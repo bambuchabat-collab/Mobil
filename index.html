@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="theme-color" content="#050a06">
+<title>Tennis for Two</title>
+<style>
+  :root {
+    --screen: #050a06;
+    --phosphor: #43ff87;
+    --phosphor-dim: #0e7a3a;
+    --amber: #ffcf4a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    height: 100%;
+    background: #000;
+    overflow: hidden;
+    font-family: ui-monospace, "SF Mono", "Menlo", "Consolas", monospace;
+    -webkit-user-select: none; user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  #wrap {
+    position: fixed; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    background:
+      radial-gradient(ellipse at center, #0a140c 0%, #030603 70%, #000 100%);
+  }
+  canvas {
+    display: block;
+    width: 100%; height: 100%;
+    touch-action: none;
+  }
+  /* Развёртка осциллографа поверх экрана */
+  #scan {
+    position: fixed; inset: 0; pointer-events: none; z-index: 3;
+    background:
+      repeating-linear-gradient(
+        to bottom,
+        rgba(0,0,0,0) 0px,
+        rgba(0,0,0,0) 2px,
+        rgba(0,0,0,0.18) 3px,
+        rgba(0,0,0,0.18) 4px);
+    mix-blend-mode: multiply;
+  }
+  #vignette {
+    position: fixed; inset: 0; pointer-events: none; z-index: 2;
+    box-shadow: inset 0 0 160px 40px rgba(0,0,0,0.9);
+    border-radius: 24px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #scan { display: none; }
+  }
+</style>
+</head>
+<body>
+  <div id="wrap">
+    <canvas id="game"></canvas>
+  </div>
+  <div id="vignette"></div>
+  <div id="scan"></div>
+
+<script>
+(function () {
+  "use strict";
+
+  var canvas = document.getElementById("game");
+  var ctx = canvas.getContext("2d");
+  var W = 0, H = 0, DPR = 1;
+
+  function resize() {
+    DPR = Math.min(window.devicePixelRatio || 1, 2.5);
+    W = canvas.clientWidth;
+    H = canvas.clientHeight;
+    canvas.width = Math.floor(W * DPR);
+    canvas.height = Math.floor(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    layout();
+  }
+
+  // ---- Игровые объекты ----
+  var state = "title";          // title | playing | over
+  var scoreP = 0, scoreAI = 0;
+  var WIN = 11;
+  var margin, paddleW, paddleH, ballR;
+  var playerX, aiX, playerY, aiY;
+  var ball;
+  var trail = [];
+  var winner = "";
+
+  function layout() {
+    margin = Math.max(28, H * 0.05);
+    paddleW = Math.max(70, Math.min(W * 0.24, 150));
+    paddleH = Math.max(11, H * 0.016);
+    ballR = Math.max(6, Math.min(W, H) * 0.012);
+    playerY = H - margin;
+    aiY = margin;
+    if (playerX === undefined) { playerX = W / 2; aiX = W / 2; }
+    playerX = clamp(playerX, paddleW / 2, W - paddleW / 2);
+    aiX = clamp(aiX, paddleW / 2, W - paddleW / 2);
+  }
+
+  function clamp(v, a, b) { return v < a ? a : (v > b ? b : v); }
+
+  function resetBall(dir) {
+    var speed = H * 0.62;
+    var ang = (Math.random() * 0.5 - 0.25); // небольшой угол в сторону
+    ball = {
+      x: W / 2,
+      y: H / 2,
+      vx: Math.sin(ang) * speed,
+      vy: dir * Math.cos(ang) * speed,
+      speed: speed
+    };
+    trail.length = 0;
+  }
+
+  function startGame() {
+    scoreP = 0; scoreAI = 0;
+    playerX = W / 2; aiX = W / 2;
+    state = "playing";
+    resetBall(Math.random() < 0.5 ? 1 : -1);
+  }
+
+  // ---- Управление ----
+  function pointerX(e) {
+    var r = canvas.getBoundingClientRect();
+    var cx = (e.touches ? e.touches[0].clientX : e.clientX);
+    return cx - r.left;
+  }
+  function onDown(e) {
+    e.preventDefault();
+    if (state === "title" || state === "over") { startGame(); return; }
+    playerX = pointerX(e);
+  }
+  function onMove(e) {
+    if (state !== "playing") return;
+    e.preventDefault();
+    playerX = pointerX(e);
+  }
+  canvas.addEventListener("touchstart", onDown, { passive: false });
+  canvas.addEventListener("touchmove", onMove, { passive: false });
+  canvas.addEventListener("mousedown", onDown);
+  canvas.addEventListener("mousemove", function (e) {
+    if (state === "playing" && (e.buttons & 1 || true)) playerX = pointerX(e);
+  });
+
+  // ---- Обновление ----
+  function update(dt) {
+    if (state !== "playing") return;
+
+    playerX = clamp(playerX, paddleW / 2, W - paddleW / 2);
+
+    // ИИ следует за мячом с ограниченной скоростью — его можно обыграть
+    var aiSpeed = H * 0.92;
+    var target = ball.x + ball.vx * 0.12;
+    var diff = target - aiX;
+    var step = aiSpeed * dt;
+    aiX += clamp(diff, -step, step);
+    aiX = clamp(aiX, paddleW / 2, W - paddleW / 2);
+
+    var prevY = ball.y;
+    ball.x += ball.vx * dt;
+    ball.y += ball.vy * dt;
+
+    // Боковые стены
+    if (ball.x - ballR < 0) { ball.x = ballR; ball.vx = Math.abs(ball.vx); }
+    if (ball.x + ballR > W) { ball.x = W - ballR; ball.vx = -Math.abs(ball.vx); }
+
+    // Ракетка игрока (снизу)
+    if (ball.vy > 0 && prevY + ballR <= playerY && ball.y + ballR >= playerY) {
+      if (Math.abs(ball.x - playerX) <= paddleW / 2 + ballR) {
+        bounce(playerX, -1);
+      }
+    }
+    // Ракетка ИИ (сверху)
+    if (ball.vy < 0 && prevY - ballR >= aiY && ball.y - ballR <= aiY) {
+      if (Math.abs(ball.x - aiX) <= paddleW / 2 + ballR) {
+        bounce(aiX, 1);
+      }
+    }
+
+    // След мяча
+    trail.push({ x: ball.x, y: ball.y });
+    if (trail.length > 14) trail.shift();
+
+    // Голы
+    if (ball.y - ballR > H) { scoreAI++; afterPoint(-1); }
+    else if (ball.y + ballR < 0) { scoreP++; afterPoint(1); }
+  }
+
+  function bounce(px, dir) {
+    ball.speed = Math.min(ball.speed * 1.045, H * 1.5);
+    var off = clamp((ball.x - px) / (paddleW / 2), -1, 1); // -1..1
+    var angle = off * (Math.PI / 3.2); // до ~56°
+    ball.vx = Math.sin(angle) * ball.speed;
+    ball.vy = dir * Math.abs(Math.cos(angle)) * ball.speed;
+    ball.y = (dir < 0 ? playerY : aiY) + dir * (ballR + 1);
+  }
+
+  function afterPoint(scorer) {
+    if (scoreP >= WIN || scoreAI >= WIN) {
+      state = "over";
+      winner = scoreP >= WIN ? "ВЫ ПОБЕДИЛИ" : "ИИ ПОБЕДИЛ";
+      return;
+    }
+    resetBall(scorer > 0 ? 1 : -1);
+  }
+
+  // ---- Отрисовка ----
+  function glow(color, blur) { ctx.shadowColor = color; ctx.shadowBlur = blur; }
+  function noGlow() { ctx.shadowBlur = 0; }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    // Центральная сетка (пунктир)
+    ctx.strokeStyle = "rgba(67,255,135,0.28)";
+    ctx.lineWidth = 2;
+    ctx.setLineDash([10, 14]);
+    ctx.beginPath();
+    ctx.moveTo(0, H / 2);
+    ctx.lineTo(W, H / 2);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Счёт
+    ctx.fillStyle = "rgba(67,255,135,0.20)";
+    ctx.font = "bold " + Math.round(Math.min(W, H) * 0.16) + "px ui-monospace, monospace";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(String(scoreAI), W / 2, H * 0.30);
+    ctx.fillText(String(scoreP), W / 2, H * 0.70);
+
+    if (state === "title") { drawTitle(); return; }
+
+    // Ракетки
+    glow("#43ff87", 18);
+    ctx.fillStyle = "#43ff87";
+    roundRect(aiX - paddleW / 2, aiY - paddleH / 2, paddleW, paddleH);
+    roundRect(playerX - paddleW / 2, playerY - paddleH / 2, paddleW, paddleH);
+
+    // След мяча
+    for (var i = 0; i < trail.length; i++) {
+      var t = trail[i];
+      var a = (i + 1) / trail.length;
+      ctx.globalAlpha = a * 0.5;
+      ctx.beginPath();
+      ctx.arc(t.x, t.y, ballR * a, 0, Math.PI * 2);
+      ctx.fillStyle = "#0e7a3a";
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+
+    // Мяч
+    glow("#c9ffdd", 26);
+    ctx.fillStyle = "#eaffef";
+    ctx.beginPath();
+    ctx.arc(ball.x, ball.y, ballR, 0, Math.PI * 2);
+    ctx.fill();
+    noGlow();
+
+    if (state === "over") drawOver();
+  }
+
+  function roundRect(x, y, w, h) {
+    var r = h / 2;
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.fill();
+    noGlow();
+  }
+
+  function drawTitle() {
+    var cx = W / 2, cy = H / 2;
+    glow("#43ff87", 24);
+    ctx.fillStyle = "#43ff87";
+    ctx.textAlign = "center";
+    ctx.font = "bold " + Math.round(Math.min(W, H) * 0.085) + "px ui-monospace, monospace";
+    ctx.fillText("TENNIS", cx, cy - Math.min(W, H) * 0.10);
+    ctx.fillText("FOR TWO", cx, cy);
+    noGlow();
+
+    ctx.fillStyle = "rgba(67,255,135,0.65)";
+    ctx.font = Math.round(Math.min(W, H) * 0.032) + "px ui-monospace, monospace";
+    ctx.fillText("1958 · У. Хигинботам", cx, cy + Math.min(W, H) * 0.09);
+
+    // Мигающая подсказка
+    var blink = (Math.floor(Date.now() / 500) % 2) === 0;
+    if (blink) {
+      ctx.fillStyle = "var(--amber)";
+      ctx.fillStyle = "#ffcf4a";
+      ctx.font = "bold " + Math.round(Math.min(W, H) * 0.04) + "px ui-monospace, monospace";
+      ctx.fillText("НАЖМИ, ЧТОБЫ ИГРАТЬ", cx, cy + Math.min(W, H) * 0.20);
+    }
+    ctx.fillStyle = "rgba(67,255,135,0.45)";
+    ctx.font = Math.round(Math.min(W, H) * 0.028) + "px ui-monospace, monospace";
+    ctx.fillText("веди пальцем — двигай ракетку", cx, H - margin * 0.7);
+  }
+
+  function drawOver() {
+    ctx.fillStyle = "rgba(3,6,3,0.72)";
+    ctx.fillRect(0, 0, W, H);
+    var cx = W / 2, cy = H / 2;
+    glow("#ffcf4a", 22);
+    ctx.fillStyle = "#ffcf4a";
+    ctx.textAlign = "center";
+    ctx.font = "bold " + Math.round(Math.min(W, H) * 0.07) + "px ui-monospace, monospace";
+    ctx.fillText(winner, cx, cy - Math.min(W, H) * 0.02);
+    noGlow();
+    ctx.fillStyle = "#43ff87";
+    ctx.font = "bold " + Math.round(Math.min(W, H) * 0.05) + "px ui-monospace, monospace";
+    ctx.fillText(scoreP + " : " + scoreAI, cx, cy + Math.min(W, H) * 0.08);
+    var blink = (Math.floor(Date.now() / 500) % 2) === 0;
+    if (blink) {
+      ctx.fillStyle = "rgba(67,255,135,0.7)";
+      ctx.font = Math.round(Math.min(W, H) * 0.035) + "px ui-monospace, monospace";
+      ctx.fillText("нажми — сыграть снова", cx, cy + Math.min(W, H) * 0.18);
+    }
+  }
+
+  // ---- Цикл ----
+  var last = 0;
+  function loop(ts) {
+    if (!last) last = ts;
+    var dt = Math.min((ts - last) / 1000, 0.033);
+    last = ts;
+    update(dt);
+    draw();
+    requestAnimationFrame(loop);
+  }
+
+  window.addEventListener("resize", resize);
+  window.addEventListener("orientationchange", function () { setTimeout(resize, 200); });
+  resize();
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
