@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#FFD100">
+<title>POŠTA · Automat poradia</title>
+<style>
+  :root{
+    --yellow:#FFD100; --yellow-deep:#F2B600; --yellow-hi:#FFE45C;
+    --ink:#16223f; --ink-70:rgba(22,34,63,.70); --ink-45:rgba(22,34,63,.45);
+    --paper:#fffdf5; --red:#E4002B; --line:rgba(22,34,63,.18);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{min-height:100%}
+  body{
+    background:
+      radial-gradient(120% 90% at 50% -10%, var(--yellow-hi) 0%, var(--yellow) 46%, var(--yellow-deep) 100%);
+    color:var(--ink);
+    font-family:"Helvetica Neue",Arial,"Segoe UI",sans-serif;
+    -webkit-font-smoothing:antialiased;
+    display:flex; align-items:flex-start; justify-content:center;
+    padding:clamp(16px,4vw,40px) 16px 40px;
+    min-height:100vh;
+  }
+  .kiosk{ width:100%; max-width:440px; display:flex; flex-direction:column; gap:18px; }
+
+  /* Шапка / бренд */
+  .brand{ display:flex; align-items:center; gap:12px; }
+  .horn{
+    width:46px;height:46px;border-radius:13px;background:var(--ink);
+    display:grid;place-items:center;flex:none;
+    box-shadow:0 6px 0 rgba(22,34,63,.18);
+  }
+  .horn svg{width:26px;height:26px}
+  .brand .word{ font-weight:800; font-size:26px; letter-spacing:.14em; }
+  .brand .sub{ font-size:11px; letter-spacing:.26em; text-transform:uppercase; color:var(--ink-70); margin-top:2px; }
+  .demo{
+    margin-left:auto; align-self:flex-start;
+    font-size:10px; letter-spacing:.18em; text-transform:uppercase; font-weight:700;
+    color:var(--ink); background:rgba(255,255,255,.55);
+    border:1.5px dashed var(--ink); border-radius:999px; padding:5px 10px;
+  }
+
+  /* Табло "сейчас обслуживаем" */
+  .board{
+    background:var(--ink); color:var(--yellow);
+    border-radius:22px; padding:22px 22px 18px;
+    box-shadow:0 14px 30px rgba(22,34,63,.28);
+    position:relative; overflow:hidden;
+  }
+  .board::after{ /* блик развёртки табло */
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background:repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 2px,transparent 2px 4px);
+    mix-blend-mode:overlay;
+  }
+  .board .lbl{ font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:rgba(255,209,0,.7); }
+  .now{ display:flex; align-items:center; gap:14px; margin-top:6px; }
+  .dot{ width:14px;height:14px;border-radius:50%;background:var(--red);
+    box-shadow:0 0 0 0 rgba(228,0,43,.6); animation:pulse 1.6s infinite; flex:none; }
+  @keyframes pulse{ 0%{box-shadow:0 0 0 0 rgba(228,0,43,.55)} 70%{box-shadow:0 0 0 16px rgba(228,0,43,0)} 100%{box-shadow:0 0 0 0 rgba(228,0,43,0)} }
+  .serving{ font-family:ui-monospace,"SF Mono",Menlo,monospace; font-weight:800;
+    font-size:clamp(52px,17vw,74px); line-height:.9; letter-spacing:.02em; font-variant-numeric:tabular-nums; }
+  .counter{ margin-top:12px; display:flex; justify-content:space-between; align-items:baseline;
+    border-top:1px solid rgba(255,209,0,.22); padding-top:12px; }
+  .counter .k{ font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,209,0,.7) }
+  .counter .v{ font-weight:800; font-size:20px; font-variant-numeric:tabular-nums }
+
+  /* Отрывной талон */
+  .ticket{
+    background:var(--paper); border-radius:22px; position:relative;
+    box-shadow:0 14px 30px rgba(22,34,63,.22);
+    padding:22px 22px 20px;
+  }
+  .ticket .top{ display:flex; justify-content:space-between; align-items:flex-start; }
+  .ticket .top .place{ font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-70) }
+  .ticket .top .date{ font-size:12px; color:var(--ink-45); font-variant-numeric:tabular-nums; text-align:right }
+  .yourlbl{ margin-top:14px; font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--ink-45) }
+  .yournum{ font-family:ui-monospace,"SF Mono",Menlo,monospace; font-weight:800;
+    font-size:clamp(64px,22vw,96px); line-height:.86; color:var(--ink); font-variant-numeric:tabular-nums; }
+  .stats{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:16px; }
+  .stat{ background:rgba(22,34,63,.05); border:1px solid var(--line); border-radius:14px; padding:12px 14px; }
+  .stat .k{ font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-45) }
+  .stat .v{ font-weight:800; font-size:22px; margin-top:3px; font-variant-numeric:tabular-nums }
+  .stat .v small{ font-size:13px; font-weight:600; color:var(--ink-70) }
+  .wink{ margin-top:14px; font-size:12.5px; color:var(--ink-70); line-height:1.5 }
+
+  /* перфорация */
+  .perf{ position:relative; height:22px; margin:4px -22px; }
+  .perf::before{ content:""; position:absolute; left:22px; right:22px; top:50%;
+    border-top:2px dashed var(--line); }
+  .perf .n{ position:absolute; top:50%; transform:translateY(-50%);
+    width:22px;height:22px;border-radius:50%; background:var(--yellow); }
+  .perf .n.l{ left:-11px } .perf .n.r{ right:-11px }
+
+  .btn{
+    -webkit-appearance:none; appearance:none; border:none; cursor:pointer;
+    width:100%; margin-top:4px; padding:17px; border-radius:16px;
+    background:var(--red); color:#fff; font-weight:800; font-size:16px;
+    letter-spacing:.04em; box-shadow:0 8px 0 #b00021; transition:transform .06s, box-shadow .06s;
+  }
+  .btn:active{ transform:translateY(4px); box-shadow:0 4px 0 #b00021 }
+  .btn .ru{ display:block; font-weight:600; font-size:11px; letter-spacing:.02em; opacity:.85; margin-top:2px }
+
+  .foot{ text-align:center; font-size:10.5px; line-height:1.5; color:var(--ink-70); padding:2px 6px 0 }
+
+  @media (prefers-reduced-motion: reduce){ .dot{animation:none} }
+</style>
+</head>
+<body>
+  <main class="kiosk">
+    <header class="brand">
+      <span class="horn" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#FFD100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 12c0-3 2-5 6-5h7"/><path d="M16 7l3-2v9a3 3 0 0 1-6 0"/><circle cx="5.5" cy="14.5" r="2.2" fill="#FFD100" stroke="none"/>
+        </svg>
+      </span>
+      <div>
+        <div class="word">POŠTA</div>
+        <div class="sub">Automat poradia</div>
+      </div>
+      <span class="demo">Ukážka · demo</span>
+    </header>
+
+    <section class="board" aria-label="Teraz obsluhujeme">
+      <div class="lbl">Teraz obsluhujeme</div>
+      <div class="now"><span class="dot"></span><span class="serving" id="serving">A-247</span></div>
+      <div class="counter">
+        <span class="k">Prepážka</span>
+        <span class="v" id="counter">č. 3</span>
+      </div>
+    </section>
+
+    <section class="ticket" aria-label="Váš lístok">
+      <div class="top">
+        <span class="place">Pobočka · Bratislava 1</span>
+        <span class="date" id="date">—</span>
+      </div>
+      <div class="yourlbl">Vaše číslo</div>
+      <div class="yournum" id="yournum">A-263</div>
+
+      <div class="stats">
+        <div class="stat"><div class="k">Pred vami</div><div class="v" id="ahead">16 <small>ľudí</small></div></div>
+        <div class="stat"><div class="k">Odhad čakania</div><div class="v" id="wait">~52 <small>min</small></div></div>
+      </div>
+
+      <p class="wink" id="wink">Odporúčaný nápoj: 2 kávy. Šanca, že to stihnete dnes: vysoká.</p>
+
+      <div class="perf"><span class="n l"></span><span class="n r"></span></div>
+
+      <button class="btn" id="draw">Vytiahnuť nový lístok
+        <span class="ru">Взять новый талончик</span>
+      </button>
+    </section>
+
+    <p class="foot">Ukážkový dizajn v poštovom štýle. Nie je oficiálny dokument ani služba Slovenskej pošty.<br>Демо-макет в почтовом стиле — не официальный документ.</p>
+  </main>
+
+<script>
+(function(){
+  "use strict";
+  var series="ABCD", serving=247, counters=[1,2,3,4,5];
+  var yourNum=263, ahead=16;
+
+  var $=function(id){return document.getElementById(id)};
+  function pad(n){return (n<10?"0":"")+n}
+
+  function fmtTicket(n){ return series[0]+"-"+n; }
+
+  function clock(){
+    var d=new Date();
+    $("date").textContent =
+      pad(d.getDate())+"."+pad(d.getMonth()+1)+"."+d.getFullYear()+"  "+
+      pad(d.getHours())+":"+pad(d.getMinutes())+":"+pad(d.getSeconds());
+  }
+  setInterval(clock,1000); clock();
+
+  function renderQueue(){
+    $("serving").textContent = fmtTicket(serving);
+    $("counter").textContent = "č. "+counters[serving % counters.length];
+    ahead = Math.max(0, yourNum - serving);
+    $("ahead").innerHTML = ahead+' <small>'+plural(ahead)+'</small>';
+    var mins = Math.round(ahead*3.2);
+    $("wait").innerHTML = (ahead===0?'ste na rade!':'~'+mins)+(ahead===0?'':' <small>min</small>');
+    $("wink").textContent = quip(ahead, mins);
+  }
+  function plural(n){ return (n===1)?"človek":(n>=2&&n<=4)?"ľudia":"ľudí"; }
+
+  function quip(a, m){
+    if(a===0) return "Bežte k prepážke! 🎉";
+    if(a<=3)  return "Už len chvíľka. Neodchádzajte na kávu teraz.";
+    if(m>=55) return "Odhad: "+m+" min (alebo celý život). Odporúčame trpezlivosť a 2 kávy.";
+    return "Pred vami "+a+". Ideálny čas zahrať si Tennis for Two.";
+  }
+
+  // очередь тикает сама — как на настоящем табло
+  setInterval(function(){
+    if(serving < yourNum + 4){ serving++; flash($("serving")); renderQueue(); }
+  }, 7000);
+
+  function flash(el){
+    el.animate&&el.animate(
+      [{filter:'brightness(2.4)'},{filter:'brightness(1)'}],
+      {duration:420,easing:'ease-out'});
+  }
+
+  $("draw").addEventListener("click",function(){
+    yourNum = serving + 5 + Math.floor(Math.random()*22);
+    $("yournum").textContent = fmtTicket(yourNum);
+    flash($("yournum"));
+    renderQueue();
+  });
+
+  renderQueue();
+})();
+</script>
+</body>
+</html>
