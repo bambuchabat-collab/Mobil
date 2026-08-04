@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Eurojackpot">
+<meta name="theme-color" content="#0b1020">
+<title>Eurojackpot · Генератор рядов</title>
+<style>
+  :root{
+    --bg:#0b1020; --bg-2:#131c36;
+    --gold:#ffc72c; --gold-deep:#e0a400; --gold-hi:#ffe08a;
+    --ink:#0b1020;
+    --paper:#f4f6fb;
+    --text:#eaeefb; --text-60:rgba(234,238,251,.60); --text-38:rgba(234,238,251,.38);
+    --line:rgba(234,238,251,.14);
+    --win:#3ddc84; --miss:rgba(234,238,251,.22);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%; background:var(--bg)}
+  /* Фон отдельным fixed-слоем: background-attachment:fixed в iOS Safari дёргается при скролле. */
+  body::before{
+    content:""; position:fixed; inset:0; z-index:-1;
+    background:radial-gradient(120% 80% at 50% -15%, #23305c 0%, var(--bg-2) 42%, var(--bg) 100%);
+  }
+  body{
+    min-height:100vh;
+    color:var(--text);
+    font-family:"Helvetica Neue",-apple-system,"SF Pro Text",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    -webkit-tap-highlight-color:transparent;
+    overscroll-behavior-y:contain;
+    display:flex; justify-content:center;
+    padding:calc(env(safe-area-inset-top) + 18px) 15px calc(env(safe-area-inset-bottom) + 34px);
+  }
+  .app{ width:100%; max-width:440px; display:flex; flex-direction:column; gap:15px; }
+
+  /* ── Шапка ─────────────────────────────────────────── */
+  .brand{ display:flex; align-items:center; gap:12px; }
+  .mark{
+    width:46px;height:46px;border-radius:14px;flex:none;
+    background:linear-gradient(160deg,var(--gold-hi),var(--gold) 45%,var(--gold-deep));
+    display:grid;place-items:center;
+    box-shadow:0 8px 22px rgba(255,199,44,.28);
+    font-weight:800;font-size:19px;color:var(--ink);letter-spacing:-.02em;
+  }
+  .brand .word{ font-weight:800; font-size:23px; letter-spacing:.05em; line-height:1.05 }
+  .brand .sub{ font-size:10.5px; letter-spacing:.24em; text-transform:uppercase; color:var(--text-38); margin-top:3px }
+
+  .next{
+    background:rgba(255,255,255,.04); border:1px solid var(--line); border-radius:18px;
+    padding:13px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px;
+  }
+  .next .k{ font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--text-38) }
+  .next .v{ font-weight:700; font-size:15px; margin-top:3px }
+  .next .cd{ font-family:ui-monospace,"SF Mono",Menlo,monospace; font-weight:700; font-size:15px;
+    color:var(--gold); font-variant-numeric:tabular-nums; text-align:right; flex:none }
+
+  /* ── Карточки ──────────────────────────────────────── */
+  .card{
+    background:rgba(255,255,255,.045); border:1px solid var(--line);
+    border-radius:20px; padding:16px;
+  }
+  .card > h2{
+    font-size:10.5px; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--text-38); font-weight:700; margin-bottom:13px;
+  }
+
+  /* ── Счётчик рядов ─────────────────────────────────── */
+  .stepper{ display:flex; align-items:center; justify-content:space-between; gap:14px; margin-bottom:14px }
+  .stepper .lbl{ font-size:14px; color:var(--text-60) }
+  .stepper .ctl{ display:flex; align-items:center; gap:4px; background:rgba(0,0,0,.28);
+    border:1px solid var(--line); border-radius:13px; padding:4px }
+  .stepper button{
+    -webkit-appearance:none;appearance:none;border:none;cursor:pointer;
+    width:38px;height:34px;border-radius:10px;background:rgba(255,255,255,.07);
+    color:var(--text);font-size:20px;font-weight:600;line-height:1;
+    display:grid;place-items:center;transition:background .12s,transform .08s;
+  }
+  .stepper button:active{ background:rgba(255,255,255,.16); transform:scale(.94) }
+  .stepper button:disabled{ opacity:.28 }
+  .stepper .n{ min-width:34px;text-align:center;font-weight:800;font-size:18px;
+    font-variant-numeric:tabular-nums }
+
+  /* ── Кнопки ────────────────────────────────────────── */
+  .btn{
+    -webkit-appearance:none;appearance:none;border:none;cursor:pointer;width:100%;
+    padding:17px;border-radius:16px;font-weight:800;font-size:16px;letter-spacing:.03em;
+    background:linear-gradient(170deg,var(--gold-hi),var(--gold) 40%,var(--gold-deep));
+    color:var(--ink); box-shadow:0 7px 0 #a87a00, 0 14px 26px rgba(0,0,0,.35);
+    transition:transform .07s,box-shadow .07s;
+  }
+  .btn:active{ transform:translateY(4px); box-shadow:0 3px 0 #a87a00, 0 7px 14px rgba(0,0,0,.3) }
+  .btn:disabled{ opacity:.5; box-shadow:0 7px 0 #a87a00 }
+  .btn.ghost{
+    background:rgba(255,255,255,.07); color:var(--text); box-shadow:none;
+    border:1px solid var(--line); font-weight:700; font-size:13px; padding:13px 8px;
+    white-space:nowrap;
+  }
+  .btn.ghost:active{ background:rgba(255,255,255,.15); transform:translateY(1px) }
+  .row-btns{ display:flex; gap:9px; margin-top:11px; flex-wrap:wrap }
+  .row-btns[hidden]{ display:none } /* иначе display:flex перебивает атрибут hidden */
+  .row-btns .btn{ flex:1 1 0; width:auto; min-width:0 }
+
+  /* ── Шары ──────────────────────────────────────────── */
+  .rows{ display:flex; flex-direction:column; gap:9px }
+  .rows:empty{ display:none }
+  .line{
+    display:flex; align-items:center; gap:6px;
+    background:rgba(0,0,0,.24); border:1px solid var(--line);
+    border-radius:15px; padding:10px 9px;
+  }
+  .line .idx{ font-size:10px; color:var(--text-38); font-weight:700; width:13px; flex:none;
+    font-variant-numeric:tabular-nums }
+  /* Шары тянутся/сжимаются под ширину экрана — на узких iPhone иначе не влезает ряд с бейджем. */
+  .balls{ display:flex; gap:clamp(3px,1.1vw,5px); flex-wrap:nowrap; flex:1 1 auto; min-width:0 }
+  .sep{ width:1px; align-self:stretch; background:var(--line); margin:1px 3px; flex:none }
+  .ball{
+    flex:1 1 0; min-width:0; max-width:32px; aspect-ratio:1; border-radius:50%;
+    display:grid;place-items:center;
+    font-weight:800;font-size:clamp(10px,3.2vw,14px);font-variant-numeric:tabular-nums;
+    background:linear-gradient(165deg,#ffffff,#d7ddec);
+    color:var(--ink);
+    box-shadow:inset 0 -2px 3px rgba(11,16,32,.22), 0 2px 5px rgba(0,0,0,.32);
+  }
+  .ball.e{
+    background:linear-gradient(165deg,var(--gold-hi),var(--gold) 55%,var(--gold-deep));
+    box-shadow:inset 0 -2px 3px rgba(120,80,0,.32), 0 2px 5px rgba(0,0,0,.32);
+  }
+  .ball.roll{ animation:shake .16s linear infinite }
+  @keyframes shake{ 0%{transform:translateY(-1.5px)} 50%{transform:translateY(1.5px)} 100%{transform:translateY(-1.5px)} }
+  .ball.pop{ animation:pop .3s cubic-bezier(.2,1.5,.4,1) }
+  @keyframes pop{ 0%{transform:scale(.4);opacity:.3} 100%{transform:scale(1);opacity:1} }
+  /* результат сверки */
+  .ball.hit{ box-shadow:inset 0 -2px 3px rgba(11,16,32,.22), 0 0 0 2.5px var(--win), 0 2px 8px rgba(61,220,132,.45) }
+  .ball.cold{ background:linear-gradient(165deg,#5b6480,#454d66); color:rgba(255,255,255,.5);
+    box-shadow:inset 0 -2px 3px rgba(0,0,0,.25) }
+  .ball.cold.e{ background:linear-gradient(165deg,#7a6a3c,#5c5030); color:rgba(255,255,255,.5) }
+
+  /* Бейдж вешаем только на выигрышные ряды — у остальных всё сказано погашенными шарами. */
+  .tier{ flex:none; font-size:10px; font-weight:800; letter-spacing:.01em; line-height:1;
+    color:var(--ink); background:var(--win); border-radius:999px; padding:4px 6px;
+    box-shadow:0 2px 8px rgba(61,220,132,.35) }
+
+  /* ── Сохранённые билеты ────────────────────────────── */
+  .ticket{
+    background:rgba(255,255,255,.045); border:1px solid var(--line);
+    border-radius:20px; padding:15px; display:flex; flex-direction:column; gap:11px;
+  }
+  .ticket.checked{ border-color:rgba(61,220,132,.35) }
+  .thead{ display:flex; align-items:baseline; justify-content:space-between; gap:10px }
+  .thead .d{ font-weight:800; font-size:15px }
+  .thead .m{ font-size:11px; color:var(--text-38); font-variant-numeric:tabular-nums }
+  .verdict{
+    font-size:12.5px; font-weight:700; line-height:1.45;
+    background:rgba(61,220,132,.10); border:1px solid rgba(61,220,132,.3);
+    color:var(--win); border-radius:12px; padding:10px 12px;
+  }
+  .verdict.none{ background:rgba(255,255,255,.04); border-color:var(--line); color:var(--text-60); font-weight:600 }
+  .verdict .drawn{ display:block; margin-top:5px; font-weight:600; font-size:11.5px; color:var(--text-60);
+    font-variant-numeric:tabular-nums }
+
+  /* ── Ввод результата ───────────────────────────────── */
+  .entry{ border-top:1px dashed var(--line); padding-top:12px }
+  .entry .k{ font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--text-38); margin-bottom:9px }
+  .fields{ display:flex; align-items:center; gap:6px }
+  .fields input{
+    -webkit-appearance:none;appearance:none;
+    flex:1 1 0; min-width:0; height:42px; border-radius:12px;
+    border:1px solid var(--line); background:rgba(0,0,0,.3);
+    color:var(--text); text-align:center;
+    font-size:16px; font-weight:700; font-variant-numeric:tabular-nums;
+    font-family:inherit;
+  }
+  .fields input:focus{ outline:none; border-color:var(--gold); background:rgba(0,0,0,.45) }
+  .fields input.eu{ border-color:rgba(255,199,44,.45); color:var(--gold) }
+  /* Само поле держим на 16px, иначе iOS зумит страницу при фокусе; мельчим только подсказку. */
+  .fields input::placeholder{ font-size:11px; font-weight:600; color:var(--text-38) }
+  .err{ font-size:12px; color:#ff8b8b; margin-top:9px; line-height:1.4 }
+  .err:empty{ display:none }
+
+  .empty{ font-size:13px; color:var(--text-38); line-height:1.55; text-align:center; padding:6px 4px }
+
+  .ref{ font-size:11.5px; color:var(--text-38); line-height:1.6; font-variant-numeric:tabular-nums }
+  .ref b{ color:var(--text-60) }
+
+  .foot{ text-align:center; font-size:10.5px; line-height:1.65; color:var(--text-38); padding:2px 8px }
+
+  .toast{
+    position:fixed; left:50%; bottom:calc(env(safe-area-inset-bottom) + 22px);
+    transform:translate(-50%,14px); opacity:0; pointer-events:none;
+    background:rgba(20,26,48,.96); border:1px solid var(--line); backdrop-filter:blur(12px);
+    color:var(--text); font-size:13px; font-weight:600;
+    padding:11px 18px; border-radius:999px; box-shadow:0 10px 30px rgba(0,0,0,.5);
+    transition:opacity .2s, transform .2s; z-index:9;
+  }
+  .toast.on{ opacity:1; transform:translate(-50%,0) }
+
+  @media (prefers-reduced-motion: reduce){
+    .ball.roll,.ball.pop{ animation:none }
+  }
+</style>
+</head>
+<body>
+<main class="app">
+
+  <header class="brand">
+    <span class="mark" aria-hidden="true">EJ</span>
+    <div>
+      <div class="word">EUROJACKPOT</div>
+      <div class="sub">Генератор рядов</div>
+    </div>
+  </header>
+
+  <div class="next">
+    <div>
+      <div class="k">Ближайший тираж</div>
+      <div class="v" id="nextDate">—</div>
+    </div>
+    <div class="cd" id="countdown">—</div>
+  </div>
+
+  <!-- Генератор -->
+  <section class="card">
+    <h2>Розыгрыш</h2>
+    <div class="stepper">
+      <span class="lbl">Рядов в билете</span>
+      <span class="ctl">
+        <button type="button" id="minus" aria-label="Меньше">−</button>
+        <span class="n" id="count">5</span>
+        <button type="button" id="plus" aria-label="Больше">+</button>
+      </span>
+    </div>
+    <button class="btn" id="roll">РАЗЫГРАТЬ</button>
+    <div class="rows" id="draft" style="margin-top:13px"></div>
+    <div class="row-btns" id="draftBtns" hidden>
+      <button class="btn ghost" id="save">Сохранить билет</button>
+      <button class="btn ghost" id="copy">Копировать</button>
+    </div>
+  </section>
+
+  <!-- Сохранённые билеты -->
+  <section class="card">
+    <h2>Мои билеты</h2>
+    <div id="tickets"></div>
+  </section>
+
+  <section class="card">
+    <h2>Для справки</h2>
+    <div class="ref">
+      Тираж <b>04.08.2026</b> — 3 · 17 · 30 · 35 · 43 <b>+</b> 1 · 12.<br>
+      Розыгрыши по вторникам и пятницам, 21:00 CET. Ряд — 5 чисел из 50 и 2 Евро-числа из 12.
+      Минимальная выигрышная категория — 1+2.
+    </div>
+  </section>
+
+  <div class="foot">
+    Числа берутся из <b>crypto.getRandomValues</b> — тот же источник случайности, что и у криптографии в браузере.<br>
+    Билеты хранятся только в этом браузере, на сервер ничего не уходит.<br>
+    Страница не подаёт ставки и не выплачивает выигрыши — числа нужно ставить самому.
+  </div>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  var STORE = "ej.tickets.v1";
+  var MAIN_N = 5, MAIN_MAX = 50, EURO_N = 2, EURO_MAX = 12;
+
+  /* ── Случайность ───────────────────────────────────── */
+  // Равномерное целое 0..n-1 без модульного смещения.
+  function randInt(n){
+    var max = Math.floor(4294967296 / n) * n, a = new Uint32Array(1), v;
+    do { crypto.getRandomValues(a); v = a[0]; } while (v >= max);
+    return v % n;
+  }
+  // k различных чисел из 1..max — частичная тасовка Фишера–Йетса.
+  function sample(k, max){
+    var pool = [], i, j, t;
+    for(i=0;i<max;i++) pool.push(i+1);
+    for(i=0;i<k;i++){
+      j = i + randInt(max - i);
+      t = pool[i]; pool[i] = pool[j]; pool[j] = t;
+    }
+    return pool.slice(0,k).sort(function(a,b){return a-b});
+  }
+  function makeRow(){ return { main: sample(MAIN_N, MAIN_MAX), euro: sample(EURO_N, EURO_MAX) }; }
+
+  /* ── Категории выигрыша ────────────────────────────── */
+  var TIERS = {"5+2":1,"5+1":2,"5+0":3,"4+2":4,"4+1":5,"4+0":6,"3+2":7,"2+2":8,"3+1":9,"3+0":10,"1+2":11,"2+1":12};
+  function tierOf(m,e){ return TIERS[m + "+" + e] || null; }
+
+  /* ── Дата ближайшего тиража ────────────────────────── */
+  function nextDraw(now){
+    for(var i=0;i<8;i++){
+      var c = new Date(now.getFullYear(), now.getMonth(), now.getDate()+i, 21, 0, 0, 0);
+      var w = c.getDay();
+      if((w===2 || w===5) && c > now) return c;
+    }
+    return null;
+  }
+  function isoDay(d){
+    return d.getFullYear() + "-" + pad(d.getMonth()+1) + "-" + pad(d.getDate());
+  }
+  function pad(n){ return (n<10?"0":"") + n; }
+  function humanDay(iso){
+    var p = iso.split("-"), d = new Date(+p[0], +p[1]-1, +p[2]);
+    try {
+      return d.toLocaleDateString("ru-RU",{weekday:"long",day:"numeric",month:"long"});
+    } catch(e){ return p[2] + "." + p[1] + "." + p[0]; }
+  }
+
+  /* ── Хранилище ─────────────────────────────────────── */
+  function load(){
+    try { var v = JSON.parse(localStorage.getItem(STORE)); return Array.isArray(v) ? v : []; }
+    catch(e){ return []; }
+  }
+  function save(list){
+    try { localStorage.setItem(STORE, JSON.stringify(list)); }
+    catch(e){ toast("Не удалось сохранить"); }
+  }
+
+  /* ── Мелочи UI ─────────────────────────────────────── */
+  var toastEl = document.getElementById("toast"), toastT;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add("on");
+    clearTimeout(toastT);
+    toastT = setTimeout(function(){ toastEl.classList.remove("on"); }, 1900);
+  }
+  function el(tag, cls, txt){
+    var n = document.createElement(tag);
+    if(cls) n.className = cls;
+    if(txt != null) n.textContent = txt;
+    return n;
+  }
+  function ball(num, isEuro, state){
+    var b = el("span", "ball" + (isEuro ? " e" : "") + (state ? " " + state : ""), String(num));
+    b.setAttribute("data-v", String(num)); // анимация прокрутки затирает текст и берёт исходное отсюда
+    return b;
+  }
+
+  /* Отрисовка одного ряда. res — {main:[],euro:[]} или null */
+  function renderLine(row, i, res){
+    var line = el("div","line");
+    line.appendChild(el("span","idx", String(i+1)));
+    var balls = el("span","balls");
+    var hitM = 0, hitE = 0, k;
+
+    for(k=0;k<row.main.length;k++){
+      var m = res && res.main.indexOf(row.main[k]) >= 0;
+      if(m) hitM++;
+      balls.appendChild(ball(row.main[k], false, res ? (m ? "hit" : "cold") : null));
+    }
+    balls.appendChild(el("span","sep"));
+    for(k=0;k<row.euro.length;k++){
+      var e = res && res.euro.indexOf(row.euro[k]) >= 0;
+      if(e) hitE++;
+      balls.appendChild(ball(row.euro[k], true, res ? (e ? "hit" : "cold") : null));
+    }
+    line.appendChild(balls);
+
+    if(res){
+      var t = tierOf(hitM, hitE);
+      if(t){
+        var tag = el("span","tier","К" + t);
+        tag.title = "Категория " + t + " (" + hitM + "+" + hitE + ")";
+        line.appendChild(tag);
+      }
+    }
+    return line;
+  }
+
+  /* ── Генератор ─────────────────────────────────────── */
+  var count = 5, draft = null;
+  var countEl = document.getElementById("count");
+  var draftEl = document.getElementById("draft");
+  var draftBtns = document.getElementById("draftBtns");
+  var rollBtn = document.getElementById("roll");
+
+  document.getElementById("minus").addEventListener("click", function(){ setCount(count-1); });
+  document.getElementById("plus").addEventListener("click", function(){ setCount(count+1); });
+  function setCount(n){
+    count = Math.max(1, Math.min(12, n));
+    countEl.textContent = count;
+    document.getElementById("minus").disabled = count <= 1;
+    document.getElementById("plus").disabled = count >= 12;
+  }
+
+  rollBtn.addEventListener("click", function(){
+    var rows = [], i;
+    for(i=0;i<count;i++) rows.push(makeRow());
+    draft = rows;
+    animate(rows);
+  });
+
+  function animate(rows){
+    draftEl.innerHTML = "";
+    draftBtns.hidden = true;
+    rollBtn.disabled = true;
+
+    var nodes = [];
+    rows.forEach(function(row,i){
+      var line = renderLine(row, i, null);
+      draftEl.appendChild(line);
+      nodes.push(line);
+    });
+
+    var all = draftEl.querySelectorAll(".ball");
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if(reduce){ finish(); return; }
+
+    var k;
+    for(k=0;k<all.length;k++) all[k].classList.add("roll");
+    var spin = setInterval(function(){
+      for(var k=0;k<all.length;k++){
+        if(all[k].classList.contains("roll")){
+          var isEuro = all[k].classList.contains("e");
+          all[k].textContent = 1 + randInt(isEuro ? EURO_MAX : MAIN_MAX);
+        }
+      }
+    }, 55);
+
+    // Шары останавливаются по очереди, слева направо.
+    var idx = 0;
+    var settle = setInterval(function(){
+      if(idx >= all.length){
+        clearInterval(settle); clearInterval(spin); finish(); return;
+      }
+      var b = all[idx];
+      b.classList.remove("roll");
+      b.classList.add("pop");
+      b.textContent = b.getAttribute("data-v");
+      idx++;
+    }, 70);
+
+    function finish(){
+      for(var k=0;k<all.length;k++){
+        all[k].classList.remove("roll");
+        all[k].textContent = all[k].getAttribute("data-v");
+      }
+      rollBtn.disabled = false;
+      draftBtns.hidden = false;
+      if(navigator.vibrate) navigator.vibrate(12);
+    }
+  }
+
+  document.getElementById("save").addEventListener("click", function(){
+    if(!draft) return;
+    var nd = nextDraw(new Date());
+    var list = load();
+    list.unshift({
+      id: Date.now() + "-" + randInt(100000),
+      drawDate: isoDay(nd),
+      created: new Date().toISOString(),
+      rows: draft,
+      result: null
+    });
+    save(list);
+    draft = null;
+    draftEl.innerHTML = "";
+    draftBtns.hidden = true;
+    renderTickets();
+    toast("Билет сохранён");
+  });
+
+  document.getElementById("copy").addEventListener("click", function(){
+    if(!draft) return;
+    var txt = draft.map(function(r,i){
+      return (i+1) + ") " + r.main.join(" ") + "  +  " + r.euro.join(" ");
+    }).join("\n");
+    copyText(txt);
+  });
+
+  function copyText(txt){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(
+        function(){ toast("Скопировано"); },
+        function(){ fallbackCopy(txt); }
+      );
+    } else fallbackCopy(txt);
+  }
+  function fallbackCopy(txt){
+    var ta = document.createElement("textarea");
+    ta.value = txt;
+    ta.style.cssText = "position:fixed;top:0;left:0;opacity:0";
+    document.body.appendChild(ta);
+    ta.focus(); ta.select(); ta.setSelectionRange(0, txt.length);
+    try { document.execCommand("copy"); toast("Скопировано"); }
+    catch(e){ toast("Скопировать не вышло"); }
+    document.body.removeChild(ta);
+  }
+
+  /* ── Билеты ────────────────────────────────────────── */
+  var ticketsEl = document.getElementById("tickets");
+
+  function renderTickets(){
+    var list = load();
+    ticketsEl.innerHTML = "";
+    if(!list.length){
+      ticketsEl.appendChild(el("div","empty",
+        "Пока пусто. Разыграйте ряды и сохраните — они закрепятся за ближайшим тиражом."));
+      return;
+    }
+    var wrap = el("div");
+    wrap.style.cssText = "display:flex;flex-direction:column;gap:12px";
+    list.forEach(function(t){ wrap.appendChild(renderTicket(t)); });
+    ticketsEl.appendChild(wrap);
+  }
+
+  function renderTicket(t){
+    var card = el("div","ticket" + (t.result ? " checked" : ""));
+
+    var head = el("div","thead");
+    head.appendChild(el("span","d", "Тираж " + humanDay(t.drawDate)));
+    head.appendChild(el("span","m", t.rows.length + " " + plural(t.rows.length,"ряд","ряда","рядов")));
+    card.appendChild(head);
+
+    var rows = el("div","rows");
+    t.rows.forEach(function(r,i){ rows.appendChild(renderLine(r, i, t.result)); });
+    card.appendChild(rows);
+
+    if(t.result){
+      card.appendChild(verdictOf(t));
+    } else {
+      card.appendChild(entryForm(t));
+    }
+
+    var btns = el("div","row-btns");
+    var cp = el("button","btn ghost","Копировать");
+    cp.addEventListener("click", function(){
+      copyText(t.rows.map(function(r,i){
+        return (i+1) + ") " + r.main.join(" ") + "  +  " + r.euro.join(" ");
+      }).join("\n"));
+    });
+    btns.appendChild(cp);
+
+    if(t.result){
+      var re = el("button","btn ghost","Сбросить");
+      re.addEventListener("click", function(){
+        var list = load(), i;
+        for(i=0;i<list.length;i++) if(list[i].id === t.id) list[i].result = null;
+        save(list); renderTickets();
+      });
+      btns.appendChild(re);
+    }
+
+    var del = el("button","btn ghost","Удалить");
+    del.style.color = "#ff8b8b";
+    del.addEventListener("click", function(){
+      if(!confirm("Удалить билет от " + humanDay(t.drawDate) + "?")) return;
+      save(load().filter(function(x){ return x.id !== t.id; }));
+      renderTickets();
+      toast("Билет удалён");
+    });
+    btns.appendChild(del);
+    card.appendChild(btns);
+
+    return card;
+  }
+
+  function plural(n, one, few, many){
+    var m10 = n % 10, m100 = n % 100;
+    if(m10 === 1 && m100 !== 11) return one;
+    if(m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return few;
+    return many;
+  }
+
+  function verdictOf(t){
+    var wins = [], i, k, hitM, hitE, tier;
+    for(i=0;i<t.rows.length;i++){
+      hitM = 0; hitE = 0;
+      for(k=0;k<t.rows[i].main.length;k++)
+        if(t.result.main.indexOf(t.rows[i].main[k]) >= 0) hitM++;
+      for(k=0;k<t.rows[i].euro.length;k++)
+        if(t.result.euro.indexOf(t.rows[i].euro[k]) >= 0) hitE++;
+      tier = tierOf(hitM, hitE);
+      if(tier) wins.push({ row: i+1, tier: tier, m: hitM, e: hitE });
+    }
+
+    var v = el("div","verdict" + (wins.length ? "" : " none"));
+    if(wins.length){
+      var best = wins.reduce(function(a,b){ return b.tier < a.tier ? b : a; });
+      v.appendChild(document.createTextNode(
+        "Есть попадание: " + wins.length + " " +
+        plural(wins.length,"ряд","ряда","рядов") + " в выигрышных категориях. " +
+        "Лучший — ряд " + best.row + ", категория " + best.tier + " (" + best.m + "+" + best.e + ")."
+      ));
+    } else {
+      v.appendChild(document.createTextNode("В этом тираже ни один ряд не дотянул до выигрышной категории."));
+    }
+    var d = el("span","drawn",
+      "Выпало: " + t.result.main.join(" · ") + "  +  " + t.result.euro.join(" · "));
+    v.appendChild(d);
+    return v;
+  }
+
+  function entryForm(t){
+    var box = el("div","entry");
+    box.appendChild(el("div","k","Результат тиража"));
+    var f = el("div","fields");
+    var inputs = [], i, inp;
+
+    for(i=0;i<MAIN_N+EURO_N;i++){
+      var isEuro = i >= MAIN_N;
+      if(isEuro && i === MAIN_N) f.appendChild(el("span","sep"));
+      inp = document.createElement("input");
+      inp.type = "text";
+      inp.inputMode = "numeric";
+      inp.pattern = "[0-9]*";
+      inp.maxLength = 2;
+      inp.placeholder = isEuro ? "1-12" : "1-50";
+      if(isEuro) inp.className = "eu";
+      inputs.push(inp);
+      f.appendChild(inp);
+    }
+    // Автопереход к следующему полю
+    inputs.forEach(function(inp, i){
+      inp.addEventListener("input", function(){
+        inp.value = inp.value.replace(/[^0-9]/g,"");
+        var lim = i >= MAIN_N ? EURO_MAX : MAIN_MAX;
+        if(+inp.value > lim) inp.value = inp.value.slice(0,1);
+        // Уходим на следующее поле, когда вторая цифра уже невозможна.
+        var done = inp.value && (inp.value.length === 2 || +inp.value * 10 > lim);
+        if(done && i < inputs.length-1) inputs[i+1].focus();
+      });
+      inp.addEventListener("keydown", function(e){
+        if(e.key === "Backspace" && !inp.value && i > 0) inputs[i-1].focus();
+      });
+    });
+    box.appendChild(f);
+
+    var err = el("div","err");
+    box.appendChild(err);
+
+    var go = el("button","btn ghost","Проверить");
+    go.style.marginTop = "11px";
+    go.addEventListener("click", function(){
+      err.textContent = "";
+      var main = [], euro = [], i, v;
+      for(i=0;i<inputs.length;i++){
+        v = parseInt(inputs[i].value, 10);
+        if(!v){ err.textContent = "Заполните все 7 полей."; return; }
+        if(i < MAIN_N){
+          if(v < 1 || v > MAIN_MAX){ err.textContent = "Основные числа — от 1 до 50."; return; }
+          if(main.indexOf(v) >= 0){ err.textContent = "Основные числа не должны повторяться."; return; }
+          main.push(v);
+        } else {
+          if(v < 1 || v > EURO_MAX){ err.textContent = "Евро-числа — от 1 до 12."; return; }
+          if(euro.indexOf(v) >= 0){ err.textContent = "Евро-числа не должны повторяться."; return; }
+          euro.push(v);
+        }
+      }
+      main.sort(function(a,b){return a-b});
+      euro.sort(function(a,b){return a-b});
+
+      var list = load();
+      for(i=0;i<list.length;i++) if(list[i].id === t.id) list[i].result = { main: main, euro: euro };
+      save(list);
+      renderTickets();
+      if(navigator.vibrate) navigator.vibrate(12);
+    });
+    box.appendChild(go);
+    return box;
+  }
+
+  /* ── Обратный отсчёт ───────────────────────────────── */
+  var nextDateEl = document.getElementById("nextDate");
+  var cdEl = document.getElementById("countdown");
+  var target = null;
+
+  function tickClock(){
+    var now = new Date();
+    if(!target || target <= now){
+      target = nextDraw(now);
+      nextDateEl.textContent = target ? cap(humanDay(isoDay(target))) : "—";
+    }
+    if(!target){ cdEl.textContent = "—"; return; }
+    var s = Math.max(0, Math.floor((target - now) / 1000));
+    var d = Math.floor(s/86400), h = Math.floor(s%86400/3600),
+        m = Math.floor(s%3600/60), sec = s%60;
+    cdEl.textContent = d > 0 ? (d + "д " + h + "ч") : (pad(h) + ":" + pad(m) + ":" + pad(sec));
+  }
+  function cap(s){ return s.charAt(0).toUpperCase() + s.slice(1); }
+
+  /* ── Старт ─────────────────────────────────────────── */
+  setCount(5);
+  renderTickets();
+  tickClock();
+  setInterval(tickClock, 1000);
+  document.addEventListener("visibilitychange", function(){
+    if(!document.hidden) tickClock();
+  });
+})();
+</script>
+</body>
+</html>
