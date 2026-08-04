@@ -1,0 +1,11 @@
+{
+  "name": "autoskola-testy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Testy z pravidiel cestnej premávky – výber skupiny vodičského oprávnenia a 10 testov v každej skupine.",
+  "scripts": {
+    "test": "node tools/validate.js",
+    "start": "npx http-server -p 8080 ."
+  },
+  "license": "MIT"
+}

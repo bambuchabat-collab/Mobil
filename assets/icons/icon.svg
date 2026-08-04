@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Autoškola testy">
+  <rect width="512" height="512" rx="112" fill="#0b6bcb"/>
+  <g fill="none" stroke="#ffffff" stroke-width="34" stroke-linecap="round">
+    <circle cx="256" cy="256" r="150"/>
+    <circle cx="256" cy="256" r="52" fill="#ffffff" stroke="none"/>
+    <path d="M256 204V118"/>
+    <path d="M211 282L136 325"/>
+    <path d="M301 282l75 43"/>
+  </g>
+</svg>

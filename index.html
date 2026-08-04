@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<title>Autoškola testy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<meta name="description" content="Testy z pravidiel cestnej premávky pre autoškolu – výber skupiny vodičského oprávnenia a 10 testov v každej skupine.">
+<meta name="theme-color" content="#0b6bcb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Autoškola">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icons/icon-180.png">
+<link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+
+<header class="topbar" id="topbar">
+  <button class="topbar__back" id="btnBack" type="button" aria-label="Späť" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="topbar__title" id="topbarTitle">Autoškola testy</div>
+  <div class="topbar__slot" id="topbarSlot"></div>
+</header>
+
+<main id="app" class="app"><!-- obrazovky sa vykresľujú sem --></main>
+
+<div class="sheet" id="sheet" hidden>
+  <div class="sheet__backdrop" data-close="1"></div>
+  <div class="sheet__panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+    <h2 class="sheet__title" id="sheetTitle"></h2>
+    <p class="sheet__text" id="sheetText"></p>
+    <div class="sheet__actions" id="sheetActions"></div>
+  </div>
+</div>
+
+<noscript><p style="padding:24px">Aplikácia potrebuje zapnutý JavaScript.</p></noscript>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/bank.js"></script>
+<script src="assets/js/data/questions-01-pravidla.js"></script>
+<script src="assets/js/data/questions-02-znacky.js"></script>
+<script src="assets/js/data/questions-03-krizovatky.js"></script>
+<script src="assets/js/data/questions-04-predpisy.js"></script>
+<script src="assets/js/data/questions-05-teoria.js"></script>
+<script src="assets/js/data/questions-06-konstrukcia.js"></script>
+<script src="assets/js/data/questions-07-bezpecnost.js"></script>
+<script src="assets/js/data/questions-90-skupiny.js"></script>
+<script src="assets/js/storage.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
