@@ -345,6 +345,40 @@ def optimize_budget(
 # --------------------------------------------------------------------------
 
 
+def min_tips_for_target(
+    target: float,
+    start: int = 1,
+    stop: int = 48,
+    pool_size: int = 900,
+    passes: int = 4,
+    seeds: tuple[int, ...] = (20260817,),
+) -> tuple[int, list[Ticket], float]:
+    """Smallest number of tips whose best found set reaches ``target``.
+
+    Returns ``(n, tickets, probability)``.  The count is an *upper bound* on
+    the true minimum: it is the smallest size at which the search reached the
+    target, and a cleverer design at one size lower cannot be ruled out.
+    Passing several ``seeds`` makes the answer at the boundary more solid.
+    """
+    if not 0.0 < target <= 1.0:
+        raise ValueError("target must be a probability in (0, 1]")
+
+    for n in range(start, stop + 1):
+        best: tuple[list[Ticket], float] | None = None
+        for seed in seeds:
+            tickets = optimize_budget(n, pool_size=pool_size, passes=passes, seed=seed)
+            p = evaluate(tickets).p_any_prize
+            if best is None or p > best[1]:
+                best = (tickets, p)
+            if p >= target:
+                break
+        assert best is not None
+        if best[1] >= target:
+            return n, best[0], best[1]
+
+    raise ValueError(f"target {target:.4f} not reached within {stop} tips")
+
+
 def naive_baseline(n_tickets: int, seed: int = 1) -> list[Ticket]:
     """What a player gets by just picking n random tips with no structure."""
     rng = random.Random(seed)
