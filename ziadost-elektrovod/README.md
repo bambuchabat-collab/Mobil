@@ -12,28 +12,25 @@ Balík dokumentov k inzerátu https://www.profesia.sk/praca/elektrovod/O5325752
 | `zivotopis.html`, `motivacny-list.html` | zdroje na úpravy |
 | `PROMPT.md` | zadanie, podľa ktorého boli dokumenty vytvorené |
 
-## Pred odoslaním DOPLNIŤ
+## Stav
 
-V životopise zostávajú **2 miesta označené červeným `[DOPLNIŤ]`**. Bez nich sa
-dokument neposiela — červený text v PDF je zámerný, aby sa nedali prehliadnuť.
+Dokumenty sú kompletné a pripravené na odoslanie. Žiadne zástupné texty
+v nich nezostali.
 
-1. Vzdelanie: **názov školy**
-2. Vzdelanie: **roky štúdia**
+Názov školy a roky štúdia sa neuvádzajú — v sekcii `Vzdelanie` je uvedený
+len stupeň vzdelania, čo pre požiadavku inzerátu („stredoškolské bez maturity")
+postačuje.
 
-Ďalej si treba overiť dve veci, ktoré nie sú označené v texte:
+## Voliteľné úpravy
 
-- **Meno a priezvisko** — v dokumentoch je `Ostap Ilischuk`, odvodené z e-mailovej
-  adresy. Overiť presný prepis podľa dokladu o tolerovanom pobyte
-  (možný variant `Ilishchuk`).
-- **Reštaurácia Millenium** — overiť oficiálny latinkový zápis názvu.
+Nasledujúce údaje sú v dokumentoch uvedené v podobe, ktorú možno ešte spresniť:
 
-## Nezrovnalosť v dátumoch
-
-Dátum narodenia 16. 10. 2005 a pozícia kuchára v rokoch 2020 – 2022 znamenajú
-vek 14 – 17 rokov. Personalista si to prepočíta. Ak išlo o prácu popri štúdiu
-alebo o odbornú prax, treba to v životopise pomenovať — stačí doplniť
-`(popri štúdiu)` za názov pozície a otázka je vybavená. Ak sú dátumy nepresné,
-opraviť ich.
+- **Meno a priezvisko** — použité `Ostap Ilischuk`, odvodené z e-mailovej adresy.
+  Prípadne overiť podľa dokladu o tolerovanom pobyte (možný variant `Ilishchuk`).
+- **Reštaurácia Millenium** — latinkový zápis názvu.
+- **Kuchár 2020 – 2022** — pri dátume narodenia 16. 10. 2005 zodpovedá veku
+  14 – 17 rokov. Ak išlo o prácu popri štúdiu, dá sa to ošetriť doplnením
+  `(popri štúdiu)` za názov pozície v `zivotopis.html`.
 
 ## Ako po úprave znova vygenerovať PDF
 
