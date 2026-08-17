@@ -14,16 +14,26 @@ Balík dokumentov k inzerátu https://www.profesia.sk/praca/elektrovod/O5325752
 
 ## Pred odoslaním DOPLNIŤ
 
-V životopise je **6 miest označených červeným `[DOPLNIŤ]`**. Bez nich sa
+V životopise zostávajú **2 miesta označené červeným `[DOPLNIŤ]`**. Bez nich sa
 dokument neposiela — červený text v PDF je zámerný, aby sa nedali prehliadnuť.
 
-1. Meno a priezvisko — overiť presný prepis podľa dokladu o tolerovanom pobyte
-   (v dokumentoch je odvodené z e-mailovej adresy)
-2. Skladník — operátor retraku: **zamestnávateľ** + **obdobie**
-3. Kuchár: **zamestnávateľ** + **obdobie**
-4. Vzdelanie: **názov školy** + **roky**
+1. Vzdelanie: **názov školy**
+2. Vzdelanie: **roky štúdia**
 
-Ak ovládaš aj ruštinu alebo angličtinu, doplň ich do sekcie `Jazyky`.
+Ďalej si treba overiť dve veci, ktoré nie sú označené v texte:
+
+- **Meno a priezvisko** — v dokumentoch je `Ostap Ilischuk`, odvodené z e-mailovej
+  adresy. Overiť presný prepis podľa dokladu o tolerovanom pobyte
+  (možný variant `Ilishchuk`).
+- **Reštaurácia Millenium** — overiť oficiálny latinkový zápis názvu.
+
+## Nezrovnalosť v dátumoch
+
+Dátum narodenia 16. 10. 2005 a pozícia kuchára v rokoch 2020 – 2022 znamenajú
+vek 14 – 17 rokov. Personalista si to prepočíta. Ak išlo o prácu popri štúdiu
+alebo o odbornú prax, treba to v životopise pomenovať — stačí doplniť
+`(popri štúdiu)` za názov pozície a otázka je vybavená. Ak sú dátumy nepresné,
+opraviť ich.
 
 ## Ako po úprave znova vygenerovať PDF
 
