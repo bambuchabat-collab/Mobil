@@ -6,7 +6,7 @@ powerball).
 
 The game started drawing on 2026-01-05 (Mondays only); Thursday draws were
 added on 2026-04-23.  This table covers the continuous run from 2026-03-30
-to the draw immediately before the one under analysis (2026-08-17).
+to 2026-08-17 inclusive.
 """
 
 from __future__ import annotations
@@ -14,6 +14,7 @@ from __future__ import annotations
 Draw = tuple[str, tuple[int, int, int, int, int, int], int]
 
 DRAWS: list[Draw] = [
+    ("2026-08-17", (9, 13, 23, 24, 25, 26), 2),
     ("2026-08-13", (5, 11, 18, 20, 23, 24), 6),
     ("2026-08-10", (14, 15, 16, 24, 25, 27), 4),
     ("2026-08-06", (2, 7, 11, 12, 16, 19), 2),
