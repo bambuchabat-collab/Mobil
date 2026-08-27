@@ -6,7 +6,7 @@ against tipos.sk), last updated 2026-08-27.  Each entry is
 
 The game started drawing on 2026-01-05 (Mondays only); Thursday draws were
 added on 2026-04-23.  This table covers the continuous run from 2026-03-30
-to 2026-08-24 inclusive.
+to 2026-08-27 inclusive.
 """
 
 from __future__ import annotations
@@ -14,6 +14,7 @@ from __future__ import annotations
 Draw = tuple[str, tuple[int, int, int, int, int, int], int]
 
 DRAWS: list[Draw] = [
+    ("2026-08-27", (3, 8, 14, 17, 18, 19), 5),
     ("2026-08-24", (5, 8, 10, 11, 18, 24), 5),
     ("2026-08-20", (1, 10, 13, 15, 21, 24), 3),
     ("2026-08-17", (9, 13, 23, 24, 25, 26), 2),
