@@ -165,6 +165,14 @@ legend{
 }
 .field input[type=text]{font-family:'Golos Text',sans-serif; padding-right:9px}
 .field input::-webkit-outer-spin-button,.field input::-webkit-inner-spin-button{-webkit-appearance:none; margin:0}
+.field select{
+  width:100%; padding:7px 9px;
+  font-family:'Golos Text', sans-serif; font-size:13px;
+  color:var(--ink); background:var(--bg);
+  border:1px solid var(--line-2); border-radius:7px;
+  appearance:none; cursor:pointer;
+}
+.field select:focus{border-color:var(--accent)}
 .field .unit{
   position:absolute; right:9px; font-size:11px; color:var(--ink-3); pointer-events:none;
   font-family:'IBM Plex Mono', ui-monospace, monospace;
@@ -308,27 +316,27 @@ footer{margin-top:36px; padding-top:20px; border-top:1px solid var(--line); font
         <legend>Флакон</legend>
         <label class="row wide"><span class="row-label">Аромат</span><span class="field"><input type="text" id="name" value="Xerjoff Alexandria II"></span></label>
         <label class="row"><span class="row-label">Объём флакона</span><span class="field"><input type="number" id="volume" value="100" step="5" min="1"><span class="unit">мл</span></span></label>
-        <label class="row"><span class="row-label">Цена закупки</span><span class="field"><input type="number" id="price" value="42000" step="500" min="0"><span class="unit">₽</span></span></label>
-        <label class="row"><span class="row-label">Доставка, посредник<small>на один флакон</small></span><span class="field"><input type="number" id="ship" value="1500" step="100" min="0"><span class="unit">₽</span></span></label>
+        <label class="row"><span class="row-label">Цена закупки</span><span class="field"><input type="number" id="price" value="480" step="10" min="0"><span class="unit">€</span></span></label>
+        <label class="row"><span class="row-label">Доставка, посредник<small>на один флакон</small></span><span class="field"><input type="number" id="ship" value="25" step="1" min="0"><span class="unit">€</span></span></label>
         <label class="row"><span class="row-label">Потери при разливе<small>остаток в помпе, пролив</small></span><span class="field"><input type="number" id="loss" value="5" step="0.5" min="0" max="50"><span class="unit">%</span></span></label>
       </fieldset>
 
       <fieldset>
         <legend>Расходники и труд</legend>
-        <label class="row"><span class="row-label">Атомайзер 2 мл</span><span class="field"><input type="number" id="atom2" value="18" step="1" min="0"><span class="unit">₽</span></span></label>
-        <label class="row"><span class="row-label">Атомайзер 5 мл</span><span class="field"><input type="number" id="atom5" value="28" step="1" min="0"><span class="unit">₽</span></span></label>
-        <label class="row"><span class="row-label">Атомайзер 10 мл</span><span class="field"><input type="number" id="atom10" value="45" step="1" min="0"><span class="unit">₽</span></span></label>
-        <label class="row"><span class="row-label">Этикетка, пакет, шприц</span><span class="field"><input type="number" id="extras" value="12" step="1" min="0"><span class="unit">₽</span></span></label>
-        <label class="row"><span class="row-label">Упаковка отправки<small>на заказ</small></span><span class="field"><input type="number" id="pack" value="60" step="5" min="0"><span class="unit">₽</span></span></label>
+        <label class="row"><span class="row-label">Атомайзер 2 мл</span><span class="field"><input type="number" id="atom2" value="0.35" step="0.05" min="0"><span class="unit">€</span></span></label>
+        <label class="row"><span class="row-label">Атомайзер 5 мл</span><span class="field"><input type="number" id="atom5" value="0.55" step="0.05" min="0"><span class="unit">€</span></span></label>
+        <label class="row"><span class="row-label">Атомайзер 10 мл</span><span class="field"><input type="number" id="atom10" value="0.9" step="0.05" min="0"><span class="unit">€</span></span></label>
+        <label class="row"><span class="row-label">Этикетка, пакет, шприц</span><span class="field"><input type="number" id="extras" value="0.25" step="0.05" min="0"><span class="unit">€</span></span></label>
+        <label class="row"><span class="row-label">Отправка на продавце<small>конверт, часть Packeta — на заказ</small></span><span class="field"><input type="number" id="pack" value="2" step="0.5" min="0"><span class="unit">€</span></span></label>
         <label class="row"><span class="row-label">Время на разлив<small>минут на пробник</small></span><span class="field"><input type="number" id="labourMin" value="4" step="1" min="0"><span class="unit">мин</span></span></label>
-        <label class="row"><span class="row-label">Стоимость часа</span><span class="field"><input type="number" id="labourRate" value="500" step="50" min="0"><span class="unit">₽</span></span></label>
+        <label class="row"><span class="row-label">Стоимость часа</span><span class="field"><input type="number" id="labourRate" value="12" step="1" min="0"><span class="unit">€</span></span></label>
       </fieldset>
 
       <fieldset>
         <legend>Цены продажи</legend>
-        <label class="row"><span class="row-label">Пробник 2 мл</span><span class="field"><input type="number" id="p2" value="1890" step="50" min="0"><span class="unit">₽</span></span></label>
-        <label class="row"><span class="row-label">Пробник 5 мл</span><span class="field"><input type="number" id="p5" value="4190" step="50" min="0"><span class="unit">₽</span></span></label>
-        <label class="row"><span class="row-label">Пробник 10 мл</span><span class="field"><input type="number" id="p10" value="7690" step="50" min="0"><span class="unit">₽</span></span></label>
+        <label class="row"><span class="row-label">Пробник 2 мл</span><span class="field"><input type="number" id="p2" value="22" step="1" min="0"><span class="unit">€</span></span></label>
+        <label class="row"><span class="row-label">Пробник 5 мл</span><span class="field"><input type="number" id="p5" value="49" step="1" min="0"><span class="unit">€</span></span></label>
+        <label class="row"><span class="row-label">Пробник 10 мл</span><span class="field"><input type="number" id="p10" value="89" step="1" min="0"><span class="unit">€</span></span></label>
       </fieldset>
 
       <fieldset>
@@ -339,13 +347,20 @@ footer{margin-top:36px; padding-top:20px; border-top:1px solid var(--line); font
       </fieldset>
 
       <fieldset>
-        <legend>Комиссии, налог, реклама</legend>
-        <label class="row"><span class="row-label">Комиссия площадки</span><span class="field"><input type="number" id="fee" value="5" step="0.5" min="0" max="90"><span class="unit">%</span></span></label>
-        <label class="row"><span class="row-label">Эквайринг</span><span class="field"><input type="number" id="acq" value="3" step="0.1" min="0" max="20"><span class="unit">%</span></span></label>
-        <label class="row"><span class="row-label">Налог с выручки</span><span class="field"><input type="number" id="tax" value="6" step="1" min="0" max="50"><span class="unit">%</span></span></label>
-        <label class="row"><span class="row-label">Реклама на заказ<small>стоимость привлечения</small></span><span class="field"><input type="number" id="cac" value="150" step="10" min="0"><span class="unit">₽</span></span></label>
+        <legend>Комиссии и реклама</legend>
+        <label class="row"><span class="row-label">Комиссия площадки<small>Bazoš, Vinted — 0%</small></span><span class="field"><input type="number" id="fee" value="0" step="0.5" min="0" max="90"><span class="unit">%</span></span></label>
+        <label class="row"><span class="row-label">Эквайринг<small>перевод — 0%, карта — ~1,5%</small></span><span class="field"><input type="number" id="acq" value="1.5" step="0.1" min="0" max="20"><span class="unit">%</span></span></label>
+        <label class="row"><span class="row-label">Реклама на заказ<small>стоимость привлечения</small></span><span class="field"><input type="number" id="cac" value="3" step="0.5" min="0"><span class="unit">€</span></span></label>
         <label class="row"><span class="row-label">Пробников в заказе</span><span class="field"><input type="number" id="ipo" value="1.4" step="0.1" min="0.1"><span class="unit">шт</span></span></label>
         <label class="row"><span class="row-label">Возвраты, невыкуп</span><span class="field"><input type="number" id="ret" value="4" step="1" min="0" max="60"><span class="unit">%</span></span></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Налоги · Словакия</legend>
+        <label class="row wide"><span class="row-label">Режим DPH</span><span class="field"><select id="vatMode"><option value="no">Не плательщик DPH</option><option value="yes">Плательщик DPH</option></select></span></label>
+        <label class="row"><span class="row-label">Ставка DPH</span><span class="field"><input type="number" id="vat" value="23" step="1" min="0" max="30"><span class="unit">%</span></span></label>
+        <label class="row"><span class="row-label">Daň z príjmu<small>с прибыли, živnosť — 15%</small></span><span class="field"><input type="number" id="incomeTax" value="15" step="1" min="0" max="50"><span class="unit">%</span></span></label>
+        <label class="row"><span class="row-label">Фиксированные расходы<small>odvody, подписки — в месяц</small></span><span class="field"><input type="number" id="fixed" value="120" step="10" min="0"><span class="unit">€</span></span></label>
       </fieldset>
 
       <fieldset>
@@ -353,7 +368,7 @@ footer{margin-top:36px; padding-top:20px; border-top:1px solid var(--line); font
         <label class="row"><span class="row-label">Пессимистичный<small>пробников в месяц</small></span><span class="field"><input type="number" id="vPess" value="3" step="1" min="0.1"><span class="unit">шт</span></span></label>
         <label class="row"><span class="row-label">Базовый</span><span class="field"><input type="number" id="vBase" value="6" step="1" min="0.1"><span class="unit">шт</span></span></label>
         <label class="row"><span class="row-label">Оптимистичный</span><span class="field"><input type="number" id="vOpt" value="12" step="1" min="0.1"><span class="unit">шт</span></span></label>
-        <label class="row"><span class="row-label">Цена перепродажи<small>флакон целиком</small></span><span class="field"><input type="number" id="whole" value="52000" step="500" min="0"><span class="unit">₽</span></span></label>
+        <label class="row"><span class="row-label">Цена перепродажи<small>флакон целиком</small></span><span class="field"><input type="number" id="whole" value="560" step="10" min="0"><span class="unit">€</span></span></label>
       </fieldset>
     </form>
 
@@ -384,13 +399,13 @@ footer{margin-top:36px; padding-top:20px; border-top:1px solid var(--line); font
       <section class="card">
         <div class="card-head">
           <h2>Себестоимость и маржа по размерам</h2>
-          <p>Минимальная цена — точка нуля с учётом комиссий, налога и возвратов. Ниже неё продавать нельзя.</p>
+          <p>Минимальная цена — точка нуля с учётом комиссий, DPH и возвратов. Прибыль показана до daň z príjmu: он берётся с итога, а не с каждой продажи.</p>
         </div>
         <div class="card-body">
           <div class="tablewrap">
             <table>
               <thead><tr>
-                <th>Размер</th><th>Себестоимость</th><th>Мин. цена</th><th>Ваша цена</th><th>За 1 мл</th><th>Прибыль</th><th>Маржа</th><th>Наценка</th>
+                <th>Размер</th><th>Себестоимость</th><th>Мин. цена</th><th>Ваша цена</th><th>За 1 мл</th><th>Прибыль до налога</th><th>Маржа</th><th>Наценка</th>
               </tr></thead>
               <tbody id="t-sizes"></tbody>
             </table>
@@ -417,12 +432,12 @@ footer{margin-top:36px; padding-top:20px; border-top:1px solid var(--line); font
       <section class="card">
         <div class="card-head">
           <h2>Сценарии по скорости продаж</h2>
-          <p>Один и тот же флакон, разная скорость. Годовой возврат учитывает, что деньги успевают обернуться несколько раз.</p>
+          <p>Один и тот же флакон, разная скорость. «После фикс. расходов» — что остаётся, когда из прибыли вычтены odvody и подписки: один флакон в обороте их обычно не тянет.</p>
         </div>
         <div class="card-body">
           <div class="tablewrap">
             <table>
-              <thead><tr><th>Сценарий</th><th>Продаж в месяц</th><th>Срок распродажи</th><th>Прибыль в месяц</th><th>Годовой возврат</th></tr></thead>
+              <thead><tr><th>Сценарий</th><th>Продаж в месяц</th><th>Срок распродажи</th><th>Прибыль в месяц</th><th>После фикс. расходов</th><th>Годовой возврат</th></tr></thead>
               <tbody id="t-speed"></tbody>
             </table>
           </div>
@@ -472,15 +487,17 @@ footer{margin-top:36px; padding-top:20px; border-top:1px solid var(--line); font
         <div class="formulas">
           <p><code>полезный объём = объём × (1 − потери)</code> — из 100 мл при потерях 5% в пробники уходит 95 мл.</p>
           <p><code>себестоимость 1 мл = (закупка + доставка) ÷ полезный объём</code></p>
-          <p><code>себестоимость пробника = жидкость + атомайзер + расходники + труд + (упаковка + реклама) ÷ пробников в заказе</code></p>
-          <p><code>прибыль = цена × (1 − комиссии − эквайринг − налог) × (1 − возвраты) − себестоимость</code> — возвращённый пробник считается потерянным вместе с содержимым.</p>
+          <p><code>себестоимость пробника = жидкость + атомайзер + расходники + труд + (отправка + реклама) ÷ пробников в заказе</code></p>
+          <p><code>прибыль пробника = цена ÷ (1 + DPH) × (1 − комиссии − эквайринг) × (1 − возвраты) − себестоимость</code> — возвращённый пробник считается потерянным вместе с содержимым.</p>
+          <p><b>Режим «не плательщик DPH»:</b> делитель DPH выключен — налог сидит в закупочной цене и не возвращается. <b>Режим «плательщик»:</b> DPH вычитается из цены продажи, но и закупка, атомайзеры и отправка считаются без DPH — вы её возвращаете. Реклама и собственное время в обоих режимах идут как есть.</p>
           <p><code>вклад в окупаемость = прибыль + стоимость жидкости</code> — флакон уже оплачен, поэтому точку безубыточности считаем без стоимости жидкости: <code>штук до нуля = стоимость флакона ÷ средний вклад</code>.</p>
+          <p><code>daň z príjmu</code> берётся с прибыли, а не с выручки, поэтому в таблице по размерам прибыль показана до налога, а на уровне флакона и месяца — уже после.</p>
           <p><code>годовой возврат = возврат за флакон × (12 ÷ срок распродажи)</code> — деньги за год оборачиваются несколько раз.</p>
           <p>Количество пробников дробное и округляется только при выводе: реальный разлив даст ±1 штуку.</p>
         </div>
       </details>
 
-      <footer>Расчёт учитывает только деньги. За кадром остаются юридическая сторона продажи парфюмерии на распив, риск подделки при закупке и срок годности вскрытого флакона — обычно распив стоит планировать так, чтобы флакон уходил за год-полтора.</footer>
+      <footer>Расчёт учитывает только деньги. Ставки по умолчанию словацкие: DPH 23%, daň z príjmu 15% для živnosť; порог обязательной регистрации плательщиком DPH — 50 000 € оборота за календарный год. Odvody вынесены в поле «фиксированные расходы в месяц»: zdravotné poistenie платится с первого месяца, sociálne — обычно с середины следующего года после превышения порога дохода. Ставки и пороги меняются — перед тем как считать это планом, сверьтесь с finančná správa или со своим účtovník. За кадром остаются юридическая сторона продажи парфюмерии на распив, риск подделки при закупке и срок годности вскрытого флакона.</footer>
 
     </main>
   </div>
@@ -489,20 +506,22 @@ footer{margin-top:36px; padding-top:20px; border-top:1px solid var(--line); font
 <script>
 (function(){
   const DEFAULTS = {
-    name:'Xerjoff Alexandria II', volume:100, price:42000, ship:1500, loss:5,
-    atom2:18, atom5:28, atom10:45, extras:12, pack:60, labourMin:4, labourRate:500,
-    p2:1890, p5:4190, p10:7690, m2:50, m5:35, m10:15,
-    fee:5, acq:3, tax:6, cac:150, ipo:1.4, ret:4,
-    vPess:3, vBase:6, vOpt:12, whole:52000
+    name:'Xerjoff Alexandria II', volume:100, price:480, ship:25, loss:5,
+    atom2:0.35, atom5:0.55, atom10:0.9, extras:0.25, pack:2, labourMin:4, labourRate:12,
+    p2:22, p5:49, p10:89, m2:50, m5:35, m10:15,
+    fee:0, acq:1.5, cac:3, ipo:1.4, ret:4,
+    vatMode:'no', vat:23, incomeTax:15, fixed:120,
+    vPess:3, vBase:6, vOpt:12, whole:560
   };
   const KEYS = Object.keys(DEFAULTS);
-  const STORE = 'raspiv-calc-v1';
+  const STORE = 'raspiv-calc-eur-v1';
   const $ = id => document.getElementById(id);
 
   const NB = '\u00A0';
-  const nf = (v, d=0) => new Intl.NumberFormat('ru-RU',{minimumFractionDigits:d, maximumFractionDigits:d}).format(v);
+  const nf = (v, d=0) => new Intl.NumberFormat('sk-SK',{minimumFractionDigits:d, maximumFractionDigits:d}).format(v);
   const unit = (v, u) => v + NB + u;
-  const money = v => Number.isFinite(v) ? unit(nf(Math.round(v)), '₽') : '—';
+  const money = v => Number.isFinite(v) ? unit(nf(Math.round(v)), '€') : '—';
+  const eur = v => Number.isFinite(v) ? unit(nf(v, 2), '€') : '—';
   const pct = (v, d=0) => Number.isFinite(v) ? unit(nf(v*100, d), '%') : '—';
   const signed = v => (v > 0 ? '+' : '') + money(v);
   const cls = v => v > 0 ? 'pos' : v < 0 ? 'neg' : '';
@@ -514,7 +533,7 @@ footer{margin-top:36px; padding-top:20px; border-top:1px solid var(--line); font
     KEYS.forEach(k => {
       const el = $(k);
       if (!el) return;
-      if (el.type === 'text') o[k] = el.value;
+      if (el.tagName === 'SELECT' || el.type === 'text') o[k] = el.value;
       else { const v = parseFloat(String(el.value).replace(',', '.')); o[k] = Number.isFinite(v) ? v : 0; }
     });
     return o;
@@ -523,13 +542,19 @@ footer{margin-top:36px; padding-top:20px; border-top:1px solid var(--line); font
 
   function calc(o){
     const usable = Math.max(0, o.volume * (1 - o.loss/100));
-    const bottleCost = o.price + o.ship;
+    const vatOn = o.vatMode === 'yes';
+    const vatDiv = vatOn ? 1 + Math.max(0, o.vat)/100 : 1;
+    const net = x => x / vatDiv;                       // цена без DPH, если вы плательщик
+
+    const bottleCost = net(o.price + o.ship);
     const mlCost = usable > 0 ? bottleCost / usable : 0;
-    const feeRate = Math.min(0.95, (o.fee + o.acq + o.tax) / 100);
+    const feeRate = Math.min(0.95, (o.fee + o.acq) / 100);
     const r = Math.min(0.95, o.ret / 100);
-    const keep = (1 - feeRate) * (1 - r);
-    const labour = o.labourMin / 60 * o.labourRate;
-    const orderCost = o.ipo > 0 ? (o.pack + o.cac) / o.ipo : (o.pack + o.cac);
+    const keep = (1 - feeRate) * (1 - r) / vatDiv;      // доля цены, доходящая до вас
+    const labour = o.labourMin / 60 * o.labourRate;     // своё время — без DPH
+    const orderCost = (net(o.pack) + o.cac) / (o.ipo > 0 ? o.ipo : 1);
+    const t = Math.min(0.9, Math.max(0, o.incomeTax) / 100);
+    const taxed = p => p > 0 ? p * (1 - t) : p;         // daň z príjmu — только с прибыли
 
     const sizes = [
       {ml:2,  cssn:'s2',  atom:o.atom2,  price:o.p2,  w:o.m2},
@@ -540,7 +565,7 @@ footer{margin-top:36px; padding-top:20px; border-top:1px solid var(--line); font
     sizes.forEach(s => {
       s.share  = Math.max(0, s.w) / wsum;
       s.liquid = s.ml * mlCost;
-      s.fixed  = s.atom + o.extras + labour + orderCost;
+      s.fixed  = net(s.atom) + net(o.extras) + labour + orderCost;
       s.cost   = s.liquid + s.fixed;
       s.net    = s.price * keep;
       s.profit = s.net - s.cost;
@@ -557,17 +582,18 @@ footer{margin-top:36px; padding-top:20px; border-top:1px solid var(--line); font
 
     const revenue    = sizes.reduce((a,s) => a + s.units * s.price * (1 - r), 0);
     const contribAll = sizes.reduce((a,s) => a + s.units * s.contrib, 0);
-    const profit     = contribAll - bottleCost;
+    const profitPre  = contribAll - bottleCost;
+    const profit     = taxed(profitPre);
     const roi        = bottleCost > 0 ? profit / bottleCost : 0;
     const avgContrib = sizes.reduce((a,s) => a + s.share * s.contrib, 0);
     const beUnits    = avgContrib > 0 ? bottleCost / avgContrib : Infinity;
     const beShare    = Number.isFinite(beUnits) && units > 0 ? beUnits / units : Infinity;
 
-    const partial = f => sizes.reduce((a,s) => a + s.units * f * s.contrib, 0) - bottleCost;
-    const wholeProfit = o.whole * (1 - feeRate) - bottleCost - o.pack - o.cac;
+    const partial = f => taxed(sizes.reduce((a,s) => a + s.units * f * s.contrib, 0) - bottleCost);
+    const wholeProfit = taxed(net(o.whole) * (1 - feeRate) - bottleCost - net(o.pack) - o.cac);
 
-    return {usable, bottleCost, mlCost, feeRate, r, keep, labour, orderCost,
-            sizes, avgVol, units, revenue, profit, roi, avgContrib, beUnits, beShare,
+    return {usable, bottleCost, mlCost, vatOn, vatDiv, feeRate, r, keep, labour, orderCost, t,
+            sizes, avgVol, units, revenue, profitPre, profit, roi, avgContrib, beUnits, beShare,
             partial, wholeProfit, avgMargin: revenue > 0 ? profit / revenue : NaN};
   }
 
@@ -580,27 +606,29 @@ footer{margin-top:36px; padding-top:20px; border-top:1px solid var(--line); font
     const o = read();
     const c = calc(o);
     const monthsBase = o.vBase > 0 ? c.units / o.vBase : Infinity;
+    const monthly = Number.isFinite(monthsBase) && monthsBase > 0 ? c.profit / monthsBase : NaN;
+    const annualBase = Number.isFinite(monthsBase) && monthsBase > 0 ? c.roi * (12 / monthsBase) : NaN;
 
     $('tag-name').textContent = o.name || 'Аромат';
-    $('tag-ml').textContent = money(c.mlCost);
+    $('tag-ml').textContent = eur(c.mlCost);
     $('tag-usable').textContent = unit(nf(c.usable, 1), 'мл');
 
-    // KPI
     $('k-profit').textContent = money(c.profit);
     $('k-profit').className = 'kpi-value ' + cls(c.profit);
-    $('k-profit-note').textContent = 'выручка ' + money(c.revenue) + ' · маржа ' + pct(c.avgMargin);
+    $('k-profit-note').textContent = 'выручка ' + money(c.revenue) + (c.vatOn ? ' с DPH' : '') +
+      ' · после daň z príjmu ' + pct(c.t);
     $('k-roi').textContent = pct(c.roi);
     $('k-roi').className = 'kpi-value ' + cls(c.roi);
     $('k-roi-note').textContent = 'вложено ' + money(c.bottleCost) + ' · ' +
-      (Number.isFinite(monthsBase) && monthsBase > 0 ? pct(c.roi * (12 / monthsBase)) + ' годовых' : 'срок не определён');
+      (Number.isFinite(annualBase) ? pct(annualBase) + ' годовых' : 'срок не определён');
     $('k-months').textContent = Number.isFinite(monthsBase) ? unit(nf(monthsBase, 1), 'мес') : '—';
-    $('k-months-note').textContent = Math.round(c.units) + ' ' + plural(c.units,'пробник','пробника','пробников') + ' по ' + o.vBase + ' шт/мес';
+    $('k-months-note').textContent = Math.round(c.units) + ' ' + plural(c.units,'пробник','пробника','пробников') +
+      ' по ' + nf(o.vBase, 0) + NB + 'шт/мес';
     $('k-be').textContent = Number.isFinite(c.beUnits) ? unit(Math.ceil(c.beUnits), 'шт') : 'никогда';
     $('k-be-note').textContent = Number.isFinite(c.beShare)
       ? pct(c.beShare) + ' объёма флакона'
       : 'вклад пробника отрицательный';
 
-    // liquid bar
     const bar = $('bar');
     bar.innerHTML = '';
     c.sizes.forEach(s => {
@@ -623,24 +651,23 @@ footer{margin-top:36px; padding-top:20px; border-top:1px solid var(--line); font
     }
     $('scale-max').textContent = unit(nf(c.usable, 1), 'мл');
     $('legend').innerHTML = c.sizes.map(s =>
-      '<span><i class="chip ' + s.cssn + '"></i>' + s.ml + '&nbsp;мл — <b>' + Math.round(s.units) + '&nbsp;шт</b> · ' + nf(s.vol,0) + '&nbsp;мл</span>'
+      '<span><i class="chip ' + s.cssn + '"></i>' + s.ml + '&nbsp;мл — <b>' + Math.round(s.units) +
+      '&nbsp;шт</b> · ' + nf(s.vol,0) + '&nbsp;мл</span>'
     ).join('');
 
-    // sizes table
     $('t-sizes').innerHTML = c.sizes.map(s =>
       '<tr>' +
-      '<td><span class="size-tag"><i class="chip ' + s.cssn + '"></i>' + s.ml + ' мл</span></td>' +
-      '<td>' + money(s.cost) + '<span class="sub">жидкость ' + money(s.liquid) + '</span></td>' +
-      '<td>' + money(s.minPrice) + '</td>' +
-      '<td>' + money(s.price) + '</td>' +
-      '<td>' + money(s.perMl) + '</td>' +
-      '<td class="' + cls(s.profit) + '">' + money(s.profit) + '</td>' +
+      '<td><span class="size-tag"><i class="chip ' + s.cssn + '"></i>' + s.ml + '&nbsp;мл</span></td>' +
+      '<td>' + eur(s.cost) + '<span class="sub">жидкость ' + eur(s.liquid) + '</span></td>' +
+      '<td>' + eur(s.minPrice) + '</td>' +
+      '<td>' + eur(s.price) + '</td>' +
+      '<td>' + eur(s.perMl) + '</td>' +
+      '<td class="' + cls(s.profit) + '">' + eur(s.profit) + '</td>' +
       '<td class="' + cls(s.margin) + '">' + pct(s.margin) + '</td>' +
       '<td>' + (Number.isFinite(s.markup) ? '×' + nf(s.markup, 2) : '—') + '</td>' +
       '</tr>'
     ).join('');
 
-    // price grid
     const cols = [{m:1.5},{m:1.75},{m:2},{m:2.5}];
     $('t-grid').innerHTML = c.sizes.map((s, i) => {
       const cells = cols.map(col => {
@@ -650,28 +677,31 @@ footer{margin-top:36px; padding-top:20px; border-top:1px solid var(--line); font
       });
       const pT = c.keep > 0.35 ? s.cost / (c.keep - 0.35) : NaN;
       cells.push(cell(i, pT, 0.35, s.price));
-      return '<tr><td><span class="size-tag"><i class="chip ' + s.cssn + '"></i>' + s.ml + ' мл</span></td>' + cells.join('') + '</tr>';
+      return '<tr><td><span class="size-tag"><i class="chip ' + s.cssn + '"></i>' + s.ml + '&nbsp;мл</span></td>' +
+             cells.join('') + '</tr>';
     }).join('');
 
-    // speed scenarios
     const speeds = [['Пессимистичный', o.vPess], ['Базовый', o.vBase], ['Оптимистичный', o.vOpt]];
     $('t-speed').innerHTML = speeds.map(([label, v]) => {
       const m = v > 0 ? c.units / v : Infinity;
       const perMonth = Number.isFinite(m) && m > 0 ? c.profit / m : NaN;
+      const afterFixed = Number.isFinite(perMonth) ? perMonth - o.fixed : NaN;
       const annual = Number.isFinite(m) && m > 0 ? c.roi * (12 / m) : NaN;
-      return '<tr><td>' + label + '</td><td>' + nf(v,0) + ' шт</td>' +
+      return '<tr><td>' + label + '</td><td>' + unit(nf(v,0), 'шт') + '</td>' +
              '<td>' + (Number.isFinite(m) ? unit(nf(m,1), 'мес') : '—') + '</td>' +
              '<td class="' + cls(perMonth) + '">' + money(perMonth) + '</td>' +
+             '<td class="' + cls(afterFixed) + '">' + money(afterFixed) + '</td>' +
              '<td class="' + cls(annual) + '">' + pct(annual) + '</td></tr>';
     }).join('');
 
-    // sensitivity
     const rows = [
       ['Закупка дороже на 20%', variant(o, {price: o.price * 1.2})],
       ['Цены ниже на 15%',      variant(o, {p2:o.p2*0.85, p5:o.p5*0.85, p10:o.p10*0.85})],
       ['Возвраты вдвое выше',   variant(o, {ret: o.ret * 2})],
+      ['Стали плательщиком DPH', variant(o, {vatMode: c.vatOn ? 'no' : 'yes'})],
       ['Продано только 60% объёма', {profit: c.partial(0.6), roi: c.bottleCost > 0 ? c.partial(0.6) / c.bottleCost : 0}]
     ];
+    if (c.vatOn) rows[3][0] = 'Вышли из режима DPH';
     $('t-sens').innerHTML = rows.map(([label, v]) => {
       const diff = v.profit - c.profit;
       return '<tr><td>' + label + '</td>' +
@@ -680,7 +710,6 @@ footer{margin-top:36px; padding-top:20px; border-top:1px solid var(--line); font
              '<td class="' + cls(v.roi) + '">' + pct(v.roi) + '</td></tr>';
     }).join('');
 
-    // decant vs whole bottle
     const wholeRoi = c.bottleCost > 0 ? c.wholeProfit / c.bottleCost : 0;
     $('t-alt').innerHTML =
       '<tr><td>Разлить на пробники</td><td>' + money(c.revenue) + '</td>' +
@@ -690,62 +719,87 @@ footer{margin-top:36px; padding-top:20px; border-top:1px solid var(--line); font
       '<tr><td>Продать флакон целиком</td><td>' + money(o.whole) + '</td>' +
       '<td class="' + cls(c.wholeProfit) + '">' + money(c.wholeProfit) + '</td>' +
       '<td class="' + cls(wholeRoi) + '">' + pct(wholeRoi) + '</td>' +
-      '<td>1 сделка</td></tr>';
+      '<td>1&nbsp;сделка</td></tr>';
 
-    verdict(o, c, monthsBase);
+    verdict(o, c, monthsBase, monthly, annualBase);
     save(o);
   }
 
   function cell(rowIndex, price, margin, current){
     if (!Number.isFinite(price) || price <= 0) return '<td>—</td>';
-    const active = Math.abs(price - current) < 1 ? ' active' : '';
+    const active = Math.abs(price - current) < 0.5 ? ' active' : '';
     return '<td><button type="button" class="gridcell' + active + '" data-row="' + rowIndex + '" data-price="' +
-           Math.round(price) + '">' + money(price) + '<span class="sub">' + pct(margin) + '</span></button></td>';
+           price.toFixed(2) + '">' + eur(price) + '<span class="sub">' + pct(margin) + '</span></button></td>';
   }
 
-  function verdict(o, c, monthsBase){
+  function verdict(o, c, monthsBase, monthly, annual){
     const box = $('verdict');
     const partial60 = c.partial(0.6);
     const worstSize = c.sizes.reduce((a,s) => (s.margin < a.margin ? s : a), c.sizes[0]);
-    let level, text;
-
-    const annual = Number.isFinite(monthsBase) && monthsBase > 0 ? c.roi * (12 / monthsBase) : NaN;
     const term = Number.isFinite(monthsBase) ? unit(nf(monthsBase,1), 'мес') : 'весь срок';
+    let level, text;
 
     if (c.profit <= 0){
       level = 'v-bad';
-      text = 'При этих ценах флакон не окупается: распив принесёт убыток ' + money(Math.abs(c.profit)) + '. Считать выгоду не из чего — либо дешевле закупка, либо выше цены.';
+      text = 'При этих ценах флакон не окупается: распив принесёт убыток ' + money(Math.abs(c.profit)) +
+             '. Считать выгоду не из чего — либо дешевле закупка, либо выше цены.';
     } else if (annual >= 0.6 && c.roi >= 0.2){
       level = 'v-good';
-      text = 'Заниматься стоит: флакон приносит ' + money(c.profit) + ' сверх вложений за ' + term + ' — это ' + pct(annual) + ' годовых на вложенные деньги.';
+      text = 'Заниматься стоит: флакон приносит ' + money(c.profit) + ' сверх вложений за ' + term +
+             ' — это ' + pct(annual) + ' годовых на вложенные деньги.';
     } else if (annual >= 0.25){
       level = 'v-warn';
-      text = 'На грани: прибыль есть — ' + money(c.profit) + ' за ' + term + ', или ' + pct(annual) + ' годовых. Запас небольшой, ошибка в цене или скорости продаж его съест.';
+      text = 'На грани: прибыль есть — ' + money(c.profit) + ' за ' + term + ', или ' + pct(annual) +
+             ' годовых. Запас небольшой, ошибка в цене или скорости продаж его съест.';
     } else {
       level = 'v-bad';
-      text = 'Невыгодно: ' + money(c.profit) + ' за ' + term + ' — это ' + pct(annual) + ' годовых при полном риске остатка. Деньги проще пристроить куда угодно ещё.';
+      text = 'Невыгодно: ' + money(c.profit) + ' за ' + term + ' — это ' + pct(annual) +
+             ' годовых при полном риске остатка. Деньги проще пристроить куда угодно ещё.';
+    }
+    if (level === 'v-good' && o.fixed > 0 && Number.isFinite(monthly) && monthly < o.fixed){
+      level = 'v-warn';
+      text = 'Сама сделка выгодная — ' + money(c.profit) + ' с флакона, ' + pct(annual) +
+             ' годовых. Но один флакон в обороте даёт ' + money(monthly) + '/мес против ' + money(o.fixed) +
+             '/мес фиксированных расходов: бизнес начинается только с нескольких флаконов сразу.';
     }
     box.className = 'verdict ' + level;
     $('v-pill').textContent = level === 'v-good' ? 'Выгодно' : level === 'v-warn' ? 'На грани' : 'Невыгодно';
     $('v-text').textContent = text;
 
     const notes = [];
+    if (o.fixed > 0 && Number.isFinite(monthly)){
+      if (monthly <= 0){
+        notes.push('Фиксированные расходы <b>' + money(o.fixed) + '/мес</b> нечем покрывать — флакон не даёт положительного потока.');
+      } else if (monthly < o.fixed){
+        notes.push('Один флакон даёт <b>' + money(monthly) + '/мес</b>, а odvody и подписки съедают <b>' + money(o.fixed) +
+                   '/мес</b>. Чтобы просто выйти в ноль, нужно держать в обороте примерно <b>' +
+                   Math.ceil(o.fixed / monthly) + '</b> ' + plural(Math.ceil(o.fixed/monthly),'флакон','флакона','флаконов') +
+                   ' одновременно — на одном аромате это не бизнес, а доплата за хобби.');
+      }
+    }
     if (partial60 < 0)
-      notes.push('Вся прибыль держится на полной распродаже: если уйдёт только 60% объёма, получится <b>' + money(partial60) + '</b>. Остаток флакона — главный риск.');
+      notes.push('Вся прибыль держится на полной распродаже: если уйдёт только 60% объёма, получится <b>' +
+                 money(partial60) + '</b>. Остаток флакона — главный риск.');
     if (Number.isFinite(c.beShare) && c.beShare > 0.6)
-      notes.push('Флакон отбивается только на <b>' + pct(c.beShare) + '</b> объёма — прибыль появляется в самом конце, когда продавать сложнее всего.');
+      notes.push('Флакон отбивается только на <b>' + pct(c.beShare) +
+                 '</b> объёма — прибыль появляется в самом конце, когда продавать сложнее всего.');
     if (!Number.isFinite(c.beUnits))
       notes.push('Пробник не покрывает даже собственные расходники и комиссии — при таких ценах окупаемости не будет никогда.');
     if (c.wholeProfit > c.profit)
-      notes.push('Продать флакон целиком выгоднее: <b>' + money(c.wholeProfit) + '</b> одной сделкой против <b>' + money(c.profit) + '</b> за месяцы разлива.');
+      notes.push('Продать флакон целиком выгоднее: <b>' + money(c.wholeProfit) + '</b> одной сделкой против <b>' +
+                 money(c.profit) + '</b> за месяцы разлива.');
     if (Number.isFinite(monthsBase) && monthsBase > 12)
-      notes.push('Распродажа занимает <b>' + unit(nf(monthsBase,1), 'мес') + '</b> — деньги заморожены больше года, а вскрытый флакон столько не ждёт.');
+      notes.push('Распродажа занимает <b>' + unit(nf(monthsBase,1), 'мес') +
+                 '</b> — деньги заморожены больше года, а вскрытый флакон столько не ждёт.');
     if (worstSize && worstSize.margin < 0.15)
-      notes.push('Размер <b>' + worstSize.ml + ' мл</b> идёт с маржой <b>' + pct(worstSize.margin) + '</b> — на таком уровне любой возврат или скидка уводят его в минус. Поднимите цену или уберите размер из линейки.');
+      notes.push('Размер <b>' + worstSize.ml + '&nbsp;мл</b> идёт с маржой <b>' + pct(worstSize.margin) +
+                 '</b> — на таком уровне любой возврат или скидка уводят его в минус. Поднимите цену или уберите размер из линейки.');
     if (c.sizes[0].price > 0 && c.sizes[2].price > 0 && c.sizes[2].perMl > c.sizes[0].perMl)
-      notes.push('Цена за миллилитр у 10 мл выше, чем у 2 мл — покупателю нет смысла брать большой объём. Обычно крупный пробник продают дешевле за мл.');
+      notes.push('Цена за миллилитр у 10&nbsp;мл выше, чем у 2&nbsp;мл — покупателю нет смысла брать большой объём. Обычно крупный пробник продают дешевле за мл.');
+    if (!c.vatOn && Number.isFinite(monthsBase) && monthsBase > 0 && c.revenue * (12 / monthsBase) > 50000)
+      notes.push('Оборот выходит за <b>50 000 €</b> в год — это порог обязательной регистрации плательщиком DPH. Переключите режим и посмотрите, что останется от маржи.');
     if (!notes.length)
-      notes.push('Слабых мест в расчёте нет: маржа держится во всех размерах, и даже неполная распродажа остаётся в плюсе.');
+      notes.push('Слабых мест в расчёте нет: маржа держится во всех размерах, фиксированные расходы покрываются, и даже неполная распродажа остаётся в плюсе.');
 
     $('v-notes').innerHTML = notes.map(n => '<li><span>' + n + '</span></li>').join('');
   }
@@ -760,6 +814,7 @@ footer{margin-top:36px; padding-top:20px; border-top:1px solid var(--line); font
   }
 
   $('panel').addEventListener('input', render);
+  $('panel').addEventListener('change', render);
   $('reset').addEventListener('click', () => { write(DEFAULTS); render(); });
   document.addEventListener('click', e => {
     const b = e.target.closest('.gridcell');
