@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Экономика распива</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Unbounded:wght@500;600&display=swap">
+<style>
+:root{
+  --bg:#F7F7F3;
+  --surface:#FFFFFF;
+  --surface-2:#F1F2EC;
+  --ink:#151A18;
+  --ink-2:#4C554F;
+  --ink-3:#7E877F;
+  --line:#E0E2D9;
+  --line-2:#C9CCC1;
+  --accent:#0F5F59;
+  --accent-ink:#0B4B46;
+  --accent-soft:#DDECE9;
+  --liquid-1:#F1CB80;
+  --liquid-2:#D29A33;
+  --liquid-3:#8E5E12;
+  --good:#246B46;
+  --good-soft:#DFEFE5;
+  --bad:#A5342A;
+  --bad-soft:#F8E2DE;
+  --warn:#8A6210;
+  --warn-soft:#F7ECD6;
+  --shadow:0 1px 2px rgba(21,26,24,.05), 0 8px 24px -16px rgba(21,26,24,.35);
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D1110;
+    --surface:#161B19;
+    --surface-2:#1D2422;
+    --ink:#E9EDE9;
+    --ink-2:#A8B2AB;
+    --ink-3:#7B8680;
+    --line:#29312E;
+    --line-2:#3D4744;
+    --accent:#4FB8AE;
+    --accent-ink:#7FD0C7;
+    --accent-soft:#11312E;
+    --liquid-1:#F8DFA8;
+    --liquid-2:#E2A63F;
+    --liquid-3:#96631A;
+    --good:#63BE8B;
+    --good-soft:#14301F;
+    --bad:#E4867A;
+    --bad-soft:#331915;
+    --warn:#D9A94B;
+    --warn-soft:#2E2510;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -18px rgba(0,0,0,.9);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D1110;
+  --surface:#161B19;
+  --surface-2:#1D2422;
+  --ink:#E9EDE9;
+  --ink-2:#A8B2AB;
+  --ink-3:#7B8680;
+  --line:#29312E;
+  --line-2:#3D4744;
+  --accent:#4FB8AE;
+  --accent-ink:#7FD0C7;
+  --accent-soft:#11312E;
+  --liquid-1:#F8DFA8;
+  --liquid-2:#E2A63F;
+  --liquid-3:#96631A;
+  --good:#63BE8B;
+  --good-soft:#14301F;
+  --bad:#E4867A;
+  --bad-soft:#331915;
+  --warn:#D9A94B;
+  --warn-soft:#2E2510;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -18px rgba(0,0,0,.9);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Golos Text', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size:15px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{margin:0; text-wrap:balance}
+p{margin:0}
+button{font:inherit; color:inherit}
+
+.page{max-width:1280px; margin:0 auto; padding:32px 20px 64px}
+
+/* ---------- masthead ---------- */
+.masthead{
+  display:flex; flex-direction:column; gap:10px;
+  padding-bottom:24px; margin-bottom:24px;
+  border-bottom:1px solid var(--line);
+}
+.eyebrow{
+  font-family:'Unbounded', 'Golos Text', sans-serif;
+  font-size:10px; font-weight:600; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--accent);
+}
+h1{
+  font-family:'Unbounded', 'Golos Text', sans-serif;
+  font-weight:600; font-size:clamp(28px, 4.2vw, 44px); line-height:1.08; letter-spacing:-.01em;
+}
+.lede{max-width:62ch; color:var(--ink-2); font-size:15px}
+.masthead-foot{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:4px}
+.tag{
+  display:inline-flex; align-items:center; gap:6px;
+  padding:4px 10px; border:1px solid var(--line-2); border-radius:999px;
+  font-size:12px; color:var(--ink-2); background:var(--surface);
+}
+.tag b{font-family:'IBM Plex Mono', ui-monospace, monospace; font-weight:500; color:var(--ink)}
+
+/* ---------- layout ---------- */
+.layout{display:grid; grid-template-columns:340px minmax(0,1fr); gap:28px; align-items:start}
+@media (max-width:1020px){ .layout{grid-template-columns:1fr} }
+
+/* ---------- input panel ---------- */
+.panel{
+  position:sticky; top:20px;
+  display:flex; flex-direction:column; gap:2px;
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--r);
+  box-shadow:var(--shadow); overflow:hidden;
+  max-height:calc(100vh - 40px); overflow-y:auto;
+}
+@media (max-width:1020px){ .panel{position:static; max-height:none} }
+.panel-head{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding:14px 16px; border-bottom:1px solid var(--line); background:var(--surface-2);
+}
+.panel-head p{font-family:'Unbounded','Golos Text',sans-serif; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-2)}
+.reset{
+  border:1px solid var(--line-2); background:transparent; border-radius:999px;
+  padding:4px 11px; font-size:12px; color:var(--ink-2); cursor:pointer;
+}
+.reset:hover{border-color:var(--accent); color:var(--accent)}
+
+fieldset{border:0; margin:0; padding:14px 16px; border-bottom:1px solid var(--line); display:flex; flex-direction:column; gap:9px}
+fieldset:last-of-type{border-bottom:0}
+legend{
+  font-family:'Unbounded','Golos Text',sans-serif;
+  font-size:10px; font-weight:500; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink-3); padding:0; margin-bottom:2px;
+}
+.row{display:grid; grid-template-columns:1fr 118px; align-items:center; gap:10px}
+.row-label{font-size:13px; color:var(--ink-2); line-height:1.25}
+.row-label small{display:block; font-size:11px; color:var(--ink-3)}
+.field{position:relative; display:flex; align-items:center}
+.field input{
+  width:100%; padding:7px 30px 7px 9px;
+  font-family:'IBM Plex Mono', ui-monospace, monospace; font-size:13px; font-variant-numeric:tabular-nums;
+  color:var(--ink); background:var(--bg);
+  border:1px solid var(--line-2); border-radius:7px;
+  -moz-appearance:textfield;
+}
+.field input[type=text]{font-family:'Golos Text',sans-serif; padding-right:9px}
+.field input::-webkit-outer-spin-button,.field input::-webkit-inner-spin-button{-webkit-appearance:none; margin:0}
+.field .unit{
+  position:absolute; right:9px; font-size:11px; color:var(--ink-3); pointer-events:none;
+  font-family:'IBM Plex Mono', ui-monospace, monospace;
+}
+.row.wide{grid-template-columns:1fr}
+input:focus-visible, button:focus-visible, summary:focus-visible{
+  outline:2px solid var(--accent); outline-offset:2px; border-color:transparent;
+}
+.field input:focus{border-color:var(--accent)}
+
+/* ---------- results ---------- */
+.results{display:flex; flex-direction:column; gap:24px; min-width:0}
+.card{
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--r);
+  box-shadow:var(--shadow); overflow:hidden;
+}
+.card-head{padding:16px 18px 12px; display:flex; flex-direction:column; gap:4px}
+.card-head h2{font-size:16px; font-weight:600; letter-spacing:-.01em}
+.card-head p{font-size:13px; color:var(--ink-3); max-width:70ch}
+.card-body{padding:0 18px 18px}
+
+/* KPI */
+.kpis{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--r); overflow:hidden}
+@media (max-width:820px){ .kpis{grid-template-columns:repeat(2, minmax(0,1fr))} }
+.kpi{background:var(--surface); padding:15px 16px 16px; display:flex; flex-direction:column; gap:5px}
+.kpi-label{font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-3)}
+.kpi-value{
+  font-family:'IBM Plex Mono', ui-monospace, monospace; font-variant-numeric:tabular-nums;
+  font-size:clamp(20px, 2.4vw, 26px); font-weight:500; letter-spacing:-.02em; white-space:nowrap;
+}
+.kpi-note{font-size:12px; color:var(--ink-3)}
+.pos{color:var(--good)} .neg{color:var(--bad)}
+
+/* liquid bar */
+.bar-wrap{position:relative; padding-top:26px}
+.bar{display:flex; gap:2px; height:44px; width:100%}
+.seg{border-radius:3px; min-width:2px}
+.seg:first-child{border-radius:5px 3px 3px 5px}
+.seg:last-child{border-radius:3px 5px 5px 3px}
+.s2{background:var(--liquid-1)} .s5{background:var(--liquid-2)} .s10{background:var(--liquid-3)}
+.be{position:absolute; top:20px; bottom:0; width:2px; background:var(--ink); border-radius:2px}
+.be::after{
+  content:attr(data-label);
+  position:absolute; top:-20px; left:50%; transform:translateX(-50%);
+  white-space:nowrap; font-size:11px; color:var(--ink);
+  background:var(--surface); padding:0 6px; border:1px solid var(--line-2); border-radius:999px;
+}
+.be.edge::after{left:auto; right:0; transform:none}
+.legend{display:flex; flex-wrap:wrap; gap:6px 20px; margin-top:14px}
+.legend span{display:flex; align-items:center; gap:7px; font-size:13px; color:var(--ink-2)}
+.chip{width:11px; height:11px; border-radius:3px; flex:none}
+.legend b{font-family:'IBM Plex Mono', ui-monospace, monospace; font-weight:500; color:var(--ink); font-variant-numeric:tabular-nums}
+.scale{display:flex; justify-content:space-between; margin-top:8px; font-size:11px; color:var(--ink-3); font-family:'IBM Plex Mono', ui-monospace, monospace}
+
+/* tables */
+.tablewrap{overflow-x:auto; margin:0 -18px; padding:0 18px}
+table{border-collapse:collapse; width:100%; font-size:13px; min-width:520px}
+th,td{text-align:right; padding:9px 10px; border-bottom:1px solid var(--line); white-space:nowrap}
+th:first-child, td:first-child{text-align:left; padding-left:0}
+th:last-child, td:last-child{padding-right:0}
+thead th{
+  font-size:10.5px; font-weight:500; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--ink-3); border-bottom:1px solid var(--line-2); padding-bottom:7px;
+}
+tbody td{font-family:'IBM Plex Mono', ui-monospace, monospace; font-variant-numeric:tabular-nums}
+tbody td:first-child{font-family:'Golos Text',sans-serif; color:var(--ink-2)}
+tbody tr:last-child td{border-bottom:0}
+td .sub{display:block; font-size:11px; color:var(--ink-3)}
+.size-tag{display:inline-flex; align-items:center; gap:7px; color:var(--ink); font-weight:500}
+
+/* price grid buttons */
+.gridcell{
+  width:100%; border:1px solid transparent; background:var(--surface-2); border-radius:7px;
+  padding:6px 9px; cursor:pointer; text-align:right; display:block;
+  font-family:'IBM Plex Mono', ui-monospace, monospace; font-variant-numeric:tabular-nums; font-size:13px;
+}
+.gridcell:hover{border-color:var(--accent); background:var(--accent-soft)}
+.gridcell.active{border-color:var(--accent); background:var(--accent-soft); color:var(--accent-ink)}
+.gridcell .sub{color:var(--ink-3)}
+.hint{font-size:12px; color:var(--ink-3); margin-top:10px}
+
+/* verdict */
+.verdict{border-radius:var(--r); border:1px solid var(--line); overflow:hidden}
+.verdict-head{display:flex; align-items:center; gap:12px; padding:16px 18px}
+.pill{
+  font-family:'Unbounded','Golos Text',sans-serif; font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+  padding:5px 12px; border-radius:999px; white-space:nowrap;
+}
+.pill{background:var(--surface); border:1px solid currentColor}
+.v-good .pill{color:var(--good)}
+.v-warn .pill{color:var(--warn)}
+.v-bad  .pill{color:var(--bad)}
+.v-good{background:var(--good-soft)} .v-warn{background:var(--warn-soft)} .v-bad{background:var(--bad-soft)}
+.verdict-head p{font-size:14px}
+.notes{background:var(--surface); padding:14px 18px; display:flex; flex-direction:column; gap:9px; margin:0; list-style:none}
+.notes li{display:flex; gap:10px; font-size:13px; color:var(--ink-2); line-height:1.45}
+.notes li::before{content:''; width:5px; height:5px; border-radius:50%; background:var(--ink-3); margin-top:8px; flex:none}
+.notes li span{min-width:0}
+.notes b{font-family:'IBM Plex Mono', ui-monospace, monospace; font-weight:500; color:var(--ink)}
+
+/* formulas */
+details{background:var(--surface); border:1px solid var(--line); border-radius:var(--r)}
+summary{padding:14px 18px; cursor:pointer; font-size:14px; font-weight:500; list-style:none; display:flex; justify-content:space-between; align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+'; font-family:'IBM Plex Mono', monospace; color:var(--ink-3)}
+details[open] summary::after{content:'–'}
+.formulas{padding:0 18px 18px; display:flex; flex-direction:column; gap:10px}
+.formulas p{font-size:13px; color:var(--ink-2)}
+.formulas code{
+  font-family:'IBM Plex Mono', ui-monospace, monospace; font-size:12.5px; color:var(--ink);
+  background:var(--surface-2); padding:2px 6px; border-radius:5px; display:inline-block;
+}
+footer{margin-top:36px; padding-top:20px; border-top:1px solid var(--line); font-size:12px; color:var(--ink-3); max-width:70ch}
+
+@media (prefers-reduced-motion: reduce){ *{transition:none !important; animation:none !important} }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="masthead">
+    <p class="eyebrow">Юнит-экономика · нишевая парфюмерия</p>
+    <h1>Экономика распива</h1>
+    <p class="lede">Считает, что останется в кармане, если разлить дорогой флакон на пробники: себестоимость миллилитра, сетку цен, точку окупаемости флакона и то, как всё это ломается при плохом сценарии.</p>
+    <div class="masthead-foot">
+      <span class="tag" id="tag-name">Xerjoff Alexandria II</span>
+      <span class="tag">1 мл жидкости — <b id="tag-ml">—</b></span>
+      <span class="tag">полезный объём — <b id="tag-usable">—</b></span>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <form class="panel" id="panel" autocomplete="off">
+      <div class="panel-head">
+        <p>Параметры</p>
+        <button type="button" class="reset" id="reset">Сбросить</button>
+      </div>
+
+      <fieldset>
+        <legend>Флакон</legend>
+        <label class="row wide"><span class="row-label">Аромат</span><span class="field"><input type="text" id="name" value="Xerjoff Alexandria II"></span></label>
+        <label class="row"><span class="row-label">Объём флакона</span><span class="field"><input type="number" id="volume" value="100" step="5" min="1"><span class="unit">мл</span></span></label>
+        <label class="row"><span class="row-label">Цена закупки</span><span class="field"><input type="number" id="price" value="42000" step="500" min="0"><span class="unit">₽</span></span></label>
+        <label class="row"><span class="row-label">Доставка, посредник<small>на один флакон</small></span><span class="field"><input type="number" id="ship" value="1500" step="100" min="0"><span class="unit">₽</span></span></label>
+        <label class="row"><span class="row-label">Потери при разливе<small>остаток в помпе, пролив</small></span><span class="field"><input type="number" id="loss" value="5" step="0.5" min="0" max="50"><span class="unit">%</span></span></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Расходники и труд</legend>
+        <label class="row"><span class="row-label">Атомайзер 2 мл</span><span class="field"><input type="number" id="atom2" value="18" step="1" min="0"><span class="unit">₽</span></span></label>
+        <label class="row"><span class="row-label">Атомайзер 5 мл</span><span class="field"><input type="number" id="atom5" value="28" step="1" min="0"><span class="unit">₽</span></span></label>
+        <label class="row"><span class="row-label">Атомайзер 10 мл</span><span class="field"><input type="number" id="atom10" value="45" step="1" min="0"><span class="unit">₽</span></span></label>
+        <label class="row"><span class="row-label">Этикетка, пакет, шприц</span><span class="field"><input type="number" id="extras" value="12" step="1" min="0"><span class="unit">₽</span></span></label>
+        <label class="row"><span class="row-label">Упаковка отправки<small>на заказ</small></span><span class="field"><input type="number" id="pack" value="60" step="5" min="0"><span class="unit">₽</span></span></label>
+        <label class="row"><span class="row-label">Время на разлив<small>минут на пробник</small></span><span class="field"><input type="number" id="labourMin" value="4" step="1" min="0"><span class="unit">мин</span></span></label>
+        <label class="row"><span class="row-label">Стоимость часа</span><span class="field"><input type="number" id="labourRate" value="500" step="50" min="0"><span class="unit">₽</span></span></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Цены продажи</legend>
+        <label class="row"><span class="row-label">Пробник 2 мл</span><span class="field"><input type="number" id="p2" value="1890" step="50" min="0"><span class="unit">₽</span></span></label>
+        <label class="row"><span class="row-label">Пробник 5 мл</span><span class="field"><input type="number" id="p5" value="4190" step="50" min="0"><span class="unit">₽</span></span></label>
+        <label class="row"><span class="row-label">Пробник 10 мл</span><span class="field"><input type="number" id="p10" value="7690" step="50" min="0"><span class="unit">₽</span></span></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Микс продаж</legend>
+        <label class="row"><span class="row-label">Доля 2 мл</span><span class="field"><input type="number" id="m2" value="50" step="5" min="0"><span class="unit">%</span></span></label>
+        <label class="row"><span class="row-label">Доля 5 мл</span><span class="field"><input type="number" id="m5" value="35" step="5" min="0"><span class="unit">%</span></span></label>
+        <label class="row"><span class="row-label">Доля 10 мл</span><span class="field"><input type="number" id="m10" value="15" step="5" min="0"><span class="unit">%</span></span></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Комиссии, налог, реклама</legend>
+        <label class="row"><span class="row-label">Комиссия площадки</span><span class="field"><input type="number" id="fee" value="5" step="0.5" min="0" max="90"><span class="unit">%</span></span></label>
+        <label class="row"><span class="row-label">Эквайринг</span><span class="field"><input type="number" id="acq" value="3" step="0.1" min="0" max="20"><span class="unit">%</span></span></label>
+        <label class="row"><span class="row-label">Налог с выручки</span><span class="field"><input type="number" id="tax" value="6" step="1" min="0" max="50"><span class="unit">%</span></span></label>
+        <label class="row"><span class="row-label">Реклама на заказ<small>стоимость привлечения</small></span><span class="field"><input type="number" id="cac" value="150" step="10" min="0"><span class="unit">₽</span></span></label>
+        <label class="row"><span class="row-label">Пробников в заказе</span><span class="field"><input type="number" id="ipo" value="1.4" step="0.1" min="0.1"><span class="unit">шт</span></span></label>
+        <label class="row"><span class="row-label">Возвраты, невыкуп</span><span class="field"><input type="number" id="ret" value="4" step="1" min="0" max="60"><span class="unit">%</span></span></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Скорость продаж</legend>
+        <label class="row"><span class="row-label">Пессимистичный<small>пробников в месяц</small></span><span class="field"><input type="number" id="vPess" value="3" step="1" min="0.1"><span class="unit">шт</span></span></label>
+        <label class="row"><span class="row-label">Базовый</span><span class="field"><input type="number" id="vBase" value="6" step="1" min="0.1"><span class="unit">шт</span></span></label>
+        <label class="row"><span class="row-label">Оптимистичный</span><span class="field"><input type="number" id="vOpt" value="12" step="1" min="0.1"><span class="unit">шт</span></span></label>
+        <label class="row"><span class="row-label">Цена перепродажи<small>флакон целиком</small></span><span class="field"><input type="number" id="whole" value="52000" step="500" min="0"><span class="unit">₽</span></span></label>
+      </fieldset>
+    </form>
+
+    <main class="results">
+
+      <section class="kpis" aria-label="Ключевые показатели">
+        <div class="kpi"><p class="kpi-label">Прибыль с флакона</p><p class="kpi-value" id="k-profit">—</p><p class="kpi-note" id="k-profit-note"></p></div>
+        <div class="kpi"><p class="kpi-label">Возврат на вложенное</p><p class="kpi-value" id="k-roi">—</p><p class="kpi-note" id="k-roi-note"></p></div>
+        <div class="kpi"><p class="kpi-label">Срок распродажи</p><p class="kpi-value" id="k-months">—</p><p class="kpi-note" id="k-months-note"></p></div>
+        <div class="kpi"><p class="kpi-label">Окупаемость флакона</p><p class="kpi-value" id="k-be">—</p><p class="kpi-note" id="k-be-note"></p></div>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h2>Флакон в разрезе</h2>
+          <p>Как полезный объём делится между пробниками при заданном миксе. Чёрная отметка — момент, когда флакон полностью отбит; всё, что правее, уже прибыль.</p>
+        </div>
+        <div class="card-body">
+          <div class="bar-wrap">
+            <div class="bar" id="bar"></div>
+            <div class="be" id="be" data-label=""></div>
+          </div>
+          <div class="scale"><span>0 мл</span><span id="scale-max">—</span></div>
+          <div class="legend" id="legend"></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h2>Себестоимость и маржа по размерам</h2>
+          <p>Минимальная цена — точка нуля с учётом комиссий, налога и возвратов. Ниже неё продавать нельзя.</p>
+        </div>
+        <div class="card-body">
+          <div class="tablewrap">
+            <table>
+              <thead><tr>
+                <th>Размер</th><th>Себестоимость</th><th>Мин. цена</th><th>Ваша цена</th><th>За 1 мл</th><th>Прибыль</th><th>Маржа</th><th>Наценка</th>
+              </tr></thead>
+              <tbody id="t-sizes"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h2>Ценовая сетка</h2>
+          <p>Цена при разной наценке к полной себестоимости. Под ценой — маржа от цены.</p>
+        </div>
+        <div class="card-body">
+          <div class="tablewrap">
+            <table>
+              <thead><tr><th>Размер</th><th>×1,5</th><th>×1,75</th><th>×2</th><th>×2,5</th><th>маржа 35%</th></tr></thead>
+              <tbody id="t-grid"></tbody>
+            </table>
+          </div>
+          <p class="hint">Нажмите на любую цену — она подставится в расчёт.</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h2>Сценарии по скорости продаж</h2>
+          <p>Один и тот же флакон, разная скорость. Годовой возврат учитывает, что деньги успевают обернуться несколько раз.</p>
+        </div>
+        <div class="card-body">
+          <div class="tablewrap">
+            <table>
+              <thead><tr><th>Сценарий</th><th>Продаж в месяц</th><th>Срок распродажи</th><th>Прибыль в месяц</th><th>Годовой возврат</th></tr></thead>
+              <tbody id="t-speed"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h2>Что если пойдёт не так</h2>
+          <p>Прибыль с флакона при отклонении одного параметра от базового расчёта.</p>
+        </div>
+        <div class="card-body">
+          <div class="tablewrap">
+            <table>
+              <thead><tr><th>Отклонение</th><th>Прибыль с флакона</th><th>Разница</th><th>Возврат</th></tr></thead>
+              <tbody id="t-sens"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h2>Разлить или продать целиком</h2>
+          <p>Распив приносит больше денег, но растянут во времени и требует продать десятки пробников.</p>
+        </div>
+        <div class="card-body">
+          <div class="tablewrap">
+            <table>
+              <thead><tr><th>Вариант</th><th>Выручка</th><th>Прибыль</th><th>Возврат</th><th>Срок</th></tr></thead>
+              <tbody id="t-alt"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="verdict" id="verdict">
+        <div class="verdict-head">
+          <span class="pill" id="v-pill">—</span>
+          <p id="v-text"></p>
+        </div>
+        <ul class="notes" id="v-notes"></ul>
+      </section>
+
+      <details>
+        <summary>Как это считается</summary>
+        <div class="formulas">
+          <p><code>полезный объём = объём × (1 − потери)</code> — из 100 мл при потерях 5% в пробники уходит 95 мл.</p>
+          <p><code>себестоимость 1 мл = (закупка + доставка) ÷ полезный объём</code></p>
+          <p><code>себестоимость пробника = жидкость + атомайзер + расходники + труд + (упаковка + реклама) ÷ пробников в заказе</code></p>
+          <p><code>прибыль = цена × (1 − комиссии − эквайринг − налог) × (1 − возвраты) − себестоимость</code> — возвращённый пробник считается потерянным вместе с содержимым.</p>
+          <p><code>вклад в окупаемость = прибыль + стоимость жидкости</code> — флакон уже оплачен, поэтому точку безубыточности считаем без стоимости жидкости: <code>штук до нуля = стоимость флакона ÷ средний вклад</code>.</p>
+          <p><code>годовой возврат = возврат за флакон × (12 ÷ срок распродажи)</code> — деньги за год оборачиваются несколько раз.</p>
+          <p>Количество пробников дробное и округляется только при выводе: реальный разлив даст ±1 штуку.</p>
+        </div>
+      </details>
+
+      <footer>Расчёт учитывает только деньги. За кадром остаются юридическая сторона продажи парфюмерии на распив, риск подделки при закупке и срок годности вскрытого флакона — обычно распив стоит планировать так, чтобы флакон уходил за год-полтора.</footer>
+
+    </main>
+  </div>
+</div>
+
+<script>
+(function(){
+  const DEFAULTS = {
+    name:'Xerjoff Alexandria II', volume:100, price:42000, ship:1500, loss:5,
+    atom2:18, atom5:28, atom10:45, extras:12, pack:60, labourMin:4, labourRate:500,
+    p2:1890, p5:4190, p10:7690, m2:50, m5:35, m10:15,
+    fee:5, acq:3, tax:6, cac:150, ipo:1.4, ret:4,
+    vPess:3, vBase:6, vOpt:12, whole:52000
+  };
+  const KEYS = Object.keys(DEFAULTS);
+  const STORE = 'raspiv-calc-v1';
+  const $ = id => document.getElementById(id);
+
+  const NB = '\u00A0';
+  const nf = (v, d=0) => new Intl.NumberFormat('ru-RU',{minimumFractionDigits:d, maximumFractionDigits:d}).format(v);
+  const unit = (v, u) => v + NB + u;
+  const money = v => Number.isFinite(v) ? unit(nf(Math.round(v)), '₽') : '—';
+  const pct = (v, d=0) => Number.isFinite(v) ? unit(nf(v*100, d), '%') : '—';
+  const signed = v => (v > 0 ? '+' : '') + money(v);
+  const cls = v => v > 0 ? 'pos' : v < 0 ? 'neg' : '';
+  const plural = (n, a, b, c) => { const m = Math.abs(Math.round(n)) % 100, u = m % 10;
+    if (m > 10 && m < 20) return c; if (u > 1 && u < 5) return b; if (u === 1) return a; return c; };
+
+  function read(){
+    const o = {};
+    KEYS.forEach(k => {
+      const el = $(k);
+      if (!el) return;
+      if (el.type === 'text') o[k] = el.value;
+      else { const v = parseFloat(String(el.value).replace(',', '.')); o[k] = Number.isFinite(v) ? v : 0; }
+    });
+    return o;
+  }
+  function write(o){ KEYS.forEach(k => { if ($(k) && o[k] !== undefined) $(k).value = o[k]; }); }
+
+  function calc(o){
+    const usable = Math.max(0, o.volume * (1 - o.loss/100));
+    const bottleCost = o.price + o.ship;
+    const mlCost = usable > 0 ? bottleCost / usable : 0;
+    const feeRate = Math.min(0.95, (o.fee + o.acq + o.tax) / 100);
+    const r = Math.min(0.95, o.ret / 100);
+    const keep = (1 - feeRate) * (1 - r);
+    const labour = o.labourMin / 60 * o.labourRate;
+    const orderCost = o.ipo > 0 ? (o.pack + o.cac) / o.ipo : (o.pack + o.cac);
+
+    const sizes = [
+      {ml:2,  cssn:'s2',  atom:o.atom2,  price:o.p2,  w:o.m2},
+      {ml:5,  cssn:'s5',  atom:o.atom5,  price:o.p5,  w:o.m5},
+      {ml:10, cssn:'s10', atom:o.atom10, price:o.p10, w:o.m10}
+    ];
+    const wsum = sizes.reduce((a,s) => a + Math.max(0, s.w), 0) || 1;
+    sizes.forEach(s => {
+      s.share  = Math.max(0, s.w) / wsum;
+      s.liquid = s.ml * mlCost;
+      s.fixed  = s.atom + o.extras + labour + orderCost;
+      s.cost   = s.liquid + s.fixed;
+      s.net    = s.price * keep;
+      s.profit = s.net - s.cost;
+      s.contrib= s.net - s.fixed;
+      s.margin = s.price > 0 ? s.profit / s.price : NaN;
+      s.markup = s.cost > 0 ? s.price / s.cost : NaN;
+      s.minPrice = keep > 0 ? s.cost / keep : NaN;
+      s.perMl  = s.ml > 0 ? s.price / s.ml : 0;
+    });
+
+    const avgVol = sizes.reduce((a,s) => a + s.share * s.ml, 0);
+    const units  = avgVol > 0 ? usable / avgVol : 0;
+    sizes.forEach(s => { s.units = units * s.share; s.vol = s.units * s.ml; });
+
+    const revenue    = sizes.reduce((a,s) => a + s.units * s.price * (1 - r), 0);
+    const contribAll = sizes.reduce((a,s) => a + s.units * s.contrib, 0);
+    const profit     = contribAll - bottleCost;
+    const roi        = bottleCost > 0 ? profit / bottleCost : 0;
+    const avgContrib = sizes.reduce((a,s) => a + s.share * s.contrib, 0);
+    const beUnits    = avgContrib > 0 ? bottleCost / avgContrib : Infinity;
+    const beShare    = Number.isFinite(beUnits) && units > 0 ? beUnits / units : Infinity;
+
+    const partial = f => sizes.reduce((a,s) => a + s.units * f * s.contrib, 0) - bottleCost;
+    const wholeProfit = o.whole * (1 - feeRate) - bottleCost - o.pack - o.cac;
+
+    return {usable, bottleCost, mlCost, feeRate, r, keep, labour, orderCost,
+            sizes, avgVol, units, revenue, profit, roi, avgContrib, beUnits, beShare,
+            partial, wholeProfit, avgMargin: revenue > 0 ? profit / revenue : NaN};
+  }
+
+  function variant(o, patch){
+    const c = calc(Object.assign({}, o, patch));
+    return {profit:c.profit, roi:c.roi};
+  }
+
+  function render(){
+    const o = read();
+    const c = calc(o);
+    const monthsBase = o.vBase > 0 ? c.units / o.vBase : Infinity;
+
+    $('tag-name').textContent = o.name || 'Аромат';
+    $('tag-ml').textContent = money(c.mlCost);
+    $('tag-usable').textContent = unit(nf(c.usable, 1), 'мл');
+
+    // KPI
+    $('k-profit').textContent = money(c.profit);
+    $('k-profit').className = 'kpi-value ' + cls(c.profit);
+    $('k-profit-note').textContent = 'выручка ' + money(c.revenue) + ' · маржа ' + pct(c.avgMargin);
+    $('k-roi').textContent = pct(c.roi);
+    $('k-roi').className = 'kpi-value ' + cls(c.roi);
+    $('k-roi-note').textContent = 'вложено ' + money(c.bottleCost) + ' · ' +
+      (Number.isFinite(monthsBase) && monthsBase > 0 ? pct(c.roi * (12 / monthsBase)) + ' годовых' : 'срок не определён');
+    $('k-months').textContent = Number.isFinite(monthsBase) ? unit(nf(monthsBase, 1), 'мес') : '—';
+    $('k-months-note').textContent = Math.round(c.units) + ' ' + plural(c.units,'пробник','пробника','пробников') + ' по ' + o.vBase + ' шт/мес';
+    $('k-be').textContent = Number.isFinite(c.beUnits) ? unit(Math.ceil(c.beUnits), 'шт') : 'никогда';
+    $('k-be-note').textContent = Number.isFinite(c.beShare)
+      ? pct(c.beShare) + ' объёма флакона'
+      : 'вклад пробника отрицательный';
+
+    // liquid bar
+    const bar = $('bar');
+    bar.innerHTML = '';
+    c.sizes.forEach(s => {
+      const share = c.usable > 0 ? s.vol / c.usable : 0;
+      if (share <= 0) return;
+      const d = document.createElement('div');
+      d.className = 'seg ' + s.cssn;
+      d.style.flex = share + ' 1 0';
+      d.title = s.ml + NB + 'мл — ' + Math.round(s.units) + NB + 'шт';
+      bar.appendChild(d);
+    });
+    const be = $('be');
+    if (Number.isFinite(c.beShare) && c.beShare <= 1){
+      be.style.display = 'block';
+      be.style.left = 'calc(' + (c.beShare * 100).toFixed(1) + '% - 1px)';
+      be.dataset.label = 'флакон отбит · ' + Math.ceil(c.beUnits) + NB + 'шт';
+      be.classList.toggle('edge', c.beShare > 0.72);
+    } else {
+      be.style.display = 'none';
+    }
+    $('scale-max').textContent = unit(nf(c.usable, 1), 'мл');
+    $('legend').innerHTML = c.sizes.map(s =>
+      '<span><i class="chip ' + s.cssn + '"></i>' + s.ml + '&nbsp;мл — <b>' + Math.round(s.units) + '&nbsp;шт</b> · ' + nf(s.vol,0) + '&nbsp;мл</span>'
+    ).join('');
+
+    // sizes table
+    $('t-sizes').innerHTML = c.sizes.map(s =>
+      '<tr>' +
+      '<td><span class="size-tag"><i class="chip ' + s.cssn + '"></i>' + s.ml + ' мл</span></td>' +
+      '<td>' + money(s.cost) + '<span class="sub">жидкость ' + money(s.liquid) + '</span></td>' +
+      '<td>' + money(s.minPrice) + '</td>' +
+      '<td>' + money(s.price) + '</td>' +
+      '<td>' + money(s.perMl) + '</td>' +
+      '<td class="' + cls(s.profit) + '">' + money(s.profit) + '</td>' +
+      '<td class="' + cls(s.margin) + '">' + pct(s.margin) + '</td>' +
+      '<td>' + (Number.isFinite(s.markup) ? '×' + nf(s.markup, 2) : '—') + '</td>' +
+      '</tr>'
+    ).join('');
+
+    // price grid
+    const cols = [{m:1.5},{m:1.75},{m:2},{m:2.5}];
+    $('t-grid').innerHTML = c.sizes.map((s, i) => {
+      const cells = cols.map(col => {
+        const p = s.cost * col.m;
+        const prof = p * c.keep - s.cost;
+        return cell(i, p, p > 0 ? prof / p : NaN, s.price);
+      });
+      const pT = c.keep > 0.35 ? s.cost / (c.keep - 0.35) : NaN;
+      cells.push(cell(i, pT, 0.35, s.price));
+      return '<tr><td><span class="size-tag"><i class="chip ' + s.cssn + '"></i>' + s.ml + ' мл</span></td>' + cells.join('') + '</tr>';
+    }).join('');
+
+    // speed scenarios
+    const speeds = [['Пессимистичный', o.vPess], ['Базовый', o.vBase], ['Оптимистичный', o.vOpt]];
+    $('t-speed').innerHTML = speeds.map(([label, v]) => {
+      const m = v > 0 ? c.units / v : Infinity;
+      const perMonth = Number.isFinite(m) && m > 0 ? c.profit / m : NaN;
+      const annual = Number.isFinite(m) && m > 0 ? c.roi * (12 / m) : NaN;
+      return '<tr><td>' + label + '</td><td>' + nf(v,0) + ' шт</td>' +
+             '<td>' + (Number.isFinite(m) ? unit(nf(m,1), 'мес') : '—') + '</td>' +
+             '<td class="' + cls(perMonth) + '">' + money(perMonth) + '</td>' +
+             '<td class="' + cls(annual) + '">' + pct(annual) + '</td></tr>';
+    }).join('');
+
+    // sensitivity
+    const rows = [
+      ['Закупка дороже на 20%', variant(o, {price: o.price * 1.2})],
+      ['Цены ниже на 15%',      variant(o, {p2:o.p2*0.85, p5:o.p5*0.85, p10:o.p10*0.85})],
+      ['Возвраты вдвое выше',   variant(o, {ret: o.ret * 2})],
+      ['Продано только 60% объёма', {profit: c.partial(0.6), roi: c.bottleCost > 0 ? c.partial(0.6) / c.bottleCost : 0}]
+    ];
+    $('t-sens').innerHTML = rows.map(([label, v]) => {
+      const diff = v.profit - c.profit;
+      return '<tr><td>' + label + '</td>' +
+             '<td class="' + cls(v.profit) + '">' + money(v.profit) + '</td>' +
+             '<td class="' + cls(diff) + '">' + signed(diff) + '</td>' +
+             '<td class="' + cls(v.roi) + '">' + pct(v.roi) + '</td></tr>';
+    }).join('');
+
+    // decant vs whole bottle
+    const wholeRoi = c.bottleCost > 0 ? c.wholeProfit / c.bottleCost : 0;
+    $('t-alt').innerHTML =
+      '<tr><td>Разлить на пробники</td><td>' + money(c.revenue) + '</td>' +
+      '<td class="' + cls(c.profit) + '">' + money(c.profit) + '</td>' +
+      '<td class="' + cls(c.roi) + '">' + pct(c.roi) + '</td>' +
+      '<td>' + (Number.isFinite(monthsBase) ? unit(nf(monthsBase,1), 'мес') : '—') + '</td></tr>' +
+      '<tr><td>Продать флакон целиком</td><td>' + money(o.whole) + '</td>' +
+      '<td class="' + cls(c.wholeProfit) + '">' + money(c.wholeProfit) + '</td>' +
+      '<td class="' + cls(wholeRoi) + '">' + pct(wholeRoi) + '</td>' +
+      '<td>1 сделка</td></tr>';
+
+    verdict(o, c, monthsBase);
+    save(o);
+  }
+
+  function cell(rowIndex, price, margin, current){
+    if (!Number.isFinite(price) || price <= 0) return '<td>—</td>';
+    const active = Math.abs(price - current) < 1 ? ' active' : '';
+    return '<td><button type="button" class="gridcell' + active + '" data-row="' + rowIndex + '" data-price="' +
+           Math.round(price) + '">' + money(price) + '<span class="sub">' + pct(margin) + '</span></button></td>';
+  }
+
+  function verdict(o, c, monthsBase){
+    const box = $('verdict');
+    const partial60 = c.partial(0.6);
+    const worstSize = c.sizes.reduce((a,s) => (s.margin < a.margin ? s : a), c.sizes[0]);
+    let level, text;
+
+    const annual = Number.isFinite(monthsBase) && monthsBase > 0 ? c.roi * (12 / monthsBase) : NaN;
+    const term = Number.isFinite(monthsBase) ? unit(nf(monthsBase,1), 'мес') : 'весь срок';
+
+    if (c.profit <= 0){
+      level = 'v-bad';
+      text = 'При этих ценах флакон не окупается: распив принесёт убыток ' + money(Math.abs(c.profit)) + '. Считать выгоду не из чего — либо дешевле закупка, либо выше цены.';
+    } else if (annual >= 0.6 && c.roi >= 0.2){
+      level = 'v-good';
+      text = 'Заниматься стоит: флакон приносит ' + money(c.profit) + ' сверх вложений за ' + term + ' — это ' + pct(annual) + ' годовых на вложенные деньги.';
+    } else if (annual >= 0.25){
+      level = 'v-warn';
+      text = 'На грани: прибыль есть — ' + money(c.profit) + ' за ' + term + ', или ' + pct(annual) + ' годовых. Запас небольшой, ошибка в цене или скорости продаж его съест.';
+    } else {
+      level = 'v-bad';
+      text = 'Невыгодно: ' + money(c.profit) + ' за ' + term + ' — это ' + pct(annual) + ' годовых при полном риске остатка. Деньги проще пристроить куда угодно ещё.';
+    }
+    box.className = 'verdict ' + level;
+    $('v-pill').textContent = level === 'v-good' ? 'Выгодно' : level === 'v-warn' ? 'На грани' : 'Невыгодно';
+    $('v-text').textContent = text;
+
+    const notes = [];
+    if (partial60 < 0)
+      notes.push('Вся прибыль держится на полной распродаже: если уйдёт только 60% объёма, получится <b>' + money(partial60) + '</b>. Остаток флакона — главный риск.');
+    if (Number.isFinite(c.beShare) && c.beShare > 0.6)
+      notes.push('Флакон отбивается только на <b>' + pct(c.beShare) + '</b> объёма — прибыль появляется в самом конце, когда продавать сложнее всего.');
+    if (!Number.isFinite(c.beUnits))
+      notes.push('Пробник не покрывает даже собственные расходники и комиссии — при таких ценах окупаемости не будет никогда.');
+    if (c.wholeProfit > c.profit)
+      notes.push('Продать флакон целиком выгоднее: <b>' + money(c.wholeProfit) + '</b> одной сделкой против <b>' + money(c.profit) + '</b> за месяцы разлива.');
+    if (Number.isFinite(monthsBase) && monthsBase > 12)
+      notes.push('Распродажа занимает <b>' + unit(nf(monthsBase,1), 'мес') + '</b> — деньги заморожены больше года, а вскрытый флакон столько не ждёт.');
+    if (worstSize && worstSize.margin < 0.15)
+      notes.push('Размер <b>' + worstSize.ml + ' мл</b> идёт с маржой <b>' + pct(worstSize.margin) + '</b> — на таком уровне любой возврат или скидка уводят его в минус. Поднимите цену или уберите размер из линейки.');
+    if (c.sizes[0].price > 0 && c.sizes[2].price > 0 && c.sizes[2].perMl > c.sizes[0].perMl)
+      notes.push('Цена за миллилитр у 10 мл выше, чем у 2 мл — покупателю нет смысла брать большой объём. Обычно крупный пробник продают дешевле за мл.');
+    if (!notes.length)
+      notes.push('Слабых мест в расчёте нет: маржа держится во всех размерах, и даже неполная распродажа остаётся в плюсе.');
+
+    $('v-notes').innerHTML = notes.map(n => '<li><span>' + n + '</span></li>').join('');
+  }
+
+  function save(o){ try { localStorage.setItem(STORE, JSON.stringify(o)); } catch(e){} }
+  function load(){
+    try {
+      const raw = localStorage.getItem(STORE);
+      if (raw) return Object.assign({}, DEFAULTS, JSON.parse(raw));
+    } catch(e){}
+    return DEFAULTS;
+  }
+
+  $('panel').addEventListener('input', render);
+  $('reset').addEventListener('click', () => { write(DEFAULTS); render(); });
+  document.addEventListener('click', e => {
+    const b = e.target.closest('.gridcell');
+    if (!b) return;
+    const ids = ['p2','p5','p10'];
+    $(ids[+b.dataset.row]).value = b.dataset.price;
+    render();
+  });
+
+  write(load());
+  render();
+})();
+</script>
+</body>
+</html>
