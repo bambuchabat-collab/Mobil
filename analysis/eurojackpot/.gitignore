@@ -1,0 +1,3 @@
+verify_bruteforce
+__pycache__/
+*.pyc
