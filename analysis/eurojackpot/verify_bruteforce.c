@@ -1,24 +1,27 @@
 /*
- * INDEPENDENT CHECK #2 - full brute force, different language, different method.
+ * INDEPENDENT CHECK - full brute force, different language, different method.
  *
  * Enumerates every single one of the C(50,5) * C(12,2) = 139,838,160 possible
  * Eurojackpot outcomes explicitly (five nested loops over the main numbers,
- * two nested loops over the euro numbers) and counts, for two concrete
- * tickets, how many outcomes fall in each event of interest.
+ * two nested loops over the euro numbers) and counts, for two tickets, how
+ * many outcomes fall in each event of interest.
  *
  * No combinatorics library, no probability formulas - just counting.
  *
- *   gcc -O2 -o verify_bruteforce verify_bruteforce.c && ./verify_bruteforce
+ *   gcc -O2 -o verify_bruteforce verify_bruteforce.c
+ *   ./verify_bruteforce                       # default tickets
+ *   ./verify_bruteforce m1..m5 e1 e2 m1..m5 e1 e2   # explicit tickets
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdint.h>
 
-/* The two concrete tickets analysed in REPORT.md */
-static const int T1_MAIN[5] = {33, 38, 42, 47, 50};
-static const int T1_EURO[2] = {5, 11};
-static const int T2_MAIN[5] = {34, 36, 43, 45, 49};
-static const int T2_EURO[2] = {8, 12};
+/* Default: the two tickets for the 2026-09-01 draw */
+static int t1_main[5] = {33, 37, 40, 44, 50};
+static int t1_euro[2] = {6, 11};
+static int t2_main[5] = {35, 41, 43, 46, 48};
+static int t2_euro[2] = {9, 12};
 
 /* paying[k][j] = 1 if k main + j euro matches is one of the 12 prize tiers */
 static int paying[6][3];
@@ -29,15 +32,49 @@ static void init_paying(void) {
     for (int i = 0; i < 12; i++) paying[tiers[i][0]][tiers[i][1]] = 1;
 }
 
-int main(void) {
+static int parse_args(int argc, char **argv) {
+    if (argc == 1) return 0;
+    if (argc != 15) {
+        fprintf(stderr, "usage: %s [m1 m2 m3 m4 m5 e1 e2  m1 m2 m3 m4 m5 e1 e2]\n",
+                argv[0]);
+        return -1;
+    }
+    int *slots[14] = {&t1_main[0], &t1_main[1], &t1_main[2], &t1_main[3],
+                      &t1_main[4], &t1_euro[0], &t1_euro[1],
+                      &t2_main[0], &t2_main[1], &t2_main[2], &t2_main[3],
+                      &t2_main[4], &t2_euro[0], &t2_euro[1]};
+    for (int i = 0; i < 14; i++) {
+        int v = atoi(argv[i + 1]);
+        int is_euro = (i == 5 || i == 6 || i == 12 || i == 13);
+        int hi = is_euro ? 12 : 50;
+        if (v < 1 || v > hi) {
+            fprintf(stderr, "ERROR: value %d out of range 1..%d\n", v, hi);
+            return -1;
+        }
+        *slots[i] = v;
+    }
+    return 0;
+}
+
+int main(int argc, char **argv) {
     init_paying();
+    if (parse_args(argc, argv) != 0) return 2;
 
     uint64_t t1m = 0, t1e = 0, t2m = 0, t2e = 0;
-    for (int i = 0; i < 5; i++) { t1m |= 1ULL << T1_MAIN[i]; t2m |= 1ULL << T2_MAIN[i]; }
-    for (int i = 0; i < 2; i++) { t1e |= 1ULL << T1_EURO[i]; t2e |= 1ULL << T2_EURO[i]; }
+    for (int i = 0; i < 5; i++) { t1m |= 1ULL << t1_main[i]; t2m |= 1ULL << t2_main[i]; }
+    for (int i = 0; i < 2; i++) { t1e |= 1ULL << t1_euro[i]; t2e |= 1ULL << t2_euro[i]; }
 
-    if (t1m & t2m) { printf("ERROR: main numbers overlap\n"); return 1; }
-    if (t1e & t2e) { printf("ERROR: euro pairs overlap\n"); return 1; }
+    if (__builtin_popcountll(t1m) != 5 || __builtin_popcountll(t2m) != 5) {
+        printf("ERROR: duplicate main numbers within a ticket\n"); return 1; }
+    if (__builtin_popcountll(t1e) != 2 || __builtin_popcountll(t2e) != 2) {
+        printf("ERROR: duplicate euro numbers within a ticket\n"); return 1; }
+
+    printf("ticket 1: %d %d %d %d %d + %d %d\n", t1_main[0], t1_main[1],
+           t1_main[2], t1_main[3], t1_main[4], t1_euro[0], t1_euro[1]);
+    printf("ticket 2: %d %d %d %d %d + %d %d\n", t2_main[0], t2_main[1],
+           t2_main[2], t2_main[3], t2_main[4], t2_euro[0], t2_euro[1]);
+    printf("main overlap = %d, euro overlap = %d\n\n",
+           __builtin_popcountll(t1m & t2m), __builtin_popcountll(t1e & t2e));
 
     /* Pre-compute the 66 euro draws: match counts for each ticket. */
     int euro_m1[66], euro_m2[66], n_euro = 0;

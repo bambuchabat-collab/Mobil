@@ -15,9 +15,9 @@ Must agree with exact_model.py to the last digit.
 from fractions import Fraction
 from itertools import combinations
 
-# The two concrete tickets analysed in REPORT.md
-T1_MAIN, T1_EURO = {33, 38, 42, 47, 50}, {5, 11}
-T2_MAIN, T2_EURO = {34, 36, 43, 45, 49}, {8, 12}
+# The two concrete tickets for the 2026-09-01 draw
+T1_MAIN, T1_EURO = {33, 37, 40, 44, 50}, {6, 11}
+T2_MAIN, T2_EURO = {35, 41, 43, 46, 48}, {9, 12}
 
 PAYING = {(5, 2), (5, 1), (5, 0), (4, 2), (4, 1), (3, 2),
           (4, 0), (2, 2), (3, 1), (3, 0), (1, 2), (2, 1)}
