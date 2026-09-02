@@ -1,0 +1,3638 @@
+{
+ "Meta": [
+  {
+   "Label": "Posledná aktualizácia",
+   "Value": "2. 9. 2026, 13:43"
+  }
+ ],
+ "Output": {
+  "Type": "success",
+  "Message": "Loto5z35"
+ },
+ "Summary": [
+  {
+   "Label": "Najčastejšie vyžrebované číslo",
+   "Value": 6
+  },
+  {
+   "Label": "Najmenej často vyžrebované číslo",
+   "Value": 28
+  }
+ ],
+ "DetailsAll": [
+  {
+   "Number": 1,
+   "Value": 293
+  },
+  {
+   "Number": 2,
+   "Value": 294
+  },
+  {
+   "Number": 3,
+   "Value": 291
+  },
+  {
+   "Number": 4,
+   "Value": 279
+  },
+  {
+   "Number": 5,
+   "Value": 279
+  },
+  {
+   "Number": 6,
+   "Value": 328
+  },
+  {
+   "Number": 7,
+   "Value": 303
+  },
+  {
+   "Number": 8,
+   "Value": 309
+  },
+  {
+   "Number": 9,
+   "Value": 283
+  },
+  {
+   "Number": 10,
+   "Value": 269
+  },
+  {
+   "Number": 11,
+   "Value": 285
+  },
+  {
+   "Number": 12,
+   "Value": 308
+  },
+  {
+   "Number": 13,
+   "Value": 309
+  },
+  {
+   "Number": 14,
+   "Value": 314
+  },
+  {
+   "Number": 15,
+   "Value": 322
+  },
+  {
+   "Number": 16,
+   "Value": 297
+  },
+  {
+   "Number": 17,
+   "Value": 292
+  },
+  {
+   "Number": 18,
+   "Value": 297
+  },
+  {
+   "Number": 19,
+   "Value": 289
+  },
+  {
+   "Number": 20,
+   "Value": 296
+  },
+  {
+   "Number": 21,
+   "Value": 304
+  },
+  {
+   "Number": 22,
+   "Value": 318
+  },
+  {
+   "Number": 23,
+   "Value": 317
+  },
+  {
+   "Number": 24,
+   "Value": 303
+  },
+  {
+   "Number": 25,
+   "Value": 281
+  },
+  {
+   "Number": 26,
+   "Value": 293
+  },
+  {
+   "Number": 27,
+   "Value": 274
+  },
+  {
+   "Number": 28,
+   "Value": 262
+  },
+  {
+   "Number": 29,
+   "Value": 305
+  },
+  {
+   "Number": 30,
+   "Value": 312
+  },
+  {
+   "Number": 31,
+   "Value": 296
+  },
+  {
+   "Number": 32,
+   "Value": 263
+  },
+  {
+   "Number": 33,
+   "Value": 288
+  },
+  {
+   "Number": 34,
+   "Value": 297
+  },
+  {
+   "Number": 35,
+   "Value": 285
+  }
+ ],
+ "Details1M": [
+  {
+   "Number": 1,
+   "Value": 3
+  },
+  {
+   "Number": 2,
+   "Value": 3
+  },
+  {
+   "Number": 3,
+   "Value": 1
+  },
+  {
+   "Number": 4,
+   "Value": 1
+  },
+  {
+   "Number": 5,
+   "Value": 3
+  },
+  {
+   "Number": 6,
+   "Value": 1
+  },
+  {
+   "Number": 7,
+   "Value": 2
+  },
+  {
+   "Number": 8,
+   "Value": 0
+  },
+  {
+   "Number": 9,
+   "Value": 0
+  },
+  {
+   "Number": 10,
+   "Value": 1
+  },
+  {
+   "Number": 11,
+   "Value": 3
+  },
+  {
+   "Number": 12,
+   "Value": 2
+  },
+  {
+   "Number": 13,
+   "Value": 2
+  },
+  {
+   "Number": 14,
+   "Value": 0
+  },
+  {
+   "Number": 15,
+   "Value": 5
+  },
+  {
+   "Number": 16,
+   "Value": 2
+  },
+  {
+   "Number": 17,
+   "Value": 0
+  },
+  {
+   "Number": 18,
+   "Value": 2
+  },
+  {
+   "Number": 19,
+   "Value": 2
+  },
+  {
+   "Number": 20,
+   "Value": 1
+  },
+  {
+   "Number": 21,
+   "Value": 1
+  },
+  {
+   "Number": 22,
+   "Value": 4
+  },
+  {
+   "Number": 23,
+   "Value": 1
+  },
+  {
+   "Number": 24,
+   "Value": 3
+  },
+  {
+   "Number": 25,
+   "Value": 0
+  },
+  {
+   "Number": 26,
+   "Value": 2
+  },
+  {
+   "Number": 27,
+   "Value": 0
+  },
+  {
+   "Number": 28,
+   "Value": 2
+  },
+  {
+   "Number": 29,
+   "Value": 4
+  },
+  {
+   "Number": 30,
+   "Value": 2
+  },
+  {
+   "Number": 31,
+   "Value": 4
+  },
+  {
+   "Number": 32,
+   "Value": 0
+  },
+  {
+   "Number": 33,
+   "Value": 2
+  },
+  {
+   "Number": 34,
+   "Value": 5
+  },
+  {
+   "Number": 35,
+   "Value": 1
+  }
+ ],
+ "Details6M": [
+  {
+   "Number": 1,
+   "Value": 10
+  },
+  {
+   "Number": 2,
+   "Value": 10
+  },
+  {
+   "Number": 3,
+   "Value": 12
+  },
+  {
+   "Number": 4,
+   "Value": 11
+  },
+  {
+   "Number": 5,
+   "Value": 8
+  },
+  {
+   "Number": 6,
+   "Value": 13
+  },
+  {
+   "Number": 7,
+   "Value": 17
+  },
+  {
+   "Number": 8,
+   "Value": 7
+  },
+  {
+   "Number": 9,
+   "Value": 7
+  },
+  {
+   "Number": 10,
+   "Value": 13
+  },
+  {
+   "Number": 11,
+   "Value": 13
+  },
+  {
+   "Number": 12,
+   "Value": 8
+  },
+  {
+   "Number": 13,
+   "Value": 19
+  },
+  {
+   "Number": 14,
+   "Value": 7
+  },
+  {
+   "Number": 15,
+   "Value": 12
+  },
+  {
+   "Number": 16,
+   "Value": 14
+  },
+  {
+   "Number": 17,
+   "Value": 6
+  },
+  {
+   "Number": 18,
+   "Value": 13
+  },
+  {
+   "Number": 19,
+   "Value": 11
+  },
+  {
+   "Number": 20,
+   "Value": 14
+  },
+  {
+   "Number": 21,
+   "Value": 11
+  },
+  {
+   "Number": 22,
+   "Value": 11
+  },
+  {
+   "Number": 23,
+   "Value": 10
+  },
+  {
+   "Number": 24,
+   "Value": 8
+  },
+  {
+   "Number": 25,
+   "Value": 11
+  },
+  {
+   "Number": 26,
+   "Value": 10
+  },
+  {
+   "Number": 27,
+   "Value": 8
+  },
+  {
+   "Number": 28,
+   "Value": 11
+  },
+  {
+   "Number": 29,
+   "Value": 15
+  },
+  {
+   "Number": 30,
+   "Value": 6
+  },
+  {
+   "Number": 31,
+   "Value": 13
+  },
+  {
+   "Number": 32,
+   "Value": 6
+  },
+  {
+   "Number": 33,
+   "Value": 14
+  },
+  {
+   "Number": 34,
+   "Value": 12
+  },
+  {
+   "Number": 35,
+   "Value": 14
+  }
+ ],
+ "Details12M": [
+  {
+   "Number": 1,
+   "Value": 22
+  },
+  {
+   "Number": 2,
+   "Value": 17
+  },
+  {
+   "Number": 3,
+   "Value": 23
+  },
+  {
+   "Number": 4,
+   "Value": 17
+  },
+  {
+   "Number": 5,
+   "Value": 20
+  },
+  {
+   "Number": 6,
+   "Value": 26
+  },
+  {
+   "Number": 7,
+   "Value": 28
+  },
+  {
+   "Number": 8,
+   "Value": 14
+  },
+  {
+   "Number": 9,
+   "Value": 18
+  },
+  {
+   "Number": 10,
+   "Value": 20
+  },
+  {
+   "Number": 11,
+   "Value": 20
+  },
+  {
+   "Number": 12,
+   "Value": 22
+  },
+  {
+   "Number": 13,
+   "Value": 32
+  },
+  {
+   "Number": 14,
+   "Value": 20
+  },
+  {
+   "Number": 15,
+   "Value": 25
+  },
+  {
+   "Number": 16,
+   "Value": 23
+  },
+  {
+   "Number": 17,
+   "Value": 21
+  },
+  {
+   "Number": 18,
+   "Value": 24
+  },
+  {
+   "Number": 19,
+   "Value": 23
+  },
+  {
+   "Number": 20,
+   "Value": 26
+  },
+  {
+   "Number": 21,
+   "Value": 24
+  },
+  {
+   "Number": 22,
+   "Value": 23
+  },
+  {
+   "Number": 23,
+   "Value": 20
+  },
+  {
+   "Number": 24,
+   "Value": 24
+  },
+  {
+   "Number": 25,
+   "Value": 19
+  },
+  {
+   "Number": 26,
+   "Value": 18
+  },
+  {
+   "Number": 27,
+   "Value": 23
+  },
+  {
+   "Number": 28,
+   "Value": 21
+  },
+  {
+   "Number": 29,
+   "Value": 24
+  },
+  {
+   "Number": 30,
+   "Value": 22
+  },
+  {
+   "Number": 31,
+   "Value": 27
+  },
+  {
+   "Number": 32,
+   "Value": 22
+  },
+  {
+   "Number": 33,
+   "Value": 21
+  },
+  {
+   "Number": 34,
+   "Value": 24
+  },
+  {
+   "Number": 35,
+   "Value": 22
+  }
+ ],
+ "AdditionalAll": null,
+ "Additional1M": null,
+ "Additional6M": null,
+ "Additional12M": null,
+ "MostFrequentPairs": [
+  {
+   "Numbers": [
+    6,
+    26
+   ],
+   "Frequency": 52,
+   "DaysAgo": 14,
+   "LastDrawn": "2026-08-19T00:00:00"
+  },
+  {
+   "Numbers": [
+    13,
+    22
+   ],
+   "Frequency": 50,
+   "DaysAgo": 5,
+   "LastDrawn": "2026-08-28T00:00:00"
+  },
+  {
+   "Numbers": [
+    24,
+    29
+   ],
+   "Frequency": 50,
+   "DaysAgo": 26,
+   "LastDrawn": "2026-08-07T00:00:00"
+  },
+  {
+   "Numbers": [
+    8,
+    30
+   ],
+   "Frequency": 49,
+   "DaysAgo": 194,
+   "LastDrawn": "2026-02-20T00:00:00"
+  },
+  {
+   "Numbers": [
+    5,
+    15
+   ],
+   "Frequency": 49,
+   "DaysAgo": 73,
+   "LastDrawn": "2026-06-21T00:00:00"
+  }
+ ],
+ "LeastFrequentPairs": [
+  {
+   "Numbers": [
+    10,
+    27
+   ],
+   "Frequency": 21,
+   "DaysAgo": 112,
+   "LastDrawn": "2026-05-13T00:00:00"
+  },
+  {
+   "Numbers": [
+    4,
+    10
+   ],
+   "Frequency": 21,
+   "DaysAgo": 68,
+   "LastDrawn": "2026-06-26T00:00:00"
+  },
+  {
+   "Numbers": [
+    10,
+    32
+   ],
+   "Frequency": 21,
+   "DaysAgo": 129,
+   "LastDrawn": "2026-04-26T00:00:00"
+  },
+  {
+   "Numbers": [
+    22,
+    32
+   ],
+   "Frequency": 21,
+   "DaysAgo": 313,
+   "LastDrawn": "2025-10-24T00:00:00"
+  },
+  {
+   "Numbers": [
+    18,
+    31
+   ],
+   "Frequency": 22,
+   "DaysAgo": 364,
+   "LastDrawn": "2025-09-03T00:00:00"
+  }
+ ],
+ "MostFrequentTrios": [
+  {
+   "Numbers": [
+    14,
+    26,
+    30
+   ],
+   "Frequency": 12,
+   "DaysAgo": 84,
+   "LastDrawn": "2026-06-10T00:00:00"
+  },
+  {
+   "Numbers": [
+    3,
+    30,
+    31
+   ],
+   "Frequency": 11,
+   "DaysAgo": 1162,
+   "LastDrawn": "2023-06-28T00:00:00"
+  },
+  {
+   "Numbers": [
+    5,
+    14,
+    15
+   ],
+   "Frequency": 11,
+   "DaysAgo": 581,
+   "LastDrawn": "2025-01-29T00:00:00"
+  },
+  {
+   "Numbers": [
+    4,
+    20,
+    25
+   ],
+   "Frequency": 10,
+   "DaysAgo": 56,
+   "LastDrawn": "2026-07-08T00:00:00"
+  },
+  {
+   "Numbers": [
+    14,
+    24,
+    29
+   ],
+   "Frequency": 10,
+   "DaysAgo": 208,
+   "LastDrawn": "2026-02-06T00:00:00"
+  }
+ ],
+ "LeastFrequentTrios": [
+  {
+   "Numbers": [
+    13,
+    16,
+    19
+   ],
+   "Frequency": 1,
+   "DaysAgo": 8725,
+   "LastDrawn": "2002-10-13T00:00:00"
+  },
+  {
+   "Numbers": [
+    17,
+    24,
+    34
+   ],
+   "Frequency": 1,
+   "DaysAgo": 8690,
+   "LastDrawn": "2002-11-17T00:00:00"
+  },
+  {
+   "Numbers": [
+    10,
+    23,
+    33
+   ],
+   "Frequency": 1,
+   "DaysAgo": 8669,
+   "LastDrawn": "2002-12-08T00:00:00"
+  },
+  {
+   "Numbers": [
+    1,
+    7,
+    20
+   ],
+   "Frequency": 1,
+   "DaysAgo": 8641,
+   "LastDrawn": "2003-01-05T00:00:00"
+  },
+  {
+   "Numbers": [
+    2,
+    22,
+    30
+   ],
+   "Frequency": 1,
+   "DaysAgo": 8620,
+   "LastDrawn": "2003-01-26T00:00:00"
+  }
+ ],
+ "LongestNotDrawn": [
+  {
+   "Numbers": [
+    14
+   ],
+   "Frequency": 0,
+   "DaysAgo": 80,
+   "LastDrawn": "2026-06-14T00:00:00"
+  },
+  {
+   "Numbers": [
+    32
+   ],
+   "Frequency": 0,
+   "DaysAgo": 77,
+   "LastDrawn": "2026-06-17T00:00:00"
+  },
+  {
+   "Numbers": [
+    27
+   ],
+   "Frequency": 0,
+   "DaysAgo": 63,
+   "LastDrawn": "2026-07-01T00:00:00"
+  },
+  {
+   "Numbers": [
+    8
+   ],
+   "Frequency": 0,
+   "DaysAgo": 54,
+   "LastDrawn": "2026-07-10T00:00:00"
+  },
+  {
+   "Numbers": [
+    9
+   ],
+   "Frequency": 0,
+   "DaysAgo": 52,
+   "LastDrawn": "2026-07-12T00:00:00"
+  }
+ ],
+ "GraphPoints6M": [
+  {
+   "Datum": "04. 03. 2026",
+   "Jackpot": 35023.02,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "06. 03. 2026",
+   "Jackpot": 53083.16,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "08. 03. 2026",
+   "Jackpot": 75838.02,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "11. 03. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 117064.43,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "13. 03. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 21780.2,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "15. 03. 2026",
+   "Jackpot": 20511.64,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "18. 03. 2026",
+   "Jackpot": 42577.51,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "20. 03. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 65206.38,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "22. 03. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 20000.0,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "25. 03. 2026",
+   "Jackpot": 20382.89,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "27. 03. 2026",
+   "Jackpot": 39863.8,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "29. 03. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 63378.32,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "01. 04. 2026",
+   "Jackpot": 20842.3,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "05. 04. 2026",
+   "Jackpot": 43313.23,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "08. 04. 2026",
+   "Jackpot": 70478.74,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "10. 04. 2026",
+   "Jackpot": 99658.9,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "12. 04. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 135792.79,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "15. 04. 2026",
+   "Jackpot": 20753.88,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "17. 04. 2026",
+   "Jackpot": 39844.75,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "19. 04. 2026",
+   "Jackpot": 61330.78,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "22. 04. 2026",
+   "Jackpot": 89963.96,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "24. 04. 2026",
+   "Jackpot": 120342.41,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "26. 04. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 157223.59,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "29. 04. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "01. 05. 2026",
+   "Jackpot": 34694.63,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "03. 05. 2026",
+   "Jackpot": 54833.41,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "06. 05. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 80602.79,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "08. 05. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "10. 05. 2026",
+   "Jackpot": 35110.66,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "13. 05. 2026",
+   "Jackpot": 59245.14,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "15. 05. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 84097.93,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "17. 05. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "20. 05. 2026",
+   "Jackpot": 38791.11,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "22. 05. 2026",
+   "Jackpot": 57469.68,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "24. 05. 2026",
+   "Jackpot": 79547.68,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "27. 05. 2026",
+   "Jackpot": 109193.29,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "29. 05. 2026",
+   "Jackpot": 141867.57,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "31. 05. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 89491.66,
+   "PocetVyhercov": 2
+  },
+  {
+   "Datum": "03. 06. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "05. 06. 2026",
+   "Jackpot": 38212.52,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "07. 06. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 59111.72,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "10. 06. 2026",
+   "Jackpot": 21355.35,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "12. 06. 2026",
+   "Jackpot": 41501.07,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "14. 06. 2026",
+   "Jackpot": 64326.58,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "17. 06. 2026",
+   "Jackpot": 94785.72,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "19. 06. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 126059.08,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "21. 06. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 20000.0,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "24. 06. 2026",
+   "Jackpot": 20544.09,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "26. 06. 2026",
+   "Jackpot": 38985.72,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "28. 06. 2026",
+   "Jackpot": 59146.17,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "01. 07. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 85847.11,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "03. 07. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 20000.0,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "05. 07. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "08. 07. 2026",
+   "Jackpot": 40543.85,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "10. 07. 2026",
+   "Jackpot": 60454.01,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "12. 07. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 42054.43,
+   "PocetVyhercov": 2
+  },
+  {
+   "Datum": "15. 07. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "17. 07. 2026",
+   "Jackpot": 35634.9,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "19. 07. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 55622.3,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "22. 07. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 20000.0,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "24. 07. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 20000.0,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "26. 07. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "29. 07. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 35436.9,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "31. 07. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "02. 08. 2026",
+   "Jackpot": 32120.74,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "05. 08. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 52615.23,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "07. 08. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "09. 08. 2026",
+   "Jackpot": 33212.2,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "12. 08. 2026",
+   "Jackpot": 56176.42,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "14. 08. 2026",
+   "Jackpot": 80276.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "16. 08. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 107965.54,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "19. 08. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "21. 08. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 37924.58,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "23. 08. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "26. 08. 2026",
+   "Jackpot": 38023.96,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "28. 08. 2026",
+   "Jackpot": 58270.07,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "30. 08. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 81089.14,
+   "PocetVyhercov": 1
+  }
+ ],
+ "GraphPoints12M": [
+  {
+   "Datum": "03. 09. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 58341.62,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "05. 09. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "07. 09. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 36211.42,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "10. 09. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 7140.91,
+   "PocetVyhercov": 3
+  },
+  {
+   "Datum": "12. 09. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "14. 09. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 18348.29,
+   "PocetVyhercov": 2
+  },
+  {
+   "Datum": "17. 09. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "19. 09. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 37117.0,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "21. 09. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "24. 09. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 19452.4,
+   "PocetVyhercov": 2
+  },
+  {
+   "Datum": "26. 09. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 20000.0,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "28. 09. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "01. 10. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 38158.24,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "03. 10. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "05. 10. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 35503.74,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "08. 10. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "10. 10. 2025",
+   "Jackpot": 34751.34,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "12. 10. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 53923.84,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "15. 10. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "17. 10. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 34454.22,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "19. 10. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 6666.66,
+   "PocetVyhercov": 3
+  },
+  {
+   "Datum": "22. 10. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 20000.0,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "24. 10. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "26. 10. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 32350.94,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "29. 10. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "31. 10. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 32945.84,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "02. 11. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "05. 11. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 34060.5,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "07. 11. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "09. 11. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 33318.98,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "12. 11. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "14. 11. 2025",
+   "Jackpot": 36041.62,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "16. 11. 2025",
+   "Jackpot": 57476.54,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "19. 11. 2025",
+   "Jackpot": 83747.94,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "21. 11. 2025",
+   "Jackpot": 113567.06,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "23. 11. 2025",
+   "Jackpot": 149242.1,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "26. 11. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 194586.4,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "28. 11. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 20000.0,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "30. 11. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 20000.0,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "03. 12. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 20909.54,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "05. 12. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "07. 12. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 37909.48,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "10. 12. 2025",
+   "Jackpot": 21595.16,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "12. 12. 2025",
+   "Jackpot": 41196.68,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "14. 12. 2025",
+   "Jackpot": 61937.78,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "17. 12. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 89483.54,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "19. 12. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "21. 12. 2025",
+   "Jackpot": 35586.36,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "23. 12. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 56028.42,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "26. 12. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "28. 12. 2025",
+   "Jackpot": 26270.68,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "31. 12. 2025",
+   "Jackpot": 20000.0,
+   "Vyhra": 51673.98,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "02. 01. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "04. 01. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 31054.66,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "07. 01. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "09. 01. 2026",
+   "Jackpot": 33941.48,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "11. 01. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 26303.51,
+   "PocetVyhercov": 2
+  },
+  {
+   "Datum": "14. 01. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "16. 01. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 35035.48,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "18. 01. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "21. 01. 2026",
+   "Jackpot": 36872.2,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "23. 01. 2026",
+   "Jackpot": 56562.32,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "25. 01. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 80656.74,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "28. 01. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 20000.0,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "30. 01. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "01. 02. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 35256.16,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "04. 02. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "06. 02. 2026",
+   "Jackpot": 33614.24,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "08. 02. 2026",
+   "Jackpot": 52968.76,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "11. 02. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 78736.0,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "13. 02. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 20000.0,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "15. 02. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "18. 02. 2026",
+   "Jackpot": 35913.6,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "20. 02. 2026",
+   "Jackpot": 54910.8,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "22. 02. 2026",
+   "Jackpot": 77769.8,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "25. 02. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 53332.15,
+   "PocetVyhercov": 2
+  },
+  {
+   "Datum": "27. 02. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 20000.0,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "01. 03. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "04. 03. 2026",
+   "Jackpot": 35023.02,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "06. 03. 2026",
+   "Jackpot": 53083.16,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "08. 03. 2026",
+   "Jackpot": 75838.02,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "11. 03. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 117064.43,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "13. 03. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 21780.2,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "15. 03. 2026",
+   "Jackpot": 20511.64,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "18. 03. 2026",
+   "Jackpot": 42577.51,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "20. 03. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 65206.38,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "22. 03. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 20000.0,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "25. 03. 2026",
+   "Jackpot": 20382.89,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "27. 03. 2026",
+   "Jackpot": 39863.8,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "29. 03. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 63378.32,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "01. 04. 2026",
+   "Jackpot": 20842.3,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "05. 04. 2026",
+   "Jackpot": 43313.23,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "08. 04. 2026",
+   "Jackpot": 70478.74,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "10. 04. 2026",
+   "Jackpot": 99658.9,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "12. 04. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 135792.79,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "15. 04. 2026",
+   "Jackpot": 20753.88,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "17. 04. 2026",
+   "Jackpot": 39844.75,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "19. 04. 2026",
+   "Jackpot": 61330.78,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "22. 04. 2026",
+   "Jackpot": 89963.96,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "24. 04. 2026",
+   "Jackpot": 120342.41,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "26. 04. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 157223.59,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "29. 04. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "01. 05. 2026",
+   "Jackpot": 34694.63,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "03. 05. 2026",
+   "Jackpot": 54833.41,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "06. 05. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 80602.79,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "08. 05. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "10. 05. 2026",
+   "Jackpot": 35110.66,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "13. 05. 2026",
+   "Jackpot": 59245.14,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "15. 05. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 84097.93,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "17. 05. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "20. 05. 2026",
+   "Jackpot": 38791.11,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "22. 05. 2026",
+   "Jackpot": 57469.68,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "24. 05. 2026",
+   "Jackpot": 79547.68,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "27. 05. 2026",
+   "Jackpot": 109193.29,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "29. 05. 2026",
+   "Jackpot": 141867.57,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "31. 05. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 89491.66,
+   "PocetVyhercov": 2
+  },
+  {
+   "Datum": "03. 06. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "05. 06. 2026",
+   "Jackpot": 38212.52,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "07. 06. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 59111.72,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "10. 06. 2026",
+   "Jackpot": 21355.35,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "12. 06. 2026",
+   "Jackpot": 41501.07,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "14. 06. 2026",
+   "Jackpot": 64326.58,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "17. 06. 2026",
+   "Jackpot": 94785.72,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "19. 06. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 126059.08,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "21. 06. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 20000.0,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "24. 06. 2026",
+   "Jackpot": 20544.09,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "26. 06. 2026",
+   "Jackpot": 38985.72,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "28. 06. 2026",
+   "Jackpot": 59146.17,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "01. 07. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 85847.11,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "03. 07. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 20000.0,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "05. 07. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "08. 07. 2026",
+   "Jackpot": 40543.85,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "10. 07. 2026",
+   "Jackpot": 60454.01,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "12. 07. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 42054.43,
+   "PocetVyhercov": 2
+  },
+  {
+   "Datum": "15. 07. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "17. 07. 2026",
+   "Jackpot": 35634.9,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "19. 07. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 55622.3,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "22. 07. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 20000.0,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "24. 07. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 20000.0,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "26. 07. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "29. 07. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 35436.9,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "31. 07. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "02. 08. 2026",
+   "Jackpot": 32120.74,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "05. 08. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 52615.23,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "07. 08. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "09. 08. 2026",
+   "Jackpot": 33212.2,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "12. 08. 2026",
+   "Jackpot": 56176.42,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "14. 08. 2026",
+   "Jackpot": 80276.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "16. 08. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 107965.54,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "19. 08. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "21. 08. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 37924.58,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "23. 08. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "26. 08. 2026",
+   "Jackpot": 38023.96,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "28. 08. 2026",
+   "Jackpot": 58270.07,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "30. 08. 2026",
+   "Jackpot": 20000.0,
+   "Vyhra": 81089.14,
+   "PocetVyhercov": 1
+  }
+ ],
+ "GraphPoints6MJoker": [
+  {
+   "Datum": "04. 03. 2026",
+   "Jackpot": 57197.45,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "06. 03. 2026",
+   "Jackpot": 65769.45,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "08. 03. 2026",
+   "Jackpot": 79583.15,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "11. 03. 2026",
+   "Jackpot": 96906.05,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "13. 03. 2026",
+   "Jackpot": 115577.75,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "15. 03. 2026",
+   "Jackpot": 134442.95,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "18. 03. 2026",
+   "Jackpot": 147848.45,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "18. 03. 2026",
+   "Jackpot": 147848.45,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "20. 03. 2026",
+   "Jackpot": 162891.95,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "22. 03. 2026",
+   "Jackpot": 182960.45,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "25. 03. 2026",
+   "Jackpot": 200786.15,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "27. 03. 2026",
+   "Jackpot": 218391.95,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "29. 03. 2026",
+   "Jackpot": 232778.15,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "01. 04. 2026",
+   "Jackpot": 247483.25,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "05. 04. 2026",
+   "Jackpot": 271210.25,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "08. 04. 2026",
+   "Jackpot": 293513.75,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "10. 04. 2026",
+   "Jackpot": 316239.35,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "12. 04. 2026",
+   "Jackpot": 6600.0,
+   "Vyhra": 335849.75,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "15. 04. 2026",
+   "Jackpot": 15424.8,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "17. 04. 2026",
+   "Jackpot": 31954.5,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "19. 04. 2026",
+   "Jackpot": 46622.1,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "22. 04. 2026",
+   "Jackpot": 65542.8,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "24. 04. 2026",
+   "Jackpot": 76987.8,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "26. 04. 2026",
+   "Jackpot": 94772.7,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "29. 04. 2026",
+   "Jackpot": 109727.4,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "01. 05. 2026",
+   "Jackpot": 6600.0,
+   "Vyhra": 124916.7,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "03. 05. 2026",
+   "Jackpot": 16157.4,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "06. 05. 2026",
+   "Jackpot": 35591.4,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "08. 05. 2026",
+   "Jackpot": 48142.8,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "10. 05. 2026",
+   "Jackpot": 65168.4,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "13. 05. 2026",
+   "Jackpot": 84524.4,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "15. 05. 2026",
+   "Jackpot": 97273.8,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "17. 05. 2026",
+   "Jackpot": 110087.1,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "20. 05. 2026",
+   "Jackpot": 130848.9,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "22. 05. 2026",
+   "Jackpot": 144546.6,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "24. 05. 2026",
+   "Jackpot": 155290.5,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "27. 05. 2026",
+   "Jackpot": 174201.9,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "29. 05. 2026",
+   "Jackpot": 194012.4,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "31. 05. 2026",
+   "Jackpot": 207791.7,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "03. 06. 2026",
+   "Jackpot": 223773.3,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "05. 06. 2026",
+   "Jackpot": 234753.6,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "07. 06. 2026",
+   "Jackpot": 246346.8,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "10. 06. 2026",
+   "Jackpot": 262429.5,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "12. 06. 2026",
+   "Jackpot": 281188.5,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "14. 06. 2026",
+   "Jackpot": 290649.9,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "17. 06. 2026",
+   "Jackpot": 313578.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "19. 06. 2026",
+   "Jackpot": 327577.8,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "21. 06. 2026",
+   "Jackpot": 345654.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "24. 06. 2026",
+   "Jackpot": 368088.9,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "26. 06. 2026",
+   "Jackpot": 384509.7,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "28. 06. 2026",
+   "Jackpot": 403008.6,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "01. 07. 2026",
+   "Jackpot": 425781.9,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "03. 07. 2026",
+   "Jackpot": 446435.4,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "05. 07. 2026",
+   "Jackpot": 456894.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "08. 07. 2026",
+   "Jackpot": 6600.0,
+   "Vyhra": 477840.9,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "10. 07. 2026",
+   "Jackpot": 16844.4,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "12. 07. 2026",
+   "Jackpot": 6600.0,
+   "Vyhra": 26730.0,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "15. 07. 2026",
+   "Jackpot": 9720.6,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "17. 07. 2026",
+   "Jackpot": 21339.6,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "19. 07. 2026",
+   "Jackpot": 37674.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "22. 07. 2026",
+   "Jackpot": 51443.4,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "24. 07. 2026",
+   "Jackpot": 68720.1,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "26. 07. 2026",
+   "Jackpot": 84286.5,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "29. 07. 2026",
+   "Jackpot": 100874.1,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "31. 07. 2026",
+   "Jackpot": 116768.1,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "02. 08. 2026",
+   "Jackpot": 133992.6,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "05. 08. 2026",
+   "Jackpot": 149656.5,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "07. 08. 2026",
+   "Jackpot": 165177.6,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "09. 08. 2026",
+   "Jackpot": 177405.9,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "12. 08. 2026",
+   "Jackpot": 198741.9,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "14. 08. 2026",
+   "Jackpot": 208635.6,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "16. 08. 2026",
+   "Jackpot": 228418.8,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "19. 08. 2026",
+   "Jackpot": 249236.1,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "21. 08. 2026",
+   "Jackpot": 263971.5,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "23. 08. 2026",
+   "Jackpot": 277063.5,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "26. 08. 2026",
+   "Jackpot": 292747.5,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "28. 08. 2026",
+   "Jackpot": 310960.5,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "30. 08. 2026",
+   "Jackpot": 325664.4,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  }
+ ],
+ "GraphPoints12MJoker": [
+  {
+   "Datum": "03. 09. 2025",
+   "Jackpot": 155657.9,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "05. 09. 2025",
+   "Jackpot": 169569.45,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "07. 09. 2025",
+   "Jackpot": 181165.95,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "10. 09. 2025",
+   "Jackpot": 6600.0,
+   "Vyhra": 195262.1,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "12. 09. 2025",
+   "Jackpot": 13252.55,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "14. 09. 2025",
+   "Jackpot": 25828.4,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "17. 09. 2025",
+   "Jackpot": 41473.6,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "19. 09. 2025",
+   "Jackpot": 57747.55,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "21. 09. 2025",
+   "Jackpot": 74676.15,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "24. 09. 2025",
+   "Jackpot": 6600.0,
+   "Vyhra": 92084.6,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "26. 09. 2025",
+   "Jackpot": 14532.7,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "28. 09. 2025",
+   "Jackpot": 29177.5,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "01. 10. 2025",
+   "Jackpot": 45381.6,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "03. 10. 2025",
+   "Jackpot": 49582.25,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "05. 10. 2025",
+   "Jackpot": 64101.9,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "08. 10. 2025",
+   "Jackpot": 79801.5,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "10. 10. 2025",
+   "Jackpot": 92435.6,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "12. 10. 2025",
+   "Jackpot": 109098.15,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "15. 10. 2025",
+   "Jackpot": 124586.95,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "17. 10. 2025",
+   "Jackpot": 136746.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "19. 10. 2025",
+   "Jackpot": 148776.4,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "22. 10. 2025",
+   "Jackpot": 160227.65,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "24. 10. 2025",
+   "Jackpot": 171103.45,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "26. 10. 2025",
+   "Jackpot": 185878.95,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "29. 10. 2025",
+   "Jackpot": 198669.75,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "31. 10. 2025",
+   "Jackpot": 212937.95,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "02. 11. 2025",
+   "Jackpot": 226913.65,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "05. 11. 2025",
+   "Jackpot": 241922.85,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "07. 11. 2025",
+   "Jackpot": 253083.8,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "09. 11. 2025",
+   "Jackpot": 269421.65,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "12. 11. 2025",
+   "Jackpot": 287968.95,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "14. 11. 2025",
+   "Jackpot": 304449.3,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "16. 11. 2025",
+   "Jackpot": 314539.25,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "19. 11. 2025",
+   "Jackpot": 324244.85,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "21. 11. 2025",
+   "Jackpot": 340361.1,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "23. 11. 2025",
+   "Jackpot": 362893.45,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "26. 11. 2025",
+   "Jackpot": 384366.8,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "28. 11. 2025",
+   "Jackpot": 399664.1,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "30. 11. 2025",
+   "Jackpot": 411489.9,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "03. 12. 2025",
+   "Jackpot": 424222.6,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "05. 12. 2025",
+   "Jackpot": 434108.2,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "07. 12. 2025",
+   "Jackpot": 454294.4,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "10. 12. 2025",
+   "Jackpot": 473836.9,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "12. 12. 2025",
+   "Jackpot": 6600.0,
+   "Vyhra": 483873.85,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "14. 12. 2025",
+   "Jackpot": 10582.85,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "17. 12. 2025",
+   "Jackpot": 6600.0,
+   "Vyhra": 19962.5,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "19. 12. 2025",
+   "Jackpot": 16081.15,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "21. 12. 2025",
+   "Jackpot": 32543.15,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "23. 12. 2025",
+   "Jackpot": 48478.25,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "26. 12. 2025",
+   "Jackpot": 56874.2,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "28. 12. 2025",
+   "Jackpot": 66303.75,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "31. 12. 2025",
+   "Jackpot": 84155.85,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "02. 01. 2026",
+   "Jackpot": 97886.35,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "04. 01. 2026",
+   "Jackpot": 109910.85,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "07. 01. 2026",
+   "Jackpot": 123209.55,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "09. 01. 2026",
+   "Jackpot": 138006.75,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "11. 01. 2026",
+   "Jackpot": 146066.85,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "14. 01. 2026",
+   "Jackpot": 160522.15,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "16. 01. 2026",
+   "Jackpot": 166917.35,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "18. 01. 2026",
+   "Jackpot": 179431.2,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "21. 01. 2026",
+   "Jackpot": 197834.05,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "23. 01. 2026",
+   "Jackpot": 211205.55,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "25. 01. 2026",
+   "Jackpot": 223426.25,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "28. 01. 2026",
+   "Jackpot": 236786.25,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "30. 01. 2026",
+   "Jackpot": 253473.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "01. 02. 2026",
+   "Jackpot": 6600.0,
+   "Vyhra": 267870.55,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "04. 02. 2026",
+   "Jackpot": 10759.8,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "06. 02. 2026",
+   "Jackpot": 25915.2,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "08. 02. 2026",
+   "Jackpot": 37368.5,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "11. 02. 2026",
+   "Jackpot": 50483.6,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "13. 02. 2026",
+   "Jackpot": 60555.65,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "15. 02. 2026",
+   "Jackpot": 72274.85,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "18. 02. 2026",
+   "Jackpot": 86102.05,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "20. 02. 2026",
+   "Jackpot": 6600.0,
+   "Vyhra": 94909.5,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "22. 02. 2026",
+   "Jackpot": 14678.35,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "25. 02. 2026",
+   "Jackpot": 23571.5,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "27. 02. 2026",
+   "Jackpot": 38502.3,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "01. 03. 2026",
+   "Jackpot": 47985.6,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "04. 03. 2026",
+   "Jackpot": 57197.45,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "06. 03. 2026",
+   "Jackpot": 65769.45,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "08. 03. 2026",
+   "Jackpot": 79583.15,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "11. 03. 2026",
+   "Jackpot": 96906.05,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "13. 03. 2026",
+   "Jackpot": 115577.75,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "15. 03. 2026",
+   "Jackpot": 134442.95,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "18. 03. 2026",
+   "Jackpot": 147848.45,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "18. 03. 2026",
+   "Jackpot": 147848.45,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "20. 03. 2026",
+   "Jackpot": 162891.95,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "22. 03. 2026",
+   "Jackpot": 182960.45,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "25. 03. 2026",
+   "Jackpot": 200786.15,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "27. 03. 2026",
+   "Jackpot": 218391.95,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "29. 03. 2026",
+   "Jackpot": 232778.15,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "01. 04. 2026",
+   "Jackpot": 247483.25,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "05. 04. 2026",
+   "Jackpot": 271210.25,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "08. 04. 2026",
+   "Jackpot": 293513.75,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "10. 04. 2026",
+   "Jackpot": 316239.35,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "12. 04. 2026",
+   "Jackpot": 6600.0,
+   "Vyhra": 335849.75,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "15. 04. 2026",
+   "Jackpot": 15424.8,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "17. 04. 2026",
+   "Jackpot": 31954.5,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "19. 04. 2026",
+   "Jackpot": 46622.1,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "22. 04. 2026",
+   "Jackpot": 65542.8,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "24. 04. 2026",
+   "Jackpot": 76987.8,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "26. 04. 2026",
+   "Jackpot": 94772.7,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "29. 04. 2026",
+   "Jackpot": 109727.4,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "01. 05. 2026",
+   "Jackpot": 6600.0,
+   "Vyhra": 124916.7,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "03. 05. 2026",
+   "Jackpot": 16157.4,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "06. 05. 2026",
+   "Jackpot": 35591.4,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "08. 05. 2026",
+   "Jackpot": 48142.8,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "10. 05. 2026",
+   "Jackpot": 65168.4,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "13. 05. 2026",
+   "Jackpot": 84524.4,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "15. 05. 2026",
+   "Jackpot": 97273.8,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "17. 05. 2026",
+   "Jackpot": 110087.1,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "20. 05. 2026",
+   "Jackpot": 130848.9,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "22. 05. 2026",
+   "Jackpot": 144546.6,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "24. 05. 2026",
+   "Jackpot": 155290.5,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "27. 05. 2026",
+   "Jackpot": 174201.9,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "29. 05. 2026",
+   "Jackpot": 194012.4,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "31. 05. 2026",
+   "Jackpot": 207791.7,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "03. 06. 2026",
+   "Jackpot": 223773.3,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "05. 06. 2026",
+   "Jackpot": 234753.6,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "07. 06. 2026",
+   "Jackpot": 246346.8,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "10. 06. 2026",
+   "Jackpot": 262429.5,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "12. 06. 2026",
+   "Jackpot": 281188.5,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "14. 06. 2026",
+   "Jackpot": 290649.9,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "17. 06. 2026",
+   "Jackpot": 313578.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "19. 06. 2026",
+   "Jackpot": 327577.8,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "21. 06. 2026",
+   "Jackpot": 345654.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "24. 06. 2026",
+   "Jackpot": 368088.9,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "26. 06. 2026",
+   "Jackpot": 384509.7,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "28. 06. 2026",
+   "Jackpot": 403008.6,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "01. 07. 2026",
+   "Jackpot": 425781.9,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "03. 07. 2026",
+   "Jackpot": 446435.4,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "05. 07. 2026",
+   "Jackpot": 456894.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "08. 07. 2026",
+   "Jackpot": 6600.0,
+   "Vyhra": 477840.9,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "10. 07. 2026",
+   "Jackpot": 16844.4,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "12. 07. 2026",
+   "Jackpot": 6600.0,
+   "Vyhra": 26730.0,
+   "PocetVyhercov": 1
+  },
+  {
+   "Datum": "15. 07. 2026",
+   "Jackpot": 9720.6,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "17. 07. 2026",
+   "Jackpot": 21339.6,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "19. 07. 2026",
+   "Jackpot": 37674.0,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "22. 07. 2026",
+   "Jackpot": 51443.4,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "24. 07. 2026",
+   "Jackpot": 68720.1,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "26. 07. 2026",
+   "Jackpot": 84286.5,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "29. 07. 2026",
+   "Jackpot": 100874.1,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "31. 07. 2026",
+   "Jackpot": 116768.1,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "02. 08. 2026",
+   "Jackpot": 133992.6,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "05. 08. 2026",
+   "Jackpot": 149656.5,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "07. 08. 2026",
+   "Jackpot": 165177.6,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "09. 08. 2026",
+   "Jackpot": 177405.9,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "12. 08. 2026",
+   "Jackpot": 198741.9,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "14. 08. 2026",
+   "Jackpot": 208635.6,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "16. 08. 2026",
+   "Jackpot": 228418.8,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "19. 08. 2026",
+   "Jackpot": 249236.1,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "21. 08. 2026",
+   "Jackpot": 263971.5,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "23. 08. 2026",
+   "Jackpot": 277063.5,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "26. 08. 2026",
+   "Jackpot": 292747.5,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "28. 08. 2026",
+   "Jackpot": 310960.5,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  },
+  {
+   "Datum": "30. 08. 2026",
+   "Jackpot": 325664.4,
+   "Vyhra": 0.0,
+   "PocetVyhercov": 0
+  }
+ ]
+}
