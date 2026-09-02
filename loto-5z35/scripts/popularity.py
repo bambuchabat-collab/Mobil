@@ -8,7 +8,7 @@ import json, math
 import numpy as np
 from math import comb
 
-rows = [r for r in json.load(open('data/draws_2021_2026.json')) if r['deposits'] and r['w3']]
+rows = [r for r in json.load(open('data/draws_2014_2026.json')) if r['deposits'] and r['w3']]
 C = comb(35, 5)
 P3 = comb(5, 3) * comb(30, 2) / C
 PRICE = 0.50

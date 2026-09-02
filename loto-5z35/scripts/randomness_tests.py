@@ -6,7 +6,7 @@ Run from a directory containing data/draws_2021_2026.json
 import json, math, collections, random, statistics
 from math import comb
 
-rows = json.load(open('data/draws_2021_2026.json'))
+rows = json.load(open('data/draws_2014_2026.json'))
 N = len(rows)
 C = comb(35, 5)
 P = {k: comb(5, k) * comb(30, 5 - k) / C for k in (3, 4, 5)}
