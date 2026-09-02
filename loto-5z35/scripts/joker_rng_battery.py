@@ -28,8 +28,8 @@ print(f"3. last-2 block (100 cells)     chi2={chi:7.2f} df=99   p={p:.4f}  {verd
 # 4 serial correlation of numeric value
 v=np.array([int(x) for x in J],dtype=float)
 r1=np.corrcoef(v[:-1],v[1:])[0,1]
-t=r1*math.sqrt((n-3)/(1-r1**2)); p=2*(1-X2.cdf(t*t,1))
-print(f"4. lag-1 autocorr of value      r={r1:+.4f}          p={p:.4f}  {verdict(p)}")
+t=r1*math.sqrt((n-3)/(1-r1**2)); p=1-X2.cdf(t*t,1)   # chi2(1) sf IS the two-sided p
+print(f"4. lag-1 autocorr of value      r={r1:+.4f}  t={t:+.2f}  p={p:.4f}  {verdict(p)}")
 
 # 5 digit transition matrix (does digit d follow digit e more often?)
 seq=[int(x) for x in digits]
