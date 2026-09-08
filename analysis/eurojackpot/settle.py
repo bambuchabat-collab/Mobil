@@ -42,6 +42,13 @@ SETTLEMENTS = [
         "tickets": [("Ticket 1", {33, 37, 40, 44, 50}, {6, 11}),
                     ("Ticket 2", {35, 41, 43, 46, 48}, {9, 12})],
     },
+    {
+        "date": "2026-09-04 (Friday, draw 987)",
+        "jackpot": 23_000_000,
+        "draw": ({5, 14, 31, 33, 43}, {3, 4}),
+        "tickets": [("Ticket 1", {32, 39, 41, 46, 49}, {6, 10}),
+                    ("Ticket 2", {34, 38, 45, 47, 48}, {9, 11})],
+    },
 ]
 
 rule = lambda t: print("\n" + "=" * 76 + f"\n{t}\n" + "=" * 76)
@@ -106,20 +113,32 @@ print(f"P(no prize at all in {n} draws)  "
       f"= {(1 - float(p_any_two)) ** n * 100:.2f}%")
 
 
-rule("ON THE 2026-09-01 RESULT SPECIFICALLY")
+rule("ON THE 2026-09-04 RESULT SPECIFICALLY")
 
-print("Ticket 2 landed on 2+0. The minimum paying tiers are 2+1 and 1+2, so a")
-print("single euro number separated it from tier 12 (about EUR 9.30).")
-print("\nThat 'near miss' is worth naming for what it is: 2+0 is simply a losing")
-print("outcome, statistically no closer to winning than 0+0. The sense of having")
-print("almost won is a documented design feature of lottery products, not")
-print("information. P(2+1) was 1 in 49.27 before the draw and is 1 in 49.27")
-print("for the next one, whatever happened tonight.")
+from math import comb
 
-print("\nAlso note ticket 2 held 9 as a EURO number while 9 was drawn as a MAIN")
-print("number. The two pools are separate draws; a number matching in one pool")
-print("has no bearing on the other.")
+prev = SETTLEMENTS[-2]["draw"][0]
+now = SETTLEMENTS[-1]["draw"][0]
+rep = sorted(prev & now)
+p_rep = comb(5, len(rep)) * comb(45, 5 - len(rep)) / comb(50, 5)
 
-print(f"\nThe outcome was the single most likely one: both tickets losing had")
-print(f"probability 93.734091%. Nothing about this draw was surprising, and")
-print(f"nothing about it changes the odds of the next.")
+print(f"Both tickets scored 0+0 - not a single one of the 14 numbers matched.")
+print(f"That is the ordinary case: 93.734091% of the time two tickets return")
+print(f"nothing, and 39.3% of the time a single ticket hits zero main numbers.\n")
+
+print(f"Repeats from the previous draw: {rep} ({len(rep)} of 5)")
+print(f"  P(exactly {len(rep)} repeat) = {p_rep * 100:.2f}%, expected repeats 0.50")
+print(f"\nWorth recording honestly: 43 was one of the numbers I EXCLUDED from")
+print(f"tonight's pool under the 'avoid the last draw's numbers' tie-break -")
+print(f"and it was drawn again. That rule was flagged from the start as resting")
+print(f"on an unestablished effect, and this is what 'no signal' looks like in")
+print(f"practice. One instance is not evidence against it either; it simply")
+print(f"illustrates that the rule does nothing, which is what was predicted.")
+
+high = sorted(n for n in now if n >= 32)
+print(f"\nDrawn main numbers >= 32: {high} ({len(high)} of 5, expected 1.9).")
+print(f"All ten of our numbers sat in 32-50 and neither of the two high numbers")
+print(f"drawn ({', '.join(map(str, high))}) was among them. On 2026-08-28 the same")
+print(f"choice caught three. Both outcomes are variance; the 32-50 criterion was")
+print(f"never about hitting numbers, only about sharing a pari-mutuel tier with")
+print(f"fewer people if a win happens.")
