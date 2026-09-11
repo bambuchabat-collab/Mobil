@@ -25,10 +25,13 @@ STAKE_PER_TICKET = 2.00
 
 # Reference prize levels (observed real payouts; the exact amount for a given
 # draw is pari-mutuel and only known from that draw's own payout table).
+# Levels from draw 988 (2026-09-08) - a real, DATED, complete payout table.
+# The actual amount for any given draw is pari-mutuel and only known from that
+# draw's own table; in particular the 3+0 paid on 2026-08-28 was never verified.
 REFERENCE_PRIZE = {
     (5, 2): None, (5, 1): None, (5, 0): None,
-    (4, 2): 4_324.50, (4, 1): 334.30, (3, 2): 130.20, (4, 0): 129.70,
-    (2, 2): 23.60, (3, 1): 20.70, (3, 0): 19.20, (1, 2): 13.30, (2, 1): 9.30,
+    (4, 2): 3_345.00, (4, 1): 238.90, (3, 2): 94.20, (4, 0): 152.60,
+    (2, 2): 25.30, (3, 1): 17.20, (3, 0): 16.80, (1, 2): 12.80, (2, 1): 9.20,
 }
 
 SETTLEMENTS = [
@@ -64,6 +67,14 @@ SETTLEMENTS = [
         "tickets": [("Field 1", {5, 9, 10, 40, 50}, {3, 11}),
                     ("Field 2", {4, 35, 43, 44, 47}, {6, 8}),
                     ("Field 3", {17, 25, 26, 41, 47}, {5, 10})],
+    },
+    {
+        "date": "2026-09-11 (Friday, draw 989)",
+        "jackpot": 40_000_000,
+        "draw": ({14, 21, 35, 37, 49}, {1, 12}),
+        "tickets": [("Ticket 1", {35, 38, 39, 44, 50}, {6, 11}),
+                    ("Ticket 2", {32, 37, 42, 45, 46}, {8, 12}),
+                    ("Ticket 3", {36, 40, 41, 43, 47}, {5, 10})],
     },
 ]
 
@@ -148,7 +159,28 @@ print(f"          staked on recommended numbers      : "
       f"EUR {by_src.get('recommendation', 0):.2f}")
 
 
-rule("YOUR THREE FIELDS - EXACT ODDS OF THE CONFIGURATION YOU PLAYED")
+rule("ON THE 2026-09-11 RESULT")
+
+print("Ticket 1 took 35            -> 1+0, not a paying tier")
+print("Ticket 2 took 37 and euro 12 -> 1+1, not a paying tier")
+print("Ticket 3 took nothing        -> 0+0")
+print("All three lost. EUR 6.00 gone.")
+print("\n1+1 is the nearest of the three to a prize: one more main number would")
+print("have made 2+1, one more euro would have made 1+2. It is still simply a")
+print("losing outcome - 'one away' is not a tier and carries no information.")
+print(f"\nP(all three tickets lose) = 90.6271% - the ordinary result.")
+
+print("\nJACKPOT STATUS UNRESOLVED. The two sources disagree:")
+print("  lotteryextreme.com : 5+2 had NO winners (so the jackpot rolls up)")
+print("  eurojackpot-numbers.com : next draw 15/09 carries EUR 10m (the reset")
+print("    minimum, which would mean the EUR 40m WAS won)")
+print("The second source also states this draw's jackpot was EUR 10m, which is")
+print("plainly wrong - three sources put it at EUR 40m before the draw. That")
+print("makes its jackpot fields look stale, but I am not resolving it on that")
+print("basis alone. The ticket settlement above does not depend on it.")
+
+
+rule("YOUR THREE FIELDS (2026-09-08) - EXACT ODDS OF THE CONFIGURATION PLAYED")
 
 from itertools import combinations
 from math import comb
@@ -183,7 +215,8 @@ def exact_multi(tickets):
     return Fraction(win, total)
 
 
-played = SETTLEMENTS[-1]["tickets"]
+s0908 = next(s for s in SETTLEMENTS if s["date"].startswith("2026-09-08"))
+played = s0908["tickets"]
 p_played = exact_multi(played)
 
 # best possible 3-ticket layout: 15 distinct mains, 3 disjoint euro pairs
@@ -209,44 +242,3 @@ print(f"{(float(p_opt) - float(p_played)) * 100:.4f} pp - small, but it is the o
 print(f"lever that exists, and it is free to pull.")
 
 
-rule("ON THE 2026-09-08 RESULT")
-
-dm, de = SETTLEMENTS[-1]["draw"]
-print(f"Field 1 took euro 3 only        -> 0+1, not a paying tier")
-print(f"Field 2 and Field 3 took 47     -> 1+0, not a paying tier")
-print(f"All three fields lost. EUR 6.00 gone.")
-print(f"\nP(all three of your fields lose) = "
-      f"{float(1 - p_played) * 100:.4f}% - the ordinary outcome.")
-
-
-rule("TWO COINCIDENCES WORTH DEFUSING")
-
-# 1. same euro pair two draws running
-prev_e = SETTLEMENTS[-2]["draw"][1]
-print(f"1. The euro pair {sorted(de)} was drawn on 2026-09-04 AND on 2026-09-08.")
-print(f"   P(a given draw repeats the previous euro pair) = 1/66 = {100 / 66:.3f}%")
-same_euro = sum(1 for i in range(1, len(ED))
-                if set(ED[i][2]) == set(ED[i - 1][2]))
-print(f"   In the archive it has happened {same_euro} times in {len(ED) - 1} "
-      f"consecutive pairs")
-print(f"   (expected {(len(ED) - 1) / 66:.1f}). Entirely unremarkable.")
-
-# 2. a number appearing in three consecutive draws
-triples = 0
-hits = []
-for i in range(2, n_all):
-    common = set(DRAWS[i][1]) & set(DRAWS[i - 1][1]) & set(DRAWS[i - 2][1])
-    if common:
-        triples += 1
-        hits.append((DRAWS[i][0], sorted(common)))
-print(f"\n2. The number 14 was drawn on 09-01, 09-04 AND 09-08 - three in a row.")
-print(f"   P(one SPECIFIC number does that) = 0.1^3 = 0.1%")
-print(f"   P(ANY of the 50 numbers does it) is ~50x that, and empirically:")
-print(f"   it happened in {triples} of the {n_all - 2} consecutive triples in the")
-print(f"   archive ({triples / (n_all - 2) * 100:.1f}%). The three most recent:")
-for d, c in hits[-3:]:
-    print(f"     {d}: {c}")
-print(f"\n   This is the multiple-comparisons illusion in miniature. Something")
-print(f"   'remarkable' happens every few draws because there are fifty numbers")
-print(f"   and dozens of patterns to notice after the fact. Neither coincidence")
-print(f"   carries any information about 2026-09-11.")
