@@ -9,11 +9,13 @@ Prepis ručne kreslenej schémy OVB do dvoch PDF (tlačeným písmom).
 |---|---|---|
 | `out/OVB-prezentacia.pdf` | 10 slajdov, 16:9 (960 × 540 pt) | prezentácia – titulná, schéma trhu, banky, poisťovne, piliere, fondy + stavebné sporenie, kolobeh peňazí, REKLAMA, legenda skratiek, originálna schéma |
 | `out/OVB-schema-A4.pdf` | 1 strana A4 | presná kópia listu – rovnaké rozloženie, rámčeky a šípky, ale tlačené písmo |
+| `out/OVB-checklist.pdf` | 2 strany A4 | checklist pred podpisom zmluvy (RU + SK formulácie otázok), červené čiary a návyky pri práci |
 
 ## Zdroje / Исходники
 
 - `prezentacia.html` – slajdy (HTML + SVG)
 - `schema-a4.html` – kópia listu (SVG, viewBox 1548 × 2190)
+- `checklist.html` – checklist pred podpisom zmluvy
 - `build.sh` – vygeneruje obe PDF cez Chromium headless
 
 ```bash
