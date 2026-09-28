@@ -1,0 +1,584 @@
+{
+  "updated": "2026-09-28",
+  "eur_czk": 24.35,
+  "platforms": [
+    {
+      "key": "bazar_sk",
+      "name": "bazar.sk",
+      "short": "bazar.sk",
+      "lang": "SK",
+      "currency": "EUR",
+      "url": "https://www.bazar.sk/",
+      "action": "Кнопка «+ Pridať inzerát»",
+      "title_max": null,
+      "text_max": null,
+      "notes": [
+        "Бесплатно.",
+        "Перед первым объявлением сайт просит подтвердить номер телефона и привязать банковский счёт переводом 0,01 €. Это защита от мошенников.",
+        "До 50 фото, каждое до 10 МБ.",
+        "Для картин подходит раздел «Starožitnosti › Obrazy», хотя они новые: там продают картины. Запасной вариант: «Nábytok › Bytové doplnky»."
+      ]
+    },
+    {
+      "key": "willhaben_at",
+      "name": "willhaben.at",
+      "short": "willhaben",
+      "lang": "DE",
+      "currency": "EUR",
+      "url": "https://www.willhaben.at/iad/anzeigenaufgabe",
+      "action": "«Anzeige aufgeben» › Marktplatz",
+      "title_max": null,
+      "text_max": null,
+      "notes": [
+        "Регистрация: имя, e-mail, пароль и SMS-код. Один аккаунт на человека, вести чужой запрещено, поэтому регистрируется сама мама.",
+        "Частное объявление бесплатно, 45 дней. Изделия собственного производства и регулярные продажи willhaben считает коммерческими: для них нужна «Gewerbliche Anzeige», 23,99 € за объявление на 60 дней. Если вещи сделаны своими руками, выбирайте её, иначе объявление могут снять.",
+        "Адрес в Словакии разрешён: в форме указать Slowakei, Galanta.",
+        "PayLivery (оплата и доставка через willhaben) работает только внутри Австрии. Не включайте её, об оплате и доставке договаривайтесь напрямую.",
+        "Телефон, e-mail и ссылки в тексте запрещены. Фото до 6 МБ."
+      ]
+    },
+    {
+      "key": "bazar_cz",
+      "name": "bazar.cz",
+      "short": "bazar.cz",
+      "lang": "CZ",
+      "currency": "CZK",
+      "url": "https://www.bazar.cz/inzeraty/vlozit-inzerat.aspx",
+      "action": "Форма «Vložit inzerát»",
+      "title_max": 100,
+      "text_max": 2000,
+      "notes": [
+        "Бесплатно. E-mail и пароль вводятся прямо в форме, это и есть регистрация.",
+        "Место можно выбрать только в Чехии. Ставьте «Břeclav»: это у словацкой границы. В тексте уже написано, что товар в Галанте.",
+        "Запрещено: телефон, e-mail и ссылки в тексте, «!!!» и «***», водяные знаки, фото, созданные или изменённые ИИ, повторная подача того же товара.",
+        "Цены пересчитаны по курсу ЧНБ на 25.09.2026: 1 € = 24,35 Kč, округлены вверх до сотен.",
+        "Телефон в форме указывается в формате +420. Если словацкий номер не примут, телефон можно не показывать: покупатели напишут через сайт."
+      ]
+    },
+    {
+      "key": "aukro_sk",
+      "name": "aukro.sk",
+      "short": "aukro",
+      "lang": "SK",
+      "currency": "EUR",
+      "url": "https://aukro.sk/",
+      "action": "Кнопка «Predať» (удобнее в приложении Aukro)",
+      "title_max": 70,
+      "text_max": null,
+      "notes": [
+        "Регистрация с e-mail и номером телефона.",
+        "20 объявлений в месяц бесплатно. Комиссия берётся только при продаже: мебель 8,5 %, картины 7,5 % (раздел «Dom a záhrada»). Счёт приходит в начале месяца.",
+        "Формат «Kúp teraz»: фиксированная цена, не аукцион.",
+        "Первое фото должно показывать только товар, без надписей и водяных знаков. Фото до 3 МБ.",
+        "Заголовок до 70 знаков, без «AKCIA», «!!!» и сплошных заглавных.",
+        "С «Platba cez Aukro» объявление видно и на aukro.cz, aukro.at, aukro.de и других сайтах Aukro."
+      ]
+    }
+  ],
+  "items": [
+    {
+      "key": "postel",
+      "folder": "01-postel-180x200",
+      "short_ru": "Кровать 180×200",
+      "kind": "bed",
+      "name_ru": "Кровать 180×200, охотничьи мотивы",
+      "summary_ru": "Кровать из массива, резьба на изголовье и изножье: олени в лесу. Спальное место 180×200 см. Покрытие: восковая пропитка и водный лак. Тумбочки продаются отдельно, 350 € за штуку. Доставку организуем по договорённости.",
+      "photos": 18,
+      "price_eur": 1800,
+      "price_czk": 43900,
+      "bazos": {
+        "id": "194339015",
+        "url": "https://nabytok.bazos.sk/inzerat/194339015/akciadrevena-postel180200-polovnicke-motivy.php",
+        "title": "Drevená posteľ180×200 Poľovnícke motívy"
+      },
+      "platforms": {
+        "bazar_sk": {
+          "title": "Vyrezávaná drevená posteľ 180x200 – poľovnícke motívy",
+          "text": "Drevená posteľ vyrezávaná do masívneho dreva.\nČelo pri hlave aj pri nohách zdobia vyrezávané poľovnícke motívy – jelene v lesnej krajine.\n\n- Rozmer ložnej plochy: 180 x 200 cm\n- Povrchová úprava: vosková impregnácia a vodný lak\n- Nočné stolíky sa predávajú samostatne: 350 € / ks\n- Dovoz po dohode zabezpečím\n- Lokalita: Galanta",
+          "price": "1 800 €",
+          "fields": [
+            [
+              "Kategória",
+              "Nábytok › Postele a matrace › Manželské"
+            ],
+            [
+              "Cena",
+              "1800"
+            ],
+            [
+              "Lokalita",
+              "Galanta"
+            ]
+          ]
+        },
+        "willhaben_at": {
+          "title": "Geschnitztes Massivholzbett 180x200 mit Jagdmotiven",
+          "text": "Holzbett, in Massivholz geschnitzt.\nKopf- und Fußteil sind mit geschnitzten Jagdmotiven verziert: Hirsche in der Waldlandschaft.\n\n- Liegefläche: 180 x 200 cm\n- Oberfläche: Wachsimprägnierung und Wasserlack\n- Passende Nachtkästchen separat erhältlich: 350 € pro Stück\n- Lieferung nach Vereinbarung, auch nach Österreich\n- Standort: Galanta (Slowakei), ca. 50 km östlich von Bratislava",
+          "price": "1 800 €",
+          "fields": [
+            [
+              "Kategorie",
+              "Wohnen / Haushalt / Gastronomie › Schlafzimmer › Betten"
+            ],
+            [
+              "Preis",
+              "1800"
+            ],
+            [
+              "Zustand",
+              "Neu"
+            ],
+            [
+              "Standort",
+              "Slowakei, Galanta"
+            ],
+            [
+              "PayLivery",
+              "aus (nur innerhalb Österreichs)"
+            ]
+          ]
+        },
+        "bazar_cz": {
+          "title": "Vyřezávaná dřevěná postel 180x200 – myslivecké motivy",
+          "text": "Dřevěná postel vyřezávaná do masivního dřeva.\nČelo u hlavy i u nohou zdobí vyřezávané myslivecké motivy – jeleni v lesní krajině.\n\n- Rozměr lůžka: 180 x 200 cm\n- Povrchová úprava: vosková impregnace a vodou ředitelný lak\n- Noční stolky prodávám samostatně: 8 600 Kč (350 €) / ks\n- Zboží se nachází v Galantě (Slovensko), dovoz do ČR po domluvě zajistím\n- Cena: 43 900 Kč (1 800 €)",
+          "price": "43 900 Kč",
+          "fields": [
+            [
+              "Kategorie",
+              "Nábytek › Ložnice › Postele"
+            ],
+            [
+              "Cena",
+              "43900"
+            ],
+            [
+              "PSČ/Město",
+              "Břeclav"
+            ],
+            [
+              "Stav věci",
+              "Nové"
+            ],
+            [
+              "Předání zboží",
+              "Neurčeno"
+            ],
+            [
+              "Platba",
+              "Neurčeno"
+            ]
+          ]
+        },
+        "aukro_sk": {
+          "title": "Vyrezávaná drevená posteľ 180x200 – poľovnícke motívy",
+          "text": "Drevená posteľ vyrezávaná do masívneho dreva.\nČelo pri hlave aj pri nohách zdobia vyrezávané poľovnícke motívy – jelene v lesnej krajine.\n\n- Rozmer ložnej plochy: 180 x 200 cm\n- Povrchová úprava: vosková impregnácia a vodný lak\n- Nočné stolíky sa predávajú samostatne: 350 € / ks\n- Dovoz po dohode zabezpečím\n- Lokalita: Galanta",
+          "price": "1 800 €",
+          "fields": [
+            [
+              "Kategória",
+              "Dom a záhrada › Nábytok › Spálňa › Postele › Manželské postele"
+            ],
+            [
+              "Formát",
+              "Kúp teraz, množstvo 1, 30 dní"
+            ],
+            [
+              "Cena",
+              "1800"
+            ],
+            [
+              "Stav tovaru",
+              "Nové"
+            ],
+            [
+              "Doprava",
+              "osobný odber + dovoz po dohode"
+            ],
+            [
+              "Poplatok pri predaji",
+              "≈ 153,00 € (8,5 %)"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "key": "polovnik",
+      "folder": "02-obraz-polovnik-50x66",
+      "short_ru": "Картина 50×66",
+      "kind": "art",
+      "name_ru": "Картина «Охотник и олень», 50×66",
+      "summary_ru": "Резная картина из массива: охотник с ружьём и олень в лесу. 50×66 см. Покрытие: восковое масло. Отправка наложенным платежом или курьером.",
+      "photos": 3,
+      "price_eur": 195,
+      "price_czk": 4800,
+      "bazos": {
+        "id": "194869758",
+        "url": "https://ostatne.bazos.sk/inzerat/194869758/dreveny-obraz-polovnicke-motivy-5066cm.php",
+        "title": "Drevený obraz Poľovnícke motívy 50×66cm"
+      },
+      "platforms": {
+        "bazar_sk": {
+          "title": "Vyrezávaný drevený obraz 50x66 cm – poľovnícky motív",
+          "text": "Drevený obraz vyrezávaný do masívneho dreva.\nMotív: poľovník s puškou a jeleň v lese.\n\n- Rozmer: 50 x 66 cm\n- Povrchová úprava: voskový olej\n- Pošlem na dobierku alebo kuriérom\n- Lokalita: Galanta",
+          "price": "195 €",
+          "fields": [
+            [
+              "Kategória",
+              "Starožitnosti › Obrazy (alternatíva: Nábytok › Bytové doplnky)"
+            ],
+            [
+              "Cena",
+              "195"
+            ],
+            [
+              "Lokalita",
+              "Galanta"
+            ]
+          ]
+        },
+        "willhaben_at": {
+          "title": "Geschnitztes Holzbild 50x66 cm – Jäger mit Hirsch",
+          "text": "Holzbild, in Massivholz geschnitzt.\nMotiv: Jäger mit Gewehr und Hirsch im Wald.\n\n- Maße: 50 x 66 cm\n- Oberfläche: Wachsöl\n- Versand per Kurier, auch nach Österreich (Versandkosten nach Vereinbarung)\n- Standort: Galanta (Slowakei)",
+          "price": "195 €",
+          "fields": [
+            [
+              "Kategorie",
+              "Wohnen / Haushalt / Gastronomie › Dekoration › Bilder / Bilderrahmen › Bilder"
+            ],
+            [
+              "Preis",
+              "195"
+            ],
+            [
+              "Zustand",
+              "Neu"
+            ],
+            [
+              "Standort",
+              "Slowakei, Galanta"
+            ],
+            [
+              "PayLivery",
+              "aus (nur innerhalb Österreichs)"
+            ]
+          ]
+        },
+        "bazar_cz": {
+          "title": "Vyřezávaný dřevěný obraz 50x66 cm – myslivecký motiv",
+          "text": "Dřevěný obraz vyřezávaný do masivního dřeva.\nMotiv: myslivec s puškou a jelen v lese.\n\n- Rozměr: 50 x 66 cm\n- Povrchová úprava: voskový olej\n- Pošlu na dobírku nebo kurýrem, odesílám ze Slovenska (Galanta)\n- Cena: 4 800 Kč (195 €)",
+          "price": "4 800 Kč",
+          "fields": [
+            [
+              "Kategorie",
+              "Sběratelství › Obrazy › Ostatní (alternativa: Nábytek › Ostatní › Dekorace)"
+            ],
+            [
+              "Cena",
+              "4800"
+            ],
+            [
+              "PSČ/Město",
+              "Břeclav"
+            ],
+            [
+              "Stav věci",
+              "Nové"
+            ],
+            [
+              "Předání zboží",
+              "Zaslání poštou"
+            ],
+            [
+              "Platba",
+              "Dobírka"
+            ]
+          ]
+        },
+        "aukro_sk": {
+          "title": "Vyrezávaný drevený obraz 50x66 cm – poľovnícky motív",
+          "text": "Drevený obraz vyrezávaný do masívneho dreva.\nMotív: poľovník s puškou a jeleň v lese.\n\n- Rozmer: 50 x 66 cm\n- Povrchová úprava: voskový olej\n- Pošlem na dobierku alebo kuriérom\n- Lokalita: Galanta",
+          "price": "195 €",
+          "fields": [
+            [
+              "Kategória",
+              "Dom a záhrada › Zariadenia pre dom a záhradu › Obrazy › Ostatné obrazy"
+            ],
+            [
+              "Formát",
+              "Kúp teraz, množstvo 1, 30 dní"
+            ],
+            [
+              "Cena",
+              "195"
+            ],
+            [
+              "Stav tovaru",
+              "Nové"
+            ],
+            [
+              "Doprava",
+              "kuriér + dobierka"
+            ],
+            [
+              "Poplatok pri predaji",
+              "≈ 14,62 € (7,5 %)"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "key": "jazero",
+      "folder": "03-obraz-jazero-145x45",
+      "short_ru": "Панорама 145×45",
+      "kind": "art",
+      "name_ru": "Панорама «Горное озеро», 145×45",
+      "summary_ru": "Большая резная картина из массива: горное озеро, медведь, лебеди и орёл. 145×45 см, толщина 4 см. Покрытие: восковая пропитка. Отправка наложенным платежом или курьером.",
+      "photos": 7,
+      "price_eur": 345,
+      "price_czk": 8500,
+      "bazos": {
+        "id": "194455649",
+        "url": "https://ostatne.bazos.sk/inzerat/194455649/dreveny-obraz-14545cmhr4cm.php",
+        "title": "Drevený obraz 145×45cmhr.4cm."
+      },
+      "platforms": {
+        "bazar_sk": {
+          "title": "Vyrezávaný drevený obraz 145x45 cm – horská krajina s medveďom",
+          "text": "Veľký drevený obraz vyrezávaný do masívneho dreva.\nMotív: horská krajina s jazerom – medveď, labute a orol.\n\n- Rozmer: 145 x 45 cm, hrúbka 4 cm\n- Povrchová úprava: vosková impregnácia\n- Pošlem na dobierku alebo kuriérom\n- Lokalita: Galanta",
+          "price": "345 €",
+          "fields": [
+            [
+              "Kategória",
+              "Starožitnosti › Obrazy (alternatíva: Nábytok › Bytové doplnky)"
+            ],
+            [
+              "Cena",
+              "345"
+            ],
+            [
+              "Lokalita",
+              "Galanta"
+            ]
+          ]
+        },
+        "willhaben_at": {
+          "title": "Geschnitztes Holzbild 145x45 cm – Bergsee mit Bär",
+          "text": "Großes Holzbild, in Massivholz geschnitzt.\nMotiv: Berglandschaft mit See, Bär, Schwänen und Adler.\n\n- Maße: 145 x 45 cm, Stärke 4 cm\n- Oberfläche: Wachsimprägnierung\n- Versand per Kurier, auch nach Österreich (Versandkosten nach Vereinbarung)\n- Standort: Galanta (Slowakei)",
+          "price": "345 €",
+          "fields": [
+            [
+              "Kategorie",
+              "Wohnen / Haushalt / Gastronomie › Dekoration › Bilder / Bilderrahmen › Bilder"
+            ],
+            [
+              "Preis",
+              "345"
+            ],
+            [
+              "Zustand",
+              "Neu"
+            ],
+            [
+              "Standort",
+              "Slowakei, Galanta"
+            ],
+            [
+              "PayLivery",
+              "aus (nur innerhalb Österreichs)"
+            ]
+          ]
+        },
+        "bazar_cz": {
+          "title": "Vyřezávaný dřevěný obraz 145x45 cm – horská krajina s medvědem",
+          "text": "Velký dřevěný obraz vyřezávaný do masivního dřeva.\nMotiv: horská krajina s jezerem – medvěd, labutě a orel.\n\n- Rozměr: 145 x 45 cm, tloušťka 4 cm\n- Povrchová úprava: vosková impregnace\n- Pošlu na dobírku nebo kurýrem, odesílám ze Slovenska (Galanta)\n- Cena: 8 500 Kč (345 €)",
+          "price": "8 500 Kč",
+          "fields": [
+            [
+              "Kategorie",
+              "Sběratelství › Obrazy › Ostatní (alternativa: Nábytek › Ostatní › Dekorace)"
+            ],
+            [
+              "Cena",
+              "8500"
+            ],
+            [
+              "PSČ/Město",
+              "Břeclav"
+            ],
+            [
+              "Stav věci",
+              "Nové"
+            ],
+            [
+              "Předání zboží",
+              "Zaslání poštou"
+            ],
+            [
+              "Platba",
+              "Dobírka"
+            ]
+          ]
+        },
+        "aukro_sk": {
+          "title": "Vyrezávaný drevený obraz 145x45 cm – horská krajina s medveďom",
+          "text": "Veľký drevený obraz vyrezávaný do masívneho dreva.\nMotív: horská krajina s jazerom – medveď, labute a orol.\n\n- Rozmer: 145 x 45 cm, hrúbka 4 cm\n- Povrchová úprava: vosková impregnácia\n- Pošlem na dobierku alebo kuriérom\n- Lokalita: Galanta",
+          "price": "345 €",
+          "fields": [
+            [
+              "Kategória",
+              "Dom a záhrada › Zariadenia pre dom a záhradu › Obrazy › Ostatné obrazy"
+            ],
+            [
+              "Formát",
+              "Kúp teraz, množstvo 1, 30 dní"
+            ],
+            [
+              "Cena",
+              "345"
+            ],
+            [
+              "Stav tovaru",
+              "Nové"
+            ],
+            [
+              "Doprava",
+              "kuriér + dobierka"
+            ],
+            [
+              "Poplatok pri predaji",
+              "≈ 25,88 € (7,5 %)"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "key": "chata",
+      "folder": "04-obraz-chata-89x62",
+      "short_ru": "Картина 89×62",
+      "kind": "art",
+      "name_ru": "Картина «Домик в лесу», 89×62",
+      "summary_ru": "Резная картина из массива в резной декоративной раме: бревенчатый домик у лесного озера. 89×62 см, толщина 4 см. Покрытие: восковое масло. Отправка наложенным платежом или курьером.",
+      "photos": 6,
+      "price_eur": 280,
+      "price_czk": 6900,
+      "bazos": {
+        "id": "194455323",
+        "url": "https://ostatne.bazos.sk/inzerat/194455323/dreveny-obraz-8962cmhr4cmchata-v-prirode.php",
+        "title": "Drevený obraz 89×62cm.hr.4cm.Chata v prirode"
+      },
+      "platforms": {
+        "bazar_sk": {
+          "title": "Vyrezávaný drevený obraz 89x62 cm – Chata v prírode",
+          "text": "Drevený obraz vyrezávaný do masívneho dreva, vo vyrezávanom ozdobnom ráme.\nMotív: zrubová chata pri lesnom jazere.\n\n- Rozmer: 89 x 62 cm, hrúbka 4 cm\n- Povrchová úprava: voskový olej\n- Pošlem na dobierku alebo kuriérom\n- Lokalita: Galanta",
+          "price": "280 €",
+          "fields": [
+            [
+              "Kategória",
+              "Starožitnosti › Obrazy (alternatíva: Nábytok › Bytové doplnky)"
+            ],
+            [
+              "Cena",
+              "280"
+            ],
+            [
+              "Lokalita",
+              "Galanta"
+            ]
+          ]
+        },
+        "willhaben_at": {
+          "title": "Geschnitztes Holzbild 89x62 cm – Blockhütte am See",
+          "text": "Holzbild, in Massivholz geschnitzt, mit geschnitztem Zierrahmen.\nMotiv: Blockhütte an einem Waldsee.\n\n- Maße: 89 x 62 cm, Stärke 4 cm\n- Oberfläche: Wachsöl\n- Versand per Kurier, auch nach Österreich (Versandkosten nach Vereinbarung)\n- Standort: Galanta (Slowakei)",
+          "price": "280 €",
+          "fields": [
+            [
+              "Kategorie",
+              "Wohnen / Haushalt / Gastronomie › Dekoration › Bilder / Bilderrahmen › Bilder"
+            ],
+            [
+              "Preis",
+              "280"
+            ],
+            [
+              "Zustand",
+              "Neu"
+            ],
+            [
+              "Standort",
+              "Slowakei, Galanta"
+            ],
+            [
+              "PayLivery",
+              "aus (nur innerhalb Österreichs)"
+            ]
+          ]
+        },
+        "bazar_cz": {
+          "title": "Vyřezávaný dřevěný obraz 89x62 cm – Chata v přírodě",
+          "text": "Dřevěný obraz vyřezávaný do masivního dřeva, ve vyřezávaném ozdobném rámu.\nMotiv: srub u lesního jezera.\n\n- Rozměr: 89 x 62 cm, tloušťka 4 cm\n- Povrchová úprava: voskový olej\n- Pošlu na dobírku nebo kurýrem, odesílám ze Slovenska (Galanta)\n- Cena: 6 900 Kč (280 €)",
+          "price": "6 900 Kč",
+          "fields": [
+            [
+              "Kategorie",
+              "Sběratelství › Obrazy › Ostatní (alternativa: Nábytek › Ostatní › Dekorace)"
+            ],
+            [
+              "Cena",
+              "6900"
+            ],
+            [
+              "PSČ/Město",
+              "Břeclav"
+            ],
+            [
+              "Stav věci",
+              "Nové"
+            ],
+            [
+              "Předání zboží",
+              "Zaslání poštou"
+            ],
+            [
+              "Platba",
+              "Dobírka"
+            ]
+          ]
+        },
+        "aukro_sk": {
+          "title": "Vyrezávaný drevený obraz 89x62 cm – Chata v prírode",
+          "text": "Drevený obraz vyrezávaný do masívneho dreva, vo vyrezávanom ozdobnom ráme.\nMotív: zrubová chata pri lesnom jazere.\n\n- Rozmer: 89 x 62 cm, hrúbka 4 cm\n- Povrchová úprava: voskový olej\n- Pošlem na dobierku alebo kuriérom\n- Lokalita: Galanta",
+          "price": "280 €",
+          "fields": [
+            [
+              "Kategória",
+              "Dom a záhrada › Zariadenia pre dom a záhradu › Obrazy › Ostatné obrazy"
+            ],
+            [
+              "Formát",
+              "Kúp teraz, množstvo 1, 30 dní"
+            ],
+            [
+              "Cena",
+              "280"
+            ],
+            [
+              "Stav tovaru",
+              "Nové"
+            ],
+            [
+              "Doprava",
+              "kuriér + dobierka"
+            ],
+            [
+              "Poplatok pri predaji",
+              "≈ 21,00 € (7,5 %)"
+            ]
+          ]
+        }
+      }
+    }
+  ]
+}
