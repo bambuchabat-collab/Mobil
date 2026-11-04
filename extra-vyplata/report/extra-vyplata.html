@@ -1,0 +1,343 @@
+<title>Extra výplata 5.11</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column like a betting-slip insert; balls and slip fields are the only "objects" */
+:root {
+  --bg: #f4f6fa; --surface: #ffffff; --ink: #121726; --muted: #586074; --line: #dde1ea;
+  --accent: #2a78d6; --accent-soft: #e3eefb; --pb: #e8a300; --pb-ink: #241a00;
+  --good: #1d7f47; --warn: #a65f00; --band: rgba(42,120,214,.10);
+  --f-display: "Unbounded", "Onest", system-ui, sans-serif;
+  --f-body: "Onest", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0f121a; --surface: #171b26; --ink: #edf0f6; --muted: #a3aabb; --line: #2a3142;
+  --accent: #3f8de8; --accent-soft: #1b2a40; --pb: #d08f00; --pb-ink: #1a1300;
+  --good: #3fb874; --warn: #e09a3a; --band: rgba(63,141,232,.16); color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0f121a; --surface: #171b26; --ink: #edf0f6; --muted: #a3aabb; --line: #2a3142;
+  --accent: #3f8de8; --accent-soft: #1b2a40; --pb: #d08f00; --pb-ink: #1a1300;
+  --good: #3fb874; --warn: #e09a3a; --band: rgba(63,141,232,.16); color-scheme: dark }
+
+body { background: var(--bg); color: var(--ink); font: 400 16px/1.55 var(--f-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 64px; }
+.wrap { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px; }
+h1, h2 { font-family: var(--f-display); text-wrap: balance; letter-spacing: -.01em; margin: 0; }
+h1 { font-size: clamp(26px, 6vw, 40px); line-height: 1.12; font-weight: 700; }
+h2 { font-size: clamp(19px, 4vw, 23px); line-height: 1.25; font-weight: 500; }
+h3 { font: 600 16px/1.3 var(--f-body); margin: 0; }
+p { margin: 0; max-width: 66ch; }
+section { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.eyebrow { font: 600 12px/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.lede { color: var(--muted); font-size: 15px; }
+.mono, td.num, .num { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+.muted { color: var(--muted); }
+small, .small { font-size: 13.5px; color: var(--muted); }
+a { color: var(--accent); }
+header { display: flex; flex-direction: column; gap: 14px; }
+.deadline { display: flex; flex-wrap: wrap; gap: 8px 18px; font: 500 14px/1.4 var(--f-mono); }
+.deadline b { color: var(--accent); font-weight: 600; }
+
+.verdict { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: grid; gap: 14px; }
+.verdict ol { margin: 0; padding-left: 20px; display: grid; gap: 10px; }
+.verdict li::marker { font-family: var(--f-mono); color: var(--accent); font-weight: 600; }
+
+.ball { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
+  background: var(--accent); color: #fff; font: 600 14px/1 var(--f-mono); flex: none; }
+.ball.pb { background: var(--pb); color: var(--pb-ink); }
+.ball.sm { width: 26px; height: 26px; font-size: 12px; }
+.balls { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.plus { font: 600 15px/1 var(--f-mono); color: var(--muted); padding: 0 2px; }
+
+.slip { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 560px) { .slip { grid-template-columns: minmax(0, 1fr); } }
+.field { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; display: grid; gap: 8px; }
+.field .lbl { display: flex; justify-content: space-between; gap: 8px; font: 500 12px/1.2 var(--f-mono); color: var(--muted); letter-spacing: .04em; }
+.field.formula { border-color: var(--accent); }
+.field.formula .lbl span:first-child { color: var(--accent); font-weight: 600; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+button { font: 600 14px/1 var(--f-body); background: var(--ink); color: var(--bg); border: 0; border-radius: 9px; padding: 11px 15px; cursor: pointer; }
+button.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+button:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.status { font-size: 13.5px; color: var(--good); min-height: 1em; }
+
+.tablebox { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { padding: 9px 12px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { font: 600 11.5px/1.2 var(--f-mono); letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+tr:last-child td { border-bottom: 0; }
+td.num, th.num { text-align: right; }
+tr.hl td { background: var(--accent-soft); }
+.pill { display: inline-block; font: 600 11.5px/1 var(--f-mono); padding: 4px 7px; border-radius: 99px; border: 1px solid currentColor; }
+.pill.good { color: var(--good); } .pill.warn { color: var(--warn); } .pill.flat { color: var(--muted); }
+
+.chart { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 10px 8px; position: relative; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart .cap { padding: 0 6px 8px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 14px; font-size: 13px; color: var(--muted); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; }
+.key { display: inline-flex; align-items: center; gap: 6px; }
+.sw { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--bg); font: 500 12.5px/1.35 var(--f-mono); padding: 7px 9px; border-radius: 7px; white-space: nowrap; transform: translate(-50%, -110%); z-index: 3; }
+.tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+.tabs button { background: transparent; color: var(--muted); border: 1px solid var(--line); padding: 8px 11px; font-size: 13px; }
+.tabs button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+.fact { border-top: 2px solid var(--ink); padding-top: 8px; display: grid; gap: 2px; min-width: 0; }
+.fact .v { font: 600 20px/1.2 var(--f-mono); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.fact .k { font-size: 13.5px; color: var(--muted); }
+
+pre.prompt { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; white-space: pre-wrap; word-break: break-word; font: 400 13.5px/1.55 var(--f-mono); margin: 0; max-height: 440px; overflow: auto; }
+ul.plain { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+details { border: 1px solid var(--line); border-radius: 12px; background: var(--surface); padding: 12px 14px; }
+summary { cursor: pointer; font-weight: 600; }
+details > div { padding-top: 10px; display: grid; gap: 10px; }
+@media (prefers-reduced-motion: no-preference) { .bar { transition: opacity .15s; } }
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">TIPOS · EXTRA VÝPLATA · 6 из 27 + 1 из 7</div>
+  <h1>Тираж 5 ноября 2026: сколько полей брать и что ставить</h1>
+  <div class="deadline"><span>Приём ставок до <b>17:45</b></span><span>Тираж в <b>18:00</b></span><span class="muted">время Братиславы</span></div>
+  <p class="lede" id="lede"></p>
+</header>
+
+<section class="verdict" aria-labelledby="v-h">
+  <h2 id="v-h">Короткий ответ</h2>
+  <ol id="verdict"></ol>
+</section>
+
+<section aria-labelledby="t-h">
+  <div class="eyebrow">Купон на сегодня</div>
+  <h2 id="t-h">8 полей, подобранных так, чтобы покрыть как можно больше комбинаций</h2>
+  <p class="small" id="slip-note"></p>
+  <div class="row">
+    <label class="small" for="nsel">Сколько полей:</label>
+    <select id="nsel"></select>
+    <button id="copy">Скопировать билеты</button>
+    <span class="status" id="copy-status" role="status"></span>
+  </div>
+  <div class="slip" id="slip"></div>
+  <textarea id="copy-fallback" hidden readonly rows="8" style="width:100%;font:13px var(--f-mono)"></textarea>
+</section>
+
+<section aria-labelledby="n-h">
+  <div class="eyebrow">Сколько полей</div>
+  <h2 id="n-h">Шанс выиграть хоть что-то растёт, средний проигрыш растёт так же</h2>
+  <p id="n-text"></p>
+  <div class="chart" id="ch-n"></div>
+  <div class="tablebox"><table id="tb-n"></table></div>
+  <p class="small">Шанс «хоть какой-то выигрыш» = хотя бы в одном поле 3+ совпадения основных чисел (минимальный приз 3+0, около 3–4 €). Посчитано точно по всем 296 010 возможным тиражам. Средний возврат взят из официальных данных: TIPOS выплачивает 57,9 % от всех ставок.</p>
+</section>
+
+<section aria-labelledby="f-h">
+  <div class="eyebrow">С самого начала, 25.03.2024</div>
+  <h2 id="f-h">Какие числа выпадали чаще всего</h2>
+  <div class="tabs" role="group" aria-label="Период">
+    <button data-p="all" aria-pressed="true">Всё время</button>
+    <button data-p="12m" aria-pressed="false">Последние 52</button>
+    <button data-p="6m" aria-pressed="false">Последние 26</button>
+  </div>
+  <div class="chart" id="ch-main"></div>
+  <p id="f-text"></p>
+  <div class="chart" id="ch-pb"></div>
+  <p id="pb-text"></p>
+</section>
+
+<section aria-labelledby="b-h">
+  <div class="eyebrow">Проверка формул</div>
+  <h2 id="b-h">Десять формул предсказания на 135 прошедших тиражах</h2>
+  <p id="b-text"></p>
+  <div class="tablebox"><table id="tb-b"></table></div>
+  <p id="b-text2"></p>
+  <div class="tablebox"><table id="tb-per"></table></div>
+</section>
+
+<section aria-labelledby="a-h">
+  <div class="eyebrow">Аномалии</div>
+  <h2 id="a-h">Что выглядело неслучайным и куда это делось</h2>
+  <div class="facts" id="facts"></div>
+  <p id="a-text"></p>
+  <div class="tablebox"><table id="tb-pat"></table></div>
+</section>
+
+<section aria-labelledby="o-h">
+  <div class="eyebrow">Шансы и деньги</div>
+  <h2 id="o-h">Вероятность каждого уровня на одно поле</h2>
+  <div class="tablebox"><table id="tb-odds"></table></div>
+  <p class="small" id="o-text"></p>
+</section>
+
+<section aria-labelledby="p-h">
+  <div class="eyebrow">Промт</div>
+  <h2 id="p-h">Промт, по которому сделан этот разбор</h2>
+  <p class="small">Его можно запускать перед каждым тиражом: данные подтянутся заново.</p>
+  <div class="row"><button class="ghost" id="copy-prompt">Скопировать промт</button><span class="status" id="copy-prompt-status" role="status"></span></div>
+  <pre class="prompt" id="prompt"></pre>
+</section>
+
+<section aria-labelledby="s-h">
+  <h2 id="s-h">Источники и метод</h2>
+  <ul class="plain small" id="sources"></ul>
+  <p class="small">Лотерея только для лиц старше 18 лет. Если игра перестаёт быть развлечением, в Словакии работает Linka pomoci pre problémy s hraním.</p>
+</section>
+</div>
+
+<script>
+const DATA = {"n_draws": 165, "first_h": "25.03.2024", "last_h": "02.11.2026", "combos_pb": 2072070, "payout": 0.5790000009494398, "plans": {"1": {"tickets": [{"main": [6, 11, 15, 17, 19, 25], "pb": 2}], "cost_eur": 1.5, "p_any_prize": 0.10093240093240093, "p_any_prize_quickpick": 0.10093240093240093, "p_4plus": 0.011070571940137157, "guarantee_3": false, "p_6main": 3.3782642478294654e-06, "p_jackpot": 4.826091782613522e-07, "p_pb_at_least_one": 0.14285714285714285, "expected_return_eur": 0.8685000014241597, "expected_loss_eur": 0.6314999985758403}, "2": {"tickets": [{"main": [6, 11, 15, 17, 19, 25], "pb": 2}, {"main": [3, 10, 14, 16, 23, 24], "pb": 1}], "cost_eur": 3.0, "p_any_prize": 0.20051349616567007, "p_any_prize_quickpick": 0.1928238741934394, "p_4plus": 0.022141143880274314, "guarantee_3": false, "p_6main": 6.756528495658931e-06, "p_jackpot": 9.652183565227044e-07, "p_pb_at_least_one": 0.2857142857142857, "expected_return_eur": 1.7370000028483195, "expected_loss_eur": 1.2629999971516805}, "3": {"tickets": [{"main": [6, 11, 15, 17, 19, 25], "pb": 2}, {"main": [1, 5, 10, 12, 13, 20], "pb": 1}, {"main": [2, 4, 8, 9, 21, 22], "pb": 3}], "cost_eur": 4.5, "p_any_prize": 0.29874328569980746, "p_any_prize_quickpick": 0.2745135468396338, "p_4plus": 0.03321171582041147, "guarantee_3": false, "p_6main": 1.0134792743488395e-05, "p_jackpot": 1.4478275347840565e-06, "p_pb_at_least_one": 0.42857142857142855, "expected_return_eur": 2.6055000042724794, "expected_loss_eur": 1.8944999957275208}, "4": {"tickets": [{"main": [6, 11, 15, 17, 19, 25], "pb": 2}, {"main": [1, 3, 5, 8, 18, 22], "pb": 1}, {"main": [2, 7, 9, 12, 14, 23], "pb": 3}, {"main": [4, 10, 13, 16, 24, 26], "pb": 6}], "cost_eur": 6.0, "p_any_prize": 0.39562176953481304, "p_any_prize_quickpick": 0.3477365798452755, "p_4plus": 0.04428228776054863, "guarantee_3": false, "p_6main": 1.3513056991317862e-05, "p_jackpot": 1.930436713045409e-06, "p_pb_at_least_one": 0.5714285714285714, "expected_return_eur": 3.474000005696639, "expected_loss_eur": 2.525999994303361}, "5": {"tickets": [{"main": [6, 11, 15, 17, 19, 25], "pb": 2}, {"main": [1, 2, 4, 8, 9, 21], "pb": 1}, {"main": [1, 5, 7, 10, 22, 27], "pb": 3}, {"main": [3, 12, 14, 16, 18, 26], "pb": 6}, {"main": [7, 9, 13, 20, 23, 24], "pb": 4}], "cost_eur": 7.5, "p_any_prize": 0.4761629674673153, "p_any_prize_quickpick": 0.4128593797506841, "p_4plus": 0.055352859700685784, "guarantee_3": false, "p_6main": 1.6891321239147324e-05, "p_jackpot": 2.4130458913067608e-06, "p_pb_at_least_one": 0.7142857142857143, "expected_return_eur": 4.342500007120798, "expected_loss_eur": 3.1574999928792016}, "6": {"tickets": [{"main": [6, 11, 15, 17, 19, 25], "pb": 2}, {"main": [3, 10, 15, 20, 24, 26], "pb": 1}, {"main": [3, 6, 9, 21, 23, 27], "pb": 3}, {"main": [1, 2, 12, 13, 14, 22], "pb": 6}, {"main": [7, 8, 9, 16, 18, 25], "pb": 4}, {"main": [4, 5, 7, 10, 17, 21], "pb": 5}], "cost_eur": 9.0, "p_any_prize": 0.541224958616263, "p_any_prize_quickpick": 0.47305938988547686, "p_4plus": 0.06642343164082294, "guarantee_3": false, "p_6main": 2.026958548697679e-05, "p_jackpot": 2.895655069568113e-06, "p_pb_at_least_one": 0.8571428571428571, "expected_return_eur": 5.211000008544959, "expected_loss_eur": 3.7889999914550416}, "8": {"tickets": [{"main": [6, 11, 15, 17, 19, 25], "pb": 2}, {"main": [3, 8, 9, 13, 22, 23], "pb": 1}, {"main": [2, 4, 7, 12, 21, 23], "pb": 3}, {"main": [1, 5, 7, 13, 16, 20], "pb": 6}, {"main": [1, 3, 10, 12, 18, 24], "pb": 4}, {"main": [4, 14, 18, 20, 22, 26], "pb": 5}, {"main": [8, 14, 16, 21, 24, 27], "pb": 7}, {"main": [2, 5, 9, 10, 26, 27], "pb": 2}], "cost_eur": 12.0, "p_any_prize": 0.6706563967433533, "p_any_prize_quickpick": 0.5724490219925003, "p_4plus": 0.08856457552109726, "guarantee_3": false, "p_6main": 2.7026113982635723e-05, "p_jackpot": 3.860873426090818e-06, "p_pb_at_least_one": 1.0, "expected_return_eur": 6.948000011393278, "expected_loss_eur": 5.051999988606722}, "10": {"tickets": [{"main": [6, 11, 15, 17, 19, 25], "pb": 2}, {"main": [5, 14, 18, 20, 26, 27], "pb": 1}, {"main": [1, 16, 19, 20, 23, 24], "pb": 3}, {"main": [4, 18, 19, 21, 22, 24], "pb": 6}, {"main": [2, 3, 7, 14, 24, 25], "pb": 4}, {"main": [1, 2, 9, 10, 15, 22], "pb": 5}, {"main": [5, 7, 8, 10, 11, 21], "pb": 7}, {"main": [3, 4, 8, 13, 23, 26], "pb": 2}, {"main": [9, 12, 16, 17, 21, 27], "pb": 1}, {"main": [6, 7, 12, 13, 20, 22], "pb": 3}], "cost_eur": 15.0, "p_any_prize": 0.7646633559677037, "p_any_prize_quickpick": 0.6551423375336419, "p_4plus": 0.11058410188844972, "guarantee_3": false, "p_6main": 3.378264247829465e-05, "p_jackpot": 4.8260917826135215e-06, "p_pb_at_least_one": 1.0, "expected_return_eur": 8.685000014241597, "expected_loss_eur": 6.314999985758403}, "12": {"tickets": [{"main": [6, 11, 15, 17, 19, 25], "pb": 2}, {"main": [2, 4, 6, 8, 22, 24], "pb": 1}, {"main": [4, 5, 13, 14, 15, 21], "pb": 3}, {"main": [1, 4, 9, 25, 26, 27], "pb": 6}, {"main": [1, 12, 15, 16, 20, 24], "pb": 4}, {"main": [3, 6, 13, 16, 18, 23], "pb": 5}, {"main": [8, 13, 19, 20, 21, 27], "pb": 7}, {"main": [3, 5, 7, 9, 19, 24], "pb": 2}, {"main": [10, 14, 20, 22, 23, 25], "pb": 1}, {"main": [2, 7, 10, 12, 17, 18], "pb": 3}, {"main": [8, 9, 11, 14, 16, 17], "pb": 6}, {"main": [3, 11, 12, 21, 22, 26], "pb": 4}], "cost_eur": 18.0, "p_any_prize": 0.8372250937468328, "p_any_prize_quickpick": 0.7230205623683885, "p_4plus": 0.13260362825580216, "guarantee_3": false, "p_6main": 4.053917097395358e-05, "p_jackpot": 5.791310139136226e-06, "p_pb_at_least_one": 1.0, "expected_return_eur": 10.422000017089918, "expected_loss_eur": 7.577999982910083}, "16": {"tickets": [{"main": [6, 11, 15, 17, 19, 25], "pb": 2}, {"main": [1, 14, 17, 20, 21, 23], "pb": 1}, {"main": [5, 12, 14, 16, 18, 27], "pb": 3}, {"main": [3, 13, 18, 20, 22, 24], "pb": 6}, {"main": [4, 9, 15, 18, 23, 26], "pb": 4}, {"main": [3, 8, 9, 12, 17, 25], "pb": 5}, {"main": [2, 4, 8, 19, 20, 27], "pb": 7}, {"main": [1, 4, 6, 7, 13, 16], "pb": 2}, {"main": [13, 14, 19, 22, 25, 26], "pb": 1}, {"main": [3, 5, 10, 11, 13, 23], "pb": 3}, {"main": [7, 8, 11, 14, 18, 24], "pb": 6}, {"main": [7, 9, 10, 21, 22, 27], "pb": 4}, {"main": [1, 2, 5, 15, 24, 25], "pb": 5}, {"main": [9, 11, 16, 20, 24, 26], "pb": 7}, {"main": [2, 6, 10, 12, 21, 26], "pb": 2}, {"main": [6, 8, 15, 16, 22, 23], "pb": 1}], "cost_eur": 24.0, "p_any_prize": 0.9254281949934123, "p_any_prize_quickpick": 0.8179639201378331, "p_4plus": 0.17542650586128847, "guarantee_3": false, "p_6main": 5.4052227965271446e-05, "p_jackpot": 7.721746852181635e-06, "p_pb_at_least_one": 1.0, "expected_return_eur": 13.896000022786556, "expected_loss_eur": 10.103999977213444}, "20": {"tickets": [{"main": [6, 11, 15, 17, 19, 25], "pb": 2}, {"main": [2, 7, 12, 17, 24, 26], "pb": 1}, {"main": [1, 2, 3, 5, 22, 23], "pb": 3}, {"main": [1, 5, 6, 8, 10, 13], "pb": 6}, {"main": [2, 9, 10, 16, 20, 27], "pb": 4}, {"main": [1, 3, 9, 18, 19, 24], "pb": 5}, {"main": [8, 11, 18, 22, 26, 27], "pb": 7}, {"main": [1, 7, 21, 23, 25, 26], "pb": 2}, {"main": [4, 6, 12, 14, 18, 23], "pb": 1}, {"main": [6, 12, 17, 20, 21, 22], "pb": 3}, {"main": [3, 7, 8, 14, 16, 17], "pb": 6}, {"main": [5, 9, 11, 14, 21, 24], "pb": 4}, {"main": [3, 10, 11, 12, 15, 20], "pb": 5}, {"main": [1, 4, 6, 11, 16, 26], "pb": 7}, {"main": [2, 4, 8, 15, 19, 21], "pb": 2}, {"main": [7, 13, 14, 15, 19, 22], "pb": 1}, {"main": [4, 10, 20, 22, 24, 25], "pb": 3}, {"main": [5, 12, 13, 16, 19, 25], "pb": 6}, {"main": [5, 15, 18, 20, 26, 27], "pb": 4}, {"main": [4, 9, 13, 17, 23, 27], "pb": 5}], "cost_eur": 30.0, "p_any_prize": 0.9693760345934259, "p_any_prize_quickpick": 0.880506964854791, "p_4plus": 0.2169453734671126, "guarantee_3": false, "p_6main": 6.75652849565893e-05, "p_jackpot": 9.652183565227043e-06, "p_pb_at_least_one": 1.0, "expected_return_eur": 17.370000028483194, "expected_loss_eur": 12.629999971516806}, "24": {"tickets": [{"main": [6, 11, 15, 17, 19, 25], "pb": 2}, {"main": [3, 8, 9, 12, 16, 21], "pb": 1}, {"main": [7, 9, 12, 22, 24, 26], "pb": 3}, {"main": [1, 2, 9, 13, 19, 23], "pb": 6}, {"main": [1, 4, 6, 7, 14, 18], "pb": 4}, {"main": [7, 10, 15, 16, 20, 23], "pb": 5}, {"main": [2, 4, 16, 18, 24, 25], "pb": 7}, {"main": [8, 17, 20, 22, 24, 27], "pb": 2}, {"main": [6, 13, 21, 22, 25, 26], "pb": 1}, {"main": [3, 12, 13, 17, 18, 20], "pb": 3}, {"main": [9, 10, 18, 19, 21, 27], "pb": 6}, {"main": [1, 4, 12, 15, 20, 27], "pb": 4}, {"main": [2, 8, 11, 19, 20, 26], "pb": 5}, {"main": [2, 4, 6, 10, 12, 17], "pb": 7}, {"main": [5, 9, 10, 14, 20, 25], "pb": 2}, {"main": [7, 11, 14, 17, 21, 24], "pb": 1}, {"main": [1, 5, 11, 18, 22, 23], "pb": 3}, {"main": [2, 3, 14, 15, 19, 22], "pb": 6}, {"main": [3, 6, 8, 10, 13, 24], "pb": 4}, {"main": [12, 14, 16, 23, 26, 27], "pb": 5}, {"main": [1, 5, 10, 11, 16, 17], "pb": 7}, {"main": [4, 5, 13, 19, 21, 27], "pb": 2}, {"main": [5, 7, 8, 15, 18, 26], "pb": 1}, {"main": [3, 4, 11, 23, 25, 27], "pb": 3}], "cost_eur": 36.0, "p_any_prize": 0.9874463700550657, "p_any_prize_quickpick": 0.9233486481312568, "p_4plus": 0.2570183439748657, "guarantee_3": false, "p_6main": 8.107834194790716e-05, "p_jackpot": 1.1582620278272452e-05, "p_pb_at_least_one": 1.0, "expected_return_eur": 20.844000034179835, "expected_loss_eur": 15.155999965820167}}, "plan_keys": ["1", "2", "3", "4", "5", "6", "8", "10", "12", "16", "20", "24"], "top_main": [{"n": 11, "c": 53}, {"n": 19, "c": 47}, {"n": 25, "c": 47}, {"n": 20, "c": 45}, {"n": 6, "c": 43}, {"n": 17, "c": 43}], "bottom_main": [{"n": 27, "c": 27}, {"n": 1, "c": 28}, {"n": 2, "c": 28}, {"n": 21, "c": 29}], "top_pb": [{"n": 2, "c": 32}, {"n": 1, "c": 30}], "pb_freq": {"1": 30, "2": 32, "3": 28, "4": 20, "5": 20, "6": 24, "7": 11}, "exp_main": 36.666666666666664, "formula": {"main": [6, 11, 15, 17, 19, 25], "pb": 2, "ranking": [{"n": 11, "score": 1.6824455392532511, "all": 53, "last52": 15, "last20": 4}, {"n": 19, "score": 1.527386368938712, "all": 47, "last52": 15, "last20": 8}, {"n": 6, "score": 1.114153483062274, "all": 43, "last52": 16, "last20": 5}, {"n": 25, "score": 0.7479237340081913, "all": 47, "last52": 12, "last20": 3}, {"n": 15, "score": 0.7260943962491593, "all": 36, "last52": 16, "last20": 7}, {"n": 17, "score": 0.6704455439792675, "all": 43, "last52": 12, "last20": 6}, {"n": 26, "score": 0.645580115686019, "all": 40, "last52": 13, "last20": 7}, {"n": 20, "score": 0.64532314004429, "all": 45, "last52": 13, "last20": 2}, {"n": 9, "score": 0.5151807931513449, "all": 41, "last52": 12, "last20": 6}, {"n": 22, "score": 0.3877661660225411, "all": 35, "last52": 14, "last20": 7}, {"n": 24, "score": 0.3625409718308723, "all": 39, "last52": 15, "last20": 1}, {"n": 16, "score": 0.3349992189018282, "all": 37, "last52": 13, "last20": 6}, {"n": 7, "score": 0.28228366690946105, "all": 38, "last52": 12, "last20": 6}, {"n": 4, "score": -0.15859376215271245, "all": 34, "last52": 11, "last20": 6}, {"n": 23, "score": -0.21146349953011695, "all": 38, "last52": 10, "last20": 3}, {"n": 14, "score": -0.23627753269501953, "all": 34, "last52": 11, "last20": 5}, {"n": 10, "score": -0.31401269836567236, "all": 35, "last52": 11, "last20": 3}, {"n": 5, "score": -0.49692199237933055, "all": 33, "last52": 9, "last20": 6}, {"n": 13, "score": -0.5218902109292705, "all": 32, "last52": 10, "last20": 5}, {"n": 18, "score": -0.5718780431574961, "all": 31, "last52": 12, "last20": 2}, {"n": 8, "score": -0.5995225863432317, "all": 31, "last52": 10, "last20": 5}, {"n": 3, "score": -0.5995739814715776, "all": 32, "last52": 10, "last20": 4}, {"n": 12, "score": -0.5996767717282692, "all": 34, "last52": 10, "last20": 2}, {"n": 2, "score": -0.8574393262634012, "all": 28, "last52": 11, "last20": 3}, {"n": 21, "score": -1.1708507330684252, "all": 29, "last52": 8, "last20": 3}, {"n": 27, "score": -1.5091275681666976, "all": 27, "last52": 6, "last20": 4}, {"n": 1, "score": -1.7948944317859858, "all": 28, "last52": 5, "last20": 1}], "weights": "0.50*z(freq all) + 0.35*z(freq last 52) + 0.15*z(freq last 20)"}, "freqs": {"all": [28, 28, 32, 34, 33, 43, 38, 31, 41, 35, 53, 34, 32, 34, 36, 37, 43, 31, 47, 45, 29, 35, 38, 39, 47, 40, 27], "12m": [5, 11, 10, 11, 9, 16, 12, 10, 12, 11, 15, 10, 10, 11, 16, 13, 12, 12, 15, 13, 8, 14, 10, 15, 12, 13, 6], "6m": [2, 4, 4, 6, 8, 5, 7, 6, 7, 5, 7, 3, 7, 6, 9, 8, 6, 4, 9, 3, 4, 7, 5, 6, 5, 8, 5]}, "text": {"freq": "Чаще всех выпадало <b>11<\/b>: 53 раз при ожидании 36,7 (σ = 5,3). Это +3,1σ, но среди 27 чисел хоть одно такое отклонение случайно бывает в 5,7 % историй. Общий тест хи-квадрат по всем числам: p = 0,065, то есть распределение на границе нормы, но не за ней. В последний месяц 11 не выпало ни разу.", "pb": "Во втором барабане 7 выпала только 11 раз при ожидании 23,6. Это самая сильная аномалия частот: такое редкое число случайно бывает в 1,2 % историй. Но в последних 52 тиражах 7 выпадала 2 раз при ожидании 7,4, то есть перекос уже почти исчез.", "n": "Каждое поле стоит 1,50 € и в среднем возвращает 0,87 €: TIPOS выплачивает 57,9 % ставок. Поэтому больше полей значит выше шанс на какой-то выигрыш и одновременно больше ожидаемый минус. Подобранные поля выигрывают у случайных только в шансе на мелкий приз: при 8 полях 67,1 % против 57,2 %. Шанс на главный приз от подбора не меняется. Даже 36 полей (54 €) не гарантируют 3 совпадения: лучший найденный набор покрывает 99,98 % тиражей.", "bt": "Каждая формула получала только прошлые тиражи и выбирала 6 чисел на следующий. Проверено 135 тиражей с 21.10.2024. Случайный выбор угадывает в среднем 1,333 числа. p показывает, как часто случайный выбор набирает столько же или больше совпадений (20 000 симуляций).", "bt2": "Формулы на «горячих» числах действительно обгоняли случай, но только в первый год. Итоговая формула собрана из двух лучших уже после просмотра результатов, поэтому её p завышает пользу. Главное видно по периодам: в последнем (июн 26 – ноя 26) она угадала 55 чисел при ожидании 53 (+0,3σ). Доп. число формула угадывала в 15,6 % тиражей при случайных 14,3 %.", "anom": "Доп. число повторяло прошлое в 25,6 % тиражей вместо 14,3 % (перестановочный тест p ≈ 0,0003). Но по третям истории это 36 % → 24 % → 17 %, а с перехода на два тиража в неделю 23.04.2026 эффекта нет (16,1 %). Перекос «горячих» чисел исчез примерно тогда же. Всё остальное (суммы, чёт/нечёт, малые/большие, соседние числа, повторы основных чисел) совпадает с теорией.", "odds": "За всё время продано около 24,9 млн полей, выплачено 21,6 млн € из 37,4 млн €. Главный приз 6+1 выиграли 18 раз (при чисто случайной игре ожидалось бы около 12). Приз за 6+0 общий: при двух победителях каждый получил 15 000 €, поэтому поля с «узорами» (1-2-3-4-5-6, ряды и диагонали купона) выгоднее не ставить."}, "backtest": {"rows": [{"key": "composite_formula", "name": "<b>Итоговая формула<\/b>", "mean": 1.5925925925925926, "ge3": 0.14814814814814814, "p": 0.0009}, {"key": "hot_last52", "name": "Горячие за 52 тиража", "mean": 1.5629629629629629, "ge3": 0.14814814814814814, "p": 0.0023}, {"key": "markov", "name": "Марковская (что идёт после чего)", "mean": 1.5407407407407407, "ge3": 0.13333333333333333, "p": 0.00525}, {"key": "hot_all", "name": "Горячие за всё время", "mean": 1.525925925925926, "ge3": 0.14074074074074075, "p": 0.0081}, {"key": "mix", "name": "Смесь: частота + пропуск + пары", "mean": 1.4962962962962962, "ge3": 0.11851851851851852, "p": 0.0219}, {"key": "hot_last20", "name": "Горячие за 20 тиражей", "mean": 1.4296296296296296, "ge3": 0.08888888888888889, "p": 0.11905}, {"key": "pair_affinity", "name": "Частые пары с прошлым тиражом", "mean": 1.385185185185185, "ge3": 0.0962962962962963, "p": 0.26995}, {"key": "cold_all", "name": "Холодные (реже всех)", "mean": 1.3777777777777778, "ge3": 0.0962962962962963, "p": 0.30395}, {"key": "repeat_last", "name": "Повтор прошлого тиража", "mean": 1.3777777777777778, "ge3": 0.07407407407407407, "p": 0.30395}, {"key": "hot_last10", "name": "Горячие за 10 тиражей", "mean": 1.3703703703703705, "ge3": 0.08888888888888889, "p": 0.33735}, {"key": "overdue", "name": "Давно не выпадали", "mean": 1.3407407407407408, "ge3": 0.08888888888888889, "p": 0.4804}], "random_ge3": 0.10093240093240094}, "periods": [{"name": "Итоговая формула", "cells": [{"hits": 96, "exp": 73.33333333333333, "z": 3.3395365903398826}, {"hits": 64, "exp": 53.333333333333336, "z": 1.842801771039668}, {"hits": 55, "exp": 53.333333333333336, "z": 0.2879377767249478}]}, {"name": "Горячие за всё время", "cells": [{"hits": 92, "exp": 73.33333333333333, "z": 2.750206603809315}, {"hits": 61, "exp": 53.333333333333336, "z": 1.3245137729347614}, {"hits": 53, "exp": 53.333333333333336, "z": -0.05758755534499005}]}, {"name": "Горячие за 52 тиража", "cells": [{"hits": 95, "exp": 73.33333333333333, "z": 3.1922040937072405}, {"hits": 62, "exp": 53.333333333333336, "z": 1.4972764389697302}, {"hits": 54, "exp": 53.333333333333336, "z": 0.11517511068997888}]}, {"name": "Горячие за 20 тиражей", "cells": [{"hits": 77, "exp": 73.33333333333333, "z": 0.5402191543196875}, {"hits": 62, "exp": 53.333333333333336, "z": 1.4972764389697302}, {"hits": 54, "exp": 53.333333333333336, "z": 0.11517511068997888}]}], "period_heads": ["окт 24 – ноя 25", "ноя 25 – июн 26", "июн 26 – ноя 26"], "facts": [{"v": "25,6 %", "k": "доп. число повторяло прошлое (норма 14,3 %)"}, {"v": "36 → 24 → 17 %", "k": "то же по третям истории: эффект угас"}, {"v": "11 из 165", "k": "доп. число 7 (ожидалось 23,6)"}, {"v": "53 из 165", "k": "число 11 (ожидалось 36,7)"}], "patterns": [{"k": "Средняя сумма 6 чисел", "obs": "86,1", "th": "84,0", "ok": true}, {"k": "Тиражи с 3 нечётными", "obs": "30 %", "th": "35 %", "ok": true}, {"k": "Тиражи с 3 числами от 1 до 13", "obs": "37 %", "th": "35 %", "ok": true}, {"k": "Есть хотя бы пара соседних чисел", "obs": "70 %", "th": "75 %", "ok": true}, {"k": "Чисел повторяется с прошлого тиража", "obs": "1,39", "th": "1,33", "ok": true}, {"k": "Доп. число = прошлому, весь период", "obs": "25,6 %", "th": "14,3 %", "ok": false}, {"k": "Доп. число = прошлому, с 23.04.2026", "obs": "16,1 %", "th": "14,3 %", "ok": true}], "odds": [{"k": "6+1", "p": 4.826091782613522e-07, "prize": "480 000 € (4 000 €/мес. × 10 лет)"}, {"k": "6+0", "p": 2.895655069568113e-06, "prize": "30 000 € (2 500 €/мес. × 1 год), делится"}, {"k": "5+1", "p": 6.0808756460930365e-05, "prize": "403,35 €"}, {"k": "5+0", "p": 0.0003648525387655822, "prize": "142,75 €"}, {"k": "4+1", "p": 0.0015202189115232593, "prize": "32,96 €"}, {"k": "4+0", "p": 0.009121313469139556, "prize": "13,44 €"}, {"k": "3+1", "p": 0.012837404141751968, "prize": "5,44 €"}, {"k": "3+0", "p": 0.07702442485051181, "prize": "3,94 €"}], "p_any1": 0.10093240093240094, "prompt": "Ты аналитик лотерей и статистик. Подготовь ставку на ближайший тираж EXTRA VÝPLATA (TIPOS, Словакия: 6 чисел из 27 + 1 доп. число из 7, 1,50 € за поле, до 8 полей на купоне).\n\n1. Данные. Скачай все тиражи с первого (25.03.2024) по последний с tipos.sk: список дат через /Millennium.CiselneLoterie/ExtraVyplata/GetZrebovania (POST Rok, Mesiac), результаты через /Millennium.CiselneLoterie/ExtraVyplata/GetForDate (POST datumZrebovania). Сверь частоты с официальной статистикой /Millennium.CiselneLoterie/extravyplata/GetStatsV1. Возьми срок приёма ставок и время тиража со страницы лотереи.\n\n2. Частоты. Для каждого основного числа и доп. числа: сколько раз выпало за всё время, за последние 52 и 26 тиражей, ожидание и σ. Назови самые частые и самые редкие.\n\n3. Случайность. Методом Монте-Карло (20 000 честных историй той же длины) посчитай p-значения: хи-квадрат по основным и доп. числам, максимум и минимум частот, устойчивость «горячих» чисел между первой и второй половиной истории, повтор доп. числа с прошлым тиражом (перестановочный тест), суммы, чёт/нечёт, малые/большие, соседние числа против точной теории. Разбей подозрительные эффекты по периодам.\n\n4. Формулы. Построй не меньше 10 формул предсказания (горячие за разные окна, холодные, давно не выпадавшие, повтор прошлого, пары, марковская, смешанная). Прогони walk-forward бэктест: каждый тираж предсказывается только по прошлым. Сравни со случайным выбором, поправь на множественные проверки и покажи результат по периодам, особенно за последние месяцы.\n\n5. Деньги. Точные шансы всех уровней (6+1 … 3+0), средние призы за год, реальная доля выплат (выплаты / ставки), ожидаемый результат на поле.\n\n6. Купон. Для 1–24 полей найди набор, который максимизирует шанс хотя бы одного выигрыша (3+ совпадения в любом поле), точным перебором всех 296 010 комбинаций. Сравни со случайными полями той же цены. Первое поле = числа лучшей формулы, доп. числа разнеси по всем 7 значениям, избегай «узоров».\n\n7. Ответ. Скажи прямо: сколько полей брать, какие билеты ставить сегодня, какие числа выпадали чаще всего, и есть ли у формулы реальное преимущество над случайностью. Не обещай выигрыш.", "sources": ["Тиражи: tipos.sk, эндпоинты <span class=\"mono\">ExtraVyplata/GetZrebovania<\/span> и <span class=\"mono\">GetForDate<\/span>, все 165 тиражей с 25.03.2024 по 02.11.2026.", "Сверка: официальная статистика <a href=\"https://www.tipos.sk/loterie/ciselne-loterie/statistika-zrebovani/extra-vyplata\">Štatistika žrebovaní<\/a> (частоты совпали один в один).", "Правила: <a href=\"https://www.tipos.sk/loterie/extra-vyplata/ako-hrat\">Ako hrať<\/a> (6 из 27 + 1 из 7, 8 полей на купоне), <a href=\"https://sita.sk/v-pondelok-sa-znova-rozdavala-extra-vyplata-v-loterii-od-tiposu-padli-dve-najvyssie-vyhry/\">SITA<\/a> (1,50 € за поле, старт 25.03.2024).", "Срок приёма и время тиража на 5.11.2026 взяты со страницы <a href=\"https://www.tipos.sk/loterie/extra-vyplata\">Extra výplata<\/a>.", "Метод: p-значения считались симуляцией честной лотереи (20 000 историй), шансы купона перебором всех 296 010 комбинаций основных чисел."]};
+const $ = (s, r = document) => r.querySelector(s);
+const fmt = (x, d = 0) => x.toLocaleString('ru-RU', { minimumFractionDigits: d, maximumFractionDigits: d });
+const pct = (x, d = 1) => fmt(100 * x, d) + ' %';
+const oneIn = p => '1 к ' + fmt(Math.round(1 / p));
+const ball = (n, pb = false, sm = false) => `<span class="ball${pb ? ' pb' : ''}${sm ? ' sm' : ''}">${n}</span>`;
+const balls = (arr, pb, sm) => `<span class="balls">${arr.map(n => ball(n, false, sm)).join('')}${pb != null ? '<span class="plus">+</span>' + ball(pb, true, sm) : ''}</span>`;
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const D = DATA;
+
+/* ---------- header + verdict ---------- */
+$('#lede').textContent = `Разбор всех ${D.n_draws} тиражей с первого (${D.first_h}) по последний (${D.last_h}). Числа взяты с tipos.sk и сверены с официальной статистикой лотереи.`;
+const p8 = D.plans['8'];
+$('#verdict').innerHTML = [
+  `<li><b>Сколько полей.</b> Нет количества, при котором шанс становится высоким: каждое поле добавляет одинаковый шанс 1 к ${fmt(D.combos_pb)} на главный приз и в среднем возвращает ${fmt(1.5 * D.payout, 2)} € из 1,50 €. Разумный максимум на сегодня: один купон из 8 полей за 12 €. Подобранные поля дают <b>${pct(p8.p_any_prize, 0)}</b> шанса выиграть хоть что-то (случайные поля: ${pct(p8.p_any_prize_quickpick, 0)}), средний проигрыш около ${fmt(p8.expected_loss_eur, 0)} €.</li>`,
+  `<li><b>Самые частые числа с начала:</b> ${D.top_main.map(x => `<b>${x.n}</b> (${x.c})`).join(', ')}. Ожидаемо около ${fmt(D.exp_main, 1)} на число. Реже всех: ${D.bottom_main.map(x => `${x.n} (${x.c})`).join(', ')}. В доп. барабане чаще всего ${D.top_pb.map(x => `${x.n} (${x.c})`).join(', ')}, реже всего 7 (${D.pb_freq['7']}).</li>`,
+  `<li><b>Формула.</b> Лучшей оказалась простая: взвешенная частота числа за всё время, за 52 и за 20 последних тиражей. В 2024–2025 она угадывала заметно больше случайного, но в последних ~40 тиражах её преимущество равно нулю. Её числа на сегодня: ${balls(D.formula.main, D.formula.pb, true)}. Считайте это выбором, который не хуже случайного, а не прогнозом.</li>`,
+  `<li><b>Честный вывод.</b> Предсказать тираж нельзя. Все проверки последних месяцев выглядят как чистая случайность. Единственное, что реально улучшается расчётом, это шанс на мелкий выигрыш за те же деньги: поля не должны дублировать друг друга, а доп. числа должны быть разными.</li>`
+].join('');
+
+/* ---------- slip ---------- */
+const sel = $('#nsel');
+D.plan_keys.forEach(k => { const o = document.createElement('option'); o.value = k; o.textContent = `${k} (${fmt(1.5 * k, 2)} €)`; if (k === '8') o.selected = true; sel.append(o); });
+function renderSlip() {
+  const p = D.plans[sel.value];
+  $('#slip').innerHTML = p.tickets.map((t, i) => `<div class="field${i === 0 ? ' formula' : ''}"><div class="lbl"><span>Поле ${i + 1}${i === 0 ? ' · формула' : ''}</span><span>${t.main.reduce((a, b) => a + b, 0)} сумма</span></div>${balls(t.main, t.pb)}</div>`).join('');
+  $('#slip-note').innerHTML = `${sel.value} пол${sel.value === '1' ? 'е' : (+sel.value < 5 ? 'я' : 'ей')} за ${fmt(p.cost_eur, 2)} €. Шанс выиграть хоть что-то: <b>${pct(p.p_any_prize)}</b> против ${pct(p.p_any_prize_quickpick)} у случайных полей той же цены. Шанс угадать все 6 основных: ${oneIn(p.p_6main)}, главный приз 6+1: ${oneIn(p.p_jackpot)}. Поле 1 содержит числа формулы, остальные подобраны оптимизатором вокруг него; доп. числа разнесены по всем семи значениям.`;
+}
+sel.addEventListener('change', renderSlip); renderSlip();
+async function copyText(text, statusEl, fallbackEl) {
+  try { await navigator.clipboard.writeText(text); statusEl.textContent = 'Скопировано'; }
+  catch (e) { if (fallbackEl) { fallbackEl.hidden = false; fallbackEl.value = text; fallbackEl.select(); } statusEl.textContent = 'Выделите текст и скопируйте вручную'; }
+}
+$('#copy').addEventListener('click', () => {
+  const p = D.plans[sel.value];
+  const text = p.tickets.map((t, i) => `Поле ${i + 1}: ${t.main.join(' ')} + ${t.pb}`).join('\n');
+  copyText(text, $('#copy-status'), $('#copy-fallback'));
+});
+
+/* ---------- generic svg helpers ---------- */
+const NS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs = {}, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.append(e); return e; }
+function tipFor(box) { let t = box.querySelector('.tip'); if (!t) { t = document.createElement('div'); t.className = 'tip'; t.hidden = true; box.append(t); } return t; }
+function showTip(box, html, x, y) { const t = tipFor(box); t.innerHTML = html; t.hidden = false; const r = box.getBoundingClientRect(); const w = t.offsetWidth; const cx = Math.min(Math.max(x - r.left, w / 2 + 4), r.width - w / 2 - 4); t.style.left = cx + 'px'; t.style.top = (y - r.top) + 'px'; }
+function hideTip(box) { const t = box.querySelector('.tip'); if (t) t.hidden = true; }
+
+/* bars with expected line and ±2σ band */
+function barChart(box, cats, vals, expected, sd, opts) {
+  box.innerHTML = `<div class="cap"><span>${opts.title}</span><span class="legend"><span class="key"><span class="sw" style="background:var(--accent)"></span>выпадений</span><span class="key"><span class="sw" style="background:var(--band);outline:1px dashed var(--muted)"></span>ожидание ±2σ</span></span></div>`;
+  const W = 760, H = opts.h || 250, m = { l: 34, r: 8, t: 10, b: 26 };
+  const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': opts.title });
+  box.append(svg);
+  const max = Math.ceil(Math.max(...vals, expected + 2 * sd) / 10) * 10;
+  const y = v => m.t + (H - m.t - m.b) * (1 - v / max);
+  const bw = (W - m.l - m.r) / cats.length;
+  for (let g = 0; g <= max; g += max > 40 ? 10 : 5) {
+    el('line', { x1: m.l, x2: W - m.r, y1: y(g), y2: y(g), stroke: css('--line'), 'stroke-width': 1 }, svg);
+    const tx = el('text', { x: m.l - 6, y: y(g) + 4, 'text-anchor': 'end', 'font-size': 11, fill: css('--muted'), 'font-family': 'JetBrains Mono, monospace' }, svg); tx.textContent = g;
+  }
+  el('rect', { x: m.l, width: W - m.l - m.r, y: y(expected + 2 * sd), height: y(expected - 2 * sd) - y(expected + 2 * sd), fill: css('--band') }, svg);
+  el('line', { x1: m.l, x2: W - m.r, y1: y(expected), y2: y(expected), stroke: css('--muted'), 'stroke-dasharray': '4 4', 'stroke-width': 1.5 }, svg);
+  cats.forEach((c, i) => {
+    const v = vals[i], x = m.l + i * bw, w = Math.max(4, bw - 2 * Math.max(1, bw * 0.14));
+    const yy = y(v), h = y(0) - yy, r = Math.min(4, w / 2, h);
+    const path = `M${x + (bw - w) / 2},${y(0)} V${yy + r} q0,-${r} ${r},-${r} H${x + (bw + w) / 2 - r} q${r},0 ${r},${r} V${y(0)} Z`;
+    const z = (v - expected) / sd;
+    const p = el('path', { d: path, fill: opts.color ? opts.color(c) : css('--accent'), class: 'bar' }, svg);
+    const tx = el('text', { x: x + bw / 2, y: H - 8, 'text-anchor': 'middle', 'font-size': 11, fill: css('--muted'), 'font-family': 'JetBrains Mono, monospace' }, svg); tx.textContent = c;
+    const hit = el('rect', { x, y: m.t, width: bw, height: H - m.t - m.b + 20, fill: 'transparent', tabindex: 0, 'aria-label': `${c}: ${v}` }, svg);
+    const on = e => { svg.querySelectorAll('.bar').forEach(b => b.style.opacity = b === p ? 1 : .45); const pt = e.touches ? e.touches[0] : e; const br = hit.getBoundingClientRect(); showTip(box, `Число ${c}: ${v} раз<br>отклонение ${z >= 0 ? '+' : ''}${fmt(z, 1)}σ`, e.clientX ?? (br.left + br.width / 2), (e.clientY ?? br.top) - 6); };
+    hit.addEventListener('pointermove', on); hit.addEventListener('focus', () => { const br = hit.getBoundingClientRect(); on({ clientX: br.left + br.width / 2, clientY: br.top + 60 }); });
+    hit.addEventListener('pointerleave', () => { svg.querySelectorAll('.bar').forEach(b => b.style.opacity = 1); hideTip(box); });
+    hit.addEventListener('blur', () => { svg.querySelectorAll('.bar').forEach(b => b.style.opacity = 1); hideTip(box); });
+  });
+}
+
+/* ---------- frequencies ---------- */
+const periods = { all: D.n_draws, '12m': 52, '6m': 26 };
+const perKey = { all: 'main', '12m': 'main_12m_52', '6m': 'main_6m_26' };
+function renderMain(p) {
+  const draws = p === 'all' ? D.n_draws : +({ '12m': 52, '6m': 26 }[p]);
+  const src = D.freqs[p];
+  const cats = Array.from({ length: 27 }, (_, i) => i + 1);
+  const vals = cats.map(c => src[c - 1]);
+  const e = draws * 6 / 27, sd = Math.sqrt(draws * (6 / 27) * (21 / 27));
+  barChart($('#ch-main'), cats, vals, e, sd, { title: `Основные числа, ${draws} тиражей` });
+}
+document.querySelectorAll('.tabs button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.tabs button').forEach(x => x.setAttribute('aria-pressed', x === b)); renderMain(b.dataset.p);
+}));
+renderMain('all');
+barChart($('#ch-pb'), [1, 2, 3, 4, 5, 6, 7], [1, 2, 3, 4, 5, 6, 7].map(i => D.pb_freq[i]), D.n_draws / 7, Math.sqrt(D.n_draws / 7 * 6 / 7), { title: `Доп. число (2-й барабан), ${D.n_draws} тиражей`, h: 200 });
+$('#f-text').innerHTML = D.text.freq;
+$('#pb-text').innerHTML = D.text.pb;
+
+/* ---------- tickets count chart + table ---------- */
+(function () {
+  const box = $('#ch-n'); const ks = D.plan_keys.map(Number);
+  box.innerHTML = `<div class="cap"><span>Шанс выиграть хоть что-то</span><span class="legend"><span class="key"><span class="sw" style="background:var(--accent)"></span>подобранные поля</span><span class="key"><span class="sw" style="background:var(--muted)"></span>случайные поля</span></span></div>`;
+  const W = 760, H = 250, m = { l: 44, r: 92, t: 12, b: 30 };
+  const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'Шанс выигрыша в зависимости от числа полей' }); box.append(svg);
+  const xmax = Math.max(...ks); const x = k => m.l + (W - m.l - m.r) * (k - 1) / (xmax - 1); const y = v => m.t + (H - m.t - m.b) * (1 - v);
+  [0, .25, .5, .75, 1].forEach(g => { el('line', { x1: m.l, x2: W - m.r, y1: y(g), y2: y(g), stroke: css('--line') }, svg); const t = el('text', { x: m.l - 6, y: y(g) + 4, 'text-anchor': 'end', 'font-size': 11, fill: css('--muted'), 'font-family': 'JetBrains Mono, monospace' }, svg); t.textContent = (g * 100) + '%'; });
+  [1, 4, 8, 12, 16, 20, 24].filter(k => k <= xmax).forEach(k => { const t = el('text', { x: x(k), y: H - 10, 'text-anchor': 'middle', 'font-size': 11, fill: css('--muted'), 'font-family': 'JetBrains Mono, monospace' }, svg); t.textContent = k; });
+  const t0 = el('text', { x: W - m.r, y: H - 10, 'text-anchor': 'start', dx: 8, 'font-size': 11, fill: css('--muted') }, svg); t0.textContent = 'полей';
+  const series = [['p_any_prize', css('--accent'), 'подобранные'], ['p_any_prize_quickpick', css('--muted'), 'случайные']];
+  series.forEach(([key, col, name]) => {
+    const pts = ks.map(k => [x(k), y(D.plans[k][key])]);
+    el('path', { d: 'M' + pts.map(p => p.join(',')).join(' L'), fill: 'none', stroke: col, 'stroke-width': 2, 'stroke-linejoin': 'round' }, svg);
+    pts.forEach(p => el('circle', { cx: p[0], cy: p[1], r: 4, fill: col, stroke: css('--surface'), 'stroke-width': 2 }, svg));
+    const last = pts[pts.length - 1]; const lt = el('text', { x: last[0] + 8, y: last[1] + 4, 'font-size': 12, fill: css('--ink') }, svg); lt.textContent = name;
+  });
+  const cross = el('line', { y1: m.t, y2: H - m.b, stroke: css('--muted'), 'stroke-width': 1, opacity: 0 }, svg);
+  const hit = el('rect', { x: m.l, y: m.t, width: W - m.l - m.r, height: H - m.t - m.b, fill: 'transparent' }, svg);
+  hit.addEventListener('pointermove', e => {
+    const r = svg.getBoundingClientRect(); const sx = (e.clientX - r.left) * W / r.width;
+    let best = ks[0]; ks.forEach(k => { if (Math.abs(x(k) - sx) < Math.abs(x(best) - sx)) best = k; });
+    cross.setAttribute('x1', x(best)); cross.setAttribute('x2', x(best)); cross.setAttribute('opacity', 1);
+    const p = D.plans[best];
+    showTip(box, `${best} полей · ${fmt(p.cost_eur, 2)} €<br>подобранные ${pct(p.p_any_prize)}<br>случайные ${pct(p.p_any_prize_quickpick)}<br>средний проигрыш ${fmt(p.expected_loss_eur, 2)} €`, r.left + x(best) * r.width / W, r.top + m.t * r.height / H + 70);
+  });
+  hit.addEventListener('pointerleave', () => { cross.setAttribute('opacity', 0); hideTip(box); });
+
+  const rows = ks.map(k => { const p = D.plans[k]; return `<tr class="${k === 8 ? 'hl' : ''}"><td class="num">${k}</td><td class="num">${fmt(p.cost_eur, 2)} €</td><td class="num">${pct(p.p_any_prize)}</td><td class="num">${pct(p.p_any_prize_quickpick)}</td><td class="num">${oneIn(p.p_6main)}</td><td class="num">${oneIn(p.p_jackpot)}</td><td class="num">−${fmt(p.expected_loss_eur, 2)} €</td></tr>`; }).join('');
+  $('#tb-n').innerHTML = `<thead><tr><th class="num">Полей</th><th class="num">Цена</th><th class="num">Хоть что-то</th><th class="num">Случайные</th><th class="num">6 основных</th><th class="num">6+1</th><th class="num">Средний итог</th></tr></thead><tbody>${rows}</tbody>`;
+  $('#n-text').innerHTML = D.text.n;
+})();
+
+/* ---------- backtest ---------- */
+(function () {
+  const b = D.backtest;
+  const rows = b.rows.map(r => `<tr class="${r.key === 'composite_formula' ? 'hl' : ''}"><td>${r.name}</td><td class="num">${fmt(r.mean, 3)}</td><td class="num">${pct(r.ge3)}</td><td class="num">${fmt(r.p, 3)}</td><td>${r.p < 0.01 ? '<span class="pill good">лучше случая</span>' : r.p < 0.05 ? '<span class="pill warn">на грани</span>' : '<span class="pill flat">как случай</span>'}</td></tr>`).join('');
+  $('#tb-b').innerHTML = `<thead><tr><th>Формула</th><th class="num">Угадано в среднем</th><th class="num">3+ совпадений</th><th class="num">p</th><th>Итог</th></tr></thead><tbody><tr><td><i>Случайный выбор</i></td><td class="num">${fmt(4 / 3, 3)}</td><td class="num">${pct(b.random_ge3)}</td><td class="num">—</td><td></td></tr>${rows}</tbody>`;
+  $('#b-text').innerHTML = D.text.bt;
+  $('#b-text2').innerHTML = D.text.bt2;
+  const pr = D.periods.map(r => `<tr><td>${r.name}</td>${r.cells.map(c => `<td class="num">${c.hits} / ${fmt(c.exp, 0)}<br><span class="small">${c.z >= 0 ? '+' : ''}${fmt(c.z, 1)}σ</span></td>`).join('')}</tr>`).join('');
+  $('#tb-per').innerHTML = `<thead><tr><th>Формула</th>${D.period_heads.map(h => `<th class="num">${h}</th>`).join('')}</tr></thead><tbody>${pr}</tbody>`;
+})();
+
+/* ---------- anomalies ---------- */
+$('#facts').innerHTML = D.facts.map(f => `<div class="fact"><span class="v">${f.v}</span><span class="k">${f.k}</span></div>`).join('');
+$('#a-text').innerHTML = D.text.anom;
+$('#tb-pat').innerHTML = `<thead><tr><th>Признак</th><th class="num">Факт</th><th class="num">Теория</th><th>Итог</th></tr></thead><tbody>${D.patterns.map(r => `<tr><td>${r.k}</td><td class="num">${r.obs}</td><td class="num">${r.th}</td><td>${r.ok ? '<span class="pill flat">как случай</span>' : '<span class="pill warn">отклонение</span>'}</td></tr>`).join('')}</tbody>`;
+
+/* ---------- odds ---------- */
+$('#tb-odds').innerHTML = `<thead><tr><th>Угадано</th><th class="num">Шанс на поле</th><th class="num">Приз (средний за год)</th></tr></thead><tbody>${D.odds.map(o => `<tr><td class="mono">${o.k}</td><td class="num">${oneIn(o.p)}</td><td class="num">${o.prize}</td></tr>`).join('')}<tr><td><b>Хоть что-то</b></td><td class="num"><b>${oneIn(D.p_any1)}</b></td><td></td></tr></tbody>`;
+$('#o-text').innerHTML = D.text.odds;
+
+/* ---------- prompt + sources ---------- */
+$('#prompt').textContent = D.prompt;
+$('#copy-prompt').addEventListener('click', () => copyText(D.prompt, $('#copy-prompt-status')));
+$('#sources').innerHTML = D.sources.map(s => `<li>${s}</li>`).join('');
+</script>

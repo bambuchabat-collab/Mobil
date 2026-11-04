@@ -1,0 +1,343 @@
+<title>Extra výplata 5.11</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column like a betting-slip insert; balls and slip fields are the only "objects" */
+:root {
+  --bg: #f4f6fa; --surface: #ffffff; --ink: #121726; --muted: #586074; --line: #dde1ea;
+  --accent: #2a78d6; --accent-soft: #e3eefb; --pb: #e8a300; --pb-ink: #241a00;
+  --good: #1d7f47; --warn: #a65f00; --band: rgba(42,120,214,.10);
+  --f-display: "Unbounded", "Onest", system-ui, sans-serif;
+  --f-body: "Onest", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0f121a; --surface: #171b26; --ink: #edf0f6; --muted: #a3aabb; --line: #2a3142;
+  --accent: #3f8de8; --accent-soft: #1b2a40; --pb: #d08f00; --pb-ink: #1a1300;
+  --good: #3fb874; --warn: #e09a3a; --band: rgba(63,141,232,.16); color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0f121a; --surface: #171b26; --ink: #edf0f6; --muted: #a3aabb; --line: #2a3142;
+  --accent: #3f8de8; --accent-soft: #1b2a40; --pb: #d08f00; --pb-ink: #1a1300;
+  --good: #3fb874; --warn: #e09a3a; --band: rgba(63,141,232,.16); color-scheme: dark }
+
+body { background: var(--bg); color: var(--ink); font: 400 16px/1.55 var(--f-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 64px; }
+.wrap { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px; }
+h1, h2 { font-family: var(--f-display); text-wrap: balance; letter-spacing: -.01em; margin: 0; }
+h1 { font-size: clamp(26px, 6vw, 40px); line-height: 1.12; font-weight: 700; }
+h2 { font-size: clamp(19px, 4vw, 23px); line-height: 1.25; font-weight: 500; }
+h3 { font: 600 16px/1.3 var(--f-body); margin: 0; }
+p { margin: 0; max-width: 66ch; }
+section { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.eyebrow { font: 600 12px/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.lede { color: var(--muted); font-size: 15px; }
+.mono, td.num, .num { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+.muted { color: var(--muted); }
+small, .small { font-size: 13.5px; color: var(--muted); }
+a { color: var(--accent); }
+header { display: flex; flex-direction: column; gap: 14px; }
+.deadline { display: flex; flex-wrap: wrap; gap: 8px 18px; font: 500 14px/1.4 var(--f-mono); }
+.deadline b { color: var(--accent); font-weight: 600; }
+
+.verdict { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: grid; gap: 14px; }
+.verdict ol { margin: 0; padding-left: 20px; display: grid; gap: 10px; }
+.verdict li::marker { font-family: var(--f-mono); color: var(--accent); font-weight: 600; }
+
+.ball { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
+  background: var(--accent); color: #fff; font: 600 14px/1 var(--f-mono); flex: none; }
+.ball.pb { background: var(--pb); color: var(--pb-ink); }
+.ball.sm { width: 26px; height: 26px; font-size: 12px; }
+.balls { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.plus { font: 600 15px/1 var(--f-mono); color: var(--muted); padding: 0 2px; }
+
+.slip { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 560px) { .slip { grid-template-columns: minmax(0, 1fr); } }
+.field { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; display: grid; gap: 8px; }
+.field .lbl { display: flex; justify-content: space-between; gap: 8px; font: 500 12px/1.2 var(--f-mono); color: var(--muted); letter-spacing: .04em; }
+.field.formula { border-color: var(--accent); }
+.field.formula .lbl span:first-child { color: var(--accent); font-weight: 600; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+button { font: 600 14px/1 var(--f-body); background: var(--ink); color: var(--bg); border: 0; border-radius: 9px; padding: 11px 15px; cursor: pointer; }
+button.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+button:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.status { font-size: 13.5px; color: var(--good); min-height: 1em; }
+
+.tablebox { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { padding: 9px 12px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { font: 600 11.5px/1.2 var(--f-mono); letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+tr:last-child td { border-bottom: 0; }
+td.num, th.num { text-align: right; }
+tr.hl td { background: var(--accent-soft); }
+.pill { display: inline-block; font: 600 11.5px/1 var(--f-mono); padding: 4px 7px; border-radius: 99px; border: 1px solid currentColor; }
+.pill.good { color: var(--good); } .pill.warn { color: var(--warn); } .pill.flat { color: var(--muted); }
+
+.chart { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 10px 8px; position: relative; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart .cap { padding: 0 6px 8px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 14px; font-size: 13px; color: var(--muted); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; }
+.key { display: inline-flex; align-items: center; gap: 6px; }
+.sw { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--bg); font: 500 12.5px/1.35 var(--f-mono); padding: 7px 9px; border-radius: 7px; white-space: nowrap; transform: translate(-50%, -110%); z-index: 3; }
+.tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+.tabs button { background: transparent; color: var(--muted); border: 1px solid var(--line); padding: 8px 11px; font-size: 13px; }
+.tabs button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+.fact { border-top: 2px solid var(--ink); padding-top: 8px; display: grid; gap: 2px; min-width: 0; }
+.fact .v { font: 600 20px/1.2 var(--f-mono); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.fact .k { font-size: 13.5px; color: var(--muted); }
+
+pre.prompt { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; white-space: pre-wrap; word-break: break-word; font: 400 13.5px/1.55 var(--f-mono); margin: 0; max-height: 440px; overflow: auto; }
+ul.plain { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+details { border: 1px solid var(--line); border-radius: 12px; background: var(--surface); padding: 12px 14px; }
+summary { cursor: pointer; font-weight: 600; }
+details > div { padding-top: 10px; display: grid; gap: 10px; }
+@media (prefers-reduced-motion: no-preference) { .bar { transition: opacity .15s; } }
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">TIPOS · EXTRA VÝPLATA · 6 из 27 + 1 из 7</div>
+  <h1>Тираж 5 ноября 2026: сколько полей брать и что ставить</h1>
+  <div class="deadline"><span>Приём ставок до <b>17:45</b></span><span>Тираж в <b>18:00</b></span><span class="muted">время Братиславы</span></div>
+  <p class="lede" id="lede"></p>
+</header>
+
+<section class="verdict" aria-labelledby="v-h">
+  <h2 id="v-h">Короткий ответ</h2>
+  <ol id="verdict"></ol>
+</section>
+
+<section aria-labelledby="t-h">
+  <div class="eyebrow">Купон на сегодня</div>
+  <h2 id="t-h">8 полей, подобранных так, чтобы покрыть как можно больше комбинаций</h2>
+  <p class="small" id="slip-note"></p>
+  <div class="row">
+    <label class="small" for="nsel">Сколько полей:</label>
+    <select id="nsel"></select>
+    <button id="copy">Скопировать билеты</button>
+    <span class="status" id="copy-status" role="status"></span>
+  </div>
+  <div class="slip" id="slip"></div>
+  <textarea id="copy-fallback" hidden readonly rows="8" style="width:100%;font:13px var(--f-mono)"></textarea>
+</section>
+
+<section aria-labelledby="n-h">
+  <div class="eyebrow">Сколько полей</div>
+  <h2 id="n-h">Шанс выиграть хоть что-то растёт, средний проигрыш растёт так же</h2>
+  <p id="n-text"></p>
+  <div class="chart" id="ch-n"></div>
+  <div class="tablebox"><table id="tb-n"></table></div>
+  <p class="small">Шанс «хоть какой-то выигрыш» = хотя бы в одном поле 3+ совпадения основных чисел (минимальный приз 3+0, около 3–4 €). Посчитано точно по всем 296 010 возможным тиражам. Средний возврат взят из официальных данных: TIPOS выплачивает 57,9 % от всех ставок.</p>
+</section>
+
+<section aria-labelledby="f-h">
+  <div class="eyebrow">С самого начала, 25.03.2024</div>
+  <h2 id="f-h">Какие числа выпадали чаще всего</h2>
+  <div class="tabs" role="group" aria-label="Период">
+    <button data-p="all" aria-pressed="true">Всё время</button>
+    <button data-p="12m" aria-pressed="false">Последние 52</button>
+    <button data-p="6m" aria-pressed="false">Последние 26</button>
+  </div>
+  <div class="chart" id="ch-main"></div>
+  <p id="f-text"></p>
+  <div class="chart" id="ch-pb"></div>
+  <p id="pb-text"></p>
+</section>
+
+<section aria-labelledby="b-h">
+  <div class="eyebrow">Проверка формул</div>
+  <h2 id="b-h">Десять формул предсказания на 135 прошедших тиражах</h2>
+  <p id="b-text"></p>
+  <div class="tablebox"><table id="tb-b"></table></div>
+  <p id="b-text2"></p>
+  <div class="tablebox"><table id="tb-per"></table></div>
+</section>
+
+<section aria-labelledby="a-h">
+  <div class="eyebrow">Аномалии</div>
+  <h2 id="a-h">Что выглядело неслучайным и куда это делось</h2>
+  <div class="facts" id="facts"></div>
+  <p id="a-text"></p>
+  <div class="tablebox"><table id="tb-pat"></table></div>
+</section>
+
+<section aria-labelledby="o-h">
+  <div class="eyebrow">Шансы и деньги</div>
+  <h2 id="o-h">Вероятность каждого уровня на одно поле</h2>
+  <div class="tablebox"><table id="tb-odds"></table></div>
+  <p class="small" id="o-text"></p>
+</section>
+
+<section aria-labelledby="p-h">
+  <div class="eyebrow">Промт</div>
+  <h2 id="p-h">Промт, по которому сделан этот разбор</h2>
+  <p class="small">Его можно запускать перед каждым тиражом: данные подтянутся заново.</p>
+  <div class="row"><button class="ghost" id="copy-prompt">Скопировать промт</button><span class="status" id="copy-prompt-status" role="status"></span></div>
+  <pre class="prompt" id="prompt"></pre>
+</section>
+
+<section aria-labelledby="s-h">
+  <h2 id="s-h">Источники и метод</h2>
+  <ul class="plain small" id="sources"></ul>
+  <p class="small">Лотерея только для лиц старше 18 лет. Если игра перестаёт быть развлечением, в Словакии работает Linka pomoci pre problémy s hraním.</p>
+</section>
+</div>
+
+<script>
+const DATA = /*DATA*/null;
+const $ = (s, r = document) => r.querySelector(s);
+const fmt = (x, d = 0) => x.toLocaleString('ru-RU', { minimumFractionDigits: d, maximumFractionDigits: d });
+const pct = (x, d = 1) => fmt(100 * x, d) + ' %';
+const oneIn = p => '1 к ' + fmt(Math.round(1 / p));
+const ball = (n, pb = false, sm = false) => `<span class="ball${pb ? ' pb' : ''}${sm ? ' sm' : ''}">${n}</span>`;
+const balls = (arr, pb, sm) => `<span class="balls">${arr.map(n => ball(n, false, sm)).join('')}${pb != null ? '<span class="plus">+</span>' + ball(pb, true, sm) : ''}</span>`;
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const D = DATA;
+
+/* ---------- header + verdict ---------- */
+$('#lede').textContent = `Разбор всех ${D.n_draws} тиражей с первого (${D.first_h}) по последний (${D.last_h}). Числа взяты с tipos.sk и сверены с официальной статистикой лотереи.`;
+const p8 = D.plans['8'];
+$('#verdict').innerHTML = [
+  `<li><b>Сколько полей.</b> Нет количества, при котором шанс становится высоким: каждое поле добавляет одинаковый шанс 1 к ${fmt(D.combos_pb)} на главный приз и в среднем возвращает ${fmt(1.5 * D.payout, 2)} € из 1,50 €. Разумный максимум на сегодня: один купон из 8 полей за 12 €. Подобранные поля дают <b>${pct(p8.p_any_prize, 0)}</b> шанса выиграть хоть что-то (случайные поля: ${pct(p8.p_any_prize_quickpick, 0)}), средний проигрыш около ${fmt(p8.expected_loss_eur, 0)} €.</li>`,
+  `<li><b>Самые частые числа с начала:</b> ${D.top_main.map(x => `<b>${x.n}</b> (${x.c})`).join(', ')}. Ожидаемо около ${fmt(D.exp_main, 1)} на число. Реже всех: ${D.bottom_main.map(x => `${x.n} (${x.c})`).join(', ')}. В доп. барабане чаще всего ${D.top_pb.map(x => `${x.n} (${x.c})`).join(', ')}, реже всего 7 (${D.pb_freq['7']}).</li>`,
+  `<li><b>Формула.</b> Лучшей оказалась простая: взвешенная частота числа за всё время, за 52 и за 20 последних тиражей. В 2024–2025 она угадывала заметно больше случайного, но в последних ~40 тиражах её преимущество равно нулю. Её числа на сегодня: ${balls(D.formula.main, D.formula.pb, true)}. Считайте это выбором, который не хуже случайного, а не прогнозом.</li>`,
+  `<li><b>Честный вывод.</b> Предсказать тираж нельзя. Все проверки последних месяцев выглядят как чистая случайность. Единственное, что реально улучшается расчётом, это шанс на мелкий выигрыш за те же деньги: поля не должны дублировать друг друга, а доп. числа должны быть разными.</li>`
+].join('');
+
+/* ---------- slip ---------- */
+const sel = $('#nsel');
+D.plan_keys.forEach(k => { const o = document.createElement('option'); o.value = k; o.textContent = `${k} (${fmt(1.5 * k, 2)} €)`; if (k === '8') o.selected = true; sel.append(o); });
+function renderSlip() {
+  const p = D.plans[sel.value];
+  $('#slip').innerHTML = p.tickets.map((t, i) => `<div class="field${i === 0 ? ' formula' : ''}"><div class="lbl"><span>Поле ${i + 1}${i === 0 ? ' · формула' : ''}</span><span>${t.main.reduce((a, b) => a + b, 0)} сумма</span></div>${balls(t.main, t.pb)}</div>`).join('');
+  $('#slip-note').innerHTML = `${sel.value} пол${sel.value === '1' ? 'е' : (+sel.value < 5 ? 'я' : 'ей')} за ${fmt(p.cost_eur, 2)} €. Шанс выиграть хоть что-то: <b>${pct(p.p_any_prize)}</b> против ${pct(p.p_any_prize_quickpick)} у случайных полей той же цены. Шанс угадать все 6 основных: ${oneIn(p.p_6main)}, главный приз 6+1: ${oneIn(p.p_jackpot)}. Поле 1 содержит числа формулы, остальные подобраны оптимизатором вокруг него; доп. числа разнесены по всем семи значениям.`;
+}
+sel.addEventListener('change', renderSlip); renderSlip();
+async function copyText(text, statusEl, fallbackEl) {
+  try { await navigator.clipboard.writeText(text); statusEl.textContent = 'Скопировано'; }
+  catch (e) { if (fallbackEl) { fallbackEl.hidden = false; fallbackEl.value = text; fallbackEl.select(); } statusEl.textContent = 'Выделите текст и скопируйте вручную'; }
+}
+$('#copy').addEventListener('click', () => {
+  const p = D.plans[sel.value];
+  const text = p.tickets.map((t, i) => `Поле ${i + 1}: ${t.main.join(' ')} + ${t.pb}`).join('\n');
+  copyText(text, $('#copy-status'), $('#copy-fallback'));
+});
+
+/* ---------- generic svg helpers ---------- */
+const NS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs = {}, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.append(e); return e; }
+function tipFor(box) { let t = box.querySelector('.tip'); if (!t) { t = document.createElement('div'); t.className = 'tip'; t.hidden = true; box.append(t); } return t; }
+function showTip(box, html, x, y) { const t = tipFor(box); t.innerHTML = html; t.hidden = false; const r = box.getBoundingClientRect(); const w = t.offsetWidth; const cx = Math.min(Math.max(x - r.left, w / 2 + 4), r.width - w / 2 - 4); t.style.left = cx + 'px'; t.style.top = (y - r.top) + 'px'; }
+function hideTip(box) { const t = box.querySelector('.tip'); if (t) t.hidden = true; }
+
+/* bars with expected line and ±2σ band */
+function barChart(box, cats, vals, expected, sd, opts) {
+  box.innerHTML = `<div class="cap"><span>${opts.title}</span><span class="legend"><span class="key"><span class="sw" style="background:var(--accent)"></span>выпадений</span><span class="key"><span class="sw" style="background:var(--band);outline:1px dashed var(--muted)"></span>ожидание ±2σ</span></span></div>`;
+  const W = 760, H = opts.h || 250, m = { l: 34, r: 8, t: 10, b: 26 };
+  const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': opts.title });
+  box.append(svg);
+  const max = Math.ceil(Math.max(...vals, expected + 2 * sd) / 10) * 10;
+  const y = v => m.t + (H - m.t - m.b) * (1 - v / max);
+  const bw = (W - m.l - m.r) / cats.length;
+  for (let g = 0; g <= max; g += max > 40 ? 10 : 5) {
+    el('line', { x1: m.l, x2: W - m.r, y1: y(g), y2: y(g), stroke: css('--line'), 'stroke-width': 1 }, svg);
+    const tx = el('text', { x: m.l - 6, y: y(g) + 4, 'text-anchor': 'end', 'font-size': 11, fill: css('--muted'), 'font-family': 'JetBrains Mono, monospace' }, svg); tx.textContent = g;
+  }
+  el('rect', { x: m.l, width: W - m.l - m.r, y: y(expected + 2 * sd), height: y(expected - 2 * sd) - y(expected + 2 * sd), fill: css('--band') }, svg);
+  el('line', { x1: m.l, x2: W - m.r, y1: y(expected), y2: y(expected), stroke: css('--muted'), 'stroke-dasharray': '4 4', 'stroke-width': 1.5 }, svg);
+  cats.forEach((c, i) => {
+    const v = vals[i], x = m.l + i * bw, w = Math.max(4, bw - 2 * Math.max(1, bw * 0.14));
+    const yy = y(v), h = y(0) - yy, r = Math.min(4, w / 2, h);
+    const path = `M${x + (bw - w) / 2},${y(0)} V${yy + r} q0,-${r} ${r},-${r} H${x + (bw + w) / 2 - r} q${r},0 ${r},${r} V${y(0)} Z`;
+    const z = (v - expected) / sd;
+    const p = el('path', { d: path, fill: opts.color ? opts.color(c) : css('--accent'), class: 'bar' }, svg);
+    const tx = el('text', { x: x + bw / 2, y: H - 8, 'text-anchor': 'middle', 'font-size': 11, fill: css('--muted'), 'font-family': 'JetBrains Mono, monospace' }, svg); tx.textContent = c;
+    const hit = el('rect', { x, y: m.t, width: bw, height: H - m.t - m.b + 20, fill: 'transparent', tabindex: 0, 'aria-label': `${c}: ${v}` }, svg);
+    const on = e => { svg.querySelectorAll('.bar').forEach(b => b.style.opacity = b === p ? 1 : .45); const pt = e.touches ? e.touches[0] : e; const br = hit.getBoundingClientRect(); showTip(box, `Число ${c}: ${v} раз<br>отклонение ${z >= 0 ? '+' : ''}${fmt(z, 1)}σ`, e.clientX ?? (br.left + br.width / 2), (e.clientY ?? br.top) - 6); };
+    hit.addEventListener('pointermove', on); hit.addEventListener('focus', () => { const br = hit.getBoundingClientRect(); on({ clientX: br.left + br.width / 2, clientY: br.top + 60 }); });
+    hit.addEventListener('pointerleave', () => { svg.querySelectorAll('.bar').forEach(b => b.style.opacity = 1); hideTip(box); });
+    hit.addEventListener('blur', () => { svg.querySelectorAll('.bar').forEach(b => b.style.opacity = 1); hideTip(box); });
+  });
+}
+
+/* ---------- frequencies ---------- */
+const periods = { all: D.n_draws, '12m': 52, '6m': 26 };
+const perKey = { all: 'main', '12m': 'main_12m_52', '6m': 'main_6m_26' };
+function renderMain(p) {
+  const draws = p === 'all' ? D.n_draws : +({ '12m': 52, '6m': 26 }[p]);
+  const src = D.freqs[p];
+  const cats = Array.from({ length: 27 }, (_, i) => i + 1);
+  const vals = cats.map(c => src[c - 1]);
+  const e = draws * 6 / 27, sd = Math.sqrt(draws * (6 / 27) * (21 / 27));
+  barChart($('#ch-main'), cats, vals, e, sd, { title: `Основные числа, ${draws} тиражей` });
+}
+document.querySelectorAll('.tabs button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.tabs button').forEach(x => x.setAttribute('aria-pressed', x === b)); renderMain(b.dataset.p);
+}));
+renderMain('all');
+barChart($('#ch-pb'), [1, 2, 3, 4, 5, 6, 7], [1, 2, 3, 4, 5, 6, 7].map(i => D.pb_freq[i]), D.n_draws / 7, Math.sqrt(D.n_draws / 7 * 6 / 7), { title: `Доп. число (2-й барабан), ${D.n_draws} тиражей`, h: 200 });
+$('#f-text').innerHTML = D.text.freq;
+$('#pb-text').innerHTML = D.text.pb;
+
+/* ---------- tickets count chart + table ---------- */
+(function () {
+  const box = $('#ch-n'); const ks = D.plan_keys.map(Number);
+  box.innerHTML = `<div class="cap"><span>Шанс выиграть хоть что-то</span><span class="legend"><span class="key"><span class="sw" style="background:var(--accent)"></span>подобранные поля</span><span class="key"><span class="sw" style="background:var(--muted)"></span>случайные поля</span></span></div>`;
+  const W = 760, H = 250, m = { l: 44, r: 92, t: 12, b: 30 };
+  const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'Шанс выигрыша в зависимости от числа полей' }); box.append(svg);
+  const xmax = Math.max(...ks); const x = k => m.l + (W - m.l - m.r) * (k - 1) / (xmax - 1); const y = v => m.t + (H - m.t - m.b) * (1 - v);
+  [0, .25, .5, .75, 1].forEach(g => { el('line', { x1: m.l, x2: W - m.r, y1: y(g), y2: y(g), stroke: css('--line') }, svg); const t = el('text', { x: m.l - 6, y: y(g) + 4, 'text-anchor': 'end', 'font-size': 11, fill: css('--muted'), 'font-family': 'JetBrains Mono, monospace' }, svg); t.textContent = (g * 100) + '%'; });
+  [1, 4, 8, 12, 16, 20, 24].filter(k => k <= xmax).forEach(k => { const t = el('text', { x: x(k), y: H - 10, 'text-anchor': 'middle', 'font-size': 11, fill: css('--muted'), 'font-family': 'JetBrains Mono, monospace' }, svg); t.textContent = k; });
+  const t0 = el('text', { x: W - m.r, y: H - 10, 'text-anchor': 'start', dx: 8, 'font-size': 11, fill: css('--muted') }, svg); t0.textContent = 'полей';
+  const series = [['p_any_prize', css('--accent'), 'подобранные'], ['p_any_prize_quickpick', css('--muted'), 'случайные']];
+  series.forEach(([key, col, name]) => {
+    const pts = ks.map(k => [x(k), y(D.plans[k][key])]);
+    el('path', { d: 'M' + pts.map(p => p.join(',')).join(' L'), fill: 'none', stroke: col, 'stroke-width': 2, 'stroke-linejoin': 'round' }, svg);
+    pts.forEach(p => el('circle', { cx: p[0], cy: p[1], r: 4, fill: col, stroke: css('--surface'), 'stroke-width': 2 }, svg));
+    const last = pts[pts.length - 1]; const lt = el('text', { x: last[0] + 8, y: last[1] + 4, 'font-size': 12, fill: css('--ink') }, svg); lt.textContent = name;
+  });
+  const cross = el('line', { y1: m.t, y2: H - m.b, stroke: css('--muted'), 'stroke-width': 1, opacity: 0 }, svg);
+  const hit = el('rect', { x: m.l, y: m.t, width: W - m.l - m.r, height: H - m.t - m.b, fill: 'transparent' }, svg);
+  hit.addEventListener('pointermove', e => {
+    const r = svg.getBoundingClientRect(); const sx = (e.clientX - r.left) * W / r.width;
+    let best = ks[0]; ks.forEach(k => { if (Math.abs(x(k) - sx) < Math.abs(x(best) - sx)) best = k; });
+    cross.setAttribute('x1', x(best)); cross.setAttribute('x2', x(best)); cross.setAttribute('opacity', 1);
+    const p = D.plans[best];
+    showTip(box, `${best} полей · ${fmt(p.cost_eur, 2)} €<br>подобранные ${pct(p.p_any_prize)}<br>случайные ${pct(p.p_any_prize_quickpick)}<br>средний проигрыш ${fmt(p.expected_loss_eur, 2)} €`, r.left + x(best) * r.width / W, r.top + m.t * r.height / H + 70);
+  });
+  hit.addEventListener('pointerleave', () => { cross.setAttribute('opacity', 0); hideTip(box); });
+
+  const rows = ks.map(k => { const p = D.plans[k]; return `<tr class="${k === 8 ? 'hl' : ''}"><td class="num">${k}</td><td class="num">${fmt(p.cost_eur, 2)} €</td><td class="num">${pct(p.p_any_prize)}</td><td class="num">${pct(p.p_any_prize_quickpick)}</td><td class="num">${oneIn(p.p_6main)}</td><td class="num">${oneIn(p.p_jackpot)}</td><td class="num">−${fmt(p.expected_loss_eur, 2)} €</td></tr>`; }).join('');
+  $('#tb-n').innerHTML = `<thead><tr><th class="num">Полей</th><th class="num">Цена</th><th class="num">Хоть что-то</th><th class="num">Случайные</th><th class="num">6 основных</th><th class="num">6+1</th><th class="num">Средний итог</th></tr></thead><tbody>${rows}</tbody>`;
+  $('#n-text').innerHTML = D.text.n;
+})();
+
+/* ---------- backtest ---------- */
+(function () {
+  const b = D.backtest;
+  const rows = b.rows.map(r => `<tr class="${r.key === 'composite_formula' ? 'hl' : ''}"><td>${r.name}</td><td class="num">${fmt(r.mean, 3)}</td><td class="num">${pct(r.ge3)}</td><td class="num">${fmt(r.p, 3)}</td><td>${r.p < 0.01 ? '<span class="pill good">лучше случая</span>' : r.p < 0.05 ? '<span class="pill warn">на грани</span>' : '<span class="pill flat">как случай</span>'}</td></tr>`).join('');
+  $('#tb-b').innerHTML = `<thead><tr><th>Формула</th><th class="num">Угадано в среднем</th><th class="num">3+ совпадений</th><th class="num">p</th><th>Итог</th></tr></thead><tbody><tr><td><i>Случайный выбор</i></td><td class="num">${fmt(4 / 3, 3)}</td><td class="num">${pct(b.random_ge3)}</td><td class="num">—</td><td></td></tr>${rows}</tbody>`;
+  $('#b-text').innerHTML = D.text.bt;
+  $('#b-text2').innerHTML = D.text.bt2;
+  const pr = D.periods.map(r => `<tr><td>${r.name}</td>${r.cells.map(c => `<td class="num">${c.hits} / ${fmt(c.exp, 0)}<br><span class="small">${c.z >= 0 ? '+' : ''}${fmt(c.z, 1)}σ</span></td>`).join('')}</tr>`).join('');
+  $('#tb-per').innerHTML = `<thead><tr><th>Формула</th>${D.period_heads.map(h => `<th class="num">${h}</th>`).join('')}</tr></thead><tbody>${pr}</tbody>`;
+})();
+
+/* ---------- anomalies ---------- */
+$('#facts').innerHTML = D.facts.map(f => `<div class="fact"><span class="v">${f.v}</span><span class="k">${f.k}</span></div>`).join('');
+$('#a-text').innerHTML = D.text.anom;
+$('#tb-pat').innerHTML = `<thead><tr><th>Признак</th><th class="num">Факт</th><th class="num">Теория</th><th>Итог</th></tr></thead><tbody>${D.patterns.map(r => `<tr><td>${r.k}</td><td class="num">${r.obs}</td><td class="num">${r.th}</td><td>${r.ok ? '<span class="pill flat">как случай</span>' : '<span class="pill warn">отклонение</span>'}</td></tr>`).join('')}</tbody>`;
+
+/* ---------- odds ---------- */
+$('#tb-odds').innerHTML = `<thead><tr><th>Угадано</th><th class="num">Шанс на поле</th><th class="num">Приз (средний за год)</th></tr></thead><tbody>${D.odds.map(o => `<tr><td class="mono">${o.k}</td><td class="num">${oneIn(o.p)}</td><td class="num">${o.prize}</td></tr>`).join('')}<tr><td><b>Хоть что-то</b></td><td class="num"><b>${oneIn(D.p_any1)}</b></td><td></td></tr></tbody>`;
+$('#o-text').innerHTML = D.text.odds;
+
+/* ---------- prompt + sources ---------- */
+$('#prompt').textContent = D.prompt;
+$('#copy-prompt').addEventListener('click', () => copyText(D.prompt, $('#copy-prompt-status')));
+$('#sources').innerHTML = D.sources.map(s => `<li>${s}</li>`).join('');
+</script>
