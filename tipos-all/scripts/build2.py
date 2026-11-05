@@ -5,6 +5,7 @@ import json, sys, math
 R = json.load(open(sys.argv[1])); TK = json.load(open(sys.argv[2]))
 css = open(sys.argv[3], encoding='utf-8').read(); body = open(sys.argv[4], encoding='utf-8').read()
 PROMPT = open(sys.argv[5], encoding='utf-8').read().strip(); OUT = sys.argv[6]
+RS = json.load(open(sys.argv[7])); FT = json.load(open(sys.argv[8])); JP = json.load(open(sys.argv[9]))
 
 def f(x, d=0):
     return f'{x:,.{d}f}'.replace(',', ' ').replace('.', ',')
@@ -15,18 +16,17 @@ J = R['joker']; L = R['loto535']; B = R['bundle']; LO = R['loto']; V = R['van'];
 EM = R.get('euromiliony'); EJ = R.get('eurojackpot')
 
 rank = [r['n'] for r in TK['formula']['ranking']]
-ev3 = [{'main': sorted(rank[0:6]), 'pb': 2, 'label': 'места 1–6 формулы'},
-       {'main': sorted(rank[6:12]), 'pb': 1, 'label': 'места 7–12'},
-       {'main': sorted(rank[12:18]), 'pb': 3, 'label': 'места 13–18'}]
-my_nums = L['pool']['formula_pick']
+ev3 = [{'main': t['main'], 'pb': t['pb'], 'label': f"популярность {f(100 * r)} %"} for t, r in zip(FT['extra']['tickets'], FT['extra']['rel_popularity'])]
+my_fields = FT['loto535']['fields']
+my_nums = my_fields[0]
 
 copy_text = '\n'.join([f"Extra výplata 5.11, билет {i + 1}: {' '.join(map(str, t['main']))} + {t['pb']}" for i, t in enumerate(ev3)]
-                      + [f"Loto 5 z 35 на 6.11: {' '.join(map(str, my_nums))} + JOKER: ÁNO"])
+                      + [f"Loto 5 z 35 на 6.11, билет {i + 1}: {' '.join(map(str, t))} + JOKER: ÁNO" for i, t in enumerate(my_fields)])
 
 verdict = [
     f"<b>Лазейка есть, но не в угадывании чисел.</b> Это накопившийся джекпот <b>JOKER</b> (добавка к Loto и Loto 5 z 35 за 0,60 €). Шанс угадать 6 цифр всегда 1 к 1 000 000, а джекпот дорос до {f(J['jackpot_carry'])} € и к пятничному тиражу будет около {f(J['pot_next_est'], 0)} €. При таком джекпоте ставка 0,60 € в среднем возвращает {f(J['ev'], 2)} €, то есть {pc(J['ev_ratio'])}. Во всех остальных играх TIPOS возврат 40–58 %.",
-    f"<b>Мой билет:</b> Loto 5 z 35, одно поле {' '.join(map(str, my_nums))} + JOKER: ÁNO, всего 1,20 €. Тираж в пятницу 6.11 в 18:00, купить можно уже сегодня. В среднем такой билет возвращает {f(B['ev'], 2)} € из 1,20 € ({pc(B['ev_ratio'])}).",
-    f"<b>Extra výplata сегодня, 3 билета по формуле:</b> {'; '.join(' '.join(map(str, t['main'])) + ' + ' + str(t['pb']) for t in ev3)}. У каждого шанс на главный приз одинаковый: 1 к 2 072 070.",
+    f"<b>Завтра, Loto 5 z 35: 5 отдельных билетов по одному полю, в каждом JOKER</b>, всего 6 €: {'; '.join(' '.join(map(str, t)) for t in my_fields)}. В среднем такой набор возвращает около {f(5 * B['ev'], 2)} € из 6 €.",
+    f"<b>Extra výplata сегодня, 3 билета:</b> {'; '.join(' '.join(map(str, t['main'])) + ' + ' + str(t['pb']) for t in ev3)}. Шанс на главный приз у любого билета одинаковый, 1 к 2 072 070. Эти числа реже выбирают другие игроки, поэтому при выигрыше делиться придётся с меньшим числом людей.",
     "<b>Числа не предсказываются ни в одной лотерее.</b> Формулы на частотах в последней трети истории ни в одной игре не обогнали случайный выбор с запасом, который выдержал бы поправку на число проверок. Частоты чисел и цифры Joker в пределах нормы.",
 ]
 
@@ -89,9 +89,11 @@ honest = [
 ]
 lede = (f"Разобраны все числовые лотереи TIPOS, кроме Keno: {f(L['pool']['draws'] + LO['pool']['draws'] + V['pool']['draws'] + (EM['pool']['draws'] if EM else 0) + (EJ['pool']['draws'] if EJ else 0) + 165)} тиражей "
         f"с официального сайта, правила сверены с игровым планом TIPOS. Цены и джекпоты на утро 5.11.2026.")
-my_note = (f"Числа поля по той же формуле, что и для Extra výplata. Они не повышают шанс в Loto 5 z 35 (там формула тоже не обгоняет случай), выгоду даёт только Joker. "
-           f"Шанс джекпота Joker 1 к 1 000 000, Loto 5 z 35 1 к {f(1 / L['p_jackpot'])}. Тираж в пятницу 6.11 в 18:00, приём ставок до 17:45 в день тиража.")
-ev3_note = "Три непересекающихся билета из 18 лучших чисел формулы. Они покрывают столько же комбинаций, сколько лучшие 3 поля оптимизатора: 29,9 % шанса хоть на какой-то выигрыш. Приём ставок до 17:45, тираж в 18:00."
+my_note = (f"Поля не пересекаются и собраны из 25 наименее популярных чисел; 10 самых любимых игроками ({', '.join(map(str, FT['loto535']['dropped_popular']))}) не используются. "
+           f"Шанс хоть на какой-то выигрыш в Loto 5 z 35 у пяти полей {pc(FT['loto535']['cover_any_prize'], 1)}, это максимум для 5 полей. Номера Joker выбрать нельзя. "
+           f"Шанс джекпота Joker при 5 билетах 1 к 200 000. Каждый билет оформляется отдельно, приём ставок до 17:45 в день тиража.")
+ev3_note = (f"Три непересекающихся билета: 29,9 % шанса хоть на какой-то выигрыш, это максимум для трёх полей. Из 27 чисел убраны 9 самых популярных у игроков ({', '.join(map(str, FT['extra']['dropped_popular']))}). "
+            f"Доп. числа 7, 6 и 5 игроки выбирают примерно на 12 % реже среднего, а 3 на 18 % чаще. «Популярность» у билета: сколько соседей по выигрышу ожидается относительно среднего билета (100 %). Приём ставок до 17:45, тираж в 18:00.")
 
 sources = [
     'Архивы тиражей: tipos.sk, эндпоинты <span class="mono">GetZrebovania</span> и <span class="mono">GetForDate</span> для каждой игры (Loto и Loto 5 z 35 с 2018 года, Euromilióny с 2020, Eurojackpot с 25.03.2022 в формате 5/50 + 2/12, Všetko alebo nič с 01.01.2026).',
@@ -100,13 +102,25 @@ sources = [
     'Премия Extra výplata в октябре 2026 (удвоенные призы 3–8 уровня) закончилась 29.10.2026 и на тираж 5.11 не действует.',
 ]
 
-data = {'lede': lede, 'verdict': verdict, 'my': {'numbers': my_nums, 'draw': 'пт 6.11, 18:00', 'cost': 1.20, 'note': my_note},
+ml = RS['ml']; pl = RS['pop_loto535']
+research = {
+ 'text': (f"Я проверил то, что предлагают исследования и «системы». Машинное обучение: логистическая регрессия на 8 признаках истории (частоты за 4 окна, пропуск, прошлые 2 тиража, пары), обучение только на прошлом. "
+          f"В Extra výplata она угадывала {f(ml['extra_vyplata']['mean_hits'], 3)} числа против {f(ml['extra_vyplata']['random_mean'], 3)} у случая, в Loto 5 z 35 {f(ml['loto535']['mean_hits'], 3)} против {f(ml['loto535']['random_mean'], 3)} ({f(ml['loto535']['draws_tested'])} тиражей). "
+          f"Работает другое: популярность чисел у игроков. По числу победителей в 1 008 тиражах Loto 5 z 35 видно, какие числа ставят чаще. Модель подтвердилась на новых тиражах (p < 0,003) и совпадает в двух половинах истории (корреляция {f(pl['half_corr'], 2)}). "
+          f"Любимые числа словацких игроков: {', '.join(map(str, FT['loto535']['most_popular'][:7]))}. Нелюбимые: {', '.join(map(str, FT['loto535']['least_popular'][:7]))}. Это совпадает с исследованиями Ziemba (1986) и Baker и McHale (2009)."),
+ 'rows': [['Частоты, «горячие» и «холодные» числа', 'не меняет', 'не меняет', 'no'],
+          ['Машинное обучение по истории тиражей', 'не меняет', 'не меняет', 'no'],
+          ['Поиск перекоса шаров или генератора', 'перекоса нет ни в одной игре', 'не меняет', 'no'],
+          ['Поля без пересечений (покрытие)', 'максимум шанса на мелкий приз', 'не меняет', 'yes'],
+          ['Непопулярные числа', 'не меняет', 'меньше соседей по выигрышу', 'yes'],
+          ['Игра с плюсом в ожидании (Joker)', 'не меняет', 'средний возврат выше ставки', 'yes']]}
+data = {'research': research, 'lede': lede, 'verdict': verdict, 'my': {'numbers': my_nums, 'fields': my_fields, 'draw': 'пт 6.11, 18:00', 'cost': 6.0, 'note': my_note},
         'ev3': ev3, 'ev3_note': ev3_note, 'copy_text': copy_text, 'cmp': rows, 'cmp_note': cmp_note,
         'jseries': J['jackpot_series'], 'joker': J, 'jfacts': jfacts, 'jwins': wins, 'text': text, 'games': games,
         'honest': honest, 'prompt': PROMPT, 'sources': sources}
 data['joker'] = {k: v for k, v in J.items() if k not in ('ev_series', 'jackpot_series')}
 head = '<title>Все лотереи TIPOS</title>\n<meta name="claude:viewport-fit-sides" content="cover">\n<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">\n'
-extra_css = '<style>.slip.one{grid-template-columns:minmax(0,1fr);max-width:420px}.facts{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}</style>\n'
+extra_css = '<style>.slip.one{grid-template-columns:minmax(0,1fr);max-width:420px}.facts{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}#tb-rs td{white-space:normal;min-width:110px}</style>\n'
 html = head + css + '\n' + extra_css + body.replace('/*DATA*/null', json.dumps(data, ensure_ascii=False).replace('</', '<\\/'))
 open(OUT, 'w', encoding='utf-8').write(html)
 print('built', OUT, 'best signal', best, 'tests', nt)

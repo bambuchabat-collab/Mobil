@@ -10,18 +10,23 @@
   <ol id="verdict"></ol>
 </section>
 
+<section aria-labelledby="rs-h">
+  <div class="eyebrow">Ресерч</div>
+  <h2 id="rs-h">Что реально улучшает результат</h2>
+  <p id="rs-text"></p>
+  <div class="tablebox"><table id="tb-rs"></table></div>
+</section>
+
 <section aria-labelledby="my-h">
-  <div class="eyebrow">Мой выбор</div>
-  <h2 id="my-h">Один билет: Loto 5 z 35 + JOKER</h2>
-  <div class="slip one">
-    <div class="field formula" id="my-ticket"></div>
-  </div>
+  <div class="eyebrow">Завтра · пятница 6.11, 18:00</div>
+  <h2 id="my-h">Loto 5 z 35: 5 билетов, в каждом JOKER</h2>
+  <div class="slip" id="my-ticket"></div>
   <p class="small" id="my-note"></p>
 </section>
 
 <section aria-labelledby="ev3-h">
   <div class="eyebrow">Extra výplata · сегодня, 18:00</div>
-  <h2 id="ev3-h">Три билета по формуле</h2>
+  <h2 id="ev3-h">Три билета Extra výplata</h2>
   <div class="slip" id="ev3"></div>
   <p class="small" id="ev3-note"></p>
   <div class="row"><button id="copy">Скопировать все билеты</button><span class="status" id="copy-status" role="status"></span></div>
@@ -97,7 +102,9 @@ $('#lede').textContent = D.lede;
 $('#verdict').innerHTML = D.verdict.map(v => `<li>${v}</li>`).join('');
 
 /* my ticket */
-$('#my-ticket').innerHTML = `<div class="lbl"><span>Loto 5 z 35 · 1 поле</span><span>${D.my.draw}</span></div>${balls(D.my.numbers)}<div class="lbl"><span>JOKER: ÁNO</span><span>${fmt(D.my.cost, 2)} €</span></div>`;
+$('#my-ticket').innerHTML = D.my.fields.map((f, i) => `<div class="field"><div class="lbl"><span>Билет ${i + 1} · 1 поле</span><span>JOKER: ÁNO · 1,20 €</span></div>${balls(f)}</div>`).join('');
+$('#rs-text').innerHTML = D.research.text;
+$('#tb-rs').innerHTML = `<thead><tr><th>Метод</th><th>Шанс выигрыша</th><th>Сумма при выигрыше</th><th>Итог</th></tr></thead><tbody>${D.research.rows.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3] === 'yes' ? '<span class="pill good">берём</span>' : '<span class="pill flat">не работает</span>'}</td></tr>`).join('')}</tbody>`;
 $('#my-note').innerHTML = D.my.note;
 
 /* extra vyplata 3 tickets */
