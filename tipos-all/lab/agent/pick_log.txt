@@ -1,0 +1,50 @@
+pick [1, 18, 30, 32, 35] sum beta -0.253
+{
+ "rule": "pre-registered: no draw hypothesis survived, so choose the 5-subset with the lowest predicted player popularity (sum of P1 betas, refit on all 1008 draws), excluding sets with consecutive numbers or arithmetic progressions",
+ "popularity_beta_by_number": {
+ },
+ "least_popular_10": [
+  35,
+  30,
+  34,
+  32,
+  18,
+  1,
+  31,
+  29,
+  26,
+  28
+ ],
+ "most_popular_10": [
+  7,
+  8,
+  3,
+  19,
+  9,
+  5,
+  13,
+  21,
+  4,
+  11
+ ],
+ "corr_train_beta_vs_holdout_only_beta": 0.742,
+ "bootstrap_inclusion_freq_top": {
+  "30": 1.0,
+ },
+ "predicted_cowinner_density_vs_average_ticket": 0.775,
+ "predicted_4hit_prize_multiplier_vs_average_ticket": 1.403,
+ "holdout_calibration_slopes": {
+  "log_w3_per_deposit": 0.78,
+  "log_4hit_prize": 0.57
+ },
+ "calibrated_cowinner_density_vs_average_ticket": 0.819,
+ "calibrated_4hit_prize_multiplier_vs_average_ticket": 1.215,
+ "for_reference_PL_top5_all_data": [
+  6,
+  13,
+  14,
+  15,
+  30
+ ]
+}
+The pick has the same 1-in-324,632 jackpot chance and the same 0.714 expected matched numbers as any other ticket (no draw-prediction hypothesis survived holdout plus Holm correction); its only validated advantage is that its numbers are less popular with other players, so if it wins, prizes are predicted to be shared with fewer people (after holdout-calibrated shrinkage: about 18% fewer co-winners and about 1.21x the average 4-hit prize; the 3-hit prize is fixed and unaffected).

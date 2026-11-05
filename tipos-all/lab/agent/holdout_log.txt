@@ -1,0 +1,36 @@
+hypothesis tests done 10.1
+models done 10.5
+H01   train p=0.8965 (holm 1.000) | holdout p=0.5131 (holm 1.000) corr resid=-0.006  survives=False
+H02   train p=0.7316 (holm 1.000) | holdout p=0.5756 (holm 1.000) corr meanpos dev=-0.037  survives=False
+H03   train p=0.8260 (holm 1.000) | holdout p=0.6808 (holm 1.000) corr=+0.084  survives=False
+H04a  train p=0.2932 (holm 1.000) | holdout p=0.8303 (holm 1.000) z=-0.96  survives=False
+H04b  train p=0.5979 (holm 1.000) | holdout p=0.1750 (holm 1.000) mean pos=3.055  survives=False
+H05a  train p=0.4536 (holm 1.000) | holdout p=0.5011 (holm 1.000) corr=-0.002  survives=False
+H05b  train p=0.6803 (holm 1.000) | holdout p=0.8290 (holm 1.000) corr=-0.162  survives=False
+H06a  train p=0.5201 (holm 1.000) | holdout p=0.8070 (holm 1.000) mean dist=11.974  survives=False
+H06b  train p=0.6122 (holm 1.000) | holdout p=0.0925 (holm 1.000) corr resid=+0.041  survives=False
+H07a  train p=0.2999 (holm 1.000) | holdout p=0.4951 (holm 1.000) pairs=218  survives=False
+H07b  train p=0.8333 (holm 1.000) | holdout p=0.6311 (holm 1.000) range=24.102  survives=False
+H08   train p=0.5094 (holm 1.000) | holdout p=0.2232 (holm 1.000) corr diff=+0.128  survives=False
+H09a  train p=0.3339 (holm 1.000) | holdout p=0.7248 (holm 1.000) chi2=53.7 (null 60.1)  survives=False
+H09b  train p=0.0607 (holm 1.000) | holdout p=0.2132 (holm 1.000) corr=+0.136  survives=False
+H10   train p=0.7933 (holm 1.000) | holdout p=0.5729 (holm 1.000) corr resid=-0.020  survives=False
+H11   train p=0.5359 (holm 1.000) | holdout p=0.5174 (holm 1.000) corr=-0.002  survives=False
+H12   train p=0.1985 (holm 1.000) | holdout p=0.8615 (holm 1.000) corr diff=-0.192  survives=False
+H13a  train p=0.9518 (holm 1.000) | holdout p=0.6231 (holm 1.000) corr resid=-0.034  survives=False
+H13b  train p=0.2677 (holm 1.000) | holdout p=0.3842 (holm 1.000) corr=-0.013  survives=False
+H14a  train p=0.7490 (holm 1.000) | holdout p=0.0959 (holm 1.000) z=-1.31  survives=False
+H14b  train p=0.1863 (holm 1.000) | holdout p=0.5909 (holm 1.000) z=-0.23  survives=False
+H15   train p=0.6583 (holm 1.000) | holdout p=0.0301 (holm 0.813) z=-1.88  survives=False
+H16   train p=0.5947 (holm 1.000) | holdout p=0.0770 (holm 1.000) logscore gain=-0.0688 nats/draw  survives=False
+M1    train p=0.4338 (holm 1.000) | holdout p=0.2401 (holm 1.000) mean hits=0.7408 vs 0.7143, z=+0.71, logscore gain=-0.0147  survives=False
+M2    train p=0.6706 (holm 1.000) | holdout p=0.3095 (holm 1.000) mean hits=0.7330 vs 0.7143, z=+0.50, ordered logscore gain=-0.0037  survives=False
+P1    train p=0.0010 (holm 0.029) | holdout p=0.0002 (holm 0.007) holdout corr(pred, actual)=+0.594, R2=0.353  survives=True
+H17a  train p=0.9177 (holm 1.000) | holdout p=0.0113 (holm 0.317) mean pos=2.817  survives=False
+H17b  train p=0.2672 (holm 1.000) | holdout p=0.3299 (holm 1.000) corr=-0.026  survives=False
+H18   train p=0.3868 (holm 1.000) | holdout p=0.1500 (holm 1.000) corr(train beta, holdout freq)=-0.175  survives=False
+{
+ "friday_vs_other_holdout": "chi2=20.9 df=34 (null 30.3), p=0.915, n_fri=85",
+ "holdout_corr(pred popularity, log 4-hit prize)": -0.415,
+ "holdout_corr(pred popularity, log W4/dep)": 0.378
+}

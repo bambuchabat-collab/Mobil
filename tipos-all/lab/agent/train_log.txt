@@ -1,0 +1,36 @@
+basic tests done 8.5 s
+H16 done 87.9 s
+  PL alpha 1 logscore gain -0.0589 hits 0.7261
+  PL alpha 5 logscore gain -0.0449 hits 0.7261
+  PL alpha 20 logscore gain -0.0211 hits 0.7261
+  PL alpha 50 logscore gain -0.0072 hits 0.7261
+  PL alpha 200 logscore gain 0.0007 hits 0.728
+  PL alpha 1000 logscore gain 0.0006 hits 0.728
+M done 89.7 s
+H01   p=0.8965  chi2=118.8 (null mean 140.2)
+H02   p=0.7316  S=29.7 (null mean 35.2); earliest=[31 22  2 16 32]; latest=[33 19 25 35 30]
+H03   p=0.8260  corr(meanpos,freq)=-0.045
+H04a  p=0.2932  z=+1.05 (count 829 vs exp 804.9)
+H04b  p=0.5979  mean pos of 1-9 = 3.022 (null 3.000)
+H05a  p=0.4536  corr(ink,freq)=-0.129
+H05b  p=0.6803  corr(ink,meanpos)=+0.070
+H06a  p=0.5201  mean |b(k+1)-b(k)|=12.015 (null 11.939)
+H06b  p=0.6122  chi2=941.3 (null mean 953.3)
+H07a  p=0.2999  consecutive pairs=340 (null 357.8)
+H07b  p=0.8333  mean range=23.947 (null 23.997)
+H08   p=0.5094  chi2=29.3 df=34 (null mean 29.8)
+H09a  p=0.3339  chi2=156.6 df=170 (null mean 150.1)
+H09b  p=0.0607  split-half corr of freq deviations=+0.280
+H10   p=0.7933  chi2=79.5 df=102 (null mean 90.1)
+H11   p=0.5359  corr(temp proxy, mean ink)=+0.025
+H12   p=0.1985  chi2=36.4 df=34 (null mean 30.3)
+H13a  p=0.9518  chi2=70.5 df=102 (null mean 89.8)
+H13b  p=0.2677  corr(illumination, sum)=-0.044
+H14a  p=0.7490  excess matches=-5.3, z=-0.32
+H14b  p=0.1863  excess draws containing day-of-month=+11.6, z=+1.32
+H15   p=0.6583  excess last-digit matches=-11.4, z=-0.44
+H16   p=0.5947  LRT 2 vs 1 comp = 30.37 (null mean 31.50), pi=[0.53, 0.47]
+M1    p=0.4338  tuned half-life=3, beta=0.05; train walk-forward logscore gain=+0.0004 nats/draw; train hits=0.7395
+M2    p=0.6706  tuned alpha=200; train walk-forward ordered logscore gain=+0.0007 nats/draw; train hits=0.7280; top weights=[6, 14, 2, 21, 8]
+P1    p=0.0010  in-sample R2 of numbers on year-demeaned log(W3/dep)=0.590 (null 0.054); least popular=[35, 30, 34, 18, 32, 1, 24, 31]; most popular=[7, 8, 19, 9, 13, 3, 5, 27]
+total 90.2 s

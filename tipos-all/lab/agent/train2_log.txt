@@ -1,0 +1,3 @@
+H17a 0.9177 mean pos of 465 repeated balls=2.994 (null 3.001)
+H17b 0.2672 corr(pos t-1, pos t)=-0.051
+H18 0.3868 corr(popularity beta, train freq)=-0.153 (null mean -0.003)

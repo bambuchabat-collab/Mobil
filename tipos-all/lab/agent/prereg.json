@@ -1,0 +1,215 @@
+{
+ "written_before_any_holdout_access": true,
+ "split": {
+  "train": "2018-01-03..2023-12-31 (discovery, tuning)",
+  "holdout": "2024-01-01..2026-11-04 (touched once, by holdout.py)"
+ },
+ "decision_rule": "A draw-prediction hypothesis SURVIVES only if (a) Holm-adjusted training p < 0.05 across all hypotheses below AND (b) the pre-specified one-sided holdout test (direction fixed from training) has Holm-adjusted p < 0.05 across all holdout tests. Nominal p-values are reported too. MC/permutation nulls: shuffle order within draw for order effects (exact conditional null), uniform 5-subsets for set-level effects, label permutation across draws for heterogeneity effects.",
+ "pick_rule": "If no draw hypothesis survives: pick the 5-subset with the lowest predicted player popularity (P1 model refit on all data), excluding subsets that contain two consecutive numbers or form an arithmetic progression (patterns players over-pick). If a draw hypothesis survives, rank numbers by that model first and use popularity only to break ties.",
+ "hypotheses": [
+  {
+   "id": "H01",
+   "name": "position_omnibus_35x5",
+   "stat": "chi2 of 35x5 number-by-draw-position table",
+   "train_test": "two-sided MC, within-draw order shuffle",
+   "holdout_test": "corr(train residuals, holdout residuals) over 175 cells, one-sided >0"
+  },
+  {
+   "id": "H02",
+   "name": "mean_position_bias_weight",
+   "stat": "sum_n N_n (meanpos_n-3)^2/2",
+   "train_test": "MC within-draw shuffle (greater)",
+   "holdout_test": "corr(train meanpos-3, holdout meanpos-3) over 35 numbers, one-sided >0"
+  },
+  {
+   "id": "H03",
+   "name": "early_drawn_more_frequent",
+   "stat": "corr over numbers of meanpos_n and frequency_n (lighter-ball theory predicts <0)",
+   "train_test": "two-sided MC within-draw shuffle",
+   "holdout_test": "same corr within holdout, one-sided in training sign"
+  },
+  {
+   "id": "H04a",
+   "name": "single_digit_frequency",
+   "stat": "total count of balls 1-9 vs exact hypergeometric expectation",
+   "train_test": "two-sided z (exact variance)",
+   "holdout_test": "one-sided in training sign"
+  },
+  {
+   "id": "H04b",
+   "name": "single_digit_mean_position",
+   "stat": "mean drawn position of balls 1-9",
+   "train_test": "two-sided MC shuffle",
+   "holdout_test": "one-sided in training sign"
+  },
+  {
+   "id": "H05a",
+   "name": "ink7seg_vs_frequency",
+   "stat": "corr over numbers of seven-segment ink count and frequency",
+   "train_test": "two-sided MC uniform draws",
+   "holdout_test": "one-sided in training sign"
+  },
+  {
+   "id": "H05b",
+   "name": "ink7seg_vs_mean_position",
+   "stat": "corr over numbers of ink and mean position",
+   "train_test": "two-sided MC shuffle",
+   "holdout_test": "one-sided in training sign"
+  },
+  {
+   "id": "H06a",
+   "name": "sequential_numeric_distance",
+   "stat": "mean |b_{k+1}-b_k| over consecutively drawn balls (drum-neighbour effect)",
+   "train_test": "two-sided MC shuffle",
+   "holdout_test": "one-sided in training sign"
+  },
+  {
+   "id": "H06b",
+   "name": "transition_matrix_omnibus",
+   "stat": "chi2 of 35x35 ball->next-ball counts vs within-draw expectation",
+   "train_test": "MC shuffle (greater)",
+   "holdout_test": "corr(train residual matrix, holdout residual matrix), one-sided >0"
+  },
+  {
+   "id": "H07a",
+   "name": "numeric_consecutive_pairs_in_set",
+   "stat": "count of pairs (n,n+1) inside drawn sets",
+   "train_test": "two-sided MC uniform",
+   "holdout_test": "one-sided in training sign"
+  },
+  {
+   "id": "H07b",
+   "name": "set_range_clumping",
+   "stat": "mean (max-min) of drawn set",
+   "train_test": "two-sided MC uniform",
+   "holdout_test": "one-sided in training sign"
+  },
+  {
+   "id": "H08",
+   "name": "weekday_heterogeneity_wed_sun",
+   "stat": "chi2 homogeneity 35x2 (Wed vs Sun)",
+   "train_test": "MC label permutation (greater)",
+   "holdout_test": "corr(train Wed-Sun freq diff, holdout Wed-Sun diff), one-sided >0"
+  },
+  {
+   "id": "H09a",
+   "name": "year_heterogeneity",
+   "stat": "chi2 homogeneity 35 x year",
+   "train_test": "MC label permutation (greater)",
+   "holdout_test": "same chi2 over 2024/2025/2026 (greater)"
+  },
+  {
+   "id": "H09b",
+   "name": "static_bias_persistence",
+   "stat": "corr of freq deviations first half vs second half of training",
+   "train_test": "MC uniform draws (greater)",
+   "holdout_test": "corr(train freq dev, holdout freq dev), one-sided >0"
+  },
+  {
+   "id": "H10",
+   "name": "season_heterogeneity",
+   "stat": "chi2 homogeneity 35 x 4 meteorological seasons",
+   "train_test": "MC label permutation (greater)",
+   "holdout_test": "corr of residual matrices, one-sided >0"
+  },
+  {
+   "id": "H11",
+   "name": "temperature_proxy_vs_ink",
+   "stat": "corr over draws of temp proxy -cos(2pi(doy-15)/365.25) and mean ink of drawn balls",
+   "train_test": "two-sided MC permutation",
+   "holdout_test": "one-sided in training sign"
+  },
+  {
+   "id": "H12",
+   "name": "sales_heterogeneity",
+   "stat": "chi2 homogeneity 35x2 high vs low deposits (median split within year)",
+   "train_test": "MC label permutation (greater)",
+   "holdout_test": "corr(train high-low diff, holdout high-low diff), one-sided >0"
+  },
+  {
+   "id": "H13a",
+   "name": "moon_quarter_heterogeneity",
+   "stat": "chi2 homogeneity 35 x 4 moon-age quarters",
+   "train_test": "MC label permutation (greater)",
+   "holdout_test": "corr of residual matrices, one-sided >0"
+  },
+  {
+   "id": "H13b",
+   "name": "moon_illumination_vs_sum",
+   "stat": "corr over draws of illuminated fraction and sum of balls",
+   "train_test": "two-sided MC permutation",
+   "holdout_test": "one-sided in training sign"
+  },
+  {
+   "id": "H14a",
+   "name": "numerology_digital_root_match",
+   "stat": "count of drawn balls whose digital root equals digital root of date digits",
+   "train_test": "two-sided z exact",
+   "holdout_test": "one-sided in training sign"
+  },
+  {
+   "id": "H14b",
+   "name": "day_of_month_number_drawn",
+   "stat": "count of draws containing the day-of-month number",
+   "train_test": "two-sided binomial z",
+   "holdout_test": "one-sided in training sign"
+  },
+  {
+   "id": "H15",
+   "name": "joker_crossdrum_last_digit",
+   "stat": "count of Loto balls whose last digit is among the same-day Joker digits",
+   "train_test": "two-sided z exact",
+   "holdout_test": "one-sided in training sign"
+  },
+  {
+   "id": "H16",
+   "name": "latent_ballset_mixture",
+   "stat": "LRT 2-component vs 1-component conditional-Bernoulli mixture (EM)",
+   "train_test": "parametric bootstrap under uniform (greater)",
+   "holdout_test": "mean holdout log-score of train-fitted mixture minus uniform, MC uniform (greater)"
+  },
+  {
+   "id": "M1",
+   "name": "dirichlet_exponential_forgetting",
+   "stat": "walk-forward top-5 by discounted counts; half-life & direction (hot/cold) tuned on train by log-score",
+   "train_test": "in-sample walk-forward hits z (optimistic, tuned)",
+   "holdout_test": "walk-forward mean hits vs 25/35, z one-sided >0"
+  },
+  {
+   "id": "M2",
+   "name": "plackett_luce_order_weights",
+   "stat": "walk-forward top-5 by MAP Plackett-Luce weights from ordered draws; prior strength tuned on train",
+   "train_test": "in-sample walk-forward hits z (optimistic, tuned)",
+   "holdout_test": "walk-forward mean hits vs 25/35, z one-sided >0"
+  },
+  {
+   "id": "P1",
+   "name": "player_popularity_(payout_not_hits)",
+   "stat": "ridge regression of log(W3/deposits) on drawn-number indicators + year effects",
+   "train_test": "in-sample R2 vs permutation of rows (greater)",
+   "holdout_test": "corr(pred from train coefs, year-demeaned holdout log(W3/deposits)), permutation one-sided >0"
+  },
+  {
+   "id": "H17a",
+   "name": "carryover_ball_position",
+   "stat": "mean drawn position (in draw t) of numbers repeated from draw t-1 (returned-balls-on-top theory)",
+   "train_test": "two-sided MC within-draw shuffle",
+   "holdout_test": "one-sided in training sign"
+  },
+  {
+   "id": "H17b",
+   "name": "carryover_position_memory",
+   "stat": "corr between position in t-1 and position in t for repeated numbers",
+   "train_test": "two-sided MC within-draw shuffle",
+   "holdout_test": "one-sided in training sign"
+  },
+  {
+   "id": "H18",
+   "name": "anti_popularity_rigging",
+   "stat": "corr over numbers of estimated player popularity (P1 beta) and draw frequency",
+   "train_test": "two-sided parametric simulation (uniform draws, resampled residuals, refit)",
+   "holdout_test": "corr(train beta, holdout freq), one-sided in training sign, MC uniform"
+  }
+ ],
+ "amendment_1_before_holdout": "Added after seeing TRAINING results only (holdout still untouched): H17a, H17b, H18."
+}
