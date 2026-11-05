@@ -1,0 +1,264 @@
+<title>Все лотереи TIPOS</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column like a betting-slip insert; balls and slip fields are the only "objects" */
+:root {
+  --bg: #f4f6fa; --surface: #ffffff; --ink: #121726; --muted: #586074; --line: #dde1ea;
+  --accent: #2a78d6; --accent-soft: #e3eefb; --pb: #e8a300; --pb-ink: #241a00;
+  --good: #1d7f47; --warn: #a65f00; --band: rgba(42,120,214,.10);
+  --f-display: "Unbounded", "Onest", system-ui, sans-serif;
+  --f-body: "Onest", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0f121a; --surface: #171b26; --ink: #edf0f6; --muted: #a3aabb; --line: #2a3142;
+  --accent: #3f8de8; --accent-soft: #1b2a40; --pb: #d08f00; --pb-ink: #1a1300;
+  --good: #3fb874; --warn: #e09a3a; --band: rgba(63,141,232,.16); color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0f121a; --surface: #171b26; --ink: #edf0f6; --muted: #a3aabb; --line: #2a3142;
+  --accent: #3f8de8; --accent-soft: #1b2a40; --pb: #d08f00; --pb-ink: #1a1300;
+  --good: #3fb874; --warn: #e09a3a; --band: rgba(63,141,232,.16); color-scheme: dark }
+
+body { background: var(--bg); color: var(--ink); font: 400 16px/1.55 var(--f-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 64px; }
+.wrap { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px; }
+h1, h2 { font-family: var(--f-display); text-wrap: balance; letter-spacing: -.01em; margin: 0; }
+h1 { font-size: clamp(26px, 6vw, 40px); line-height: 1.12; font-weight: 700; }
+h2 { font-size: clamp(19px, 4vw, 23px); line-height: 1.25; font-weight: 500; }
+h3 { font: 600 16px/1.3 var(--f-body); margin: 0; }
+p { margin: 0; max-width: 66ch; }
+section { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.eyebrow { font: 600 12px/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.lede { color: var(--muted); font-size: 15px; }
+.mono, td.num, .num { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+.muted { color: var(--muted); }
+small, .small { font-size: 13.5px; color: var(--muted); }
+a { color: var(--accent); }
+header { display: flex; flex-direction: column; gap: 14px; }
+.deadline { display: flex; flex-wrap: wrap; gap: 8px 18px; font: 500 14px/1.4 var(--f-mono); }
+.deadline b { color: var(--accent); font-weight: 600; }
+
+.verdict { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: grid; gap: 14px; }
+.verdict ol { margin: 0; padding-left: 20px; display: grid; gap: 10px; }
+.verdict li::marker { font-family: var(--f-mono); color: var(--accent); font-weight: 600; }
+
+.ball { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
+  background: var(--accent); color: #fff; font: 600 14px/1 var(--f-mono); flex: none; }
+.ball.pb { background: var(--pb); color: var(--pb-ink); }
+.ball.sm { width: 26px; height: 26px; font-size: 12px; }
+.balls { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.plus { font: 600 15px/1 var(--f-mono); color: var(--muted); padding: 0 2px; }
+
+.slip { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 560px) { .slip { grid-template-columns: minmax(0, 1fr); } }
+.field { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; display: grid; gap: 8px; }
+.field .lbl { display: flex; justify-content: space-between; gap: 8px; font: 500 12px/1.2 var(--f-mono); color: var(--muted); letter-spacing: .04em; }
+.field.formula { border-color: var(--accent); }
+.field.formula .lbl span:first-child { color: var(--accent); font-weight: 600; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+button { font: 600 14px/1 var(--f-body); background: var(--ink); color: var(--bg); border: 0; border-radius: 9px; padding: 11px 15px; cursor: pointer; }
+button.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+button:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.status { font-size: 13.5px; color: var(--good); min-height: 1em; }
+
+.tablebox { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { padding: 9px 12px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { font: 600 11.5px/1.2 var(--f-mono); letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+tr:last-child td { border-bottom: 0; }
+td.num, th.num { text-align: right; }
+tr.hl td { background: var(--accent-soft); }
+.pill { display: inline-block; font: 600 11.5px/1 var(--f-mono); padding: 4px 7px; border-radius: 99px; border: 1px solid currentColor; }
+.pill.good { color: var(--good); } .pill.warn { color: var(--warn); } .pill.flat { color: var(--muted); }
+
+.chart { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 10px 8px; position: relative; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart .cap { padding: 0 6px 8px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 14px; font-size: 13px; color: var(--muted); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; }
+.key { display: inline-flex; align-items: center; gap: 6px; }
+.sw { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--bg); font: 500 12.5px/1.35 var(--f-mono); padding: 7px 9px; border-radius: 7px; white-space: nowrap; transform: translate(-50%, -110%); z-index: 3; }
+.tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+.tabs button { background: transparent; color: var(--muted); border: 1px solid var(--line); padding: 8px 11px; font-size: 13px; }
+.tabs button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+.fact { border-top: 2px solid var(--ink); padding-top: 8px; display: grid; gap: 2px; min-width: 0; }
+.fact .v { font: 600 20px/1.2 var(--f-mono); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.fact .k { font-size: 13.5px; color: var(--muted); }
+
+pre.prompt { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; white-space: pre-wrap; word-break: break-word; font: 400 13.5px/1.55 var(--f-mono); margin: 0; max-height: 440px; overflow: auto; }
+ul.plain { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+details { border: 1px solid var(--line); border-radius: 12px; background: var(--surface); padding: 12px 14px; }
+summary { cursor: pointer; font-weight: 600; }
+details > div { padding-top: 10px; display: grid; gap: 10px; }
+@media (prefers-reduced-motion: no-preference) { .bar { transition: opacity .15s; } }
+</style>
+<style>.slip.one{grid-template-columns:minmax(0,1fr);max-width:420px}.facts{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}</style>
+<div class="wrap">
+<header>
+  <div class="eyebrow">TIPOS · все числовые лотереи, кроме Keno</div>
+  <h1>Где математика на стороне игрока: Joker</h1>
+  <p class="lede" id="lede"></p>
+</header>
+
+<section class="verdict" aria-labelledby="v-h">
+  <h2 id="v-h">Короткий ответ</h2>
+  <ol id="verdict"></ol>
+</section>
+
+<section aria-labelledby="my-h">
+  <div class="eyebrow">Мой выбор</div>
+  <h2 id="my-h">Один билет: Loto 5 z 35 + JOKER</h2>
+  <div class="slip one">
+    <div class="field formula" id="my-ticket"></div>
+  </div>
+  <p class="small" id="my-note"></p>
+</section>
+
+<section aria-labelledby="ev3-h">
+  <div class="eyebrow">Extra výplata · сегодня, 18:00</div>
+  <h2 id="ev3-h">Три билета по формуле</h2>
+  <div class="slip" id="ev3"></div>
+  <p class="small" id="ev3-note"></p>
+  <div class="row"><button id="copy">Скопировать все билеты</button><span class="status" id="copy-status" role="status"></span></div>
+  <textarea id="copy-fallback" hidden readonly rows="6" style="width:100%;font:13px var(--f-mono)"></textarea>
+</section>
+
+<section aria-labelledby="cmp-h">
+  <div class="eyebrow">Сравнение</div>
+  <h2 id="cmp-h">Сколько возвращает каждый евро ставки при сегодняшних джекпотах</h2>
+  <div class="chart" id="ch-ev"></div>
+  <div class="tablebox"><table id="tb-cmp"></table></div>
+  <p class="small" id="cmp-note"></p>
+</section>
+
+<section aria-labelledby="j-h">
+  <div class="eyebrow">Лазейка</div>
+  <h2 id="j-h">Почему Joker сейчас выгоднее всего</h2>
+  <p id="j-text"></p>
+  <div class="chart" id="ch-j"></div>
+  <div class="facts" id="j-facts"></div>
+  <p id="j-text2"></p>
+  <div class="tablebox"><table id="tb-jw"></table></div>
+</section>
+
+<section aria-labelledby="g-h">
+  <div class="eyebrow">Та же работа для каждой лотереи</div>
+  <h2 id="g-h">Частоты, тесты случайности и проверка формул</h2>
+  <p id="g-text"></p>
+  <div class="tablebox"><table id="tb-g"></table></div>
+  <p class="small" id="g-note"></p>
+</section>
+
+<section aria-labelledby="h-h">
+  <h2 id="h-h">Что это значит на практике</h2>
+  <ul class="plain" id="honest"></ul>
+</section>
+
+<section aria-labelledby="p-h">
+  <div class="eyebrow">Промт</div>
+  <h2 id="p-h">Промт для всех лотерей</h2>
+  <div class="row"><button class="ghost" id="copy-prompt">Скопировать промт</button><span class="status" id="copy-prompt-status" role="status"></span></div>
+  <pre class="prompt" id="prompt"></pre>
+</section>
+
+<section aria-labelledby="s-h">
+  <h2 id="s-h">Источники</h2>
+  <ul class="plain small" id="sources"></ul>
+  <p class="small">Лотереи только для лиц старше 18 лет.</p>
+</section>
+</div>
+
+<script>
+const D = {"lede": "Разобраны все числовые лотереи TIPOS, кроме Keno: 3 689 тиражей с официального сайта, правила сверены с игровым планом TIPOS. Цены и джекпоты на утро 5.11.2026.", "verdict": ["<b>Лазейка есть, но не в угадывании чисел.<\/b> Это накопившийся джекпот <b>JOKER<\/b> (добавка к Loto и Loto 5 z 35 за 0,60 €). Шанс угадать 6 цифр всегда 1 к 1 000 000, а джекпот дорос до 862 841 € и к пятничному тиражу будет около 884 823 €. При таком джекпоте ставка 0,60 € в среднем возвращает 0,95 €, то есть 159 %. Во всех остальных играх TIPOS возврат 40–58 %.", "<b>Мой билет:<\/b> Loto 5 z 35, одно поле 13 15 16 30 31 + JOKER: ÁNO, всего 1,20 €. Тираж в пятницу 6.11 в 18:00, купить можно уже сегодня. В среднем такой билет возвращает 1,29 € из 1,20 € (107 %).", "<b>Extra výplata сегодня, 3 билета по формуле:<\/b> 6 11 15 17 19 25 + 2; 9 16 20 22 24 26 + 1; 4 5 7 10 14 23 + 3. У каждого шанс на главный приз одинаковый: 1 к 2 072 070.", "<b>Числа не предсказываются ни в одной лотерее.<\/b> Формулы на частотах в последней трети истории ни в одной игре не обогнали случайный выбор с запасом, который выдержал бы поправку на число проверок. Частоты чисел и цифры Joker в пределах нормы."], "my": {"numbers": [13, 15, 16, 30, 31], "draw": "пт 6.11, 18:00", "cost": 1.2, "note": "Числа поля по той же формуле, что и для Extra výplata. Они не повышают шанс в Loto 5 z 35 (там формула тоже не обгоняет случай), выгоду даёт только Joker. Шанс джекпота Joker 1 к 1 000 000, Loto 5 z 35 1 к 324 632. Тираж в пятницу 6.11 в 18:00, приём ставок до 17:45 в день тиража."}, "ev3": [{"main": [6, 11, 15, 17, 19, 25], "pb": 2, "label": "места 1–6 формулы"}, {"main": [9, 16, 20, 22, 24, 26], "pb": 1, "label": "места 7–12"}, {"main": [4, 5, 7, 10, 14, 23], "pb": 3, "label": "места 13–18"}], "ev3_note": "Три непересекающихся билета из 18 лучших чисел формулы. Они покрывают столько же комбинаций, сколько лучшие 3 поля оптимизатора: 29,9 % шанса хоть на какой-то выигрыш. Приём ставок до 17:45, тираж в 18:00.", "copy_text": "Extra výplata 5.11, билет 1: 6 11 15 17 19 25 + 2\nExtra výplata 5.11, билет 2: 9 16 20 22 24 26 + 1\nExtra výplata 5.11, билет 3: 4 5 7 10 14 23 + 3\nLoto 5 z 35 на 6.11: 13 15 16 30 31 + JOKER: ÁNO", "cmp": [{"name": "JOKER (к Loto / Loto 5 z 35)", "price": 0.6, "ev": 0.9525580237863411, "ratio": 1.5875967063105687, "top": "≈ 884 823 €", "p": 1e-06}, {"name": "Loto 5 z 35 + JOKER, билет", "price": 1.2, "ev": 1.2852409829285512, "ratio": 1.0710341524404594, "top": "884 823 € + 66 703 €", "p": 1e-06}, {"name": "Extra výplata", "price": 1.5, "ev": 0.8685000014241597, "ratio": 0.5790000009494398, "top": "480 000 € рентой", "p": 4.826091782613522e-07}, {"name": "Loto 5 z 35", "price": 0.6, "ev": 0.33268295914221, "ratio": 0.5544715985703501, "top": "≈ 66 703 €", "p": 3.0804110500505186e-06}, {"name": "Euromilióny JOKER", "price": 0.5, "ev": 0.254, "ratio": 0.508, "top": "20 000 €", "p": 1e-06}, {"name": "Všetko alebo nič", "price": 1.5, "ev": 0.7552109912791027, "ratio": 0.5034739941860685, "top": "100 000 €", "p": 2.835142154027603e-06}, {"name": "Eurojackpot JOKER", "price": 1.0, "ev": 0.5, "ratio": 0.5, "top": "50 000 €", "p": 1e-06}, {"name": "Eurojackpot", "price": 2.0, "ev": 0.9539759026829442, "ratio": 0.4769879513414721, "top": "44 млн €", "p": 7.1511238420185165e-09, "upper": true}, {"name": "Euromilióny", "price": 1.5, "ev": 0.6402704153760699, "ratio": 0.42684694358404657, "top": "1 565 014 €", "p": 3.901329448233415e-08, "upper": true}, {"name": "Loto (2 тяга)", "price": 1.2, "ev": 0.47935517218835516, "ratio": 0.399462643490296, "top": "820 766 €", "p": 7.151123842018516e-08}], "cmp_note": "Возврат на 1 € = ожидаемая сумма выигрышей при сегодняшних джекпотах и средних призах за последние 104 тиража, делённая на ставку. Для Joker и Loto 5 z 35 учтены рост джекпота к следующему тиражу и вероятность дележа. * У Eurojackpot и Euromilióny это верхняя оценка без дележа джекпота, реальный возврат ещё ниже.", "jseries": [["2023-11-01", 43780.8], ["2023-11-05", 0.0], ["2023-11-08", 14332.4], ["2023-11-12", 34343.2], ["2023-11-15", 45741.55], ["2023-11-19", 63059.75], ["2023-11-22", 77118.6], ["2023-11-26", 0.0], ["2023-11-29", 6718.0], ["2023-12-03", 25773.3], ["2023-12-06", 33211.2], ["2023-12-10", 40986.35], ["2023-12-13", 58475.7], ["2023-12-17", 79795.75], ["2023-12-20", 102107.2], ["2023-12-23", 123653.9], ["2023-12-27", 129120.0], ["2023-12-31", 145618.5], ["2024-01-03", 162556.7], ["2024-01-07", 175685.55], ["2024-01-10", 192262.05], ["2024-01-14", 213886.9], ["2024-01-17", 228571.8], ["2024-01-21", 254764.1], ["2024-01-24", 268826.85], ["2024-01-28", 287684.2], ["2024-01-31", 0.0], ["2024-02-04", 13852.2], ["2024-02-07", 0.0], ["2024-02-11", 14379.1], ["2024-02-14", 28203.6], ["2024-02-18", 43258.3], ["2024-02-21", 63185.4], ["2024-02-25", 84989.7], ["2024-02-28", 98273.25], ["2024-03-03", 0.0], ["2024-03-06", 15630.3], ["2024-03-10", 31691.3], ["2024-03-13", 41359.2], ["2024-03-17", 0.0], ["2024-03-20", 14499.15], ["2024-03-24", 33036.35], ["2024-03-27", 46369.8], ["2024-03-31", 61782.5], ["2024-04-03", 77575.85], ["2024-04-07", 92196.65], ["2024-04-10", 107380.9], ["2024-04-14", 119656.7], ["2024-04-17", 137167.95], ["2024-04-21", 157362.1], ["2024-04-24", 175036.3], ["2024-04-28", 192713.35], ["2024-05-01", 211049.9], ["2024-05-05", 231018.2], ["2024-05-08", 244875.8], ["2024-05-12", 266733.15], ["2024-05-15", 288922.3], ["2024-05-19", 0.0], ["2024-05-22", 0.0], ["2024-05-26", 13143.3], ["2024-05-29", 27166.5], ["2024-06-02", 44237.5], ["2024-06-05", 62193.7], ["2024-06-09", 82846.45], ["2024-06-12", 101623.05], ["2024-06-16", 0.0], ["2024-06-19", 12985.65], ["2024-06-23", 25384.65], ["2024-06-26", 43527.4], ["2024-06-30", 64087.25], ["2024-07-03", 77232.6], ["2024-07-07", 0.0], ["2024-07-10", 17136.8], ["2024-07-14", 36842.45], ["2024-07-17", 50683.6], ["2024-07-21", 70637.05], ["2024-07-24", 78243.3], ["2024-07-28", 0.0], ["2024-07-31", 12320.85], ["2024-08-04", 26209.2], ["2024-08-07", 0.0], ["2024-08-11", 19466.15], ["2024-08-14", 35867.95], ["2024-08-18", 52131.9], ["2024-08-21", 65077.1], ["2024-08-25", 84937.85], ["2024-08-28", 101381.9], ["2024-09-01", 114949.55], ["2024-09-04", 129838.7], ["2024-09-08", 147471.8], ["2024-09-11", 152441.6], ["2024-09-15", 161440.55], ["2024-09-18", 176009.9], ["2024-09-22", 195027.15], ["2024-09-25", 209594.45], ["2024-09-29", 221347.3], ["2024-10-02", 239630.35], ["2024-10-06", 253181.8], ["2024-10-09", 270210.85], ["2024-10-13", 288484.55], ["2024-10-16", 304337.9], ["2024-10-20", 0.0], ["2024-10-23", 13400.6], ["2024-10-27", 30640.9], ["2024-10-30", 47084.25], ["2024-11-03", 63120.9], ["2024-11-06", 82089.55], ["2024-11-10", 100590.1], ["2024-11-13", 116893.2], ["2024-11-17", 128475.9], ["2024-11-20", 143893.9], ["2024-11-24", 166228.5], ["2024-11-27", 169866.5], ["2024-12-01", 190460.6], ["2024-12-04", 210153.15], ["2024-12-08", 232114.9], ["2024-12-11", 250496.95], ["2024-12-15", 274247.4], ["2024-12-18", 0.0], ["2024-12-22", 13740.05], ["2024-12-26", 25458.75], ["2024-12-29", 47157.25], ["2025-01-01", 60869.2], ["2025-01-05", 82083.35], ["2025-01-08", 99452.1], ["2025-01-12", 112930.7], ["2025-01-15", 0.0], ["2025-01-19", 0.0], ["2025-01-22", 19496.3], ["2025-01-26", 31596.5], ["2025-01-29", 43693.35], ["2025-02-02", 65373.15], ["2025-02-05", 82165.85], ["2025-02-09", 0.0], ["2025-02-12", 18981.3], ["2025-02-16", 40201.3], ["2025-02-19", 60230.25], ["2025-02-23", 80800.15], ["2025-02-26", 96618.05], ["2025-03-02", 115179.9], ["2025-03-05", 127463.1], ["2025-03-07", 138925.7], ["2025-03-09", 155303.15], ["2025-03-12", 172869.5], ["2025-03-14", 190816.9], ["2025-03-16", 197321.45], ["2025-03-19", 214314.85], ["2025-03-21", 230769.4], ["2025-03-23", 240819.7], ["2025-03-26", 261726.9], ["2025-03-28", 280097.95], ["2025-03-30", 297062.85], ["2025-04-02", 312358.25], ["2025-04-04", 327265.4], ["2025-04-06", 6600.0], ["2025-04-09", 6600.0], ["2025-04-11", 10494.1], ["2025-04-13", 26001.55], ["2025-04-16", 42521.6], ["2025-04-20", 58045.1], ["2025-04-23", 76231.4], ["2025-04-25", 6600.0], ["2025-04-27", 9328.5], ["2025-04-30", 21547.65], ["2025-05-02", 34311.55], ["2025-05-04", 41100.25], ["2025-05-07", 59257.5], ["2025-05-09", 73989.75], ["2025-05-11", 89826.15], ["2025-05-14", 100887.3], ["2025-05-16", 116991.8], ["2025-05-18", 127727.8], ["2025-05-21", 139186.6], ["2025-05-23", 157020.4], ["2025-05-25", 169561.4], ["2025-05-28", 185075.6], ["2025-05-30", 195765.15], ["2025-06-01", 213271.0], ["2025-06-04", 232271.05], ["2025-06-06", 248259.75], ["2025-06-08", 264911.8], ["2025-06-11", 281725.4], ["2025-06-13", 303849.45], ["2025-06-15", 316133.2], ["2025-06-18", 6600.0], ["2025-06-20", 15736.5], ["2025-06-22", 6600.0], ["2025-06-25", 6600.0], ["2025-06-27", 14129.05], ["2025-06-29", 28771.5], ["2025-07-02", 40986.8], ["2025-07-04", 51784.4], ["2025-07-06", 66126.0], ["2025-07-09", 80214.65], ["2025-07-11", 96561.65], ["2025-07-13", 110991.8], ["2025-07-16", 125687.9], ["2025-07-18", 138596.85], ["2025-07-20", 6600.0], ["2025-07-23", 16170.2], ["2025-07-25", 24897.7], ["2025-07-27", 39379.5], ["2025-07-30", 57834.0], ["2025-08-01", 69222.95], ["2025-08-03", 84172.45], ["2025-08-06", 101587.2], ["2025-08-08", 6600.0], ["2025-08-10", 11115.25], ["2025-08-13", 28411.75], ["2025-08-15", 45996.95], ["2025-08-17", 60303.2], ["2025-08-20", 69155.8], ["2025-08-22", 85538.45], ["2025-08-24", 103225.35], ["2025-08-27", 112546.15], ["2025-08-29", 125677.1], ["2025-08-31", 139674.15], ["2025-09-03", 155657.9], ["2025-09-05", 169569.45], ["2025-09-07", 181165.95], ["2025-09-10", 6600.0], ["2025-09-12", 13252.55], ["2025-09-14", 25828.4], ["2025-09-17", 41473.6], ["2025-09-19", 57747.55], ["2025-09-21", 74676.15], ["2025-09-24", 6600.0], ["2025-09-26", 14532.7], ["2025-09-28", 29177.5], ["2025-10-01", 45381.6], ["2025-10-03", 49582.25], ["2025-10-05", 64101.9], ["2025-10-08", 79801.5], ["2025-10-10", 92435.6], ["2025-10-12", 109098.15], ["2025-10-15", 124586.95], ["2025-10-17", 136746.0], ["2025-10-19", 148776.4], ["2025-10-22", 160227.65], ["2025-10-24", 171103.45], ["2025-10-26", 185878.95], ["2025-10-29", 198669.75], ["2025-10-31", 212937.95], ["2025-11-02", 226913.65], ["2025-11-05", 241922.85], ["2025-11-07", 253083.8], ["2025-11-09", 269421.65], ["2025-11-12", 287968.95], ["2025-11-14", 304449.3], ["2025-11-16", 314539.25], ["2025-11-19", 324244.85], ["2025-11-21", 340361.1], ["2025-11-23", 362893.45], ["2025-11-26", 384366.8], ["2025-11-28", 399664.1], ["2025-11-30", 411489.9], ["2025-12-03", 424222.6], ["2025-12-05", 434108.2], ["2025-12-07", 454294.4], ["2025-12-10", 473836.9], ["2025-12-12", 6600.0], ["2025-12-14", 10582.85], ["2025-12-17", 6600.0], ["2025-12-19", 16081.15], ["2025-12-21", 32543.15], ["2025-12-23", 48478.25], ["2025-12-26", 56874.2], ["2025-12-28", 66303.75], ["2025-12-31", 84155.85], ["2026-01-02", 97886.35], ["2026-01-04", 109910.85], ["2026-01-07", 123209.55], ["2026-01-09", 138006.75], ["2026-01-11", 146066.85], ["2026-01-14", 160522.15], ["2026-01-16", 166917.35], ["2026-01-18", 179431.2], ["2026-01-21", 197834.05], ["2026-01-23", 211205.55], ["2026-01-25", 223426.25], ["2026-01-28", 236786.25], ["2026-01-30", 253473.0], ["2026-02-01", 6600.0], ["2026-02-04", 10759.8], ["2026-02-06", 25915.2], ["2026-02-08", 37368.5], ["2026-02-11", 50483.6], ["2026-02-13", 60555.65], ["2026-02-15", 72274.85], ["2026-02-18", 86102.05], ["2026-02-20", 6600.0], ["2026-02-22", 14678.35], ["2026-02-25", 23571.5], ["2026-02-27", 38502.3], ["2026-03-01", 47985.6], ["2026-03-04", 57197.45], ["2026-03-06", 65769.45], ["2026-03-08", 79583.15], ["2026-03-11", 96906.05], ["2026-03-13", 115577.75], ["2026-03-15", 134442.95], ["2026-03-18", 147848.45], ["2026-03-20", 162891.95], ["2026-03-22", 182960.45], ["2026-03-25", 200786.15], ["2026-03-27", 218391.95], ["2026-03-29", 232778.15], ["2026-04-01", 247483.25], ["2026-04-05", 271210.25], ["2026-04-08", 293513.75], ["2026-04-10", 316239.35], ["2026-04-12", 6600.0], ["2026-04-15", 15424.8], ["2026-04-17", 31954.5], ["2026-04-19", 46622.1], ["2026-04-22", 65542.8], ["2026-04-24", 76987.8], ["2026-04-26", 94772.7], ["2026-04-29", 109727.4], ["2026-05-01", 6600.0], ["2026-05-03", 16157.4], ["2026-05-06", 35591.4], ["2026-05-08", 48142.8], ["2026-05-10", 65168.4], ["2026-05-13", 84524.4], ["2026-05-15", 97273.8], ["2026-05-17", 110087.1], ["2026-05-20", 130848.9], ["2026-05-22", 144546.6], ["2026-05-24", 155290.5], ["2026-05-27", 174201.9], ["2026-05-29", 194012.4], ["2026-05-31", 207791.7], ["2026-06-03", 223773.3], ["2026-06-05", 234753.6], ["2026-06-07", 246346.8], ["2026-06-10", 262429.5], ["2026-06-12", 281188.5], ["2026-06-14", 290649.9], ["2026-06-17", 313578.0], ["2026-06-19", 327577.8], ["2026-06-21", 345654.0], ["2026-06-24", 368088.9], ["2026-06-26", 384509.7], ["2026-06-28", 403008.6], ["2026-07-01", 425781.9], ["2026-07-03", 446435.4], ["2026-07-05", 456894.0], ["2026-07-08", 6600.0], ["2026-07-10", 16844.4], ["2026-07-12", 6600.0], ["2026-07-15", 9720.6], ["2026-07-17", 21339.6], ["2026-07-19", 37674.0], ["2026-07-22", 51443.4], ["2026-07-24", 68720.1], ["2026-07-26", 84286.5], ["2026-07-29", 100874.1], ["2026-07-31", 116768.1], ["2026-08-02", 133992.6], ["2026-08-05", 149656.5], ["2026-08-07", 165177.6], ["2026-08-09", 177405.9], ["2026-08-12", 198741.9], ["2026-08-14", 208635.6], ["2026-08-16", 228418.8], ["2026-08-19", 249236.1], ["2026-08-21", 263971.5], ["2026-08-23", 277063.5], ["2026-08-26", 292747.5], ["2026-08-28", 310960.5], ["2026-08-30", 325664.4], ["2026-09-02", 339449.7], ["2026-09-04", 356022.6], ["2026-09-06", 376533.3], ["2026-09-09", 397562.4], ["2026-09-11", 413142.0], ["2026-09-13", 432626.4], ["2026-09-16", 453611.1], ["2026-09-18", 472686.6], ["2026-09-20", 493320.3], ["2026-09-23", 513708.3], ["2026-09-25", 532011.0], ["2026-09-27", 548776.5], ["2026-09-30", 564648.0], ["2026-10-02", 578569.2], ["2026-10-04", 599091.9], ["2026-10-07", 613570.5], ["2026-10-09", 634745.7], ["2026-10-11", 653656.2], ["2026-10-14", 673318.8], ["2026-10-16", 690111.0], ["2026-10-18", 708622.2], ["2026-10-21", 730951.8], ["2026-10-23", 753185.4], ["2026-10-25", 774796.2], ["2026-10-28", 797639.7], ["2026-10-30", 820173.3], ["2026-11-01", 839341.8], ["2026-11-04", 862841.1]], "joker": {"price": 0.6, "jackpot_carry": 862841.1, "pot_next_est": 884822.65, "quota_per_draw": 21981.55, "tickets_per_draw": 120089.66666666667, "share_factor": 0.9422882922203011, "fixed_ev": 0.11879999999999999, "ev": 0.9525580237863411, "ev_ratio": 1.5875967063105687, "break_even_pot": 510671.7381218385, "wins": [["2025-07-20", 151716.85, 1], ["2025-08-08", 115102.2, 1], ["2025-09-10", 195262.1, 1], ["2025-09-24", 92084.6, 1], ["2025-12-12", 483873.85, 1], ["2025-12-17", 19962.5, 1], ["2026-02-01", 267870.55, 1], ["2026-02-20", 94909.5, 1], ["2026-04-12", 335849.75, 1], ["2026-05-01", 124916.7, 1], ["2026-07-08", 477840.9, 1], ["2026-07-12", 26730.0, 1]], "n_wins": 109, "draws": 1008, "from": "2018-01-03", "share_draws_ev_positive": 0.044642857142857144, "max_carry": 881596.9, "max_carry_date": "2021-04-04", "digits": {"label": "JOKER", "draws": 1008, "positions": [{"pos": 1, "p": 0.132, "top": 9, "min": 5}, {"pos": 2, "p": 0.8236666666666667, "top": 9, "min": 0}, {"pos": 3, "p": 0.3343333333333333, "top": 1, "min": 0}, {"pos": 4, "p": 0.6996666666666667, "top": 8, "min": 7}, {"pos": 5, "p": 0.31833333333333336, "top": 4, "min": 3}, {"pos": 6, "p": 0.30366666666666664, "top": 4, "min": 6}]}}, "jfacts": [{"v": "862 841 €", "k": "джекпот Joker сейчас (после тиража 4.11)"}, {"v": "510 672 €", "k": "с какого джекпота Joker окупается в среднем"}, {"v": "881 597 €", "k": "прошлый максимум с 2018 года (04.04.2021)"}, {"v": "109 из 1 008", "k": "тиражей с выигранным джекпотом Joker с 2018"}], "jwins": [["12.07.2026", 26730.0, 1], ["08.07.2026", 477840.9, 1], ["01.05.2026", 124916.7, 1], ["12.04.2026", 335849.75, 1], ["20.02.2026", 94909.5, 1], ["01.02.2026", 267870.55, 1], ["17.12.2025", 19962.5, 1], ["12.12.2025", 483873.85, 1], ["24.09.2025", 92084.6, 1], ["10.09.2025", 195262.1, 1]], "text": {"j1": "Joker не зависит от ваших чисел: терминал печатает случайное шестизначное число, и надо совпасть с выпавшими цифрами по позициям. Шанс на джекпот всегда 1 к 1 000 000, а призы за 5, 4, 3 и 2 последние цифры фиксированные (3 300, 330, 33 и 3,30 €) и вместе дают 0,12 € на ставку. Если джекпот никто не взял, он переходит на следующий тираж. Поэтому выгодность Joker зависит только от накопленной суммы: выше 510 672 € ставка в среднем возвращает больше, чем стоит. С 2018 года так было лишь в 4,5 % тиражей, и сейчас как раз такой период.", "j2": "Риск дележа учтён. Сейчас продаётся около 120 090 ставок Joker за тираж, поэтому с вероятностью около 11 % у победителя будет совладелец джекпота. В среднем это снижает выигрыш до 94 % от джекпота. Цифры Joker распределены равномерно на всех шести позициях (минимальное p = 0,13), подкрутки нет. Джекпот выпадает в среднем раз в 9,2 тиража, последний раз его взяли 12.07.2026.", "g": "Для каждой лотереи сделано то же, что и для Extra výplata: частоты, тест хи-квадрат (p методом Монте-Карло) и проверка семи формул на прошлых тиражах, где формула видела только прошлое. «Формула» в таблице: 50 % частоты за всё время, 35 % за 52 тиража, 15 % за 20 тиражей. Отклонение в σ показывает, на сколько формула угадывала больше (+) или меньше (−) случайного выбора.", "gnote": "Всего проверено 35 пар «игра × формула». Лучший результат: повтор прошлого в Loto, +2,0σ за всё время и +1,0σ в последней трети. При 35 проверках одно отклонение больше 2σ ожидается само по себе, так что это не преимущество."}, "games": [{"name": "Loto 5 z 35", "draws": 1008, "from": "03.01.2018", "top": "6, 15, 13, 30, 14", "bottom": "27, 19, 11", "p_chi": 0.18066666666666667, "z": -0.07095254285949161, "zl": -0.42430728291380915, "pick": "13 15 16 30 31"}, {"name": "Loto, 1. ťah", "draws": 1013, "from": "03.01.2018", "top": "26, 18, 38, 35, 13", "bottom": "49, 27, 15", "p_chi": 0.14666666666666667, "z": -1.0910585482913921, "zl": 0.42662263128722877, "pick": "3 4 10 14 18 38"}, {"name": "Euromilióny", "draws": 714, "from": "04.01.2020", "top": "31, 33, 12, 1, 21", "bottom": "27, 10, 30", "p_chi": 0.4706666666666667, "z": -0.47558685269201345, "zl": 0.05299371672202283, "pick": "12 17 21 22 23 28 33 + 1"}, {"name": "Eurojackpot", "draws": 482, "from": "25.03.2022", "top": "11, 17, 30, 23, 20", "bottom": "25, 19, 33", "p_chi": 0.478, "z": 0.29867622445877645, "zl": -0.19377278632539324, "pick": "17 30 34 35 45 + 3 5"}, {"name": "Všetko alebo nič", "draws": 307, "from": "01.01.2026", "top": "16, 14, 10, 18, 6", "bottom": "7, 12, 17", "p_chi": 0.562, "z": -0.6758352531316643, "zl": -0.04319917848286286, "pick": "2 6 8 9 10 11 14 16 18 19 22"}], "honest": ["Положительное ожидание не значит выигрыш. Один билет Loto 5 z 35 + Joker за 1,20 € с вероятностью около 99,9999 % джекпот не возьмёт. Чаще всего вы получите 0 € или мелкий приз: хоть какой-то выигрыш в Joker бывает примерно 1 раз из 100 (3,30 € и выше), в Loto 5 z 35 примерно 1 раз из 72.", "Больше билетов увеличивают шанс линейно: 10 билетов (12 €) дают 1 к 100 000 на джекпот Joker. Средний результат на 1 € остаётся около 1,07 €, но разброс огромный. Тратьте только ту сумму, которую не жалко потерять.", "Окно временное. Когда джекпот Joker кто-то выиграет, он сбросится до 6 600 €, и Joker снова станет невыгодным (около 21 % возврата).", "Номер Joker выбрать нельзя, его печатает генератор. Один Joker на одну ставку, и к нему нужно хотя бы одно поле Loto или Loto 5 z 35. Самый дешёвый вариант: одно поле Loto 5 z 35.", "Loto 5 z 35 отдельно становится выгодной, когда её джекпот выше примерно 174 789 €. С 2018 года так было только в 1,3 % тиражей, сейчас нет."], "prompt": "Ты аналитик лотерей и статистик. Разбери все числовые лотереи TIPOS (Словакия), кроме Keno: LOTO (6 из 49, два тяга), LOTO 5 z 35, EUROJACKPOT (5 из 50 + 2 из 12), EUROMILIÓNY (7 из 33 + 1 из 6), VŠETKO ALEBO NIČ (11 из 22), EXTRA VÝPLATA (6 из 27 + 1 из 7) и дополнительные игры JOKER.\n\n1. Данные. Для каждой игры скачай историю тиражей с tipos.sk: даты через /Millennium.CiselneLoterie/<Игра>/GetZrebovania (POST Rok, Mesiac), результаты через /Millennium.CiselneLoterie/<Игра>/GetForDate (POST datumZrebovania). Возьми текущие джекпоты, цены и сроки приёма ставок со страниц игр. Правила и формулы призов проверь по игровому плану (herný plán).\n\n2. Та же работа, что для Extra výplata, для каждой игры: частоты чисел, самые частые и редкие, хи-квадрат и максимум частоты (p методом Монте-Карло), walk-forward бэктест формул (горячие за всё время, 52 и 20 тиражей, холодные, давно не выпадавшие, повтор прошлого, итоговая смешанная формула) с разбивкой по периодам. Для Joker проверь равномерность цифр на каждой позиции.\n\n3. Деньги. Для каждой игры посчитай ожидаемый возврат на 1 € ставки при сегодняшних джекпотах: точные вероятности всех уровней, средние призы за последние 104 тиража, ожидаемый размер джекпота к следующему тиражу и вероятность его дележа (по числу проданных ставок).\n\n4. Лазейка. Ищи только законные структурные преимущества: накопившиеся джекпоты при фиксированном шансе, фиксированные призы, превышающие честную цену, правила дележа и потолки. Найди игру, где ожидаемый возврат сейчас выше ставки, и посчитай порог окупаемости.\n\n5. Ответ. Дай 3 билета Extra výplata на сегодня по лучшей формуле, выбери один билет из любой игры TIPOS и объясни почему. Честно скажи, есть ли у формул преимущество над случайностью и насколько реален выигрыш. Не обещай выигрыш.", "sources": ["Архивы тиражей: tipos.sk, эндпоинты <span class=\"mono\">GetZrebovania<\/span> и <span class=\"mono\">GetForDate<\/span> для каждой игры (Loto и Loto 5 z 35 с 2018 года, Euromilióny с 2020, Eurojackpot с 25.03.2022 в формате 5/50 + 2/12, Všetko alebo nič с 01.01.2026).", "Правила Joker, Loto 5 z 35 и остальных игр: <a href=\"https://www.tipos.sk/loterie/ciselne-loterie/informacie-k-loteriam/herny-plan\">Herný plán číselných lotérií<\/a>, статья 24 (Joker), и страницы «Všetko o číselnej lotérii» каждой игры.", "Текущие джекпоты: страницы <a href=\"https://www.tipos.sk/loterie/loto\">Loto<\/a>, <a href=\"https://www.tipos.sk/loterie/loto-5-z-35\">Loto 5 z 35<\/a>, <a href=\"https://www.tipos.sk/loterie/eurojackpot\">Eurojackpot<\/a>, <a href=\"https://www.tipos.sk/loterie/euromiliony\">Euromilióny<\/a>, <a href=\"https://www.tipos.sk/loterie/vsetko-alebo-nic\">Všetko alebo nič<\/a>.", "Премия Extra výplata в октябре 2026 (удвоенные призы 3–8 уровня) закончилась 29.10.2026 и на тираж 5.11 не действует."]};
+const $ = (s, r = document) => r.querySelector(s);
+const fmt = (x, d = 0) => x.toLocaleString('ru-RU', { minimumFractionDigits: d, maximumFractionDigits: d });
+const pct = (x, d = 0) => fmt(100 * x, d) + ' %';
+const oneIn = p => '1 к ' + fmt(Math.round(1 / p));
+const ball = (n, pb = false) => `<span class="ball${pb ? ' pb' : ''}">${n}</span>`;
+const balls = (arr, pb) => `<span class="balls">${arr.map(n => ball(n)).join('')}${pb != null ? '<span class="plus">+</span>' + ball(pb, true) : ''}</span>`;
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const NS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs = {}, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.append(e); return e; }
+function txt(parent, x, y, s, attrs = {}) { const t = el('text', Object.assign({ x, y, 'font-size': 11, fill: css('--muted'), 'font-family': 'JetBrains Mono, monospace' }, attrs), parent); t.textContent = s; return t; }
+function tipFor(box) { let t = box.querySelector('.tip'); if (!t) { t = document.createElement('div'); t.className = 'tip'; t.hidden = true; box.append(t); } return t; }
+function showTip(box, html, x, y) { const t = tipFor(box); t.innerHTML = html; t.hidden = false; const r = box.getBoundingClientRect(); const w = t.offsetWidth; const cx = Math.min(Math.max(x - r.left, w / 2 + 4), r.width - w / 2 - 4); t.style.left = cx + 'px'; t.style.top = (y - r.top) + 'px'; }
+function hideTip(box) { const t = box.querySelector('.tip'); if (t) t.hidden = true; }
+async function copyText(text, statusEl, fallbackEl) {
+  try { await navigator.clipboard.writeText(text); statusEl.textContent = 'Скопировано'; }
+  catch (e) { if (fallbackEl) { fallbackEl.hidden = false; fallbackEl.value = text; fallbackEl.select(); } statusEl.textContent = 'Выделите текст и скопируйте вручную'; }
+}
+
+$('#lede').textContent = D.lede;
+$('#verdict').innerHTML = D.verdict.map(v => `<li>${v}</li>`).join('');
+
+/* my ticket */
+$('#my-ticket').innerHTML = `<div class="lbl"><span>Loto 5 z 35 · 1 поле</span><span>${D.my.draw}</span></div>${balls(D.my.numbers)}<div class="lbl"><span>JOKER: ÁNO</span><span>${fmt(D.my.cost, 2)} €</span></div>`;
+$('#my-note').innerHTML = D.my.note;
+
+/* extra vyplata 3 tickets */
+$('#ev3').innerHTML = D.ev3.map((t, i) => `<div class="field${i === 0 ? ' formula' : ''}"><div class="lbl"><span>Билет ${i + 1}</span><span>${t.label}</span></div>${balls(t.main, t.pb)}</div>`).join('');
+$('#ev3-note').innerHTML = D.ev3_note;
+$('#copy').addEventListener('click', () => copyText(D.copy_text, $('#copy-status'), $('#copy-fallback')));
+
+/* EV comparison: horizontal bars */
+(function () {
+  const box = $('#ch-ev'); const rows = D.cmp;
+  box.innerHTML = `<div class="cap"><span>Средний возврат на 1 € ставки</span><span class="legend"><span class="key"><span class="sw" style="background:var(--accent)"></span>больше ставки</span><span class="key"><span class="sw" style="background:var(--muted)"></span>меньше ставки</span></span></div>`;
+  const W = 760, rowH = 30, m = { l: 210, r: 60, t: 6, b: 24 }; const H = m.t + m.b + rows.length * rowH;
+  const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'Средний возврат на 1 евро по играм' }); box.append(svg);
+  const max = Math.max(1.7, ...rows.map(r => r.ratio)); const x = v => m.l + (W - m.l - m.r) * v / max;
+  [0, .5, 1, 1.5].filter(v => v <= max).forEach(v => { el('line', { x1: x(v), x2: x(v), y1: m.t, y2: H - m.b, stroke: v === 1 ? css('--ink') : css('--line'), 'stroke-width': v === 1 ? 1.5 : 1, 'stroke-dasharray': v === 1 ? '4 3' : '' }, svg); txt(svg, x(v), H - 6, fmt(v, 1) + ' €', { 'text-anchor': 'middle' }); });
+  rows.forEach((r, i) => {
+    const y = m.t + i * rowH + 6, h = rowH - 12; const good = r.ratio >= 1;
+    txt(svg, m.l - 10, y + h / 2 + 4, r.name, { 'text-anchor': 'end', 'font-size': 12.5, fill: css('--ink'), 'font-family': 'Onest, system-ui, sans-serif' });
+    const w = Math.max(2, x(r.ratio) - m.l), rr = Math.min(4, h / 2);
+    el('path', { d: `M${m.l},${y} H${m.l + w - rr} q${rr},0 ${rr},${rr} V${y + h - rr} q0,${rr} -${rr},${rr} H${m.l} Z`, fill: good ? css('--accent') : css('--muted'), opacity: good ? 1 : .55 }, svg);
+    txt(svg, m.l + w + 6, y + h / 2 + 4, fmt(r.ratio, 2), { fill: css('--ink'), 'font-size': 12 });
+    const hit = el('rect', { x: 0, y: y - 6, width: W, height: rowH, fill: 'transparent' }, svg);
+    hit.addEventListener('pointermove', e => showTip(box, `${r.name}<br>ставка ${fmt(r.price, 2)} €, в среднем ${fmt(r.ev, 2)} €`, e.clientX, e.clientY - 8));
+    hit.addEventListener('pointerleave', () => hideTip(box));
+  });
+  $('#tb-cmp').innerHTML = `<thead><tr><th>Игра</th><th class="num">Ставка</th><th class="num">Главный приз сейчас</th><th class="num">Шанс на него</th><th class="num">Возврат на 1 €</th></tr></thead><tbody>${rows.map(r => `<tr class="${r.ratio >= 1 ? 'hl' : ''}"><td>${r.name}</td><td class="num">${fmt(r.price, 2)} €</td><td class="num">${r.top}</td><td class="num">${oneIn(r.p)}</td><td class="num">${fmt(r.ratio, 2)}${r.upper ? '*' : ''}</td></tr>`).join('')}</tbody>`;
+  $('#cmp-note').innerHTML = D.cmp_note;
+})();
+
+/* Joker jackpot chart */
+(function () {
+  const box = $('#ch-j'); const s = D.jseries; const be = D.joker.break_even_pot;
+  box.innerHTML = `<div class="cap"><span>Джекпот Joker после каждого тиража</span><span class="legend"><span class="key"><span class="sw" style="background:var(--accent)"></span>джекпот</span><span class="key"><span class="sw" style="background:var(--pb)"></span>порог окупаемости Joker</span></span></div>`;
+  const W = 760, H = 260, m = { l: 56, r: 12, t: 10, b: 28 };
+  const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'Джекпот Joker во времени' }); box.append(svg);
+  const t0 = Date.parse(s[0][0]), t1 = Date.parse(s[s.length - 1][0]);
+  const ymax = Math.ceil(Math.max(be, ...s.map(p => p[1])) / 200000) * 200000;
+  const x = d => m.l + (W - m.l - m.r) * (Date.parse(d) - t0) / (t1 - t0); const y = v => m.t + (H - m.t - m.b) * (1 - v / ymax);
+  for (let g = 0; g <= ymax; g += 200000) { el('line', { x1: m.l, x2: W - m.r, y1: y(g), y2: y(g), stroke: css('--line') }, svg); txt(svg, m.l - 6, y(g) + 4, g === 0 ? '0' : fmt(g / 1000) + ' тыс', { 'text-anchor': 'end' }); }
+  const years = [...new Set(s.map(p => p[0].slice(0, 4)))];
+  years.forEach(yr => { const d = yr + '-01-01'; if (Date.parse(d) > t0) { const xx = x(d); el('line', { x1: xx, x2: xx, y1: H - m.b, y2: H - m.b + 4, stroke: css('--muted') }, svg); txt(svg, xx, H - 8, yr, { 'text-anchor': 'middle' }); } });
+  el('path', { d: 'M' + s.map(p => `${x(p[0]).toFixed(1)},${y(p[1]).toFixed(1)}`).join(' L') + ` L${x(s[s.length - 1][0])},${y(0)} L${x(s[0][0])},${y(0)} Z`, fill: css('--band') }, svg);
+  el('path', { d: 'M' + s.map(p => `${x(p[0]).toFixed(1)},${y(p[1]).toFixed(1)}`).join(' L'), fill: 'none', stroke: css('--accent'), 'stroke-width': 2, 'stroke-linejoin': 'round' }, svg);
+  el('line', { x1: m.l, x2: W - m.r, y1: y(be), y2: y(be), stroke: css('--pb'), 'stroke-width': 2, 'stroke-dasharray': '6 4' }, svg);
+  const last = s[s.length - 1]; el('circle', { cx: x(last[0]), cy: y(last[1]), r: 5, fill: css('--accent'), stroke: css('--surface'), 'stroke-width': 2 }, svg);
+  txt(svg, x(last[0]) - 8, y(last[1]) - 10, fmt(last[1]) + ' €', { 'text-anchor': 'end', fill: css('--ink'), 'font-size': 12 });
+  const cross = el('line', { y1: m.t, y2: H - m.b, stroke: css('--muted'), opacity: 0 }, svg);
+  const hit = el('rect', { x: m.l, y: m.t, width: W - m.l - m.r, height: H - m.t - m.b, fill: 'transparent' }, svg);
+  hit.addEventListener('pointermove', e => { const r = svg.getBoundingClientRect(); const sx = (e.clientX - r.left) * W / r.width; let bi = 0, bd = 1e9; s.forEach((p, i) => { const dd = Math.abs(x(p[0]) - sx); if (dd < bd) { bd = dd; bi = i; } }); const p = s[bi]; cross.setAttribute('x1', x(p[0])); cross.setAttribute('x2', x(p[0])); cross.setAttribute('opacity', 1); showTip(box, `${p[0].split('-').reverse().join('.')}<br>джекпот ${fmt(p[1])} €`, r.left + x(p[0]) * r.width / W, r.top + y(p[1]) * r.height / H - 8); });
+  hit.addEventListener('pointerleave', () => { cross.setAttribute('opacity', 0); hideTip(box); });
+  $('#j-text').innerHTML = D.text.j1; $('#j-text2').innerHTML = D.text.j2;
+  $('#j-facts').innerHTML = D.jfacts.map(f => `<div class="fact"><span class="v">${f.v}</span><span class="k">${f.k}</span></div>`).join('');
+  $('#tb-jw').innerHTML = `<thead><tr><th>Дата</th><th class="num">Джекпот Joker выигран</th><th class="num">Победителей</th></tr></thead><tbody>${D.jwins.map(w => `<tr><td class="mono">${w[0]}</td><td class="num">${fmt(w[1], 2)} €</td><td class="num">${w[2]}</td></tr>`).join('')}</tbody>`;
+})();
+
+/* per-game table */
+$('#g-text').innerHTML = D.text.g;
+$('#tb-g').innerHTML = `<thead><tr><th>Лотерея</th><th class="num">Тиражей</th><th>Чаще всего</th><th>Реже всего</th><th class="num">p частот</th><th class="num">Формула, всё время</th><th class="num">Формула, последняя треть</th><th>Числа формулы</th></tr></thead><tbody>${D.games.map(g => `<tr><td>${g.name}<br><span class="small">с ${g.from}</span></td><td class="num">${fmt(g.draws)}</td><td class="mono">${g.top}</td><td class="mono">${g.bottom}</td><td class="num">${fmt(g.p_chi, 2)}</td><td class="num">${g.z >= 0 ? '+' : ''}${fmt(g.z, 1)}σ</td><td class="num">${g.zl >= 0 ? '+' : ''}${fmt(g.zl, 1)}σ</td><td class="mono">${g.pick}</td></tr>`).join('')}</tbody>`;
+$('#g-note').innerHTML = D.text.gnote;
+$('#honest').innerHTML = D.honest.map(h => `<li>${h}</li>`).join('');
+$('#prompt').textContent = D.prompt;
+$('#copy-prompt').addEventListener('click', () => copyText(D.prompt, $('#copy-prompt-status')));
+$('#sources').innerHTML = D.sources.map(s => `<li>${s}</li>`).join('');
+</script>

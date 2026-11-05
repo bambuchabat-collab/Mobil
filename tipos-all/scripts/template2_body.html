@@ -1,0 +1,164 @@
+<div class="wrap">
+<header>
+  <div class="eyebrow">TIPOS · все числовые лотереи, кроме Keno</div>
+  <h1>Где математика на стороне игрока: Joker</h1>
+  <p class="lede" id="lede"></p>
+</header>
+
+<section class="verdict" aria-labelledby="v-h">
+  <h2 id="v-h">Короткий ответ</h2>
+  <ol id="verdict"></ol>
+</section>
+
+<section aria-labelledby="my-h">
+  <div class="eyebrow">Мой выбор</div>
+  <h2 id="my-h">Один билет: Loto 5 z 35 + JOKER</h2>
+  <div class="slip one">
+    <div class="field formula" id="my-ticket"></div>
+  </div>
+  <p class="small" id="my-note"></p>
+</section>
+
+<section aria-labelledby="ev3-h">
+  <div class="eyebrow">Extra výplata · сегодня, 18:00</div>
+  <h2 id="ev3-h">Три билета по формуле</h2>
+  <div class="slip" id="ev3"></div>
+  <p class="small" id="ev3-note"></p>
+  <div class="row"><button id="copy">Скопировать все билеты</button><span class="status" id="copy-status" role="status"></span></div>
+  <textarea id="copy-fallback" hidden readonly rows="6" style="width:100%;font:13px var(--f-mono)"></textarea>
+</section>
+
+<section aria-labelledby="cmp-h">
+  <div class="eyebrow">Сравнение</div>
+  <h2 id="cmp-h">Сколько возвращает каждый евро ставки при сегодняшних джекпотах</h2>
+  <div class="chart" id="ch-ev"></div>
+  <div class="tablebox"><table id="tb-cmp"></table></div>
+  <p class="small" id="cmp-note"></p>
+</section>
+
+<section aria-labelledby="j-h">
+  <div class="eyebrow">Лазейка</div>
+  <h2 id="j-h">Почему Joker сейчас выгоднее всего</h2>
+  <p id="j-text"></p>
+  <div class="chart" id="ch-j"></div>
+  <div class="facts" id="j-facts"></div>
+  <p id="j-text2"></p>
+  <div class="tablebox"><table id="tb-jw"></table></div>
+</section>
+
+<section aria-labelledby="g-h">
+  <div class="eyebrow">Та же работа для каждой лотереи</div>
+  <h2 id="g-h">Частоты, тесты случайности и проверка формул</h2>
+  <p id="g-text"></p>
+  <div class="tablebox"><table id="tb-g"></table></div>
+  <p class="small" id="g-note"></p>
+</section>
+
+<section aria-labelledby="h-h">
+  <h2 id="h-h">Что это значит на практике</h2>
+  <ul class="plain" id="honest"></ul>
+</section>
+
+<section aria-labelledby="p-h">
+  <div class="eyebrow">Промт</div>
+  <h2 id="p-h">Промт для всех лотерей</h2>
+  <div class="row"><button class="ghost" id="copy-prompt">Скопировать промт</button><span class="status" id="copy-prompt-status" role="status"></span></div>
+  <pre class="prompt" id="prompt"></pre>
+</section>
+
+<section aria-labelledby="s-h">
+  <h2 id="s-h">Источники</h2>
+  <ul class="plain small" id="sources"></ul>
+  <p class="small">Лотереи только для лиц старше 18 лет.</p>
+</section>
+</div>
+
+<script>
+const D = /*DATA*/null;
+const $ = (s, r = document) => r.querySelector(s);
+const fmt = (x, d = 0) => x.toLocaleString('ru-RU', { minimumFractionDigits: d, maximumFractionDigits: d });
+const pct = (x, d = 0) => fmt(100 * x, d) + ' %';
+const oneIn = p => '1 к ' + fmt(Math.round(1 / p));
+const ball = (n, pb = false) => `<span class="ball${pb ? ' pb' : ''}">${n}</span>`;
+const balls = (arr, pb) => `<span class="balls">${arr.map(n => ball(n)).join('')}${pb != null ? '<span class="plus">+</span>' + ball(pb, true) : ''}</span>`;
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const NS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs = {}, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.append(e); return e; }
+function txt(parent, x, y, s, attrs = {}) { const t = el('text', Object.assign({ x, y, 'font-size': 11, fill: css('--muted'), 'font-family': 'JetBrains Mono, monospace' }, attrs), parent); t.textContent = s; return t; }
+function tipFor(box) { let t = box.querySelector('.tip'); if (!t) { t = document.createElement('div'); t.className = 'tip'; t.hidden = true; box.append(t); } return t; }
+function showTip(box, html, x, y) { const t = tipFor(box); t.innerHTML = html; t.hidden = false; const r = box.getBoundingClientRect(); const w = t.offsetWidth; const cx = Math.min(Math.max(x - r.left, w / 2 + 4), r.width - w / 2 - 4); t.style.left = cx + 'px'; t.style.top = (y - r.top) + 'px'; }
+function hideTip(box) { const t = box.querySelector('.tip'); if (t) t.hidden = true; }
+async function copyText(text, statusEl, fallbackEl) {
+  try { await navigator.clipboard.writeText(text); statusEl.textContent = 'Скопировано'; }
+  catch (e) { if (fallbackEl) { fallbackEl.hidden = false; fallbackEl.value = text; fallbackEl.select(); } statusEl.textContent = 'Выделите текст и скопируйте вручную'; }
+}
+
+$('#lede').textContent = D.lede;
+$('#verdict').innerHTML = D.verdict.map(v => `<li>${v}</li>`).join('');
+
+/* my ticket */
+$('#my-ticket').innerHTML = `<div class="lbl"><span>Loto 5 z 35 · 1 поле</span><span>${D.my.draw}</span></div>${balls(D.my.numbers)}<div class="lbl"><span>JOKER: ÁNO</span><span>${fmt(D.my.cost, 2)} €</span></div>`;
+$('#my-note').innerHTML = D.my.note;
+
+/* extra vyplata 3 tickets */
+$('#ev3').innerHTML = D.ev3.map((t, i) => `<div class="field${i === 0 ? ' formula' : ''}"><div class="lbl"><span>Билет ${i + 1}</span><span>${t.label}</span></div>${balls(t.main, t.pb)}</div>`).join('');
+$('#ev3-note').innerHTML = D.ev3_note;
+$('#copy').addEventListener('click', () => copyText(D.copy_text, $('#copy-status'), $('#copy-fallback')));
+
+/* EV comparison: horizontal bars */
+(function () {
+  const box = $('#ch-ev'); const rows = D.cmp;
+  box.innerHTML = `<div class="cap"><span>Средний возврат на 1 € ставки</span><span class="legend"><span class="key"><span class="sw" style="background:var(--accent)"></span>больше ставки</span><span class="key"><span class="sw" style="background:var(--muted)"></span>меньше ставки</span></span></div>`;
+  const W = 760, rowH = 30, m = { l: 210, r: 60, t: 6, b: 24 }; const H = m.t + m.b + rows.length * rowH;
+  const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'Средний возврат на 1 евро по играм' }); box.append(svg);
+  const max = Math.max(1.7, ...rows.map(r => r.ratio)); const x = v => m.l + (W - m.l - m.r) * v / max;
+  [0, .5, 1, 1.5].filter(v => v <= max).forEach(v => { el('line', { x1: x(v), x2: x(v), y1: m.t, y2: H - m.b, stroke: v === 1 ? css('--ink') : css('--line'), 'stroke-width': v === 1 ? 1.5 : 1, 'stroke-dasharray': v === 1 ? '4 3' : '' }, svg); txt(svg, x(v), H - 6, fmt(v, 1) + ' €', { 'text-anchor': 'middle' }); });
+  rows.forEach((r, i) => {
+    const y = m.t + i * rowH + 6, h = rowH - 12; const good = r.ratio >= 1;
+    txt(svg, m.l - 10, y + h / 2 + 4, r.name, { 'text-anchor': 'end', 'font-size': 12.5, fill: css('--ink'), 'font-family': 'Onest, system-ui, sans-serif' });
+    const w = Math.max(2, x(r.ratio) - m.l), rr = Math.min(4, h / 2);
+    el('path', { d: `M${m.l},${y} H${m.l + w - rr} q${rr},0 ${rr},${rr} V${y + h - rr} q0,${rr} -${rr},${rr} H${m.l} Z`, fill: good ? css('--accent') : css('--muted'), opacity: good ? 1 : .55 }, svg);
+    txt(svg, m.l + w + 6, y + h / 2 + 4, fmt(r.ratio, 2), { fill: css('--ink'), 'font-size': 12 });
+    const hit = el('rect', { x: 0, y: y - 6, width: W, height: rowH, fill: 'transparent' }, svg);
+    hit.addEventListener('pointermove', e => showTip(box, `${r.name}<br>ставка ${fmt(r.price, 2)} €, в среднем ${fmt(r.ev, 2)} €`, e.clientX, e.clientY - 8));
+    hit.addEventListener('pointerleave', () => hideTip(box));
+  });
+  $('#tb-cmp').innerHTML = `<thead><tr><th>Игра</th><th class="num">Ставка</th><th class="num">Главный приз сейчас</th><th class="num">Шанс на него</th><th class="num">Возврат на 1 €</th></tr></thead><tbody>${rows.map(r => `<tr class="${r.ratio >= 1 ? 'hl' : ''}"><td>${r.name}</td><td class="num">${fmt(r.price, 2)} €</td><td class="num">${r.top}</td><td class="num">${oneIn(r.p)}</td><td class="num">${fmt(r.ratio, 2)}${r.upper ? '*' : ''}</td></tr>`).join('')}</tbody>`;
+  $('#cmp-note').innerHTML = D.cmp_note;
+})();
+
+/* Joker jackpot chart */
+(function () {
+  const box = $('#ch-j'); const s = D.jseries; const be = D.joker.break_even_pot;
+  box.innerHTML = `<div class="cap"><span>Джекпот Joker после каждого тиража</span><span class="legend"><span class="key"><span class="sw" style="background:var(--accent)"></span>джекпот</span><span class="key"><span class="sw" style="background:var(--pb)"></span>порог окупаемости Joker</span></span></div>`;
+  const W = 760, H = 260, m = { l: 56, r: 12, t: 10, b: 28 };
+  const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'Джекпот Joker во времени' }); box.append(svg);
+  const t0 = Date.parse(s[0][0]), t1 = Date.parse(s[s.length - 1][0]);
+  const ymax = Math.ceil(Math.max(be, ...s.map(p => p[1])) / 200000) * 200000;
+  const x = d => m.l + (W - m.l - m.r) * (Date.parse(d) - t0) / (t1 - t0); const y = v => m.t + (H - m.t - m.b) * (1 - v / ymax);
+  for (let g = 0; g <= ymax; g += 200000) { el('line', { x1: m.l, x2: W - m.r, y1: y(g), y2: y(g), stroke: css('--line') }, svg); txt(svg, m.l - 6, y(g) + 4, g === 0 ? '0' : fmt(g / 1000) + ' тыс', { 'text-anchor': 'end' }); }
+  const years = [...new Set(s.map(p => p[0].slice(0, 4)))];
+  years.forEach(yr => { const d = yr + '-01-01'; if (Date.parse(d) > t0) { const xx = x(d); el('line', { x1: xx, x2: xx, y1: H - m.b, y2: H - m.b + 4, stroke: css('--muted') }, svg); txt(svg, xx, H - 8, yr, { 'text-anchor': 'middle' }); } });
+  el('path', { d: 'M' + s.map(p => `${x(p[0]).toFixed(1)},${y(p[1]).toFixed(1)}`).join(' L') + ` L${x(s[s.length - 1][0])},${y(0)} L${x(s[0][0])},${y(0)} Z`, fill: css('--band') }, svg);
+  el('path', { d: 'M' + s.map(p => `${x(p[0]).toFixed(1)},${y(p[1]).toFixed(1)}`).join(' L'), fill: 'none', stroke: css('--accent'), 'stroke-width': 2, 'stroke-linejoin': 'round' }, svg);
+  el('line', { x1: m.l, x2: W - m.r, y1: y(be), y2: y(be), stroke: css('--pb'), 'stroke-width': 2, 'stroke-dasharray': '6 4' }, svg);
+  const last = s[s.length - 1]; el('circle', { cx: x(last[0]), cy: y(last[1]), r: 5, fill: css('--accent'), stroke: css('--surface'), 'stroke-width': 2 }, svg);
+  txt(svg, x(last[0]) - 8, y(last[1]) - 10, fmt(last[1]) + ' €', { 'text-anchor': 'end', fill: css('--ink'), 'font-size': 12 });
+  const cross = el('line', { y1: m.t, y2: H - m.b, stroke: css('--muted'), opacity: 0 }, svg);
+  const hit = el('rect', { x: m.l, y: m.t, width: W - m.l - m.r, height: H - m.t - m.b, fill: 'transparent' }, svg);
+  hit.addEventListener('pointermove', e => { const r = svg.getBoundingClientRect(); const sx = (e.clientX - r.left) * W / r.width; let bi = 0, bd = 1e9; s.forEach((p, i) => { const dd = Math.abs(x(p[0]) - sx); if (dd < bd) { bd = dd; bi = i; } }); const p = s[bi]; cross.setAttribute('x1', x(p[0])); cross.setAttribute('x2', x(p[0])); cross.setAttribute('opacity', 1); showTip(box, `${p[0].split('-').reverse().join('.')}<br>джекпот ${fmt(p[1])} €`, r.left + x(p[0]) * r.width / W, r.top + y(p[1]) * r.height / H - 8); });
+  hit.addEventListener('pointerleave', () => { cross.setAttribute('opacity', 0); hideTip(box); });
+  $('#j-text').innerHTML = D.text.j1; $('#j-text2').innerHTML = D.text.j2;
+  $('#j-facts').innerHTML = D.jfacts.map(f => `<div class="fact"><span class="v">${f.v}</span><span class="k">${f.k}</span></div>`).join('');
+  $('#tb-jw').innerHTML = `<thead><tr><th>Дата</th><th class="num">Джекпот Joker выигран</th><th class="num">Победителей</th></tr></thead><tbody>${D.jwins.map(w => `<tr><td class="mono">${w[0]}</td><td class="num">${fmt(w[1], 2)} €</td><td class="num">${w[2]}</td></tr>`).join('')}</tbody>`;
+})();
+
+/* per-game table */
+$('#g-text').innerHTML = D.text.g;
+$('#tb-g').innerHTML = `<thead><tr><th>Лотерея</th><th class="num">Тиражей</th><th>Чаще всего</th><th>Реже всего</th><th class="num">p частот</th><th class="num">Формула, всё время</th><th class="num">Формула, последняя треть</th><th>Числа формулы</th></tr></thead><tbody>${D.games.map(g => `<tr><td>${g.name}<br><span class="small">с ${g.from}</span></td><td class="num">${fmt(g.draws)}</td><td class="mono">${g.top}</td><td class="mono">${g.bottom}</td><td class="num">${fmt(g.p_chi, 2)}</td><td class="num">${g.z >= 0 ? '+' : ''}${fmt(g.z, 1)}σ</td><td class="num">${g.zl >= 0 ? '+' : ''}${fmt(g.zl, 1)}σ</td><td class="mono">${g.pick}</td></tr>`).join('')}</tbody>`;
+$('#g-note').innerHTML = D.text.gnote;
+$('#honest').innerHTML = D.honest.map(h => `<li>${h}</li>`).join('');
+$('#prompt').textContent = D.prompt;
+$('#copy-prompt').addEventListener('click', () => copyText(D.prompt, $('#copy-prompt-status')));
+$('#sources').innerHTML = D.sources.map(s => `<li>${s}</li>`).join('');
+</script>
