@@ -1,0 +1,163 @@
+{
+ "draws": 1008,
+ "last": {
+  "date": "2026-11-04",
+  "numbers": [
+   10,
+   11,
+   17,
+   21,
+   30
+  ]
+ },
+ "virtual_drum": {
+  "drum A": {
+   "seeds_scanned": 16777216,
+   "matches_total": 52003,
+   "draws_with_a_matching_seed": 1008,
+   "seeds_per_draw_avg": 51.59027777777778,
+   "seeds_replaying_two_draws_in_a_row": 0,
+   "rolled_forward_mean_hits": 0.714904012618782,
+   "rolled_forward_n": 51986,
+   "consensus_mean_hits": 0.7269116186693148,
+   "consensus_z": 0.5451217057312614,
+   "seeds_matching_last_draw": 69,
+   "prediction_for_2026_11_06": [
+    1,
+    12,
+    16,
+    25,
+    35
+   ],
+   "prediction_votes": {
+    "1": 17,
+    "12": 15,
+    "25": 14,
+    "35": 14,
+    "16": 12,
+    "6": 12,
+    "18": 12,
+    "8": 12
+   },
+   "max_vote_share": 0.2463768115942029,
+   "seconds": 9.1
+  },
+  "drum B": {
+   "seeds_scanned": 16777216,
+   "matches_total": 51994,
+   "draws_with_a_matching_seed": 1008,
+   "seeds_per_draw_avg": 51.58134920634921,
+   "seeds_replaying_two_draws_in_a_row": 0,
+   "rolled_forward_mean_hits": 0.7090338963487361,
+   "rolled_forward_n": 51982,
+   "consensus_mean_hits": 0.7159880834160874,
+   "consensus_z": 0.07349955582893232,
+   "seeds_matching_last_draw": 55,
+   "prediction_for_2026_11_06": [
+    6,
+    7,
+    11,
+    18,
+    26
+   ],
+   "prediction_votes": {
+    "18": 12,
+    "7": 11,
+    "11": 11,
+    "6": 11,
+    "26": 11,
+    "23": 11,
+    "20": 11,
+    "10": 11
+   },
+   "max_vote_share": 0.21818181818181817,
+   "seconds": 8.9
+  }
+ },
+ "information": {
+  "history_bits": 18454.913257870776,
+  "expected_32bit_seeds_replaying_2_draws": 0.04075465363304911,
+  "expected_32bit_seeds_replaying_3_draws": 1.2554108539222598e-07,
+  "expected_64bit_seeds_replaying_4_draws": 0.0016609417927498026
+ },
+ "date_seeded": {
+  "results": {
+   "python random, seed YYYYMMDD": {
+    "ge3": 20,
+    "exact": 1
+   },
+   "python random, seed day ordinal": {
+    "ge3": 18,
+    "exact": 0
+   },
+   "numpy default_rng, seed YYYYMMDD": {
+    "ge3": 18,
+    "exact": 0
+   },
+   "numpy RandomState, seed YYYYMMDD": {
+    "ge3": 11,
+    "exact": 0
+   }
+  },
+  "expected_ge3_by_chance": 13.975849577367603,
+  "expected_exact_by_chance": 0.003105054338450923
+ },
+ "physical_drum": {
+  "base_draw": [
+   3,
+   6,
+   21,
+   25,
+   26
+  ],
+  "perturbations": {
+   "1e-06": {
+    "draw": [
+     3,
+     9,
+     11,
+     24,
+     28
+    ],
+    "same_as_base": false,
+    "bounces_until_divergence": 33
+   },
+   "1e-09": {
+    "draw": [
+     3,
+     4,
+     7,
+     12,
+     33
+    ],
+    "same_as_base": false,
+    "bounces_until_divergence": 64
+   },
+   "1e-12": {
+    "draw": [
+     3,
+     8,
+     11,
+     13,
+     17
+    ],
+    "same_as_base": false,
+    "bounces_until_divergence": 91
+   },
+   "1e-15": {
+    "draw": [
+     3,
+     6,
+     17,
+     20,
+     21
+    ],
+    "same_as_base": false,
+    "bounces_until_divergence": 116
+   }
+  },
+  "lyapunov_per_bounce": 0.0638862600703807,
+  "precision_needed_m_for_100_bounces": 0.0005041691095432896,
+  "precision_needed_m_for_1000_bounces": 5.391021163226925e-29
+ }
+}
