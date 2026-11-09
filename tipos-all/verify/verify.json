@@ -1,0 +1,367 @@
+{
+ "Extra výplata": {
+  "old_draws": 165,
+  "new_draws": 166,
+  "only_in_new": [
+   "2026-11-05"
+  ],
+  "only_in_old": [],
+  "records_changed_any_field": 165,
+  "records_changed_numbers": [],
+  "first": "2024-03-25",
+  "last": "2026-11-05",
+  "changed_fields": [],
+  "official_check": {
+   "DetailsAll": {
+    "abs_diff_total": 0,
+    "window_days": null,
+    "our_draws_in_window": 166,
+    "official_sum": 996,
+    "our_sum": 996
+   },
+   "Details12M": {
+    "abs_diff_total": 0,
+    "window_days": 365,
+    "our_draws_in_window": 81,
+    "official_sum": 486,
+    "our_sum": 486
+   },
+   "Details6M": {
+    "abs_diff_total": 0,
+    "window_days": 183,
+    "our_draws_in_window": 52,
+    "official_sum": 312,
+    "our_sum": 312
+   },
+   "Details1M": {
+    "abs_diff_total": 0,
+    "window_days": 29,
+    "our_draws_in_window": 8,
+    "official_sum": 48,
+    "our_sum": 48
+   },
+   "AdditionalAll": {
+    "abs_diff_total": 0,
+    "official_sum": 166,
+    "our_sum": 166
+   }
+  }
+ },
+ "Loto 5 z 35": {
+  "old_draws": 1008,
+  "new_draws": 1010,
+  "only_in_new": [
+   "2026-11-06",
+   "2026-11-08"
+  ],
+  "only_in_old": [],
+  "records_changed_any_field": 1008,
+  "records_changed_numbers": [],
+  "first": "2018-01-03",
+  "last": "2026-11-08",
+  "changed_fields": [],
+  "official_check": {
+   "DetailsAll": {
+    "abs_diff_total": 5435,
+    "window_days": null,
+    "our_draws_in_window": 1010,
+    "official_sum": 10485,
+    "our_sum": 5050
+   },
+   "Details12M": {
+    "abs_diff_total": 0,
+    "window_days": 366,
+    "our_draws_in_window": 156,
+    "official_sum": 780,
+    "our_sum": 780
+   },
+   "Details6M": {
+    "abs_diff_total": 0,
+    "window_days": 184,
+    "our_draws_in_window": 79,
+    "official_sum": 395,
+    "our_sum": 395
+   },
+   "Details1M": {
+    "abs_diff_total": 0,
+    "window_days": 32,
+    "our_draws_in_window": 14,
+    "official_sum": 70,
+    "our_sum": 70
+   }
+  }
+ },
+ "Loto": {
+  "old_draws": 1013,
+  "new_draws": 1015,
+  "only_in_new": [
+   "2026-11-06",
+   "2026-11-08"
+  ],
+  "only_in_old": [],
+  "records_changed_any_field": 1013,
+  "records_changed_numbers": [],
+  "first": "2018-01-03",
+  "last": "2026-11-08",
+  "changed_fields": [
+   "PremiumV1"
+  ],
+  "official_check": {
+   "DetailsAll": {
+    "abs_diff_total": 23231,
+    "window_days": null,
+    "our_draws_in_window": 1015,
+    "official_sum": 29321,
+    "our_sum": 6090
+   },
+   "Details12M": {
+    "abs_diff_total": 825,
+    "window_days": 366,
+    "our_draws_in_window": 156,
+    "official_sum": 1761,
+    "our_sum": 936
+   },
+   "Details6M": {
+    "abs_diff_total": 411,
+    "window_days": 184,
+    "our_draws_in_window": 79,
+    "official_sum": 885,
+    "our_sum": 474
+   },
+   "Details1M": {
+    "abs_diff_total": 71,
+    "window_days": 32,
+    "our_draws_in_window": 14,
+    "official_sum": 155,
+    "our_sum": 84
+   }
+  }
+ },
+ "Euromilióny": {
+  "old_draws": 714,
+  "new_draws": 715,
+  "only_in_new": [
+   "2026-11-07"
+  ],
+  "only_in_old": [],
+  "records_changed_any_field": 714,
+  "records_changed_numbers": [],
+  "first": "2020-01-04",
+  "last": "2026-11-07",
+  "changed_fields": [],
+  "official_check": {
+   "DetailsAll": {
+    "abs_diff_total": 7793,
+    "window_days": null,
+    "our_draws_in_window": 715,
+    "official_sum": 12798,
+    "our_sum": 5005
+   },
+   "Details12M": {
+    "abs_diff_total": 104,
+    "window_days": 364,
+    "our_draws_in_window": 104,
+    "official_sum": 624,
+    "our_sum": 728
+   },
+   "Details6M": {
+    "abs_diff_total": 7,
+    "window_days": 182,
+    "our_draws_in_window": 52,
+    "official_sum": 371,
+    "our_sum": 364
+   },
+   "Details1M": {
+    "abs_diff_total": 0,
+    "window_days": 31,
+    "our_draws_in_window": 9,
+    "official_sum": 63,
+    "our_sum": 63
+   },
+   "AdditionalAll": {
+    "abs_diff_total": 1141,
+    "official_sum": 1856,
+    "our_sum": 715
+   }
+  }
+ },
+ "Eurojackpot": {
+  "old_draws": 493,
+  "new_draws": 494,
+  "only_in_new": [
+   "2026-11-06"
+  ],
+  "only_in_old": [],
+  "records_changed_any_field": 493,
+  "records_changed_numbers": [],
+  "first": "2022-01-07",
+  "last": "2026-11-06",
+  "changed_fields": [],
+  "official_check": {
+   "DetailsAll": {
+    "abs_diff_total": 55,
+    "window_days": null,
+    "our_draws_in_window": 494,
+    "official_sum": 2415,
+    "our_sum": 2470
+   },
+   "Details12M": {
+    "abs_diff_total": 0,
+    "window_days": 364,
+    "our_draws_in_window": 104,
+    "official_sum": 520,
+    "our_sum": 520
+   },
+   "Details6M": {
+    "abs_diff_total": 0,
+    "window_days": 182,
+    "our_draws_in_window": 52,
+    "official_sum": 260,
+    "our_sum": 260
+   },
+   "Details1M": {
+    "abs_diff_total": 0,
+    "window_days": 32,
+    "our_draws_in_window": 9,
+    "official_sum": 45,
+    "our_sum": 45
+   },
+   "AdditionalAll": {
+    "abs_diff_total": 22,
+    "official_sum": 966,
+    "our_sum": 988
+   }
+  }
+ },
+ "Všetko alebo nič": {
+  "old_draws": 307,
+  "new_draws": 396,
+  "only_in_new": [
+   "2025-10-06",
+   "2025-10-07",
+   "2025-10-08",
+   "2025-10-09",
+   "2025-10-10",
+   "2025-10-11",
+   "2025-10-12",
+   "2025-10-13",
+   "2025-10-14",
+   "2025-10-15",
+   "2025-10-16",
+   "2025-10-17",
+   "2025-10-18",
+   "2025-10-19",
+   "2025-10-20",
+   "2025-10-21",
+   "2025-10-22",
+   "2025-10-23",
+   "2025-10-24",
+   "2025-10-25",
+   "2025-10-26",
+   "2025-10-27",
+   "2025-10-28",
+   "2025-10-29",
+   "2025-10-30",
+   "2025-10-31",
+   "2025-11-01",
+   "2025-11-02",
+   "2025-11-03",
+   "2025-11-04",
+   "2025-11-05",
+   "2025-11-06",
+   "2025-11-07",
+   "2025-11-08",
+   "2025-11-09",
+   "2025-11-10",
+   "2025-11-11",
+   "2025-11-12",
+   "2025-11-13",
+   "2025-11-14",
+   "2025-11-15",
+   "2025-11-16",
+   "2025-11-17",
+   "2025-11-18",
+   "2025-11-19",
+   "2025-11-20",
+   "2025-11-21",
+   "2025-11-22",
+   "2025-11-23",
+   "2025-11-24",
+   "2025-11-25",
+   "2025-11-26",
+   "2025-11-27",
+   "2025-11-28",
+   "2025-11-29",
+   "2025-11-30",
+   "2025-12-01",
+   "2025-12-02",
+   "2025-12-03",
+   "2025-12-04",
+   "2025-12-05",
+   "2025-12-06",
+   "2025-12-07",
+   "2025-12-08",
+   "2025-12-09",
+   "2025-12-10",
+   "2025-12-11",
+   "2025-12-12",
+   "2025-12-13",
+   "2025-12-14",
+   "2025-12-15",
+   "2025-12-16",
+   "2025-12-17",
+   "2025-12-18",
+   "2025-12-19",
+   "2025-12-20",
+   "2025-12-21",
+   "2025-12-22",
+   "2025-12-23",
+   "2025-12-26",
+   "2025-12-27",
+   "2025-12-28",
+   "2025-12-29",
+   "2025-12-30",
+   "2025-12-31",
+   "2026-11-05",
+   "2026-11-06",
+   "2026-11-07",
+   "2026-11-08"
+  ],
+  "only_in_old": [],
+  "records_changed_any_field": 307,
+  "records_changed_numbers": [],
+  "first": "2025-10-06",
+  "last": "2026-11-08",
+  "changed_fields": [],
+  "official_check": {
+   "DetailsAll": {
+    "abs_diff_total": 0,
+    "window_days": null,
+    "our_draws_in_window": 396,
+    "official_sum": 4356,
+    "our_sum": 4356
+   },
+   "Details12M": {
+    "abs_diff_total": 0,
+    "window_days": 366,
+    "our_draws_in_window": 362,
+    "official_sum": 3982,
+    "our_sum": 3982
+   },
+   "Details6M": {
+    "abs_diff_total": 11,
+    "window_days": 184,
+    "our_draws_in_window": 183,
+    "official_sum": 2024,
+    "our_sum": 2013
+   },
+   "Details1M": {
+    "abs_diff_total": 0,
+    "window_days": 32,
+    "our_draws_in_window": 31,
+    "official_sum": 341,
+    "our_sum": 341
+   }
+  }
+ }
+}
