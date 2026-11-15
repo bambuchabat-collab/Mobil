@@ -1,0 +1,41 @@
+{
+  "title": "TIPOS EXTRA VYPLATA - pre-registration (agent_lab3)",
+  "written_utc": "2026-11-15T11:58:00Z",
+  "data_file": "data/draws_1115.json",
+  "data_sha256": "5bd41e55ad3559464c9f563c1ce2c51e91718944577e303ade329ff34c4fe453",
+  "split": {
+    "discovery": "draws with date < 2025-11-01 (84 draws, 2024-03-25..2025-10-27)",
+    "holdout": "draws with 2025-11-01 <= date <= 2026-11-12 (84 draws)",
+    "rule": "All hyper-parameters / rule choices are made using discovery data only (prequential walk-forward inside discovery, first 20 discovery draws used only as burn-in). They are frozen in agent_lab3/frozen.json BEFORE any holdout evaluation is run. Holdout evaluation is strict walk-forward: the prediction for holdout draw t uses only draws < t (discovery + earlier holdout draws), with frozen hyper-parameters."
+  },
+  "metrics": {
+    "primary_LL": "mean over holdout draws of log P_model(drawn ORDER of 6 main numbers) - log P_uniform(order) = log P_model + log(27*26*25*24*23*22); nats per draw. (For the extra number: log P_model(pb) + log 7.)",
+    "secondary_LL": "same with the unordered SET probability (sum over 720 orders), reported but not tested",
+    "bootstrap": "95% percentile CI of mean per-draw gain, 10000 bootstrap resamples of holdout draws",
+    "p_value_LL": "one-sided Monte-Carlo p: holdout draws replaced by i.i.d. uniform random ordered draws (discovery kept real), identical walk-forward re-run; p = (1 + #{sim >= obs}) / (R + 1). Also reported: the always-valid e-value bound p_e = min(1, exp(-sum of holdout gains)).",
+    "top6_hits": "top-6 numbers by model weight before each draw; total hits vs 84*36/27 = 112, z = (H - 112)/sqrt(84 * 0.83761) (exact hypergeometric variance per draw); one-sided p from the exact distribution (convolution of hypergeometrics)."
+  },
+  "hypotheses_family_AB_draw_predictability": {
+    "holm": "Holm-Bonferroni over the 9 primary p-values A1..A6, B1..B3 at family-wise alpha = 0.05",
+    "A1_PL_static": "Plackett-Luce ball-propensity model on the drawn order, log-weights theta ~ N(0, s^2) MAP (Newton). s chosen on discovery from {0.02,0.05,0.1,0.15,0.2,0.3,0.5}. Primary test: holdout ordered-LL gain > 0 (MC p).",
+    "A2_PL_forgetting": "Same PL with exponentially decaying draw weights, half-life h in {4,8,16,32,64} draws, s in the same grid; (h,s) chosen on discovery. Primary test: holdout ordered-LL gain > 0.",
+    "A3_PL_changepoint": "Bayesian online change-point detection (Adams-MacKay) with constant hazard 1/H, H in {10,25,50,100,200}; within a segment the propensities are a Dirichlet(a)-count plug-in, PL weights w_i = a + c_i (c_i = count of i in the current run), a in {2,5,10,20,50}; predictive = run-length posterior mixture. (H,a) chosen on discovery. Primary test: holdout ordered-LL gain > 0.",
+    "A4_hot_numbers": "Rule fixed on discovery: pick the 6 numbers with the most (mode=hot) or fewest (mode=cold) appearances in the last K draws, K in {3,5,8,10,15,20,30,40,60}; ties broken by count over all history (same direction), then by lower number. (mode,K) maximizing discovery walk-forward hits is frozen. Primary test: holdout top-6 hits > 112 (exact one-sided p).",
+    "A5_two_machine_HMM": "Two-state hidden Markov mixture (two machines / ball sets), each state with its own PL propensity vector (MAP, s fixed at 0.3), stay-probability rho in {0.5 (iid mixture), 0.8, 0.95}, fitted by EM (5 restarts on discovery). rho chosen on discovery prequential LL. Holdout: forward-filtered state posterior x transition -> mixture of the two PL models; EM refit every 4 holdout draws with warm start. Primary test: holdout ordered-LL gain > 0 (MC p with R>=40 plus e-value bound).",
+    "A6_lag1_repeat": "Numbers from the previous draw have a different probability of reappearing. Test: holdout total repeats vs 84*1.3333 (two-sided, exact hypergeometric convolution). Direction and size delta (PL weight multiplier exp(delta) for previous-draw numbers) estimated on discovery and reported.",
+    "B1_extra_drum_bias": "Extra number (1..7) Dirichlet-multinomial predictive with concentration a in {1,2,5,10,20,50,200} and optional forgetting half-life in {16,32,64,inf}; chosen on discovery. Primary test: holdout LL gain > 0 (MC p).",
+    "B2_extra_lag1_repeat": "P(pb_t == pb_{t-1}) > 1/7 in holdout (one-sided exact binomial; discovery showed excess).",
+    "B3_extra_cold_persists": "The least-frequent extra number in discovery is drawn with frequency < 1/7 in holdout (one-sided exact binomial)."
+  },
+  "descriptive_not_in_holm": {
+    "D1": "Chi-square uniformity of main-number frequencies separately on discovery and holdout; chi-square homogeneity discovery vs holdout (2x27).",
+    "D2": "Chi-square uniformity of extra number separately on discovery and holdout.",
+    "D3": "Number 11 excess: discovery count vs holdout count of 11 (binomial vs 6/27)."
+  },
+  "hypotheses_family_C_popularity": {
+    "holm": "Holm over C1, C2",
+    "C1_main_popularity": "y_t = log(3-match winners_t / deposits_t). Ridge regression on 27 drawn-number indicators (shrunk toward a prior vector c*m, m = +1 for 3,5,7,8,9,13,19,21 and -1 for 1,16,18 from Slovak Loto 5z35, 0 otherwise), plus unpenalised: intercept, #consecutive pairs in draw, #numbers repeated from previous draw, Thursday indicator, Oct-2026 premium indicator, Mon+Thu era indicator, log(deposits). Ridge lambda and prior scale c chosen by leave-one-out CV on discovery. Holdout test: Pearson correlation between discovery-model number-effect prediction (sum of drawn-number coefficients) and holdout residual y (after regressing holdout y on the unpenalised covariates only), one-sided permutation p (permuting the 27 coefficients over numbers, 20000 perms).",
+    "C2_extra_popularity": "Share of 3/4/5-match winners holding the drawn extra number estimates the fraction of players picking that extra number. Holdout test: correlation of per-extra-number popularity estimated on discovery vs on holdout > 0 (permutation p over the 7 labels, exact 5040 perms)."
+  },
+  "decision_rule_for_tickets": "Two tickets, disjoint main numbers. If no hypothesis in family A/B survives Holm, choose main numbers minimising estimated popularity (full-data refit of the C1 model) subject to: disjoint, no run of 3+ consecutive numbers, no 3-term arithmetic progression within a ticket, avoid repeating last draw's numbers if the repeat coefficient is positive; extra numbers = the two least popular extra numbers (or the single least popular for both if its advantage is large). If a model survives, compute the expected-value trade-off: (model probability ratio for the ticket) x (popularity-driven prize share factor) and choose to maximise it."
+}

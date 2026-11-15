@@ -1,0 +1,1269 @@
+{
+ "title": "TIPOS Loto 5 z 35 - drum reconstruction and walk-forward validation",
+ "target_draw": "2026-11-15 18:00 CET (Sunday)",
+ "data": {
+  "n_draws": 1012,
+  "first": "2018-01-03",
+  "last": "2026-11-13",
+  "holdout": "2024-01-03..2026-11-13",
+  "n_holdout": 386,
+  "tuning_period": "2019-06-12..2023-12-31 (hyper-parameters chosen here only)"
+ },
+ "validation_protocol": "walk-forward: model fitted only on draws before t, scored on draw t; gain = log p_model(ordered draw) - log p_uniform (uniform = -log(35*34*33*32*31)); CI = 95% iid bootstrap of the mean over holdout draws (block-bootstrap(10) also given); hits = overlap of model top-5 with the 5 drawn numbers vs 25/35 = 0.714, z with hypergeometric sd 0.735/sqrt(n).",
+ "any_ball_model_significantly_predictive": false,
+ "models": [
+  {
+   "name": "uniform",
+   "description": "baseline: every ball 1/35 per pick (5/35 inclusion)",
+   "holdout_loglik_gain": 0.0,
+   "CI": [
+    0.0,
+    0.0
+   ],
+   "CI_block_bootstrap10": [
+    0.0,
+    0.0
+   ],
+   "p_one_sided": 1.0,
+   "holdout_hits": 0.7098,
+   "z": -0.12,
+   "tuning_period_loglik_gain": 0.0,
+   "set_loglik_gain": 0.0,
+   "significant": false,
+   "p_holm": null
+  },
+  {
+   "name": "PL_weekday_EB",
+   "description": "Plackett-Luce fitted on same-weekday draws only (separate machine/set per day), EB sigma",
+   "holdout_loglik_gain": -0.00121,
+   "CI": [
+    -0.00713,
+    0.00447
+   ],
+   "CI_block_bootstrap10": [
+    -0.0074,
+    0.00528
+   ],
+   "p_one_sided": 0.6594,
+   "holdout_hits": 0.715,
+   "z": 0.02,
+   "tuning_period_loglik_gain": -0.00429,
+   "set_loglik_gain": -0.00126,
+   "significant": false,
+   "p_holm": 1.0
+  },
+  {
+   "name": "PL_static_BMA_sigma",
+   "description": "Plackett-Luce, Bayesian model average over sigma grid (evidence weights)",
+   "holdout_loglik_gain": -0.00149,
+   "CI": [
+    -0.0058,
+    0.00285
+   ],
+   "CI_block_bootstrap10": [
+    -0.00518,
+    0.00263
+   ],
+   "p_one_sided": 0.7525,
+   "holdout_hits": 0.728,
+   "z": 0.37,
+   "tuning_period_loglik_gain": 0.00082,
+   "set_loglik_gain": -0.00151,
+   "significant": false,
+   "p_holm": 1.0
+  },
+  {
+   "name": "physics_ABC_drum",
+   "description": "drum-simulator emulator (theta = beta_mass * dm, beta from simulator, 50/50 mixture of nominal- and weak-air regimes), per-ball mass deviations calibrated by regression-adjusted ABC on per-ball counts, recalibrated every 10 draws",
+   "holdout_loglik_gain": -0.00189,
+   "CI": [
+    -0.00503,
+    0.00119
+   ],
+   "CI_block_bootstrap10": [
+    -0.00511,
+    0.00176
+   ],
+   "p_one_sided": 0.8865,
+   "holdout_hits": 0.6943,
+   "z": -0.53,
+   "tuning_period_loglik_gain": -0.00068,
+   "set_loglik_gain": -0.00181,
+   "significant": false,
+   "p_holm": 1.0
+  },
+  {
+   "name": "PL_static_sigma0.05",
+   "description": "Plackett-Luce, fixed sigma=0.05",
+   "holdout_loglik_gain": -0.00192,
+   "CI": [
+    -0.00718,
+    0.00336
+   ],
+   "CI_block_bootstrap10": [
+    -0.00638,
+    0.00326
+   ],
+   "p_one_sided": 0.7655,
+   "holdout_hits": 0.728,
+   "z": 0.37,
+   "tuning_period_loglik_gain": 0.00161,
+   "set_loglik_gain": -0.00194,
+   "significant": false,
+   "p_holm": 1.0
+  },
+  {
+   "name": "PL_static_EBsigma",
+   "description": "Plackett-Luce on drawn order, log w ~ N(0,sigma^2), sigma by Laplace marginal likelihood (re-chosen every 5 draws)",
+   "holdout_loglik_gain": -0.00253,
+   "CI": [
+    -0.00799,
+    0.00302
+   ],
+   "CI_block_bootstrap10": [
+    -0.00715,
+    0.00261
+   ],
+   "p_one_sided": 0.8179,
+   "holdout_hits": 0.728,
+   "z": 0.37,
+   "tuning_period_loglik_gain": -0.0003,
+   "set_loglik_gain": -0.00256,
+   "significant": false,
+   "p_holm": 1.0
+  },
+  {
+   "name": "BMA_all_ball_models",
+   "description": "Bayesian model averaging over all ball models above, weights = cumulative walk-forward predictive likelihood from draw 150 (hits = pick of top-weight model)",
+   "holdout_loglik_gain": -0.00357,
+   "CI": [
+    -0.00914,
+    0.0021
+   ],
+   "CI_block_bootstrap10": [
+    -0.00819,
+    0.00185
+   ],
+   "p_one_sided": 0.8962,
+   "holdout_hits": 0.728,
+   "z": 0.37,
+   "tuning_period_loglik_gain": 2e-05,
+   "set_loglik_gain": null,
+   "significant": false,
+   "p_holm": 1.0
+  },
+  {
+   "name": "PL_context_mixing",
+   "description": "incomplete-mixing PL: adjacency to already drawn balls, proximity to last drawn, previous-draw return effects (4 params)",
+   "holdout_loglik_gain": -0.00432,
+   "CI": [
+    -0.01042,
+    0.00182
+   ],
+   "CI_block_bootstrap10": [
+    -0.00958,
+    0.00194
+   ],
+   "p_one_sided": 0.9141,
+   "holdout_hits": 0.7098,
+   "z": -0.12,
+   "tuning_period_loglik_gain": -0.0085,
+   "set_loglik_gain": null,
+   "significant": false,
+   "p_holm": 1.0
+  },
+  {
+   "name": "PL_forget_hl50",
+   "description": "Plackett-Luce with exponential forgetting, half-life 50 draws (ball wear / set changes)",
+   "holdout_loglik_gain": -0.00449,
+   "CI": [
+    -0.00877,
+    -0.00022
+   ],
+   "CI_block_bootstrap10": [
+    -0.00783,
+    -0.00021
+   ],
+   "p_one_sided": 0.9813,
+   "holdout_hits": 0.6632,
+   "z": -1.37,
+   "tuning_period_loglik_gain": 0.0015,
+   "set_loglik_gain": -0.00449,
+   "significant": false,
+   "p_holm": 1.0
+  },
+  {
+   "name": "PL_mixture_2sets",
+   "description": "mixture of 2 Plackett-Luce ball sets with latent set per draw (EM, refit every 25 draws)",
+   "holdout_loglik_gain": -0.0046,
+   "CI": [
+    -0.01322,
+    0.00398
+   ],
+   "CI_block_bootstrap10": [
+    -0.01212,
+    0.00395
+   ],
+   "p_one_sided": 0.8553,
+   "holdout_hits": 0.7021,
+   "z": -0.33,
+   "tuning_period_loglik_gain": 0.00116,
+   "set_loglik_gain": -0.00462,
+   "significant": false,
+   "p_holm": 1.0
+  },
+  {
+   "name": "PL_forget_hl100",
+   "description": "Plackett-Luce with exponential forgetting, half-life 100 draws (ball wear / set changes)",
+   "holdout_loglik_gain": -0.00574,
+   "CI": [
+    -0.01139,
+    -0.0002
+   ],
+   "CI_block_bootstrap10": [
+    -0.01022,
+    -0.00027
+   ],
+   "p_one_sided": 0.9786,
+   "holdout_hits": 0.6373,
+   "z": -2.06,
+   "tuning_period_loglik_gain": 0.00167,
+   "set_loglik_gain": -0.00574,
+   "significant": false,
+   "p_holm": 1.0
+  },
+  {
+   "name": "PL_forget_hl200",
+   "description": "Plackett-Luce with exponential forgetting, half-life 200 draws (ball wear / set changes)",
+   "holdout_loglik_gain": -0.00683,
+   "CI": [
+    -0.01418,
+    0.00053
+   ],
+   "CI_block_bootstrap10": [
+    -0.01293,
+    0.0006
+   ],
+   "p_one_sided": 0.9673,
+   "holdout_hits": 0.6477,
+   "z": -1.78,
+   "tuning_period_loglik_gain": 0.00175,
+   "set_loglik_gain": -0.00682,
+   "significant": false,
+   "p_holm": 1.0
+  },
+  {
+   "name": "PL_forget_hl400",
+   "description": "Plackett-Luce with exponential forgetting, half-life 400 draws (ball wear / set changes)",
+   "holdout_loglik_gain": -0.00759,
+   "CI": [
+    -0.01672,
+    0.00161
+   ],
+   "CI_block_bootstrap10": [
+    -0.01541,
+    0.00178
+   ],
+   "p_one_sided": 0.9487,
+   "holdout_hits": 0.6943,
+   "z": -0.53,
+   "tuning_period_loglik_gain": 0.00149,
+   "set_loglik_gain": -0.00759,
+   "significant": false,
+   "p_holm": 1.0
+  },
+  {
+   "name": "PL_static_sigma0.1",
+   "description": "Plackett-Luce, fixed sigma=0.1",
+   "holdout_loglik_gain": -0.00893,
+   "CI": [
+    -0.02143,
+    0.00373
+   ],
+   "CI_block_bootstrap10": [
+    -0.01965,
+    0.0035
+   ],
+   "p_one_sided": 0.9195,
+   "holdout_hits": 0.7228,
+   "z": 0.23,
+   "tuning_period_loglik_gain": 0.00046,
+   "set_loglik_gain": -0.00896,
+   "significant": false,
+   "p_holm": 1.0
+  },
+  {
+   "name": "PL_randomwalk_q1e-05",
+   "description": "random-walk Plackett-Luce (Laplace/EKF filter), log w_t = log w_(t-1) + N(0,1e-05)",
+   "holdout_loglik_gain": -0.01614,
+   "CI": [
+    -0.03138,
+    -0.00084
+   ],
+   "CI_block_bootstrap10": [
+    -0.02904,
+    -0.00079
+   ],
+   "p_one_sided": 0.9817,
+   "holdout_hits": 0.6995,
+   "z": -0.4,
+   "tuning_period_loglik_gain": -0.00023,
+   "set_loglik_gain": -0.01613,
+   "significant": false,
+   "p_holm": 1.0
+  },
+  {
+   "name": "PL_static_sigma0.2",
+   "description": "Plackett-Luce, fixed sigma=0.2",
+   "holdout_loglik_gain": -0.02006,
+   "CI": [
+    -0.03941,
+    -0.00048
+   ],
+   "CI_block_bootstrap10": [
+    -0.03665,
+    -0.00086
+   ],
+   "p_one_sided": 0.9788,
+   "holdout_hits": 0.7228,
+   "z": 0.23,
+   "tuning_period_loglik_gain": -0.01124,
+   "set_loglik_gain": -0.02012,
+   "significant": false,
+   "p_holm": 1.0
+  },
+  {
+   "name": "PL_randomwalk_q3e-05",
+   "description": "random-walk Plackett-Luce (Laplace/EKF filter), log w_t = log w_(t-1) + N(0,3e-05)",
+   "holdout_loglik_gain": -0.02693,
+   "CI": [
+    -0.04596,
+    -0.00763
+   ],
+   "CI_block_bootstrap10": [
+    -0.04307,
+    -0.00744
+   ],
+   "p_one_sided": 0.9973,
+   "holdout_hits": 0.658,
+   "z": -1.5,
+   "tuning_period_loglik_gain": -0.00241,
+   "set_loglik_gain": -0.02687,
+   "significant": false,
+   "p_holm": 1.0
+  },
+  {
+   "name": "PL_randomwalk_q0.0001",
+   "description": "random-walk Plackett-Luce (Laplace/EKF filter), log w_t = log w_(t-1) + N(0,0.0001)",
+   "holdout_loglik_gain": -0.04781,
+   "CI": [
+    -0.07355,
+    -0.0221
+   ],
+   "CI_block_bootstrap10": [
+    -0.06909,
+    -0.02206
+   ],
+   "p_one_sided": 0.9999,
+   "holdout_hits": 0.6373,
+   "z": -2.06,
+   "tuning_period_loglik_gain": -0.01208,
+   "set_loglik_gain": -0.04769,
+   "significant": false,
+   "p_holm": 1.0
+  },
+  {
+   "name": "PL_randomwalk_q0.0003",
+   "description": "random-walk Plackett-Luce (Laplace/EKF filter), log w_t = log w_(t-1) + N(0,0.0003)",
+   "holdout_loglik_gain": -0.07559,
+   "CI": [
+    -0.10862,
+    -0.04303
+   ],
+   "CI_block_bootstrap10": [
+    -0.10209,
+    -0.04351
+   ],
+   "p_one_sided": 1.0,
+   "holdout_hits": 0.6295,
+   "z": -2.27,
+   "tuning_period_loglik_gain": -0.03523,
+   "set_loglik_gain": -0.07545,
+   "significant": false,
+   "p_holm": 1.0
+  },
+  {
+   "name": "PL_randomwalk_q0.001",
+   "description": "random-walk Plackett-Luce (Laplace/EKF filter), log w_t = log w_(t-1) + N(0,0.001)",
+   "holdout_loglik_gain": -0.12616,
+   "CI": [
+    -0.17012,
+    -0.08259
+   ],
+   "CI_block_bootstrap10": [
+    -0.16013,
+    -0.08287
+   ],
+   "p_one_sided": 1.0,
+   "holdout_hits": 0.6606,
+   "z": -1.43,
+   "tuning_period_loglik_gain": -0.08317,
+   "set_loglik_gain": -0.12596,
+   "significant": false,
+   "p_holm": 1.0
+  }
+ ],
+ "tuning_period_selected_variants": {
+  "PL_static_fixed_sigma": {
+   "selected_variant": "PL_static_sigma0.05",
+   "tuning_gain": 0.00161,
+   "holdout_gain": -0.00192,
+   "CI": [
+    -0.00718,
+    0.00336
+   ],
+   "holdout_hits": 0.728,
+   "z": 0.37
+  },
+  "PL_forget": {
+   "selected_variant": "PL_forget_hl200",
+   "tuning_gain": 0.00175,
+   "holdout_gain": -0.00683,
+   "CI": [
+    -0.01418,
+    0.00053
+   ],
+   "holdout_hits": 0.6477,
+   "z": -1.78
+  },
+  "PL_randomwalk": {
+   "selected_variant": "PL_randomwalk_q1e-05",
+   "tuning_gain": -0.00023,
+   "holdout_gain": -0.01614,
+   "CI": [
+    -0.03138,
+    -0.00084
+   ],
+   "holdout_hits": 0.6995,
+   "z": -0.4
+  }
+ },
+ "joker_models": [
+  {
+   "name": "joker_pos_DM_BMA",
+   "holdout_loglik_gain": 0.00034,
+   "unit": "nats per draw, sum over the 6 digit drums, vs uniform 6*log(1/10)",
+   "CI": [
+    -0.00098,
+    0.00166
+   ],
+   "p_one_sided": 0.3099,
+   "holdout_hits": 0.0976,
+   "hits_definition": "fraction of the 6 positions where the model's most probable digit was drawn; baseline 0.1",
+   "z": -0.39,
+   "significant": false
+  },
+  {
+   "name": "uniform",
+   "holdout_loglik_gain": 0.0,
+   "unit": "nats per draw, sum over the 6 digit drums, vs uniform 6*log(1/10)",
+   "CI": [
+    0.0,
+    0.0
+   ],
+   "p_one_sided": 1.0,
+   "holdout_hits": 0.0967,
+   "hits_definition": "fraction of the 6 positions where the model's most probable digit was drawn; baseline 0.1",
+   "z": -0.53,
+   "significant": true
+  },
+  {
+   "name": "joker_pos_DM_EB",
+   "holdout_loglik_gain": -0.00018,
+   "unit": "nats per draw, sum over the 6 digit drums, vs uniform 6*log(1/10)",
+   "CI": [
+    -0.00086,
+    0.00049
+   ],
+   "p_one_sided": 0.7012,
+   "holdout_hits": 0.0989,
+   "hits_definition": "fraction of the 6 positions where the model's most probable digit was drawn; baseline 0.1",
+   "z": -0.18,
+   "significant": false
+  },
+  {
+   "name": "joker_hier_DM_EB",
+   "holdout_loglik_gain": -0.00139,
+   "unit": "nats per draw, sum over the 6 digit drums, vs uniform 6*log(1/10)",
+   "CI": [
+    -0.00372,
+    0.00099
+   ],
+   "p_one_sided": 0.8724,
+   "holdout_hits": 0.1049,
+   "hits_definition": "fraction of the 6 positions where the model's most probable digit was drawn; baseline 0.1",
+   "z": 0.79,
+   "significant": false
+  },
+  {
+   "name": "joker_pooled_DM_EB",
+   "holdout_loglik_gain": -0.00143,
+   "unit": "nats per draw, sum over the 6 digit drums, vs uniform 6*log(1/10)",
+   "CI": [
+    -0.00375,
+    0.00095
+   ],
+   "p_one_sided": 0.8797,
+   "holdout_hits": 0.1071,
+   "hits_definition": "fraction of the 6 positions where the model's most probable digit was drawn; baseline 0.1",
+   "z": 1.14,
+   "significant": false
+  },
+  {
+   "name": "joker_pos_freq_alpha10",
+   "holdout_loglik_gain": -0.02155,
+   "unit": "nats per draw, sum over the 6 digit drums, vs uniform 6*log(1/10)",
+   "CI": [
+    -0.0477,
+    0.00467
+   ],
+   "p_one_sided": 0.9465,
+   "holdout_hits": 0.0967,
+   "hits_definition": "fraction of the 6 positions where the model's most probable digit was drawn; baseline 0.1",
+   "z": -0.53,
+   "significant": false
+  },
+  {
+   "name": "joker_forget_hl400",
+   "holdout_loglik_gain": -0.02627,
+   "unit": "nats per draw, sum over the 6 digit drums, vs uniform 6*log(1/10)",
+   "CI": [
+    -0.05358,
+    0.00116
+   ],
+   "p_one_sided": 0.9693,
+   "holdout_hits": 0.0959,
+   "hits_definition": "fraction of the 6 positions where the model's most probable digit was drawn; baseline 0.1",
+   "z": -0.66,
+   "significant": false
+  },
+  {
+   "name": "joker_forget_hl200",
+   "holdout_loglik_gain": -0.03803,
+   "unit": "nats per draw, sum over the 6 digit drums, vs uniform 6*log(1/10)",
+   "CI": [
+    -0.0691,
+    -0.00683
+   ],
+   "p_one_sided": 0.9912,
+   "holdout_hits": 0.0928,
+   "hits_definition": "fraction of the 6 positions where the model's most probable digit was drawn; baseline 0.1",
+   "z": -1.15,
+   "significant": false
+  },
+  {
+   "name": "joker_forget_hl100",
+   "holdout_loglik_gain": -0.0624,
+   "unit": "nats per draw, sum over the 6 digit drums, vs uniform 6*log(1/10)",
+   "CI": [
+    -0.1003,
+    -0.02402
+   ],
+   "p_one_sided": 0.9993,
+   "holdout_hits": 0.0976,
+   "hits_definition": "fraction of the 6 positions where the model's most probable digit was drawn; baseline 0.1",
+   "z": -0.39,
+   "significant": false
+  },
+  {
+   "name": "joker_forget_hl50",
+   "holdout_loglik_gain": -0.09013,
+   "unit": "nats per draw, sum over the 6 digit drums, vs uniform 6*log(1/10)",
+   "CI": [
+    -0.13489,
+    -0.04492
+   ],
+   "p_one_sided": 0.9999,
+   "holdout_hits": 0.1036,
+   "hits_definition": "fraction of the 6 positions where the model's most probable digit was drawn; baseline 0.1",
+   "z": 0.58,
+   "significant": false
+  }
+ ],
+ "any_joker_model_significantly_predictive": false,
+ "joker_notes": {
+  "chi2_per_position_df9_all_draws": [
+   14.21,
+   5.69,
+   10.08,
+   6.48,
+   11.0,
+   10.31
+  ],
+  "critical_5pct_df9": 16.92,
+  "empirical_bayes_alpha_final": "10000.0",
+  "meaning": "EB Dirichlet concentration -> very large alpha = digits indistinguishable from uniform"
+ },
+ "change_points": {
+  "balls": {
+   "max_scan_G": 49.377111582656354,
+   "best_split_date": "2018-10-28",
+   "p_perm_scan": 0.2543728135932034,
+   "friday_intro_split_G": 24.381175193375416,
+   "friday_intro_p_perm": 0.7680463907218557,
+   "binary_seg_subsegments": {
+    "2018-10-28..2026-11-13": {
+     "maxG": 45.15862601621885,
+     "tau": "2026-04-15",
+     "p_perm": 0.46107784431137727
+    }
+   }
+  },
+  "joker": {
+   "max_scan_G": 70.95148277581474,
+   "best_split_date": "2018-12-23",
+   "p_perm_scan": 0.7181409295352323,
+   "friday_intro_split_G": 55.30857299990981,
+   "friday_intro_p_perm": 0.4391121775644871,
+   "binary_seg_subsegments": {
+    "2018-12-23..2026-11-13": {
+     "maxG": 73.0255222967333,
+     "tau": "2019-11-03",
+     "p_perm": 0.626746506986028
+    }
+   }
+  }
+ },
+ "positive_control": {
+  "0.0": [
+   {
+    "gain": -0.0011,
+    "CI": [
+     -0.0044,
+     0.0022
+    ],
+    "detected": false,
+    "hits": 0.694,
+    "z": -0.53
+   },
+   {
+    "gain": -0.0,
+    "CI": [
+     -0.0,
+     0.0
+    ],
+    "detected": false,
+    "hits": 0.689,
+    "z": -0.67
+   }
+  ],
+  "0.08": [
+   {
+    "gain": 0.007,
+    "CI": [
+     -0.0073,
+     0.0215
+    ],
+    "detected": false,
+    "hits": 0.746,
+    "z": 0.85
+   },
+   {
+    "gain": 0.0019,
+    "CI": [
+     -0.0077,
+     0.0114
+    ],
+    "detected": false,
+    "hits": 0.754,
+    "z": 1.06
+   },
+   {
+    "gain": 0.001,
+    "CI": [
+     -0.0035,
+     0.0055
+    ],
+    "detected": false,
+    "hits": 0.754,
+    "z": 1.06
+   }
+  ],
+  "0.13": [
+   {
+    "gain": 0.0227,
+    "CI": [
+     0.0072,
+     0.0385
+    ],
+    "detected": true,
+    "hits": 0.889,
+    "z": 4.66
+   },
+   {
+    "gain": 0.0206,
+    "CI": [
+     -0.0073,
+     0.0484
+    ],
+    "detected": false,
+    "hits": 0.821,
+    "z": 2.86
+   },
+   {
+    "gain": 0.0098,
+    "CI": [
+     -0.0044,
+     0.0244
+    ],
+    "detected": false,
+    "hits": 0.744,
+    "z": 0.78
+   }
+  ],
+  "0.2": [
+   {
+    "gain": 0.091,
+    "CI": [
+     0.0459,
+     0.1355
+    ],
+    "detected": true,
+    "hits": 0.907,
+    "z": 5.14
+   },
+   {
+    "gain": 0.0577,
+    "CI": [
+     0.0315,
+     0.0848
+    ],
+    "detected": true,
+    "hits": 0.878,
+    "z": 4.38
+   },
+   {
+    "gain": 0.1009,
+    "CI": [
+     0.0704,
+     0.1312
+    ],
+    "detected": true,
+    "hits": 0.966,
+    "z": 6.74
+   }
+  ]
+ },
+ "per_ball_probabilities_2026_11_15": {
+  "definition": "P(ball i is among the 5 drawn); uniform = 5/35 = 0.142857",
+  "uniform_baseline": 0.142857,
+  "best_holdout_model_name": "PL_weekday_EB",
+  "best_holdout_model": {
+   "1": 0.1421,
+   "2": 0.1429,
+   "3": 0.1428,
+   "4": 0.1423,
+   "5": 0.1432,
+   "6": 0.1433,
+   "7": 0.1428,
+   "8": 0.1426,
+   "9": 0.1427,
+   "10": 0.1434,
+   "11": 0.142,
+   "12": 0.1426,
+   "13": 0.1427,
+   "14": 0.1431,
+   "15": 0.1429,
+   "16": 0.1426,
+   "17": 0.143,
+   "18": 0.1426,
+   "19": 0.1428,
+   "20": 0.1428,
+   "21": 0.1436,
+   "22": 0.1431,
+   "23": 0.1433,
+   "24": 0.1423,
+   "25": 0.1426,
+   "26": 0.1426,
+   "27": 0.1428,
+   "28": 0.143,
+   "29": 0.1431,
+   "30": 0.1427,
+   "31": 0.1436,
+   "32": 0.1428,
+   "33": 0.1432,
+   "34": 0.1427,
+   "35": 0.1432
+  },
+  "BMA_final": {
+   "1": 0.1436,
+   "2": 0.1438,
+   "3": 0.1437,
+   "4": 0.1403,
+   "5": 0.1409,
+   "6": 0.1448,
+   "7": 0.1435,
+   "8": 0.1419,
+   "9": 0.1417,
+   "10": 0.1418,
+   "11": 0.1411,
+   "12": 0.1426,
+   "13": 0.1463,
+   "14": 0.1434,
+   "15": 0.1461,
+   "16": 0.1446,
+   "17": 0.1441,
+   "18": 0.1427,
+   "19": 0.1404,
+   "20": 0.1419,
+   "21": 0.1441,
+   "22": 0.1442,
+   "23": 0.1433,
+   "24": 0.1423,
+   "25": 0.1432,
+   "26": 0.142,
+   "27": 0.1397,
+   "28": 0.1407,
+   "29": 0.144,
+   "30": 0.1457,
+   "31": 0.1441,
+   "32": 0.1415,
+   "33": 0.1416,
+   "34": 0.1426,
+   "35": 0.142
+  },
+  "BMA_final_weights": {
+   "PL_forget_hl100": 0.0652,
+   "PL_forget_hl200": 0.0445,
+   "PL_forget_hl400": 0.0294,
+   "PL_forget_hl50": 0.0976,
+   "PL_randomwalk_q0.0001": 0.0,
+   "PL_randomwalk_q0.0003": 0.0,
+   "PL_randomwalk_q0.001": 0.0,
+   "PL_randomwalk_q1e-05": 0.0005,
+   "PL_randomwalk_q3e-05": 0.0,
+   "PL_static_EBsigma": 0.0884,
+   "PL_static_sigma0.05": 0.2771,
+   "PL_static_sigma0.1": 0.0108,
+   "PL_static_sigma0.2": 0.0,
+   "PL_weekday_EB": 0.022,
+   "physics_ABC_drum": 0.0942,
+   "uniform": 0.2704
+  },
+  "physics_ABC_drum": {
+   "1": 0.1445,
+   "2": 0.1442,
+   "3": 0.1426,
+   "4": 0.1405,
+   "5": 0.1419,
+   "6": 0.1456,
+   "7": 0.144,
+   "8": 0.1441,
+   "9": 0.1415,
+   "10": 0.1408,
+   "11": 0.1412,
+   "12": 0.1431,
+   "13": 0.1451,
+   "14": 0.1438,
+   "15": 0.1442,
+   "16": 0.1434,
+   "17": 0.1449,
+   "18": 0.1436,
+   "19": 0.1408,
+   "20": 0.1418,
+   "21": 0.1434,
+   "22": 0.1444,
+   "23": 0.1431,
+   "24": 0.1418,
+   "25": 0.1438,
+   "26": 0.1418,
+   "27": 0.1392,
+   "28": 0.1411,
+   "29": 0.1438,
+   "30": 0.1451,
+   "31": 0.144,
+   "32": 0.1398,
+   "33": 0.1426,
+   "34": 0.1425,
+   "35": 0.1419
+  },
+  "PL_static_EBsigma": {
+   "1": 0.1441,
+   "2": 0.1437,
+   "3": 0.1435,
+   "4": 0.1408,
+   "5": 0.1409,
+   "6": 0.1456,
+   "7": 0.1423,
+   "8": 0.1428,
+   "9": 0.1428,
+   "10": 0.1408,
+   "11": 0.1406,
+   "12": 0.1431,
+   "13": 0.1459,
+   "14": 0.1451,
+   "15": 0.1453,
+   "16": 0.144,
+   "17": 0.1442,
+   "18": 0.1434,
+   "19": 0.1398,
+   "20": 0.1413,
+   "21": 0.1452,
+   "22": 0.1443,
+   "23": 0.1435,
+   "24": 0.1426,
+   "25": 0.1425,
+   "26": 0.1418,
+   "27": 0.1393,
+   "28": 0.141,
+   "29": 0.1441,
+   "30": 0.1458,
+   "31": 0.1438,
+   "32": 0.1409,
+   "33": 0.1416,
+   "34": 0.1423,
+   "35": 0.1414
+  },
+  "max_abs_deviation_from_uniform": {
+   "PL_static_EBsigma": 0.0036,
+   "physics_ABC_drum": 0.0036,
+   "PL_weekday_EB": 0.0008,
+   "BMA_final": 0.0035
+  },
+  "note": "none of these models beat uniform out-of-sample; deviations from 0.1429 are estimation noise"
+ },
+ "physical_simulation": {
+  "model": "2-D electro-pneumatic drum: 35 soft disks (r=2 cm, m=2.7 g nominal) in a 25 cm radius chamber, bottom air jet + divergence-free turbulent field (8 OU Fourier modes), quadratic drag (accel ~ r^2/m), spring-dashpot collisions, gated exit tube at the top (dead time 0.3 s), 1.5 s mixing before first capture.",
+  "sensitivity": {
+   "n_sim_draws": 2048,
+   "fraction_draws_completed": 1.0,
+   "sim_params": null,
+   "design": "per-ball mass deviation U(-15%,+15%), radius deviation U(-4%,+4%), random per simulated draw",
+   "beta_mass_per_unit_fraction": -0.7901917466907827,
+   "se_beta_mass": 0.11627081903577581,
+   "beta_radius_per_unit_fraction": 2.990889191686425,
+   "se_beta_radius": 0.4349946569979826,
+   "quadratic_fit": {
+    "coef": [
+     -0.7952201958826568,
+     2.985070593747235,
+     -1.2128009427064346,
+     4.851898275958437
+    ],
+    "se": [
+     0.11682664951863943,
+     0.435173020993763,
+     1.5028655804799977,
+     20.996627435786525
+    ],
+    "cols": [
+     "dm",
+     "dr",
+     "dm^2",
+     "dr^2"
+    ]
+   },
+   "first_pick_only": {
+    "coef": [
+     -1.1544832513568184,
+     2.868274133652215
+    ],
+    "se": [
+     0.26016132756201044,
+     0.9720006273612024
+    ]
+   },
+   "interpretation": "conditional-logit slope of log exit-propensity per unit fractional deviation; beta_mass=-0.6 means a 1% heavier ball has ~0.6% lower per-pick propensity"
+  },
+  "sensitivity_weak_air_regime": {
+   "n_sim_draws": 1011,
+   "fraction_draws_completed": 0.9873046875,
+   "sim_params": {
+    "dt": 0.001,
+    "k": 500.0,
+    "U0": 6.0,
+    "sj": 0.12,
+    "Lj": 0.5,
+    "turb": 1.5,
+    "mix": 1.5,
+    "dead": 0.3
+   },
+   "design": "per-ball mass deviation U(-15%,+15%), radius deviation U(-4%,+4%), random per simulated draw",
+   "beta_mass_per_unit_fraction": -3.106057754817533,
+   "se_beta_mass": 0.1681075624369955,
+   "beta_radius_per_unit_fraction": 7.044426513852428,
+   "se_beta_radius": 0.6211568588554559,
+   "quadratic_fit": {
+    "coef": [
+     -3.1710089872691825,
+     7.122470731891875,
+     -4.004243831180893,
+     -28.332321459870798
+    ],
+    "se": [
+     0.17381443528114585,
+     0.630397672731689,
+     2.1902133942102027,
+     30.197582708559043
+    ],
+    "cols": [
+     "dm",
+     "dr",
+     "dm^2",
+     "dr^2"
+    ]
+   },
+   "first_pick_only": {
+    "coef": [
+     -3.3812504655692983,
+     7.61625952990102
+    ],
+    "se": [
+     0.37771304529794414,
+     1.3916968096728504
+    ]
+   },
+   "interpretation": "conditional-logit slope of log exit-propensity per unit fractional deviation; beta_mass=-0.6 means a 1% heavier ball has ~0.6% lower per-pick propensity"
+  },
+  "minimum_detectable_defect": {
+   "n_draws": 1012,
+   "se_log_propensity_per_ball": 0.08204850672782633,
+   "min_detectable_log_propensity_single_ball_80pct_power": 0.22986586572107737,
+   "min_detectable_log_propensity_any_of_35_bonferroni_80pct_power": 0.3307064342358181,
+   "min_detectable_mass_defect_pct_single": 29.089884408907686,
+   "min_detectable_radius_defect_pct_single": 7.685536005814596,
+   "min_detectable_mass_defect_pct_bonferroni35": 41.8514158899751,
+   "min_detectable_radius_defect_pct_bonferroni35": 11.057127597874928,
+   "single_ball_log_propensity_needed_for_significant_holdout_gain": 0.767463721507497,
+   "equivalent_mass_defect_pct_for_holdout_detection": 97.12373290679538
+  },
+  "detectability_summary": {
+   "fisher_trace_per_draw": 4.848205746488574,
+   "log_propensity_spread_sd_detectable_in_holdout_by_oracle": 0.12945053620002397,
+   "log_propensity_spread_sd_detectable_with_all_1012_draws": 0.07819515594753121,
+   "mass_sd_pct_detectable_all_draws_nominal_air": 9.895719143486636,
+   "radius_sd_pct_detectable_all_draws_nominal_air": 2.614445100971479,
+   "single_ball_mass_defect_pct_detectable_bonferroni_nominal_air": 41.8514158899751,
+   "single_ball_mass_defect_pct_detectable_single_test_nominal_air": 29.08988440890769,
+   "single_ball_radius_defect_pct_detectable_bonferroni_nominal_air": 11.057127597874928,
+   "mass_sd_pct_detectable_all_draws_weak_air": 2.517504892697168,
+   "radius_sd_pct_detectable_all_draws_weak_air": 1.110028698486176,
+   "single_ball_mass_defect_pct_detectable_bonferroni_weak_air": 10.64714375393981,
+   "single_ball_mass_defect_pct_detectable_single_test_weak_air": 7.400566372745407,
+   "single_ball_radius_defect_pct_detectable_bonferroni_weak_air": 4.694582782367086
+  },
+  "chaos": {
+   "0.001": {
+    "pairs": 64,
+    "P_same_first_ball": 0.0,
+    "P_identical_5_sequence": 0.0,
+    "mean_set_overlap_between_twins": 0.578125,
+    "random_expectation_overlap": 0.7142857142857143,
+    "random_expectation_same_first": 0.02857142857142857,
+    "lyapunov_exponent_per_s": null,
+    "time_separation_reaches_1cm_s": 0.3000000000000002,
+    "gate_opens_at_s": 1.5
+   },
+   "1e-06": {
+    "pairs": 64,
+    "P_same_first_ball": 0.046875,
+    "P_identical_5_sequence": 0.0,
+    "mean_set_overlap_between_twins": 0.65625,
+    "random_expectation_overlap": 0.7142857142857143,
+    "random_expectation_same_first": 0.02857142857142857,
+    "lyapunov_exponent_per_s": null,
+    "time_separation_reaches_1cm_s": 0.44000000000000034,
+    "gate_opens_at_s": 1.5
+   },
+   "1e-09": {
+    "pairs": 64,
+    "P_same_first_ball": 0.03125,
+    "P_identical_5_sequence": 0.0,
+    "mean_set_overlap_between_twins": 0.703125,
+    "random_expectation_overlap": 0.7142857142857143,
+    "random_expectation_same_first": 0.02857142857142857,
+    "lyapunov_exponent_per_s": 39.94954042580752,
+    "time_separation_reaches_1cm_s": 0.6200000000000004,
+    "gate_opens_at_s": 1.5
+   },
+   "1e-12": {
+    "pairs": 64,
+    "P_same_first_ball": 0.078125,
+    "P_identical_5_sequence": 0.0,
+    "mean_set_overlap_between_twins": 0.71875,
+    "random_expectation_overlap": 0.7142857142857143,
+    "random_expectation_same_first": 0.02857142857142857,
+    "lyapunov_exponent_per_s": 38.9924081718624,
+    "time_separation_reaches_1cm_s": 0.8000000000000006,
+    "gate_opens_at_s": 1.5
+   }
+  },
+  "abc_calibration": {
+   "emulator": {
+    "beta_mass_nominal_air": -0.7901917466907827,
+    "se_nominal": 0.11627081903577581,
+    "beta_mass_weak_air": -3.106057754817533,
+    "se_weak": 0.1681075624369955,
+    "regime_prior": "50/50 mixture",
+    "inclusion_slope_c": 0.9384076470588236
+   },
+   "tau_posterior_pct": {
+    "median": 0.4563650674944165,
+    "q05": 0.11901911807996023,
+    "q95": 4.352400688751692,
+    "prior_range_pct": [
+     0.1,
+     60
+    ]
+   },
+   "tau_posterior_regression_adjusted_pct": {
+    "median": 0.6322877453370656,
+    "q05": 0.1650450161836753,
+    "q95": 5.522960994564079
+   },
+   "n_balls_with_90CI_excluding_0": 4
+  },
+  "abc_dm_posterior_mean_pct": [
+   -1.06,
+   -1.07,
+   0.24,
+   1.56,
+   0.65,
+   -2.13,
+   -0.78,
+   -0.92,
+   0.49,
+   1.45,
+   1.38,
+   -0.61,
+   -1.36,
+   -0.89,
+   -1.21,
+   -0.54,
+   -1.35,
+   -0.57,
+   1.05,
+   0.47,
+   0.18,
+   -0.78,
+   -0.08,
+   0.72,
+   -0.93,
+   0.34,
+   2.53,
+   1.19,
+   -1.17,
+   -2.0,
+   -0.79,
+   2.45,
+   0.39,
+   0.48,
+   0.21
+  ],
+  "chaos_summary": "Twin drums with identical air turbulence, one ball displaced by 1e-12..1e-3 m: separation grows with a Lyapunov exponent ~39/s (e-folding ~25 ms); even a 1e-12 m difference reaches 1 cm in ~0.8 s, before the gate opens at 1.5 s. Twins never produced the same 5-number sequence (0/256 pairs), and their set overlap (0.58-0.72) equals the random value 0.714. Hence nothing beyond per-ball marginal propensities is predictable; the order/sets are fully mixed.",
+  "sim_vs_today": "Per-ball probabilities from the calibrated simulator are taken from its emulator (ABC posterior predictive); resolving the implied deviations (<0.004) by brute-force simulation would need >10^6 simulated draws."
+ },
+ "popularity": {
+  "least_to_most_popular_estimated_here": [
+   35,
+   30,
+   34,
+   32,
+   1,
+   29,
+   18,
+   31,
+   16,
+   28,
+   26,
+   25,
+   24,
+   20,
+   10,
+   33,
+   15,
+   14,
+   27,
+   23,
+   22,
+   6,
+   17,
+   12,
+   11,
+   2,
+   4,
+   13,
+   21,
+   5,
+   19,
+   9,
+   3,
+   8,
+   7
+  ],
+  "consecutive_pair_coef": -0.033142127418755586,
+  "tiers": "tier 3 (3 hits) is fixed 3.30/3.60 EUR; tiers 1 (5 hits) and 2 (4 hits) are pari-mutuel, so popularity only matters there"
+ },
+ "recommended_two_tickets": [
+  [
+   1,
+   29,
+   30,
+   34,
+   35
+  ],
+  [
+   16,
+   18,
+   28,
+   31,
+   32
+  ]
+ ],
+ "ticket_checks": {
+  "A": {
+   "sorted": [
+    1,
+    29,
+    30,
+    34,
+    35
+   ],
+   "run_of_3_plus": false,
+   "contains_3term_arithmetic_progression": false,
+   "consecutive_pairs": 2,
+   "popularity_index_sum_logcoef": -0.263,
+   "relative_co_winner_count_vs_average_ticket": 0.719,
+   "prize_share_multiplier_in_parimutuel_tiers_approx": 1.39,
+   "relative_co_winner_count_tier2_4hit_model": 0.599,
+   "prize_share_multiplier_4hit_tier_model": 1.67
+  },
+  "B": {
+   "sorted": [
+    16,
+    18,
+    28,
+    31,
+    32
+   ],
+   "run_of_3_plus": false,
+   "contains_3term_arithmetic_progression": false,
+   "consecutive_pairs": 1,
+   "popularity_index_sum_logcoef": -0.173,
+   "relative_co_winner_count_vs_average_ticket": 0.814,
+   "prize_share_multiplier_in_parimutuel_tiers_approx": 1.23,
+   "relative_co_winner_count_tier2_4hit_model": 0.714,
+   "prize_share_multiplier_4hit_tier_model": 1.4
+  }
+ },
+ "expected_hits_per_field": {
+  "uniform": 0.7142857142857143,
+  "A_under_BMA": 0.7180039407672596,
+  "B_under_BMA": 0.7135041890721645,
+  "A_under_physics_ABC": 0.7177953333333333,
+  "B_under_physics_ABC": 0.7118585
+ },
+ "recommended_joker": null,
+ "conclusion": "No ball model and no Joker model has a holdout log-likelihood gain significantly > 0; the drum is statistically indistinguishable from a fair random device given 1012 draws. Recommended fields are built only from the least-popular numbers (the one validated edge: fewer co-winners in the pari-mutuel 4- and 5-hit tiers); their probability of being drawn is the same as any other field, 1 in 324,632 for 5 hits.",
+ "honest_statement": "The two fields have exactly the same chance of being drawn as any other pair of fields (each 1 in 324,632 for 5 hits, 0.714 expected hits per field); their only validated advantage is ~1.2-1.7x larger share in the pari-mutuel 4- and 5-hit tiers if they win."
+}

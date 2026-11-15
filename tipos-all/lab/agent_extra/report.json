@@ -1,0 +1,798 @@
+{
+ "title": "TIPOS EXTRA VYPLATA 16.11.2026 - agent_lab3 independent analysis",
+ "verdict": "NULL RESULT: none of 9 pre-registered draw-predictability hypotheses survives Holm on the holdout (smallest raw p = 0.035, B3). All four propensity models (PL static/forgetting/change-point/2-machine HMM) score WORSE than uniform on the holdout (negative LL gain). Popularity models (C1, C2) are strongly validated, so tickets are chosen to be unpopular (bigger shared prizes), not more likely.",
+ "prereg_file": "agent_lab3/prereg.json",
+ "frozen_params_file": "agent_lab3/frozen.json",
+ "hypotheses": {
+  "A1": {
+   "prereg": "Plackett-Luce ball-propensity model on the drawn order, log-weights theta ~ N(0, s^2) MAP (Newton). s chosen on discovery from {0.02,0.05,0.1,0.15,0.2,0.3,0.5}. Primary test: holdout ordered-LL gain > 0 (MC p).",
+   "discovery_tuning": {
+    "chosen_s": 0.2
+   },
+   "holdout": {
+    "mean_order_LL_gain": -0.023421543012495327,
+    "CI95_order": [
+     -0.08131548959840205,
+     0.03517286896279004
+    ],
+    "mean_set_LL_gain": -0.020093317985308234,
+    "CI95_set": [
+     -0.07769080016128964,
+     0.03712147971465661
+    ],
+    "sum_order_gain": -1.9674096130496075,
+    "p_evalue_bound": 1.0,
+    "top6_hits": 120,
+    "top6_expected": 112.0,
+    "top6_z": 0.9537405261671772,
+    "top6_p_one_sided": 0.1852236090164145,
+    "period_split_mean_gain": {
+     "Nov25-Apr26 (Mon only)": -0.04533762313229005,
+     "Apr26-Nov26 (Mon+Thu)": -0.014135068385463665
+    },
+    "null_mean_gain_mean": -0.037559575722539935,
+    "null_mean_gain_sd": 0.026002089388934824,
+    "p_MC": 0.2753623188405797
+   },
+   "holm": {
+    "p": 0.2753623188405797,
+    "p_holm": 1.0,
+    "reject": false
+   }
+  },
+  "A2": {
+   "prereg": "Same PL with exponentially decaying draw weights, half-life h in {4,8,16,32,64} draws, s in the same grid; (h,s) chosen on discovery. Primary test: holdout ordered-LL gain > 0.",
+   "discovery_tuning": {
+    "chosen_h": 64,
+    "chosen_s": 0.2
+   },
+   "holdout": {
+    "mean_order_LL_gain": -0.01795667495955668,
+    "CI95_order": [
+     -0.06037498721068983,
+     0.026108829719863506
+    ],
+    "mean_set_LL_gain": -0.016619612973578606,
+    "CI95_set": [
+     -0.05899801889926108,
+     0.02697174669465685
+    ],
+    "sum_order_gain": -1.508360696602761,
+    "p_evalue_bound": 1.0,
+    "top6_hits": 119,
+    "top6_expected": 112.0,
+    "top6_z": 0.83452296039628,
+    "top6_p_one_sided": 0.21838136709225991,
+    "period_split_mean_gain": {
+     "Nov25-Apr26 (Mon only)": -0.041836091256610926,
+     "Apr26-Nov26 (Mon+Thu)": -0.007838278223516742
+    },
+    "null_mean_gain_mean": -0.021576869053442492,
+    "null_mean_gain_sd": 0.020219918709706176,
+    "p_MC": 0.3918040979510245
+   },
+   "holm": {
+    "p": 0.3918040979510245,
+    "p_holm": 1.0,
+    "reject": false
+   }
+  },
+  "A3": {
+   "prereg": "Bayesian online change-point detection (Adams-MacKay) with constant hazard 1/H, H in {10,25,50,100,200}; within a segment the propensities are a Dirichlet(a)-count plug-in, PL weights w_i = a + c_i (c_i = count of i in the current run), a in {2,5,10,20,50}; predictive = run-length posterior mixture. (H,a) chosen on discovery. Primary test: holdout ordered-LL gain > 0.",
+   "discovery_tuning": {
+    "chosen_H": 200,
+    "chosen_a": 20
+   },
+   "holdout": {
+    "mean_order_LL_gain": -0.021315160285006806,
+    "CI95_order": [
+     -0.0666920261602658,
+     0.024611121120531928
+    ],
+    "mean_set_LL_gain": -0.019407418869974647,
+    "CI95_set": [
+     -0.06467569503481647,
+     0.026344197337420158
+    ],
+    "sum_order_gain": -1.7904734639405717,
+    "p_evalue_bound": 1.0,
+    "top6_hits": 119,
+    "top6_expected": 112.0,
+    "top6_z": 0.83452296039628,
+    "top6_p_one_sided": 0.21838136709225991,
+    "period_split_mean_gain": {
+     "Nov25-Apr26 (Mon only)": -0.04634510026799646,
+     "Apr26-Nov26 (Mon+Thu)": -0.010709253512553564
+    },
+    "null_mean_gain_mean": -0.02374467790329262,
+    "null_mean_gain_sd": 0.02017516064489683,
+    "p_MC": 0.4052973513243378
+   },
+   "holm": {
+    "p": 0.4052973513243378,
+    "p_holm": 1.0,
+    "reject": false
+   }
+  },
+  "A4": {
+   "prereg": "Rule fixed on discovery: pick the 6 numbers with the most (mode=hot) or fewest (mode=cold) appearances in the last K draws, K in {3,5,8,10,15,20,30,40,60}; ties broken by count over all history (same direction), then by lower number. (mode,K) maximizing discovery walk-forward hits is frozen. Primary test: holdout top-6 hits > 112 (exact one-sided p).",
+   "discovery_tuning": {
+    "expected": 85.33333333333333,
+    "chosen_mode": "hot",
+    "chosen_K": 30,
+    "chosen_z_discovery": 3.50557591559504
+   },
+   "holdout": {
+    "rule": "hot K=30",
+    "top6_hits": 120,
+    "expected": 112.0,
+    "z": 0.9537405261671772,
+    "p": 0.1852236090164145,
+    "mean_hits": 1.4285714285714286
+   },
+   "holm": {
+    "p": 0.1852236090164145,
+    "p_holm": 1.0,
+    "reject": false
+   }
+  },
+  "A5": {
+   "prereg": "Two-state hidden Markov mixture (two machines / ball sets), each state with its own PL propensity vector (MAP, s fixed at 0.3), stay-probability rho in {0.5 (iid mixture), 0.8, 0.95}, fitted by EM (5 restarts on discovery). rho chosen on discovery prequential LL. Holdout: forward-filtered state posterior x transition -> mixture of the two PL models; EM refit every 4 holdout draws with warm start. Primary test: holdout ordered-LL gain > 0 (MC p with R>=40 plus e-value bound).",
+   "discovery_tuning": {
+    "chosen_rho": 0.5
+   },
+   "holdout": {
+    "mean_order_LL_gain": -0.029298186074437967,
+    "CI95_order": [
+     -0.09141937036851118,
+     0.033488315746584056
+    ],
+    "mean_set_LL_gain": -0.024614295557309873,
+    "CI95_set": [
+     -0.08584887522560081,
+     0.036611218936923214
+    ],
+    "sum_order_gain": -2.4610476302527893,
+    "p_evalue_bound": 1.0,
+    "top6_hits": 121,
+    "top6_expected": 112.0,
+    "top6_z": 1.0729580919380743,
+    "top6_p_one_sided": 0.15542680684226096,
+    "period_split_mean_gain": {
+     "Nov25-Apr26 (Mon only)": -0.054196367615380436,
+     "Apr26-Nov26 (Mon+Thu)": -0.0187481091503098
+    },
+    "null_mean_gain_mean": -0.04386468671565286,
+    "null_mean_gain_sd": 0.027060456590761346,
+    "p_MC": 0.30564784053156147
+   },
+   "holm": {
+    "p": 0.30564784053156147,
+    "p_holm": 1.0,
+    "reject": false
+   }
+  },
+  "A6": {
+   "prereg": "Numbers from the previous draw have a different probability of reappearing. Test: holdout total repeats vs 84*1.3333 (two-sided, exact hypergeometric convolution). Direction and size delta (PL weight multiplier exp(delta) for previous-draw numbers) estimated on discovery and reported.",
+   "discovery_tuning": {
+    "discovery_repeats": 114,
+    "expected": 110.66666666666666,
+    "z": 0.39977864541607466,
+    "delta_mle": 0.050000000000000044
+   },
+   "holdout": {
+    "holdout_repeats": 119,
+    "expected": 112.0,
+    "z": 0.83452296039628,
+    "p_two_sided": 0.43676273418451983
+   },
+   "holm": {
+    "p": 0.43676273418451983,
+    "p_holm": 1.0,
+    "reject": false
+   }
+  },
+  "B1": {
+   "prereg": "Extra number (1..7) Dirichlet-multinomial predictive with concentration a in {1,2,5,10,20,50,200} and optional forgetting half-life in {16,32,64,inf}; chosen on discovery. Primary test: holdout LL gain > 0 (MC p).",
+   "discovery_tuning": {
+    "chosen_a": 20,
+    "chosen_h": 16,
+    "best_gain": 0.0027475037779425716
+   },
+   "holdout": {
+    "mean_LL_gain": 9.617220177175066e-05,
+    "CI95": [
+     -0.011596948546099805,
+     0.011729816288872314
+    ],
+    "p_MC": 0.3488651134886511,
+    "top1_hits": 13,
+    "top1_expected": 12.0,
+    "p_evalue_bound": 0.9919540781573936
+   },
+   "holm": {
+    "p": 0.3488651134886511,
+    "p_holm": 1.0,
+    "reject": false
+   }
+  },
+  "B2": {
+   "prereg": "P(pb_t == pb_{t-1}) > 1/7 in holdout (one-sided exact binomial; discovery showed excess).",
+   "discovery_tuning": {
+    "discovery_repeats": 27,
+    "n": 83,
+    "expected": 11.857142857142858
+   },
+   "holdout": {
+    "holdout_repeats": 15,
+    "n": 84,
+    "expected": 12.0,
+    "p_one_sided": 0.21343221309475358,
+    "repeats_Nov25_Apr26": 6,
+    "n_Nov25_Apr26": 25,
+    "repeats_after_Apr26": 9,
+    "n_after": 59
+   },
+   "holm": {
+    "p": 0.21343221309475358,
+    "p_holm": 1.0,
+    "reject": false
+   }
+  },
+  "B3": {
+   "prereg": "The least-frequent extra number in discovery is drawn with frequency < 1/7 in holdout (one-sided exact binomial).",
+   "discovery_tuning": {
+    "discovery_counts_extra_1to7": [
+     18,
+     14,
+     15,
+     9,
+     9,
+     13,
+     6
+    ],
+    "least_frequent_extra": 7
+   },
+   "holdout": {
+    "extra_number": 7,
+    "holdout_count": 6,
+    "n": 84,
+    "expected": 12.0,
+    "p_one_sided_less": 0.035035064545653985
+   },
+   "holm": {
+    "p": 0.035035064545653985,
+    "p_holm": 0.31531558091088585,
+    "reject": false
+   }
+  },
+  "C1": {
+   "prereg": "y_t = log(3-match winners_t / deposits_t). Ridge regression on 27 drawn-number indicators (shrunk toward a prior vector c*m, m = +1 for 3,5,7,8,9,13,19,21 and -1 for 1,16,18 from Slovak Loto 5z35, 0 otherwise), plus unpenalised: intercept, #consecutive pairs in draw, #numbers repeated from previous draw, Thursday indicator, Oct-2026 premium indicator, Mon+Thu era indicator, log(deposits). Ridge lambda and prior scale c chosen by leave-one-out CV on discovery. Holdout test: Pearson correlation between discovery-model number-effect prediction (sum of drawn-number coefficients) and holdout residual y (after regressing holdout y on the unpenalised covariates only), one-sided permutation p (permuting the 27 coefficients over numbers, 20000 perms).",
+   "result": {
+    "chosen_lambda": 2,
+    "chosen_prior_scale_c": 0.01,
+    "discovery_LOO_mse": 0.0007769514284347428,
+    "discovery_LOO_mse_covariates_only": 0.002261028623224487,
+    "holdout_corr": 0.8398570740120863,
+    "p_perm_one_sided": 4.999750012499375e-05,
+    "holdout_slope": 1.1363062443783363,
+    "holdout_R2_of_residual": 0.7053599047681436,
+    "prior_only_holdout_corr": 0.49655628300639576,
+    "prior_only_p": 0.007598480303939212
+   },
+   "holm": {
+    "p": 4.999750012499375e-05,
+    "p_holm": 9.99950002499875e-05,
+    "reject": true
+   }
+  },
+  "C2": {
+   "prereg": "Share of 3/4/5-match winners holding the drawn extra number estimates the fraction of players picking that extra number. Holdout test: correlation of per-extra-number popularity estimated on discovery vs on holdout > 0 (permutation p over the 7 labels, exact 5040 perms).",
+   "result": {
+    "rel_popularity_discovery": [
+     1.037,
+     1.1254,
+     1.2802,
+     1.0895,
+     0.8254,
+     0.8221,
+     0.8203
+    ],
+    "rel_popularity_holdout": [
+     1.0063,
+     1.0809,
+     1.1585,
+     1.0219,
+     0.9068,
+     0.9151,
+     0.9106
+    ],
+    "rel_popularity_all": [
+     1.032,
+     1.1035,
+     1.2249,
+     1.0574,
+     0.8631,
+     0.8591,
+     0.86
+    ],
+    "approx_se_all(binomial only)": [
+     0.0042,
+     0.0043,
+     0.005,
+     0.0051,
+     0.0043,
+     0.0037,
+     0.0054
+    ],
+    "holdout_corr": 0.9887268264959727,
+    "p_perm_exact": 0.000992063492063492
+   },
+   "holm": {
+    "p": 0.000992063492063492,
+    "p_holm": 0.000992063492063492,
+    "reject": true
+   }
+  }
+ },
+ "descriptive": {
+  "D1": {
+   "chi2_discovery_df26": 30.75,
+   "chi2_holdout_df26": 17.89285714285714,
+   "chi2_homogeneity_df26": 17.675585326900578,
+   "note": "chi2(26) 95% critical = 38.89",
+   "counts_discovery": [
+    17,
+    14,
+    16,
+    16,
+    18,
+    18,
+    16,
+    15,
+    23,
+    18,
+    31,
+    21,
+    15,
+    14,
+    15,
+    20,
+    26,
+    14,
+    26,
+    23,
+    15,
+    17,
+    17,
+    15,
+    28,
+    21,
+    15
+   ],
+   "counts_holdout": [
+    13,
+    14,
+    17,
+    18,
+    15,
+    25,
+    24,
+    16,
+    18,
+    18,
+    22,
+    15,
+    17,
+    22,
+    21,
+    19,
+    17,
+    17,
+    22,
+    22,
+    14,
+    18,
+    23,
+    25,
+    19,
+    20,
+    13
+   ]
+  },
+  "D2": {
+   "extra_counts_discovery": [
+    18,
+    14,
+    15,
+    9,
+    9,
+    13,
+    6
+   ],
+   "extra_counts_holdout": [
+    12,
+    19,
+    13,
+    12,
+    11,
+    11,
+    6
+   ],
+   "chi2_disc_df6": 8.666666666666668,
+   "chi2_hold_df6": 7.333333333333332,
+   "note": "chi2(6) 95% crit = 12.59"
+  },
+  "D3": {
+   "number11_discovery": 31,
+   "number11_holdout": 22,
+   "expected_each": 18.666666666666668,
+   "p_holdout_greater": 0.22529515359541397
+  }
+ },
+ "models_table": [
+  {
+   "id": "A1",
+   "model": "PL static",
+   "holdout_mean_order_LL_gain_nats": -0.023421543012495327,
+   "CI95": [
+    -0.08131548959840205,
+    0.03517286896279004
+   ],
+   "holdout_mean_set_LL_gain": -0.020093317985308234,
+   "CI95_set": [
+    -0.07769080016128964,
+    0.03712147971465661
+   ],
+   "null_mean_gain(sim)": -0.037559575722539935,
+   "p_MC": 0.2753623188405797,
+   "top6_hits": 120,
+   "expected": 112.0,
+   "z": 0.9537405261671772,
+   "p_top6": 0.1852236090164145,
+   "period_split": {
+    "Nov25-Apr26 (Mon only)": -0.04533762313229005,
+    "Apr26-Nov26 (Mon+Thu)": -0.014135068385463665
+   }
+  },
+  {
+   "id": "A2",
+   "model": "PL forgetting",
+   "holdout_mean_order_LL_gain_nats": -0.01795667495955668,
+   "CI95": [
+    -0.06037498721068983,
+    0.026108829719863506
+   ],
+   "holdout_mean_set_LL_gain": -0.016619612973578606,
+   "CI95_set": [
+    -0.05899801889926108,
+    0.02697174669465685
+   ],
+   "null_mean_gain(sim)": -0.021576869053442492,
+   "p_MC": 0.3918040979510245,
+   "top6_hits": 119,
+   "expected": 112.0,
+   "z": 0.83452296039628,
+   "p_top6": 0.21838136709225991,
+   "period_split": {
+    "Nov25-Apr26 (Mon only)": -0.041836091256610926,
+    "Apr26-Nov26 (Mon+Thu)": -0.007838278223516742
+   }
+  },
+  {
+   "id": "A3",
+   "model": "PL change-point (BOCPD)",
+   "holdout_mean_order_LL_gain_nats": -0.021315160285006806,
+   "CI95": [
+    -0.0666920261602658,
+    0.024611121120531928
+   ],
+   "holdout_mean_set_LL_gain": -0.019407418869974647,
+   "CI95_set": [
+    -0.06467569503481647,
+    0.026344197337420158
+   ],
+   "null_mean_gain(sim)": -0.02374467790329262,
+   "p_MC": 0.4052973513243378,
+   "top6_hits": 119,
+   "expected": 112.0,
+   "z": 0.83452296039628,
+   "p_top6": 0.21838136709225991,
+   "period_split": {
+    "Nov25-Apr26 (Mon only)": -0.04634510026799646,
+    "Apr26-Nov26 (Mon+Thu)": -0.010709253512553564
+   }
+  },
+  {
+   "id": "A5",
+   "model": "2-machine HMM mixture",
+   "holdout_mean_order_LL_gain_nats": -0.029298186074437967,
+   "CI95": [
+    -0.09141937036851118,
+    0.033488315746584056
+   ],
+   "holdout_mean_set_LL_gain": -0.024614295557309873,
+   "CI95_set": [
+    -0.08584887522560081,
+    0.036611218936923214
+   ],
+   "null_mean_gain(sim)": -0.04386468671565286,
+   "p_MC": 0.30564784053156147,
+   "top6_hits": 121,
+   "expected": 112.0,
+   "z": 1.0729580919380743,
+   "p_top6": 0.15542680684226096,
+   "period_split": {
+    "Nov25-Apr26 (Mon only)": -0.054196367615380436,
+    "Apr26-Nov26 (Mon+Thu)": -0.0187481091503098
+   }
+  },
+  {
+   "id": "A4",
+   "model": "hot numbers hot K=30",
+   "top6_hits": 120,
+   "expected": 112.0,
+   "z": 0.9537405261671772,
+   "p": 0.1852236090164145
+  },
+  {
+   "id": "B1",
+   "model": "extra drum Dirichlet a=20 h=16",
+   "holdout_mean_LL_gain_nats": 9.617220177175066e-05,
+   "CI95": [
+    -0.011596948546099805,
+    0.011729816288872314
+   ],
+   "p_MC": 0.3488651134886511,
+   "top1_hits": 13,
+   "expected": 12
+  }
+ ],
+ "popularity": {
+  "main_number_log_effect_on_3match_winners_centered": {
+   "1": -0.01957241029051822,
+   "2": -0.018314433591064137,
+   "3": 0.026929191566885335,
+   "4": -0.004080489074253942,
+   "5": 0.005889418848296244,
+   "6": 0.0034492106872213643,
+   "7": 0.03673072608001174,
+   "8": -0.0035131117405833847,
+   "9": 0.016299193040178968,
+   "10": -0.016822151311724137,
+   "11": 0.0400546668053834,
+   "12": 0.007918833883048915,
+   "13": 0.01349628633201843,
+   "14": -0.025369677797860993,
+   "15": -0.02470101838885061,
+   "16": -0.02096031949459497,
+   "17": 0.01727466975506335,
+   "18": -0.021519402821634226,
+   "19": -0.003979769102767527,
+   "20": -0.02195824793451421,
+   "21": -0.0005867496825972863,
+   "22": -0.006788027095653644,
+   "23": -0.009590717336154313,
+   "24": -0.005540840165141692,
+   "25": 0.025779162471530153,
+   "26": -0.0030409104249363586,
+   "27": 0.01251691678321176
+  },
+  "player_choice_logweight_a_by_number": {
+   "1": -0.05472095013980929,
+   "2": -0.05120387282403195,
+   "3": 0.07528919163066906,
+   "4": -0.011408315882610414,
+   "5": 0.016465759217514288,
+   "6": 0.009643374690983971,
+   "7": 0.10269252486481051,
+   "8": -0.009822030579707007,
+   "9": 0.045569621545428214,
+   "10": -0.047031719114284484,
+   "11": 0.11198566720144237,
+   "12": 0.022139639811744355,
+   "13": 0.03773319690752385,
+   "14": -0.0709290707293374,
+   "15": -0.06905961890210399,
+   "16": -0.05860129544360967,
+   "17": 0.04829687955225595,
+   "18": -0.060164392190959926,
+   "19": -0.011126720899877955,
+   "20": -0.061391324448385465,
+   "21": -0.0016404469173379936,
+   "22": -0.018978106770471893,
+   "23": -0.026813926203608587,
+   "24": -0.015491195714216931,
+   "25": 0.07207391646260519,
+   "26": -0.00850184035959952,
+   "27": 0.03499505523497473
+  },
+  "consecutive_pair_effect_3match": [
+   -0.011804107269698078,
+   0.0018623428801719023
+  ],
+  "consecutive_pair_ticket_logweight_kappa": -0.17005464399515346,
+  "consecutive_pair_stability": {
+   "discovery": -0.0137,
+   "holdout": -0.0132
+  },
+  "repeat_prev_draw_effect": [
+   -0.0004491821651155109,
+   0.002010017869619646
+  ],
+  "least_popular_order": [
+   14,
+   15,
+   20,
+   18,
+   16,
+   1,
+   2,
+   10,
+   23,
+   22,
+   24,
+   4,
+   19,
+   8,
+   26,
+   21,
+   6,
+   5,
+   12,
+   27,
+   13,
+   9,
+   17,
+   25,
+   3,
+   7,
+   11
+  ],
+  "extra_number_relative_popularity_1to7": [
+   1.032,
+   1.1035,
+   1.2249,
+   1.0574,
+   0.8631,
+   0.8591,
+   0.86
+  ],
+  "holdout_validation": {
+   "C1_corr": 0.8398570740120863,
+   "C1_p": 4.999750012499375e-05,
+   "C1_R2": 0.7053599047681436,
+   "C2_corr": 0.9887268264959727,
+   "C2_p": 0.000992063492063492
+  }
+ },
+ "tickets": {
+  "ticket_1": {
+   "main": [
+    1,
+    2,
+    14,
+    20,
+    22,
+    23
+   ],
+   "extra": 6,
+   "factors_vs_average_ticket": {
+    "f3": 1.038791537284851,
+    "f4": 1.0971243381500244,
+    "f5": 1.2625053539096487,
+    "cowinner6_ratio": 0.636387397370419
+   },
+   "EV_eur": 0.8490166412587805,
+   "EV_parts": {
+    "6+1": 0.23162207628014367,
+    "6+0": 0.07884324596129486,
+    "5+1": 0.019722318353684456,
+    "5+0": 0.052373435842940845,
+    "4+1": 0.048147078739696245,
+    "4+0": 0.10507575753033072,
+    "3+1": 0.06519453438396142,
+    "3+0": 0.24803819416672837
+   }
+  },
+  "ticket_2": {
+   "main": [
+    8,
+    10,
+    15,
+    16,
+    18,
+    19
+   ],
+   "extra": 5,
+   "factors_vs_average_ticket": {
+    "f3": 1.0357707738876343,
+    "f4": 1.0978384017944336,
+    "f5": 1.252358063357556,
+    "cowinner6_ratio": 0.6546095396695463
+   },
+   "EV_eur": 0.8467939612914563,
+   "EV_parts": {
+    "6+1": 0.2316200302340857,
+    "6+0": 0.07862843010881598,
+    "5+1": 0.0194731341216358,
+    "5+0": 0.051952488344331076,
+    "4+1": 0.0479551344746476,
+    "4+0": 0.10514414611287522,
+    "3+1": 0.0647036886745049,
+    "3+0": 0.24731690922056004
+   }
+  },
+  "selection": "Maximise popularity-adjusted expected value (pari-mutuel tiers 3-6 scale ~1/co-winners; prize-vs-winners slope ~ -1 verified) over disjoint main sets with no 3-run and no 3-term arithmetic progression. Extra numbers 6 and 5: tied least-popular with 7 (0.86 vs 1.00 avg); 7 avoided as a free hedge because it was drawn 12/168 (B3 raw p=0.035, not significant after Holm).",
+  "S6_optimal_pair_for_comparison": {
+   "T1": [
+    1,
+    2,
+    15,
+    16,
+    18,
+    19
+   ],
+   "T2": [
+    13,
+    14,
+    20,
+    21,
+    23,
+    24
+   ]
+  },
+  "EV_random_ticket_avg_extra_eur": 0.7874276783382272,
+  "EV_most_popular_valid_ticket_eur": 0.7206602143914255,
+  "most_popular_valid_ticket": [
+   3,
+   11,
+   13,
+   17,
+   25,
+   27
+  ],
+  "EV_ticket1_if_extra7": 0.8488773251756292,
+  "EV_ticket1_if_extra3": 0.8092479193912968,
+  "stake_per_column_eur": 1.5,
+  "assumed_columns_next_draw": 106976.33333333333,
+  "typical_prizes_used": {
+   "3+0": 3.1,
+   "3+1": 4.2,
+   "4+0": 10.5,
+   "4+1": 24.8,
+   "5+0": 113.7,
+   "5+1": 220.7
+  },
+  "probabilities": {
+   "per_ticket": {
+    "P(6+1)": 4.826091782613522e-07,
+    "P(6+1)_one_in": 2072070,
+    "P(6+0)": 2.895655069568113e-06,
+    "P(6+0)_one_in": 345345.0,
+    "P(5+1)": 6.080875646093037e-05,
+    "P(5+0)": 0.0003648525387655822,
+    "P(4+1)": 0.0015202189115232595,
+    "P(4+0)": 0.009121313469139556,
+    "P(3+1)": 0.012837404141751968,
+    "P(3+0)": 0.0770244248505118,
+    "P(any prize)": 0.10093240093240094,
+    "P(any prize)_one_in": 9.907621247113163
+   },
+   "two_tickets_combined": {
+    "P(6+1 on either)": 9.652183565227044e-07,
+    "one_in": 1036035.0,
+    "P(6+0 on either)": 5.791310139136226e-06,
+    "one_in_6+0": 172672.5,
+    "P(6 main on either)": 6.756528495658931e-06,
+    "one_in_6main": 148005.0,
+    "P(>=5 main on either)": 0.0008580791189486842,
+    "P(>=4 main on either)": 0.022141143880274314,
+    "P(any prize on either)": 0.20051349616567007,
+    "any_prize_one_in": 4.987195471240355
+   },
+   "note": "Exact under a fair draw (uniform). No tested model changes these probabilities detectably; popularity only changes prize SIZE in shared tiers."
+  }
+ },
+ "honest_edge": "Probability of winning is exactly the same as any other ticket (1 in 1,036,035 for 6+1 with two tickets; 1 in 4.99 for any prize). The only edge is prize size when winning in shared tiers: expected return ~7.7% higher than an average ticket (0.848 vs 0.787 EUR per 1.50 EUR column), i.e. still a loss of ~43% of the stake."
+}

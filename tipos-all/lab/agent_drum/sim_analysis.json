@@ -1,0 +1,151 @@
+{
+ "sensitivity": {
+  "n_sim_draws": 2048,
+  "fraction_draws_completed": 1.0,
+  "sim_params": null,
+  "design": "per-ball mass deviation U(-15%,+15%), radius deviation U(-4%,+4%), random per simulated draw",
+  "beta_mass_per_unit_fraction": -0.7901917466907827,
+  "se_beta_mass": 0.11627081903577581,
+  "beta_radius_per_unit_fraction": 2.990889191686425,
+  "se_beta_radius": 0.4349946569979826,
+  "quadratic_fit": {
+   "coef": [
+    -0.7952201958826568,
+    2.985070593747235,
+    -1.2128009427064346,
+    4.851898275958437
+   ],
+   "se": [
+    0.11682664951863943,
+    0.435173020993763,
+    1.5028655804799977,
+    20.996627435786525
+   ],
+   "cols": [
+    "dm",
+    "dr",
+    "dm^2",
+    "dr^2"
+   ]
+  },
+  "first_pick_only": {
+   "coef": [
+    -1.1544832513568184,
+    2.868274133652215
+   ],
+   "se": [
+    0.26016132756201044,
+    0.9720006273612024
+   ]
+  },
+  "interpretation": "conditional-logit slope of log exit-propensity per unit fractional deviation; beta_mass=-0.6 means a 1% heavier ball has ~0.6% lower per-pick propensity"
+ },
+ "sensitivity_weak": {
+  "n_sim_draws": 1011,
+  "fraction_draws_completed": 0.9873046875,
+  "sim_params": {
+   "dt": 0.001,
+   "k": 500.0,
+   "U0": 6.0,
+   "sj": 0.12,
+   "Lj": 0.5,
+   "turb": 1.5,
+   "mix": 1.5,
+   "dead": 0.3
+  },
+  "design": "per-ball mass deviation U(-15%,+15%), radius deviation U(-4%,+4%), random per simulated draw",
+  "beta_mass_per_unit_fraction": -3.106057754817533,
+  "se_beta_mass": 0.1681075624369955,
+  "beta_radius_per_unit_fraction": 7.044426513852428,
+  "se_beta_radius": 0.6211568588554559,
+  "quadratic_fit": {
+   "coef": [
+    -3.1710089872691825,
+    7.122470731891875,
+    -4.004243831180893,
+    -28.332321459870798
+   ],
+   "se": [
+    0.17381443528114585,
+    0.630397672731689,
+    2.1902133942102027,
+    30.197582708559043
+   ],
+   "cols": [
+    "dm",
+    "dr",
+    "dm^2",
+    "dr^2"
+   ]
+  },
+  "first_pick_only": {
+   "coef": [
+    -3.3812504655692983,
+    7.61625952990102
+   ],
+   "se": [
+    0.37771304529794414,
+    1.3916968096728504
+   ]
+  },
+  "interpretation": "conditional-logit slope of log exit-propensity per unit fractional deviation; beta_mass=-0.6 means a 1% heavier ball has ~0.6% lower per-pick propensity"
+ },
+ "min_detectable_defect": {
+  "n_draws": 1012,
+  "se_log_propensity_per_ball": 0.08204850672782633,
+  "min_detectable_log_propensity_single_ball_80pct_power": 0.22986586572107737,
+  "min_detectable_log_propensity_any_of_35_bonferroni_80pct_power": 0.3307064342358181,
+  "min_detectable_mass_defect_pct_single": 29.089884408907686,
+  "min_detectable_radius_defect_pct_single": 7.685536005814596,
+  "min_detectable_mass_defect_pct_bonferroni35": 41.8514158899751,
+  "min_detectable_radius_defect_pct_bonferroni35": 11.057127597874928,
+  "single_ball_log_propensity_needed_for_significant_holdout_gain": 0.767463721507497,
+  "equivalent_mass_defect_pct_for_holdout_detection": 97.12373290679538
+ },
+ "chaos": {
+  "0.001": {
+   "pairs": 64,
+   "P_same_first_ball": 0.0,
+   "P_identical_5_sequence": 0.0,
+   "mean_set_overlap_between_twins": 0.578125,
+   "random_expectation_overlap": 0.7142857142857143,
+   "random_expectation_same_first": 0.02857142857142857,
+   "lyapunov_exponent_per_s": null,
+   "time_separation_reaches_1cm_s": 0.3000000000000002,
+   "gate_opens_at_s": 1.5
+  },
+  "1e-06": {
+   "pairs": 64,
+   "P_same_first_ball": 0.046875,
+   "P_identical_5_sequence": 0.0,
+   "mean_set_overlap_between_twins": 0.65625,
+   "random_expectation_overlap": 0.7142857142857143,
+   "random_expectation_same_first": 0.02857142857142857,
+   "lyapunov_exponent_per_s": null,
+   "time_separation_reaches_1cm_s": 0.44000000000000034,
+   "gate_opens_at_s": 1.5
+  },
+  "1e-09": {
+   "pairs": 64,
+   "P_same_first_ball": 0.03125,
+   "P_identical_5_sequence": 0.0,
+   "mean_set_overlap_between_twins": 0.703125,
+   "random_expectation_overlap": 0.7142857142857143,
+   "random_expectation_same_first": 0.02857142857142857,
+   "lyapunov_exponent_per_s": 39.94954042580752,
+   "time_separation_reaches_1cm_s": 0.6200000000000004,
+   "gate_opens_at_s": 1.5
+  },
+  "1e-12": {
+   "pairs": 64,
+   "P_same_first_ball": 0.078125,
+   "P_identical_5_sequence": 0.0,
+   "mean_set_overlap_between_twins": 0.71875,
+   "random_expectation_overlap": 0.7142857142857143,
+   "random_expectation_same_first": 0.02857142857142857,
+   "lyapunov_exponent_per_s": 38.9924081718624,
+   "time_separation_reaches_1cm_s": 0.8000000000000006,
+   "gate_opens_at_s": 1.5
+  }
+ }
+}
