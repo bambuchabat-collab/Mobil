@@ -1,0 +1,1714 @@
+{
+ "prereg": "ideas_prereg.md",
+ "alpha": 0.05,
+ "k": 10,
+ "practical_threshold_pp_per_eur": 0.5,
+ "tests": {
+  "H1": {
+   "name": "EV consecutive pairs",
+   "p_raw": 0.0005,
+   "p_holm": 0.0045000000000000005,
+   "survives_holm": true,
+   "effect_pp_per_eur": 0.9989832537393772,
+   "practically_relevant": true,
+   "finding": true,
+   "note": "pre-registered effect 1.00 pp comes from extreme fields (e.g. 18-23, 5 pairs) outside the data support (draws have 0-3 pairs); POST-HOC within support (<=2 pairs per field, no run of 3): 0.31 pp. Coefficients: -1.2% 3-match and -6.2% 4-match winners per consecutive pair in the draw."
+  },
+  "H2": {
+   "name": "EV slip rows/columns (generic grids)",
+   "p_raw": 0.124,
+   "p_holm": 0.744,
+   "survives_holm": false,
+   "effect_pp_per_eur": 0.2905823950661579,
+   "practically_relevant": false,
+   "finding": false,
+   "note": ""
+  },
+  "H3": {
+   "name": "EV 1-12 clustering",
+   "p_raw": 0.921,
+   "p_holm": 1.0,
+   "survives_holm": false,
+   "effect_pp_per_eur": 0.053434782360273214,
+   "practically_relevant": false,
+   "finding": false,
+   "note": ""
+  },
+  "H4": {
+   "name": "EV copying recent/jackpot/hot draws",
+   "p_raw": 0.7055,
+   "p_holm": 1.0,
+   "survives_holm": false,
+   "effect_pp_per_eur": 0.05226713298804864,
+   "practically_relevant": false,
+   "finding": false,
+   "note": ""
+  },
+  "H5": {
+   "name": "EV spread (SD) of numbers",
+   "p_raw": 0.01,
+   "p_holm": 0.07,
+   "survives_holm": false,
+   "effect_pp_per_eur": 0.2578869478442769,
+   "practically_relevant": false,
+   "finding": false,
+   "note": ""
+  },
+  "H6": {
+   "name": "EV arithmetic progressions / multiples of 5",
+   "p_raw": 0.7175,
+   "p_holm": 1.0,
+   "survives_holm": false,
+   "effect_pp_per_eur": 0.005437823542631115,
+   "practically_relevant": false,
+   "finding": false,
+   "note": ""
+  },
+  "H7": {
+   "name": "EV Thursday-specific profile",
+   "p_raw": 0.4405,
+   "p_holm": 1.0,
+   "survives_holm": false,
+   "effect_pp_per_eur": -0.0015517315595736658,
+   "practically_relevant": false,
+   "finding": false,
+   "note": ""
+  },
+  "H8": {
+   "name": "EV premium-month profile",
+   "p_raw": 0.5785,
+   "p_holm": 1.0,
+   "survives_holm": false,
+   "effect_pp_per_eur": 0.0023096601100836,
+   "practically_relevant": false,
+   "finding": false,
+   "note": ""
+  },
+  "H9": {
+   "name": "VAN pattern tickets (windows, odd, even) over-played",
+   "p_raw": 0.0001,
+   "p_holm": 0.001,
+   "survives_holm": true,
+   "effect_pp_per_eur": 0.0,
+   "practically_relevant": false,
+   "finding": false,
+   "note": "fixed tiers; only the 100 000 EUR share can depend on popularity; for a random-looking ticket the effect is 0 and the absolute cap is 1.19 pp; confirms the existing \"no odd/even/half tickets\" advice"
+  },
+  "H10": {
+   "name": "EV extra number coupled to main numbers",
+   "p_raw": 0.002,
+   "p_holm": 0.016,
+   "survives_holm": true,
+   "effect_pp_per_eur": 0.18352609571070794,
+   "practically_relevant": false,
+   "finding": false,
+   "note": "direction: choose an extra number that is NOT in your own 6 numbers (+1 tiers share 8% more often)"
+  }
+ },
+ "ev_details": {
+  "H1": {
+   "T_max_obs": 0.5758634328890463,
+   "p": 0.0005,
+   "best_variant": "consec_pairs",
+   "variants": {
+    "consec_pairs": {
+     "T_obs": 0.5758634328890463,
+     "rel_mse_gain_by_resp": [
+      0.1400021504182298,
+      0.43586128247081646
+     ],
+     "p_single": 0.0005
+    }
+   },
+   "null_Tmax_mean": -0.03883404520825304,
+   "null_Tmax_q95": 0.003972207554658436,
+   "mse_reduced_obs": [
+    0.0008410833072529944,
+    0.008777603386916775
+   ],
+   "R": 1999,
+   "seed": 20261124
+  },
+  "H2": {
+   "T_max_obs": 0.025764671760462425,
+   "p": 0.124,
+   "best_variant": "row_w9",
+   "variants": {
+    "row_w5": {
+     "T_obs": -0.013630339389159198,
+     "rel_mse_gain_by_resp": [
+      -0.020034894335147085,
+      0.006404554945987887
+     ],
+     "p_single": 0.156
+    },
+    "col_w5": {
+     "T_obs": -0.033624782405978486,
+     "rel_mse_gain_by_resp": [
+      -0.031050673606519922,
+      -0.002574108799458565
+     ],
+     "p_single": 0.5955
+    },
+    "row_w6": {
+     "T_obs": -0.010162000277832137,
+     "rel_mse_gain_by_resp": [
+      -0.02209953065704561,
+      0.011937530379213475
+     ],
+     "p_single": 0.14
+    },
+    "col_w6": {
+     "T_obs": -0.07439872991937109,
+     "rel_mse_gain_by_resp": [
+      -0.043447638826552885,
+      -0.030951091092818208
+     ],
+     "p_single": 0.9125
+    },
+    "row_w7": {
+     "T_obs": -0.03514678372224987,
+     "rel_mse_gain_by_resp": [
+      -0.019944470865891465,
+      -0.015202312856358409
+     ],
+     "p_single": 0.3955
+    },
+    "col_w7": {
+     "T_obs": -0.011101518064241749,
+     "rel_mse_gain_by_resp": [
+      -0.004992687396260332,
+      -0.006108830667981417
+     ],
+     "p_single": 0.2045
+    },
+    "row_w9": {
+     "T_obs": 0.025764671760462425,
+     "rel_mse_gain_by_resp": [
+      0.001581711621599481,
+      0.024182960138862945
+     ],
+     "p_single": 0.014
+    },
+    "col_w9": {
+     "T_obs": -0.04618083337270092,
+     "rel_mse_gain_by_resp": [
+      -0.030704812363876868,
+      -0.015476021008824054
+     ],
+     "p_single": 0.703
+    },
+    "row_w10": {
+     "T_obs": -0.014371796658796579,
+     "rel_mse_gain_by_resp": [
+      -0.015761026944080672,
+      0.0013892302852840934
+     ],
+     "p_single": 0.186
+    },
+    "col_w10": {
+     "T_obs": -0.021321641590135436,
+     "rel_mse_gain_by_resp": [
+      -0.01245985221956341,
+      -0.008861789370572026
+     ],
+     "p_single": 0.292
+    }
+   },
+   "null_Tmax_mean": 0.0025104501314517523,
+   "null_Tmax_q95": 0.0417993245080961,
+   "mse_reduced_obs": [
+    0.0007233298355566985,
+    0.004951785917675047
+   ],
+   "R": 1999,
+   "seed": 20261125
+  },
+  "H3": {
+   "T_max_obs": -0.03792061564663555,
+   "p": 0.921,
+   "best_variant": "low12_pairs",
+   "variants": {
+    "low12_pairs": {
+     "T_obs": -0.03792061564663555,
+     "rel_mse_gain_by_resp": [
+      -0.025902896653391013,
+      -0.012017718993244535
+     ],
+     "p_single": 0.921
+    }
+   },
+   "null_Tmax_mean": -0.01013478942939854,
+   "null_Tmax_q95": 0.02985103481831185,
+   "mse_reduced_obs": [
+    0.0008410833072529944,
+    0.008777603386916775
+   ],
+   "R": 1999,
+   "seed": 20261126
+  },
+  "H4": {
+   "T_max_obs": -0.028427100035050477,
+   "p": 0.7055,
+   "best_variant": "overlap_last_jackpot",
+   "variants": {
+    "overlap_prev": {
+     "T_obs": -0.03290959956723018,
+     "rel_mse_gain_by_resp": [
+      -0.023167055813750722,
+      -0.009742543753479459
+     ],
+     "p_single": 0.3505
+    },
+    "overlap_last_jackpot": {
+     "T_obs": -0.028427100035050477,
+     "rel_mse_gain_by_resp": [
+      -0.032173237944435856,
+      0.00374613790938538
+     ],
+     "p_single": 0.302
+    },
+    "overlap_hot6_last10": {
+     "T_obs": -0.04769947692391753,
+     "rel_mse_gain_by_resp": [
+      -0.03145868561473408,
+      -0.016240791309183447
+     ],
+     "p_single": 0.7755
+    }
+   },
+   "null_Tmax_mean": -0.015855308984913268,
+   "null_Tmax_q95": 0.026858631592319392,
+   "mse_reduced_obs": [
+    0.0008410833072529944,
+    0.008777603386916775
+   ],
+   "R": 1999,
+   "seed": 20261127
+  },
+  "H5": {
+   "T_max_obs": 0.030868424503609784,
+   "p": 0.01,
+   "best_variant": "sd_numbers",
+   "variants": {
+    "sd_numbers": {
+     "T_obs": 0.030868424503609784,
+     "rel_mse_gain_by_resp": [
+      0.0046631139250245274,
+      0.02620531057858526
+     ],
+     "p_single": 0.01
+    }
+   },
+   "null_Tmax_mean": -0.03994794577983526,
+   "null_Tmax_q95": 0.005788630854974136,
+   "mse_reduced_obs": [
+    0.0008410833072529944,
+    0.008777603386916775
+   ],
+   "R": 1999,
+   "seed": 20261128
+  },
+  "H6": {
+   "T_max_obs": -0.037865930281084044,
+   "p": 0.7175,
+   "best_variant": "ap3_count",
+   "variants": {
+    "ap3_count": {
+     "T_obs": -0.037865930281084044,
+     "rel_mse_gain_by_resp": [
+      -0.020718807116746802,
+      -0.017147123164337242
+     ],
+     "p_single": 0.6055
+    },
+    "mult5_pairs": {
+     "T_obs": -0.04380678413979979,
+     "rel_mse_gain_by_resp": [
+      -0.03263739616324992,
+      -0.01116938797654987
+     ],
+     "p_single": 0.3485
+    }
+   },
+   "null_Tmax_mean": -0.027009902935035152,
+   "null_Tmax_q95": 0.014348607990747516,
+   "mse_reduced_obs": [
+    0.0008410833072529944,
+    0.008777603386916775
+   ],
+   "R": 1999,
+   "seed": 20261129
+  },
+  "H7": {
+   "T_max_obs": -0.02900443198591108,
+   "p": 0.4405,
+   "best_variant": "thursday_x_number",
+   "variants": {
+    "thursday_x_number": {
+     "T_obs": -0.02900443198591108,
+     "rel_mse_gain_by_resp": [
+      0.004059942718470932,
+      -0.03306437470438201
+     ],
+     "p_single": 0.4405
+    }
+   },
+   "null_Tmax_mean": -0.034613226923238524,
+   "null_Tmax_q95": 0.02286312070515532,
+   "mse_reduced_obs": [
+    0.0008410833072529944,
+    0.008777603386916775
+   ],
+   "R": 1999,
+   "seed": 20261130
+  },
+  "H8": {
+   "T_max_obs": -0.016799119125890508,
+   "p": 0.5785,
+   "best_variant": "premium_x_number",
+   "variants": {
+    "premium_x_number": {
+     "T_obs": -0.016799119125890508,
+     "rel_mse_gain_by_resp": [
+      -0.018890505291415116,
+      0.0020913861655246077
+     ],
+     "p_single": 0.5785
+    }
+   },
+   "null_Tmax_mean": -0.013176584634546091,
+   "null_Tmax_q95": 0.020969903352087243,
+   "mse_reduced_obs": [
+    0.0008410833072529944,
+    0.008777603386916775
+   ],
+   "R": 1999,
+   "seed": 20261131
+  },
+  "H10": {
+   "T_max_obs": 0.08075399841771436,
+   "p": 0.002,
+   "best_variant": "extra_in_main",
+   "variants": {
+    "extra_in_main": {
+     "T_obs": 0.08075399841771436,
+     "rel_mse_gain_by_resp": [
+      -0.015182108482660973,
+      0.09593610690037532
+     ],
+     "p_single": 0.002
+    }
+   },
+   "null_Tmax_mean": -0.034920150505952666,
+   "null_Tmax_q95": 0.009883094142710552,
+   "mse_reduced_obs": [
+    0.0033217305981191733,
+    0.011028433453746827
+   ],
+   "R": 1999,
+   "seed": 20261133,
+   "n_draws": 142,
+   "n_eval": 112,
+   "share_extra_in_main_obs": 0.2112676056338028,
+   "share_expected": 0.2222222222222222
+  }
+ },
+ "ev_coefficients": {
+  "H1": {
+   "feature": "consec_pairs",
+   "gamma_y3": -0.011923653040798359,
+   "gamma_y4": -0.062424766374124405
+  },
+  "H2": {
+   "feature": "row_w9",
+   "gamma_y3": -0.0018777998362541374,
+   "gamma_y4": -0.00860827999720024
+  },
+  "H3": {
+   "feature": "low12_pairs",
+   "gamma_y3": -0.0002017965152260832,
+   "gamma_y4": -0.007716889607212284
+  },
+  "H4": {
+   "feature": "overlap_last_jackpot",
+   "gamma_y3": -0.0008925816348565023,
+   "gamma_y4": -0.01650091800173094
+  },
+  "H5": {
+   "feature": "sd_numbers",
+   "gamma_y3": 0.005308537791545618,
+   "gamma_y4": 0.02065833843061549
+  },
+  "H6": {
+   "feature": "ap3_count",
+   "gamma_y3": 0.0008660551533733853,
+   "gamma_y4": 0.0009384034005699244
+  },
+  "H10": {
+   "feature": "extra_in_main",
+   "delta_u3": 0.013793182821256229,
+   "delta_u4": 0.07925716472072783
+  }
+ },
+ "ev_money": {
+  "baseline_M0": {
+   "best_pair": [
+    [
+     1,
+     14,
+     15,
+     16,
+     18,
+     20
+    ],
+    [
+     2,
+     8,
+     10,
+     22,
+     23,
+     26
+    ]
+   ],
+   "return_per_eur": 0.33472738948226843,
+   "uniform_return": 0.313818
+  },
+  "H1": {
+   "variant": "consec_pairs",
+   "best_pair_full": [
+    [
+     1,
+     2,
+     10,
+     14,
+     15,
+     16
+    ],
+    [
+     18,
+     19,
+     20,
+     21,
+     22,
+     23
+    ]
+   ],
+   "best_pair_reduced": [
+    [
+     1,
+     2,
+     8,
+     15,
+     22,
+     23
+    ],
+    [
+     10,
+     14,
+     16,
+     18,
+     20,
+     26
+    ]
+   ],
+   "ret_full_best": 0.3438019813624163,
+   "ret_full_of_reduced_best": 0.3338121488250225,
+   "effect_pp_per_eur": 0.9989832537393772,
+   "ticket_changes": true
+  },
+  "H2": {
+   "variant": "row_w9",
+   "best_pair_full": [
+    [
+     1,
+     2,
+     10,
+     14,
+     15,
+     16
+    ],
+    [
+     18,
+     19,
+     20,
+     21,
+     22,
+     23
+    ]
+   ],
+   "best_pair_reduced": [
+    [
+     14,
+     15,
+     16,
+     18,
+     19,
+     20
+    ],
+    [
+     1,
+     2,
+     10,
+     21,
+     22,
+     23
+    ]
+   ],
+   "ret_full_best": 0.34418290698272286,
+   "ret_full_of_reduced_best": 0.3412770830320613,
+   "effect_pp_per_eur": 0.2905823950661579,
+   "ticket_changes": true
+  },
+  "H3": {
+   "variant": "low12_pairs",
+   "best_pair_full": [
+    [
+     1,
+     2,
+     8,
+     10,
+     15,
+     16
+    ],
+    [
+     14,
+     18,
+     20,
+     22,
+     23,
+     26
+    ]
+   ],
+   "best_pair_reduced": [
+    [
+     1,
+     2,
+     8,
+     15,
+     22,
+     23
+    ],
+    [
+     10,
+     14,
+     16,
+     18,
+     20,
+     26
+    ]
+   ],
+   "ret_full_best": 0.33528237678984185,
+   "ret_full_of_reduced_best": 0.3347480289662391,
+   "effect_pp_per_eur": 0.053434782360273214,
+   "ticket_changes": true
+  },
+  "H4": {
+   "variant": "overlap_last_jackpot",
+   "best_pair_full": [
+    [
+     2,
+     10,
+     15,
+     16,
+     19,
+     20
+    ],
+    [
+     1,
+     14,
+     18,
+     22,
+     23,
+     26
+    ]
+   ],
+   "best_pair_reduced": [
+    [
+     1,
+     2,
+     8,
+     15,
+     22,
+     23
+    ],
+    [
+     10,
+     14,
+     16,
+     18,
+     20,
+     26
+    ]
+   ],
+   "ret_full_best": 0.33568545872770833,
+   "ret_full_of_reduced_best": 0.33516278739782784,
+   "effect_pp_per_eur": 0.05226713298804864,
+   "ticket_changes": true
+  },
+  "H5": {
+   "variant": "sd_numbers",
+   "best_pair_full": [
+    [
+     1,
+     2,
+     8,
+     10,
+     14,
+     15
+    ],
+    [
+     16,
+     18,
+     20,
+     22,
+     23,
+     26
+    ]
+   ],
+   "best_pair_reduced": [
+    [
+     1,
+     2,
+     8,
+     15,
+     22,
+     23
+    ],
+    [
+     10,
+     14,
+     16,
+     18,
+     20,
+     26
+    ]
+   ],
+   "ret_full_best": 0.33733852865449215,
+   "ret_full_of_reduced_best": 0.3347596591760494,
+   "effect_pp_per_eur": 0.2578869478442769,
+   "ticket_changes": true
+  },
+  "H6": {
+   "variant": "ap3_count",
+   "best_pair_full": [
+    [
+     1,
+     14,
+     15,
+     16,
+     18,
+     20
+    ],
+    [
+     2,
+     8,
+     10,
+     22,
+     23,
+     26
+    ]
+   ],
+   "best_pair_reduced": [
+    [
+     1,
+     2,
+     8,
+     15,
+     22,
+     23
+    ],
+    [
+     10,
+     14,
+     16,
+     18,
+     20,
+     26
+    ]
+   ],
+   "ret_full_best": 0.3346799050890926,
+   "ret_full_of_reduced_best": 0.3346255268536663,
+   "effect_pp_per_eur": 0.005437823542631115,
+   "ticket_changes": true
+  },
+  "H7": {
+   "variant": "thursday_x_number",
+   "best_pair_full": [
+    [
+     1,
+     14,
+     15,
+     16,
+     18,
+     20
+    ],
+    [
+     2,
+     8,
+     10,
+     22,
+     23,
+     26
+    ]
+   ],
+   "best_pair_reduced": [
+    [
+     1,
+     2,
+     8,
+     15,
+     22,
+     23
+    ],
+    [
+     10,
+     14,
+     16,
+     18,
+     20,
+     26
+    ]
+   ],
+   "ret_full_best": 0.33482265161571334,
+   "ret_full_of_reduced_best": 0.3348381689313091,
+   "effect_pp_per_eur": -0.0015517315595736658,
+   "ticket_changes": true,
+   "other_population_best_pair": [
+    [
+     1,
+     8,
+     10,
+     14,
+     16,
+     23
+    ],
+    [
+     2,
+     15,
+     18,
+     19,
+     20,
+     22
+    ]
+   ],
+   "other_population_gain_pp_vs_monday_ticket": 0.12972419782288913
+  },
+  "H8": {
+   "variant": "premium_x_number",
+   "best_pair_full": [
+    [
+     1,
+     14,
+     15,
+     16,
+     18,
+     20
+    ],
+    [
+     2,
+     8,
+     10,
+     22,
+     23,
+     26
+    ]
+   ],
+   "best_pair_reduced": [
+    [
+     1,
+     2,
+     8,
+     15,
+     22,
+     23
+    ],
+    [
+     10,
+     14,
+     16,
+     18,
+     20,
+     26
+    ]
+   ],
+   "ret_full_best": 0.3346488395489467,
+   "ret_full_of_reduced_best": 0.33462574294784586,
+   "effect_pp_per_eur": 0.0023096601100836,
+   "ticket_changes": true,
+   "other_population_best_pair": [
+    [
+     1,
+     2,
+     8,
+     15,
+     20,
+     23
+    ],
+    [
+     10,
+     14,
+     16,
+     18,
+     22,
+     26
+    ]
+   ],
+   "other_population_gain_pp_vs_monday_ticket": 0.0037644629429567367
+  },
+  "H10": {
+   "ret_plus1_inside": 0.06866986415729674,
+   "ret_plus1_outside": 0.07050512511440382,
+   "effect_pp_per_eur": 0.18352609571070794,
+   "better": "extra outside own field"
+  },
+  "H1_posthoc_constrained": {
+   "constraint": "each field <= 2 consecutive pairs, no run of 3",
+   "best_pair_full": [
+    [
+     1,
+     2,
+     14,
+     19,
+     20,
+     23
+    ],
+    [
+     10,
+     15,
+     16,
+     18,
+     21,
+     22
+    ]
+   ],
+   "best_pair_reduced": [
+    [
+     1,
+     10,
+     15,
+     16,
+     18,
+     20
+    ],
+    [
+     2,
+     8,
+     14,
+     22,
+     23,
+     26
+    ]
+   ],
+   "ret_full_best": 0.33707249572671816,
+   "ret_full_of_reduced_best": 0.33394552846474745,
+   "effect_pp_per_eur": 0.31269672619707034,
+   "gain_vs_uniform_pp": 2.3254495726718174,
+   "gamma_consec_y3": -0.011923653040798359,
+   "gamma_consec_y4": -0.062424766374124405
+  }
+ },
+ "van_H9": {
+  "m_hat_obs": 41.96697803078554,
+  "p": 0.0001,
+  "R": 9999,
+  "seed": 20261132,
+  "null_mean": -0.3036618151857194,
+  "null_q95": 8.770127812619696,
+  "n_patterns": 14,
+  "n_cells_9_10_2_1": 42,
+  "interpretation": "m_hat = inverse-variance estimate of extra players per pattern ticket (beyond uniform)"
+ },
+ "van_descriptive": {
+  "D3_prizes_seen": {
+   "0": [
+    50000.0,
+    100000.0
+   ],
+   "1": [
+    200.0
+   ],
+   "2": [
+    20.0
+   ],
+   "3": [
+    3.0
+   ],
+   "8": [
+    3.0
+   ],
+   "9": [
+    20.0
+   ],
+   "10": [
+    200.0
+   ],
+   "11": [
+    100000.0
+   ]
+  },
+  "D6_dispersion": {
+   "1": {
+    "obs_over_exp": 1.000664052455394,
+    "var_z": 2.1807113881362756,
+    "mean_exp": 7.972754453316826
+   },
+   "2": {
+    "obs_over_exp": 0.9976538004602364,
+    "var_z": 9.773402909545382,
+    "mean_exp": 199.31886133292062
+   },
+   "3": {
+    "obs_over_exp": 1.0027361500347167,
+    "var_z": 15.13345622533674,
+    "mean_exp": 1793.8697519962857
+   },
+   "8": {
+    "obs_over_exp": 0.9955735450164281,
+    "var_z": 14.992324912097196,
+    "mean_exp": 1793.8697519962857
+   },
+   "9": {
+    "obs_over_exp": 0.9992445840349132,
+    "var_z": 11.496438398599022,
+    "mean_exp": 199.31886133292062
+   },
+   "10": {
+    "obs_over_exp": 1.0159600483657485,
+    "var_z": 3.6266192270908815,
+    "mean_exp": 7.972754453316826
+   }
+  },
+  "top_prize": {
+   "observed_winners": 46,
+   "expected_uniform": 54.03023679107271,
+   "mean_bets": 46481.29024390244,
+   "lambda_cowinners_random_ticket": 0.13178106534407977,
+   "share_factor": 0.9369109452859481,
+   "max_gain_pp_of_stake": 1.1924429231837494
+  }
+ },
+ "rules_descriptive": {
+  "D1_tier_shares": {
+   "5+1": {
+    "rule_share_of_stakes": 0.008684999999999998,
+    "new_normal": {
+     "n": 125,
+     "draws_with_0_winners": 0,
+     "share_mean": 0.00869201573950216,
+     "share_sd": 8.298185583405404e-05,
+     "min_prize": 84.6,
+     "max_prize": 1964.1
+    },
+    "new_premium": {
+     "n": 17,
+     "draws_with_0_winners": 0,
+     "share_mean": 0.01736863022032996,
+     "share_sd": 1.1816425560240166e-06,
+     "min_prize": 259.6,
+     "max_prize": 2646.3
+    },
+    "old_era": {
+     "n": 28,
+     "draws_with_0_winners": 0,
+     "share_mean": 0.015050568735061734,
+     "share_sd": 2.683940343478785e-06,
+     "min_prize": 110.9,
+     "max_prize": 410.8
+    }
+   },
+   "5+0": {
+    "rule_share_of_stakes": 0.024896999999999996,
+    "new_normal": {
+     "n": 125,
+     "draws_with_0_winners": 0,
+     "share_mean": 0.024876295241785154,
+     "share_sd": 8.24406778925175e-05,
+     "min_prize": 58.3,
+     "max_prize": 199.5
+    },
+    "new_premium": {
+     "n": 17,
+     "draws_with_0_winners": 0,
+     "share_mean": 0.0497841559894342,
+     "share_sd": 4.896289803554912e-06,
+     "min_prize": 141.1,
+     "max_prize": 278.1
+    },
+    "old_era": {
+     "n": 28,
+     "draws_with_0_winners": 0,
+     "share_mean": 0.02199121967133191,
+     "share_sd": 7.611141285460082e-06,
+     "min_prize": 58.7,
+     "max_prize": 172.0
+    }
+   },
+   "4+1": {
+    "rule_share_of_stakes": 0.025475999999999995,
+    "new_normal": {
+     "n": 125,
+     "draws_with_0_winners": 0,
+     "share_mean": 0.025424739834756564,
+     "share_sd": 3.366146473973333e-05,
+     "min_prize": 15.2,
+     "max_prize": 36.8
+    },
+    "new_premium": {
+     "n": 17,
+     "draws_with_0_winners": 0,
+     "share_mean": 0.05090448216613558,
+     "share_sd": 2.618441114855765e-05,
+     "min_prize": 35.8,
+     "max_prize": 63.3
+    },
+    "old_era": {
+     "n": 28,
+     "draws_with_0_winners": 0,
+     "share_mean": 0.04624250107181499,
+     "share_sd": 5.406508284433063e-05,
+     "min_prize": 14.3,
+     "max_prize": 31.6
+    }
+   },
+   "4+0": {
+    "rule_share_of_stakes": 0.06253199999999999,
+    "new_normal": {
+     "n": 125,
+     "draws_with_0_winners": 0,
+     "share_mean": 0.062226645036881856,
+     "share_sd": 0.00018682799924114098,
+     "min_prize": 7.9,
+     "max_prize": 12.7
+    },
+    "new_premium": {
+     "n": 17,
+     "draws_with_0_winners": 0,
+     "share_mean": 0.12474067180842016,
+     "share_sd": 0.00019221345419346135,
+     "min_prize": 17.6,
+     "max_prize": 23.7
+    },
+    "old_era": {
+     "n": 28,
+     "draws_with_0_winners": 0,
+     "share_mean": 0.05539726945024601,
+     "share_sd": 0.00015500686491095542,
+     "min_prize": 6.9,
+     "max_prize": 11.7
+    }
+   },
+   "3+1": {
+    "rule_share_of_stakes": 0.035898,
+    "new_normal": {
+     "n": 125,
+     "draws_with_0_winners": 0,
+     "share_mean": 0.03547252201699567,
+     "share_sd": 0.0002590288969238456,
+     "min_prize": 3.1,
+     "max_prize": 5.2
+    },
+    "new_premium": {
+     "n": 17,
+     "draws_with_0_winners": 0,
+     "share_mean": 0.07134470944380407,
+     "share_sd": 0.00026886417838143425,
+     "min_prize": 6.8,
+     "max_prize": 9.7
+    },
+    "old_era": {
+     "n": 0,
+     "draws_with_0_winners": 0,
+     "share_mean": null,
+     "share_sd": null,
+     "min_prize": null,
+     "max_prize": null
+    }
+   },
+   "3+0": {
+    "rule_share_of_stakes": 0.15633,
+    "new_normal": {
+     "n": 125,
+     "draws_with_0_winners": 0,
+     "share_mean": 0.15377709590227215,
+     "share_sd": 0.001611953528686676,
+     "min_prize": 2.6,
+     "max_prize": 3.3
+    },
+    "new_premium": {
+     "n": 17,
+     "draws_with_0_winners": 0,
+     "share_mean": 0.3101719383086251,
+     "share_sd": 0.0014762045955554583,
+     "min_prize": 5.7,
+     "max_prize": 6.4
+    },
+    "old_era": {
+     "n": 28,
+     "draws_with_0_winners": 0,
+     "share_mean": 0.13838735466996058,
+     "share_sd": 0.0013147460718474558,
+     "min_prize": 2.6,
+     "max_prize": 3.3
+    }
+   }
+  },
+  "D1_premium_draws": [
+   "2026-05-04",
+   "2026-05-07",
+   "2026-05-11",
+   "2026-05-14",
+   "2026-05-18",
+   "2026-05-21",
+   "2026-05-25",
+   "2026-05-28",
+   "2026-10-01",
+   "2026-10-05",
+   "2026-10-08",
+   "2026-10-12",
+   "2026-10-15",
+   "2026-10-19",
+   "2026-10-22",
+   "2026-10-26",
+   "2026-10-29"
+  ],
+  "D2_top_tiers_multi": [
+   {
+    "date": "2024-04-08",
+    "tier": "6+0",
+    "prize": 24000.0,
+    "winners": 1
+   },
+   {
+    "date": "2024-04-22",
+    "tier": "6+1",
+    "prize": 480000.0,
+    "winners": 2
+   },
+   {
+    "date": "2024-04-22",
+    "tier": "6+0",
+    "prize": 24000.0,
+    "winners": 2
+   },
+   {
+    "date": "2024-04-29",
+    "tier": "6+1",
+    "prize": 480000.0,
+    "winners": 1
+   },
+   {
+    "date": "2024-04-29",
+    "tier": "6+0",
+    "prize": 16000.0,
+    "winners": 3
+   },
+   {
+    "date": "2024-05-06",
+    "tier": "6+0",
+    "prize": 24000.0,
+    "winners": 1
+   },
+   {
+    "date": "2024-05-13",
+    "tier": "6+1",
+    "prize": 480000.0,
+    "winners": 1
+   },
+   {
+    "date": "2024-05-13",
+    "tier": "6+0",
+    "prize": 24000.0,
+    "winners": 1
+   },
+   {
+    "date": "2024-05-20",
+    "tier": "6+1",
+    "prize": 480000.0,
+    "winners": 1
+   },
+   {
+    "date": "2024-05-27",
+    "tier": "6+1",
+    "prize": 320000.0,
+    "winners": 3
+   },
+   {
+    "date": "2024-06-03",
+    "tier": "6+0",
+    "prize": 24000.0,
+    "winners": 1
+   },
+   {
+    "date": "2024-06-17",
+    "tier": "6+0",
+    "prize": 24000.0,
+    "winners": 1
+   },
+   {
+    "date": "2024-06-24",
+    "tier": "6+1",
+    "prize": 480000.0,
+    "winners": 1
+   },
+   {
+    "date": "2024-07-01",
+    "tier": "6+0",
+    "prize": 24000.0,
+    "winners": 1
+   },
+   {
+    "date": "2024-07-08",
+    "tier": "6+0",
+    "prize": 24000.0,
+    "winners": 1
+   },
+   {
+    "date": "2024-07-29",
+    "tier": "6+0",
+    "prize": 24000.0,
+    "winners": 1
+   },
+   {
+    "date": "2024-08-05",
+    "tier": "6+1",
+    "prize": 480000.0,
+    "winners": 1
+   },
+   {
+    "date": "2024-09-02",
+    "tier": "6+0",
+    "prize": 12000.0,
+    "winners": 2
+   },
+   {
+    "date": "2024-09-30",
+    "tier": "6+0",
+    "prize": 12000.0,
+    "winners": 3
+   },
+   {
+    "date": "2024-10-07",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2024-10-21",
+    "tier": "6+1",
+    "prize": 480000.0,
+    "winners": 1
+   },
+   {
+    "date": "2024-10-21",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2024-10-28",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2024-11-04",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2024-12-23",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2024-12-30",
+    "tier": "6+0",
+    "prize": 10000.0,
+    "winners": 3
+   },
+   {
+    "date": "2025-01-06",
+    "tier": "6+1",
+    "prize": 480000.0,
+    "winners": 1
+   },
+   {
+    "date": "2025-02-03",
+    "tier": "6+0",
+    "prize": 15000.0,
+    "winners": 2
+   },
+   {
+    "date": "2025-02-10",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2025-02-17",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2025-03-03",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2025-03-24",
+    "tier": "6+0",
+    "prize": 15000.0,
+    "winners": 2
+   },
+   {
+    "date": "2025-04-07",
+    "tier": "6+1",
+    "prize": 480000.0,
+    "winners": 1
+   },
+   {
+    "date": "2025-04-28",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2025-05-05",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2025-05-19",
+    "tier": "6+0",
+    "prize": 15000.0,
+    "winners": 2
+   },
+   {
+    "date": "2025-06-02",
+    "tier": "6+0",
+    "prize": 10000.0,
+    "winners": 3
+   },
+   {
+    "date": "2025-06-16",
+    "tier": "6+0",
+    "prize": 15000.0,
+    "winners": 2
+   },
+   {
+    "date": "2025-06-23",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2025-07-07",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2025-07-14",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2025-08-11",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2025-08-25",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2025-09-01",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2025-09-08",
+    "tier": "6+0",
+    "prize": 15000.0,
+    "winners": 2
+   },
+   {
+    "date": "2025-10-06",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2025-10-20",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2025-10-27",
+    "tier": "6+0",
+    "prize": 15000.0,
+    "winners": 2
+   },
+   {
+    "date": "2025-11-10",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2025-12-01",
+    "tier": "6+1",
+    "prize": 480000.0,
+    "winners": 1
+   },
+   {
+    "date": "2025-12-01",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2025-12-08",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2025-12-29",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2026-01-05",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2026-02-16",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2026-03-16",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2026-03-30",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2026-04-13",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2026-04-20",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2026-05-21",
+    "tier": "6+1",
+    "prize": 480000.0,
+    "winners": 1
+   },
+   {
+    "date": "2026-05-21",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2026-05-25",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2026-06-08",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2026-06-11",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2026-06-15",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2026-07-09",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2026-07-13",
+    "tier": "6+1",
+    "prize": 480000.0,
+    "winners": 1
+   },
+   {
+    "date": "2026-07-13",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2026-07-16",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2026-08-06",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2026-08-20",
+    "tier": "6+0",
+    "prize": 15000.0,
+    "winners": 2
+   },
+   {
+    "date": "2026-08-24",
+    "tier": "6+0",
+    "prize": 15000.0,
+    "winners": 2
+   },
+   {
+    "date": "2026-08-31",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2026-09-03",
+    "tier": "6+0",
+    "prize": 15000.0,
+    "winners": 2
+   },
+   {
+    "date": "2026-09-10",
+    "tier": "6+1",
+    "prize": 480000.0,
+    "winners": 1
+   },
+   {
+    "date": "2026-09-14",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2026-10-12",
+    "tier": "6+1",
+    "prize": 480000.0,
+    "winners": 1
+   },
+   {
+    "date": "2026-10-12",
+    "tier": "6+0",
+    "prize": 15000.0,
+    "winners": 2
+   },
+   {
+    "date": "2026-10-15",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2026-10-19",
+    "tier": "6+0",
+    "prize": 10000.0,
+    "winners": 3
+   },
+   {
+    "date": "2026-10-22",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   },
+   {
+    "date": "2026-11-12",
+    "tier": "6+1",
+    "prize": 480000.0,
+    "winners": 1
+   },
+   {
+    "date": "2026-11-19",
+    "tier": "6+0",
+    "prize": 30000.0,
+    "winners": 1
+   }
+  ],
+  "D2_summary": {
+   "old": {
+    "draws": 28,
+    "6+0_obs": 18,
+    "6+0_exp": 14.803179791223268,
+    "6+0_draws_ge2_obs": 4,
+    "6+0_draws_ge2_exp_poisson": 2.7988618706545516,
+    "6+1_obs": 10,
+    "6+1_exp": 4.934393263741089
+   },
+   "new": {
+    "draws": 142,
+    "6+0_obs": 71,
+    "6+0_exp": 56.67505248374813,
+    "6+0_draws_ge2_obs": 13,
+    "6+0_draws_ge2_exp_poisson": 9.191863898155862,
+    "6+1_obs": 9,
+    "6+1_exp": 9.445842080624692
+   }
+  },
+  "D4_P_any_3EUR": {
+   "EV 2 disjoint fields": 0.20051349616567007,
+   "VAN 2 tickets 5-6 common": 0.167115,
+   "EV 1 field + VAN 1 ticket": 0.17835015663069964,
+   "EV 1 field": 0.10093240093240093,
+   "VAN 1 ticket": 0.08610893750212635
+  },
+  "D5_extra": {
+   "P_any_independent_of_extra": true,
+   "plus1_tiers_share_of_stakes": 0.070059,
+   "note": "with C2 relative popularity 0.86 for extras 5,6,7 vs mean 1.0 -> about +16% on these tiers = +1.1 pp of stake (already known, agent_extra C2)"
+  },
+  "D7_posthoc_day_volume": {
+   "mean_bets_monday_last30": 102690.53333333334,
+   "mean_bets_thursday": 90353.58064516129,
+   "fixed_tiers_return_monday": 0.20076681880767397,
+   "fixed_tiers_return_thursday": 0.2020730226958217
+  }
+ }
+}

@@ -1,0 +1,418 @@
+{
+ "H9": {
+  "m_hat_obs": 41.96697803078554,
+  "p": 0.0001,
+  "R": 9999,
+  "seed": 20261132,
+  "null_mean": -0.3036618151857194,
+  "null_q95": 8.770127812619696,
+  "n_patterns": 14,
+  "n_cells_9_10_2_1": 42,
+  "cells_9_10_2_1": [
+   {
+    "pattern": "1-11",
+    "date": "2026-08-26",
+    "hits": 9,
+    "tier_winners": 295,
+    "expected": 136.88,
+    "excess": 158.1
+   },
+   {
+    "pattern": "2-12",
+    "date": "2025-11-06",
+    "hits": 2,
+    "tier_winners": 340,
+    "expected": 332.32,
+    "excess": 7.7
+   },
+   {
+    "pattern": "3-13",
+    "date": "2025-10-08",
+    "hits": 9,
+    "tier_winners": 249,
+    "expected": 261.38,
+    "excess": -12.4
+   },
+   {
+    "pattern": "3-13",
+    "date": "2026-08-01",
+    "hits": 2,
+    "tier_winners": 170,
+    "expected": 121.93,
+    "excess": 48.1
+   },
+   {
+    "pattern": "4-14",
+    "date": "2025-11-28",
+    "hits": 2,
+    "tier_winners": 308,
+    "expected": 338.19,
+    "excess": -30.2
+   },
+   {
+    "pattern": "4-14",
+    "date": "2025-12-26",
+    "hits": 9,
+    "tier_winners": 138,
+    "expected": 172.22,
+    "excess": -34.2
+   },
+   {
+    "pattern": "4-14",
+    "date": "2026-04-08",
+    "hits": 9,
+    "tier_winners": 154,
+    "expected": 179.89,
+    "excess": -25.9
+   },
+   {
+    "pattern": "4-14",
+    "date": "2026-08-04",
+    "hits": 9,
+    "tier_winners": 93,
+    "expected": 140.63,
+    "excess": -47.6
+   },
+   {
+    "pattern": "4-14",
+    "date": "2026-08-09",
+    "hits": 9,
+    "tier_winners": 106,
+    "expected": 121.01,
+    "excess": -15.0
+   },
+   {
+    "pattern": "4-14",
+    "date": "2026-10-01",
+    "hits": 9,
+    "tier_winners": 144,
+    "expected": 141.68,
+    "excess": 2.3
+   },
+   {
+    "pattern": "4-14",
+    "date": "2026-11-09",
+    "hits": 2,
+    "tier_winners": 116,
+    "expected": 140.79,
+    "excess": -24.8
+   },
+   {
+    "pattern": "5-15",
+    "date": "2025-11-28",
+    "hits": 2,
+    "tier_winners": 308,
+    "expected": 338.19,
+    "excess": -30.2
+   },
+   {
+    "pattern": "5-15",
+    "date": "2025-12-26",
+    "hits": 9,
+    "tier_winners": 138,
+    "expected": 172.22,
+    "excess": -34.2
+   },
+   {
+    "pattern": "5-15",
+    "date": "2026-08-04",
+    "hits": 9,
+    "tier_winners": 93,
+    "expected": 140.63,
+    "excess": -47.6
+   },
+   {
+    "pattern": "5-15",
+    "date": "2026-08-09",
+    "hits": 9,
+    "tier_winners": 106,
+    "expected": 121.01,
+    "excess": -15.0
+   },
+   {
+    "pattern": "5-15",
+    "date": "2026-08-16",
+    "hits": 2,
+    "tier_winners": 117,
+    "expected": 122.57,
+    "excess": -5.6
+   },
+   {
+    "pattern": "5-15",
+    "date": "2026-10-01",
+    "hits": 10,
+    "tier_winners": 7,
+    "expected": 5.67,
+    "excess": 1.3
+   },
+   {
+    "pattern": "5-15",
+    "date": "2026-11-09",
+    "hits": 2,
+    "tier_winners": 116,
+    "expected": 140.79,
+    "excess": -24.8
+   },
+   {
+    "pattern": "5-15",
+    "date": "2026-11-14",
+    "hits": 9,
+    "tier_winners": 129,
+    "expected": 141.63,
+    "excess": -12.6
+   },
+   {
+    "pattern": "6-16",
+    "date": "2026-07-13",
+    "hits": 9,
+    "tier_winners": 160,
+    "expected": 154.03,
+    "excess": 6.0
+   },
+   {
+    "pattern": "6-16",
+    "date": "2026-10-01",
+    "hits": 9,
+    "tier_winners": 144,
+    "expected": 141.68,
+    "excess": 2.3
+   },
+   {
+    "pattern": "7-17",
+    "date": "2026-01-11",
+    "hits": 9,
+    "tier_winners": 171,
+    "expected": 207.37,
+    "excess": -36.4
+   },
+   {
+    "pattern": "7-17",
+    "date": "2026-08-16",
+    "hits": 2,
+    "tier_winners": 117,
+    "expected": 122.57,
+    "excess": -5.6
+   },
+   {
+    "pattern": "8-18",
+    "date": "2026-04-06",
+    "hits": 2,
+    "tier_winners": 92,
+    "expected": 110.26,
+    "excess": -18.3
+   },
+   {
+    "pattern": "8-18",
+    "date": "2026-07-13",
+    "hits": 9,
+    "tier_winners": 160,
+    "expected": 154.03,
+    "excess": 6.0
+   },
+   {
+    "pattern": "8-18",
+    "date": "2026-07-19",
+    "hits": 9,
+    "tier_winners": 115,
+    "expected": 123.46,
+    "excess": -8.5
+   },
+   {
+    "pattern": "9-19",
+    "date": "2026-03-26",
+    "hits": 9,
+    "tier_winners": 203,
+    "expected": 205.88,
+    "excess": -2.9
+   },
+   {
+    "pattern": "10-20",
+    "date": "2026-02-18",
+    "hits": 9,
+    "tier_winners": 241,
+    "expected": 235.97,
+    "excess": 5.0
+   },
+   {
+    "pattern": "10-20",
+    "date": "2026-03-08",
+    "hits": 9,
+    "tier_winners": 151,
+    "expected": 177.82,
+    "excess": -26.8
+   },
+   {
+    "pattern": "10-20",
+    "date": "2026-06-11",
+    "hits": 9,
+    "tier_winners": 137,
+    "expected": 163.41,
+    "excess": -26.4
+   },
+   {
+    "pattern": "11-21",
+    "date": "2026-02-18",
+    "hits": 9,
+    "tier_winners": 241,
+    "expected": 235.97,
+    "excess": 5.0
+   },
+   {
+    "pattern": "11-21",
+    "date": "2026-06-02",
+    "hits": 2,
+    "tier_winners": 133,
+    "expected": 145.17,
+    "excess": -12.2
+   },
+   {
+    "pattern": "11-21",
+    "date": "2026-06-11",
+    "hits": 9,
+    "tier_winners": 137,
+    "expected": 163.41,
+    "excess": -26.4
+   },
+   {
+    "pattern": "12-22",
+    "date": "2026-08-26",
+    "hits": 2,
+    "tier_winners": 224,
+    "expected": 136.88,
+    "excess": 87.1
+   },
+   {
+    "pattern": "odd",
+    "date": "2025-10-10",
+    "hits": 2,
+    "tier_winners": 1144,
+    "expected": 357.82,
+    "excess": 786.2
+   },
+   {
+    "pattern": "odd",
+    "date": "2026-04-29",
+    "hits": 9,
+    "tier_winners": 406,
+    "expected": 163.25,
+    "excess": 242.8
+   },
+   {
+    "pattern": "odd",
+    "date": "2026-06-09",
+    "hits": 9,
+    "tier_winners": 475,
+    "expected": 150.65,
+    "excess": 324.4
+   },
+   {
+    "pattern": "odd",
+    "date": "2026-09-02",
+    "hits": 2,
+    "tier_winners": 379,
+    "expected": 134.28,
+    "excess": 244.7
+   },
+   {
+    "pattern": "even",
+    "date": "2025-10-10",
+    "hits": 9,
+    "tier_winners": 1095,
+    "expected": 357.82,
+    "excess": 737.2
+   },
+   {
+    "pattern": "even",
+    "date": "2026-04-29",
+    "hits": 2,
+    "tier_winners": 350,
+    "expected": 163.25,
+    "excess": 186.8
+   },
+   {
+    "pattern": "even",
+    "date": "2026-06-09",
+    "hits": 2,
+    "tier_winners": 354,
+    "expected": 150.65,
+    "excess": 203.4
+   },
+   {
+    "pattern": "even",
+    "date": "2026-09-02",
+    "hits": 9,
+    "tier_winners": 328,
+    "expected": 134.28,
+    "excess": 193.7
+   }
+  ],
+  "interpretation": "m_hat = inverse-variance estimate of extra players per pattern ticket (beyond uniform)"
+ },
+ "D3_prizes_seen": {
+  "0": [
+   50000.0,
+   100000.0
+  ],
+  "1": [
+   200.0
+  ],
+  "2": [
+   20.0
+  ],
+  "3": [
+   3.0
+  ],
+  "8": [
+   3.0
+  ],
+  "9": [
+   20.0
+  ],
+  "10": [
+   200.0
+  ],
+  "11": [
+   100000.0
+  ]
+ },
+ "D6_dispersion": {
+  "1": {
+   "obs_over_exp": 1.000664052455394,
+   "var_z": 2.1807113881362756,
+   "mean_exp": 7.972754453316826
+  },
+  "2": {
+   "obs_over_exp": 0.9976538004602364,
+   "var_z": 9.773402909545382,
+   "mean_exp": 199.31886133292062
+  },
+  "3": {
+   "obs_over_exp": 1.0027361500347167,
+   "var_z": 15.13345622533674,
+   "mean_exp": 1793.8697519962857
+  },
+  "8": {
+   "obs_over_exp": 0.9955735450164281,
+   "var_z": 14.992324912097196,
+   "mean_exp": 1793.8697519962857
+  },
+  "9": {
+   "obs_over_exp": 0.9992445840349132,
+   "var_z": 11.496438398599022,
+   "mean_exp": 199.31886133292062
+  },
+  "10": {
+   "obs_over_exp": 1.0159600483657485,
+   "var_z": 3.6266192270908815,
+   "mean_exp": 7.972754453316826
+  }
+ },
+ "top_prize": {
+  "observed_winners": 46,
+  "expected_uniform": 54.03023679107271,
+  "mean_bets": 46481.29024390244,
+  "lambda_cowinners_random_ticket": 0.13178106534407977,
+  "share_factor": 0.9369109452859481,
+  "max_gain_pp_of_stake": 1.1924429231837494
+ }
+}

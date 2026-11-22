@@ -1,0 +1,723 @@
+{
+ "D1_tier_shares": {
+  "5+1": {
+   "rule_share_of_stakes": 0.008684999999999998,
+   "new_normal": {
+    "n": 125,
+    "draws_with_0_winners": 0,
+    "share_mean": 0.00869201573950216,
+    "share_sd": 8.298185583405404e-05,
+    "min_prize": 84.6,
+    "max_prize": 1964.1
+   },
+   "new_premium": {
+    "n": 17,
+    "draws_with_0_winners": 0,
+    "share_mean": 0.01736863022032996,
+    "share_sd": 1.1816425560240166e-06,
+    "min_prize": 259.6,
+    "max_prize": 2646.3
+   },
+   "old_era": {
+    "n": 28,
+    "draws_with_0_winners": 0,
+    "share_mean": 0.015050568735061734,
+    "share_sd": 2.683940343478785e-06,
+    "min_prize": 110.9,
+    "max_prize": 410.8
+   }
+  },
+  "5+0": {
+   "rule_share_of_stakes": 0.024896999999999996,
+   "new_normal": {
+    "n": 125,
+    "draws_with_0_winners": 0,
+    "share_mean": 0.024876295241785154,
+    "share_sd": 8.24406778925175e-05,
+    "min_prize": 58.3,
+    "max_prize": 199.5
+   },
+   "new_premium": {
+    "n": 17,
+    "draws_with_0_winners": 0,
+    "share_mean": 0.0497841559894342,
+    "share_sd": 4.896289803554912e-06,
+    "min_prize": 141.1,
+    "max_prize": 278.1
+   },
+   "old_era": {
+    "n": 28,
+    "draws_with_0_winners": 0,
+    "share_mean": 0.02199121967133191,
+    "share_sd": 7.611141285460082e-06,
+    "min_prize": 58.7,
+    "max_prize": 172.0
+   }
+  },
+  "4+1": {
+   "rule_share_of_stakes": 0.025475999999999995,
+   "new_normal": {
+    "n": 125,
+    "draws_with_0_winners": 0,
+    "share_mean": 0.025424739834756564,
+    "share_sd": 3.366146473973333e-05,
+    "min_prize": 15.2,
+    "max_prize": 36.8
+   },
+   "new_premium": {
+    "n": 17,
+    "draws_with_0_winners": 0,
+    "share_mean": 0.05090448216613558,
+    "share_sd": 2.618441114855765e-05,
+    "min_prize": 35.8,
+    "max_prize": 63.3
+   },
+   "old_era": {
+    "n": 28,
+    "draws_with_0_winners": 0,
+    "share_mean": 0.04624250107181499,
+    "share_sd": 5.406508284433063e-05,
+    "min_prize": 14.3,
+    "max_prize": 31.6
+   }
+  },
+  "4+0": {
+   "rule_share_of_stakes": 0.06253199999999999,
+   "new_normal": {
+    "n": 125,
+    "draws_with_0_winners": 0,
+    "share_mean": 0.062226645036881856,
+    "share_sd": 0.00018682799924114098,
+    "min_prize": 7.9,
+    "max_prize": 12.7
+   },
+   "new_premium": {
+    "n": 17,
+    "draws_with_0_winners": 0,
+    "share_mean": 0.12474067180842016,
+    "share_sd": 0.00019221345419346135,
+    "min_prize": 17.6,
+    "max_prize": 23.7
+   },
+   "old_era": {
+    "n": 28,
+    "draws_with_0_winners": 0,
+    "share_mean": 0.05539726945024601,
+    "share_sd": 0.00015500686491095542,
+    "min_prize": 6.9,
+    "max_prize": 11.7
+   }
+  },
+  "3+1": {
+   "rule_share_of_stakes": 0.035898,
+   "new_normal": {
+    "n": 125,
+    "draws_with_0_winners": 0,
+    "share_mean": 0.03547252201699567,
+    "share_sd": 0.0002590288969238456,
+    "min_prize": 3.1,
+    "max_prize": 5.2
+   },
+   "new_premium": {
+    "n": 17,
+    "draws_with_0_winners": 0,
+    "share_mean": 0.07134470944380407,
+    "share_sd": 0.00026886417838143425,
+    "min_prize": 6.8,
+    "max_prize": 9.7
+   },
+   "old_era": {
+    "n": 0,
+    "draws_with_0_winners": 0,
+    "share_mean": null,
+    "share_sd": null,
+    "min_prize": null,
+    "max_prize": null
+   }
+  },
+  "3+0": {
+   "rule_share_of_stakes": 0.15633,
+   "new_normal": {
+    "n": 125,
+    "draws_with_0_winners": 0,
+    "share_mean": 0.15377709590227215,
+    "share_sd": 0.001611953528686676,
+    "min_prize": 2.6,
+    "max_prize": 3.3
+   },
+   "new_premium": {
+    "n": 17,
+    "draws_with_0_winners": 0,
+    "share_mean": 0.3101719383086251,
+    "share_sd": 0.0014762045955554583,
+    "min_prize": 5.7,
+    "max_prize": 6.4
+   },
+   "old_era": {
+    "n": 28,
+    "draws_with_0_winners": 0,
+    "share_mean": 0.13838735466996058,
+    "share_sd": 0.0013147460718474558,
+    "min_prize": 2.6,
+    "max_prize": 3.3
+   }
+  }
+ },
+ "D1_premium_draws": [
+  "2026-05-04",
+  "2026-05-07",
+  "2026-05-11",
+  "2026-05-14",
+  "2026-05-18",
+  "2026-05-21",
+  "2026-05-25",
+  "2026-05-28",
+  "2026-10-01",
+  "2026-10-05",
+  "2026-10-08",
+  "2026-10-12",
+  "2026-10-15",
+  "2026-10-19",
+  "2026-10-22",
+  "2026-10-26",
+  "2026-10-29"
+ ],
+ "D2_top_tiers_multi": [
+  {
+   "date": "2024-04-08",
+   "tier": "6+0",
+   "prize": 24000.0,
+   "winners": 1
+  },
+  {
+   "date": "2024-04-22",
+   "tier": "6+1",
+   "prize": 480000.0,
+   "winners": 2
+  },
+  {
+   "date": "2024-04-22",
+   "tier": "6+0",
+   "prize": 24000.0,
+   "winners": 2
+  },
+  {
+   "date": "2024-04-29",
+   "tier": "6+1",
+   "prize": 480000.0,
+   "winners": 1
+  },
+  {
+   "date": "2024-04-29",
+   "tier": "6+0",
+   "prize": 16000.0,
+   "winners": 3
+  },
+  {
+   "date": "2024-05-06",
+   "tier": "6+0",
+   "prize": 24000.0,
+   "winners": 1
+  },
+  {
+   "date": "2024-05-13",
+   "tier": "6+1",
+   "prize": 480000.0,
+   "winners": 1
+  },
+  {
+   "date": "2024-05-13",
+   "tier": "6+0",
+   "prize": 24000.0,
+   "winners": 1
+  },
+  {
+   "date": "2024-05-20",
+   "tier": "6+1",
+   "prize": 480000.0,
+   "winners": 1
+  },
+  {
+   "date": "2024-05-27",
+   "tier": "6+1",
+   "prize": 320000.0,
+   "winners": 3
+  },
+  {
+   "date": "2024-06-03",
+   "tier": "6+0",
+   "prize": 24000.0,
+   "winners": 1
+  },
+  {
+   "date": "2024-06-17",
+   "tier": "6+0",
+   "prize": 24000.0,
+   "winners": 1
+  },
+  {
+   "date": "2024-06-24",
+   "tier": "6+1",
+   "prize": 480000.0,
+   "winners": 1
+  },
+  {
+   "date": "2024-07-01",
+   "tier": "6+0",
+   "prize": 24000.0,
+   "winners": 1
+  },
+  {
+   "date": "2024-07-08",
+   "tier": "6+0",
+   "prize": 24000.0,
+   "winners": 1
+  },
+  {
+   "date": "2024-07-29",
+   "tier": "6+0",
+   "prize": 24000.0,
+   "winners": 1
+  },
+  {
+   "date": "2024-08-05",
+   "tier": "6+1",
+   "prize": 480000.0,
+   "winners": 1
+  },
+  {
+   "date": "2024-09-02",
+   "tier": "6+0",
+   "prize": 12000.0,
+   "winners": 2
+  },
+  {
+   "date": "2024-09-30",
+   "tier": "6+0",
+   "prize": 12000.0,
+   "winners": 3
+  },
+  {
+   "date": "2024-10-07",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2024-10-21",
+   "tier": "6+1",
+   "prize": 480000.0,
+   "winners": 1
+  },
+  {
+   "date": "2024-10-21",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2024-10-28",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2024-11-04",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2024-12-23",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2024-12-30",
+   "tier": "6+0",
+   "prize": 10000.0,
+   "winners": 3
+  },
+  {
+   "date": "2025-01-06",
+   "tier": "6+1",
+   "prize": 480000.0,
+   "winners": 1
+  },
+  {
+   "date": "2025-02-03",
+   "tier": "6+0",
+   "prize": 15000.0,
+   "winners": 2
+  },
+  {
+   "date": "2025-02-10",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2025-02-17",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2025-03-03",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2025-03-24",
+   "tier": "6+0",
+   "prize": 15000.0,
+   "winners": 2
+  },
+  {
+   "date": "2025-04-07",
+   "tier": "6+1",
+   "prize": 480000.0,
+   "winners": 1
+  },
+  {
+   "date": "2025-04-28",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2025-05-05",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2025-05-19",
+   "tier": "6+0",
+   "prize": 15000.0,
+   "winners": 2
+  },
+  {
+   "date": "2025-06-02",
+   "tier": "6+0",
+   "prize": 10000.0,
+   "winners": 3
+  },
+  {
+   "date": "2025-06-16",
+   "tier": "6+0",
+   "prize": 15000.0,
+   "winners": 2
+  },
+  {
+   "date": "2025-06-23",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2025-07-07",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2025-07-14",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2025-08-11",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2025-08-25",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2025-09-01",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2025-09-08",
+   "tier": "6+0",
+   "prize": 15000.0,
+   "winners": 2
+  },
+  {
+   "date": "2025-10-06",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2025-10-20",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2025-10-27",
+   "tier": "6+0",
+   "prize": 15000.0,
+   "winners": 2
+  },
+  {
+   "date": "2025-11-10",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2025-12-01",
+   "tier": "6+1",
+   "prize": 480000.0,
+   "winners": 1
+  },
+  {
+   "date": "2025-12-01",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2025-12-08",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2025-12-29",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2026-01-05",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2026-02-16",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2026-03-16",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2026-03-30",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2026-04-13",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2026-04-20",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2026-05-21",
+   "tier": "6+1",
+   "prize": 480000.0,
+   "winners": 1
+  },
+  {
+   "date": "2026-05-21",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2026-05-25",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2026-06-08",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2026-06-11",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2026-06-15",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2026-07-09",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2026-07-13",
+   "tier": "6+1",
+   "prize": 480000.0,
+   "winners": 1
+  },
+  {
+   "date": "2026-07-13",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2026-07-16",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2026-08-06",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2026-08-20",
+   "tier": "6+0",
+   "prize": 15000.0,
+   "winners": 2
+  },
+  {
+   "date": "2026-08-24",
+   "tier": "6+0",
+   "prize": 15000.0,
+   "winners": 2
+  },
+  {
+   "date": "2026-08-31",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2026-09-03",
+   "tier": "6+0",
+   "prize": 15000.0,
+   "winners": 2
+  },
+  {
+   "date": "2026-09-10",
+   "tier": "6+1",
+   "prize": 480000.0,
+   "winners": 1
+  },
+  {
+   "date": "2026-09-14",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2026-10-12",
+   "tier": "6+1",
+   "prize": 480000.0,
+   "winners": 1
+  },
+  {
+   "date": "2026-10-12",
+   "tier": "6+0",
+   "prize": 15000.0,
+   "winners": 2
+  },
+  {
+   "date": "2026-10-15",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2026-10-19",
+   "tier": "6+0",
+   "prize": 10000.0,
+   "winners": 3
+  },
+  {
+   "date": "2026-10-22",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  },
+  {
+   "date": "2026-11-12",
+   "tier": "6+1",
+   "prize": 480000.0,
+   "winners": 1
+  },
+  {
+   "date": "2026-11-19",
+   "tier": "6+0",
+   "prize": 30000.0,
+   "winners": 1
+  }
+ ],
+ "D2_summary": {
+  "old": {
+   "draws": 28,
+   "6+0_obs": 18,
+   "6+0_exp": 14.803179791223268,
+   "6+0_draws_ge2_obs": 4,
+   "6+0_draws_ge2_exp_poisson": 2.7988618706545516,
+   "6+1_obs": 10,
+   "6+1_exp": 4.934393263741089
+  },
+  "new": {
+   "draws": 142,
+   "6+0_obs": 71,
+   "6+0_exp": 56.67505248374813,
+   "6+0_draws_ge2_obs": 13,
+   "6+0_draws_ge2_exp_poisson": 9.191863898155862,
+   "6+1_obs": 9,
+   "6+1_exp": 9.445842080624692
+  }
+ },
+ "D4_P_any_3EUR": {
+  "EV 2 disjoint fields": 0.20051349616567007,
+  "VAN 2 tickets 5-6 common": 0.167115,
+  "EV 1 field + VAN 1 ticket": 0.17835015663069964,
+  "EV 1 field": 0.10093240093240093,
+  "VAN 1 ticket": 0.08610893750212635
+ },
+ "D5_extra": {
+  "P_any_independent_of_extra": true,
+  "plus1_tiers_share_of_stakes": 0.070059,
+  "note": "with C2 relative popularity 0.86 for extras 5,6,7 vs mean 1.0 -> about +16% on these tiers = +1.1 pp of stake (already known, agent_extra C2)"
+ },
+ "D7_posthoc_day_volume": {
+  "mean_bets_monday_last30": 102690.53333333334,
+  "mean_bets_thursday": 90353.58064516129,
+  "fixed_tiers_return_monday": 0.20076681880767397,
+  "fixed_tiers_return_thursday": 0.2020730226958217
+ }
+}
