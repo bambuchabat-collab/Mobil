@@ -1,0 +1,862 @@
+{
+ "title": "TIPOS EXTRA VYPLATA - agent_lab4 red-team audit + new methods, tickets for Thu 19.11.2026",
+ "verdict": "Previous conclusion stands. No new method survives Holm (smallest raw p = 0.186, N1 same-day VAN coupling; all Holm-adjusted p = 1.0). Audit found no data or leakage error that changes the conclusion; it found two reporting inaccuracies and one under-appreciated weak signal (extra ball 7 deficit), none of which is actionable beyond avoiding extra number 7, which the popularity rule already does.",
+ "prereg": {
+  "file": "agent_lab4/prereg.json",
+  "written_utc": "2026-11-19T02:56:07.106646Z",
+  "data_sha256": {
+   "ev": "d9e3a389dc6a4c979a2cbd9fed494fa49ad9a2ab59dd6af36ae5950baa3402df",
+   "van": "94c23b62502e4f609d88a7e82eb3a7d7b16eaab9eceb2206d035d3c0a7fbee23",
+   "loto5": "0e4e033f4a3af8bf91cf86858e09cad596e6bf40ea00f248c725f886d4c56416",
+   "loto": "3bc981fad40ef27e3e2686ac76eb32301d061a50db64ca3f74281b0845023d43"
+  }
+ },
+ "A_audit": {
+  "data_integrity": {
+   "draws": 169,
+   "range": [
+    "2024-03-25",
+    "2026-11-16"
+   ],
+   "duplicate_dates": [],
+   "duplicate_draws": [],
+   "schedule": "every Monday from 2024-03-25 plus every Thursday from 2026-04-23; 0 missing, 0 extra draws vs this schedule; weekday labels consistent",
+   "bad_records": [],
+   "main_range": [
+    1,
+    27
+   ],
+   "extra_range": "1..7 throughout",
+   "order_field": {
+    "sorted(order)==main for all draws": true,
+    "up_steps": 422,
+    "down_steps": 423,
+    "fully_ascending": 1,
+    "fully_descending": 0,
+    "expected_each": 0.23472222222222222,
+    "max_monotone_run_obs": {
+     "2": 28,
+     "3": 101,
+     "4": 33,
+     "5": 6,
+     "6": 1
+    },
+    "max_monotone_run_expected": {
+     "2": 28.7,
+     "3": 103.9,
+     "4": 31.1,
+     "5": 4.8,
+     "6": 0.5
+    },
+    "mean_spearman(position,rank)": [
+     0.016060862214708378,
+     0.033661369478005895
+    ],
+    "conclusion": "no sorting/display artifact: order behaves like a genuine random drawing order"
+   },
+   "cross_file_consistency": "draws_1119 identical to draws_1115/1112/fresh/draws.json on all overlapping dates",
+   "rule_changes": {
+    "3+1 tier": "absent in the first 28 draws (2024-03-25..2024-09-30), not only the first draw as stated in the brief",
+    "stake": "3-match winners per EUR deposit jump by exactly 4/3 at 2024-10-07 (refit coefficient of the no-3+1-tier indicator = -0.2877 vs ln(0.75) = -0.2877): consistent with a column price change 2.00 -> 1.50 EUR together with the new 3+1 tier. Lab3 popularity model already absorbs it with an indicator, so no analysis error.",
+    "thursday_draws": "added 2026-04-23",
+    "payout": "prize fund = 57.9% of deposits in every draw (wins field is the fund, not the paid sum; jackpot rollovers explain tier-sum mismatches)"
+   }
+  },
+  "statistical_audit": {
+   "chi_square_scaling_error": {
+    "finding": "Lab3 report D1 compares the naive chi-square (sum (O-E)^2/E) with the chi2(26) critical value 38.89. For 6-of-27 draws without replacement the naive statistic has mean 21, not 26; it must be multiplied by 26/21. The descriptive note is therefore conservative (biased toward fairness). Earlier agents' Monte-Carlo p-values were correct.",
+    "corrected": {
+     "discovery": {
+      "n": 84,
+      "naive_chi2": 30.75,
+      "naive_p_chi2df26(WRONG, conservative)": 0.23771166565079804,
+      "corrected_chi2=naive*26/21": 38.07142857142857,
+      "corrected_p_chi2df26": 0.0596428355203007,
+      "MC_p": 0.057747112644367785,
+      "MC_null_mean": 21.01981071428571
+     },
+     "holdout": {
+      "n": 85,
+      "naive_chi2": 17.505882352941175,
+      "naive_p_chi2df26(WRONG, conservative)": 0.8930045522944947,
+      "corrected_chi2=naive*26/21": 21.67394957983193,
+      "corrected_p_chi2df26": 0.7063971302186114,
+      "MC_p": 0.712314384280786,
+      "MC_null_mean": 21.017047058823525
+     },
+     "all": {
+      "n": 169,
+      "naive_chi2": 29.36094674556213,
+      "naive_p_chi2df26(WRONG, conservative)": 0.2949255866935607,
+      "corrected_chi2=naive*26/21": 36.35164835164836,
+      "corrected_p_chi2df26": 0.08538909523145988,
+      "MC_p": 0.08364581770911454,
+      "MC_null_mean": 20.95690118343195
+     }
+    },
+    "impact": "discovery p 0.24 -> 0.058, all-data p 0.29 -> 0.084 (= the quoted p~0.07-0.08). Still not significant; no conclusion changes."
+   },
+   "homogeneity_discovery_vs_holdout": {
+    "stat": 17.218211474146624,
+    "perm_p": 0.7313268673132687
+   },
+   "leakage_check": "Lab3 protocol is sound: hyper-parameters frozen on discovery before holdout; holdout walk-forward uses only earlier draws; MC null replaces holdout draws only; e-value bound valid. No leakage found. Selection-bias caveat: B2/B3 were formulated after earlier agents had seen all 168 draws, which biases toward FALSE positives, not negatives.",
+   "hot_number_discovery_signal": {
+    "finding": "Lab3 A4 discovery max z=3.51 over 18 hot/cold rules; selection-adjusted MC p=0.0050 (R=400) - a genuine discovery-period anomaly (hot-30 rule z=3.1 in Jan-Oct 2025, z=2.4 even without ball 11), which did NOT replicate (holdout z~1.0).",
+    "by_period": {
+     "2024": {
+      "draws": 21,
+      "hits": 35,
+      "expected": 28.0,
+      "z": 1.66904592079256
+     },
+     "2025 to Oct": {
+      "draws": 43,
+      "hits": 76,
+      "expected": 57.333333333333336,
+      "z": 3.1103727436838113
+     },
+     "Nov25-Apr26": {
+      "draws": 25,
+      "hits": 35,
+      "expected": 33.333333333333336,
+      "z": 0.36421567954234124
+     },
+     "Apr26-Nov26": {
+      "draws": 60,
+      "hits": 87,
+      "expected": 80.0,
+      "z": 0.9874208829065749
+     }
+    },
+    "number_11_by_period": {
+     "2024": [
+      16,
+      9.1
+     ],
+     "2025 to Oct": [
+      15,
+      9.6
+     ],
+     "Nov25-Apr26": [
+      7,
+      5.6
+     ],
+     "Apr26-Nov26": [
+      15,
+      13.3
+     ]
+    },
+    "interpretation": "Either chance or a transient effect that vanished around Nov 2025; not exploitable now. Notably the historically hot numbers (11, 25, 17, 3, 7) are exactly the most POPULAR with players, so chasing them also lowers prize share."
+   },
+   "ball_propensity_marginal_likelihood": {
+    "log_BF_vs_uniform_by_sigma": {
+     "all": {
+      "log_marginal_lik_minus_uniform_by_sigma": {
+       "0.01": 0.019,
+       "0.03": 0.164,
+       "0.05": 0.4,
+       "0.075": 0.693,
+       "0.1": 0.842,
+       "0.125": 0.752,
+       "0.15": 0.401,
+       "0.2": -0.967,
+       "0.3": -5.121
+      }
+     },
+     "discovery": {
+      "log_marginal_lik_minus_uniform_by_sigma": {
+       "0.01": 0.012,
+       "0.03": 0.103,
+       "0.05": 0.272,
+       "0.075": 0.547,
+       "0.1": 0.833,
+       "0.125": 1.063,
+       "0.15": 1.189,
+       "0.2": 1.031,
+       "0.3": -0.769
+      }
+     },
+     "holdout": {
+      "log_marginal_lik_minus_uniform_by_sigma": {
+       "0.01": -0.005,
+       "0.03": -0.042,
+       "0.05": -0.121,
+       "0.075": -0.292,
+       "0.1": -0.559,
+       "0.125": -0.937,
+       "0.15": -1.428,
+       "0.2": -2.725,
+       "0.3": -6.171
+      }
+     }
+    },
+    "reading": "All 169 draws: best sigma 0.10, log BF 0.84 (BF 2.3, \"barely worth mentioning\"); discovery favours sigma~0.15 (BF 3.3), holdout favours uniform. Classic regression to the mean."
+   },
+   "extra_drum": {
+    "counts_1to7": [
+     30,
+     34,
+     28,
+     21,
+     20,
+     24,
+     12
+    ],
+    "expected": 24.142857142857142,
+    "chi2_df6": 13.289940828402369,
+    "MC_p": 0.03855961440385596,
+    "ball7_binom_p_one_sided": 0.002962533758622532,
+    "ball7_selection_adjusted_p(min of 7 counts <= 12)": 0.02023,
+    "bayes_factor_DM_vs_uniform": {
+     "1": 0.037448805583192635,
+     "5": 1.6379142282988954,
+     "20": 3.977228840142663,
+     "50": 2.7754676764033084,
+     "100": 1.9279910056642047,
+     "300": 1.3027882590257636
+    },
+    "EB_alpha": 17.49160467887519,
+    "EB_posterior_mean_probs": [
+     0.163,
+     0.1767,
+     0.1561,
+     0.1321,
+     0.1286,
+     0.1424,
+     0.1012
+    ],
+    "note": "BF>1 favours non-uniform. Discovery count of 7: 6/84, holdout 6/85 (lab3 B3 p=0.035 one-sided, Holm-adjusted 0.32)."
+   },
+   "extra_drum_reading": "Strongest anomaly in the data: extra ball 7 drawn 12/169 (expected 24.1); all-data chi2 p=0.039, selection-adjusted p=0.020, Bayes factor <= 4 (weak); discovery 6/84 then holdout 6/85 (pre-registered p=0.035, Holm 0.32). Not conclusive, but avoiding 7 costs nothing because 5 and 6 are equally unpopular.",
+   "multiple_testing": {
+    "lab3_family": {
+     "fisher_chi2": 25.559406665830082,
+     "df": 18,
+     "fisher_p_if_independent": 0.11026696267176339,
+     "harmonic_mean_p": 0.16147690532345263,
+     "note": "A1-A5 are positively dependent (same signal), so the true combined p is larger than Fisher's.",
+     "min_p_bonferroni": 0.31500000000000006
+    },
+    "reading": "Even with no correction only B3 had p<0.05; Fisher combination of all 9 lab3 p-values gives p=0.11 assuming independence (larger with the actual positive dependence). Holm did not hide a family-level effect."
+   },
+   "power": {
+    "single_number": {
+     "n=85 holdout, one pre-specified number, alpha=0.05 one-sided": 0.529,
+     "n=85, any of 27 numbers (Bonferroni 0.05/27)": 0.791,
+     "n=169 all draws, pre-specified, 0.05": 0.371,
+     "n=169, any of 27 (0.05/27)": 0.557,
+     "n=1000 hypothetical, any of 27": 0.226
+    },
+    "extra_ball": {
+     "n=85, pre-specified, 0.05": 0.588,
+     "n=169, any of 7 (0.05/7)": 0.5710000000000001
+    },
+    "cross_game_overlap": {
+     "N2_VAN_prev_day_per_draw_shift_(80%,two-sided 0.05)": 0.299438304,
+     "expected_per_draw": 2.3941176470588235,
+     "N3_Loto5_per_draw_shift": 0.22887424,
+     "N3_expected_per_draw": 0.8209411764705883
+    },
+    "PL_sigma_power": {
+     "design": "theta_i ~ N(0,sigma^2) fixed over 169 draws; lab3 A1 rule (static MAP PL, s=0.2) walk-forward on last 85 draws; null quantiles from 300 fair simulations; 80 sims per sigma",
+     "null_q95": 0.010866162183732011,
+     "null_q(1-0.05/9)": 0.02802575340439434,
+     "by_sigma": {
+      "0.05": {
+       "power_alpha0.05": 0.05,
+       "power_holm_worst(0.05/9)": 0.025,
+       "mean_holdout_gain_estimated_model": -0.02408759515671485,
+       "mean_holdout_top6_hits_per_draw_estimated": 1.3579411764705882,
+       "oracle_top6_hits_per_draw": 1.4120625,
+       "oracle_jackpot_prob_multiplier_best_set": 1.530013935486106,
+       "random_hits_per_draw": 1.3333333333333333
+      },
+      "0.1": {
+       "power_alpha0.05": 0.225,
+       "power_holm_worst(0.05/9)": 0.1125,
+       "mean_holdout_gain_estimated_model": -0.006251600271736606,
+       "mean_holdout_top6_hits_per_draw_estimated": 1.3992647058823529,
+       "oracle_top6_hits_per_draw": 1.49308125,
+       "oracle_jackpot_prob_multiplier_best_set": 2.3327456395759665,
+       "random_hits_per_draw": 1.3333333333333333
+      },
+      "0.15": {
+       "power_alpha0.05": 0.6,
+       "power_holm_worst(0.05/9)": 0.3375,
+       "mean_holdout_gain_estimated_model": 0.019851888952199286,
+       "mean_holdout_top6_hits_per_draw_estimated": 1.479264705882353,
+       "oracle_top6_hits_per_draw": 1.57185,
+       "oracle_jackpot_prob_multiplier_best_set": 3.348781384584258,
+       "random_hits_per_draw": 1.3333333333333333
+      },
+      "0.2": {
+       "power_alpha0.05": 0.9,
+       "power_holm_worst(0.05/9)": 0.725,
+       "mean_holdout_gain_estimated_model": 0.05756269503974607,
+       "mean_holdout_top6_hits_per_draw_estimated": 1.58,
+       "oracle_top6_hits_per_draw": 1.6586437500000002,
+       "oracle_jackpot_prob_multiplier_best_set": 5.093934124623328,
+       "random_hits_per_draw": 1.3333333333333333
+      },
+      "0.3": {
+       "power_alpha0.05": 1.0,
+       "power_holm_worst(0.05/9)": 1.0,
+       "mean_holdout_gain_estimated_model": 0.17728023245218374,
+       "mean_holdout_top6_hits_per_draw_estimated": 1.759264705882353,
+       "oracle_top6_hits_per_draw": 1.8349812499999998,
+       "oracle_jackpot_prob_multiplier_best_set": 10.857302500255878,
+       "random_hits_per_draw": 1.3333333333333333
+      }
+     }
+    },
+    "PL_sigma_consistency_and_value": {
+     "observed_EV_holdout_gain_same_procedure": -0.023643561588721402,
+     "observed_hits": 121,
+     "by_sigma": {
+      "0.0": {
+       "mean_gain": -0.027673070687994537,
+       "sd_gain": 0.025811090292994363,
+       "P(gain<=observed)": 0.5866666666666667,
+       "mean_hits_per_draw_estimated": 1.3427450980392157,
+       "jackpot_multiplier_of_estimated_top6_set(geo-mean)": 1.0,
+       "jackpot_multiplier_oracle_top6": 1.0
+      },
+      "0.05": {
+       "mean_gain": -0.023467934739633437,
+       "sd_gain": 0.0230483980780214,
+       "P(gain<=observed)": 0.47333333333333333,
+       "mean_hits_per_draw_estimated": 1.3492549019607842,
+       "jackpot_multiplier_of_estimated_top6_set(geo-mean)": 1.1398204694299743,
+       "jackpot_multiplier_oracle_top6": 1.5117959212582142
+      },
+      "0.1": {
+       "mean_gain": -0.010296279507042906,
+       "sd_gain": 0.025471680850081765,
+       "P(gain<=observed)": 0.34,
+       "mean_hits_per_draw_estimated": 1.3934117647058823,
+       "jackpot_multiplier_of_estimated_top6_set(geo-mean)": 1.5852557037203154,
+       "jackpot_multiplier_oracle_top6": 2.3216772125769363
+      },
+      "0.15": {
+       "mean_gain": 0.018334932352104615,
+       "sd_gain": 0.03433830033916029,
+       "P(gain<=observed)": 0.12,
+       "mean_hits_per_draw_estimated": 1.468,
+       "jackpot_multiplier_of_estimated_top6_set(geo-mean)": 2.2182324809394793,
+       "jackpot_multiplier_oracle_top6": 3.3608769511129863
+      },
+      "0.2": {
+       "mean_gain": 0.056840268907227175,
+       "sd_gain": 0.04238627093222969,
+       "P(gain<=observed)": 0.02,
+       "mean_hits_per_draw_estimated": 1.555764705882353,
+       "jackpot_multiplier_of_estimated_top6_set(geo-mean)": 3.331453211008918,
+       "jackpot_multiplier_oracle_top6": 4.9350160598846
+      }
+     }
+    },
+    "reading": "With 85 holdout draws the lab3 tests have ~5% power at sigma=0.05, ~22% at 0.10, ~60% at 0.15, ~90% at 0.20 (log-propensity sd). The observed holdout gain makes sigma>=0.20 unlikely (P=0.02) and sigma=0.15 marginal (P=0.12). So a ball bias of sigma<=0.1 (best ball ~20% more likely than average) could have been missed. Its value if real: estimated top-6 picks give ~1.39 vs 1.33 hits/draw (+4%) and ~1.6x jackpot probability for the chosen set (vs 2.3x for an oracle); with sigma=0 (equally consistent with data) the gain is exactly zero, while hot numbers are the popular ones (prize-share loss is validated). Undetectable single-number biases up to +37% (pre-specified) or +56% (any of 27) are possible in principle with 169 draws."
+   }
+  }
+ },
+ "B_new_methods": {
+  "holm_family": {
+   "N1_VAN_same_day": {
+    "p": 0.18639625199959006,
+    "p_holm": 1.0,
+    "reject": false
+   },
+   "N2_VAN_previous_day": {
+    "p": 0.3217417532691969,
+    "p_holm": 1.0,
+    "reject": false
+   },
+   "N3_Loto5z35_previous": {
+    "p": 0.4498025795113716,
+    "p_holm": 1.0,
+    "reject": false
+   },
+   "N9_cross_game_ensemble": {
+    "p": 0.4684385382059801,
+    "p_holm": 1.0,
+    "reject": false
+   },
+   "N7_feature_autocorrelation": {
+    "p": 0.5011249437528124,
+    "p_holm": 1.0,
+    "reject": false
+   },
+   "N4_Loto_previous": {
+    "p": 0.5116218123775762,
+    "p_holm": 1.0,
+    "reject": false
+   },
+   "N5_main_vs_extra_drum": {
+    "p": 0.6622668866556672,
+    "p_holm": 1.0,
+    "reject": false
+   },
+   "N6_within_draw_sequence": {
+    "p": 1.0,
+    "p_holm": 1.0,
+    "reject": false
+   },
+   "N8_compression_MI": {
+    "p": 1.0,
+    "p_holm": 1.0,
+    "reject": false
+   }
+  },
+  "results": {
+   "N1_VAN_same_day": {
+    "holdout": {
+     "n_draws": 85,
+     "overlap": 216,
+     "expected": 203.49999999999977,
+     "sd": 9.084916856290661,
+     "z": 1.3759069232807413,
+     "p_two_sided": 0.18639625199959006,
+     "p_greater": 0.09319812599979503,
+     "p_less": 0.9238541033717322
+    },
+    "discovery": {
+     "n_draws": 4,
+     "overlap": 11,
+     "expected": 10.5,
+     "sd": 2.026608708444444,
+     "z": 0.24671758189758447,
+     "p_two_sided": 0.9999999999999999,
+     "p_greater": 0.49999999999999994,
+     "p_less": 0.6897299166732132
+    },
+    "walk_forward_PL": {
+     "mean_LL_gain": 9.682776642759785e-05,
+     "CI95": [
+      -0.03884407319401276,
+      0.037942661329441164
+     ],
+     "sum_gain": 0.008230360146345816,
+     "e_value_p_bound": 0.9918034165394402,
+     "top6_hits": 118,
+     "top6_expected": 113.33333333333333,
+     "top6_p_one_sided": 0.30895606953985494,
+     "beta_final": 0.13547609326191584,
+     "beta_first": 0.0364009760997126
+    }
+   },
+   "N2_VAN_previous_day": {
+    "holdout": {
+     "n_draws": 85,
+     "overlap": 194,
+     "expected": 203.49999999999977,
+     "sd": 9.084916856290661,
+     "z": -1.0456892616933193,
+     "p_two_sided": 0.3217417532691969,
+     "p_greater": 0.8645554363095759,
+     "p_less": 0.16087087663459845
+    },
+    "discovery": {
+     "n_draws": 3,
+     "overlap": 7,
+     "expected": 7.499999999999999,
+     "sd": 1.7217101133134214,
+     "z": -0.2904089347757573,
+     "p_two_sided": 1.0,
+     "p_greater": 0.7202112740624544,
+     "p_less": 0.5
+    },
+    "walk_forward_PL": {
+     "mean_LL_gain": -0.004756980093629186,
+     "CI95": [
+      -0.019707755187839238,
+      0.009792529321406885
+     ],
+     "sum_gain": -0.40434330795848084,
+     "e_value_p_bound": 1.0,
+     "top6_hits": 115,
+     "top6_expected": 113.33333333333333,
+     "top6_p_one_sided": 0.4424633076771747,
+     "beta_final": -0.08955969491365429,
+     "beta_first": -0.03897458083356526
+    }
+   },
+   "N3_Loto5z35_previous": {
+    "holdout": {
+     "n_draws": 85,
+     "overlap": 64,
+     "expected": 69.77777777777783,
+     "sd": 6.944222218666555,
+     "z": -0.8320266252780272,
+     "p_two_sided": 0.4498025795113716,
+     "p_greater": 0.8165634024259166,
+     "p_less": 0.2249012897556858
+    },
+    "discovery": {
+     "n_draws": 84,
+     "overlap": 74,
+     "expected": 71.33333333333333,
+     "sd": 7.000474817704465,
+     "z": 0.38092654228575623,
+     "p_two_sided": 0.7500610979633034,
+     "p_greater": 0.3750305489816517,
+     "p_less": 0.6773563834798568
+    },
+    "walk_forward_PL": {
+     "mean_LL_gain": -0.002927621841672924,
+     "CI95": [
+      -0.010975128835877423,
+      0.004957660019385763
+     ],
+     "sum_gain": -0.24884785654219854,
+     "e_value_p_bound": 1.0,
+     "top6_hits": 107,
+     "top6_expected": 113.33333333333333,
+     "top6_p_one_sided": 0.7903668059365829,
+     "beta_final": -0.0223356216130373,
+     "beta_first": 0.0331190264117312
+    }
+   },
+   "N4_Loto_previous": {
+    "holdout": {
+     "n_draws": 85,
+     "overlap": 129,
+     "expected": 122.88888888888889,
+     "sd": 8.59393102848267,
+     "z": 0.7110961317768548,
+     "p_two_sided": 0.5116218123775762,
+     "p_greater": 0.2558109061887881,
+     "p_less": 0.7798717460774284
+    },
+    "discovery": {
+     "n_draws": 84,
+     "overlap": 121,
+     "expected": 117.77777777777781,
+     "sd": 8.455907649036906,
+     "z": 0.38106166197181496,
+     "p_two_sided": 0.7433865723109316,
+     "p_greater": 0.3716932861554658,
+     "p_less": 0.6718762534575967
+    },
+    "walk_forward_PL": {
+     "mean_LL_gain": -0.0012053433625946,
+     "CI95": [
+      -0.012553552839894656,
+      0.010086598853736875
+     ],
+     "sum_gain": -0.102454185820541,
+     "e_value_p_bound": 1.0,
+     "top6_hits": 115,
+     "top6_expected": 113.33333333333333,
+     "top6_p_one_sided": 0.4424633076771747,
+     "beta_final": 0.06052427818940216,
+     "beta_first": 0.03348951511494579
+    }
+   },
+   "N5_main_vs_extra_drum": {
+    "tercile_cuts_sum": [
+     76,
+     92
+    ],
+    "a_pb_in_main_holdout": 15,
+    "a_expected": 18.88888888888889,
+    "p_a": 0.3793932116395956,
+    "a_discovery": 22,
+    "a_disc_expected": 18.666666666666664,
+    "chi2_pb_x_sumtercile": 13.66688704408003,
+    "chi2_null_mean": 12.1130448212955,
+    "p_chi": 0.3311334433278336,
+    "p": 0.6622668866556672
+   },
+   "N6_within_draw_sequence": {
+    "a_mean_abs_successive_diff": 9.39764705882353,
+    "a_null_mean": 9.38992588235294,
+    "p_a": 0.975851207439628,
+    "b_successive_pairs_absdiff_le2": 59,
+    "b_null_mean": 59.68645,
+    "p_b": 0.9741512924353782,
+    "c_consecutive_integer_pairs_in_set": 89,
+    "c_expected": 94.4444444444443,
+    "c_sd": 7.883891519362676,
+    "p_c": 0.5337234130475446,
+    "p": 1.0
+   },
+   "N7_feature_autocorrelation": {
+    "features": [
+     "sum",
+     "range",
+     "n_odd",
+     "n_low<=13",
+     "pb"
+    ],
+    "Q5_holdout": [
+     4.185453121002362,
+     2.198219218652833,
+     2.444511194695844,
+     8.401666758099687,
+     1.1722729764570317
+    ],
+    "Q5_per_feature_MC_p": [
+     0.5251237438128094,
+     0.832058397080146,
+     0.7948602569871507,
+     0.13984300784960751,
+     0.9504524773761311
+    ],
+    "max_Q": 8.401666758099687,
+    "p": 0.5011249437528124,
+    "Q5_discovery": [
+     1.985287504067433,
+     2.316395674577141,
+     3.5417459284276713,
+     2.7323496047747606,
+     18.571454172257784
+    ]
+   },
+   "N8_compression_MI": {
+    "G2_lag1": 439.23765221878665,
+    "G2_null_mean": 481.83340535604793,
+    "p_G2": 0.9404119176164767,
+    "MI_lag1_nats_plugin_minus_null": -0.007042948600737646,
+    "lzma_bytes": 460,
+    "lzma_null_mean": 461.7976,
+    "lzma_null_sd": 3.6657106050532686,
+    "p_lzma": 0.6386722655468906,
+    "p": 1.0
+   },
+   "N9_cross_game_ensemble": {
+    "features": [
+     "VAN_prev_day(centred)",
+     "in_last_Loto5z35",
+     "in_last_Loto(T1uT2)",
+     "in_prev_EV",
+     "hot10(scaled)"
+    ],
+    "mean_LL_gain": -0.013093010801585253,
+    "CI95": [
+     -0.042302386888300916,
+     0.01572541589122713
+    ],
+    "sum_gain": -1.1129059181347465,
+    "e_value_p_bound": 1.0,
+    "null_mean_gain_mean": -0.011713690124696714,
+    "null_mean_gain_sd": 0.012028940427626094,
+    "R": 300,
+    "p_MC": 0.4684385382059801,
+    "top6_hits": 117,
+    "top6_expected": 113.33333333333333,
+    "top6_p_one_sided": 0.351616334083549,
+    "beta_final": [
+     -0.09083904083574058,
+     -0.024508886665572164,
+     0.061848926734910395,
+     0.07026172881276342,
+     -0.011052190456400726
+    ],
+    "beta_at_holdout_start": [
+     -0.039124490236408245,
+     0.033089750526210236,
+     0.03363574974955947,
+     0.05088524358344282,
+     -0.03022795847666002
+    ],
+    "gain_Nov25_Apr26": -0.0013387370564848311,
+    "gain_Apr26_Nov26": -0.017990624862043763
+   }
+  },
+  "summary_table": [
+   {
+    "id": "N1_VAN_same_day",
+    "p_raw": 0.18639625199959006,
+    "p_holm": 1.0,
+    "reject": false
+   },
+   {
+    "id": "N2_VAN_previous_day",
+    "p_raw": 0.3217417532691969,
+    "p_holm": 1.0,
+    "reject": false
+   },
+   {
+    "id": "N3_Loto5z35_previous",
+    "p_raw": 0.4498025795113716,
+    "p_holm": 1.0,
+    "reject": false
+   },
+   {
+    "id": "N4_Loto_previous",
+    "p_raw": 0.5116218123775762,
+    "p_holm": 1.0,
+    "reject": false
+   },
+   {
+    "id": "N5_main_vs_extra_drum",
+    "p_raw": 0.6622668866556672,
+    "p_holm": 1.0,
+    "reject": false
+   },
+   {
+    "id": "N6_within_draw_sequence",
+    "p_raw": 1.0,
+    "p_holm": 1.0,
+    "reject": false
+   },
+   {
+    "id": "N7_feature_autocorrelation",
+    "p_raw": 0.5011249437528124,
+    "p_holm": 1.0,
+    "reject": false
+   },
+   {
+    "id": "N8_compression_MI",
+    "p_raw": 1.0,
+    "p_holm": 1.0,
+    "reject": false
+   },
+   {
+    "id": "N9_cross_game_ensemble",
+    "p_raw": 0.4684385382059801,
+    "p_holm": 1.0,
+    "reject": false
+   }
+  ]
+ },
+ "C_tickets": {
+  "rule": "No new method predictive -> validated popularity rule (lab3 C1/C2, frozen lambda=2, c=0.01) refit on all 169 draws incl. 16.11.2026 (holdout corr now 0.834, p=5e-5; extra-number popularity corr 0.989); EV-maximising disjoint pair with no 3-run, no 3-term AP; prize assumptions from holdout medians, Thursday sales (98180 columns).",
+  "ticket_1": {
+   "main": [
+    14,
+    15,
+    20,
+    21,
+    23,
+    24
+   ],
+   "extra": 6,
+   "EV_eur": 0.8506956639992432,
+   "factors": {
+    "f3": 1.035422682762146,
+    "f4": 1.0802854299545288,
+    "f5": 1.3180709989919575,
+    "cowinner6_ratio": 0.557836824496298
+   }
+  },
+  "ticket_2": {
+   "main": [
+    1,
+    2,
+    16,
+    18,
+    19,
+    26
+   ],
+   "extra": 5,
+   "EV_eur": 0.8476480068010126,
+   "factors": {
+    "f3": 1.0343908071517944,
+    "f4": 1.1061042547225952,
+    "f5": 1.237026569696497,
+    "cowinner6_ratio": 0.6581338169563862
+   }
+  },
+  "EV_random_ticket": 0.7886807452761301,
+  "EV_most_popular_valid_ticket": [
+   [
+    3,
+    11,
+    13,
+    17,
+    25,
+    27
+   ],
+   0.7219708161399098
+  ],
+  "edge_vs_random_pct": 7.669908323020969,
+  "return_per_1.50_stake": 0.5661145569334186,
+  "least_popular_order_refit": [
+   14,
+   15,
+   20,
+   16,
+   18,
+   1,
+   2,
+   10,
+   23,
+   22,
+   24,
+   4,
+   19,
+   26,
+   8,
+   21,
+   6,
+   5,
+   12,
+   27,
+   13,
+   9,
+   17,
+   25,
+   3,
+   7,
+   11
+  ],
+  "extra_popularity_refit": [
+   1.0321,
+   1.1028,
+   1.2251,
+   1.0575,
+   0.8632,
+   0.8592,
+   0.8601
+  ],
+  "probabilities": {
+   "per_ticket": {
+    "P(6+1)": 4.826091782613522e-07,
+    "one_in_6+1": 2072070,
+    "P(6+0)": 2.895655069568113e-06,
+    "one_in_6+0": 345345.0,
+    "P(5+1)": 6.080875646093037e-05,
+    "P(5+0)": 0.0003648525387655822,
+    "P(4+1)": 0.0015202189115232595,
+    "P(4+0)": 0.009121313469139556,
+    "P(3+1)": 0.012837404141751968,
+    "P(3+0)": 0.0770244248505118,
+    "P(any prize)": 0.10093240093240094,
+    "one_in_any": 9.907621247113163
+   },
+   "two_tickets": {
+    "P(6+1 on either)": 9.652183565227044e-07,
+    "one_in_6+1": 1036035.0,
+    "P(6+0 on either)": 5.791310139136226e-06,
+    "one_in_6+0": 172672.5,
+    "P(6 main on either)": 6.756528495658931e-06,
+    "P(>=5 main either)": 0.0008580791189486842,
+    "P(>=4 main either)": 0.022141143880274314,
+    "P(any prize either)": 0.20051349616567007,
+    "one_in_any": 4.987195471240355,
+    "P(both tickets win)": 0.001351305699131786
+   }
+  },
+  "S6_only_optimal_pair_for_reference": [
+   [
+    1,
+    2,
+    15,
+    16,
+    18,
+    19
+   ],
+   [
+    13,
+    14,
+    20,
+    21,
+    23,
+    24
+   ]
+  ]
+ },
+ "honest_edge": "Winning probabilities are exactly those of any ticket (two tickets: 6+1 1 in 1,036,035; 6+0 1 in 172,673; any prize 1 in 4.99); the only validated edge is ~7.7% larger expected payout than an average random ticket via less prize sharing, i.e. an expected loss of ~43% of the stake instead of ~47%."
+}

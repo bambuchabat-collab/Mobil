@@ -1,0 +1,46 @@
+{
+ "observed_EV_holdout_gain_same_procedure": -0.023643561588721402,
+ "observed_hits": 121,
+ "by_sigma": {
+  "0.0": {
+   "mean_gain": -0.027673070687994537,
+   "sd_gain": 0.025811090292994363,
+   "P(gain<=observed)": 0.5866666666666667,
+   "mean_hits_per_draw_estimated": 1.3427450980392157,
+   "jackpot_multiplier_of_estimated_top6_set(geo-mean)": 1.0,
+   "jackpot_multiplier_oracle_top6": 1.0
+  },
+  "0.05": {
+   "mean_gain": -0.023467934739633437,
+   "sd_gain": 0.0230483980780214,
+   "P(gain<=observed)": 0.47333333333333333,
+   "mean_hits_per_draw_estimated": 1.3492549019607842,
+   "jackpot_multiplier_of_estimated_top6_set(geo-mean)": 1.1398204694299743,
+   "jackpot_multiplier_oracle_top6": 1.5117959212582142
+  },
+  "0.1": {
+   "mean_gain": -0.010296279507042906,
+   "sd_gain": 0.025471680850081765,
+   "P(gain<=observed)": 0.34,
+   "mean_hits_per_draw_estimated": 1.3934117647058823,
+   "jackpot_multiplier_of_estimated_top6_set(geo-mean)": 1.5852557037203154,
+   "jackpot_multiplier_oracle_top6": 2.3216772125769363
+  },
+  "0.15": {
+   "mean_gain": 0.018334932352104615,
+   "sd_gain": 0.03433830033916029,
+   "P(gain<=observed)": 0.12,
+   "mean_hits_per_draw_estimated": 1.468,
+   "jackpot_multiplier_of_estimated_top6_set(geo-mean)": 2.2182324809394793,
+   "jackpot_multiplier_oracle_top6": 3.3608769511129863
+  },
+  "0.2": {
+   "mean_gain": 0.056840268907227175,
+   "sd_gain": 0.04238627093222969,
+   "P(gain<=observed)": 0.02,
+   "mean_hits_per_draw_estimated": 1.555764705882353,
+   "jackpot_multiplier_of_estimated_top6_set(geo-mean)": 3.331453211008918,
+   "jackpot_multiplier_oracle_top6": 4.9350160598846
+  }
+ }
+}

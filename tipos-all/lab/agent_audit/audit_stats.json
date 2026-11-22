@@ -1,0 +1,90 @@
+{
+ "chi2_main": {
+  "discovery": {
+   "n": 84,
+   "naive_chi2": 30.75,
+   "naive_p_chi2df26(WRONG, conservative)": 0.23771166565079804,
+   "corrected_chi2=naive*26/21": 38.07142857142857,
+   "corrected_p_chi2df26": 0.0596428355203007,
+   "MC_p": 0.057747112644367785,
+   "MC_null_mean": 21.01981071428571
+  },
+  "holdout": {
+   "n": 85,
+   "naive_chi2": 17.505882352941175,
+   "naive_p_chi2df26(WRONG, conservative)": 0.8930045522944947,
+   "corrected_chi2=naive*26/21": 21.67394957983193,
+   "corrected_p_chi2df26": 0.7063971302186114,
+   "MC_p": 0.712314384280786,
+   "MC_null_mean": 21.017047058823525
+  },
+  "all": {
+   "n": 169,
+   "naive_chi2": 29.36094674556213,
+   "naive_p_chi2df26(WRONG, conservative)": 0.2949255866935607,
+   "corrected_chi2=naive*26/21": 36.35164835164836,
+   "corrected_p_chi2df26": 0.08538909523145988,
+   "MC_p": 0.08364581770911454,
+   "MC_null_mean": 20.95690118343195
+  }
+ },
+ "homogeneity_disc_vs_holdout": {
+  "stat": 17.218211474146624,
+  "perm_p": 0.7313268673132687
+ },
+ "number_11": {
+  "disc": 31,
+  "hold": 22,
+  "exp_disc": 18.666666666666668,
+  "exp_hold": 18.88888888888889
+ },
+ "extra_drum": {
+  "counts_1to7": [
+   30,
+   34,
+   28,
+   21,
+   20,
+   24,
+   12
+  ],
+  "expected": 24.142857142857142,
+  "chi2_df6": 13.289940828402369,
+  "MC_p": 0.03855961440385596,
+  "ball7_binom_p_one_sided": 0.002962533758622532,
+  "ball7_selection_adjusted_p(min of 7 counts <= 12)": 0.02023,
+  "bayes_factor_DM_vs_uniform": {
+   "1": 0.037448805583192635,
+   "5": 1.6379142282988954,
+   "20": 3.977228840142663,
+   "50": 2.7754676764033084,
+   "100": 1.9279910056642047,
+   "300": 1.3027882590257636
+  },
+  "EB_alpha": 17.49160467887519,
+  "EB_posterior_mean_probs": [
+   0.163,
+   0.1767,
+   0.1561,
+   0.1321,
+   0.1286,
+   0.1424,
+   0.1012
+  ],
+  "note": "BF>1 favours non-uniform. Discovery count of 7: 6/84, holdout 6/85 (lab3 B3 p=0.035 one-sided, Holm-adjusted 0.32)."
+ },
+ "lab3_family_combination": {
+  "fisher_chi2": 25.559406665830082,
+  "df": 18,
+  "fisher_p_if_independent": 0.11026696267176339,
+  "harmonic_mean_p": 0.16147690532345263,
+  "note": "A1-A5 are positively dependent (same signal), so the true combined p is larger than Fisher's.",
+  "min_p_bonferroni": 0.31500000000000006
+ },
+ "lab3_A4_discovery_selection": {
+  "max_z_over_18_rules_discovery": 3.50557591559504,
+  "MC_p_selection_adjusted": 0.004987531172069825,
+  "R": 400,
+  "holdout_z_of_selected_rule": 0.954
+ }
+}

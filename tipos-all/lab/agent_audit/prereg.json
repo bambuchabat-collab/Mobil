@@ -1,0 +1,47 @@
+{
+ "title": "TIPOS EXTRA VYPLATA - agent_lab4 red-team pre-registration (new methods)",
+ "written_utc": "2026-11-19T02:56:07.106646Z",
+ "data_files": {
+  "ev": "/tmp/claude-0/-home-user-Mobil/b5a09aa0-3ae1-547d-aca0-e9005dcfc1f6/scratchpad/data/draws_1119.json",
+  "van": "/tmp/claude-0/-home-user-Mobil/b5a09aa0-3ae1-547d-aca0-e9005dcfc1f6/scratchpad/agent_lab4/dl_van/van.json",
+  "loto5": "/tmp/claude-0/-home-user-Mobil/b5a09aa0-3ae1-547d-aca0-e9005dcfc1f6/scratchpad/agent_lab4/dl_loto5/loto5.json",
+  "loto": "/tmp/claude-0/-home-user-Mobil/b5a09aa0-3ae1-547d-aca0-e9005dcfc1f6/scratchpad/agent_lab4/dl_loto/loto.json"
+ },
+ "data_sha256": {
+  "ev": "d9e3a389dc6a4c979a2cbd9fed494fa49ad9a2ab59dd6af36ae5950baa3402df",
+  "van": "94c23b62502e4f609d88a7e82eb3a7d7b16eaab9eceb2206d035d3c0a7fbee23",
+  "loto5": "0e4e033f4a3af8bf91cf86858e09cad596e6bf40ea00f248c725f886d4c56416",
+  "loto": "3bc981fad40ef27e3e2686ac76eb32301d061a50db64ca3f74281b0845023d43"
+ },
+ "status_at_writing": "Only the record FORMAT of VAN/Loto/Loto5z35 files has been inspected (field names, weekday counts). No coupling statistic, no holdout statistic of any new method has been computed. EV data were previously analysed by other agents on all 169 draws (so EV-only hypotheses here are not blind to the data as a whole, but none of these statistics were computed before).",
+ "split": {
+  "discovery": "EV draws with date < 2025-11-01 (84 draws)",
+  "holdout": "EV draws 2025-11-01..2026-11-16 (85 draws)",
+  "rule": "All new tests are parameter-free or have parameters fixed below, so the primary p-value is computed on the holdout only. Discovery values are reported as descriptive replication. VAN exists only from 2025-10-06, so VAN tests are effectively holdout-only."
+ },
+ "family": "N1..N9, Holm-Bonferroni at FWER 0.05 over the 9 primary holdout p-values. Composite hypotheses use min-p over their sub-statistics times the number of sub-statistics (Bonferroni inside), capped at 1.",
+ "common_predictive_metrics": {
+  "LL": "walk-forward: for each holdout draw t, the model is fitted on all draws strictly before t (EV + other games with draw date strictly before the EV draw date for lag models); gain_t = log P_model(drawn ORDER) + log(27*26*25*24*23*22); report mean, 95% bootstrap CI (10000 resamples).",
+  "top6": "6 numbers with largest model log-weight before draw t, ties broken by a fixed random permutation of 1..27 (numpy default_rng(4242).permutation); hits vs 85*36/27 = 113.33, exact one-sided p by convolution of hypergeometric pmfs.",
+  "model_for_coupling": "PL with theta_i = beta * x_i, beta ~ N(0, 0.3^2) MAP (Newton), x_i = feature of number i."
+ },
+ "hypotheses": {
+  "N1_VAN_same_day": "Same-day Vsetko alebo nic (11 of 22) vs EV main set. Statistic: S = sum_t |EV_t ∩ VAN_t| over holdout EV draws having a VAN draw on the same date. Null (independence): conditional on EV_t, overlap ~ Hypergeom(22 balls, K=k_t=|EV_t∩[1,22]|, 11 drawn). Exact two-sided p (2*min tail, capped 1) by convolution. Not usable for betting (same session) - tests shared equipment/ball handling.",
+  "N2_VAN_previous_day": "Same as N1 but VAN draw of the previous calendar day (Sunday for Monday, Wednesday for Thursday). Usable before ticket purchase. Exact two-sided p. Secondary: walk-forward PL coupling model LL gain and top-6 hits.",
+  "N3_Loto5z35_previous": "Most recent Loto 5 z 35 draw strictly before the EV date; L = its 5 numbers ∩ [1,27], m_t=|L|. Statistic sum_t |EV_t ∩ L_t|; null per draw Hypergeom(27, m_t, 6). Exact two-sided p on holdout. Discovery value reported. Secondary: walk-forward PL LL gain, top-6 hits.",
+  "N4_Loto_previous": "Most recent Loto draw strictly before the EV date; L = (Tah1 ∪ Tah2 main 6+6 numbers, additional numbers excluded) ∩ [1,27]. Same statistic/null/p as N3.",
+  "N5_main_vs_extra_drum": "Independence of the extra drum (1..7) from the main drum. (a) count of draws with pb ∈ main set vs Binomial(n, 6/27), exact two-sided; (b) chi-square statistic of the 7 x 3 table pb x tercile of main sum (tercile cut points fixed from the exact null distribution of the sum of 6 of 27: <=75, 76..92, >=93 to be computed exactly and frozen in code from the null pmf), p by 20000 permutations of pb across holdout draws. p = min(1, 2*min(pa,pb)).",
+  "N6_within_draw_sequence": "(a) mean |o_{k+1}-o_k| over the 5 successive pairs in drawn order; null: permute order within each draw (20000 MC), two-sided; (b) number of successive drawn pairs with |difference|<=2 (ball neighbours in loading order), same permutation null, two-sided; (c) number of consecutive-integer pairs in the drawn SET vs exact null (per-draw pmf by enumeration of all C(27,6) sets, convolution), two-sided. p = min(1, 3*min).",
+  "N7_feature_autocorrelation": "Set features: sum, range (max-min), #odd, #<=13, pb. Ljung-Box Q(5) for each feature over the holdout sequence; statistic = max over the 5 features of Q; null by 20000 MC simulations of fair draws (uniform 6-sets, uniform pb); one-sided.",
+  "N8_compression_MI": "(a) lag-1 27x27 co-occurrence table C[i,j]=#{t: i in D_t, j in D_{t+1}} over holdout; G^2 vs expected from margins; (b) lzma (preset 9 | extreme) compressed length of the byte string of holdout draws (drawn order 6 bytes + pb byte per draw); both vs 5000 MC fair sequences; (a) one-sided upper, (b) one-sided lower (more compressible = structure). p = min(1, 2*min).",
+  "N9_cross_game_ensemble": "Walk-forward PL with theta_i = beta.x_i, beta ~ N(0, 0.3^2 I) MAP, refit before every holdout draw on all earlier EV draws. Features: x1 = 1[i in VAN previous day]-0.5 for i<=22 (0 for i>22 or no VAN); x2 = 1[i in last Loto5z35]; x3 = 1[i in last Loto Tah1∪Tah2]; x4 = 1[i in previous EV draw]; x5 = (count of i in last 10 EV draws - 60/27)/2 (0 history-padding before start). Primary: holdout mean ordered-LL gain > 0, one-sided MC p (holdout EV draws replaced by uniform random ordered draws, other games real, R=300). Secondary: CI, top-6 hits."
+ },
+ "audit_plan": [
+  "data integrity (duplicates, schedule gaps, order field artifacts, ranges, rule changes)",
+  "check of correct chi-square scaling for 6-of-27 draws without replacement",
+  "re-examination of lab3 holdout protocol for leakage/selection bias",
+  "power analysis: single-number bias, PL heterogeneity sigma (simulated), cross-game coupling",
+  "Bayesian look at extra-drum ball 7 deficit (descriptive, not in family)"
+ ],
+ "ticket_rule": "If no N-hypothesis survives Holm: validated popularity rule (lab3 C1/C2 model, frozen lambda=2, c=0.01) refit on all 169 draws incl. 16.11.2026; two disjoint tickets, no run of 3, no 3-term arithmetic progression, minimise popularity co-winner factor; extra numbers = least popular (5/6/7), avoid 7 only as a free hedge."
+}

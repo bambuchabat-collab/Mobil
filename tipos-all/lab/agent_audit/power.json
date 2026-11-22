@@ -1,0 +1,71 @@
+{
+ "single_number_min_detectable_relative_excess(80% power)": {
+  "n=85 holdout, one pre-specified number, alpha=0.05 one-sided": 0.529,
+  "n=85, any of 27 numbers (Bonferroni 0.05/27)": 0.791,
+  "n=169 all draws, pre-specified, 0.05": 0.371,
+  "n=169, any of 27 (0.05/27)": 0.557,
+  "n=1000 hypothetical, any of 27": 0.226
+ },
+ "extra_ball_min_detectable_relative_deficit(80% power)": {
+  "n=85, pre-specified, 0.05": 0.588,
+  "n=169, any of 7 (0.05/7)": 0.5710000000000001
+ },
+ "cross_game_overlap_min_detectable_shift": {
+  "N2_VAN_prev_day_per_draw_shift_(80%,two-sided 0.05)": 0.299438304,
+  "expected_per_draw": 2.3941176470588235,
+  "N3_Loto5_per_draw_shift": 0.22887424,
+  "N3_expected_per_draw": 0.8209411764705883
+ },
+ "PL_sigma_power": {
+  "design": "theta_i ~ N(0,sigma^2) fixed over 169 draws; lab3 A1 rule (static MAP PL, s=0.2) walk-forward on last 85 draws; null quantiles from 300 fair simulations; 80 sims per sigma",
+  "null_q95": 0.010866162183732011,
+  "null_q(1-0.05/9)": 0.02802575340439434,
+  "by_sigma": {
+   "0.05": {
+    "power_alpha0.05": 0.05,
+    "power_holm_worst(0.05/9)": 0.025,
+    "mean_holdout_gain_estimated_model": -0.02408759515671485,
+    "mean_holdout_top6_hits_per_draw_estimated": 1.3579411764705882,
+    "oracle_top6_hits_per_draw": 1.4120625,
+    "oracle_jackpot_prob_multiplier_best_set": 1.530013935486106,
+    "random_hits_per_draw": 1.3333333333333333
+   },
+   "0.1": {
+    "power_alpha0.05": 0.225,
+    "power_holm_worst(0.05/9)": 0.1125,
+    "mean_holdout_gain_estimated_model": -0.006251600271736606,
+    "mean_holdout_top6_hits_per_draw_estimated": 1.3992647058823529,
+    "oracle_top6_hits_per_draw": 1.49308125,
+    "oracle_jackpot_prob_multiplier_best_set": 2.3327456395759665,
+    "random_hits_per_draw": 1.3333333333333333
+   },
+   "0.15": {
+    "power_alpha0.05": 0.6,
+    "power_holm_worst(0.05/9)": 0.3375,
+    "mean_holdout_gain_estimated_model": 0.019851888952199286,
+    "mean_holdout_top6_hits_per_draw_estimated": 1.479264705882353,
+    "oracle_top6_hits_per_draw": 1.57185,
+    "oracle_jackpot_prob_multiplier_best_set": 3.348781384584258,
+    "random_hits_per_draw": 1.3333333333333333
+   },
+   "0.2": {
+    "power_alpha0.05": 0.9,
+    "power_holm_worst(0.05/9)": 0.725,
+    "mean_holdout_gain_estimated_model": 0.05756269503974607,
+    "mean_holdout_top6_hits_per_draw_estimated": 1.58,
+    "oracle_top6_hits_per_draw": 1.6586437500000002,
+    "oracle_jackpot_prob_multiplier_best_set": 5.093934124623328,
+    "random_hits_per_draw": 1.3333333333333333
+   },
+   "0.3": {
+    "power_alpha0.05": 1.0,
+    "power_holm_worst(0.05/9)": 1.0,
+    "mean_holdout_gain_estimated_model": 0.17728023245218374,
+    "mean_holdout_top6_hits_per_draw_estimated": 1.759264705882353,
+    "oracle_top6_hits_per_draw": 1.8349812499999998,
+    "oracle_jackpot_prob_multiplier_best_set": 10.857302500255878,
+    "random_hits_per_draw": 1.3333333333333333
+   }
+  }
+ }
+}
