@@ -1,0 +1,82 @@
+{
+  "checked_at_utc": "2026-11-22T23:30:00Z",
+  "target_draw": "2026-11-23 18:00 CET (Extra vyplata, Vsetko alebo nic)",
+  "extra_vyplata_premium_nov_2026": {
+    "value": false,
+    "details": "No November 2026 Extra vyplata premium decision exists. The only Extra vyplata decision listed is for October 2026 (1.10-29.10, 9 draws, tiers 3-8 x2, cap 550000 EUR, signed 25.08.2026, effective 26.08.2026). Actual Nov 2026 draws 2.11-19.11 paid tiers 3-8 = 0.309-0.314 of stakes, which is normal (premium months 0.624-0.626)."
+  },
+  "extra_vyplata_premium_dec_2026": {
+    "value": false,
+    "status": "not announced as of 2026-11-22 23:30 UTC",
+    "details": "No December decision on the herne-plany page. Guessed URLs (..._december_2026.pdf, ..._november_2026.pdf, ..._januar_2027.pdf under media/Documents/HernePlany and media/Stranky/2026) all return 404. Cannot be ruled out: game plan art. 35 only requires publication before the premium period, and the October decision came 5 weeks ahead. Base rate is low: since 2024-03 only May and Oct 2026 were premium months, and Dec 2024 and Dec 2025 were normal. Re-check the herne-plany page before the December draws."
+  },
+  "van_premium_23_11": {
+    "value": false,
+    "details": "The only premium affecting Vsetko alebo nic in Nov 2026 was 13.11.2026 (10 x 1000 EUR by unique premium code, bets placed that day; joint decision with LOTO, LOTO 5 z 35, EUROJACKPOT; signed 13.10.2026). The 410 VAN draws since 06.10.2025 have Premium field set only for 2026-11-13. Nothing for 23.11."
+  },
+  "promos_23_11": [
+    {
+      "name": "Lovec jackpotu",
+      "valid_until": "2026-12-06",
+      "applies_to_ev_or_van": false,
+      "details": "Not a bonus: an auto-repeat feature for jackpot games (Eurojackpot, LOTO, LOTO 5 z 35, Euromiliony) that keeps the bet in play until the jackpot is won."
+    },
+    {
+      "name": "Bonusy troch kralov v adventnom kasine - 23.11 SPINDAY",
+      "valid_until": "2027-01-07",
+      "applies_to_ev_or_van": false,
+      "details": "Casino only: 10 free spins for logging in on Monday, coefficient 0.02 per calendar (old statute says 0.04). Has no effect on lottery returns."
+    },
+    {
+      "name": "Loteriova druha sanca (LOTO 5 z 35, 2500th draw)",
+      "valid_until": "2026-11-22 (ended)",
+      "applies_to_ev_or_van": false,
+      "details": "Paid 10% back (max 15 EUR) on an online LOTO 5 z 35 stake of at least 6 EUR placed on 22.11. The bonus is credited the next day and can be used on number lotteries for 10 days, so it would cover EV/VAN on 23.11 only for players who qualified on 22.11. The project skipped it, and the promo is over."
+    },
+    {
+      "name": "Other listed promos (Registracka, Uvitaci bonus, Narodeninovy bonus, Vratime ti vklad, Tipuj Slovan, Spatak, The GAME is on, Stieraci zreb JACKPOT, Rozbi trezor, 100 free spinov, Nove hry)",
+      "applies_to_ev_or_van": false,
+      "details": "These are for new customers, casino, sports betting or instant lotteries. Registracka (+50% on the first deposit, max 20 EUR) is for new players only."
+    }
+  ],
+  "ev_adjustment_per_eur": {
+    "extra_vyplata_23_11": 0.0,
+    "vsetko_alebo_nic_23_11": 0.0,
+    "baseline_return_per_eur": {
+      "extra_vyplata": [0.49, 0.51],
+      "vsetko_alebo_nic": 0.50
+    },
+    "adjustment_on_3_eur_purchase": {
+      "extra_vyplata": 0.0,
+      "vsetko_alebo_nic": 0.0
+    },
+    "hypothetical_reference": {
+      "extra_vyplata_premium_month": "+0.31 per EUR (tiers 3-8 share 0.311 -> 0.624), i.e. +0.94 EUR on 3 EUR, total return 0.80-0.83",
+      "van_10x1000_premium_day": "+0.13 per EUR (10000 / 76305 EUR staked on 13.11.2026), i.e. +0.39 EUR on 3 EUR, total return ~0.63"
+    }
+  },
+  "sources": [
+    "https://www.tipos.sk/stranky/spolocnost-tipos/pravne-informacie/herne-plany",
+    "https://www.tipos.sk/media/Documents/HernePlany/Rozhodnutie_GR_EV_PREMIOVE_ŽREBOVANIE_oktober_2026.pdf",
+    "https://www.tipos.sk/media/Stranky/2026/Rozhodnutie_GR_PD_PREMIOVE_ŽREBOVANIE_november_2026.pdf",
+    "https://www.tipos.sk/loterie/ciselne-loterie/informacie-k-loteriam/herny-plan (clanok 35)",
+    "https://moj.etipos.sk/promoakcie/lot",
+    "https://moj.etipos.sk/promoakcie/all",
+    "https://moj.etipos.sk/promoakcia/lovec-jackpotu",
+    "https://moj.etipos.sk/promoakcia/bonusy-troch-kralov-v-adventnom-kasine",
+    "https://moj.etipos.sk/lp-obsah/bonusy-troch-kralov/index-final.html",
+    "https://moj.etipos.sk/promoakcia/registracka",
+    "https://www.tipos.sk/novinky/loto-5-z-35-caka-jubilejne-2-500-zrebovanie",
+    "https://www.tipos.sk/novinky/premiove-obdobie-prinasa-radost-aj-3x-za-jeden-den",
+    "https://www.tipos.sk/loterie/extra-vyplata",
+    "https://www.tipos.sk/loterie/vsetko-alebo-nic",
+    "lab/run_2311/data/ev_raw.json, lab/run_2311/data/van_raw.json (tier payouts, Premium field)",
+    "lab/rules_2211/results.txt (baseline EV)"
+  ],
+  "notes": [
+    "The decision PDFs are scans. They were read from PNG renders at 110 dpi; local copies are in the session scratchpad under premiums/ev_okt and premiums/pd_nov.",
+    "The task's 'tiers 3-5' means 3-5 matched numbers, which is prize ranks (poradie) 3-8 (5+1, 5+0, 4+1, 4+0, 3+1, 3+0). The October decision doubles exactly these ranks.",
+    "Normal tier quotas (percent of the prize fund): 1.5, 4.3, 4.4, 10.8, 6.2, 27.0. The October premium quotas were 3.0, 8.6, 8.8, 21.6, 12.4, 54.0.",
+    "Nothing found changes the 23.11 plan: Extra vyplata with 2 disjoint fields returns ~0.50 per EUR, the same as Vsetko alebo nic."
+  ]
+}
