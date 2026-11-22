@@ -1,0 +1,44 @@
+$ python3 -I van2.py
+1 ticket: any 8.610894%  top 1 in 352,716  EV 0.7552 per 1.50 -> 0.5035 per 1 EUR
+s= 0 any=8.6109% top=1 in 352,716
+s= 1 any=12.6935% top=1 in 176,358
+s= 2 any=14.4082% top=1 in 176,358
+s= 3 any=15.5513% top=1 in 176,358
+s= 4 any=16.3213% top=1 in 176,358
+s= 5 any=16.7115% top=1 in 176,358
+s= 6 any=16.7115% top=1 in 176,358
+s= 7 any=16.3213% top=1 in 176,358
+s= 8 any=15.5513% top=1 in 176,358
+s= 9 any=14.4082% top=1 in 176,358
+s=10 any=12.6935% top=1 in 176,358
+s=11 any=8.6109% top=1 in 352,716
+
+$ python3 -I vantop.py van.json   # VsetkoAleboNic 2025-10-06..2026-11-22
+draws 410 top winners 46 expected if random 54.0
+avg bets/draw (from tiers) 46439 deposits-based 46481
+draws with >=1 top win 45  with >=2: 1
+2025-11-15 bets~70449 top 2 11: (50000.0, 0) 0: (50000.0, 2) [4, 5, 6, 10, 11, 12, 14, 15, 19, 21, 22]
+
+$ python3 -I evx.py ev.json   # ExtraVyplata 2026-01-05..2026-11-19
+P any 1 field 10.0932%
+P any 2 disjoint fields 20.0513%
+draws 77 bets/draw mean 100827 last10 [113032, 103033, 112740, 103611, 104035, 92961, 101451, 93131, 106856, 93589]
+tiers3-8 payout share of stake: mean 0.3800, last 20 0.4525
+pv 1.0 top tiers EV per 1.50: 0.3019 -> total ratio 0.6537
+pv 0.86 top tiers EV per 1.50: 0.2702 -> total ratio 0.6326
+normal: draws 60, tiers3-8 0.3107, pv 1.0: total return 0.5120
+normal: draws 60, tiers3-8 0.3107, pv 0.86: total return 0.4909
+premium: draws 17, tiers3-8 0.6243, pv 1.0: total return 0.8256
+premium: draws 17, tiers3-8 0.6243, pv 0.86: total return 0.8044
+
+$ python3 -I keno.py
+ 1 picks: EV 0.5000  P(any) 0.2500  P(>stake) 0.2500 | KENO PLUS EV 0.5000
+ 2 picks: EV 0.4810  P(any) 0.0601  P(>stake) 0.0601 | KENO PLUS EV 0.4858
+ 3 picks: EV 0.4995  P(any) 0.1526  P(>stake) 0.1526 | KENO PLUS EV 0.4944
+ 4 picks: EV 0.4992  P(any) 0.0463  P(>stake) 0.0463 | KENO PLUS EV 0.4959
+ 5 picks: EV 0.4903  P(any) 0.0967  P(>stake) 0.0967 | KENO PLUS EV 0.4950
+ 6 picks: EV 0.4928  P(any) 0.3282  P(>stake) 0.0318 | KENO PLUS EV 0.4945
+ 7 picks: EV 0.4832  P(any) 0.1832  P(>stake) 0.0616 | KENO PLUS EV 0.4881
+ 8 picks: EV 0.4887  P(any) 0.1906  P(>stake) 0.0208 | KENO PLUS EV 0.4941
+ 9 picks: EV 0.4957  P(any) 0.1027  P(>stake) 0.0389 | KENO PLUS EV 0.4909
+10 picks: EV 0.4984  P(any) 0.1105  P(>stake) 0.0647 | KENO PLUS EV 0.4975
