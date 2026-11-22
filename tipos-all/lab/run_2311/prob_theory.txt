@@ -1,0 +1,66 @@
+1) EV one field, hypergeometric P(k hits):
+   k=0: 18.331813%  (1 in 5.5)
+   k=1: 41.246580%  (1 in 2.4)
+   k=2: 30.328367%  (1 in 3.3)
+   k=3: 8.986183%  (1 in 11.1)
+   k=4: 1.064153%  (1 in 94.0)
+   k=5: 0.042566%  (1 in 2,349.3)
+   k=6: 0.000338%  (1 in 296,010.0)
+   P(any prize, k>=3) = 10.0932%   [extra number does not matter for "any prize": every tier needs >=3 main]
+
+2) EV two fields with c common numbers (inclusion-exclusion):
+   c=0: P(A)=P(B)=10.0932%  P(A∩B)=0.1351%  P(A∪B)=20.0513%
+   c=1: P(A)=P(B)=10.0932%  P(A∩B)=0.6419%  P(A∪B)=19.5446%
+   c=2: P(A)=P(B)=10.0932%  P(A∩B)=1.4851%  P(A∪B)=18.7014%
+   c=3: P(A)=P(B)=10.0932%  P(A∩B)=2.5935%  P(A∪B)=17.5930%
+   c=4: P(A)=P(B)=10.0932%  P(A∩B)=4.0468%  P(A∪B)=16.1397%
+   c=5: P(A)=P(B)=10.0932%  P(A∩B)=6.2420%  P(A∪B)=13.9445%
+   c=6: P(A)=P(B)=10.0932%  P(A∩B)=10.0932%  P(A∪B)=10.0932%
+   => P(A∪B) is maximal when P(A∩B) is minimal, i.e. c=0 (disjoint fields).
+
+3) VAN two tickets with s common numbers:
+   s= 0: P(A∩B)=8.6109%  P(A∪B)=8.6109%
+   s= 1: P(A∩B)=4.5283%  P(A∪B)=12.6935%
+   s= 2: P(A∩B)=2.8136%  P(A∪B)=14.4082%
+   s= 3: P(A∩B)=1.6705%  P(A∪B)=15.5513%
+   s= 4: P(A∩B)=0.9004%  P(A∪B)=16.3213%
+   s= 5: P(A∩B)=0.5103%  P(A∪B)=16.7115%
+   s= 6: P(A∩B)=0.5103%  P(A∪B)=16.7115%
+   s= 7: P(A∩B)=0.9004%  P(A∪B)=16.3213%
+   s= 8: P(A∩B)=1.6705%  P(A∪B)=15.5513%
+   s= 9: P(A∩B)=2.8136%  P(A∪B)=14.4082%
+   s=10: P(A∩B)=4.5283%  P(A∪B)=12.6935%
+   s=11: P(A∩B)=8.6109%  P(A∪B)=8.6109%
+   => minimum of P(A∩B) at s=5,6 -> max P(any) 16.71%. EV disjoint (20.05%) > VAN best (16.71%).
+   mixed 1 EV + 1 VAN (independent draws): 1-(1-0.1009)(1-0.0861) = 17.8350%
+
+4) Sharing: if co-winners K ~ Poisson(mu), my share of a pool S is S*E[1/(1+K)] = S*(1-e^-mu)/mu.
+   mu=  0.05: E[1/(1+K)] = 0.9754
+   mu=   0.1: E[1/(1+K)] = 0.9516
+   mu=   0.5: E[1/(1+K)] = 0.7869
+   mu=     1: E[1/(1+K)] = 0.6321
+   mu=     2: E[1/(1+K)] = 0.4323
+   mu=    10: E[1/(1+K)] = 0.1000
+   mu=   100: E[1/(1+K)] = 0.0100
+   For tiers with many winners (mu>>1) the prize is ~ S/mu: 10% fewer co-winners (unpopular numbers) -> ~11% bigger prize;
+   the chance to win does not change (every 6-set has the same hypergeometric law).
+
+5) Typical prizes, normal months 2026 (median, € ): 5+1 213.9, 5+0 111.5, 4+1 24.6, 4+0 10.4, 3+1 4.0, 3+0 3.0, 6+1 468,327.5, 6+0 25,959.6
+   E[payout] for 3 € = 1.538 €  -> 0.513 per 1 € (nominal top prize); low tiers only 0.312 per 1 €
+   P(payout >= 3 €) = 20.0513%
+   P(payout >= 3.01 €) = 4.8781%
+   P(payout >= 10 €) = 2.2141%
+   P(payout >= 20 €) = 0.3899%
+   P(payout >= 100 €) = 0.0858%
+   P(payout >= 1000 €) = 0.0007%
+   P(payout = 0) = 79.9487%
+   SD of payout = 464 € (dominated by the top prize): expected loss per draw 1.46 €; LLN: over n draws loss ~ n*1.46 €
+
+6) VAN 2 tickets, s=5, payout distribution for 3 €:
+   P(payout >= 3 €) = 16.7115%
+   P(payout >= 3.01 €) = 2.2381%
+   P(payout >= 10 €) = 1.7844%
+   P(payout >= 20 €) = 1.7844%
+   P(payout >= 100 €) = 0.0692%
+   P(payout >= 1000 €) = 0.0006%
+   E[payout] by rules = 1.510 € -> 0.5035 per 1 € (before top-prize sharing)
