@@ -1,0 +1,284 @@
+{
+ "method": "Red team, attack (a): independent minimal walk-forward of per-number popularity (P1).",
+ "results": {
+  "all_draws|3match": {
+   "n_eval": 130,
+   "first_eval": "2024-12-30",
+   "corr": 0.6823253299909843,
+   "p_perm": 4.999750012499375e-05,
+   "calib_slope": 0.7972319306482268,
+   "R2_oos_vs_mean": 0.4299838994167249,
+   "p_holm_15": 0.0007499625018749063
+  },
+  "all_draws|4match": {
+   "n_eval": 130,
+   "first_eval": "2024-12-30",
+   "corr": 0.3828623500846573,
+   "p_perm": 0.00034998250087495624,
+   "calib_slope": 0.5781190936358177,
+   "R2_oos_vs_mean": 0.06851952200263622,
+   "p_holm_15": 0.0038498075096245186
+  },
+  "all_draws|5match": {
+   "n_eval": 130,
+   "first_eval": "2024-12-30",
+   "corr": 0.20567734648331304,
+   "p_perm": 0.015249237538123094,
+   "calib_slope": 0.3525193343428668,
+   "R2_oos_vs_mean": -0.10455980465672554,
+   "p_holm_15": 0.0815459227038648
+  },
+  "drop_2024_(train+eval from 2025-01-01)|3match": {
+   "n_eval": 99,
+   "first_eval": "2025-08-04",
+   "corr": 0.622568158353811,
+   "p_perm": 0.00039998000099995,
+   "calib_slope": 0.662271332579241,
+   "R2_oos_vs_mean": 0.2686122502262871,
+   "p_holm_15": 0.0039998000099995
+  },
+  "drop_2024_(train+eval from 2025-01-01)|4match": {
+   "n_eval": 99,
+   "first_eval": "2025-08-04",
+   "corr": 0.3140011570070093,
+   "p_perm": 0.011649417529123544,
+   "calib_slope": 0.5173941088089541,
+   "R2_oos_vs_mean": 0.012746686425940679,
+   "p_holm_15": 0.0815459227038648
+  },
+  "drop_2024_(train+eval from 2025-01-01)|5match": {
+   "n_eval": 99,
+   "first_eval": "2025-08-04",
+   "corr": 0.09870158888056456,
+   "p_perm": 0.17789110544472778,
+   "calib_slope": 0.16835120944520382,
+   "R2_oos_vs_mean": -0.2319365386140515,
+   "p_holm_15": 0.5336733163341834
+  },
+  "drop_premium_months|3match": {
+   "n_eval": 113,
+   "first_eval": "2024-12-30",
+   "corr": 0.7306144752665789,
+   "p_perm": 4.999750012499375e-05,
+   "calib_slope": 0.8405389745736982,
+   "R2_oos_vs_mean": 0.49237559390688634,
+   "p_holm_15": 0.0007499625018749063
+  },
+  "drop_premium_months|4match": {
+   "n_eval": 113,
+   "first_eval": "2024-12-30",
+   "corr": 0.41257388204419454,
+   "p_perm": 0.000199990000499975,
+   "calib_slope": 0.5928432628196958,
+   "R2_oos_vs_mean": 0.08973629435796648,
+   "p_holm_15": 0.0023998800059997
+  },
+  "drop_premium_months|5match": {
+   "n_eval": 113,
+   "first_eval": "2024-12-30",
+   "corr": 0.2283323233088344,
+   "p_perm": 0.01319934003299835,
+   "calib_slope": 0.37892339185144336,
+   "R2_oos_vs_mean": -0.08919761238279822,
+   "p_holm_15": 0.0815459227038648
+  },
+  "monday_only|3match": {
+   "n_eval": 99,
+   "first_eval": "2024-12-30",
+   "corr": 0.6991714776659544,
+   "p_perm": 4.999750012499375e-05,
+   "calib_slope": 0.8139563776916119,
+   "R2_oos_vs_mean": 0.46019580644864144,
+   "p_holm_15": 0.0007499625018749063
+  },
+  "monday_only|4match": {
+   "n_eval": 99,
+   "first_eval": "2024-12-30",
+   "corr": 0.3709241605823388,
+   "p_perm": 0.0017499125043747813,
+   "calib_slope": 0.5178846729191654,
+   "R2_oos_vs_mean": 0.01562676136575425,
+   "p_holm_15": 0.01574921253937303
+  },
+  "monday_only|5match": {
+   "n_eval": 99,
+   "first_eval": "2024-12-30",
+   "corr": 0.23228826193616123,
+   "p_perm": 0.020848957552122394,
+   "calib_slope": 0.3477252763772438,
+   "R2_oos_vs_mean": -0.13730096725621865,
+   "p_holm_15": 0.08339583020848958
+  },
+  "post_era_only_2026|3match": {
+   "n_eval": 52,
+   "first_eval": "2026-05-25",
+   "corr": 0.5547385432496091,
+   "p_perm": 0.0017499125043747813,
+   "calib_slope": 0.43904165501786707,
+   "R2_oos_vs_mean": -0.1989453255056901,
+   "p_holm_15": 0.01574921253937303
+  },
+  "post_era_only_2026|4match": {
+   "n_eval": 52,
+   "first_eval": "2026-05-25",
+   "corr": 0.08413346310201242,
+   "p_perm": 0.2913354332283386,
+   "calib_slope": 0.07982813665626041,
+   "R2_oos_vs_mean": -0.9395051154005813,
+   "p_holm_15": 0.5826708664566772
+  },
+  "post_era_only_2026|5match": {
+   "n_eval": 52,
+   "first_eval": "2026-05-25",
+   "corr": 0.02660672384926356,
+   "p_perm": 0.4351782410879456,
+   "calib_slope": 0.031000312463311034,
+   "R2_oos_vs_mean": -0.7076665719903041,
+   "p_holm_15": 0.5826708664566772
+  },
+  "all_draws_with_pair_covariate|3match": {
+   "n_eval": 130,
+   "first_eval": "2024-12-30",
+   "corr": 0.7047047441178088,
+   "p_perm": 4.999750012499375e-05,
+   "calib_slope": 0.8385097240988716,
+   "R2_oos_vs_mean": 0.47277636916465426
+  },
+  "all_draws_no_covariates_local_baseline|3match": {
+   "n_eval": 112,
+   "first_eval": "2025-05-05",
+   "corr": 0.7036753679261717,
+   "p_perm": 4.999750012499375e-05,
+   "calib_slope": 0.8765908366406069,
+   "R2_oos_vs_mean": 0.47930501628322597
+  },
+  "all_draws_with_pair_covariate|4match": {
+   "n_eval": 130,
+   "first_eval": "2024-12-30",
+   "corr": 0.5364749784533681,
+   "p_perm": 4.999750012499375e-05,
+   "calib_slope": 0.7984986879160123,
+   "R2_oos_vs_mean": 0.2694724687288583
+  },
+  "all_draws_no_covariates_local_baseline|4match": {
+   "n_eval": 140,
+   "first_eval": "2024-10-21",
+   "corr": 0.3781674604843404,
+   "p_perm": 4.999750012499375e-05,
+   "calib_slope": 0.5128526873840841,
+   "R2_oos_vs_mean": 0.013071283021133917
+  },
+  "all_draws_with_pair_covariate|5match": {
+   "n_eval": 130,
+   "first_eval": "2024-12-30",
+   "corr": 0.27638924798726494,
+   "p_perm": 0.005149742512874356,
+   "calib_slope": 0.5372843934083901,
+   "R2_oos_vs_mean": 0.015352020926104881
+  },
+  "all_draws_no_covariates_local_baseline|5match": {
+   "n_eval": 140,
+   "first_eval": "2024-10-21",
+   "corr": 0.19168072475536024,
+   "p_perm": 0.023448827558622067,
+   "calib_slope": 0.2942773852553632,
+   "R2_oos_vs_mean": -0.17636161210962453
+  }
+ },
+ "ranking_stability": {
+  "3match": {
+   "corr_half1_vs_half2": 0.5404146182928296,
+   "order_least_popular_post_era": [
+    18,
+    1,
+    15,
+    20,
+    2,
+    16,
+    4,
+    14,
+    24,
+    22,
+    23,
+    10,
+    12,
+    21,
+    8,
+    19,
+    6,
+    13,
+    5,
+    27,
+    26,
+    9,
+    17,
+    25,
+    7,
+    3,
+    11
+   ],
+   "corr_with_claimed_order_rank": 0.8742368742368741
+  },
+  "4match": {
+   "corr_half1_vs_half2": 0.4050348584579136,
+   "order_least_popular_post_era": [
+    1,
+    16,
+    15,
+    2,
+    20,
+    18,
+    10,
+    23,
+    4,
+    14,
+    22,
+    19,
+    21,
+    13,
+    24,
+    27,
+    8,
+    9,
+    6,
+    5,
+    12,
+    26,
+    25,
+    17,
+    11,
+    7,
+    3
+   ],
+   "corr_with_claimed_order_rank": 0.8669108669108669
+  }
+ },
+ "ticket_numbers_rank_in_claimed_order": {
+  "1": 4,
+  "2": 7,
+  "10": 8,
+  "14": 2,
+  "15": 3,
+  "16": 5,
+  "18": 6,
+  "19": 12,
+  "20": 1,
+  "21": 15,
+  "23": 9,
+  "24": 14
+ },
+ "ticket_numbers_rank_in_redteam_3match_order": {
+  "1": 2,
+  "2": 5,
+  "10": 12,
+  "14": 8,
+  "15": 3,
+  "16": 6,
+  "18": 1,
+  "19": 16,
+  "20": 4,
+  "21": 14,
+  "23": 11,
+  "24": 9
+ }
+}

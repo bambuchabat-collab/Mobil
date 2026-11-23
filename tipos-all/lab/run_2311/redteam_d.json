@@ -1,0 +1,28 @@
+{
+ "n_post_draws": 142,
+ "n_pb_in_D": 30,
+ "expected_share_pb_in_D": 0.2222222222222222,
+ "diff_log_plus1_share_pb_in_D_minus_not": {
+  "3": 0.01895528488355461,
+  "4": 0.07146057373641088,
+  "5": 0.08798000152142511
+ },
+ "pct_effect": {
+  "3": 1.9136076810192915,
+  "4": 7.407580307078843,
+  "5": 9.196628414549801
+ },
+ "p_perm_m34": 0.0039998000099995,
+ "p_perm_m345": 0.0034998250087495625,
+ "implied_phi_from_3match": 0.044233666658900606,
+ "implied_phi_from_4match": 0.10112574370476747,
+ "money_pp_per_EUR_outside_minus_inside": 0.1736948252474016,
+ "final_tickets": {
+  "field1_extra_in_own_field": false,
+  "field2_extra_in_own_field": false,
+  "extras_in_other_field": [
+   false,
+   false
+  ]
+ }
+}

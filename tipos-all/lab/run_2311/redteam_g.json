@@ -1,0 +1,65 @@
+{
+ "delta": 0.14730080123356762,
+ "null_sd": 0.03664038128746636,
+ "p_two_sided": 0.00014999250037498125,
+ "interpretation": "delta>0: extra preferences weaker in unpopular-number draws",
+ "extra_rel_pop_unpopular_D_tercile": [
+  1.021,
+  1.066,
+  1.147,
+  1.046,
+  0.919,
+  0.9,
+  0.902
+ ],
+ "extra_rel_pop_popular_D_tercile": [
+  1.024,
+  1.109,
+  1.225,
+  1.051,
+  0.868,
+  0.854,
+  0.869
+ ],
+ "extra_rel_pop_all_post": [
+  1.021,
+  1.09,
+  1.192,
+  1.058,
+  0.882,
+  0.878,
+  0.879
+ ],
+ "extra_bonus_6_7_pct_all_post": 3.0562985072200455,
+ "extra_bonus_6_7_pct_unpopular_D_tercile": 2.499437341791899,
+ "robust_drop_pb_in_D": {
+  "n": 112,
+  "delta": 0.13520112757726582,
+  "p_two_sided": 0.00014999250037498125
+ },
+ "robust_2026_only_drop_pb_in_D": {
+  "n": 63,
+  "delta": 0.13723002277624413,
+  "p_two_sided": 0.0025498725063746812
+ },
+ "final_fields_extra_bonus": {
+  "field1": {
+   "mean_z_of_winning_draws": {
+    "3": -1.0832294146183934,
+    "4": -1.6697831199825957,
+    "5": -2.2563368253467977
+   },
+   "extra_bonus_pct_2026_shares": 2.4037067319815364,
+   "extra_bonus_pct_with_interaction": 1.8012168201048118
+  },
+  "field2": {
+   "mean_z_of_winning_draws": {
+    "3": -0.790216855339423,
+    "4": -1.200963025136243,
+    "5": -1.6117091949330633
+   },
+   "extra_bonus_pct_2026_shares": 2.0954634508637104,
+   "extra_bonus_pct_with_interaction": 1.6624681648357065
+  }
+ }
+}

@@ -1,0 +1,817 @@
+{
+ "pool_shares_2026_normal": {
+  "3+1": 0.035485130333007084,
+  "3+0": 0.15401951305041112,
+  "4+1": 0.025429760821109638,
+  "4+0": 0.06224093205364892,
+  "5+1": 0.008701764448760172,
+  "5+0": 0.024867730621838658
+ },
+ "pool_sum": 0.31074483132877556,
+ "extra_rel_popularity": {
+  "claim_pooled_all_eras(contaminated by 1-4 era)": [
+   1.032,
+   1.103,
+   1.225,
+   1.057,
+   0.863,
+   0.86,
+   0.86
+  ],
+  "post_era_all": [
+   1.021,
+   1.09,
+   1.192,
+   1.058,
+   0.882,
+   0.878,
+   0.879
+  ],
+  "2026_only": [
+   1.007,
+   1.081,
+   1.163,
+   1.023,
+   0.908,
+   0.904,
+   0.914
+  ],
+  "2026H2_only": [
+   0.976,
+   1.098,
+   1.157,
+   1.013,
+   0.923,
+   0.91,
+   0.923
+  ]
+ },
+ "lambda_chosen": {
+  "ridge_LOO_linear_pairs": {
+   "3": 1,
+   "4": 3,
+   "5": 10
+  },
+  "ridge_LOO_dummy_pairs(saturating)": {
+   "3": 1,
+   "4": 3,
+   "5": 10
+  },
+  "ridge_LOO_no_pair_term": {
+   "3": 1,
+   "4": 10,
+   "5": 30
+  },
+  "ridge_LOO_linear_pairs_5match_numbers_from_4match": {
+   "3": 1,
+   "4": 3,
+   "5": 10
+  },
+  "ridge_LOO_linear_pairs_post_era_only": {
+   "3": 1,
+   "4": 3,
+   "5": 30
+  },
+  "ridge_LOO_linear_pairs_2025_2026_only": {
+   "3": 1,
+   "4": 3,
+   "5": 30
+  }
+ },
+ "pair_gamma": {
+  "ridge_LOO_linear_pairs": {
+   "3": [
+    -0.0119
+   ],
+   "4": [
+    -0.0624
+   ],
+   "5": [
+    -0.1549
+   ]
+  },
+  "ridge_LOO_dummy_pairs(saturating)": {
+   "3": [
+    -0.0068,
+    -0.0238,
+    -0.0336
+   ],
+   "4": [
+    -0.0511,
+    -0.1225,
+    -0.1916
+   ],
+   "5": [
+    -0.1431,
+    -0.3223,
+    -0.4118
+   ]
+  },
+  "ridge_LOO_no_pair_term": {
+   "3": [],
+   "4": [],
+   "5": []
+  },
+  "ridge_LOO_linear_pairs_5match_numbers_from_4match": {
+   "3": [
+    -0.0119
+   ],
+   "4": [
+    -0.0624
+   ],
+   "5": [
+    -0.1549
+   ]
+  },
+  "ridge_LOO_linear_pairs_post_era_only": {
+   "3": [
+    -0.0126
+   ],
+   "4": [
+    -0.0615
+   ],
+   "5": [
+    -0.1531
+   ]
+  },
+  "ridge_LOO_linear_pairs_2025_2026_only": {
+   "3": [
+    -0.0133
+   ],
+   "4": [
+    -0.0648
+   ],
+   "5": [
+    -0.1477
+   ]
+  }
+ },
+ "point_estimates": {
+  "ridge_LOO_linear_pairs|claim_pooled_all_eras(contaminated by 1-4 era)|FINAL": {
+   "gain_vs_random_pct": 12.821857364058186,
+   "main_numbers_only_pct": 8.920187707853433,
+   "extra_only_pct": 3.5819321913020286,
+   "tier_factor_vs_random": [
+    1.036592234962144,
+    1.1117417792052204,
+    1.321177702976486
+   ],
+   "EV_tiers3to5_per_EUR": 0.3541130834434594,
+   "EV_random_field": 0.3138692197743145
+  },
+  "ridge_LOO_linear_pairs|post_era_all|FINAL": {
+   "gain_vs_random_pct": 12.280730723325583,
+   "main_numbers_only_pct": 8.919122013193558,
+   "extra_only_pct": 3.086134166263843,
+   "tier_factor_vs_random": [
+    1.036592234962144,
+    1.1117417792052204,
+    1.321177702976486
+   ],
+   "EV_tiers3to5_per_EUR": 0.35203205443073654,
+   "EV_random_field": 0.31352846758558206
+  },
+  "ridge_LOO_linear_pairs|2026_only|FINAL": {
+   "gain_vs_random_pct": 11.396001884328545,
+   "main_numbers_only_pct": 8.917938011330339,
+   "extra_only_pct": 2.2715173165213987,
+   "tier_factor_vs_random": [
+    1.036592234962144,
+    1.1117417792052204,
+    1.321177702976486
+   ],
+   "EV_tiers3to5_per_EUR": 0.3488394075017284,
+   "EV_random_field": 0.3131525383325306
+  },
+  "ridge_LOO_linear_pairs|2026H2_only|FINAL": {
+   "gain_vs_random_pct": 11.181995866004147,
+   "main_numbers_only_pct": 8.917783146161362,
+   "extra_only_pct": 2.074278630562043,
+   "tier_factor_vs_random": [
+    1.036592234962144,
+    1.1117417792052204,
+    1.321177702976486
+   ],
+   "EV_tiers3to5_per_EUR": 0.3481156967289408,
+   "EV_random_field": 0.31310437811216096
+  },
+  "ridge_LOO_linear_pairs|claim_pooled_all_eras(contaminated by 1-4 era)|RUNNER_UP": {
+   "gain_vs_random_pct": 12.848560027368073,
+   "main_numbers_only_pct": 8.945810765808183,
+   "extra_only_pct": 3.5820643338061453,
+   "tier_factor_vs_random": [
+    1.036588193319444,
+    1.111936452273011,
+    1.3230253619054344
+   ],
+   "EV_tiers3to5_per_EUR": 0.3541968948844491,
+   "EV_random_field": 0.3138692197743145
+  },
+  "ridge_LOO_linear_pairs|post_era_all|RUNNER_UP": {
+   "gain_vs_random_pct": 12.307281356409927,
+   "main_numbers_only_pct": 8.944740442301269,
+   "extra_only_pct": 3.0862480483617727,
+   "tier_factor_vs_random": [
+    1.036588193319444,
+    1.111936452273011,
+    1.3230253619054344
+   ],
+   "EV_tiers3to5_per_EUR": 0.3521152982237801,
+   "EV_random_field": 0.31352846758558206
+  },
+  "ridge_LOO_linear_pairs|2026_only|RUNNER_UP": {
+   "gain_vs_random_pct": 11.422606489137067,
+   "main_numbers_only_pct": 8.943551297723463,
+   "extra_only_pct": 2.2716010323572178,
+   "tier_factor_vs_random": [
+    1.036588193319444,
+    1.111936452273011,
+    1.3230253619054344
+   ],
+   "EV_tiers3to5_per_EUR": 0.3489227204969997,
+   "EV_random_field": 0.3131525383325306
+  },
+  "ridge_LOO_linear_pairs|2026H2_only|RUNNER_UP": {
+   "gain_vs_random_pct": 11.20861968935165,
+   "main_numbers_only_pct": 8.94339575989731,
+   "extra_only_pct": 2.0743550015243084,
+   "tier_factor_vs_random": [
+    1.036588193319444,
+    1.111936452273011,
+    1.3230253619054344
+   ],
+   "EV_tiers3to5_per_EUR": 0.34819905708546267,
+   "EV_random_field": 0.31310437811216096
+  },
+  "ridge_LOO_linear_pairs|claim_pooled_all_eras(contaminated by 1-4 era)|agent_extra_earlier (1 2 14 20 22 23+6 / 8 10 15 16 18 19+5)": {
+   "gain_vs_random_pct": 12.160595811276265,
+   "main_numbers_only_pct": 8.337602178535697,
+   "extra_only_pct": 3.528790891153055,
+   "tier_factor_vs_random": [
+    1.0367236162428894,
+    1.1039231176900872,
+    1.2876494551683833
+   ],
+   "EV_tiers3to5_per_EUR": 0.35203758696707527,
+   "EV_random_field": 0.3138692197743145
+  },
+  "ridge_LOO_linear_pairs|post_era_all|agent_extra_earlier (1 2 14 20 22 23+6 / 8 10 15 16 18 19+5)": {
+   "gain_vs_random_pct": 11.623919836110353,
+   "main_numbers_only_pct": 8.336655077519218,
+   "extra_only_pct": 3.034317660651231,
+   "tier_factor_vs_random": [
+    1.0367236162428894,
+    1.1039231176900872,
+    1.2876494551683833
+   ],
+   "EV_tiers3to5_per_EUR": 0.3499727653211153,
+   "EV_random_field": 0.31352846758558206
+  },
+  "ridge_LOO_linear_pairs|2026_only|agent_extra_earlier (1 2 14 20 22 23+6 / 8 10 15 16 18 19+5)": {
+   "gain_vs_random_pct": 10.900325509928766,
+   "main_numbers_only_pct": 8.3356028348738,
+   "extra_only_pct": 2.3673991021340823,
+   "tier_factor_vs_random": [
+    1.0367236162428894,
+    1.1039231176900872,
+    1.2876494551683833
+   ],
+   "EV_tiers3to5_per_EUR": 0.3472871843533809,
+   "EV_random_field": 0.3131525383325306
+  },
+  "ridge_LOO_linear_pairs|2026H2_only|agent_extra_earlier (1 2 14 20 22 23+6 / 8 10 15 16 18 19+5)": {
+   "gain_vs_random_pct": 10.575865145373742,
+   "main_numbers_only_pct": 8.335465203557346,
+   "extra_only_pct": 2.068063357820793,
+   "tier_factor_vs_random": [
+    1.0367236162428894,
+    1.1039231176900872,
+    1.2876494551683833
+   ],
+   "EV_tiers3to5_per_EUR": 0.3462178749055642,
+   "EV_random_field": 0.31310437811216096
+  },
+  "ridge_LOO_dummy_pairs(saturating)|2026_only|FINAL": {
+   "gain_vs_random_pct": 11.441031913988109,
+   "main_numbers_only_pct": 8.961653180031682,
+   "extra_only_pct": 2.2715512774515556,
+   "tier_factor_vs_random": [
+    1.0367157071389905,
+    1.1114928838635825,
+    1.3253137057693463
+   ],
+   "EV_tiers3to5_per_EUR": 0.34895316267647913,
+   "EV_random_field": 0.3131280792031848
+  },
+  "ridge_LOO_dummy_pairs(saturating)|2026_only|RUNNER_UP": {
+   "gain_vs_random_pct": 11.417136910899206,
+   "main_numbers_only_pct": 8.93812354416632,
+   "extra_only_pct": 2.271472052632717,
+   "tier_factor_vs_random": [
+    1.036697650811641,
+    1.1111721275780504,
+    1.3240992764884278
+   ],
+   "EV_tiers3to5_per_EUR": 0.3488783407122813,
+   "EV_random_field": 0.3131280792031848
+  },
+  "ridge_LOO_dummy_pairs(saturating)|2026_only|agent_extra_earlier (1 2 14 20 22 23+6 / 8 10 15 16 18 19+5)": {
+   "gain_vs_random_pct": 10.843004107700228,
+   "main_numbers_only_pct": 8.279783324205269,
+   "extra_only_pct": 2.3671752519495604,
+   "tier_factor_vs_random": [
+    1.036810036140901,
+    1.1037704297644435,
+    1.2826777371530833
+   ],
+   "EV_tiers3to5_per_EUR": 0.34708056969354895,
+   "EV_random_field": 0.3131280792031848
+  },
+  "ridge_LOO_no_pair_term|2026_only|FINAL": {
+   "gain_vs_random_pct": 7.488945363214983,
+   "main_numbers_only_pct": 5.115999600116483,
+   "extra_only_pct": 2.2568816848837603,
+   "tier_factor_vs_random": [
+    1.0351162093256512,
+    1.066396249602546,
+    1.101714598676279
+   ],
+   "EV_tiers3to5_per_EUR": 0.33546054397178077,
+   "EV_random_field": 0.3120884132207539
+  },
+  "ridge_LOO_no_pair_term|2026_only|RUNNER_UP": {
+   "gain_vs_random_pct": 7.4904155124351,
+   "main_numbers_only_pct": 5.117043772043628,
+   "extra_only_pct": 2.2568872586631983,
+   "tier_factor_vs_random": [
+    1.0351131717388955,
+    1.0664153848288045,
+    1.1017782243862226
+   ],
+   "EV_tiers3to5_per_EUR": 0.33546513213715384,
+   "EV_random_field": 0.3120884132207539
+  },
+  "ridge_LOO_no_pair_term|2026_only|agent_extra_earlier (1 2 14 20 22 23+6 / 8 10 15 16 18 19+5)": {
+   "gain_vs_random_pct": 8.064257402459173,
+   "main_numbers_only_pct": 5.577538635195944,
+   "extra_only_pct": 2.3556726554231577,
+   "tier_factor_vs_random": [
+    1.0363870208728774,
+    1.0714063754431493,
+    1.1241218317418693
+   ],
+   "EV_tiers3to5_per_EUR": 0.33725602618612593,
+   "EV_random_field": 0.3120884132207539
+  },
+  "ridge_LOO_linear_pairs_5match_numbers_from_4match|2026_only|FINAL": {
+   "gain_vs_random_pct": 11.389782355468059,
+   "main_numbers_only_pct": 8.911706160436639,
+   "extra_only_pct": 2.2714635255840276,
+   "tier_factor_vs_random": [
+    1.036592234962144,
+    1.1117417792052204,
+    1.3208804619429615
+   ],
+   "EV_tiers3to5_per_EUR": 0.3487754333722959,
+   "EV_random_field": 0.3131125907574544
+  },
+  "ridge_LOO_linear_pairs_5match_numbers_from_4match|2026_only|RUNNER_UP": {
+   "gain_vs_random_pct": 11.410870261306428,
+   "main_numbers_only_pct": 8.932044041728894,
+   "extra_only_pct": 2.2715331665523752,
+   "tier_factor_vs_random": [
+    1.036588193319444,
+    1.111936452273011,
+    1.3222507225451774
+   ],
+   "EV_tiers3to5_per_EUR": 0.34884146226060286,
+   "EV_random_field": 0.3131125907574544
+  },
+  "ridge_LOO_linear_pairs_5match_numbers_from_4match|2026_only|agent_extra_earlier (1 2 14 20 22 23+6 / 8 10 15 16 18 19+5)": {
+   "gain_vs_random_pct": 10.646596023174947,
+   "main_numbers_only_pct": 8.08836941092228,
+   "extra_only_pct": 2.3666596221724845,
+   "tier_factor_vs_random": [
+    1.0367236162428894,
+    1.1039231176900872,
+    1.265426372614708
+   ],
+   "EV_tiers3to5_per_EUR": 0.34644842339309756,
+   "EV_random_field": 0.3131125907574544
+  },
+  "ridge_LOO_linear_pairs_post_era_only|2026_only|FINAL": {
+   "gain_vs_random_pct": 10.423436883546056,
+   "main_numbers_only_pct": 7.969768275932854,
+   "extra_only_pct": 2.2694288879467006,
+   "tier_factor_vs_random": [
+    1.0345857340642703,
+    1.111063185528223,
+    1.2488391683914326
+   ],
+   "EV_tiers3to5_per_EUR": 0.3455465629516472,
+   "EV_random_field": 0.3129286433242111
+  },
+  "ridge_LOO_linear_pairs_post_era_only|2026_only|RUNNER_UP": {
+   "gain_vs_random_pct": 10.447472778160826,
+   "main_numbers_only_pct": 7.992628754526621,
+   "extra_only_pct": 2.2695193292531446,
+   "tier_factor_vs_random": [
+    1.0345788161142304,
+    1.111423993714814,
+    1.2500321295168857
+   ],
+   "EV_tiers3to5_per_EUR": 0.34562177815057604,
+   "EV_random_field": 0.3129286433242111
+  },
+  "ridge_LOO_linear_pairs_post_era_only|2026_only|agent_extra_earlier (1 2 14 20 22 23+6 / 8 10 15 16 18 19+5)": {
+   "gain_vs_random_pct": 9.77318991296896,
+   "main_numbers_only_pct": 7.237152050725371,
+   "extra_only_pct": 2.364882651134148,
+   "tier_factor_vs_random": [
+    1.0348042654814094,
+    1.10538453569757,
+    1.195464317206058
+   ],
+   "EV_tiers3to5_per_EUR": 0.34351175392836353,
+   "EV_random_field": 0.3129286433242111
+  },
+  "ridge_LOO_linear_pairs_2025_2026_only|2026_only|FINAL": {
+   "gain_vs_random_pct": 10.45100581639522,
+   "main_numbers_only_pct": 7.996720675771307,
+   "extra_only_pct": 2.2695427559037196,
+   "tier_factor_vs_random": [
+    1.0352343206316659,
+    1.1145114864862997,
+    1.239010337455211
+   ],
+   "EV_tiers3to5_per_EUR": 0.34566458786984816,
+   "EV_random_field": 0.3129573925695642
+  },
+  "ridge_LOO_linear_pairs_2025_2026_only|2026_only|RUNNER_UP": {
+   "gain_vs_random_pct": 10.491008354589493,
+   "main_numbers_only_pct": 8.03441388523125,
+   "extra_only_pct": 2.2696933848885603,
+   "tier_factor_vs_random": [
+    1.0352228761877835,
+    1.115128259959666,
+    1.2409231905528637
+   ],
+   "EV_tiers3to5_per_EUR": 0.34578977877034256,
+   "EV_random_field": 0.3129573925695642
+  },
+  "ridge_LOO_linear_pairs_2025_2026_only|2026_only|agent_extra_earlier (1 2 14 20 22 23+6 / 8 10 15 16 18 19+5)": {
+   "gain_vs_random_pct": 9.83736361867864,
+   "main_numbers_only_pct": 7.2998946645135065,
+   "extra_only_pct": 2.3648040086119204,
+   "tier_factor_vs_random": [
+    1.0360132268769453,
+    1.1076466365920443,
+    1.1887865854561592
+   ],
+   "EV_tiers3to5_per_EUR": 0.34374414924816776,
+   "EV_random_field": 0.3129573925695642
+  }
+ },
+ "bootstrap": {
+  "reps": 400,
+  "extras": "2026-only shares, resampled",
+  "final_gain_pct": {
+   "mean": 11.21127768184869,
+   "CI95": [
+    9.990189790388149,
+    12.413200372678244
+   ]
+  },
+  "final_main_only_pct": {
+   "mean": 8.740824073925172,
+   "CI95": [
+    7.644963583038721,
+    9.956560445212455
+   ]
+  },
+  "final_extra_only_pct": {
+   "mean": 2.2685192509629335,
+   "CI95": [
+    1.7887073378623397,
+    2.825514839984815
+   ]
+  },
+  "runner_gain_pct": {
+   "mean": 11.233527328857909,
+   "CI95": [
+    10.016799463224965,
+    12.419748422697106
+   ]
+  },
+  "final_minus_runner_pp": {
+   "mean": -0.02224964700921929,
+   "CI95": [
+    -0.1429621862219641,
+    0.09446405343089173
+   ],
+   "P_final_better": 0.3325
+  },
+  "tier_factors_CI95": [
+   [
+    1.0323320958521465,
+    1.0405936762725763
+   ],
+   [
+    1.0907310713533447,
+    1.1279799420962224
+   ],
+   [
+    1.245551860186073,
+    1.3759927735453523
+   ]
+  ]
+ },
+ "valid_fields": 83148,
+ "honest_split_half": {
+  "choose_on_H1(2024-03..2025-07)_eval_on_H2(2025-07..2026-11)": {
+   "pair": [
+    [
+     1,
+     2,
+     16,
+     17,
+     20,
+     21
+    ],
+    6,
+    [
+     14,
+     15,
+     18,
+     19,
+     26,
+     27
+    ],
+    7
+   ],
+   "gain_on_choice_half": 11.51091441517249,
+   "gain_on_eval_half": 8.518775090304853,
+   "FINAL_gain_on_eval_half": 9.880926799041823
+  },
+  "choose_on_H2(2025-07..2026-11)_eval_on_H1(2024-03..2025-07)": {
+   "pair": [
+    [
+     1,
+     2,
+     15,
+     16,
+     18,
+     19
+    ],
+    5,
+    [
+     4,
+     5,
+     20,
+     21,
+     23,
+     24
+    ],
+    7
+   ],
+   "gain_on_choice_half": 10.377487097488935,
+   "gain_on_eval_half": 9.91626500181708,
+   "FINAL_gain_on_eval_half": 11.266010505150991
+  }
+ },
+ "alternatives": {
+  "user_constraints_only": {
+   "field1": [
+    10,
+    14,
+    20,
+    21,
+    23,
+    24
+   ],
+   "extra1": 5,
+   "field2": [
+    1,
+    2,
+    15,
+    16,
+    18,
+    19
+   ],
+   "extra2": 6,
+   "EV_mean": 0.3492491006728547,
+   "bound_ok": true,
+   "gain_vs_random_pct": 11.526830512864583,
+   "FINAL_minus_this_pp": {
+    "mean": -0.131948702629405,
+    "CI95": [
+     -0.9080587189512781,
+     0.6552267778553437
+    ],
+    "P_final_better": 0.355
+   }
+  },
+  "max2_pairs_per_field": {
+   "field1": [
+    1,
+    2,
+    14,
+    20,
+    22,
+    23
+   ],
+   "extra1": 5,
+   "field2": [
+    8,
+    10,
+    15,
+    16,
+    18,
+    19
+   ],
+   "extra2": 6,
+   "EV_mean": 0.3472872683643741,
+   "bound_ok": true,
+   "gain_vs_random_pct": 10.900352337427499,
+   "FINAL_minus_this_pp": {
+    "mean": 0.5153503002725026,
+    "CI95": [
+     -0.7105778441440153,
+     1.7620893489817693
+    ],
+    "P_final_better": 0.785
+   }
+  },
+  "max1_pair_per_field": {
+   "field1": [
+    8,
+    10,
+    15,
+    16,
+    19,
+    26
+   ],
+   "extra1": 5,
+   "field2": [
+    1,
+    2,
+    14,
+    18,
+    20,
+    23
+   ],
+   "extra2": 6,
+   "EV_mean": 0.34120610697610204,
+   "bound_ok": true,
+   "gain_vs_random_pct": 8.958435653420093,
+   "FINAL_minus_this_pp": {
+    "mean": 2.4867083854770224,
+    "CI95": [
+     1.3176296915668333,
+     3.6974771923712653
+    ],
+    "P_final_better": 1.0
+   }
+  },
+  "no_pairs": {
+   "field1": [
+    2,
+    8,
+    15,
+    18,
+    20,
+    26
+   ],
+   "extra1": 5,
+   "field2": [
+    1,
+    10,
+    14,
+    16,
+    21,
+    23
+   ],
+   "extra2": 6,
+   "EV_mean": 0.3351812121113058,
+   "bound_ok": true,
+   "gain_vs_random_pct": 7.034486738020118,
+   "FINAL_minus_this_pp": {
+    "mean": 4.433344622116934,
+    "CI95": [
+     3.3229047935574347,
+     5.749046184914106
+    ],
+    "P_final_better": 1.0
+   }
+  },
+  "only_12_least_popular_numbers": {
+   "field1": [
+    10,
+    14,
+    19,
+    20,
+    22,
+    23
+   ],
+   "extra1": 5,
+   "field2": [
+    1,
+    2,
+    15,
+    16,
+    18,
+    26
+   ],
+   "extra2": 6,
+   "EV_mean": 0.34688027683220357,
+   "bound_ok": true,
+   "gain_vs_random_pct": 10.770386431885836,
+   "FINAL_minus_this_pp": {
+    "mean": 0.683273372978964,
+    "CI95": [
+     -0.4845855628270346,
+     1.8383053896260635
+    ],
+    "P_final_better": 0.845
+   }
+  },
+  "only_12_least_popular_max2_pairs": {
+   "field1": [
+    10,
+    14,
+    19,
+    20,
+    22,
+    23
+   ],
+   "extra1": 5,
+   "field2": [
+    1,
+    2,
+    15,
+    16,
+    18,
+    26
+   ],
+   "extra2": 6,
+   "EV_mean": 0.34688027683220357,
+   "bound_ok": true,
+   "gain_vs_random_pct": 10.770386431885836,
+   "FINAL_minus_this_pp": {
+    "mean": 0.683273372978964,
+    "CI95": [
+     -0.4845855628270346,
+     1.8383053896260635
+    ],
+    "P_final_better": 0.845
+   }
+  },
+  "only_15_least_popular_max2_pairs": {
+   "field1": [
+    1,
+    2,
+    14,
+    20,
+    22,
+    23
+   ],
+   "extra1": 5,
+   "field2": [
+    8,
+    10,
+    15,
+    16,
+    18,
+    19
+   ],
+   "extra2": 6,
+   "EV_mean": 0.3472872683643741,
+   "bound_ok": true,
+   "gain_vs_random_pct": 10.900352337427499,
+   "FINAL_minus_this_pp": {
+    "mean": 0.5153503002725026,
+    "CI95": [
+     -0.7105778441440153,
+     1.7620893489817693
+    ],
+    "P_final_better": 0.785
+   }
+  },
+  "FINAL": {
+   "gain_vs_random_pct": 11.396001884328545
+  },
+  "RUNNER_UP": {
+   "gain_vs_random_pct": 11.422606489137067
+  }
+ },
+ "return_per_EUR": {
+  "population_average_3pct": 0.49094483132877553,
+  "population_average_0pct": 0.5113448313287756,
+  "random_field_3pct": 0.49335253833253057,
+  "FINAL_3pct": 0.5290394075017284,
+  "FINAL_0pct": 0.5494394075017284,
+  "FINAL_minus_population_avg_pp": 3.8094576172952865,
+  "note": "top tiers without popularity bonus (~+0.003 more for unpopular fields per P3)"
+ },
+ "runtime_s": 76.79361271858215
+}

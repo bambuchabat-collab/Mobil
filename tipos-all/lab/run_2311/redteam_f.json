@@ -1,0 +1,263 @@
+{
+ "FINAL": {
+  "field1": {
+   "numbers": [
+    1,
+    2,
+    14,
+    15,
+    20,
+    21
+   ],
+   "extra": 6,
+   "six_distinct_in_1_27": true,
+   "run_of_3": false,
+   "ap3_triples": [],
+   "consecutive_pairs": 3,
+   "gaps": [
+    1,
+    12,
+    1,
+    5,
+    1
+   ],
+   "all_gaps_distinct(stricter reading of no equal steps)": false,
+   "extra_in_5_6_7": true,
+   "extra_in_own_field": false,
+   "sum": 73,
+   "claimed_popularity_ranks(1=least)": [
+    4,
+    7,
+    2,
+    3,
+    1,
+    15
+   ],
+   "max_on_one_line_grid_w3..10": {
+    "3": 3,
+    "4": 2,
+    "5": 3,
+    "6": 3,
+    "7": 3,
+    "8": 2,
+    "9": 2,
+    "10": 3
+   }
+  },
+  "field2": {
+   "numbers": [
+    10,
+    16,
+    18,
+    19,
+    23,
+    24
+   ],
+   "extra": 7,
+   "six_distinct_in_1_27": true,
+   "run_of_3": false,
+   "ap3_triples": [],
+   "consecutive_pairs": 2,
+   "gaps": [
+    6,
+    2,
+    1,
+    4,
+    1
+   ],
+   "all_gaps_distinct(stricter reading of no equal steps)": false,
+   "extra_in_5_6_7": true,
+   "extra_in_own_field": false,
+   "sum": 110,
+   "claimed_popularity_ranks(1=least)": [
+    8,
+    5,
+    6,
+    12,
+    9,
+    14
+   ],
+   "max_on_one_line_grid_w3..10": {
+    "3": 3,
+    "4": 2,
+    "5": 3,
+    "6": 3,
+    "7": 3,
+    "8": 4,
+    "9": 3,
+    "10": 3
+   }
+  },
+  "disjoint": true,
+  "extras_differ": true,
+  "all_numbers_within_claimed_k_least_popular": 15,
+  "numbers_outside_12_least_popular": [
+   21,
+   24
+  ],
+  "common_with_earlier_project_tickets": [
+   [
+    1,
+    2,
+    14,
+    20
+   ],
+   [
+    10,
+    16,
+    18,
+    19
+   ]
+  ],
+  "ALL_USER_CONSTRAINTS_OK": true
+ },
+ "RUNNER_UP": {
+  "field1": {
+   "numbers": [
+    1,
+    2,
+    15,
+    16,
+    18,
+    19
+   ],
+   "extra": 6,
+   "six_distinct_in_1_27": true,
+   "run_of_3": false,
+   "ap3_triples": [],
+   "consecutive_pairs": 3,
+   "gaps": [
+    1,
+    13,
+    1,
+    2,
+    1
+   ],
+   "all_gaps_distinct(stricter reading of no equal steps)": false,
+   "extra_in_5_6_7": true,
+   "extra_in_own_field": false,
+   "sum": 71,
+   "claimed_popularity_ranks(1=least)": [
+    4,
+    7,
+    3,
+    5,
+    6,
+    12
+   ],
+   "max_on_one_line_grid_w3..10": {
+    "3": 3,
+    "4": 2,
+    "5": 3,
+    "6": 3,
+    "7": 4,
+    "8": 2,
+    "9": 3,
+    "10": 4
+   }
+  },
+  "field2": {
+   "numbers": [
+    10,
+    14,
+    20,
+    21,
+    23,
+    24
+   ],
+   "extra": 7,
+   "six_distinct_in_1_27": true,
+   "run_of_3": false,
+   "ap3_triples": [],
+   "consecutive_pairs": 2,
+   "gaps": [
+    4,
+    6,
+    1,
+    2,
+    1
+   ],
+   "all_gaps_distinct(stricter reading of no equal steps)": false,
+   "extra_in_5_6_7": true,
+   "extra_in_own_field": false,
+   "sum": 112,
+   "claimed_popularity_ranks(1=least)": [
+    8,
+    2,
+    1,
+    15,
+    9,
+    14
+   ],
+   "max_on_one_line_grid_w3..10": {
+    "3": 3,
+    "4": 3,
+    "5": 3,
+    "6": 4,
+    "7": 2,
+    "8": 4,
+    "9": 4,
+    "10": 3
+   }
+  },
+  "disjoint": true,
+  "extras_differ": true,
+  "all_numbers_within_claimed_k_least_popular": 15,
+  "numbers_outside_12_least_popular": [
+   21,
+   24
+  ],
+  "common_with_earlier_project_tickets": [
+   [
+    1,
+    2
+   ],
+   [
+    10
+   ]
+  ],
+  "ALL_USER_CONSTRAINTS_OK": true
+ },
+ "reference_P(max_on_line >= value)_random_field": {
+  "3": {
+   "3": 0.8695,
+   "4": 0.21275,
+   "5": 0.0215
+  },
+  "4": {
+   "3": 0.7505,
+   "4": 0.091,
+   "5": 0.00375
+  },
+  "5": {
+   "3": 0.72275,
+   "4": 0.07025,
+   "5": 0.00175
+  },
+  "6": {
+   "3": 0.72225,
+   "4": 0.07725,
+   "5": 0.00325
+  },
+  "7": {
+   "3": 0.737,
+   "4": 0.099,
+   "5": 0.008
+  },
+  "8": {
+   "3": 0.76025,
+   "4": 0.1455,
+   "5": 0.01475
+  },
+  "9": {
+   "3": 0.86975,
+   "4": 0.224,
+   "5": 0.02725
+  },
+  "10": {
+   "3": 0.8885,
+   "4": 0.2455,
+   "5": 0.033
+  }
+ }
+}
