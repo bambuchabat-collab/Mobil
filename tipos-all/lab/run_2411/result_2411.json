@@ -1,0 +1,142 @@
+{
+ "date": "2026-11-24",
+ "drawn": [
+  1,
+  2,
+  4,
+  6,
+  7,
+  14,
+  15,
+  17,
+  20,
+  21,
+  22
+ ],
+ "results": [
+  {
+   "ticket": [
+    2,
+    3,
+    5,
+    9,
+    11,
+    14,
+    15,
+    16,
+    18,
+    20,
+    22
+   ],
+   "hits": [
+    2,
+    14,
+    15,
+    20,
+    22
+   ],
+   "n": 5,
+   "prize": 0
+  },
+  {
+   "ticket": [
+    1,
+    2,
+    4,
+    7,
+    8,
+    10,
+    11,
+    15,
+    16,
+    19,
+    22
+   ],
+   "hits": [
+    1,
+    2,
+    4,
+    7,
+    15,
+    22
+   ],
+   "n": 6,
+   "prize": 0
+  }
+ ],
+ "raw": {
+  "Date": "24. 11. 2026",
+  "Week": "48",
+  "SKDay": "Utorok",
+  "Zrebovanie": [
+   "22",
+   "1",
+   "7",
+   "21",
+   "4",
+   "20",
+   "14",
+   "2",
+   "6",
+   "15",
+   "17"
+  ],
+  "TopWin": "200,00 €",
+  "SumOfDeposits": "50 484,00 €",
+  "SumOfWins": "25 418,69 €",
+  "Premium": null,
+  "PremiumText": null,
+  "TabulkaVyhier": {
+   "Loteria": [
+    {
+     "Poradie": "1",
+     "PocetUhadnutych": "11",
+     "VyskaVyhry": "0,00 €",
+     "PocetVyhier": "0"
+    },
+    {
+     "Poradie": "2",
+     "PocetUhadnutych": "10",
+     "VyskaVyhry": "200,00 €",
+     "PocetVyhier": "3"
+    },
+    {
+     "Poradie": "3",
+     "PocetUhadnutych": "9",
+     "VyskaVyhry": "20,00 €",
+     "PocetVyhier": "108"
+    },
+    {
+     "Poradie": "4",
+     "PocetUhadnutych": "8",
+     "VyskaVyhry": "3,00 €",
+     "PocetVyhier": "1198"
+    },
+    {
+     "Poradie": "5",
+     "PocetUhadnutych": "3",
+     "VyskaVyhry": "3,00 €",
+     "PocetVyhier": "1410"
+    },
+    {
+     "Poradie": "6",
+     "PocetUhadnutych": "2",
+     "VyskaVyhry": "20,00 €",
+     "PocetVyhier": "161"
+    },
+    {
+     "Poradie": "7",
+     "PocetUhadnutych": "1",
+     "VyskaVyhry": "200,00 €",
+     "PocetVyhier": "2"
+    },
+    {
+     "Poradie": "8",
+     "PocetUhadnutych": "0",
+     "VyskaVyhry": "0,00 €",
+     "PocetVyhier": "0"
+    }
+   ]
+  }
+ }
+}
