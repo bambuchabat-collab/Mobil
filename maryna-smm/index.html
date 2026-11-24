@@ -58,6 +58,8 @@ h1{margin:0;font:700 clamp(40px,6vw,56px)/1.05 "Playfair Display",Georgia,serif;
 .slide{position:relative;display:block;width:100%;padding:0;border:0;border-radius:10px;overflow:hidden;background:var(--ox);cursor:zoom-in;box-shadow:0 0 0 1px rgba(37,0,0,.14),0 3px 10px -4px rgba(37,0,0,.3)}
 .slide:first-child{background:var(--bg)}
 .slide img{width:100%;height:auto;aspect-ratio:16/9}
+.slide .pi{left:50%;top:50%;bottom:auto;width:64px;height:64px;margin:-32px 0 0 -32px}
+.slide .pi svg{width:24px;height:24px}
 .hint{display:flex;align-items:center;gap:8px;margin:0 0 12px;font-size:14px;color:#5e3a3d}
 .hint svg{width:16px;height:16px;flex:none}
 .dark{background:var(--ox);color:var(--milk)}
@@ -83,6 +85,7 @@ h2{margin:0;font-weight:400}
 .track::-webkit-scrollbar{display:none}
 .track figure{flex:0 0 100%;display:grid;place-items:center;margin:0;padding:64px 16px;scroll-snap-align:center}
 .track img{width:auto;height:auto;max-width:min(100%,1600px);max-height:calc(100vh - 140px);border-radius:6px}
+.track video{width:100%;max-width:1600px;height:auto;aspect-ratio:16/9;max-height:calc(100vh - 140px);border-radius:6px;background:#000}
 .ctl{position:absolute;z-index:3;display:grid;place-items:center;width:48px;height:48px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;cursor:pointer}
 .ctl:hover{background:rgba(255,255,255,.26)}
 .ctl svg{width:22px;height:22px}
@@ -106,6 +109,7 @@ h2{margin:0;font-weight:400}
 #lb.r .track{flex-direction:column;overflow-x:hidden;overflow-y:auto;scroll-snap-type:y mandatory}
 #lb.r .track figure{padding:16px;overflow:hidden}
 #lb.r .track img{max-width:calc(100vh - 190px);max-width:calc(100svh - 190px);max-height:calc(100vw - 40px);transform:rotate(90deg)}
+#lb.r .track video{width:calc(100vh - 190px);width:calc(100svh - 190px);max-width:none;max-height:calc(100vw - 40px);transform:rotate(90deg)}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
@@ -179,6 +183,9 @@ h2{margin:0;font-weight:400}
 const SLIDES=[
   ['1','Обкладинка: Social Media Manager, портфоліо Марини'],
   ['2','Хто я. Я Марина, менеджер з маркетингу. Допомагаю бізнесам виходити на новий рівень у соціальних мережах. Пишу SMM-стратегії та створюю весь контент. Навички: Figma, Canva, VN, InShot, CapCut.'],
+  ['process','Мій процес: спостереження, зйомка, монтаж, фінальне відео. Відео.','slides/process.mp4'],
+  ['reels','Reels — двигун зростання сторінки, з акцентом на результат. Відео з прикладами.','slides/reels.mp4'],
+  ['stories','Stories that work for results — сторіс, що працюють на результат. Відео з прикладами.','slides/stories.mp4'],
   ['3','Пакет 1: написання стратегії, контент-план, 2 пости в тиждень (8–10 постів на місяць), 2 зйомки на місяць, 2–4 сторіс у день 5 днів на тиждень. 450 € зі зйомками, 350 € без зйомок.'],
   ['4','Пакет 2: написання стратегії, контент-план, 3 пости в тиждень (10–12 постів на місяць), 2–3 зйомки на місяць, 5/6 у день 6 днів на тиждень. 550 € зі зйомками, 450 € без зйомок.'],
   ['5','Додаткові послуги, відео (reels). Базовий монтаж: 12 € за відео 15–30 с, 18 € за відео 1 хв; склейка кадрів, фонова музика, субтитри до озвучки. Довше відео за домовленістю.'],
@@ -199,8 +206,8 @@ const ICON={
   off:'<svg viewBox="0 0 24 24"><path d="M3 9h4l5-4v14l-5-4H3z" fill="currentColor"/><path d="M16 9.5l5 5M21 9.5l-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
 };
 
-$('#deck').innerHTML=SLIDES.map(([f,a],i)=>`<button class="slide" type="button" data-i="${i}"><img src="slides/${f}-m.jpg" srcset="slides/${f}-m.jpg 960w, slides/${f}.jpg 1920w" sizes="(max-width:1100px) 92vw, 1000px" width="1920" height="1080" alt="${esc(a)}" ${i?'loading="lazy"':'fetchpriority="high"'} decoding="async"></button>`).join('');
-$('#lbTrack').innerHTML=SLIDES.map(([f,a])=>`<figure><img src="slides/${f}.jpg" width="1920" height="1080" alt="${esc(a)}" loading="lazy" decoding="async"></figure>`).join('');
+$('#deck').innerHTML=SLIDES.map(([f,a,vd],i)=>`<button class="slide" type="button" data-i="${i}"><img src="slides/${f}-m.jpg" srcset="slides/${f}-m.jpg 960w, slides/${f}.jpg 1920w" sizes="(max-width:1100px) 92vw, 1000px" width="1920" height="1080" alt="${esc(a)}" ${i?'loading="lazy"':'fetchpriority="high"'} decoding="async">${vd?`<span class="pi" aria-hidden="true">${ICON.play}</span>`:''}</button>`).join('');
+$('#lbTrack').innerHTML=SLIDES.map(([f,a,vd])=>`<figure>${vd?`<video src="${esc(vd)}" data-poster="slides/${f}.jpg" width="1920" height="1080" controls playsinline preload="none" aria-label="${esc(a)}"></video>`:`<img src="slides/${f}.jpg" width="1920" height="1080" alt="${esc(a)}" loading="lazy" decoding="async">`}</figure>`).join('');
 
 const tiles=(arr,g)=>arr.map((it,i)=>`<button class="tile" type="button" data-g="${g}" data-i="${i}" aria-label="${g==='v'?'Відео':'Сторіс'} ${i+1}"><img src="${esc(it.poster||it.src)}" alt="" loading="lazy" decoding="async"><span class="pi" aria-hidden="true">${it.img?ICON.zoom:ICON.play}</span></button>`).join('');
 $('#vGrid').innerHTML=tiles(VIDEOS,'v');
@@ -223,9 +230,10 @@ let rot=false,cur=0;
 const vert=()=>rot&&mq.matches;
 const idx=()=>vert()?Math.round(tr.scrollTop/Math.max(1,tr.clientHeight)):Math.round(tr.scrollLeft/Math.max(1,tr.clientWidth));
 const to=(i,smooth)=>tr.scrollTo(vert()?{top:i*tr.clientHeight,behavior:smooth?'smooth':'auto'}:{left:i*tr.clientWidth,behavior:smooth?'smooth':'auto'});
-const upd=()=>{cur=idx();cnt.textContent=`${cur+1} / ${SLIDES.length}`};
-function openLb(i){back=document.activeElement;lb.hidden=false;lock(true);to(i);upd();$('#lbX').focus({preventScroll:true})}
-function closeLb(){lb.hidden=true;lock(false);if(back)back.focus({preventScroll:true})}
+const lbv=()=>[...tr.querySelectorAll('video')];
+const upd=()=>{cur=idx();cnt.textContent=`${cur+1} / ${SLIDES.length}`;lbv().forEach(x=>{if(x.parentNode!==tr.children[cur]&&!x.paused)x.pause()})};
+function openLb(i){back=document.activeElement;lbv().forEach(x=>{if(!x.poster)x.poster=x.dataset.poster});lb.hidden=false;lock(true);to(i);upd();$('#lbX').focus({preventScroll:true});const x=tr.children[i].querySelector('video');if(x)x.play().catch(()=>{})}
+function closeLb(){lbv().forEach(x=>x.pause());lb.hidden=true;lock(false);if(back)back.focus({preventScroll:true})}
 function go(d){to(Math.max(0,Math.min(SLIDES.length-1,idx()+d)),true)}
 rb.addEventListener('click',()=>{const i=cur;rot=!rot;lb.classList.toggle('r',rot);rb.setAttribute('aria-pressed',String(rot));rb.querySelector('span').textContent=rot?'Зменшити':'Збільшити';to(i);upd()});
 addEventListener('resize',()=>{if(lb.hidden)return;const i=cur;requestAnimationFrame(()=>{to(i);upd()})});
