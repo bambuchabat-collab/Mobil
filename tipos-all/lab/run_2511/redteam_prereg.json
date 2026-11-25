@@ -1,0 +1,621 @@
+{
+ "timing": [
+  {
+   "agent": "A1",
+   "prereg_written": "2026-11-25T05:55:51+00:00",
+   "prereg_mtime": "2026-11-25T05:56:04.781601+00:00",
+   "py_mtime": "2026-11-25T05:56:28.640793+00:00",
+   "json_mtime": "2026-11-25T05:56:45.899300+00:00",
+   "git_first_commit": {
+    "_prereg.md": [
+     "e1f2beb",
+     "2026-11-25T05:56:26+00:00"
+    ],
+    ".py": [
+     "e1f2beb",
+     "2026-11-25T05:56:26+00:00"
+    ],
+    ".json": [
+     "cb6e0d0",
+     "2026-11-25T05:56:53+00:00"
+    ]
+   },
+   "git_changes": {
+    "_prereg.md": [
+     [
+      "A",
+      "e1f2beb",
+      "2026-11-25T05:56:26+00:00"
+     ]
+    ],
+    ".py": [
+     [
+      "A",
+      "e1f2beb",
+      "2026-11-25T05:56:26+00:00"
+     ],
+     [
+      "M",
+      "cb6e0d0",
+      "2026-11-25T05:56:53+00:00"
+     ]
+    ],
+    ".json": [
+     [
+      "A",
+      "cb6e0d0",
+      "2026-11-25T05:56:53+00:00"
+     ]
+    ]
+   },
+   "written_before_result": true,
+   "prereg_file_before_result": true,
+   "prereg_committed_not_after_result": true,
+   "prereg_unchanged_after_commit": true,
+   "code_unchanged_after_commit": false,
+   "seconds_prereg_to_result": 54.9
+  },
+  {
+   "agent": "A2",
+   "prereg_written": "2026-11-25T05:56:01+00:00",
+   "prereg_mtime": "2026-11-25T05:56:15.957602+00:00",
+   "py_mtime": "2026-11-25T05:56:33.849602+00:00",
+   "json_mtime": "2026-11-25T05:57:30.550007+00:00",
+   "git_first_commit": {
+    "_prereg.md": [
+     "e1f2beb",
+     "2026-11-25T05:56:26+00:00"
+    ],
+    ".py": [
+     "cb6e0d0",
+     "2026-11-25T05:56:53+00:00"
+    ],
+    ".json": [
+     "0bfe91c",
+     "2026-11-25T05:57:43+00:00"
+    ]
+   },
+   "git_changes": {
+    "_prereg.md": [
+     [
+      "A",
+      "e1f2beb",
+      "2026-11-25T05:56:26+00:00"
+     ]
+    ],
+    ".py": [
+     [
+      "A",
+      "cb6e0d0",
+      "2026-11-25T05:56:53+00:00"
+     ]
+    ],
+    ".json": [
+     [
+      "A",
+      "0bfe91c",
+      "2026-11-25T05:57:43+00:00"
+     ]
+    ]
+   },
+   "written_before_result": true,
+   "prereg_file_before_result": true,
+   "prereg_committed_not_after_result": true,
+   "prereg_unchanged_after_commit": true,
+   "code_unchanged_after_commit": true,
+   "seconds_prereg_to_result": 89.6
+  },
+  {
+   "agent": "A3",
+   "prereg_written": "2026-11-25T05:55:18+00:00",
+   "prereg_mtime": "2026-11-25T05:55:33.157599+00:00",
+   "py_mtime": "2026-11-25T05:55:49.297600+00:00",
+   "json_mtime": "2026-11-25T05:55:57.807613+00:00",
+   "git_first_commit": {
+    "_prereg.md": [
+     "e1f2beb",
+     "2026-11-25T05:56:26+00:00"
+    ],
+    ".py": [
+     "e1f2beb",
+     "2026-11-25T05:56:26+00:00"
+    ],
+    ".json": [
+     "e1f2beb",
+     "2026-11-25T05:56:26+00:00"
+    ]
+   },
+   "git_changes": {
+    "_prereg.md": [
+     [
+      "A",
+      "e1f2beb",
+      "2026-11-25T05:56:26+00:00"
+     ]
+    ],
+    ".py": [
+     [
+      "A",
+      "e1f2beb",
+      "2026-11-25T05:56:26+00:00"
+     ]
+    ],
+    ".json": [
+     [
+      "A",
+      "e1f2beb",
+      "2026-11-25T05:56:26+00:00"
+     ]
+    ]
+   },
+   "written_before_result": true,
+   "prereg_file_before_result": true,
+   "prereg_committed_not_after_result": true,
+   "prereg_unchanged_after_commit": true,
+   "code_unchanged_after_commit": true,
+   "seconds_prereg_to_result": 39.8
+  },
+  {
+   "agent": "A4",
+   "prereg_written": "2026-11-25T05:55:33+00:00",
+   "prereg_mtime": "2026-11-25T05:55:48.169600+00:00",
+   "py_mtime": "2026-11-25T05:56:22.689602+00:00",
+   "json_mtime": "2026-11-25T05:57:29.001534+00:00",
+   "git_first_commit": {
+    "_prereg.md": [
+     "e1f2beb",
+     "2026-11-25T05:56:26+00:00"
+    ],
+    ".py": [
+     "e1f2beb",
+     "2026-11-25T05:56:26+00:00"
+    ],
+    ".json": [
+     "0bfe91c",
+     "2026-11-25T05:57:43+00:00"
+    ]
+   },
+   "git_changes": {
+    "_prereg.md": [
+     [
+      "A",
+      "e1f2beb",
+      "2026-11-25T05:56:26+00:00"
+     ]
+    ],
+    ".py": [
+     [
+      "A",
+      "e1f2beb",
+      "2026-11-25T05:56:26+00:00"
+     ]
+    ],
+    ".json": [
+     [
+      "A",
+      "0bfe91c",
+      "2026-11-25T05:57:43+00:00"
+     ]
+    ]
+   },
+   "written_before_result": true,
+   "prereg_file_before_result": true,
+   "prereg_committed_not_after_result": true,
+   "prereg_unchanged_after_commit": true,
+   "code_unchanged_after_commit": true,
+   "seconds_prereg_to_result": 116.0
+  },
+  {
+   "agent": "A5",
+   "prereg_written": "2026-11-25T05:55:40+00:00",
+   "prereg_mtime": "2026-11-25T05:55:56.005600+00:00",
+   "py_mtime": "2026-11-25T05:56:14.445601+00:00",
+   "json_mtime": "2026-11-25T05:56:29.969003+00:00",
+   "git_first_commit": {
+    "_prereg.md": [
+     "e1f2beb",
+     "2026-11-25T05:56:26+00:00"
+    ],
+    ".py": [
+     "e1f2beb",
+     "2026-11-25T05:56:26+00:00"
+    ],
+    ".json": [
+     "cb6e0d0",
+     "2026-11-25T05:56:53+00:00"
+    ]
+   },
+   "git_changes": {
+    "_prereg.md": [
+     [
+      "A",
+      "e1f2beb",
+      "2026-11-25T05:56:26+00:00"
+     ]
+    ],
+    ".py": [
+     [
+      "A",
+      "e1f2beb",
+      "2026-11-25T05:56:26+00:00"
+     ]
+    ],
+    ".json": [
+     [
+      "A",
+      "cb6e0d0",
+      "2026-11-25T05:56:53+00:00"
+     ]
+    ]
+   },
+   "written_before_result": true,
+   "prereg_file_before_result": true,
+   "prereg_committed_not_after_result": true,
+   "prereg_unchanged_after_commit": true,
+   "code_unchanged_after_commit": true,
+   "seconds_prereg_to_result": 50.0
+  },
+  {
+   "agent": "A6",
+   "prereg_written": "2026-11-25T05:57:23+00:00",
+   "prereg_mtime": "2026-11-25T05:57:37.725606+00:00",
+   "py_mtime": "2026-11-25T05:57:57.609607+00:00",
+   "json_mtime": "2026-11-25T05:58:07.304169+00:00",
+   "git_first_commit": {
+    "_prereg.md": [
+     "0bfe91c",
+     "2026-11-25T05:57:43+00:00"
+    ],
+    ".py": [
+     "2250809",
+     "2026-11-25T05:58:19+00:00"
+    ],
+    ".json": [
+     "2250809",
+     "2026-11-25T05:58:19+00:00"
+    ]
+   },
+   "git_changes": {
+    "_prereg.md": [
+     [
+      "A",
+      "0bfe91c",
+      "2026-11-25T05:57:43+00:00"
+     ]
+    ],
+    ".py": [
+     [
+      "A",
+      "2250809",
+      "2026-11-25T05:58:19+00:00"
+     ]
+    ],
+    ".json": [
+     [
+      "A",
+      "2250809",
+      "2026-11-25T05:58:19+00:00"
+     ]
+    ]
+   },
+   "written_before_result": true,
+   "prereg_file_before_result": true,
+   "prereg_committed_not_after_result": true,
+   "prereg_unchanged_after_commit": true,
+   "code_unchanged_after_commit": true,
+   "seconds_prereg_to_result": 44.3
+  },
+  {
+   "agent": "A7",
+   "prereg_written": "2026-11-25T05:55:36+00:00",
+   "prereg_mtime": "2026-11-25T05:55:51.313600+00:00",
+   "py_mtime": "2026-11-25T05:56:18.697602+00:00",
+   "json_mtime": "2026-11-25T05:56:25.433141+00:00",
+   "git_first_commit": {
+    "_prereg.md": [
+     "e1f2beb",
+     "2026-11-25T05:56:26+00:00"
+    ],
+    ".py": [
+     "e1f2beb",
+     "2026-11-25T05:56:26+00:00"
+    ],
+    ".json": [
+     "e1f2beb",
+     "2026-11-25T05:56:26+00:00"
+    ]
+   },
+   "git_changes": {
+    "_prereg.md": [
+     [
+      "A",
+      "e1f2beb",
+      "2026-11-25T05:56:26+00:00"
+     ]
+    ],
+    ".py": [
+     [
+      "A",
+      "e1f2beb",
+      "2026-11-25T05:56:26+00:00"
+     ]
+    ],
+    ".json": [
+     [
+      "A",
+      "e1f2beb",
+      "2026-11-25T05:56:26+00:00"
+     ]
+    ]
+   },
+   "written_before_result": true,
+   "prereg_file_before_result": true,
+   "prereg_committed_not_after_result": true,
+   "prereg_unchanged_after_commit": true,
+   "code_unchanged_after_commit": true,
+   "seconds_prereg_to_result": 49.4
+  },
+  {
+   "agent": "A8",
+   "prereg_written": "2026-11-25T05:56:07+00:00",
+   "prereg_mtime": "2026-11-25T05:56:19.172718+00:00",
+   "py_mtime": "2026-11-25T05:56:57.217604+00:00",
+   "json_mtime": "2026-11-25T05:57:06.713265+00:00",
+   "git_first_commit": {
+    "_prereg.md": [
+     "e1f2beb",
+     "2026-11-25T05:56:26+00:00"
+    ],
+    ".py": [
+     "5181679",
+     "2026-11-25T05:57:11+00:00"
+    ],
+    ".json": [
+     "5181679",
+     "2026-11-25T05:57:11+00:00"
+    ]
+   },
+   "git_changes": {
+    "_prereg.md": [
+     [
+      "A",
+      "e1f2beb",
+      "2026-11-25T05:56:26+00:00"
+     ]
+    ],
+    ".py": [
+     [
+      "A",
+      "5181679",
+      "2026-11-25T05:57:11+00:00"
+     ]
+    ],
+    ".json": [
+     [
+      "A",
+      "5181679",
+      "2026-11-25T05:57:11+00:00"
+     ]
+    ]
+   },
+   "written_before_result": true,
+   "prereg_file_before_result": true,
+   "prereg_committed_not_after_result": true,
+   "prereg_unchanged_after_commit": true,
+   "code_unchanged_after_commit": true,
+   "seconds_prereg_to_result": 59.7
+  },
+  {
+   "agent": "A9",
+   "prereg_written": "2026-11-25T05:55:13+00:00",
+   "prereg_mtime": "2026-11-25T05:55:25.941598+00:00",
+   "py_mtime": "2026-11-25T05:55:58.625600+00:00",
+   "json_mtime": "2026-11-25T05:56:15.985500+00:00",
+   "git_first_commit": {
+    "_prereg.md": [
+     "e1f2beb",
+     "2026-11-25T05:56:26+00:00"
+    ],
+    ".py": [
+     "e1f2beb",
+     "2026-11-25T05:56:26+00:00"
+    ],
+    ".json": [
+     "e1f2beb",
+     "2026-11-25T05:56:26+00:00"
+    ]
+   },
+   "git_changes": {
+    "_prereg.md": [
+     [
+      "A",
+      "e1f2beb",
+      "2026-11-25T05:56:26+00:00"
+     ]
+    ],
+    ".py": [
+     [
+      "A",
+      "e1f2beb",
+      "2026-11-25T05:56:26+00:00"
+     ]
+    ],
+    ".json": [
+     [
+      "A",
+      "e1f2beb",
+      "2026-11-25T05:56:26+00:00"
+     ]
+    ]
+   },
+   "written_before_result": true,
+   "prereg_file_before_result": true,
+   "prereg_committed_not_after_result": true,
+   "prereg_unchanged_after_commit": true,
+   "code_unchanged_after_commit": true,
+   "seconds_prereg_to_result": 63.0
+  },
+  {
+   "agent": "A10",
+   "prereg_written": "2026-11-25T05:56:18+00:00",
+   "prereg_mtime": "2026-11-25T05:56:31.541602+00:00",
+   "py_mtime": "2026-11-25T05:56:47.441603+00:00",
+   "json_mtime": "2026-11-25T05:56:52.235640+00:00",
+   "git_first_commit": {
+    "_prereg.md": [
+     "cb6e0d0",
+     "2026-11-25T05:56:53+00:00"
+    ],
+    ".py": [
+     "cb6e0d0",
+     "2026-11-25T05:56:53+00:00"
+    ],
+    ".json": [
+     "cb6e0d0",
+     "2026-11-25T05:56:53+00:00"
+    ]
+   },
+   "git_changes": {
+    "_prereg.md": [
+     [
+      "A",
+      "cb6e0d0",
+      "2026-11-25T05:56:53+00:00"
+     ]
+    ],
+    ".py": [
+     [
+      "A",
+      "cb6e0d0",
+      "2026-11-25T05:56:53+00:00"
+     ]
+    ],
+    ".json": [
+     [
+      "A",
+      "cb6e0d0",
+      "2026-11-25T05:56:53+00:00"
+     ]
+    ]
+   },
+   "written_before_result": true,
+   "prereg_file_before_result": true,
+   "prereg_committed_not_after_result": true,
+   "prereg_unchanged_after_commit": true,
+   "code_unchanged_after_commit": true,
+   "seconds_prereg_to_result": 34.2
+  }
+ ],
+ "study_files_dirty_vs_HEAD": [
+  "?? tipos-all/lab/run_2511/redteam_harness_mc.py",
+  "?? tipos-all/lab/run_2511/redteam_leak.py",
+  "?? tipos-all/lab/run_2511/redteam_prereg.py"
+ ],
+ "pyc_forensics": {
+  "A5": {
+   "commit": "e1f2beb",
+   "pyc_flags": 0,
+   "pyc_source_mtime": "2026-11-25T05:56:14+00:00",
+   "pyc_source_size": 3686,
+   "current_size": 3686,
+   "current_mtime_s": 1795586174,
+   "code_object_identical_to_current": true
+  },
+  "A9": {
+   "commit": "e1f2beb",
+   "pyc_flags": 0,
+   "pyc_source_mtime": "2026-11-25T05:55:58+00:00",
+   "pyc_source_size": 5090,
+   "current_size": 5090,
+   "current_mtime_s": 1795586158,
+   "code_object_identical_to_current": true
+  },
+  "A4": {
+   "commit": "cb6e0d0",
+   "pyc_flags": 0,
+   "pyc_source_mtime": "2026-11-25T05:56:22+00:00",
+   "pyc_source_size": 6807,
+   "current_size": 6807,
+   "current_mtime_s": 1795586182,
+   "code_object_identical_to_current": true
+  },
+  "A10": {
+   "commit": "5181679",
+   "pyc_flags": 0,
+   "pyc_source_mtime": "2026-11-25T05:56:47+00:00",
+   "pyc_source_size": 3003,
+   "current_size": 3003,
+   "current_mtime_s": 1795586207,
+   "code_object_identical_to_current": true
+  },
+  "harness": {
+   "code_object_identical_to_current": true
+  }
+ },
+ "hashes": {
+  "van412.json": "ce9a079e488f458befa620ef7695a3c9f01a2e3fbbe02f3229a4d13d807bd73e",
+  "harness.py": "a85a1e3e57b1a3113fc0ca37e6e403f8ad3cc2111fb5f302afe98f993427aad4",
+  "claimed_van412_A1_A5": "ce9a079e488f458befa620ef7695a3c9f01a2e3fbbe02f3229a4d13d807bd73e",
+  "claimed_harness_A5": "a85a1e3e57b1a3113fc0ca37e6e403f8ad3cc2111fb5f302afe98f993427aad4",
+  "match": true
+ },
+ "side_data": {
+  "van412_first410_equal_run2311_van_json": true,
+  "ev_draws": 171,
+  "ev_in_run2311": 170,
+  "ev_mismatch_vs_run2311": [],
+  "ev_not_in_run2311": [
+   "2026-11-23"
+  ],
+  "ev_weekdays": {
+   "0": 140,
+   "1": 0,
+   "2": 0,
+   "3": 31,
+   "4": 0,
+   "5": 0,
+   "6": 0
+  },
+  "ev_last": "2026-11-23",
+  "l535_draws": 286,
+  "l535_last": "2026-11-22",
+  "l535_weekdays": {
+   "0": 0,
+   "1": 1,
+   "2": 98,
+   "3": 0,
+   "4": 88,
+   "5": 0,
+   "6": 99
+  },
+  "ev_dates_on_or_after_2026-11-24": [],
+  "l535_dates_on_or_after_2026-11-24": []
+ },
+ "A1_code_change": {
+  "diff": "R3 sampler: u = rng.random()*total  ->  u = (1-rng.random())*total (open interval at 0); removed unused variable inc. No parameter change.",
+  "pre_change": {
+   "mean_hits": 5.507853403141361,
+   "p_mean_lower": 0.5593068658483445,
+   "p_le3": 0.47924247924105967
+  },
+  "reported": {
+   "mean_hits": 5.43717277486911,
+   "p_mean_lower": 0.1582051371686203,
+   "p_le3": 0.15331731643081542
+  }
+ },
+ "manual_prereg_vs_code": {
+  "A1": "match (R1 late-ball, R2 early balls lags 1..3, R3 Markov order sim N=10000 seed 20261125+t); R3 sampler edited after first commit (bug-proofing, no parameter change; effect re-evaluated)",
+  "A2": "match (R1 lag-1 residual, R2 phi vs predicted set, R3 exhaustive 352716 partitions + lag-1 autocorr side)",
+  "A3": "match (R1/R2 Laplace Markov orders 1/2, R3 pooled signed run-length hazard cap 6, jitter seed 20251125+t)",
+  "A4": "match (features, lambda=10, IRLS 50/1e-8, refit every 10 from t=30, stumps 100x0.1, min 20, <=16 thr); target weekday = last date + 1 day (wrong for 2 draws after the 24-25.12 and 3.4 gaps) - pre-registered, not a leak",
+  "A5": "match; reads DRAWS[t][\"date\"] only (declared in prereg; date is public in advance)",
+  "A6": "match; reads DRAWS[t][\"date\"] only (declared); other-game draws strictly before the VAN date; R2 = exact complement of R1",
+  "A7": "match (88 candidates, strict-< ties; R2 m0=5.4828 -> image; R3 a0=5.6552 -> highest)",
+  "A8": "match; reads DRAWS[t][\"date\"] only (declared); Step-1 best-by-#>=9 and best-by-mean picked the SAME combo PY/UDAY/SEQ, so R1 == R2 (one test counted twice in Holm: conservative)",
+  "A9": "match (half-life 30 alpha0=1; BOCPD H=1/50 Beta(1,1) exact; PL MAP s=0.1 Newton)",
+  "A10": "match (ridge lambda=1 on centred indicators, tier rows < t only; R2 = complement of R1; R3 sign switch)"
+ },
+ "all_preregs_before_results": true,
+ "verdict": "PREREG OK with minor deviations"
+}

@@ -1,0 +1,1026 @@
+{
+ "verdicts": {
+  "HARNESS": "HARNESS OK",
+  "LEAKAGE": {
+   "A1": "LEAKAGE none",
+   "A2": "LEAKAGE none",
+   "A3": "LEAKAGE none",
+   "A4": "LEAKAGE none",
+   "A5": "LEAKAGE none",
+   "A6": "LEAKAGE none",
+   "A7": "LEAKAGE none",
+   "A8": "LEAKAGE none",
+   "A9": "LEAKAGE none",
+   "A10": "LEAKAGE none"
+  },
+  "LEAKAGE_overall": "none",
+  "PREREG": "ok, minor deviations (see deviations)",
+  "HOLM_survivors": [],
+  "TICKET": "ok"
+ },
+ "harness": {
+  "pmf_chi2": 7.062039179242515,
+  "pmf_df": 9,
+  "random_runs": 20000,
+  "p_mean_lower_calibration": {
+   "0.001": {
+    "frac_p_le_alpha": 0.0012,
+    "mc_se": 0.0002234949663862701
+   },
+   "0.005": {
+    "frac_p_le_alpha": 0.0054,
+    "mc_se": 0.0004987484335815
+   },
+   "0.01": {
+    "frac_p_le_alpha": 0.0099,
+    "mc_se": 0.0007035623639735144
+   },
+   "0.014": {
+    "frac_p_le_alpha": 0.01365,
+    "mc_se": 0.0008307827634225448
+   },
+   "0.05": {
+    "frac_p_le_alpha": 0.0468,
+    "mc_se": 0.0015411035007422442
+   },
+   "0.1": {
+    "frac_p_le_alpha": 0.096,
+    "mc_se": 0.0021213203435596424
+   },
+   "0.25": {
+    "frac_p_le_alpha": 0.24345,
+    "mc_se": 0.0030618621784789723
+   },
+   "0.5": {
+    "frac_p_le_alpha": 0.4936,
+    "mc_se": 0.0035355339059327377
+   }
+  },
+  "p_mean_lower_ks": {
+   "D_anticonservative": 0.005782540743859421,
+   "D_conservative": 0.01629678603648027,
+   "crit_5pct_two_sided": 0.009602510088513316
+  },
+  "p_le3_calibration": {
+   "0.001": {
+    "frac_p_le_alpha": 0.0005,
+    "mc_se": 0.0002234949663862701
+   },
+   "0.005": {
+    "frac_p_le_alpha": 0.0041,
+    "mc_se": 0.0004987484335815
+   },
+   "0.01": {
+    "frac_p_le_alpha": 0.0073,
+    "mc_se": 0.0007035623639735144
+   },
+   "0.014": {
+    "frac_p_le_alpha": 0.0073,
+    "mc_se": 0.0008307827634225448
+   },
+   "0.05": {
+    "frac_p_le_alpha": 0.04305,
+    "mc_se": 0.0015411035007422442
+   },
+   "0.1": {
+    "frac_p_le_alpha": 0.0675,
+    "mc_se": 0.0021213203435596424
+   },
+   "0.25": {
+    "frac_p_le_alpha": 0.21565,
+    "mc_se": 0.0030618621784789723
+   },
+   "0.5": {
+    "frac_p_le_alpha": 0.48285,
+    "mc_se": 0.0035355339059327377
+   }
+  },
+  "tail_A7R2": {
+   "S_obs": 2049,
+   "p_exact_harness": 0.014058554460433236,
+   "p_mc_2e6": 0.0141825,
+   "mc_se": 8.361027656260324e-05,
+   "p_normal_cc": 0.01406585624796125,
+   "sum_pmf_total": 1.000000000000006,
+   "sum_pmf_mean": 5.500000000000034
+  },
+  "past_dependent_null": {
+   "synthetic_histories": 5000,
+   "reimplementation_check_on_real_draws": {
+    "A7_R2_mean_reimpl": 5.363874345549738,
+    "A7_R1_mean_reimpl": 5.390052356020942,
+    "A7_R2_mean_reported": 5.363874345549738,
+    "A7_R1_mean_reported": 5.390052356020942
+   },
+   "A7_R2_mirror": {
+    "calibration": {
+     "0.001": {
+      "frac_p_le_alpha": 0.0006,
+      "mc_se": 0.0004469899327725402
+     },
+     "0.005": {
+      "frac_p_le_alpha": 0.0056,
+      "mc_se": 0.000997496867163
+     },
+     "0.01": {
+      "frac_p_le_alpha": 0.0106,
+      "mc_se": 0.0014071247279470289
+     },
+     "0.014": {
+      "frac_p_le_alpha": 0.0134,
+      "mc_se": 0.0016615655268450895
+     },
+     "0.05": {
+      "frac_p_le_alpha": 0.05,
+      "mc_se": 0.0030822070014844883
+     },
+     "0.1": {
+      "frac_p_le_alpha": 0.0996,
+      "mc_se": 0.004242640687119285
+     },
+     "0.25": {
+      "frac_p_le_alpha": 0.2436,
+      "mc_se": 0.006123724356957945
+     },
+     "0.5": {
+      "frac_p_le_alpha": 0.4988,
+      "mc_se": 0.007071067811865475
+     }
+    },
+    "ks": {
+     "D_anticonservative": 0.007303213963519739,
+     "D_conservative": 0.01601745925614051,
+     "crit_5pct_two_sided": 0.019205020177026633
+    },
+    "mean_p": 0.5025553696890555
+   },
+   "A7_R1_adaptive88": {
+    "calibration": {
+     "0.001": {
+      "frac_p_le_alpha": 0.0006,
+      "mc_se": 0.0004469899327725402
+     },
+     "0.005": {
+      "frac_p_le_alpha": 0.0026,
+      "mc_se": 0.000997496867163
+     },
+     "0.01": {
+      "frac_p_le_alpha": 0.0082,
+      "mc_se": 0.0014071247279470289
+     },
+     "0.014": {
+      "frac_p_le_alpha": 0.0118,
+      "mc_se": 0.0016615655268450895
+     },
+     "0.05": {
+      "frac_p_le_alpha": 0.0414,
+      "mc_se": 0.0030822070014844883
+     },
+     "0.1": {
+      "frac_p_le_alpha": 0.0928,
+      "mc_se": 0.004242640687119285
+     },
+     "0.25": {
+      "frac_p_le_alpha": 0.2402,
+      "mc_se": 0.006123724356957945
+     },
+     "0.5": {
+      "frac_p_le_alpha": 0.4914,
+      "mc_se": 0.007071067811865475
+     }
+    },
+    "ks": {
+     "D_anticonservative": 0.00961713891440319,
+     "D_conservative": 0.01949313415166143,
+     "crit_5pct_two_sided": 0.019205020177026633
+    },
+    "mean_p": 0.5050755550733895
+   },
+   "A7_R1_adaptive88_p_le3": {
+    "calibration": {
+     "0.001": {
+      "frac_p_le_alpha": 0.0006,
+      "mc_se": 0.0004469899327725402
+     },
+     "0.005": {
+      "frac_p_le_alpha": 0.0046,
+      "mc_se": 0.000997496867163
+     },
+     "0.01": {
+      "frac_p_le_alpha": 0.0084,
+      "mc_se": 0.0014071247279470289
+     },
+     "0.014": {
+      "frac_p_le_alpha": 0.0084,
+      "mc_se": 0.0016615655268450895
+     },
+     "0.05": {
+      "frac_p_le_alpha": 0.0432,
+      "mc_se": 0.0030822070014844883
+     },
+     "0.1": {
+      "frac_p_le_alpha": 0.0646,
+      "mc_se": 0.004242640687119285
+     },
+     "0.25": {
+      "frac_p_le_alpha": 0.2144,
+      "mc_se": 0.006123724356957945
+     },
+     "0.5": {
+      "frac_p_le_alpha": 0.487,
+      "mc_se": 0.007071067811865475
+     }
+    },
+    "ks": {
+     "D_anticonservative": 0.007757520758940317,
+     "D_conservative": 0.09624247924105966,
+     "crit_5pct_two_sided": 0.019205020177026633
+    }
+   }
+  }
+ },
+ "leakage": {
+  "per_agent": {
+   "A1": {
+    "verdict": "LEAKAGE none",
+    "poisoned_t_tested_per_rule": [
+     382,
+     382,
+     382
+    ],
+    "tickets_changed_under_poison": 0,
+    "reproduced_reported_numbers": true,
+    "ticket_25_11_reproduced": true,
+    "note": "uses only the `past` argument"
+   },
+   "A2": {
+    "verdict": "LEAKAGE none",
+    "poisoned_t_tested_per_rule": [
+     382,
+     382,
+     382
+    ],
+    "tickets_changed_under_poison": 0,
+    "reproduced_reported_numbers": true,
+    "ticket_25_11_reproduced": true,
+    "note": "uses only the `past` argument"
+   },
+   "A3": {
+    "verdict": "LEAKAGE none",
+    "poisoned_t_tested_per_rule": [
+     382,
+     382,
+     382
+    ],
+    "tickets_changed_under_poison": 0,
+    "reproduced_reported_numbers": true,
+    "ticket_25_11_reproduced": true,
+    "note": "uses only the `past` argument"
+   },
+   "A4": {
+    "verdict": "LEAKAGE none",
+    "poisoned_t_tested_per_rule": [
+     30,
+     30,
+     30
+    ],
+    "tickets_changed_under_poison": 0,
+    "reproduced_reported_numbers": true,
+    "ticket_25_11_reproduced": true,
+    "note": "uses only the `past` argument"
+   },
+   "A5": {
+    "verdict": "LEAKAGE none",
+    "poisoned_t_tested_per_rule": [
+     382,
+     382,
+     382
+    ],
+    "tickets_changed_under_poison": 0,
+    "reproduced_reported_numbers": true,
+    "ticket_25_11_reproduced": true,
+    "note": "reads DRAWS[t][\"date\"] (date only, declared, public in advance)"
+   },
+   "A6": {
+    "verdict": "LEAKAGE none",
+    "poisoned_t_tested_per_rule": [
+     382,
+     382,
+     382
+    ],
+    "tickets_changed_under_poison": 0,
+    "reproduced_reported_numbers": true,
+    "ticket_25_11_reproduced": true,
+    "note": "reads DRAWS[t][\"date\"] (date only, declared); EV / Loto 5z35 rows strictly dated < VAN date"
+   },
+   "A7": {
+    "verdict": "LEAKAGE none",
+    "poisoned_t_tested_per_rule": [
+     382,
+     382,
+     382
+    ],
+    "tickets_changed_under_poison": 0,
+    "reproduced_reported_numbers": true,
+    "ticket_25_11_reproduced": true,
+    "note": "R2/R3 orientation from draws 0..29 at import (pre-registered; all < 30 <= t)"
+   },
+   "A8": {
+    "verdict": "LEAKAGE none",
+    "poisoned_t_tested_per_rule": [
+     382,
+     382,
+     382
+    ],
+    "tickets_changed_under_poison": 0,
+    "reproduced_reported_numbers": true,
+    "ticket_25_11_reproduced": true,
+    "note": "reads DRAWS[t][\"date\"] (date only, declared); combo search on draws 0..29 only"
+   },
+   "A9": {
+    "verdict": "LEAKAGE none",
+    "poisoned_t_tested_per_rule": [
+     382,
+     382,
+     382
+    ],
+    "tickets_changed_under_poison": 0,
+    "reproduced_reported_numbers": true,
+    "ticket_25_11_reproduced": true,
+    "note": "uses only the `past` argument"
+   },
+   "A10": {
+    "verdict": "LEAKAGE none",
+    "poisoned_t_tested_per_rule": [
+     382,
+     382,
+     382
+    ],
+    "tickets_changed_under_poison": 0,
+    "reproduced_reported_numbers": true,
+    "ticket_25_11_reproduced": true,
+    "note": "external tier data run_2311/data/van.json, rows < t only"
+   }
+  },
+  "positive_controls_flagged": true,
+  "controls": [
+   {
+    "agent": "CTRL",
+    "rule": "peek_DRAWS[t]",
+    "mean_hits": 0.0,
+    "p_mean_lower": 0.0,
+    "p_le3": 0.0,
+    "n_zero": 382,
+    "won_eur": 38200000,
+    "poison_t_tested": 382,
+    "poison_changed_ticket": 382,
+    "changed_at_t": [
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37,
+     38,
+     39
+    ],
+    "leak": true,
+    "seconds": 1.1
+   },
+   {
+    "agent": "CTRL",
+    "rule": "same_day_EV",
+    "mean_hits": 5.429319371727749,
+    "p_mean_lower": 0.12928823925867333,
+    "p_le3": 0.6775513584785062,
+    "n_zero": 0,
+    "won_eur": 183,
+    "poison_t_tested": 382,
+    "poison_changed_ticket": 86,
+    "changed_at_t": [
+     35,
+     42,
+     49,
+     56,
+     63,
+     70,
+     77,
+     82,
+     89,
+     96
+    ],
+    "leak": true,
+    "seconds": 0.9
+   }
+  ]
+ },
+ "prereg": {
+  "timing": [
+   {
+    "agent": "A1",
+    "prereg_written": "2026-11-25T05:55:51+00:00",
+    "json_mtime": "2026-11-25T05:56:45.899300+00:00",
+    "written_before_result": true,
+    "prereg_committed_not_after_result": true,
+    "prereg_unchanged_after_commit": true,
+    "code_unchanged_after_commit": false
+   },
+   {
+    "agent": "A2",
+    "prereg_written": "2026-11-25T05:56:01+00:00",
+    "json_mtime": "2026-11-25T05:57:30.550007+00:00",
+    "written_before_result": true,
+    "prereg_committed_not_after_result": true,
+    "prereg_unchanged_after_commit": true,
+    "code_unchanged_after_commit": true
+   },
+   {
+    "agent": "A3",
+    "prereg_written": "2026-11-25T05:55:18+00:00",
+    "json_mtime": "2026-11-25T05:55:57.807613+00:00",
+    "written_before_result": true,
+    "prereg_committed_not_after_result": true,
+    "prereg_unchanged_after_commit": true,
+    "code_unchanged_after_commit": true
+   },
+   {
+    "agent": "A4",
+    "prereg_written": "2026-11-25T05:55:33+00:00",
+    "json_mtime": "2026-11-25T05:57:29.001534+00:00",
+    "written_before_result": true,
+    "prereg_committed_not_after_result": true,
+    "prereg_unchanged_after_commit": true,
+    "code_unchanged_after_commit": true
+   },
+   {
+    "agent": "A5",
+    "prereg_written": "2026-11-25T05:55:40+00:00",
+    "json_mtime": "2026-11-25T05:56:29.969003+00:00",
+    "written_before_result": true,
+    "prereg_committed_not_after_result": true,
+    "prereg_unchanged_after_commit": true,
+    "code_unchanged_after_commit": true
+   },
+   {
+    "agent": "A6",
+    "prereg_written": "2026-11-25T05:57:23+00:00",
+    "json_mtime": "2026-11-25T05:58:07.304169+00:00",
+    "written_before_result": true,
+    "prereg_committed_not_after_result": true,
+    "prereg_unchanged_after_commit": true,
+    "code_unchanged_after_commit": true
+   },
+   {
+    "agent": "A7",
+    "prereg_written": "2026-11-25T05:55:36+00:00",
+    "json_mtime": "2026-11-25T05:56:25.433141+00:00",
+    "written_before_result": true,
+    "prereg_committed_not_after_result": true,
+    "prereg_unchanged_after_commit": true,
+    "code_unchanged_after_commit": true
+   },
+   {
+    "agent": "A8",
+    "prereg_written": "2026-11-25T05:56:07+00:00",
+    "json_mtime": "2026-11-25T05:57:06.713265+00:00",
+    "written_before_result": true,
+    "prereg_committed_not_after_result": true,
+    "prereg_unchanged_after_commit": true,
+    "code_unchanged_after_commit": true
+   },
+   {
+    "agent": "A9",
+    "prereg_written": "2026-11-25T05:55:13+00:00",
+    "json_mtime": "2026-11-25T05:56:15.985500+00:00",
+    "written_before_result": true,
+    "prereg_committed_not_after_result": true,
+    "prereg_unchanged_after_commit": true,
+    "code_unchanged_after_commit": true
+   },
+   {
+    "agent": "A10",
+    "prereg_written": "2026-11-25T05:56:18+00:00",
+    "json_mtime": "2026-11-25T05:56:52.235640+00:00",
+    "written_before_result": true,
+    "prereg_committed_not_after_result": true,
+    "prereg_unchanged_after_commit": true,
+    "code_unchanged_after_commit": true
+   }
+  ],
+  "pyc_forensics_identical": {
+   "A5": true,
+   "A9": true,
+   "A4": true,
+   "A10": true,
+   "harness": true
+  },
+  "hashes_match": true,
+  "side_data": {
+   "van412_first410_equal_run2311_van_json": true,
+   "ev_draws": 171,
+   "ev_in_run2311": 170,
+   "ev_mismatch_vs_run2311": [],
+   "ev_not_in_run2311": [
+    "2026-11-23"
+   ],
+   "ev_weekdays": {
+    "0": 140,
+    "1": 0,
+    "2": 0,
+    "3": 31,
+    "4": 0,
+    "5": 0,
+    "6": 0
+   },
+   "ev_last": "2026-11-23",
+   "l535_draws": 286,
+   "l535_last": "2026-11-22",
+   "l535_weekdays": {
+    "0": 0,
+    "1": 1,
+    "2": 98,
+    "3": 0,
+    "4": 88,
+    "5": 0,
+    "6": 99
+   },
+   "ev_dates_on_or_after_2026-11-24": [],
+   "l535_dates_on_or_after_2026-11-24": []
+  },
+  "manual_prereg_vs_code": {
+   "A1": "match (R1 late-ball, R2 early balls lags 1..3, R3 Markov order sim N=10000 seed 20261125+t); R3 sampler edited after first commit (bug-proofing, no parameter change; effect re-evaluated)",
+   "A2": "match (R1 lag-1 residual, R2 phi vs predicted set, R3 exhaustive 352716 partitions + lag-1 autocorr side)",
+   "A3": "match (R1/R2 Laplace Markov orders 1/2, R3 pooled signed run-length hazard cap 6, jitter seed 20251125+t)",
+   "A4": "match (features, lambda=10, IRLS 50/1e-8, refit every 10 from t=30, stumps 100x0.1, min 20, <=16 thr); target weekday = last date + 1 day (wrong for 2 draws after the 24-25.12 and 3.4 gaps) - pre-registered, not a leak",
+   "A5": "match; reads DRAWS[t][\"date\"] only (declared in prereg; date is public in advance)",
+   "A6": "match; reads DRAWS[t][\"date\"] only (declared); other-game draws strictly before the VAN date; R2 = exact complement of R1",
+   "A7": "match (88 candidates, strict-< ties; R2 m0=5.4828 -> image; R3 a0=5.6552 -> highest)",
+   "A8": "match; reads DRAWS[t][\"date\"] only (declared); Step-1 best-by-#>=9 and best-by-mean picked the SAME combo PY/UDAY/SEQ, so R1 == R2 (one test counted twice in Holm: conservative)",
+   "A9": "match (half-life 30 alpha0=1; BOCPD H=1/50 Beta(1,1) exact; PL MAP s=0.1 Newton)",
+   "A10": "match (ridge lambda=1 on centred indicators, tier rows < t only; R2 = complement of R1; R3 sign switch)"
+  },
+  "deviations": [
+   "A1: R3 sampler edited after the file was first committed (u in [0,T) -> (0,T]); no parameter change, but the MC realisation changed: pre-change code gives R3 mean 5.508, p 0.559 vs reported 5.437, p 0.158 (R3 is MC-noise driven). Not decisive either way.",
+   "A8: R1 and R2 selected the same generator combo (PY/UDAY/SEQ) -> one test counted twice (Holm slightly conservative).",
+   "A6 R2 and A10 R2 are exact complements of R1 (hits = 11 - hits): pre-registered two-tailed pairs, not independent tests.",
+   "A4: target weekday = previous date + 1 day (wrong after the two calendar gaps); pre-registered, not a leak.",
+   "aggregate.py declares a survivor if Holm(p_mean) OR Holm(p_le3) < 0.05: two families, FWER up to ~0.10 (moot: none).",
+   "Timing only proves prereg-before-result for the final files; earlier unsaved runs cannot be excluded by mtimes/git (committed .pyc bytecode of A4/A5/A9/A10 is identical to the final code)."
+  ]
+ },
+ "multiplicity": {
+  "holm_recomputed_matches_aggregate": true,
+  "min_p": 0.014058554460433236,
+  "min_p_holm": 0.42175663381299705,
+  "min_p_le3": 0.02659980418343608,
+  "min_p_le3_holm": 0.7979941255030824,
+  "bh_survivors": [],
+  "ks_all30": {
+   "n": 30,
+   "D": 0.175128196164713,
+   "D_plus_excess_small_p": 0.175128196164713,
+   "D_minus": 0.08698939480156664,
+   "p_two_sided_mc_indep": 0.28278,
+   "p_one_sided_excess_small_mc_indep": 0.14096,
+   "p_two_sided_asymptotic": 0.28782873561722105,
+   "n_p_le_0.05": 2,
+   "expected_le_0.05": 1.5,
+   "P_at_least_that_many_le_0.05_indep": 0.44645792456821315,
+   "mean_p": 0.45471103200751123
+  },
+  "ks_dedup27": {
+   "n": 27,
+   "D": 0.21216523320175004,
+   "D_plus_excess_small_p": 0.21216523320175004,
+   "D_minus": 0.014058554460433236,
+   "p_two_sided_mc_indep": 0.15183,
+   "p_one_sided_excess_small_mc_indep": 0.07582,
+   "p_two_sided_asymptotic": 0.15382471278198878,
+   "n_p_le_0.05": 2,
+   "expected_le_0.05": 1.35,
+   "P_at_least_that_many_le_0.05_indep": 0.39390378272879223,
+   "mean_p": 0.40831772087311696
+  },
+  "global_minp_conditional": {
+   "rules": 30,
+   "tickets_reproduce_reported_p": true,
+   "observed_min_p": 0.014058554460433238,
+   "sims": 20000,
+   "P_minp_le_observed": 0.30935,
+   "P_minp_le_observed_if_indep": 0.34606633358078176,
+   "minp_5pct_quantile": 0.0020017528280853185,
+   "hit_corr_offdiag": {
+    "min": -1.0,
+    "max": 1.0,
+    "mean_abs": 0.07856612483138234,
+    "pairs_abs_gt_0.5": [
+     [
+      "A10:R1",
+      "A10:R2",
+      -1.0
+     ],
+     [
+      "A1:R3",
+      "A4:R1",
+      0.552
+     ],
+     [
+      "A1:R3",
+      "A9:A9_R1_dirmult_halflife30",
+      0.523
+     ],
+     [
+      "A1:R3",
+      "A9:A9_R3_plackett_luce_map_s0.1",
+      0.796
+     ],
+     [
+      "A4:R1",
+      "A9:A9_R3_plackett_luce_map_s0.1",
+      0.606
+     ],
+     [
+      "A6:R1",
+      "A6:R2",
+      -1.0
+     ],
+     [
+      "A8:R1",
+      "A8:R2",
+      1.0
+     ],
+     [
+      "A9:A9_R1_dirmult_halflife30",
+      "A9:A9_R2_bocpd_h50_beta11",
+      0.703
+     ]
+    ]
+   }
+  }
+ },
+ "A7_R2_stability": {
+  "segments": [
+   {
+    "segment": "all t=30..411",
+    "n": 382,
+    "mean_hits": 5.363874345549738,
+    "z": -2.216759712985055,
+    "p_mean_lower_exact": 0.014058554460433236,
+    "n_le3": 23,
+    "expected_le3": 16.44680706290613
+   },
+   {
+    "segment": "t=30..220",
+    "n": 191,
+    "mean_hits": 5.272251308900524,
+    "z": -2.62252436158116,
+    "p_mean_lower_exact": 0.004757766910169412,
+    "n_le3": 13,
+    "expected_le3": 8.223403531453066
+   },
+   {
+    "segment": "t=221..411",
+    "n": 191,
+    "mean_hits": 5.455497382198953,
+    "z": -0.5124472890445945,
+    "p_mean_lower_exact": 0.3147782052194428,
+    "n_le3": 10,
+    "expected_le3": 8.223403531453066
+   },
+   {
+    "segment": "quarter 1: t=30..124",
+    "n": 95,
+    "mean_hits": 5.315789473684211,
+    "z": -1.495971100850632,
+    "p_mean_lower_exact": 0.07302542862837766,
+    "n_le3": 3,
+    "expected_le3": 4.090174531351002
+   },
+   {
+    "segment": "quarter 2: t=125..219",
+    "n": 95,
+    "mean_hits": 5.231578947368421,
+    "z": -2.1798436040966354,
+    "p_mean_lower_exact": 0.016263261737088443,
+    "n_le3": 10,
+    "expected_le3": 4.090174531351002
+   },
+   {
+    "segment": "quarter 3: t=220..314",
+    "n": 95,
+    "mean_hits": 5.336842105263158,
+    "z": -1.3250029750391312,
+    "p_mean_lower_exact": 0.09981860731658311,
+    "n_le3": 7,
+    "expected_le3": 4.090174531351002
+   },
+   {
+    "segment": "quarter 4: t=315..411",
+    "n": 97,
+    "mean_hits": 5.56701030927835,
+    "z": 0.5498882596182112,
+    "p_mean_lower_exact": 0.7231771274448107,
+    "n_le3": 3,
+    "expected_le3": 4.176283468853128
+   },
+   {
+    "segment": "direction-fixing draws t=1..29 (m0)",
+    "n": 29,
+    "mean_hits": 5.482758620689655,
+    "z": -0.07736026758152392,
+    "p_mean_lower_exact": 0.5000000000000001,
+    "n_le3": 1,
+    "expected_le3": 1.2485795937808322
+   }
+  ],
+  "halves_diff_mean": -0.18324607329842912,
+  "halves_diff_z": -1.4920498068168622,
+  "reproduces_reported_mean": true,
+  "rolling_100_mean_min_max": [
+   5.159999999999999,
+   5.6
+  ]
+ },
+ "effect_meaning": {
+  "assumed_mean_hits": 5.363874345549738,
+  "tilted_P0": 2.3687435103106213e-06,
+  "tilted_1_in": 422164.7449997094,
+  "null_P0_1_in": 705432,
+  "tilted_P0_or_11_1_in": 311891.74156934133,
+  "note": "max-entropy (exponential tilt) hit distribution with the observed best mean; even taken at face value the 0-hit chance only moves from 1/705432 to about 1/422165",
+  "sd_of_mean_n382": 0.06140749204926548,
+  "min_detectable_shift_holm30_power50": 0.18023098916459418,
+  "min_detectable_shift_holm30_power80": 0.23191153447325602
+ },
+ "ticket": {
+  "ticket": [
+   1,
+   4,
+   7,
+   8,
+   10,
+   11,
+   14,
+   16,
+   18,
+   20,
+   21
+  ],
+  "complement": [
+   2,
+   3,
+   5,
+   6,
+   9,
+   12,
+   13,
+   15,
+   17,
+   19,
+   22
+  ],
+  "T": {
+   "numbers": [
+    1,
+    4,
+    7,
+    8,
+    10,
+    11,
+    14,
+    16,
+    18,
+    20,
+    21
+   ],
+   "n": 11,
+   "distinct_in_range": true,
+   "n_odd": 4,
+   "all_odd_or_even": false,
+   "n_in_1_11": 6,
+   "is_1_11_or_12_22": false,
+   "longest_run": 2,
+   "run_gt_3": false,
+   "share_tickets_with_longer_or_equal_run": 0.9999829891470758,
+   "longest_AP": 4,
+   "longest_AP_seq": [
+    14,
+    16,
+    18,
+    20
+   ],
+   "share_tickets_with_AP_ge_this": 0.9590321958743011,
+   "whole_set_is_AP": false,
+   "full_lines_len_ge4_layouts_w4_11": {},
+   "share_tickets_with_any_full_line": 0.5800303927238912,
+   "sum": 130,
+   "sum_mean_sd": [
+    126.5,
+    15.228810415349804
+   ],
+   "mirror_23_minus_x_overlap": 2
+  },
+  "C": {
+   "numbers": [
+    2,
+    3,
+    5,
+    6,
+    9,
+    12,
+    13,
+    15,
+    17,
+    19,
+    22
+   ],
+   "n": 11,
+   "distinct_in_range": true,
+   "n_odd": 7,
+   "all_odd_or_even": false,
+   "n_in_1_11": 5,
+   "is_1_11_or_12_22": false,
+   "longest_run": 2,
+   "run_gt_3": false,
+   "share_tickets_with_longer_or_equal_run": 0.9999829891470758,
+   "longest_AP": 5,
+   "longest_AP_seq": [
+    3,
+    6,
+    9,
+    12,
+    15
+   ],
+   "share_tickets_with_AP_ge_this": 0.49397815806484535,
+   "whole_set_is_AP": false,
+   "full_lines_len_ge4_layouts_w4_11": {},
+   "share_tickets_with_any_full_line": 0.5800303927238912,
+   "sum": 123,
+   "sum_mean_sd": [
+    126.5,
+    15.228810415349804
+   ],
+   "mirror_23_minus_x_overlap": 2
+  },
+  "vs_last_draws": {
+   "2026-11-23": {
+    "hits_if_T_had_played": 6,
+    "equal": false,
+    "equal_complement": false,
+    "T_equals_any_rotation_reflection_parity_image_or_its_complement": false,
+    "max_overlap_with_those_images": 8
+   },
+   "2026-11-24": {
+    "hits_if_T_had_played": 6,
+    "equal": false,
+    "equal_complement": false,
+    "T_equals_any_rotation_reflection_parity_image_or_its_complement": false,
+    "max_overlap_with_those_images": 8
+   }
+  },
+  "vs_history": {
+   "equal_any_past_draw": false,
+   "equal_complement_any_past_draw": false,
+   "overlap_range_over_412_draws": [
+    2,
+    9
+   ],
+   "mean_overlap": 5.502427184466019
+  },
+  "popularity_proxy": {
+   "T_score": -0.11570742742240528,
+   "C_score": 0.11570742742237815,
+   "T_percentile": 0.09177496909695051,
+   "C_percentile": 0.9082264484741265,
+   "beta_reproduced": true,
+   "T_score_se": 0.00963828083300348,
+   "T_score_z": -12.004986099408825,
+   "note": "A10 betas are noisy (A10 found no draw effect); a mid percentile = neither a popular nor an unpopular combination by this proxy. Score(T) = -Score(C) + const, so T and C sit at mirrored percentiles."
+  },
+  "odds": {
+   "P_hits": {
+    "0": {
+     "fraction": "1/705432",
+     "one_in": 705432.0,
+     "percent": 0.00014175710770138015
+    },
+    "1": {
+     "fraction": "121/705432",
+     "one_in": 5830.01652892562,
+     "percent": 0.017152610031866997
+    },
+    "2": {
+     "fraction": "3025/705432",
+     "one_in": 233.2006611570248,
+     "percent": 0.42881525079667493
+    },
+    "3": {
+     "fraction": "9075/235144",
+     "one_in": 25.911184573002753,
+     "percent": 3.8593372571700746
+    },
+    "4": {
+     "fraction": "9075/58786",
+     "one_in": 6.477796143250688,
+     "percent": 15.437349028680298
+    },
+    "5": {
+     "fraction": "2541/8398",
+     "one_in": 3.3049980322707597,
+     "percent": 30.257204096213385
+    },
+    "6": {
+     "fraction": "2541/8398",
+     "one_in": 3.3049980322707597,
+     "percent": 30.257204096213385
+    },
+    "7": {
+     "fraction": "9075/58786",
+     "one_in": 6.477796143250688,
+     "percent": 15.437349028680298
+    },
+    "8": {
+     "fraction": "9075/235144",
+     "one_in": 25.911184573002753,
+     "percent": 3.8593372571700746
+    },
+    "9": {
+     "fraction": "3025/705432",
+     "one_in": 233.2006611570248,
+     "percent": 0.42881525079667493
+    },
+    "10": {
+     "fraction": "121/705432",
+     "one_in": 5830.01652892562,
+     "percent": 0.017152610031866997
+    },
+    "11": {
+     "fraction": "1/705432",
+     "one_in": 705432.0,
+     "percent": 0.00014175710770138015
+    }
+   },
+   "P_0": {
+    "fraction": "1/705432",
+    "one_in": 705432.0,
+    "percent": 0.00014175710770138015
+   },
+   "P_0_or_11": {
+    "fraction": "1/352716",
+    "one_in": 352716.0,
+    "percent": 0.0002835142154027603
+   },
+   "P_any_prize": {
+    "fraction": "2531/29393",
+    "one_in": 11.613196365073094,
+    "percent": 8.610893750212636
+   },
+   "P_5_or_6": {
+    "fraction": "2541/4199",
+    "one_in": 1.6524990161353799,
+    "percent": 60.51440819242677
+   },
+   "P_4_to_7_no_prize": {
+    "fraction": "26862/29393",
+    "one_in": 1.0942223214950488,
+    "percent": 91.38910624978736
+   },
+   "P_5": {
+    "fraction": "2541/8398",
+    "one_in": 3.3049980322707597,
+    "percent": 30.257204096213385
+   },
+   "P_6": {
+    "fraction": "2541/8398",
+    "one_in": 3.3049980322707597,
+    "percent": 30.257204096213385
+   },
+   "expected_payout_eur_unshared_top": 0.7552109912791027,
+   "expected_payout_eur_without_top": 0.47169677587634246,
+   "claims": {
+    "P0=1/705432": true,
+    "P0or11=1/352716": true,
+    "P_any_prize_8.61%": true
+   }
+  },
+  "problems": []
+ },
+ "scripts": [
+  "redteam_harness_mc.py",
+  "redteam_leak.py",
+  "redteam_prereg.py",
+  "redteam_stats.py",
+  "redteam_ticket.py",
+  "redteam_build.py"
+ ],
+ "component_files": [
+  "redteam_harness_mc.json",
+  "redteam_leak.json",
+  "redteam_tickets.json",
+  "redteam_prereg.json",
+  "redteam_stats.json",
+  "redteam_ticket.json"
+ ]
+}

@@ -1,0 +1,267 @@
+{
+ "ticket": [
+  1,
+  4,
+  7,
+  8,
+  10,
+  11,
+  14,
+  16,
+  18,
+  20,
+  21
+ ],
+ "complement": [
+  2,
+  3,
+  5,
+  6,
+  9,
+  12,
+  13,
+  15,
+  17,
+  19,
+  22
+ ],
+ "complement_matches_lead": true,
+ "T": {
+  "numbers": [
+   1,
+   4,
+   7,
+   8,
+   10,
+   11,
+   14,
+   16,
+   18,
+   20,
+   21
+  ],
+  "n": 11,
+  "distinct_in_range": true,
+  "n_odd": 4,
+  "all_odd_or_even": false,
+  "n_in_1_11": 6,
+  "is_1_11_or_12_22": false,
+  "longest_run": 2,
+  "run_gt_3": false,
+  "share_tickets_with_longer_or_equal_run": 0.9999829891470758,
+  "longest_AP": 4,
+  "longest_AP_seq": [
+   14,
+   16,
+   18,
+   20
+  ],
+  "share_tickets_with_AP_ge_this": 0.9590321958743011,
+  "whole_set_is_AP": false,
+  "full_lines_len_ge4_layouts_w4_11": {},
+  "share_tickets_with_any_full_line": 0.5800303927238912,
+  "sum": 130,
+  "sum_mean_sd": [
+   126.5,
+   15.228810415349804
+  ],
+  "mirror_23_minus_x_overlap": 2
+ },
+ "C": {
+  "numbers": [
+   2,
+   3,
+   5,
+   6,
+   9,
+   12,
+   13,
+   15,
+   17,
+   19,
+   22
+  ],
+  "n": 11,
+  "distinct_in_range": true,
+  "n_odd": 7,
+  "all_odd_or_even": false,
+  "n_in_1_11": 5,
+  "is_1_11_or_12_22": false,
+  "longest_run": 2,
+  "run_gt_3": false,
+  "share_tickets_with_longer_or_equal_run": 0.9999829891470758,
+  "longest_AP": 5,
+  "longest_AP_seq": [
+   3,
+   6,
+   9,
+   12,
+   15
+  ],
+  "share_tickets_with_AP_ge_this": 0.49397815806484535,
+  "whole_set_is_AP": false,
+  "full_lines_len_ge4_layouts_w4_11": {},
+  "share_tickets_with_any_full_line": 0.5800303927238912,
+  "sum": 123,
+  "sum_mean_sd": [
+   126.5,
+   15.228810415349804
+  ],
+  "mirror_23_minus_x_overlap": 2
+ },
+ "vs_last_draws": {
+  "2026-11-23": {
+   "hits_if_T_had_played": 6,
+   "equal": false,
+   "equal_complement": false,
+   "T_equals_any_rotation_reflection_parity_image_or_its_complement": false,
+   "max_overlap_with_those_images": 8
+  },
+  "2026-11-24": {
+   "hits_if_T_had_played": 6,
+   "equal": false,
+   "equal_complement": false,
+   "T_equals_any_rotation_reflection_parity_image_or_its_complement": false,
+   "max_overlap_with_those_images": 8
+  }
+ },
+ "vs_history": {
+  "equal_any_past_draw": false,
+  "equal_complement_any_past_draw": false,
+  "overlap_range_over_412_draws": [
+   2,
+   9
+  ],
+  "mean_overlap": 5.502427184466019
+ },
+ "overlap_with_agents_25_11_tickets": {
+  "A1": 6,
+  "A2": 4,
+  "A3": 6,
+  "A4": 5,
+  "A5": 5,
+  "A6": 5,
+  "A7": 5,
+  "A8": 5,
+  "A9": 6,
+  "A10": 4
+ },
+ "popularity_proxy": {
+  "T_score": -0.11570742742240528,
+  "C_score": 0.11570742742237815,
+  "T_percentile": 0.09177496909695051,
+  "C_percentile": 0.9082264484741265,
+  "beta_reproduced": true,
+  "T_score_se": 0.00963828083300348,
+  "T_score_z": -12.004986099408825,
+  "note": "A10 betas are noisy (A10 found no draw effect); a mid percentile = neither a popular nor an unpopular combination by this proxy. Score(T) = -Score(C) + const, so T and C sit at mirrored percentiles."
+ },
+ "odds": {
+  "P_hits": {
+   "0": {
+    "fraction": "1/705432",
+    "one_in": 705432.0,
+    "percent": 0.00014175710770138015
+   },
+   "1": {
+    "fraction": "121/705432",
+    "one_in": 5830.01652892562,
+    "percent": 0.017152610031866997
+   },
+   "2": {
+    "fraction": "3025/705432",
+    "one_in": 233.2006611570248,
+    "percent": 0.42881525079667493
+   },
+   "3": {
+    "fraction": "9075/235144",
+    "one_in": 25.911184573002753,
+    "percent": 3.8593372571700746
+   },
+   "4": {
+    "fraction": "9075/58786",
+    "one_in": 6.477796143250688,
+    "percent": 15.437349028680298
+   },
+   "5": {
+    "fraction": "2541/8398",
+    "one_in": 3.3049980322707597,
+    "percent": 30.257204096213385
+   },
+   "6": {
+    "fraction": "2541/8398",
+    "one_in": 3.3049980322707597,
+    "percent": 30.257204096213385
+   },
+   "7": {
+    "fraction": "9075/58786",
+    "one_in": 6.477796143250688,
+    "percent": 15.437349028680298
+   },
+   "8": {
+    "fraction": "9075/235144",
+    "one_in": 25.911184573002753,
+    "percent": 3.8593372571700746
+   },
+   "9": {
+    "fraction": "3025/705432",
+    "one_in": 233.2006611570248,
+    "percent": 0.42881525079667493
+   },
+   "10": {
+    "fraction": "121/705432",
+    "one_in": 5830.01652892562,
+    "percent": 0.017152610031866997
+   },
+   "11": {
+    "fraction": "1/705432",
+    "one_in": 705432.0,
+    "percent": 0.00014175710770138015
+   }
+  },
+  "P_0": {
+   "fraction": "1/705432",
+   "one_in": 705432.0,
+   "percent": 0.00014175710770138015
+  },
+  "P_0_or_11": {
+   "fraction": "1/352716",
+   "one_in": 352716.0,
+   "percent": 0.0002835142154027603
+  },
+  "P_any_prize": {
+   "fraction": "2531/29393",
+   "one_in": 11.613196365073094,
+   "percent": 8.610893750212636
+  },
+  "P_5_or_6": {
+   "fraction": "2541/4199",
+   "one_in": 1.6524990161353799,
+   "percent": 60.51440819242677
+  },
+  "P_4_to_7_no_prize": {
+   "fraction": "26862/29393",
+   "one_in": 1.0942223214950488,
+   "percent": 91.38910624978736
+  },
+  "P_5": {
+   "fraction": "2541/8398",
+   "one_in": 3.3049980322707597,
+   "percent": 30.257204096213385
+  },
+  "P_6": {
+   "fraction": "2541/8398",
+   "one_in": 3.3049980322707597,
+   "percent": 30.257204096213385
+  },
+  "expected_payout_eur_unshared_top": 0.7552109912791027,
+  "expected_payout_eur_without_top": 0.47169677587634246,
+  "claims": {
+   "P0=1/705432": true,
+   "P0or11=1/352716": true,
+   "P_any_prize_8.61%": true
+  }
+ },
+ "problems": [],
+ "verdict": "TICKET OK"
+}
