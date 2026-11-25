@@ -1,0 +1,86 @@
+{
+ "id": "A9",
+ "family": "BAYESIAN BALL-PROPENSITY MODELS",
+ "rules": [
+  {
+   "rule": "A9_R1_dirmult_halflife30",
+   "n": 382,
+   "mean_hits": 5.484293193717278,
+   "p_mean_lower": 0.4073076393906773,
+   "n_hits_le3": 20,
+   "expected_le3": 16.44680706290613,
+   "p_le3": 0.21596396962949999,
+   "n_zero": 0,
+   "won_eur": 170,
+   "cost_eur": 573.0,
+   "definition": "Dirichlet(alpha0=1) propensity with exponential forgetting w=0.5**(age/30), age 0 = newest past draw; ticket = 11 lowest (alpha0+c_i)/(22*alpha0+sum c); ties -> smaller number."
+  },
+  {
+   "rule": "A9_R2_bocpd_h50_beta11",
+   "n": 382,
+   "mean_hits": 5.526178010471204,
+   "p_mean_lower": 0.6727924256035235,
+   "n_hits_le3": 18,
+   "expected_le3": 16.44680706290613,
+   "p_le3": 0.38168511581628467,
+   "n_zero": 0,
+   "won_eur": 235,
+   "cost_eur": 573.0,
+   "definition": "Per-number Bernoulli BOCPD (Adams-MacKay), constant hazard 1/50, Beta(1,1) segment prior, exact (untruncated) run-length recursion; ticket = 11 lowest posterior predictive P(drawn next)."
+  },
+  {
+   "rule": "A9_R3_plackett_luce_map_s0.1",
+   "n": 382,
+   "mean_hits": 5.513089005235602,
+   "p_mean_lower": 0.5926923606093286,
+   "n_hits_le3": 16,
+   "expected_le3": 16.44680706290613,
+   "p_le3": 0.5799581094168602,
+   "n_zero": 0,
+   "won_eur": 161,
+   "cost_eur": 573.0,
+   "definition": "Plackett-Luce on full draw order (11 sequential picks from 22), MAP with theta_i~N(0,0.1^2), Newton to |grad|<1e-10, all past draws equal weight; ticket = 11 lowest theta_i (= lowest plug-in inclusion prob)."
+  }
+ ],
+ "ticket_25_11": [
+  5,
+  7,
+  9,
+  11,
+  13,
+  15,
+  16,
+  18,
+  20,
+  21,
+  22
+ ],
+ "tickets_25_11_secondary": {
+  "R2": [
+   5,
+   7,
+   9,
+   11,
+   12,
+   13,
+   16,
+   17,
+   18,
+   20,
+   22
+  ],
+  "R3": [
+   2,
+   3,
+   5,
+   7,
+   8,
+   12,
+   13,
+   17,
+   18,
+   20,
+   21
+  ]
+ }
+}
