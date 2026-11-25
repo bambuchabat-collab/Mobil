@@ -1,0 +1,697 @@
+{
+ "id": "A8",
+ "family": "PSEUDO-RANDOM GENERATOR / SEED SEARCH",
+ "rules": [
+  {
+   "rule": "R1",
+   "n": 382,
+   "mean_hits": 5.554973821989528,
+   "p_mean_lower": 0.8203227281348999,
+   "n_hits_le3": 12,
+   "expected_le3": 16.44680706290613,
+   "p_le3": 0.8987526402051322,
+   "n_zero": 0,
+   "won_eur": 133,
+   "cost_eur": 573.0,
+   "definition": "complement of PY/UDAY/SEQ output for draw date (best by #overlap>=9 on draws 0..29)"
+  },
+  {
+   "rule": "R2",
+   "n": 382,
+   "mean_hits": 5.554973821989528,
+   "p_mean_lower": 0.8203227281348999,
+   "n_hits_le3": 12,
+   "expected_le3": 16.44680706290613,
+   "p_le3": 0.8987526402051322,
+   "n_zero": 0,
+   "won_eur": 133,
+   "cost_eur": 573.0,
+   "definition": "complement of PY/UDAY/SEQ output for draw date (highest mean overlap on draws 0..29)"
+  },
+  {
+   "rule": "R3",
+   "n": 382,
+   "mean_hits": 5.554973821989528,
+   "p_mean_lower": 0.8203227281348999,
+   "n_hits_le3": 18,
+   "expected_le3": 16.44680706290613,
+   "p_le3": 0.38168511581628467,
+   "n_zero": 0,
+   "won_eur": 179,
+   "cost_eur": 573.0,
+   "definition": "direct output of PCG/YMD/SHUF for draw date (lowest mean overlap on draws 0..29)"
+  }
+ ],
+ "ticket_25_11": [
+  1,
+  5,
+  6,
+  9,
+  10,
+  13,
+  14,
+  16,
+  17,
+  19,
+  21
+ ],
+ "step1_search_draws_0_29": {
+  "n_combos": 72,
+  "P_ge9": 0.004461096179362433,
+  "expected_ge9_per_combo": 0.13383288538087298,
+  "combos_with_ge9": [
+   "PY/YMD6/REJ:1",
+   "PY/UDAY/SAMPLE:1",
+   "PY/UDAY/SEQ:1",
+   "RS/DMY/SEQ:1",
+   "RS/TS_LOC/REJ:1",
+   "RS/TS_CET/REJ:1",
+   "PCG/DMY/SHUF:1",
+   "PCG/DMY/SEQ:1",
+   "PCG/YMD6/SAMPLE:1",
+   "PCG/YMD6/SEQ:1",
+   "PCG/UDAY/REJ:1"
+  ],
+  "n_combos_with_any_ge9": 11,
+  "expected_combos_with_any_ge9": 9.037845595441462,
+  "max_ge9": 1,
+  "p_max_ge9_single": 0.12552563327002098,
+  "p_max_ge9_familywise": 0.9999360574398038,
+  "max_le2": 2,
+  "p_max_le2_single": 0.00796776863817298,
+  "p_max_le2_familywise": 0.437844640652571,
+  "best_combo": {
+   "combo": "PY/UDAY/SEQ",
+   "idx": 14,
+   "n_ge9": 1,
+   "n_le2": 0,
+   "mean": 6.066666666666666,
+   "dist": [
+    0,
+    0,
+    0,
+    0,
+    2,
+    10,
+    7,
+    7,
+    3,
+    1,
+    0,
+    0
+   ]
+  },
+  "best_mean_combo": {
+   "combo": "PY/UDAY/SEQ",
+   "idx": 14,
+   "n_ge9": 1,
+   "n_le2": 0,
+   "mean": 6.066666666666666,
+   "dist": [
+    0,
+    0,
+    0,
+    0,
+    2,
+    10,
+    7,
+    7,
+    3,
+    1,
+    0,
+    0
+   ]
+  },
+  "worst_mean_combo": {
+   "combo": "PCG/YMD/SHUF",
+   "idx": 49,
+   "n_ge9": 0,
+   "n_le2": 0,
+   "mean": 4.9,
+   "dist": [
+    0,
+    0,
+    0,
+    1,
+    11,
+    9,
+    8,
+    1,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  "mean_overlap_range": [
+   4.9,
+   6.066666666666666
+  ],
+  "null_sd_mean30": 0.21912524504463884
+ },
+ "best_combo_overlap_distribution": [
+  {
+   "sample": "draws 30..411",
+   "n": 382,
+   "counts_by_overlap_0..11": [
+    0,
+    0,
+    2,
+    19,
+    60,
+    112,
+    116,
+    61,
+    12,
+    0,
+    0,
+    0
+   ],
+   "expected_by_overlap_0..11": [
+    0.0,
+    0.07,
+    1.64,
+    14.74,
+    58.97,
+    115.58,
+    115.58,
+    58.97,
+    14.74,
+    1.64,
+    0.07,
+    0.0
+   ],
+   "bins": [
+    "0-3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8-11"
+   ],
+   "binned_obs": [
+    21,
+    60,
+    112,
+    116,
+    61,
+    12
+   ],
+   "binned_exp": [
+    16.45,
+    58.97,
+    115.58,
+    115.58,
+    58.97,
+    16.45
+   ],
+   "chi2": 2.6631784055328804,
+   "p_chi2_mc": 0.7549,
+   "mean_overlap": 5.445026178010472,
+   "n_ge9": 0,
+   "expected_ge9": 1.7041387405164494
+  },
+  {
+   "sample": "all 412 draws",
+   "n": 412,
+   "counts_by_overlap_0..11": [
+    0,
+    0,
+    2,
+    19,
+    62,
+    122,
+    123,
+    68,
+    15,
+    1,
+    0,
+    0
+   ],
+   "expected_by_overlap_0..11": [
+    0.0,
+    0.07,
+    1.77,
+    15.9,
+    63.6,
+    124.66,
+    124.66,
+    63.6,
+    15.9,
+    1.77,
+    0.07,
+    0.0
+   ],
+   "bins": [
+    "0-3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8-11"
+   ],
+   "binned_obs": [
+    21,
+    62,
+    122,
+    123,
+    68,
+    16
+   ],
+   "binned_exp": [
+    17.74,
+    63.6,
+    124.66,
+    124.66,
+    63.6,
+    17.74
+   ],
+   "chi2": 1.1933966419927935,
+   "p_chi2_mc": 0.947,
+   "mean_overlap": 5.490291262135922,
+   "n_ge9": 1,
+   "expected_ge9": 1.8379716258973224
+  }
+ ],
+ "descriptive_all_combos": {
+  "expected_ge9_per_combo_eval": 1.7041387405164494,
+  "total_ge9_all_combos_eval": 129,
+  "expected_total_ge9_eval": 122.69798931718437,
+  "max_ge9_eval": 7,
+  "mean_eval_range": [
+   5.350785340314136,
+   5.672774869109948
+  ],
+  "per_combo": [
+   {
+    "combo": "PY/YMD/SAMPLE",
+    "n_ge9_eval": 3,
+    "mean_eval": 5.5785340314136125
+   },
+   {
+    "combo": "PY/YMD/SHUF",
+    "n_ge9_eval": 1,
+    "mean_eval": 5.4214659685863875
+   },
+   {
+    "combo": "PY/YMD/SEQ",
+    "n_ge9_eval": 2,
+    "mean_eval": 5.607329842931938
+   },
+   {
+    "combo": "PY/YMD/REJ",
+    "n_ge9_eval": 2,
+    "mean_eval": 5.523560209424084
+   },
+   {
+    "combo": "PY/DMY/SAMPLE",
+    "n_ge9_eval": 3,
+    "mean_eval": 5.617801047120419
+   },
+   {
+    "combo": "PY/DMY/SHUF",
+    "n_ge9_eval": 1,
+    "mean_eval": 5.382198952879581
+   },
+   {
+    "combo": "PY/DMY/SEQ",
+    "n_ge9_eval": 4,
+    "mean_eval": 5.5
+   },
+   {
+    "combo": "PY/DMY/REJ",
+    "n_ge9_eval": 6,
+    "mean_eval": 5.5890052356020945
+   },
+   {
+    "combo": "PY/YMD6/SAMPLE",
+    "n_ge9_eval": 3,
+    "mean_eval": 5.515706806282722
+   },
+   {
+    "combo": "PY/YMD6/SHUF",
+    "n_ge9_eval": 2,
+    "mean_eval": 5.484293193717278
+   },
+   {
+    "combo": "PY/YMD6/SEQ",
+    "n_ge9_eval": 0,
+    "mean_eval": 5.507853403141361
+   },
+   {
+    "combo": "PY/YMD6/REJ",
+    "n_ge9_eval": 1,
+    "mean_eval": 5.528795811518324
+   },
+   {
+    "combo": "PY/UDAY/SAMPLE",
+    "n_ge9_eval": 1,
+    "mean_eval": 5.463350785340314
+   },
+   {
+    "combo": "PY/UDAY/SHUF",
+    "n_ge9_eval": 0,
+    "mean_eval": 5.536649214659686
+   },
+   {
+    "combo": "PY/UDAY/SEQ",
+    "n_ge9_eval": 0,
+    "mean_eval": 5.445026178010472
+   },
+   {
+    "combo": "PY/UDAY/REJ",
+    "n_ge9_eval": 0,
+    "mean_eval": 5.358638743455497
+   },
+   {
+    "combo": "PY/TS_LOC/SAMPLE",
+    "n_ge9_eval": 1,
+    "mean_eval": 5.649214659685864
+   },
+   {
+    "combo": "PY/TS_LOC/SHUF",
+    "n_ge9_eval": 2,
+    "mean_eval": 5.350785340314136
+   },
+   {
+    "combo": "PY/TS_LOC/SEQ",
+    "n_ge9_eval": 1,
+    "mean_eval": 5.518324607329843
+   },
+   {
+    "combo": "PY/TS_LOC/REJ",
+    "n_ge9_eval": 2,
+    "mean_eval": 5.662303664921466
+   },
+   {
+    "combo": "PY/TS_CET/SAMPLE",
+    "n_ge9_eval": 1,
+    "mean_eval": 5.5942408376963355
+   },
+   {
+    "combo": "PY/TS_CET/SHUF",
+    "n_ge9_eval": 2,
+    "mean_eval": 5.4057591623036645
+   },
+   {
+    "combo": "PY/TS_CET/SEQ",
+    "n_ge9_eval": 1,
+    "mean_eval": 5.460732984293194
+   },
+   {
+    "combo": "PY/TS_CET/REJ",
+    "n_ge9_eval": 3,
+    "mean_eval": 5.672774869109948
+   },
+   {
+    "combo": "RS/YMD/SAMPLE",
+    "n_ge9_eval": 0,
+    "mean_eval": 5.505235602094241
+   },
+   {
+    "combo": "RS/YMD/SHUF",
+    "n_ge9_eval": 0,
+    "mean_eval": 5.505235602094241
+   },
+   {
+    "combo": "RS/YMD/SEQ",
+    "n_ge9_eval": 1,
+    "mean_eval": 5.489528795811518
+   },
+   {
+    "combo": "RS/YMD/REJ",
+    "n_ge9_eval": 0,
+    "mean_eval": 5.465968586387435
+   },
+   {
+    "combo": "RS/DMY/SAMPLE",
+    "n_ge9_eval": 2,
+    "mean_eval": 5.5
+   },
+   {
+    "combo": "RS/DMY/SHUF",
+    "n_ge9_eval": 2,
+    "mean_eval": 5.5
+   },
+   {
+    "combo": "RS/DMY/SEQ",
+    "n_ge9_eval": 1,
+    "mean_eval": 5.382198952879581
+   },
+   {
+    "combo": "RS/DMY/REJ",
+    "n_ge9_eval": 2,
+    "mean_eval": 5.492146596858639
+   },
+   {
+    "combo": "RS/YMD6/SAMPLE",
+    "n_ge9_eval": 4,
+    "mean_eval": 5.526178010471204
+   },
+   {
+    "combo": "RS/YMD6/SHUF",
+    "n_ge9_eval": 4,
+    "mean_eval": 5.526178010471204
+   },
+   {
+    "combo": "RS/YMD6/SEQ",
+    "n_ge9_eval": 0,
+    "mean_eval": 5.361256544502618
+   },
+   {
+    "combo": "RS/YMD6/REJ",
+    "n_ge9_eval": 2,
+    "mean_eval": 5.5
+   },
+   {
+    "combo": "RS/UDAY/SAMPLE",
+    "n_ge9_eval": 0,
+    "mean_eval": 5.489528795811518
+   },
+   {
+    "combo": "RS/UDAY/SHUF",
+    "n_ge9_eval": 0,
+    "mean_eval": 5.489528795811518
+   },
+   {
+    "combo": "RS/UDAY/SEQ",
+    "n_ge9_eval": 1,
+    "mean_eval": 5.510471204188482
+   },
+   {
+    "combo": "RS/UDAY/REJ",
+    "n_ge9_eval": 1,
+    "mean_eval": 5.465968586387435
+   },
+   {
+    "combo": "RS/TS_LOC/SAMPLE",
+    "n_ge9_eval": 2,
+    "mean_eval": 5.560209424083769
+   },
+   {
+    "combo": "RS/TS_LOC/SHUF",
+    "n_ge9_eval": 2,
+    "mean_eval": 5.560209424083769
+   },
+   {
+    "combo": "RS/TS_LOC/SEQ",
+    "n_ge9_eval": 2,
+    "mean_eval": 5.445026178010472
+   },
+   {
+    "combo": "RS/TS_LOC/REJ",
+    "n_ge9_eval": 4,
+    "mean_eval": 5.507853403141361
+   },
+   {
+    "combo": "RS/TS_CET/SAMPLE",
+    "n_ge9_eval": 1,
+    "mean_eval": 5.549738219895288
+   },
+   {
+    "combo": "RS/TS_CET/SHUF",
+    "n_ge9_eval": 1,
+    "mean_eval": 5.549738219895288
+   },
+   {
+    "combo": "RS/TS_CET/SEQ",
+    "n_ge9_eval": 0,
+    "mean_eval": 5.445026178010472
+   },
+   {
+    "combo": "RS/TS_CET/REJ",
+    "n_ge9_eval": 3,
+    "mean_eval": 5.523560209424084
+   },
+   {
+    "combo": "PCG/YMD/SAMPLE",
+    "n_ge9_eval": 0,
+    "mean_eval": 5.515706806282722
+   },
+   {
+    "combo": "PCG/YMD/SHUF",
+    "n_ge9_eval": 2,
+    "mean_eval": 5.554973821989528
+   },
+   {
+    "combo": "PCG/YMD/SEQ",
+    "n_ge9_eval": 0,
+    "mean_eval": 5.56544502617801
+   },
+   {
+    "combo": "PCG/YMD/REJ",
+    "n_ge9_eval": 1,
+    "mean_eval": 5.531413612565445
+   },
+   {
+    "combo": "PCG/DMY/SAMPLE",
+    "n_ge9_eval": 1,
+    "mean_eval": 5.465968586387435
+   },
+   {
+    "combo": "PCG/DMY/SHUF",
+    "n_ge9_eval": 4,
+    "mean_eval": 5.481675392670157
+   },
+   {
+    "combo": "PCG/DMY/SEQ",
+    "n_ge9_eval": 3,
+    "mean_eval": 5.549738219895288
+   },
+   {
+    "combo": "PCG/DMY/REJ",
+    "n_ge9_eval": 7,
+    "mean_eval": 5.62565445026178
+   },
+   {
+    "combo": "PCG/YMD6/SAMPLE",
+    "n_ge9_eval": 3,
+    "mean_eval": 5.447643979057592
+   },
+   {
+    "combo": "PCG/YMD6/SHUF",
+    "n_ge9_eval": 2,
+    "mean_eval": 5.481675392670157
+   },
+   {
+    "combo": "PCG/YMD6/SEQ",
+    "n_ge9_eval": 4,
+    "mean_eval": 5.662303664921466
+   },
+   {
+    "combo": "PCG/YMD6/REJ",
+    "n_ge9_eval": 2,
+    "mean_eval": 5.536649214659686
+   },
+   {
+    "combo": "PCG/UDAY/SAMPLE",
+    "n_ge9_eval": 1,
+    "mean_eval": 5.489528795811518
+   },
+   {
+    "combo": "PCG/UDAY/SHUF",
+    "n_ge9_eval": 1,
+    "mean_eval": 5.494764397905759
+   },
+   {
+    "combo": "PCG/UDAY/SEQ",
+    "n_ge9_eval": 3,
+    "mean_eval": 5.62565445026178
+   },
+   {
+    "combo": "PCG/UDAY/REJ",
+    "n_ge9_eval": 4,
+    "mean_eval": 5.659685863874346
+   },
+   {
+    "combo": "PCG/TS_LOC/SAMPLE",
+    "n_ge9_eval": 0,
+    "mean_eval": 5.395287958115183
+   },
+   {
+    "combo": "PCG/TS_LOC/SHUF",
+    "n_ge9_eval": 2,
+    "mean_eval": 5.5
+   },
+   {
+    "combo": "PCG/TS_LOC/SEQ",
+    "n_ge9_eval": 2,
+    "mean_eval": 5.507853403141361
+   },
+   {
+    "combo": "PCG/TS_LOC/REJ",
+    "n_ge9_eval": 3,
+    "mean_eval": 5.513089005235602
+   },
+   {
+    "combo": "PCG/TS_CET/SAMPLE",
+    "n_ge9_eval": 0,
+    "mean_eval": 5.4214659685863875
+   },
+   {
+    "combo": "PCG/TS_CET/SHUF",
+    "n_ge9_eval": 2,
+    "mean_eval": 5.513089005235602
+   },
+   {
+    "combo": "PCG/TS_CET/SEQ",
+    "n_ge9_eval": 4,
+    "mean_eval": 5.463350785340314
+   },
+   {
+    "combo": "PCG/TS_CET/REJ",
+    "n_ge9_eval": 1,
+    "mean_eval": 5.507853403141361
+   }
+  ]
+ },
+ "tickets_25_11_all_rules": {
+  "R1": [
+   1,
+   5,
+   6,
+   9,
+   10,
+   13,
+   14,
+   16,
+   17,
+   19,
+   21
+  ],
+  "R2": [
+   1,
+   5,
+   6,
+   9,
+   10,
+   13,
+   14,
+   16,
+   17,
+   19,
+   21
+  ],
+  "R3": [
+   1,
+   5,
+   6,
+   7,
+   13,
+   14,
+   15,
+   16,
+   18,
+   20,
+   22
+  ]
+ },
+ "seeds_25_11": {
+  "YMD": 20261125,
+  "DMY": 25112026,
+  "YMD6": 261125,
+  "UDAY": 20782,
+  "TS_LOC": 1795626000,
+  "TS_CET": 1795626000
+ }
+}
