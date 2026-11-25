@@ -1,0 +1,109 @@
+{
+ "id": "A5",
+ "family": "CALENDAR AND DATE NUMEROLOGY",
+ "seed": 20261125,
+ "rules": [
+  {
+   "rule": "R1",
+   "n": 382,
+   "mean_hits": 5.4188481675392675,
+   "p_mean_lower": 0.09674954636353197,
+   "n_hits_le3": 25,
+   "expected_le3": 16.44680706290613,
+   "p_le3": 0.02659980418343608,
+   "n_zero": 0,
+   "won_eur": 202,
+   "cost_eur": 573.0,
+   "definition": "Same-weekday cold: 11 numbers least often drawn in past draws on the target weekday; ties by rng([SEED,1,t]).",
+   "ticket_25_11": [
+    3,
+    5,
+    6,
+    7,
+    8,
+    10,
+    11,
+    13,
+    14,
+    19,
+    22
+   ]
+  },
+  {
+   "rule": "R2",
+   "n": 382,
+   "mean_hits": 5.528795811518324,
+   "p_mean_lower": 0.688028343825865,
+   "n_hits_le3": 19,
+   "expected_le3": 16.44680706290613,
+   "p_le3": 0.29268072539937506,
+   "n_zero": 0,
+   "won_eur": 242,
+   "cost_eur": 573.0,
+   "definition": "Date anchors A={day wrap22, month, digit sum DDMMYYYY wrap22, digit sum of day, ISO weekday}; 11 numbers farthest (circular distance on 1..22) from nearest anchor; ties by rng([SEED,2,t]).",
+   "ticket_25_11": [
+    1,
+    5,
+    9,
+    10,
+    13,
+    14,
+    15,
+    16,
+    17,
+    21,
+    22
+   ]
+  },
+  {
+   "rule": "R3",
+   "n": 382,
+   "mean_hits": 5.541884816753926,
+   "p_mean_lower": 0.7591065963460074,
+   "n_hits_le3": 19,
+   "expected_le3": 16.44680706290613,
+   "p_le3": 0.29268072539937506,
+   "n_zero": 0,
+   "won_eur": 150,
+   "cost_eur": 573.0,
+   "definition": "Lunar 4-bucket cold: 11 numbers least often drawn in past draws in the same mean-lunar-phase quarter (new/first/full/last, centred) at 17:00 UTC; ties by rng([SEED,3,t]).",
+   "ticket_25_11": [
+    2,
+    3,
+    7,
+    8,
+    10,
+    12,
+    15,
+    17,
+    18,
+    19,
+    20
+   ]
+  }
+ ],
+ "final_date_info": {
+  "date": "2026-11-25",
+  "weekday": "Wednesday",
+  "anchors": [
+   3,
+   7,
+   11,
+   19
+  ],
+  "lunar_bucket": 2
+ },
+ "ticket_25_11": [
+  3,
+  5,
+  6,
+  7,
+  8,
+  10,
+  11,
+  13,
+  14,
+  19,
+  22
+ ]
+}

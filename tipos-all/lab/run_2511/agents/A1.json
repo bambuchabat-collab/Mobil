@@ -1,0 +1,97 @@
+{
+ "id": "A1",
+ "family": "DRAW ORDER / BALL POSITION",
+ "rules": [
+  {
+   "rule": "R1",
+   "n": 382,
+   "mean_hits": 5.450261780104712,
+   "p_mean_lower": 0.2151445606513946,
+   "n_hits_le3": 18,
+   "expected_le3": 16.44680706290613,
+   "p_le3": 0.38168511581628467,
+   "n_zero": 0,
+   "won_eur": 181,
+   "cost_eur": 573.0,
+   "definition": "PRIMARY. 11 numbers with largest mean draw position (1..11) over all past draws in which drawn (never drawn -> 12); tie-break fewer appearances, then smaller number.",
+   "ticket_25_11": [
+    2,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    14,
+    17,
+    20,
+    21
+   ]
+  },
+  {
+   "rule": "R2",
+   "n": 382,
+   "mean_hits": 5.43455497382199,
+   "p_mean_lower": 0.14812816376307275,
+   "n_hits_le3": 17,
+   "expected_le3": 16.44680706290613,
+   "p_le3": 0.47924247924105967,
+   "n_zero": 0,
+   "won_eur": 138,
+   "cost_eur": 573.0,
+   "definition": "Early balls of last 3 draws: scan positions 1..11, within each lags 1,2,3 (most recent first), add order[p] if new, stop at 11.",
+   "ticket_25_11": [
+    1,
+    3,
+    4,
+    7,
+    9,
+    13,
+    14,
+    15,
+    17,
+    21,
+    22
+   ]
+  },
+  {
+   "rule": "R3",
+   "n": 382,
+   "mean_hits": 5.43717277486911,
+   "p_mean_lower": 0.1582051371686203,
+   "n_hits_le3": 21,
+   "expected_le3": 16.44680706290613,
+   "p_le3": 0.15331731643081542,
+   "n_zero": 0,
+   "won_eur": 170,
+   "cost_eur": 573.0,
+   "definition": "Order-transition Markov model from all past draws: first ball ~ F+1, next ~ C[prev][b]+1 among remaining; 10000 sims, seed 20261125+len(past); 11 lowest inclusion probabilities.",
+   "ticket_25_11": [
+    2,
+    3,
+    5,
+    7,
+    9,
+    12,
+    13,
+    17,
+    18,
+    20,
+    21
+   ]
+  }
+ ],
+ "ticket_25_11": [
+  2,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  14,
+  17,
+  20,
+  21
+ ]
+}

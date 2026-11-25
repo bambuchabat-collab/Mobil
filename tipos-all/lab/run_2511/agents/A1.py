@@ -43,12 +43,11 @@ def r3_transition(past, n_sim=10000):
             C[a, b] += 1
     rng = np.random.default_rng(20261125 + len(past))
     used = np.zeros((n_sim, 23), bool); used[:, 0] = True
-    inc = np.zeros(23)
     w = np.broadcast_to(F, (n_sim, 23)).copy()
     for step in range(11):
         w[used] = 0
         cw = np.cumsum(w, axis=1)
-        u = rng.random(n_sim) * cw[:, -1]
+        u = (1.0 - rng.random(n_sim)) * cw[:, -1]        # in (0, total]
         pick = (cw < u[:, None]).sum(axis=1)
         used[np.arange(n_sim), pick] = True
         w = C[pick].copy()
