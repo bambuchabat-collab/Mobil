@@ -2,8 +2,9 @@
 import json, glob, os
 HERE = os.path.dirname(os.path.abspath(__file__))
 rows = []
-for f in sorted(glob.glob(os.path.join(HERE, 'agents', 'A*.json'))):
+for f in sorted(glob.glob(os.path.join(HERE, 'agents', 'A[0-9]*.json'))):
     j = json.load(open(f))
+    if not isinstance(j, dict) or 'rules' not in j: continue
     for r in j.get('rules', []):
         rows.append({'agent': j.get('id', os.path.basename(f)), 'family': j.get('family', ''), 'rule': r['rule'],
                      'mean_hits': r['mean_hits'], 'p': r['p_mean_lower'], 'p_le3': r['p_le3'],

@@ -1,0 +1,97 @@
+{
+ "id": "A2",
+ "family": "CO-OCCURRENCE / PAIRS",
+ "rules": [
+  {
+   "rule": "R1",
+   "n": 382,
+   "mean_hits": 5.4136125654450264,
+   "p_mean_lower": 0.08293978209635532,
+   "n_hits_le3": 19,
+   "expected_le3": 16.44680706290613,
+   "p_le3": 0.29268072539937506,
+   "n_zero": 0,
+   "won_eur": 150,
+   "cost_eur": 573.0,
+   "definition": "lag-1 pair residual R[i,j]=A[i,j]-a_i b_j/M over all past transitions; s_j=sum_{i in last draw} R[i,j]; ticket = 11 lowest s_j (primary)",
+   "ticket_25_11": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    12,
+    13,
+    17,
+    19,
+    21
+   ]
+  },
+  {
+   "rule": "R2",
+   "n": 382,
+   "mean_hits": 5.520942408376963,
+   "p_mean_lower": 0.6414632039821306,
+   "n_hits_le3": 11,
+   "expected_le3": 16.44680706290613,
+   "p_le3": 0.9406117305934716,
+   "n_zero": 0,
+   "won_eur": 141,
+   "cost_eur": 573.0,
+   "definition": "predicted draw P = 11 highest R1 scores; contemporaneous phi over all past draws; u_k = mean_{p in P\\k} phi[k,p]; ticket = 11 lowest u_k",
+   "ticket_25_11": [
+    1,
+    5,
+    6,
+    8,
+    11,
+    13,
+    15,
+    16,
+    18,
+    19,
+    21
+   ]
+  },
+  {
+   "rule": "R3",
+   "n": 382,
+   "mean_hits": 5.43717277486911,
+   "p_mean_lower": 0.1582051371686203,
+   "n_hits_le3": 18,
+   "expected_le3": 16.44680706290613,
+   "p_le3": 0.38168511581628467,
+   "n_zero": 0,
+   "won_eur": 119,
+   "cost_eur": 573.0,
+   "definition": "max within-group phi 11/11 partition (exhaustive, all past draws); side predicted by sign of lag-1 autocorr of overlap with side A applied to last draw; ticket = other side",
+   "ticket_25_11": [
+    1,
+    3,
+    8,
+    9,
+    10,
+    12,
+    13,
+    16,
+    17,
+    18,
+    21
+   ]
+  }
+ ],
+ "ticket_25_11": [
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  12,
+  13,
+  17,
+  19,
+  21
+ ]
+}

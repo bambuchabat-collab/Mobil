@@ -1,0 +1,99 @@
+{
+ "id": "A4",
+ "family": "MACHINE LEARNING",
+ "rules": [
+  {
+   "rule": "R1",
+   "n": 382,
+   "mean_hits": 5.471204188481676,
+   "p_mean_lower": 0.3272075743964824,
+   "n_hits_le3": 16,
+   "expected_le3": 16.44680706290613,
+   "p_le3": 0.5799581094168602,
+   "n_zero": 0,
+   "won_eur": 207,
+   "cost_eur": 573.0,
+   "definition": "PRIMARY. Pooled L2 logistic regression (lambda=10, Newton) over (draw,number) rows; features L1..L10 last-10-draw indicators, freq last 20, freq all, gap(min 10)/10, position in last draw order, + 22 number dummies; standardized; refit every 10 draws on targets 10..R-1; ticket = 11 lowest prob."
+  },
+  {
+   "rule": "R2",
+   "n": 382,
+   "mean_hits": 5.494764397905759,
+   "p_mean_lower": 0.47450580238147677,
+   "n_hits_le3": 15,
+   "expected_le3": 16.44680706290613,
+   "p_le3": 0.6775513584785062,
+   "n_zero": 0,
+   "won_eur": 127,
+   "cost_eur": 573.0,
+   "definition": "Per-number L2 logistic regression (22 models, lambda=10, Newton); same 14 lag features + 7 weekday dummies of target draw; refit every 10 draws; ticket = 11 lowest prob."
+  },
+  {
+   "rule": "R3",
+   "n": 382,
+   "mean_hits": 5.5732984293193715,
+   "p_mean_lower": 0.8878225714492494,
+   "n_hits_le3": 17,
+   "expected_le3": 16.44680706290613,
+   "p_le3": 0.47924247924105967,
+   "n_zero": 0,
+   "won_eur": 341,
+   "cost_eur": 573.0,
+   "definition": "Gradient-boosted stumps (pooled, 100 rounds, lr 0.1, leaf L2=1, min 20 rows/side, <=16 thresholds) on 14 lag features + 22 number dummies + 7 weekday dummies; refit every 10 draws; ticket = 11 lowest prob."
+  }
+ ],
+ "ticket_25_11": [
+  1,
+  2,
+  3,
+  7,
+  8,
+  12,
+  13,
+  17,
+  18,
+  19,
+  21
+ ],
+ "tickets_all_rules_25_11": {
+  "R1": [
+   1,
+   2,
+   3,
+   7,
+   8,
+   12,
+   13,
+   17,
+   18,
+   19,
+   21
+  ],
+  "R2": [
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   10,
+   12,
+   14,
+   19,
+   22
+  ],
+  "R3": [
+   1,
+   2,
+   3,
+   6,
+   7,
+   8,
+   10,
+   11,
+   13,
+   19,
+   21
+  ]
+ }
+}
