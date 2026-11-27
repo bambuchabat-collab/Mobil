@@ -1,0 +1,19 @@
+{
+ "made_utc": "2026-11-27T17:05:01Z",
+ "draw": "2026-11-27 20:00 CET",
+ "main": [
+  18,
+  23,
+  36,
+  38,
+  47
+ ],
+ "euro": [
+  5,
+  7
+ ],
+ "p_any": 0.03141625290264117,
+ "p_any_one_in": 31.83065794316705,
+ "p_jackpot_one_in": 139838160.0,
+ "note": "experiment only: acceptance closed at 17:45 CET"
+}
