@@ -1,0 +1,271 @@
+{
+ "date": "2026-11-27",
+ "drawn": [
+  20,
+  21,
+  23,
+  25,
+  26
+ ],
+ "euro": [
+  3,
+  9
+ ],
+ "ticket": [
+  18,
+  23,
+  36,
+  38,
+  47
+ ],
+ "ticket_euro": [
+  5,
+  7
+ ],
+ "tier": "1+0",
+ "prize": "0",
+ "raw": {
+  "Date": "27. 11. 2026",
+  "Week": "48",
+  "SKDay": "Piatok",
+  "Zrebovanie": [
+   "21",
+   "20",
+   "23",
+   "26",
+   "25"
+  ],
+  "ZrebovanieAdd": [
+   "3",
+   "9"
+  ],
+  "ZrebovanieJoker": [
+   "0",
+   "5",
+   "8",
+   "3",
+   "8",
+   "1"
+  ],
+  "Jackpot": "10 000 000,00 €",
+  "JackpotJoker": "50 000,00 €",
+  "TopWin": "10 000 000,00 €",
+  "SumOfDeposits": "666 786,00 €",
+  "SumOfWins": "10 333 393,00 €",
+  "SumOfDepositsJoker": "91 096,00 €",
+  "SumOfWinsJoker": "95 548,00 €",
+  "Premium": null,
+  "PremiumText": null,
+  "TabulkaVyhier": {
+   "Loteria": [
+    {
+     "Poradie": "1",
+     "PocetUhadnutych": "5 + 2",
+     "VyskaVyhry": "10 000 000,00 €",
+     "PocetVyhier": "0",
+     "Countries": [
+      {
+       "Country": "Španielsko",
+       "Count": "1"
+      }
+     ]
+    },
+    {
+     "Poradie": "2",
+     "PocetUhadnutych": "5 + 1",
+     "VyskaVyhry": "280 258,50 €",
+     "PocetVyhier": "0",
+     "Countries": [
+      {
+       "Country": "Nemecko",
+       "Count": "4"
+      },
+      {
+       "Country": "Fínsko",
+       "Count": "1"
+      },
+      {
+       "Country": "Island",
+       "Count": "1"
+      }
+     ]
+    },
+    {
+     "Poradie": "3",
+     "PocetUhadnutych": "5 + 0",
+     "VyskaVyhry": "86 210,60 €",
+     "PocetVyhier": "0",
+     "Countries": [
+      {
+       "Country": "Nemecko",
+       "Count": "5"
+      },
+      {
+       "Country": "Poľsko",
+       "Count": "3"
+      },
+      {
+       "Country": "Fínsko",
+       "Count": "1"
+      },
+      {
+       "Country": "Lotyšsko",
+       "Count": "1"
+      },
+      {
+       "Country": "Švédsko",
+       "Count": "1"
+      }
+     ]
+    },
+    {
+     "Poradie": "4",
+     "PocetUhadnutych": "4 + 2",
+     "VyskaVyhry": "3 724,30 €",
+     "PocetVyhier": "1",
+     "Countries": [
+      {
+       "Country": "Slovensko",
+       "Count": "1"
+      }
+     ]
+    },
+    {
+     "Poradie": "5",
+     "PocetUhadnutych": "4 + 1",
+     "VyskaVyhry": "283,70 €",
+     "PocetVyhier": "2",
+     "Countries": [
+      {
+       "Country": "Slovensko",
+       "Count": "2"
+      }
+     ]
+    },
+    {
+     "Poradie": "6",
+     "PocetUhadnutych": "3 + 2",
+     "VyskaVyhry": "135,50 €",
+     "PocetVyhier": "25",
+     "Countries": [
+      {
+       "Country": "Slovensko",
+       "Count": "25"
+      }
+     ]
+    },
+    {
+     "Poradie": "7",
+     "PocetUhadnutych": "4 + 0",
+     "VyskaVyhry": "116,10 €",
+     "PocetVyhier": "21",
+     "Countries": [
+      {
+       "Country": "Slovensko",
+       "Count": "21"
+      }
+     ]
+    },
+    {
+     "Poradie": "8",
+     "PocetUhadnutych": "2 + 2",
+     "VyskaVyhry": "20,00 €",
+     "PocetVyhier": "428",
+     "Countries": [
+      {
+       "Country": "Slovensko",
+       "Count": "428"
+      }
+     ]
+    },
+    {
+     "Poradie": "9",
+     "PocetUhadnutych": "3 + 1",
+     "VyskaVyhry": "20,00 €",
+     "PocetVyhier": "437",
+     "Countries": [
+      {
+       "Country": "Slovensko",
+       "Count": "437"
+      }
+     ]
+    },
+    {
+     "Poradie": "10",
+     "PocetUhadnutych": "3 + 0",
+     "VyskaVyhry": "18,20 €",
+     "PocetVyhier": "952",
+     "Countries": [
+      {
+       "Country": "Slovensko",
+       "Count": "952"
+      }
+     ]
+    },
+    {
+     "Poradie": "11",
+     "PocetUhadnutych": "1 + 2",
+     "VyskaVyhry": "9,10 €",
+     "PocetVyhier": "2452",
+     "Countries": [
+      {
+       "Country": "Slovensko",
+       "Count": "2452"
+      }
+     ]
+    },
+    {
+     "Poradie": "12",
+     "PocetUhadnutych": "2 + 1",
+     "VyskaVyhry": "9,10 €",
+     "PocetVyhier": "7383",
+     "Countries": [
+      {
+       "Country": "Slovensko",
+       "Count": "7383"
+      }
+     ]
+    }
+   ],
+   "Joker": [
+    {
+     "Poradie": "1",
+     "VyherneCisla": "058381",
+     "VyskaVyhry": "0,00 €",
+     "PocetVyhier": "-1"
+    },
+    {
+     "Poradie": "2",
+     "VyherneCisla": "58381",
+     "VyskaVyhry": "5 000,00 €",
+     "PocetVyhier": "1"
+    },
+    {
+     "Poradie": "3",
+     "VyherneCisla": "8381",
+     "VyskaVyhry": "500,00 €",
+     "PocetVyhier": "8"
+    },
+    {
+     "Poradie": "4",
+     "VyherneCisla": "381",
+     "VyskaVyhry": "50,00 €",
+     "PocetVyhier": "76"
+    },
+    {
+     "Poradie": "5",
+     "VyherneCisla": "81",
+     "VyskaVyhry": "5,00 €",
+     "PocetVyhier": "811"
+    },
+    {
+     "Poradie": "6",
+     "VyherneCisla": "1",
+     "VyskaVyhry": "3,00 €",
+     "PocetVyhier": "8169"
+    }
+   ]
+  },
+  "EJV2": true
+ }
+}
