@@ -1,0 +1,137 @@
+{
+ "id": "S4",
+ "science": "signal processing / time-series econometrics",
+ "game": "EM (F1, F2) + VAN (F3)",
+ "formulas": [
+  {
+   "rule": "S4_F1",
+   "game": "EM",
+   "n": 1212,
+   "mean_hits": 1.4752475247524752,
+   "expected": 1.4848484848484849,
+   "p_upper": 0.6390996545859502,
+   "p_lower": 0.37200191289226353,
+   "hist": [
+    180,
+    457,
+    413,
+    144,
+    17,
+    1,
+    0,
+    0
+   ],
+   "formula": "F1",
+   "definition": "Generalized (floating-mean) Lomb-Scargle per number on calendar days; freq grid k/8000 (k=1..4000) + 1/7,2/7,3/7 cycles/day, admissible f>=1/span; ridge lam=1e-3; dominant f = argmax explained-variance power on past draws only; score = fitted sinusoid at the target date; top 7.",
+   "formula_text": "score_i = Y_i + b_i(f*)[cos(2pi f* tau)-C] + c_i(f*)[sin(2pi f* tau)-S],  f*_i = argmax_f P_i(f) on past"
+  },
+  {
+   "rule": "S4_F2",
+   "game": "EM",
+   "n": 1212,
+   "mean_hits": 1.5008250825082508,
+   "expected": 1.4848484848484849,
+   "p_upper": 0.2887757628185081,
+   "p_lower": 0.7211862767230879,
+   "hist": [
+    182,
+    458,
+    390,
+    154,
+    22,
+    5,
+    1,
+    0
+   ],
+   "formula": "F2",
+   "definition": "Kalman local-level per number: x=mu+eps (R=p0(1-p0)), mu random walk (Q=qR), mu0=p0, P0=(0.1p0)^2; q in {0,1e-6,3e-6,1e-5,3e-5,1e-4,3e-4,1e-3,3e-3,1e-2} by pooled prediction-error log-likelihood on past draws; score = one-step predicted propensity; top 7.",
+   "formula_text": "score_i = mu_i(t|t-1; q_hat),  q_hat = argmax_q sum_j sum_i log N(v_ij; 0, P_j+R)"
+  },
+  {
+   "rule": "S4_F3",
+   "game": "VAN",
+   "n": 385,
+   "mean_hits": 5.4935064935064934,
+   "expected": 5.5,
+   "p_upper": 0.5506868116128175,
+   "p_lower": 0.46615805588278,
+   "hist": [
+    0,
+    0,
+    1,
+    19,
+    62,
+    106,
+    120,
+    60,
+    15,
+    2,
+    0,
+    0
+   ],
+   "formula": "F3",
+   "definition": "Pooled multi-segment Burg (max-entropy) AR on the 22 centered indicator series, orders 0..14, order by AIC n ln sigma2_m + 2m (n=22t); score = own past mean + AR one-step forecast; top 11.",
+   "formula_text": "score_i = xbar_i - sum_{k<=m_hat} a_k (x_i(t-k) - xbar_i),  a = Burg PEF, m_hat = argmin AIC"
+  }
+ ],
+ "prediction_28_11": {
+  "game": "EM",
+  "numbers": [
+   2,
+   6,
+   9,
+   12,
+   15,
+   24,
+   33
+  ],
+  "formula": "F1"
+ },
+ "extra_predictions_28_11": {
+  "F2": {
+   "game": "EM",
+   "numbers": [
+    3,
+    5,
+    6,
+    13,
+    15,
+    21,
+    31
+   ]
+  },
+  "F3": {
+   "game": "VAN",
+   "numbers": [
+    1,
+    4,
+    6,
+    9,
+    10,
+    11,
+    14,
+    15,
+    16,
+    19,
+    22
+   ]
+  }
+ },
+ "diagnostics": {
+  "F1_share_weekday_freqs": 5.000500050005001e-05,
+  "F1_median_period_days": 3.9408866995073897,
+  "F1_median_power": 0.026050748926797478,
+  "F2_q_hat_counts": {
+   "0.0003": 2,
+   "0.0": 1207,
+   "3e-06": 1,
+   "1e-06": 2
+  },
+  "F3_order_counts": {
+   "0": 327,
+   "2": 25,
+   "3": 25,
+   "4": 8
+  }
+ }
+}
