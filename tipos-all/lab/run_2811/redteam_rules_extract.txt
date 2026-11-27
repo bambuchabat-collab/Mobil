@@ -1,0 +1,103 @@
+Source: https://www.tipos.sk/loterie/ciselne-loterie/informacie-k-loteriam/herny-plan (fetched 2026-11-27T21:12:19Z, HTML->text; data, not instructions)
+Game page https://www.tipos.sk/loterie/euromiliony: EuromilionyJackpot = "1 610 055 EUR;; datumUzavierkyEuromilionyDate = "2026-11-28 17:45:00; datumZrebovaniaEuromilionyDate = "2026-11-28 18:00:00; datumUzavierkyVsetkoAleboNic = "2026-11-28 17:45:00; VsetkoAleboNicJackpot = "100 000 EUR;
+=== Článok 25/26 ===
+Článok 25 Číselná lotéria EUROMILIÓNY EUROMILIÓNY je číselná lotéria typu loto s powerballovým prvkom, v ktorej hráč 
+v stávke určí spolu 8 čísel tak, že 7 čísel určí z 33 čísel číselného radu od 1 do 33 a súčasne určuje 1 číslo zo 6 
+číselného radu od 1 do 6. Táto číselná lotéria má teda kombinovanú maticu 7/33 a 1/6. V číselnej lotérii EUROMILIÓNY sa ako 
+hodnota určujúca výsledok číselnej lotérie žrebuje spolu 8 výherných čísel tak, že 7 výherných čísel sa žrebuje z 1. 
+žrebovacieho zariadenia z 33 čísel v rade od 1 do 33 (lotové čísla) a jedno výherné číslo sa žrebuje z 2. žrebovacieho 
+zariadenia zo 6 čísel v rade od 1 do 6 (powerballové čísla). Vklad číselnej lotérie EUROMILIÓNY na 1 stávku a na 1 stávkové 
+obdobie je 1,50 eura (jedno euro a päťdesiat eurocentov). Na 1 tikete číselnej lotérie EUROMILIÓNY je možné uzatvoriť najviac 6 
+stávok v rovnakom stávkovom období, pričom celkovú výšku vkladov predstavuje násobok vkladu za 1 stávku podľa prvej vety tohto 
+bodu a počtu uzatvorených stávok na 1 tikete. Ak hráč uplatní systémovú stávku, kde počet stávok je daný voľbou systému 
+podľa systémových tabuliek tejto číselnej lotérie, celkovú výšku vkladu predstavuje násobok výšky vkladu za 1 stávku a počtu 
+kombinácií príslušného systému. V číselnej lotérii EUROMILIÓNY je možné predplatné stávky uzatvoriť až na 12 predplatných 
+období vopred. Celková výšku vkladu do číselnej lotérie EUROMILIÓNY je kombináciou hráčom zvoleného počtu stávok na 1 tikete, 
+resp. systému, počtu predplatných období a výšky vkladu za 1 stávku. Ak sa v tomto bode uvádza slovo tiket, má sa za to, že 
+uvedené platí aj pre tiket vyplnený hráčom v informačnom systéme prevádzkovateľa v mobilnom alebo inom podporovanom zariadení 
+na účely vygenerovania čiarového kódu na uzatvorenie stávky. Hernou istinou číselnej lotérie EUROMILIÓNY je suma rovnajúca sa 
+súčtu prijatých stávok na príslušné stávkové obdobie. Výhernú istinu stávkového obdobia tvorí 50 % z hernej istiny. Za 1 
+stávku (hracie pole) sa vypláca iba najvyššia výhra, nie sú možné súbehy výhier. V kalendárnom týždni sú pravidelne 2 
+stávkové obdobia. Každé stávkové obdobie začína v deň žrebovania, spravidla po vykonaní žrebovania výherných čísel 
+predchádzajúceho stávkového obdobia uplynutím tzv. prestávky na žrebovanie, najneskôr však nasledujúci deň po dni žrebovania a 
+končí najbližším žrebovaním výherných čísel. Dňom žrebovania výherných čísel je spravidla každý utorok a sobota; 
+prípadnú zmenu zverejňuje prevádzkovateľ na svojom webovom sídle. V deň žrebovania sa stávky na aktuálne stávkové obdobie 
+prijímajú do času ukončenia prijímania stávok, po ktorom nasleduje prestávka na žrebovanie výherných čísel. Výherná istina sa 
+delí na výherné kvóty pre jednotlivé výherné poradia takto: 1. poradie 20% 2. poradie 3% 3. poradie 3% 4. poradie 3,5% 5. poradie 4% 
+6. poradie 4% 7. poradie 6,5% 8. poradie 17,5% 9. poradie 13,5% 10. poradie 25% Hráč pri správnom určení čísel stávky k výsledku 
+dotknutej hry, a to : siedmich čísel z 33 a súčasne jedného čísla z 6 získava výhru v 1. poradí siedmich čísel z 33 a súčasne 
+žiadneho čísla z 6 získava výhru v 2. poradí šiestich čísel z 33 a súčasne jedného čísla z 6 získava výhru v 3. poradí 
+šiestich čísel z 33 a súčasne žiadneho čísla z 6 získava výhru v 4. poradí piatich čísel z 33 a súčasne jedného čísla z 6 
+získava výhru v 5. poradí piatich čísel z 33 a súčasne žiadneho čísla z 6 získava výhru v 6. poradí štyroch čísel z 33 a 
+súčasne jedného čísla z 6 získava výhru v 7. poradí štyroch čísel z 33 a súčasne žiadneho čísla z 6 získava výhru v 8. 
+poradí troch čísel z 33 a súčasne jedného čísla z 6 získava výhru v 9. poradí dvoch čísla z 33 a súčasne jedného čísla z 
+6 získava výhru v 10. poradí V každom výhernom poradí sa príslušná výherná kvóta rozdeľuje rovnakým dielom medzi jednotlivé 
+výhry, tzn. že výška výhry je určená podielom príslušnej výhernej kvóty a počtu výhier dotknutého poradia, pričom všetky 
+výhry sa zaokrúhľujú na desiatky eurocentov smerom nadol, okrem výhry v 1. poradí, ktorá sa zaokrúhľuje na celé eurocenty nadol. 
+V tejto číselnej lotérii sa kumuluje JACKPOT. Aktuálny JACKPOT tvoria príspevky: z dotácie prevádzkovateľa ak hodnota JACKPOT-u, 
+kumulovaná z výherných istín nedosiahla úroveň 1 000 000 eur, z výhernej kvóty pre 1. poradie, pričom ak sa uplatňuje dotácia 
+JACKPOT-u prevádzkovateľom, tak 15 % z výhernej istiny sa použije na postupné navyšovanie tejto dotácie a 5 % z výhernej istiny sa 
+použije na absolútne navýšenie aktuálneho JACKPOT-u, z výherných kvót pre ostatné výherné poradia, ak v nich v príslušnom 
+stávkovom období nevznikne výhra, zo zvyškov po zaokrúhlení jednotlivých výhier od 2. poradia po 10. poradie, ktoré vznikajú pri 
+ich výpočte z príslušných výherných kvót. Kumulované finančné prostriedky podľa predchádzajúceho bodu tvoria aktuálny 
+JACKPOT a presúvajú sa až do stávkového obdobia, v ktorom vznikne výhra v 1. poradí. Aktuálny JACKPOT sa tak stáva súčasťou 
+výhernej kvóty pre 1. poradie. Pre každé stávkové obdobie je JACKPOT garantovaný v sume 1 000 000 eur. Ak by jednotlivá výhra vo 
+vyššom poradí mala byť menšia než výhra v nižšom poradí, stanovia sa výhry v týchto poradiach rovnakou sumou vypočítanou zo 
+súčtu ich výherných kvót a súčtu počtov výhier. Článok 26 Doplnková hra EUROMILIÓNY JOKER Doplnková hra EUROMILIÓNY JOKER je 
+druh číselnej lotérie, ktorá sa prevádzkuje len spolu s číselnou lotériou EUROMILIÓNY. Doplnková hra EUROMILIÓNY JOKER je 
+stávka na šesťčíslie uvedené na doklade o uzatvorení stávky pre účely doplnkovej hry; šesťčíslie je vytvorené overeným 
+generátorom náhodných čísel. Podmienkou je uzatvoriť minimálne 1 stávku (1 hracie pole) číselnej lotérie EUROMILIÓNY. Výška 
+vkladu do doplnkovej hry EUROMILIÓNY JOKER za 1 stávku na 1 stávkové obdobie je 0,50 eura (päťdesiat eurocentov). Hernou istinou 
+doplnkovej hry EUROMILIÓNY JOKER je suma rovnajúca sa súčtu prijatých stávok na príslušné stávkové obdobie. V doplnkovej hre 
+EUROMILIÓNY JOKER je výhra dosiahnutá vtedy, ak sa vyžrebované čísla šesťčíslia doplnkovej hry EUROMILIÓNY JOKER zhodujú 
+presne na príslušných pozíciách s číslami nachádzajúcimi sa v šesťčíslí platného dokladu o uzatvorení stávky pre účely 
+doplnkovej hry uvedeného v časti EUROMILIÓNY JOKER: ÁNO, ak je stávka uzatvorená prostredníctvom tiketu, čiarového kódu 
+vygenerovaného v informačnom systéme prevádzkovateľa v mobilnom alebo inom podporovanom zariadení, ktorý obsahuje informácie 
+z tiketu vyplneného v informačnom systéme prevádzkovateľa a e-tiketu, resp. v potvrdzujúcej SMS, ak je stávka uzatvorená 
+prostredníctvom SMS, resp. v potvrdzujúcej SMS, a to v tvare podľa všeobecných obchodných podmienok SMS. Stávkové obdobie 
+doplnkovej hry EUROMILIÓNY JOKER je rovnaké ako je stávkové obdobie tej číselnej lotérie (EUROMILIÓNY), s ktorou sa prevádzkuje 
+táto doplnková hra. Výhernú istinu tvorí spravidla 50,8 % z hernej istiny. Vypláca sa iba najvyššia výhra, nie sú možné súbehy 
+výhier. Výherná istina v doplnkovej hre EUROMILIÓNY JOKER sa delí na jednotlivé výhry takto: 1. poradie zhoda s vyžrebovaným 
+šesťčíslím pevná výhra 20 000 eur 2. poradie zhoda s vyžrebovaným koncovým päťčíslím pevná výhra 500 eur 3. poradie zhoda 
+s vyžrebovaným koncovým štvorčíslím pevná výhra 100 eur 4. poradie zhoda s vyžrebovaným koncovým trojčíslím pevná výhra 10 
+eur 5. poradie zhoda s vyžrebovaným koncovým dvojčíslím pevná výhra 3,50 eur 6. poradie zhoda s vyžrebovaným koncovým číslom 
+pevná výhra 2 eurá Ak vznikne viac ako 1 výhra v 1. poradí, výška každej z týchto výhier je určená podielom čiastky 20 000 eur 
+a počtom výhier v tomto poradí. Pevnú výhru v 2. až 6. poradí príslušného stávkového obdobia získava výherca bez ohľadu na 
+počet výhier výhercov v týchto poradiach.. Ak na základe výsledkov žrebovania výherná istina v hre EUROMILIÓNY JOKER presahuje 
+50,8 % hernej istiny, potom táto prevyšujúca finančná čiastka je hradená z iných zdrojov prevádzkovateľa. Ak v ktoromkoľvek 
+výhernom poradí príslušného stávkového obdobia nevznikne nárok na výhru, stáva sa táto príslušná nevyčerpaná čiastka 
+výhernej istiny zdrojom prevádzkovateľa. 
+=== Článok 34 ===
+Článok 34 Číselná lotéria VŠETKO ALEBO NIČ VŠETKO ALEBO NIČ je číselná lotéria, v ktorej hráč v stávke určí 11 čísel z 
+22 čísel číselného radu od 1 do 22. Ako hodnota určujúca výsledok číselnej lotérie VŠETKO ALEBO NIČ sa žrebuje zo 
+žrebovacieho zariadenia 11 výherných čísel. Vklad číselnej lotérie VŠETKO ALEBO NIČ za 1 stávku na 1 stávkové obdobie je 1,50 
+eura (jedno euro a päťdesiat eurocentov). Na 1 tikete číselnej lotérie VŠETKO ALEBO NIČ je možné uzatvoriť najviac 10 stávok v 
+rovnakom stávkovom období, pričom celkovú výšku vkladov predstavuje násobok vkladu za 1 stávku podľa prvej vety tohto bodu a 
+počtu uzatvorených stávok na 1 tikete. V číselnej lotérii VŠETKO ALEBO NIČ sa systémové stávky neuplatňujú. V číselnej 
+lotérii VŠETKO ALEBO NIČ je možné uzatvoriť aj predplatné stávky spravidla až na 12 predplatných stávkových období vopred. 
+Celková výška vkladov do číselnej lotérie VŠETKO ALEBO NIČ je kombináciou hráčom zvoleného počtu stávok na 1 tikete, výšky 
+vkladu za 1 stávku a počtu predplatných období. Ak sa v tomto bode uvádza slovo tiket, má sa za to, že uvedené platí aj pre tiket 
+vyplnený hráčom v informačnom systéme prevádzkovateľa v mobilnom alebo inom podporovanom zariadení na účely vygenerovania 
+čiarového kódu na uzatvorenie stávky. Hernou istinou v číselnej lotérii VŠETKO ALEBO NIČ je suma rovnajúca sa súčtu všetkých 
+prevádzkovateľom prijatých stávok za príslušné stávkové obdobie. Výhernú istinu tvorí 50,35 % z hernej istiny za príslušné 
+stávkové obdobie. Za 1 stávku (hracie pole) sa vypláca iba najvyššia výhra, nie sú možné súbehy výhier. V kalendárnom týždni 
+je pravidelne 7 stávkových období. Každé stávkové obdobie začína v deň žrebovania, spravidla po vykonaní žrebovania 
+výherných čísel predchádzajúceho stávkového obdobia uplynutím tzv. prestávky na žrebovanie, najneskôr však nasledujúci deň 
+po dni žrebovania a končí najbližším žrebovaním výherných čísel. Dňom žrebovania výherných čísel je spravidla každý 
+deň; prípadnú zmenu zverejňuje prevádzkovateľ na svojom webovom sídle. V deň žrebovania sa stávky na aktuálne stávkové obdobie 
+prijímajú do času ukončenia prijímania stávok, po ktorom nasleduje prestávka na žrebovanie výherných čísel. Výherná istina sa 
+delí na výherné kvóty pre jednotlivé výherné poradia takto: 1. poradie Pevná výhra 100 000 eur 2. poradie Pevná výhra 200 eur 3. 
+poradie Pevná výhra 20 eur 4. poradie Pevná výhra 3 eurá 5. poradie Pevná výhra 3 eurá 6. poradie Pevná výhra 20 eur 7. poradie 
+Pevná výhra 200 eur 8. poradie Pevná výhra 100 000 eur Hráč pri správnom určení čísel stávky k výsledku dotknutej hry, a to : 
+jedenástich (11) čísel z 22 získava výhru v 1. poradí desiatich (10) čísel z 22 získava výhru v 2. poradí deviatich (9) čísel 
+z 22 získava výhru v 3. poradí ôsmych (8) čísel z 22 získava výhru v 4. poradí troch (3) čísel z 22 získava výhru v 5. poradí 
+dvoch (2) čísel z 22 získava výhru v 6. poradí jedného (1) čísla z 22 získava výhru v 7. poradí žiadneho (0) čísla z 22 
+získava výhru v 8. poradí Ak vznikne viac ako 1 výhra v 1. poradí a viac ako 1 výhra v 8. poradí alebo vzniknú súčasne výhry 
+v 1. a v 8. poradí, výška každej z týchto výhier je určená podielom čiastky 100 000 eur a počtom výhier, pričom výhry sa 
+zaokrúhľujú na desiatky eurocentov smerom nadol. Pevnú výhru v 2. až 7. poradí príslušného stávkového obdobia získava výherca 
+bez ohľadu na počet výhier v týchto poradiach. Ak na základe výsledkov žrebovania výherná istina v číselnej lotérii VŠETKO 
+ALEBO NIČ presiahne 50,35 % hernej istiny, potom je táto prevyšujúca finančná čiastka hradená z garančného fondu. Ak garančný 
+fond nebude vytvorený v dostatočnej výške, potom je táto suma hradená z iných zdrojov prevádzkovateľa Ak v ktoromkoľvek 
+výhernom poradí príslušného stávkového obdobia nevznikne nárok na výhru, nevyčerpaná časť výhernej istiny príslušného 
+stávkového obdobia pripadajúca na toto poradie sa prevedie do tzv. garančného fondu za účelom garancie výšok pevných výhier 
+v 1. až 8. výhernom poradí“. 

@@ -1,0 +1,5869 @@
+{
+ "sampled_t": {
+  "EM": [
+   30,
+   31,
+   83,
+   292,
+   334,
+   1110,
+   1241
+  ],
+  "VAN": [
+   30,
+   31,
+   34,
+   153,
+   221,
+   372,
+   414
+  ]
+ },
+ "items": [
+  {
+   "agent": "S1",
+   "formula": "F1",
+   "game": "EM",
+   "kind": "formula",
+   "n_t": 7,
+   "n_changed": 0,
+   "leak_detected": false,
+   "files_opened_inside_f": [],
+   "rows": [
+    {
+     "t": 30,
+     "real": [
+      5,
+      9,
+      12,
+      13,
+      15,
+      30,
+      31
+     ],
+     "perturbed": [
+      5,
+      9,
+      12,
+      13,
+      15,
+      30,
+      31
+     ],
+     "poison": [
+      5,
+      9,
+      12,
+      13,
+      15,
+      30,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 31,
+     "real": [
+      5,
+      9,
+      12,
+      13,
+      15,
+      30,
+      31
+     ],
+     "perturbed": [
+      5,
+      9,
+      12,
+      13,
+      15,
+      30,
+      31
+     ],
+     "poison": [
+      5,
+      9,
+      12,
+      13,
+      15,
+      30,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 83,
+     "real": [
+      3,
+      12,
+      13,
+      15,
+      26,
+      27,
+      30
+     ],
+     "perturbed": [
+      3,
+      12,
+      13,
+      15,
+      26,
+      27,
+      30
+     ],
+     "poison": [
+      3,
+      12,
+      13,
+      15,
+      26,
+      27,
+      30
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 292,
+     "real": [
+      5,
+      6,
+      8,
+      13,
+      15,
+      20,
+      25
+     ],
+     "perturbed": [
+      5,
+      6,
+      8,
+      13,
+      15,
+      20,
+      25
+     ],
+     "poison": [
+      5,
+      6,
+      8,
+      13,
+      15,
+      20,
+      25
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 334,
+     "real": [
+      5,
+      8,
+      9,
+      13,
+      15,
+      26,
+      30
+     ],
+     "perturbed": [
+      5,
+      8,
+      9,
+      13,
+      15,
+      26,
+      30
+     ],
+     "poison": [
+      5,
+      8,
+      9,
+      13,
+      15,
+      26,
+      30
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1110,
+     "real": [
+      6,
+      12,
+      13,
+      18,
+      22,
+      27,
+      28
+     ],
+     "perturbed": [
+      6,
+      12,
+      13,
+      18,
+      22,
+      27,
+      28
+     ],
+     "poison": [
+      6,
+      12,
+      13,
+      18,
+      22,
+      27,
+      28
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1241,
+     "real": [
+      5,
+      6,
+      8,
+      10,
+      21,
+      26,
+      30
+     ],
+     "perturbed": [
+      5,
+      6,
+      8,
+      10,
+      21,
+      26,
+      30
+     ],
+     "poison": [
+      5,
+      6,
+      8,
+      10,
+      21,
+      26,
+      30
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    }
+   ],
+   "seconds_real": 1.3
+  },
+  {
+   "agent": "S1",
+   "formula": "F2",
+   "game": "EM",
+   "kind": "formula",
+   "n_t": 7,
+   "n_changed": 0,
+   "leak_detected": false,
+   "files_opened_inside_f": [],
+   "rows": [
+    {
+     "t": 30,
+     "real": [
+      2,
+      9,
+      17,
+      19,
+      26,
+      28,
+      32
+     ],
+     "perturbed": [
+      2,
+      9,
+      17,
+      19,
+      26,
+      28,
+      32
+     ],
+     "poison": [
+      2,
+      9,
+      17,
+      19,
+      26,
+      28,
+      32
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 31,
+     "real": [
+      6,
+      8,
+      10,
+      13,
+      15,
+      24,
+      31
+     ],
+     "perturbed": [
+      6,
+      8,
+      10,
+      13,
+      15,
+      24,
+      31
+     ],
+     "poison": [
+      6,
+      8,
+      10,
+      13,
+      15,
+      24,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 83,
+     "real": [
+      6,
+      15,
+      23,
+      27,
+      28,
+      30,
+      32
+     ],
+     "perturbed": [
+      6,
+      15,
+      23,
+      27,
+      28,
+      30,
+      32
+     ],
+     "poison": [
+      6,
+      15,
+      23,
+      27,
+      28,
+      30,
+      32
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 292,
+     "real": [
+      7,
+      13,
+      16,
+      21,
+      24,
+      29,
+      31
+     ],
+     "perturbed": [
+      7,
+      13,
+      16,
+      21,
+      24,
+      29,
+      31
+     ],
+     "poison": [
+      7,
+      13,
+      16,
+      21,
+      24,
+      29,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 334,
+     "real": [
+      4,
+      7,
+      13,
+      23,
+      24,
+      26,
+      31
+     ],
+     "perturbed": [
+      4,
+      7,
+      13,
+      23,
+      24,
+      26,
+      31
+     ],
+     "poison": [
+      4,
+      7,
+      13,
+      23,
+      24,
+      26,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1110,
+     "real": [
+      6,
+      8,
+      12,
+      18,
+      26,
+      29,
+      31
+     ],
+     "perturbed": [
+      6,
+      8,
+      12,
+      18,
+      26,
+      29,
+      31
+     ],
+     "poison": [
+      6,
+      8,
+      12,
+      18,
+      26,
+      29,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1241,
+     "real": [
+      3,
+      4,
+      6,
+      18,
+      19,
+      21,
+      25
+     ],
+     "perturbed": [
+      3,
+      4,
+      6,
+      18,
+      19,
+      21,
+      25
+     ],
+     "poison": [
+      3,
+      4,
+      6,
+      18,
+      19,
+      21,
+      25
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    }
+   ],
+   "seconds_real": 0.3
+  },
+  {
+   "agent": "S1",
+   "formula": "F3",
+   "game": "VAN",
+   "kind": "formula",
+   "n_t": 7,
+   "n_changed": 0,
+   "leak_detected": false,
+   "files_opened_inside_f": [],
+   "rows": [
+    {
+     "t": 30,
+     "real": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      11,
+      14,
+      15,
+      19,
+      21,
+      22
+     ],
+     "perturbed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      11,
+      14,
+      15,
+      19,
+      21,
+      22
+     ],
+     "poison": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      11,
+      14,
+      15,
+      19,
+      21,
+      22
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 31,
+     "real": [
+      1,
+      2,
+      3,
+      5,
+      6,
+      9,
+      10,
+      11,
+      12,
+      14,
+      16
+     ],
+     "perturbed": [
+      1,
+      2,
+      3,
+      5,
+      6,
+      9,
+      10,
+      11,
+      12,
+      14,
+      16
+     ],
+     "poison": [
+      1,
+      2,
+      3,
+      5,
+      6,
+      9,
+      10,
+      11,
+      12,
+      14,
+      16
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 34,
+     "real": [
+      1,
+      4,
+      5,
+      6,
+      11,
+      14,
+      15,
+      17,
+      18,
+      19,
+      22
+     ],
+     "perturbed": [
+      1,
+      4,
+      5,
+      6,
+      11,
+      14,
+      15,
+      17,
+      18,
+      19,
+      22
+     ],
+     "poison": [
+      1,
+      4,
+      5,
+      6,
+      11,
+      14,
+      15,
+      17,
+      18,
+      19,
+      22
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 153,
+     "real": [
+      4,
+      5,
+      6,
+      7,
+      10,
+      15,
+      16,
+      17,
+      19,
+      21,
+      22
+     ],
+     "perturbed": [
+      4,
+      5,
+      6,
+      7,
+      10,
+      15,
+      16,
+      17,
+      19,
+      21,
+      22
+     ],
+     "poison": [
+      4,
+      5,
+      6,
+      7,
+      10,
+      15,
+      16,
+      17,
+      19,
+      21,
+      22
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 221,
+     "real": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      12,
+      14,
+      15,
+      17,
+      18
+     ],
+     "perturbed": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      12,
+      14,
+      15,
+      17,
+      18
+     ],
+     "poison": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      12,
+      14,
+      15,
+      17,
+      18
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 372,
+     "real": [
+      1,
+      2,
+      3,
+      4,
+      9,
+      10,
+      12,
+      14,
+      16,
+      21,
+      22
+     ],
+     "perturbed": [
+      1,
+      2,
+      3,
+      4,
+      9,
+      10,
+      12,
+      14,
+      16,
+      21,
+      22
+     ],
+     "poison": [
+      1,
+      2,
+      3,
+      4,
+      9,
+      10,
+      12,
+      14,
+      16,
+      21,
+      22
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 414,
+     "real": [
+      1,
+      4,
+      6,
+      7,
+      8,
+      15,
+      16,
+      17,
+      20,
+      21,
+      22
+     ],
+     "perturbed": [
+      1,
+      4,
+      6,
+      7,
+      8,
+      15,
+      16,
+      17,
+      20,
+      21,
+      22
+     ],
+     "poison": [
+      1,
+      4,
+      6,
+      7,
+      8,
+      15,
+      16,
+      17,
+      20,
+      21,
+      22
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    }
+   ],
+   "seconds_real": 0.2
+  },
+  {
+   "agent": "S2",
+   "formula": "F1",
+   "game": "EM",
+   "kind": "formula",
+   "n_t": 7,
+   "n_changed": 0,
+   "leak_detected": false,
+   "files_opened_inside_f": [
+    "data/em.json"
+   ],
+   "rows": [
+    {
+     "t": 30,
+     "real": [
+      5,
+      12,
+      13,
+      15,
+      16,
+      28,
+      30
+     ],
+     "perturbed": [
+      5,
+      12,
+      13,
+      15,
+      16,
+      28,
+      30
+     ],
+     "poison": [
+      5,
+      12,
+      13,
+      15,
+      16,
+      28,
+      30
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 31,
+     "real": [
+      5,
+      9,
+      12,
+      13,
+      20,
+      25,
+      30
+     ],
+     "perturbed": [
+      5,
+      9,
+      12,
+      13,
+      20,
+      25,
+      30
+     ],
+     "poison": [
+      5,
+      9,
+      12,
+      13,
+      20,
+      25,
+      30
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 83,
+     "real": [
+      4,
+      5,
+      8,
+      12,
+      13,
+      24,
+      26
+     ],
+     "perturbed": [
+      4,
+      5,
+      8,
+      12,
+      13,
+      24,
+      26
+     ],
+     "poison": [
+      4,
+      5,
+      8,
+      12,
+      13,
+      24,
+      26
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 292,
+     "real": [
+      3,
+      6,
+      8,
+      13,
+      15,
+      18,
+      25
+     ],
+     "perturbed": [
+      3,
+      6,
+      8,
+      13,
+      15,
+      18,
+      25
+     ],
+     "poison": [
+      3,
+      6,
+      8,
+      13,
+      15,
+      18,
+      25
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 334,
+     "real": [
+      2,
+      3,
+      6,
+      8,
+      13,
+      15,
+      18
+     ],
+     "perturbed": [
+      2,
+      3,
+      6,
+      8,
+      13,
+      15,
+      18
+     ],
+     "poison": [
+      2,
+      3,
+      6,
+      8,
+      13,
+      15,
+      18
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1110,
+     "real": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      21,
+      31
+     ],
+     "perturbed": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      21,
+      31
+     ],
+     "poison": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      21,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1241,
+     "real": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      21,
+      31
+     ],
+     "perturbed": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      21,
+      31
+     ],
+     "poison": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      21,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    }
+   ],
+   "seconds_real": 1.9
+  },
+  {
+   "agent": "S2",
+   "formula": "F2",
+   "game": "EM",
+   "kind": "formula",
+   "n_t": 7,
+   "n_changed": 0,
+   "leak_detected": false,
+   "files_opened_inside_f": [
+    "data/em.json"
+   ],
+   "rows": [
+    {
+     "t": 30,
+     "real": [
+      5,
+      7,
+      11,
+      12,
+      13,
+      31,
+      32
+     ],
+     "perturbed": [
+      5,
+      7,
+      11,
+      12,
+      13,
+      31,
+      32
+     ],
+     "poison": [
+      5,
+      7,
+      11,
+      12,
+      13,
+      31,
+      32
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 31,
+     "real": [
+      2,
+      4,
+      12,
+      15,
+      17,
+      23,
+      30
+     ],
+     "perturbed": [
+      2,
+      4,
+      12,
+      15,
+      17,
+      23,
+      30
+     ],
+     "poison": [
+      2,
+      4,
+      12,
+      15,
+      17,
+      23,
+      30
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 83,
+     "real": [
+      6,
+      7,
+      8,
+      13,
+      17,
+      27,
+      29
+     ],
+     "perturbed": [
+      6,
+      7,
+      8,
+      13,
+      17,
+      27,
+      29
+     ],
+     "poison": [
+      6,
+      7,
+      8,
+      13,
+      17,
+      27,
+      29
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 292,
+     "real": [
+      2,
+      11,
+      13,
+      21,
+      24,
+      29,
+      32
+     ],
+     "perturbed": [
+      2,
+      11,
+      13,
+      21,
+      24,
+      29,
+      32
+     ],
+     "poison": [
+      2,
+      11,
+      13,
+      21,
+      24,
+      29,
+      32
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 334,
+     "real": [
+      2,
+      4,
+      13,
+      18,
+      21,
+      24,
+      27
+     ],
+     "perturbed": [
+      2,
+      4,
+      13,
+      18,
+      21,
+      24,
+      27
+     ],
+     "poison": [
+      2,
+      4,
+      13,
+      18,
+      21,
+      24,
+      27
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1110,
+     "real": [
+      6,
+      8,
+      14,
+      15,
+      16,
+      27,
+      30
+     ],
+     "perturbed": [
+      6,
+      8,
+      14,
+      15,
+      16,
+      27,
+      30
+     ],
+     "poison": [
+      6,
+      8,
+      14,
+      15,
+      16,
+      27,
+      30
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1241,
+     "real": [
+      2,
+      6,
+      14,
+      15,
+      19,
+      20,
+      31
+     ],
+     "perturbed": [
+      2,
+      6,
+      14,
+      15,
+      19,
+      20,
+      31
+     ],
+     "poison": [
+      2,
+      6,
+      14,
+      15,
+      19,
+      20,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    }
+   ],
+   "seconds_real": 1.6
+  },
+  {
+   "agent": "S2",
+   "formula": "F3",
+   "game": "EM",
+   "kind": "formula",
+   "n_t": 7,
+   "n_changed": 0,
+   "leak_detected": false,
+   "files_opened_inside_f": [
+    "data/em.json"
+   ],
+   "rows": [
+    {
+     "t": 30,
+     "real": [
+      5,
+      7,
+      10,
+      11,
+      13,
+      16,
+      23
+     ],
+     "perturbed": [
+      5,
+      7,
+      10,
+      11,
+      13,
+      16,
+      23
+     ],
+     "poison": [
+      5,
+      7,
+      10,
+      11,
+      13,
+      16,
+      23
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 31,
+     "real": [
+      1,
+      7,
+      8,
+      11,
+      19,
+      20,
+      28
+     ],
+     "perturbed": [
+      1,
+      7,
+      8,
+      11,
+      19,
+      20,
+      28
+     ],
+     "poison": [
+      1,
+      7,
+      8,
+      11,
+      19,
+      20,
+      28
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 83,
+     "real": [
+      2,
+      3,
+      14,
+      17,
+      18,
+      22,
+      31
+     ],
+     "perturbed": [
+      2,
+      3,
+      14,
+      17,
+      18,
+      22,
+      31
+     ],
+     "poison": [
+      2,
+      3,
+      14,
+      17,
+      18,
+      22,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 292,
+     "real": [
+      8,
+      20,
+      21,
+      22,
+      24,
+      31,
+      32
+     ],
+     "perturbed": [
+      8,
+      20,
+      21,
+      22,
+      24,
+      31,
+      32
+     ],
+     "poison": [
+      8,
+      20,
+      21,
+      22,
+      24,
+      31,
+      32
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 334,
+     "real": [
+      1,
+      7,
+      8,
+      11,
+      15,
+      18,
+      25
+     ],
+     "perturbed": [
+      1,
+      7,
+      8,
+      11,
+      15,
+      18,
+      25
+     ],
+     "poison": [
+      1,
+      7,
+      8,
+      11,
+      15,
+      18,
+      25
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1110,
+     "real": [
+      7,
+      11,
+      12,
+      14,
+      21,
+      24,
+      31
+     ],
+     "perturbed": [
+      7,
+      11,
+      12,
+      14,
+      21,
+      24,
+      31
+     ],
+     "poison": [
+      7,
+      11,
+      12,
+      14,
+      21,
+      24,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1241,
+     "real": [
+      3,
+      13,
+      18,
+      20,
+      22,
+      28,
+      30
+     ],
+     "perturbed": [
+      3,
+      13,
+      18,
+      20,
+      22,
+      28,
+      30
+     ],
+     "poison": [
+      3,
+      13,
+      18,
+      20,
+      22,
+      28,
+      30
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    }
+   ],
+   "seconds_real": 1.4
+  },
+  {
+   "agent": "S3",
+   "formula": "F1",
+   "game": "VAN",
+   "kind": "formula",
+   "n_t": 7,
+   "n_changed": 0,
+   "leak_detected": false,
+   "files_opened_inside_f": [],
+   "rows": [
+    {
+     "t": 30,
+     "real": [
+      6,
+      8,
+      9,
+      12,
+      14,
+      16,
+      17,
+      18,
+      19,
+      20,
+      22
+     ],
+     "perturbed": [
+      6,
+      8,
+      9,
+      12,
+      14,
+      16,
+      17,
+      18,
+      19,
+      20,
+      22
+     ],
+     "poison": [
+      6,
+      8,
+      9,
+      12,
+      14,
+      16,
+      17,
+      18,
+      19,
+      20,
+      22
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 31,
+     "real": [
+      2,
+      4,
+      6,
+      8,
+      9,
+      13,
+      14,
+      16,
+      20,
+      21,
+      22
+     ],
+     "perturbed": [
+      2,
+      4,
+      6,
+      8,
+      9,
+      13,
+      14,
+      16,
+      20,
+      21,
+      22
+     ],
+     "poison": [
+      2,
+      4,
+      6,
+      8,
+      9,
+      13,
+      14,
+      16,
+      20,
+      21,
+      22
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 34,
+     "real": [
+      2,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      14,
+      16,
+      18,
+      21
+     ],
+     "perturbed": [
+      2,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      14,
+      16,
+      18,
+      21
+     ],
+     "poison": [
+      2,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      14,
+      16,
+      18,
+      21
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 153,
+     "real": [
+      1,
+      3,
+      4,
+      6,
+      7,
+      8,
+      11,
+      13,
+      15,
+      16,
+      18
+     ],
+     "perturbed": [
+      1,
+      3,
+      4,
+      6,
+      7,
+      8,
+      11,
+      13,
+      15,
+      16,
+      18
+     ],
+     "poison": [
+      1,
+      3,
+      4,
+      6,
+      7,
+      8,
+      11,
+      13,
+      15,
+      16,
+      18
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 221,
+     "real": [
+      2,
+      4,
+      5,
+      7,
+      8,
+      12,
+      13,
+      18,
+      19,
+      20,
+      21
+     ],
+     "perturbed": [
+      2,
+      4,
+      5,
+      7,
+      8,
+      12,
+      13,
+      18,
+      19,
+      20,
+      21
+     ],
+     "poison": [
+      2,
+      4,
+      5,
+      7,
+      8,
+      12,
+      13,
+      18,
+      19,
+      20,
+      21
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 372,
+     "real": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      9,
+      11,
+      13,
+      15,
+      19,
+      20
+     ],
+     "perturbed": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      9,
+      11,
+      13,
+      15,
+      19,
+      20
+     ],
+     "poison": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      9,
+      11,
+      13,
+      15,
+      19,
+      20
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 414,
+     "real": [
+      2,
+      7,
+      9,
+      10,
+      11,
+      13,
+      15,
+      16,
+      17,
+      19,
+      22
+     ],
+     "perturbed": [
+      2,
+      7,
+      9,
+      10,
+      11,
+      13,
+      15,
+      16,
+      17,
+      19,
+      22
+     ],
+     "poison": [
+      2,
+      7,
+      9,
+      10,
+      11,
+      13,
+      15,
+      16,
+      17,
+      19,
+      22
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    }
+   ],
+   "seconds_real": 0.2
+  },
+  {
+   "agent": "S3",
+   "formula": "F2",
+   "game": "EM",
+   "kind": "formula",
+   "n_t": 7,
+   "n_changed": 0,
+   "leak_detected": false,
+   "files_opened_inside_f": [],
+   "rows": [
+    {
+     "t": 30,
+     "real": [
+      1,
+      3,
+      6,
+      18,
+      26,
+      32,
+      33
+     ],
+     "perturbed": [
+      1,
+      3,
+      6,
+      18,
+      26,
+      32,
+      33
+     ],
+     "poison": [
+      1,
+      3,
+      6,
+      18,
+      26,
+      32,
+      33
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 31,
+     "real": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      11,
+      13
+     ],
+     "perturbed": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      11,
+      13
+     ],
+     "poison": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      11,
+      13
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 83,
+     "real": [
+      3,
+      8,
+      11,
+      14,
+      17,
+      19,
+      27
+     ],
+     "perturbed": [
+      3,
+      8,
+      11,
+      14,
+      17,
+      19,
+      27
+     ],
+     "poison": [
+      3,
+      8,
+      11,
+      14,
+      17,
+      19,
+      27
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 292,
+     "real": [
+      5,
+      8,
+      13,
+      16,
+      28,
+      30,
+      31
+     ],
+     "perturbed": [
+      5,
+      8,
+      13,
+      16,
+      28,
+      30,
+      31
+     ],
+     "poison": [
+      5,
+      8,
+      13,
+      16,
+      28,
+      30,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 334,
+     "real": [
+      2,
+      6,
+      11,
+      12,
+      15,
+      28,
+      29
+     ],
+     "perturbed": [
+      2,
+      6,
+      11,
+      12,
+      15,
+      28,
+      29
+     ],
+     "poison": [
+      2,
+      6,
+      11,
+      12,
+      15,
+      28,
+      29
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1110,
+     "real": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      33
+     ],
+     "perturbed": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      33
+     ],
+     "poison": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      33
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1241,
+     "real": [
+      3,
+      5,
+      11,
+      13,
+      14,
+      21,
+      23
+     ],
+     "perturbed": [
+      3,
+      5,
+      11,
+      13,
+      14,
+      21,
+      23
+     ],
+     "poison": [
+      3,
+      5,
+      11,
+      13,
+      14,
+      21,
+      23
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    }
+   ],
+   "seconds_real": 0.5
+  },
+  {
+   "agent": "S3",
+   "formula": "F3",
+   "game": "EM",
+   "kind": "formula",
+   "n_t": 7,
+   "n_changed": 0,
+   "leak_detected": false,
+   "files_opened_inside_f": [],
+   "rows": [
+    {
+     "t": 30,
+     "real": [
+      1,
+      2,
+      7,
+      10,
+      29,
+      32,
+      33
+     ],
+     "perturbed": [
+      1,
+      2,
+      7,
+      10,
+      29,
+      32,
+      33
+     ],
+     "poison": [
+      1,
+      2,
+      7,
+      10,
+      29,
+      32,
+      33
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 31,
+     "real": [
+      3,
+      6,
+      7,
+      8,
+      12,
+      15,
+      19
+     ],
+     "perturbed": [
+      3,
+      6,
+      7,
+      8,
+      12,
+      15,
+      19
+     ],
+     "poison": [
+      3,
+      6,
+      7,
+      8,
+      12,
+      15,
+      19
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 83,
+     "real": [
+      1,
+      2,
+      11,
+      17,
+      19,
+      21,
+      22
+     ],
+     "perturbed": [
+      1,
+      2,
+      11,
+      17,
+      19,
+      21,
+      22
+     ],
+     "poison": [
+      1,
+      2,
+      11,
+      17,
+      19,
+      21,
+      22
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 292,
+     "real": [
+      1,
+      4,
+      7,
+      9,
+      11,
+      18,
+      31
+     ],
+     "perturbed": [
+      1,
+      4,
+      7,
+      9,
+      11,
+      18,
+      31
+     ],
+     "poison": [
+      1,
+      4,
+      7,
+      9,
+      11,
+      18,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 334,
+     "real": [
+      1,
+      3,
+      4,
+      7,
+      14,
+      15,
+      27
+     ],
+     "perturbed": [
+      1,
+      3,
+      4,
+      7,
+      14,
+      15,
+      27
+     ],
+     "poison": [
+      1,
+      3,
+      4,
+      7,
+      14,
+      15,
+      27
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1110,
+     "real": [
+      3,
+      6,
+      10,
+      22,
+      23,
+      25,
+      33
+     ],
+     "perturbed": [
+      3,
+      6,
+      10,
+      22,
+      23,
+      25,
+      33
+     ],
+     "poison": [
+      3,
+      6,
+      10,
+      22,
+      23,
+      25,
+      33
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1241,
+     "real": [
+      3,
+      4,
+      12,
+      15,
+      18,
+      23,
+      31
+     ],
+     "perturbed": [
+      3,
+      4,
+      12,
+      15,
+      18,
+      23,
+      31
+     ],
+     "poison": [
+      3,
+      4,
+      12,
+      15,
+      18,
+      23,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    }
+   ],
+   "seconds_real": 0.4
+  },
+  {
+   "agent": "S4",
+   "formula": "F1",
+   "game": "EM",
+   "kind": "formula",
+   "n_t": 7,
+   "n_changed": 0,
+   "leak_detected": false,
+   "files_opened_inside_f": [],
+   "rows": [
+    {
+     "t": 30,
+     "real": [
+      5,
+      9,
+      13,
+      15,
+      16,
+      17,
+      19
+     ],
+     "perturbed": [
+      5,
+      9,
+      13,
+      15,
+      16,
+      17,
+      19
+     ],
+     "poison": [
+      5,
+      9,
+      13,
+      15,
+      16,
+      17,
+      19
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 31,
+     "real": [
+      1,
+      2,
+      4,
+      7,
+      12,
+      21,
+      24
+     ],
+     "perturbed": [
+      1,
+      2,
+      4,
+      7,
+      12,
+      21,
+      24
+     ],
+     "poison": [
+      1,
+      2,
+      4,
+      7,
+      12,
+      21,
+      24
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 83,
+     "real": [
+      6,
+      8,
+      12,
+      15,
+      26,
+      28,
+      32
+     ],
+     "perturbed": [
+      6,
+      8,
+      12,
+      15,
+      26,
+      28,
+      32
+     ],
+     "poison": [
+      6,
+      8,
+      12,
+      15,
+      26,
+      28,
+      32
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 292,
+     "real": [
+      2,
+      3,
+      5,
+      6,
+      7,
+      15,
+      26
+     ],
+     "perturbed": [
+      2,
+      3,
+      5,
+      6,
+      7,
+      15,
+      26
+     ],
+     "poison": [
+      2,
+      3,
+      5,
+      6,
+      7,
+      15,
+      26
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 334,
+     "real": [
+      2,
+      3,
+      8,
+      13,
+      15,
+      28,
+      29
+     ],
+     "perturbed": [
+      2,
+      3,
+      8,
+      13,
+      15,
+      28,
+      29
+     ],
+     "poison": [
+      2,
+      3,
+      8,
+      13,
+      15,
+      28,
+      29
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1110,
+     "real": [
+      1,
+      2,
+      5,
+      6,
+      13,
+      20,
+      31
+     ],
+     "perturbed": [
+      1,
+      2,
+      5,
+      6,
+      13,
+      20,
+      31
+     ],
+     "poison": [
+      1,
+      2,
+      5,
+      6,
+      13,
+      20,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1241,
+     "real": [
+      3,
+      4,
+      11,
+      12,
+      13,
+      21,
+      25
+     ],
+     "perturbed": [
+      3,
+      4,
+      11,
+      12,
+      13,
+      21,
+      25
+     ],
+     "poison": [
+      3,
+      4,
+      11,
+      12,
+      13,
+      21,
+      25
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    }
+   ],
+   "seconds_real": 0.6
+  },
+  {
+   "agent": "S4",
+   "formula": "F2",
+   "game": "EM",
+   "kind": "formula",
+   "n_t": 7,
+   "n_changed": 0,
+   "leak_detected": false,
+   "files_opened_inside_f": [],
+   "rows": [
+    {
+     "t": 30,
+     "real": [
+      5,
+      9,
+      12,
+      15,
+      16,
+      30,
+      31
+     ],
+     "perturbed": [
+      5,
+      9,
+      12,
+      15,
+      16,
+      30,
+      31
+     ],
+     "poison": [
+      5,
+      9,
+      12,
+      15,
+      16,
+      30,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 31,
+     "real": [
+      5,
+      9,
+      12,
+      15,
+      16,
+      30,
+      31
+     ],
+     "perturbed": [
+      5,
+      9,
+      12,
+      15,
+      16,
+      30,
+      31
+     ],
+     "poison": [
+      5,
+      9,
+      12,
+      15,
+      16,
+      30,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 83,
+     "real": [
+      5,
+      8,
+      13,
+      20,
+      24,
+      26,
+      31
+     ],
+     "perturbed": [
+      5,
+      8,
+      13,
+      20,
+      24,
+      26,
+      31
+     ],
+     "poison": [
+      5,
+      8,
+      13,
+      20,
+      24,
+      26,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 292,
+     "real": [
+      3,
+      6,
+      7,
+      8,
+      13,
+      15,
+      18
+     ],
+     "perturbed": [
+      3,
+      6,
+      7,
+      8,
+      13,
+      15,
+      18
+     ],
+     "poison": [
+      3,
+      6,
+      7,
+      8,
+      13,
+      15,
+      18
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 334,
+     "real": [
+      3,
+      6,
+      8,
+      13,
+      15,
+      18,
+      31
+     ],
+     "perturbed": [
+      3,
+      6,
+      8,
+      13,
+      15,
+      18,
+      31
+     ],
+     "poison": [
+      3,
+      6,
+      8,
+      13,
+      15,
+      18,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1110,
+     "real": [
+      3,
+      5,
+      6,
+      9,
+      13,
+      15,
+      31
+     ],
+     "perturbed": [
+      3,
+      5,
+      6,
+      9,
+      13,
+      15,
+      31
+     ],
+     "poison": [
+      3,
+      5,
+      6,
+      9,
+      13,
+      15,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1241,
+     "real": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      21,
+      31
+     ],
+     "perturbed": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      21,
+      31
+     ],
+     "poison": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      21,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    }
+   ],
+   "seconds_real": 0.3
+  },
+  {
+   "agent": "S4",
+   "formula": "F3",
+   "game": "VAN",
+   "kind": "formula",
+   "n_t": 7,
+   "n_changed": 0,
+   "leak_detected": false,
+   "files_opened_inside_f": [],
+   "rows": [
+    {
+     "t": 30,
+     "real": [
+      2,
+      4,
+      5,
+      6,
+      11,
+      12,
+      14,
+      15,
+      16,
+      19,
+      22
+     ],
+     "perturbed": [
+      2,
+      4,
+      5,
+      6,
+      11,
+      12,
+      14,
+      15,
+      16,
+      19,
+      22
+     ],
+     "poison": [
+      2,
+      4,
+      5,
+      6,
+      11,
+      12,
+      14,
+      15,
+      16,
+      19,
+      22
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 31,
+     "real": [
+      2,
+      5,
+      6,
+      10,
+      11,
+      12,
+      14,
+      15,
+      16,
+      19,
+      22
+     ],
+     "perturbed": [
+      2,
+      5,
+      6,
+      10,
+      11,
+      12,
+      14,
+      15,
+      16,
+      19,
+      22
+     ],
+     "poison": [
+      2,
+      5,
+      6,
+      10,
+      11,
+      12,
+      14,
+      15,
+      16,
+      19,
+      22
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 34,
+     "real": [
+      1,
+      2,
+      5,
+      9,
+      10,
+      11,
+      12,
+      14,
+      15,
+      16,
+      22
+     ],
+     "perturbed": [
+      1,
+      2,
+      5,
+      9,
+      10,
+      11,
+      12,
+      14,
+      15,
+      16,
+      22
+     ],
+     "poison": [
+      1,
+      2,
+      5,
+      9,
+      10,
+      11,
+      12,
+      14,
+      15,
+      16,
+      22
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 153,
+     "real": [
+      1,
+      4,
+      5,
+      11,
+      12,
+      14,
+      15,
+      16,
+      17,
+      20,
+      22
+     ],
+     "perturbed": [
+      1,
+      4,
+      5,
+      11,
+      12,
+      14,
+      15,
+      16,
+      17,
+      20,
+      22
+     ],
+     "poison": [
+      1,
+      4,
+      5,
+      11,
+      12,
+      14,
+      15,
+      16,
+      17,
+      20,
+      22
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 221,
+     "real": [
+      1,
+      4,
+      5,
+      6,
+      9,
+      10,
+      11,
+      14,
+      15,
+      16,
+      22
+     ],
+     "perturbed": [
+      1,
+      4,
+      5,
+      6,
+      9,
+      10,
+      11,
+      14,
+      15,
+      16,
+      22
+     ],
+     "poison": [
+      1,
+      4,
+      5,
+      6,
+      9,
+      10,
+      11,
+      14,
+      15,
+      16,
+      22
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 372,
+     "real": [
+      5,
+      6,
+      9,
+      10,
+      11,
+      14,
+      15,
+      16,
+      18,
+      19,
+      22
+     ],
+     "perturbed": [
+      5,
+      6,
+      9,
+      10,
+      11,
+      14,
+      15,
+      16,
+      18,
+      19,
+      22
+     ],
+     "poison": [
+      5,
+      6,
+      9,
+      10,
+      11,
+      14,
+      15,
+      16,
+      18,
+      19,
+      22
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 414,
+     "real": [
+      1,
+      4,
+      6,
+      9,
+      10,
+      11,
+      14,
+      15,
+      16,
+      19,
+      22
+     ],
+     "perturbed": [
+      1,
+      4,
+      6,
+      9,
+      10,
+      11,
+      14,
+      15,
+      16,
+      19,
+      22
+     ],
+     "poison": [
+      1,
+      4,
+      6,
+      9,
+      10,
+      11,
+      14,
+      15,
+      16,
+      19,
+      22
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    }
+   ],
+   "seconds_real": 0.2
+  },
+  {
+   "agent": "S5",
+   "formula": "F1",
+   "game": "EM",
+   "kind": "formula",
+   "n_t": 7,
+   "n_changed": 0,
+   "leak_detected": false,
+   "files_opened_inside_f": [],
+   "rows": [
+    {
+     "t": 30,
+     "real": [
+      5,
+      9,
+      12,
+      13,
+      15,
+      30,
+      31
+     ],
+     "perturbed": [
+      5,
+      9,
+      12,
+      13,
+      15,
+      30,
+      31
+     ],
+     "poison": [
+      5,
+      9,
+      12,
+      13,
+      15,
+      30,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 31,
+     "real": [
+      5,
+      9,
+      12,
+      13,
+      15,
+      30,
+      31
+     ],
+     "perturbed": [
+      5,
+      9,
+      12,
+      13,
+      15,
+      30,
+      31
+     ],
+     "poison": [
+      5,
+      9,
+      12,
+      13,
+      15,
+      30,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 83,
+     "real": [
+      3,
+      5,
+      8,
+      13,
+      14,
+      24,
+      26
+     ],
+     "perturbed": [
+      3,
+      5,
+      8,
+      13,
+      14,
+      24,
+      26
+     ],
+     "poison": [
+      3,
+      5,
+      8,
+      13,
+      14,
+      24,
+      26
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 292,
+     "real": [
+      1,
+      8,
+      14,
+      15,
+      17,
+      21,
+      27
+     ],
+     "perturbed": [
+      1,
+      8,
+      14,
+      15,
+      17,
+      21,
+      27
+     ],
+     "poison": [
+      1,
+      8,
+      14,
+      15,
+      17,
+      21,
+      27
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 334,
+     "real": [
+      2,
+      6,
+      13,
+      15,
+      18,
+      28,
+      31
+     ],
+     "perturbed": [
+      2,
+      6,
+      13,
+      15,
+      18,
+      28,
+      31
+     ],
+     "poison": [
+      2,
+      6,
+      13,
+      15,
+      18,
+      28,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1110,
+     "real": [
+      1,
+      6,
+      9,
+      15,
+      16,
+      23,
+      31
+     ],
+     "perturbed": [
+      1,
+      6,
+      9,
+      15,
+      16,
+      23,
+      31
+     ],
+     "poison": [
+      1,
+      6,
+      9,
+      15,
+      16,
+      23,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1241,
+     "real": [
+      6,
+      9,
+      15,
+      17,
+      19,
+      21,
+      27
+     ],
+     "perturbed": [
+      6,
+      9,
+      15,
+      17,
+      19,
+      21,
+      27
+     ],
+     "poison": [
+      6,
+      9,
+      15,
+      17,
+      19,
+      21,
+      27
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    }
+   ],
+   "seconds_real": 14.9
+  },
+  {
+   "agent": "S5",
+   "formula": "F2",
+   "game": "EM",
+   "kind": "formula",
+   "n_t": 7,
+   "n_changed": 0,
+   "leak_detected": false,
+   "files_opened_inside_f": [],
+   "rows": [
+    {
+     "t": 30,
+     "real": [
+      5,
+      12,
+      13,
+      15,
+      16,
+      30,
+      31
+     ],
+     "perturbed": [
+      5,
+      12,
+      13,
+      15,
+      16,
+      30,
+      31
+     ],
+     "poison": [
+      5,
+      12,
+      13,
+      15,
+      16,
+      30,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 31,
+     "real": [
+      5,
+      12,
+      13,
+      15,
+      16,
+      30,
+      31
+     ],
+     "perturbed": [
+      5,
+      12,
+      13,
+      15,
+      16,
+      30,
+      31
+     ],
+     "poison": [
+      5,
+      12,
+      13,
+      15,
+      16,
+      30,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 83,
+     "real": [
+      5,
+      13,
+      19,
+      20,
+      26,
+      27,
+      30
+     ],
+     "perturbed": [
+      5,
+      13,
+      19,
+      20,
+      26,
+      27,
+      30
+     ],
+     "poison": [
+      5,
+      13,
+      19,
+      20,
+      26,
+      27,
+      30
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 292,
+     "real": [
+      4,
+      5,
+      14,
+      15,
+      20,
+      25,
+      32
+     ],
+     "perturbed": [
+      4,
+      5,
+      14,
+      15,
+      20,
+      25,
+      32
+     ],
+     "poison": [
+      4,
+      5,
+      14,
+      15,
+      20,
+      25,
+      32
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 334,
+     "real": [
+      3,
+      6,
+      8,
+      9,
+      14,
+      15,
+      18
+     ],
+     "perturbed": [
+      3,
+      6,
+      8,
+      9,
+      14,
+      15,
+      18
+     ],
+     "poison": [
+      3,
+      6,
+      8,
+      9,
+      14,
+      15,
+      18
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1110,
+     "real": [
+      14,
+      15,
+      16,
+      18,
+      28,
+      31,
+      32
+     ],
+     "perturbed": [
+      14,
+      15,
+      16,
+      18,
+      28,
+      31,
+      32
+     ],
+     "poison": [
+      14,
+      15,
+      16,
+      18,
+      28,
+      31,
+      32
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1241,
+     "real": [
+      3,
+      6,
+      7,
+      9,
+      15,
+      16,
+      32
+     ],
+     "perturbed": [
+      3,
+      6,
+      7,
+      9,
+      15,
+      16,
+      32
+     ],
+     "poison": [
+      3,
+      6,
+      7,
+      9,
+      15,
+      16,
+      32
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    }
+   ],
+   "seconds_real": 0.2
+  },
+  {
+   "agent": "S5",
+   "formula": "F3",
+   "game": "EM",
+   "kind": "formula",
+   "n_t": 7,
+   "n_changed": 0,
+   "leak_detected": false,
+   "files_opened_inside_f": [],
+   "rows": [
+    {
+     "t": 30,
+     "real": [
+      9,
+      10,
+      19,
+      24,
+      28,
+      30,
+      31
+     ],
+     "perturbed": [
+      9,
+      10,
+      19,
+      24,
+      28,
+      30,
+      31
+     ],
+     "poison": [
+      9,
+      10,
+      19,
+      24,
+      28,
+      30,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 31,
+     "real": [
+      9,
+      10,
+      12,
+      16,
+      24,
+      26,
+      33
+     ],
+     "perturbed": [
+      9,
+      10,
+      12,
+      16,
+      24,
+      26,
+      33
+     ],
+     "poison": [
+      9,
+      10,
+      12,
+      16,
+      24,
+      26,
+      33
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 83,
+     "real": [
+      3,
+      4,
+      6,
+      8,
+      9,
+      13,
+      28
+     ],
+     "perturbed": [
+      3,
+      4,
+      6,
+      8,
+      9,
+      13,
+      28
+     ],
+     "poison": [
+      3,
+      4,
+      6,
+      8,
+      9,
+      13,
+      28
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 292,
+     "real": [
+      2,
+      5,
+      8,
+      9,
+      10,
+      18,
+      21
+     ],
+     "perturbed": [
+      2,
+      5,
+      8,
+      9,
+      10,
+      18,
+      21
+     ],
+     "poison": [
+      2,
+      5,
+      8,
+      9,
+      10,
+      18,
+      21
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 334,
+     "real": [
+      2,
+      3,
+      4,
+      14,
+      16,
+      23,
+      26
+     ],
+     "perturbed": [
+      2,
+      3,
+      4,
+      14,
+      16,
+      23,
+      26
+     ],
+     "poison": [
+      2,
+      3,
+      4,
+      14,
+      16,
+      23,
+      26
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1110,
+     "real": [
+      1,
+      3,
+      4,
+      6,
+      13,
+      15,
+      30
+     ],
+     "perturbed": [
+      1,
+      3,
+      4,
+      6,
+      13,
+      15,
+      30
+     ],
+     "poison": [
+      1,
+      3,
+      4,
+      6,
+      13,
+      15,
+      30
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1241,
+     "real": [
+      2,
+      3,
+      7,
+      17,
+      19,
+      21,
+      28
+     ],
+     "perturbed": [
+      2,
+      3,
+      7,
+      17,
+      19,
+      21,
+      28
+     ],
+     "poison": [
+      2,
+      3,
+      7,
+      17,
+      19,
+      21,
+      28
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    }
+   ],
+   "seconds_real": 12.6
+  },
+  {
+   "agent": "PC0",
+   "formula": "PC0_legit",
+   "game": "EM",
+   "kind": "legit",
+   "n_t": 7,
+   "n_changed": 0,
+   "leak_detected": false,
+   "files_opened_inside_f": [],
+   "rows": [
+    {
+     "t": 30,
+     "real": [
+      5,
+      9,
+      12,
+      13,
+      15,
+      30,
+      31
+     ],
+     "perturbed": [
+      5,
+      9,
+      12,
+      13,
+      15,
+      30,
+      31
+     ],
+     "poison": [
+      5,
+      9,
+      12,
+      13,
+      15,
+      30,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 31,
+     "real": [
+      5,
+      9,
+      12,
+      13,
+      15,
+      30,
+      31
+     ],
+     "perturbed": [
+      5,
+      9,
+      12,
+      13,
+      15,
+      30,
+      31
+     ],
+     "poison": [
+      5,
+      9,
+      12,
+      13,
+      15,
+      30,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 83,
+     "real": [
+      5,
+      8,
+      13,
+      20,
+      24,
+      26,
+      31
+     ],
+     "perturbed": [
+      5,
+      8,
+      13,
+      20,
+      24,
+      26,
+      31
+     ],
+     "poison": [
+      5,
+      8,
+      13,
+      20,
+      24,
+      26,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 292,
+     "real": [
+      3,
+      6,
+      7,
+      8,
+      13,
+      15,
+      18
+     ],
+     "perturbed": [
+      3,
+      6,
+      7,
+      8,
+      13,
+      15,
+      18
+     ],
+     "poison": [
+      3,
+      6,
+      7,
+      8,
+      13,
+      15,
+      18
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 334,
+     "real": [
+      2,
+      3,
+      6,
+      8,
+      13,
+      15,
+      18
+     ],
+     "perturbed": [
+      2,
+      3,
+      6,
+      8,
+      13,
+      15,
+      18
+     ],
+     "poison": [
+      2,
+      3,
+      6,
+      8,
+      13,
+      15,
+      18
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1110,
+     "real": [
+      3,
+      5,
+      6,
+      9,
+      13,
+      15,
+      31
+     ],
+     "perturbed": [
+      3,
+      5,
+      6,
+      9,
+      13,
+      15,
+      31
+     ],
+     "poison": [
+      3,
+      5,
+      6,
+      9,
+      13,
+      15,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1241,
+     "real": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      21,
+      31
+     ],
+     "perturbed": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      21,
+      31
+     ],
+     "poison": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      21,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    }
+   ],
+   "seconds_real": 0.2
+  },
+  {
+   "agent": "PC1",
+   "formula": "PC1_modcache",
+   "game": "EM",
+   "kind": "peek",
+   "n_t": 7,
+   "n_changed": 7,
+   "leak_detected": true,
+   "files_opened_inside_f": [],
+   "rows": [
+    {
+     "t": 30,
+     "real": [
+      3,
+      6,
+      15,
+      18,
+      19,
+      32,
+      33
+     ],
+     "perturbed": [
+      5,
+      10,
+      13,
+      19,
+      28,
+      29,
+      30
+     ],
+     "poison": null,
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": "IndexError('list index out of range')",
+     "unredirected_real_data": []
+    },
+    {
+     "t": 31,
+     "real": [
+      3,
+      7,
+      9,
+      11,
+      21,
+      24,
+      26
+     ],
+     "perturbed": [
+      9,
+      12,
+      15,
+      17,
+      21,
+      28,
+      30
+     ],
+     "poison": null,
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": "IndexError('list index out of range')",
+     "unredirected_real_data": []
+    },
+    {
+     "t": 83,
+     "real": [
+      2,
+      7,
+      9,
+      15,
+      17,
+      19,
+      22
+     ],
+     "perturbed": [
+      1,
+      4,
+      16,
+      19,
+      24,
+      27,
+      31
+     ],
+     "poison": null,
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": "IndexError('list index out of range')",
+     "unredirected_real_data": []
+    },
+    {
+     "t": 292,
+     "real": [
+      1,
+      3,
+      15,
+      18,
+      30,
+      31,
+      32
+     ],
+     "perturbed": [
+      5,
+      13,
+      16,
+      20,
+      21,
+      27,
+      29
+     ],
+     "poison": null,
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": "IndexError('list index out of range')",
+     "unredirected_real_data": []
+    },
+    {
+     "t": 334,
+     "real": [
+      4,
+      9,
+      10,
+      16,
+      18,
+      21,
+      32
+     ],
+     "perturbed": [
+      2,
+      3,
+      10,
+      12,
+      19,
+      23,
+      31
+     ],
+     "poison": null,
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": "IndexError('list index out of range')",
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1110,
+     "real": [
+      1,
+      17,
+      22,
+      24,
+      27,
+      29,
+      30
+     ],
+     "perturbed": [
+      5,
+      8,
+      12,
+      20,
+      21,
+      31,
+      33
+     ],
+     "poison": null,
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": "IndexError('list index out of range')",
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1241,
+     "real": [
+      10,
+      11,
+      13,
+      17,
+      27,
+      31,
+      32
+     ],
+     "perturbed": [
+      1,
+      4,
+      12,
+      23,
+      25,
+      29,
+      30
+     ],
+     "poison": null,
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": "IndexError('list index out of range')",
+     "unredirected_real_data": []
+    }
+   ],
+   "seconds_real": 0.2
+  },
+  {
+   "agent": "PC1",
+   "formula": "PC1_VAN",
+   "game": "VAN",
+   "kind": "peek",
+   "n_t": 7,
+   "n_changed": 7,
+   "leak_detected": true,
+   "files_opened_inside_f": [],
+   "rows": [
+    {
+     "t": 30,
+     "real": [
+      4,
+      5,
+      6,
+      7,
+      11,
+      15,
+      17,
+      18,
+      19,
+      20,
+      22
+     ],
+     "perturbed": [
+      1,
+      7,
+      8,
+      10,
+      12,
+      13,
+      15,
+      16,
+      18,
+      19,
+      20
+     ],
+     "poison": null,
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": "IndexError('list index out of range')",
+     "unredirected_real_data": []
+    },
+    {
+     "t": 31,
+     "real": [
+      1,
+      6,
+      8,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+     ],
+     "perturbed": [
+      3,
+      4,
+      7,
+      10,
+      11,
+      15,
+      16,
+      17,
+      18,
+      20,
+      22
+     ],
+     "poison": null,
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": "IndexError('list index out of range')",
+     "unredirected_real_data": []
+    },
+    {
+     "t": 34,
+     "real": [
+      1,
+      4,
+      5,
+      6,
+      7,
+      9,
+      15,
+      16,
+      17,
+      20,
+      22
+     ],
+     "perturbed": [
+      1,
+      5,
+      6,
+      7,
+      8,
+      9,
+      12,
+      14,
+      18,
+      19,
+      20
+     ],
+     "poison": null,
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": "IndexError('list index out of range')",
+     "unredirected_real_data": []
+    },
+    {
+     "t": 153,
+     "real": [
+      1,
+      5,
+      6,
+      7,
+      10,
+      15,
+      16,
+      18,
+      19,
+      20,
+      21
+     ],
+     "perturbed": [
+      1,
+      3,
+      4,
+      9,
+      11,
+      13,
+      14,
+      15,
+      16,
+      18,
+      21
+     ],
+     "poison": null,
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": "IndexError('list index out of range')",
+     "unredirected_real_data": []
+    },
+    {
+     "t": 221,
+     "real": [
+      3,
+      6,
+      7,
+      8,
+      10,
+      11,
+      12,
+      13,
+      15,
+      20,
+      22
+     ],
+     "perturbed": [
+      1,
+      3,
+      6,
+      10,
+      12,
+      14,
+      16,
+      17,
+      19,
+      21,
+      22
+     ],
+     "poison": null,
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": "IndexError('list index out of range')",
+     "unredirected_real_data": []
+    },
+    {
+     "t": 372,
+     "real": [
+      2,
+      4,
+      5,
+      8,
+      10,
+      13,
+      14,
+      16,
+      19,
+      21,
+      22
+     ],
+     "perturbed": [
+      2,
+      3,
+      4,
+      8,
+      10,
+      13,
+      14,
+      15,
+      17,
+      21,
+      22
+     ],
+     "poison": null,
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": "IndexError('list index out of range')",
+     "unredirected_real_data": []
+    },
+    {
+     "t": 414,
+     "real": [
+      1,
+      2,
+      4,
+      8,
+      9,
+      10,
+      11,
+      14,
+      15,
+      17,
+      20
+     ],
+     "perturbed": [
+      3,
+      8,
+      9,
+      10,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      19
+     ],
+     "poison": null,
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": "IndexError('list index out of range')",
+     "unredirected_real_data": []
+    }
+   ],
+   "seconds_real": 0.1
+  },
+  {
+   "agent": "PC2",
+   "formula": "PC2_fileread",
+   "game": "EM",
+   "kind": "peek",
+   "n_t": 7,
+   "n_changed": 7,
+   "leak_detected": true,
+   "files_opened_inside_f": [
+    "data/em.json"
+   ],
+   "rows": [
+    {
+     "t": 30,
+     "real": [
+      3,
+      6,
+      15,
+      18,
+      19,
+      32,
+      33
+     ],
+     "perturbed": [
+      1,
+      5,
+      11,
+      12,
+      20,
+      23,
+      28
+     ],
+     "poison": null,
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": "StopIteration()",
+     "unredirected_real_data": []
+    },
+    {
+     "t": 31,
+     "real": [
+      3,
+      7,
+      9,
+      11,
+      21,
+      24,
+      26
+     ],
+     "perturbed": [
+      2,
+      6,
+      15,
+      17,
+      22,
+      29,
+      31
+     ],
+     "poison": null,
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": "StopIteration()",
+     "unredirected_real_data": []
+    },
+    {
+     "t": 83,
+     "real": [
+      2,
+      7,
+      9,
+      15,
+      17,
+      19,
+      22
+     ],
+     "perturbed": [
+      5,
+      11,
+      17,
+      22,
+      24,
+      29,
+      31
+     ],
+     "poison": null,
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": "StopIteration()",
+     "unredirected_real_data": []
+    },
+    {
+     "t": 292,
+     "real": [
+      1,
+      3,
+      15,
+      18,
+      30,
+      31,
+      32
+     ],
+     "perturbed": [
+      5,
+      7,
+      8,
+      23,
+      26,
+      27,
+      29
+     ],
+     "poison": null,
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": "StopIteration()",
+     "unredirected_real_data": []
+    },
+    {
+     "t": 334,
+     "real": [
+      4,
+      9,
+      10,
+      16,
+      18,
+      21,
+      32
+     ],
+     "perturbed": [
+      1,
+      4,
+      5,
+      11,
+      15,
+      22,
+      33
+     ],
+     "poison": null,
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": "StopIteration()",
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1110,
+     "real": [
+      1,
+      17,
+      22,
+      24,
+      27,
+      29,
+      30
+     ],
+     "perturbed": [
+      2,
+      3,
+      6,
+      8,
+      12,
+      19,
+      21
+     ],
+     "poison": null,
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": "StopIteration()",
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1241,
+     "real": [
+      10,
+      11,
+      13,
+      17,
+      27,
+      31,
+      32
+     ],
+     "perturbed": [
+      12,
+      13,
+      16,
+      18,
+      19,
+      22,
+      23
+     ],
+     "poison": null,
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": "StopIteration()",
+     "unredirected_real_data": []
+    }
+   ],
+   "seconds_real": 0.3
+  },
+  {
+   "agent": "PC3",
+   "formula": "PC3_frame",
+   "game": "EM",
+   "kind": "peek",
+   "n_t": 7,
+   "n_changed": 7,
+   "leak_detected": true,
+   "files_opened_inside_f": [],
+   "rows": [
+    {
+     "t": 30,
+     "real": [
+      3,
+      6,
+      15,
+      18,
+      19,
+      32,
+      33
+     ],
+     "perturbed": [
+      7,
+      19,
+      21,
+      23,
+      24,
+      30,
+      33
+     ],
+     "poison": [
+      7,
+      19,
+      21,
+      23,
+      24,
+      30,
+      33
+     ],
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 31,
+     "real": [
+      3,
+      7,
+      9,
+      11,
+      21,
+      24,
+      26
+     ],
+     "perturbed": [
+      2,
+      5,
+      10,
+      20,
+      26,
+      28,
+      31
+     ],
+     "poison": [
+      2,
+      5,
+      10,
+      20,
+      26,
+      28,
+      31
+     ],
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 83,
+     "real": [
+      2,
+      7,
+      9,
+      15,
+      17,
+      19,
+      22
+     ],
+     "perturbed": [
+      2,
+      3,
+      11,
+      13,
+      25,
+      28,
+      31
+     ],
+     "poison": [
+      2,
+      3,
+      11,
+      13,
+      25,
+      28,
+      31
+     ],
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 292,
+     "real": [
+      1,
+      3,
+      15,
+      18,
+      30,
+      31,
+      32
+     ],
+     "perturbed": [
+      10,
+      12,
+      17,
+      21,
+      22,
+      27,
+      33
+     ],
+     "poison": [
+      10,
+      12,
+      17,
+      21,
+      22,
+      27,
+      33
+     ],
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 334,
+     "real": [
+      4,
+      9,
+      10,
+      16,
+      18,
+      21,
+      32
+     ],
+     "perturbed": [
+      2,
+      7,
+      9,
+      10,
+      17,
+      19,
+      26
+     ],
+     "poison": [
+      2,
+      7,
+      9,
+      10,
+      17,
+      19,
+      26
+     ],
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1110,
+     "real": [
+      1,
+      17,
+      22,
+      24,
+      27,
+      29,
+      30
+     ],
+     "perturbed": [
+      2,
+      3,
+      5,
+      7,
+      9,
+      19,
+      23
+     ],
+     "poison": [
+      2,
+      3,
+      5,
+      7,
+      9,
+      19,
+      23
+     ],
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1241,
+     "real": [
+      10,
+      11,
+      13,
+      17,
+      27,
+      31,
+      32
+     ],
+     "perturbed": [
+      9,
+      14,
+      16,
+      21,
+      25,
+      32,
+      33
+     ],
+     "poison": [
+      9,
+      14,
+      16,
+      21,
+      25,
+      32,
+      33
+     ],
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": null,
+     "unredirected_real_data": []
+    }
+   ],
+   "seconds_real": 0.2
+  },
+  {
+   "agent": "PC4",
+   "formula": "PC4_fullfreq",
+   "game": "EM",
+   "kind": "peek",
+   "n_t": 7,
+   "n_changed": 6,
+   "leak_detected": true,
+   "files_opened_inside_f": [],
+   "rows": [
+    {
+     "t": 30,
+     "real": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      21,
+      31
+     ],
+     "perturbed": [
+      4,
+      5,
+      7,
+      12,
+      21,
+      30,
+      33
+     ],
+     "poison": [
+      4,
+      5,
+      7,
+      12,
+      21,
+      30,
+      33
+     ],
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 31,
+     "real": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      21,
+      31
+     ],
+     "perturbed": [
+      5,
+      10,
+      12,
+      13,
+      19,
+      21,
+      30
+     ],
+     "poison": [
+      5,
+      10,
+      12,
+      13,
+      19,
+      21,
+      30
+     ],
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 83,
+     "real": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      21,
+      31
+     ],
+     "perturbed": [
+      8,
+      13,
+      15,
+      20,
+      26,
+      31,
+      32
+     ],
+     "poison": [
+      8,
+      13,
+      15,
+      20,
+      26,
+      31,
+      32
+     ],
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 292,
+     "real": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      21,
+      31
+     ],
+     "perturbed": [
+      3,
+      6,
+      15,
+      20,
+      26,
+      28,
+      29
+     ],
+     "poison": [
+      3,
+      6,
+      15,
+      20,
+      26,
+      28,
+      29
+     ],
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 334,
+     "real": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      21,
+      31
+     ],
+     "perturbed": [
+      13,
+      15,
+      19,
+      25,
+      27,
+      28,
+      32
+     ],
+     "poison": [
+      13,
+      15,
+      19,
+      25,
+      27,
+      28,
+      32
+     ],
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1110,
+     "real": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      21,
+      31
+     ],
+     "perturbed": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      18,
+      31
+     ],
+     "poison": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      18,
+      31
+     ],
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1241,
+     "real": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      21,
+      31
+     ],
+     "perturbed": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      21,
+      31
+     ],
+     "poison": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      21,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    }
+   ],
+   "seconds_real": 0.2
+  },
+  {
+   "agent": "PC5",
+   "formula": "PC5_offbyone",
+   "game": "EM",
+   "kind": "peek",
+   "n_t": 7,
+   "n_changed": 4,
+   "leak_detected": true,
+   "files_opened_inside_f": [
+    "data/em.json"
+   ],
+   "rows": [
+    {
+     "t": 30,
+     "real": [
+      5,
+      9,
+      12,
+      13,
+      15,
+      30,
+      31
+     ],
+     "perturbed": [
+      5,
+      9,
+      12,
+      13,
+      15,
+      16,
+      30
+     ],
+     "poison": [
+      5,
+      9,
+      12,
+      13,
+      15,
+      16,
+      30
+     ],
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 31,
+     "real": [
+      5,
+      9,
+      12,
+      13,
+      15,
+      30,
+      31
+     ],
+     "perturbed": [
+      5,
+      9,
+      12,
+      13,
+      15,
+      16,
+      30
+     ],
+     "poison": [
+      5,
+      9,
+      12,
+      13,
+      15,
+      16,
+      30
+     ],
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 83,
+     "real": [
+      5,
+      8,
+      13,
+      15,
+      20,
+      24,
+      31
+     ],
+     "perturbed": [
+      5,
+      8,
+      13,
+      20,
+      24,
+      26,
+      31
+     ],
+     "poison": [
+      5,
+      8,
+      13,
+      20,
+      24,
+      26,
+      31
+     ],
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 292,
+     "real": [
+      3,
+      6,
+      7,
+      8,
+      13,
+      15,
+      18
+     ],
+     "perturbed": [
+      3,
+      6,
+      7,
+      8,
+      13,
+      15,
+      18
+     ],
+     "poison": [
+      3,
+      6,
+      7,
+      8,
+      13,
+      15,
+      18
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 334,
+     "real": [
+      2,
+      3,
+      6,
+      8,
+      13,
+      15,
+      18
+     ],
+     "perturbed": [
+      2,
+      3,
+      6,
+      8,
+      13,
+      15,
+      18
+     ],
+     "poison": [
+      2,
+      3,
+      6,
+      8,
+      13,
+      15,
+      18
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1110,
+     "real": [
+      1,
+      3,
+      5,
+      6,
+      13,
+      15,
+      31
+     ],
+     "perturbed": [
+      3,
+      5,
+      6,
+      9,
+      13,
+      15,
+      31
+     ],
+     "poison": [
+      3,
+      5,
+      6,
+      9,
+      13,
+      15,
+      31
+     ],
+     "same_perturbed": false,
+     "same_poison": false,
+     "poison_error": null,
+     "unredirected_real_data": []
+    },
+    {
+     "t": 1241,
+     "real": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      21,
+      31
+     ],
+     "perturbed": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      21,
+      31
+     ],
+     "poison": [
+      3,
+      5,
+      6,
+      13,
+      15,
+      21,
+      31
+     ],
+     "same_perturbed": true,
+     "same_poison": true,
+     "poison_error": null,
+     "unredirected_real_data": []
+    }
+   ],
+   "seconds_real": 0.3
+  }
+ ],
+ "static": {
+  "S1": {
+   "module_level_data": [
+    [
+     "CACHE_P = {g: params(g) for g in ('EM', 'VAN')}",
+     141
+    ]
+   ],
+   "in_function_data": [
+    [
+     "main",
+     "load",
+     177
+    ],
+    [
+     "main",
+     "load",
+     177
+    ],
+    [
+     "main",
+     "open",
+     184
+    ]
+   ],
+   "frame_or_gc": [],
+   "file_literals": []
+  },
+  "S2": {
+   "module_level_data": [],
+   "in_function_data": [
+    [
+     "engine_for",
+     "params",
+     137
+    ],
+    [
+     "make_f",
+     "params",
+     156
+    ],
+    [
+     "scratch_check",
+     "load",
+     169
+    ],
+    [
+     "scratch_check",
+     "params",
+     169
+    ],
+    [
+     "entropy_test",
+     "load",
+     186
+    ],
+    [
+     "entropy_test",
+     "params",
+     186
+    ],
+    [
+     "main",
+     "load",
+     242
+    ],
+    [
+     "main",
+     "open",
+     257
+    ]
+   ],
+   "frame_or_gc": [],
+   "file_literals": []
+  },
+  "S3": {
+   "module_level_data": [],
+   "in_function_data": [
+    [
+     "main",
+     "load",
+     481
+    ],
+    [
+     "main",
+     "load",
+     481
+    ],
+    [
+     "main",
+     "open",
+     553
+    ]
+   ],
+   "frame_or_gc": [],
+   "file_literals": []
+  },
+  "S4": {
+   "module_level_data": [
+    [
+     "N_EM = params('EM')[1]",
+     15
+    ]
+   ],
+   "in_function_data": [
+    [
+     "main",
+     "load",
+     238
+    ],
+    [
+     "main",
+     "load",
+     238
+    ],
+    [
+     "main",
+     "open",
+     249
+    ]
+   ],
+   "frame_or_gc": [],
+   "file_literals": []
+  },
+  "S5": {
+   "module_level_data": [
+    [
+     "_D, N, K, T = params(GAME)",
+     11
+    ]
+   ],
+   "in_function_data": [
+    [
+     "main",
+     "load",
+     296
+    ],
+    [
+     "main",
+     "open",
+     320
+    ]
+   ],
+   "frame_or_gc": [],
+   "file_literals": []
+  }
+ },
+ "positive_controls_all_caught": true,
+ "negative_control_passed": true,
+ "formulas_with_leak": [],
+ "control_scores": {
+  "PC1_modcache": {
+   "mean_hits": 7.0,
+   "expected": 1.4848484848484849,
+   "p_upper": 0.0
+  },
+  "PC4_fullfreq": {
+   "mean_hits": 1.584983498349835,
+   "expected": 1.4848484848484849,
+   "p_upper": 0.00019896254552437696
+  },
+  "PC5_offbyone": {
+   "mean_hits": 1.6567656765676568,
+   "expected": 1.4848484848484849,
+   "p_upper": 6.606993598343178e-10
+  },
+  "PC0_legit": {
+   "mean_hits": 1.4884488448844884,
+   "expected": 1.4848484848484849,
+   "p_upper": 0.45400791033809107
+  }
+ },
+ "seconds": 93.1
+}
