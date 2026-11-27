@@ -1,0 +1,215 @@
+{
+ "id": "S2",
+ "science": "information theory / algorithmic complexity (universal prediction by compression: CTW, LZ78, MDL; entropy-rate test)",
+ "game": "EM",
+ "formulas": [
+  {
+   "rule": "S2_F1",
+   "game": "EM",
+   "n": 1212,
+   "mean_hits": 1.4983498349834983,
+   "expected": 1.4848484848484849,
+   "p_upper": 0.3196300260395186,
+   "p_lower": 0.6908097654169372,
+   "hist": [
+    179,
+    456,
+    402,
+    151,
+    18,
+    5,
+    1,
+    0
+   ],
+   "definition": "Per-number context-tree weighting (CTW, depth 8, KT estimator) on each number's binary drawn/not-drawn sequence; predicted set = 7 numbers with highest CTW probability P(drawn next | own past).",
+   "formula_text": "p_i = Pw(x_i^{t-1} 1) / Pw(x_i^{t-1}),  Pw = 1/2 Pe(KT) + 1/2 Pw(c0) Pw(c1), D = 8;  pick top-7 p_i"
+  },
+  {
+   "rule": "S2_F2",
+   "game": "EM",
+   "n": 1212,
+   "mean_hits": 1.50990099009901,
+   "expected": 1.4848484848484849,
+   "p_upper": 0.18936147948108906,
+   "p_lower": 0.8184895381814417,
+   "hist": [
+    160,
+    482,
+    397,
+    144,
+    23,
+    6,
+    0,
+    0
+   ],
+   "definition": "Per-number LZ78 incremental-parsing predictor (Feder-Merhav-Gutman): P(1) = (n1+1/2)/(n0+n1+1) at the current node of the LZ78 parse tree; predicted set = 7 numbers with highest P(1).",
+   "formula_text": "p_i = (n1(cur_i)+1/2)/(n0(cur_i)+n1(cur_i)+1) on LZ78 tree of x_i;  pick top-7 p_i"
+  },
+  {
+   "rule": "S2_F3",
+   "game": "EM",
+   "n": 1212,
+   "mean_hits": 1.462046204620462,
+   "expected": 1.4848484848484849,
+   "p_upper": 0.7962855982413034,
+   "p_lower": 0.21217986200930336,
+   "hist": [
+    182,
+    482,
+    382,
+    138,
+    28,
+    0,
+    0,
+    0
+   ],
+   "definition": "Prequential MDL: before each draw choose, among M0 iid Bernoulli(7/33), M1 per-number KT frequency, M2 pooled CTW(8), M3 per-number CTW(8), M4 per-number LZ78, the model with the smallest cumulative code length on all past draws (ties -> lower index); predict top-7 by its probabilities (M0 -> fixed tie key).",
+   "formula_text": "m* = argmin_m sum_{s<t} sum_i -log2 P_m(x_i(s) | <s);  pick top-7 P_{m*}(x_i(t)=1)",
+   "mdl_selection_share": {
+    "M0_iid": 1.0,
+    "M1_KT_freq": 0.0,
+    "M2_pooled_CTW": 0.0,
+    "M3_pernumber_CTW": 0.0,
+    "M4_pernumber_LZ78": 0.0
+   }
+  }
+ ],
+ "scratch_check_mismatches": 0,
+ "prediction_28_11": {
+  "game": "EM",
+  "numbers": [
+   3,
+   5,
+   6,
+   13,
+   15,
+   21,
+   31
+  ],
+  "formula": "F1",
+  "F1_probabilities_top7": {
+   "3": 0.2281991843365771,
+   "5": 0.22238008776100035,
+   "6": 0.22694622532493905,
+   "13": 0.22801929820394315,
+   "15": 0.2240299986639811,
+   "21": 0.22644584246455116,
+   "31": 0.23549949930677155
+  },
+  "F2_numbers": [
+   11,
+   13,
+   17,
+   19,
+   21,
+   22,
+   29
+  ],
+  "F3_numbers": [
+   14,
+   18,
+   24,
+   26,
+   27,
+   28,
+   30
+  ],
+  "F3_model_now": "M0_iid"
+ },
+ "entropy_rate_test": [
+  {
+   "game": "EM",
+   "n_draws": 1242,
+   "nsim": 200,
+   "seed": 2811,
+   "iid_max_bits_per_symbol": 0.7455178428108284,
+   "log2_C(N,K)_bits_per_draw": 22.026496426315212,
+   "bits_per_symbol": {
+    "M0_iid": 0.7455178428108191,
+    "M1_KT_freq": 0.7494486047049698,
+    "M2_pooled_CTW": 0.74575065129536,
+    "M3_pernumber_CTW": 0.7502266372461438,
+    "M4_pernumber_LZ78": 0.8236584201324033
+   },
+   "bits_per_draw": {
+    "M0_iid": 24.60208881275703,
+    "M1_KT_freq": 24.731803955264002,
+    "M2_pooled_CTW": 24.60977149274688,
+    "M3_pernumber_CTW": 24.757479029122745,
+    "M4_pernumber_LZ78": 27.18072786436931
+   },
+   "gain_bits_vs_iid": {
+    "M1_KT_freq": -161.10620699365973,
+    "M2_pooled_CTW": -9.541888547391864,
+    "M3_pernumber_CTW": -192.99464872621684,
+    "M4_pernumber_LZ78": -3202.6697021024484
+   },
+   "null_gain_mean": {
+    "M1_KT_freq": -157.18271162173664,
+    "M2_pooled_CTW": -9.623377898644502,
+    "M3_pernumber_CTW": -188.08197828735163,
+    "M4_pernumber_LZ78": -3237.3571461378842
+   },
+   "null_gain_sd": {
+    "M1_KT_freq": 5.790182612076037,
+    "M2_pooled_CTW": 1.427655619636102,
+    "M3_pernumber_CTW": 5.840422806317736,
+    "M4_pernumber_LZ78": 50.570876092126184
+   },
+   "p_E": {
+    "M1_KT_freq": 0.7213930348258707,
+    "M2_pooled_CTW": 0.527363184079602,
+    "M3_pernumber_CTW": 0.8009950248756219,
+    "M4_pernumber_LZ78": 0.27860696517412936
+   },
+   "mdl_final_choice": "M0_iid"
+  },
+  {
+   "game": "VAN",
+   "n_draws": 415,
+   "nsim": 200,
+   "seed": 2812,
+   "iid_max_bits_per_symbol": 1.0,
+   "log2_C(N,K)_bits_per_draw": 19.42814749561378,
+   "bits_per_symbol": {
+    "M0_iid": 1.0,
+    "M1_KT_freq": 1.0098861584438685,
+    "M2_pooled_CTW": 1.0000734083996659,
+    "M3_pernumber_CTW": 1.011973894885606,
+    "M4_pernumber_LZ78": 1.0842015975455668
+   },
+   "bits_per_draw": {
+    "M0_iid": 22.0,
+    "M1_KT_freq": 22.217495485765106,
+    "M2_pooled_CTW": 22.00161498479265,
+    "M3_pernumber_CTW": 22.26342568748333,
+    "M4_pernumber_LZ78": 23.852435146002467
+   },
+   "gain_bits_vs_iid": {
+    "M1_KT_freq": -90.26062659251875,
+    "M2_pooled_CTW": -0.6702186889488075,
+    "M3_pernumber_CTW": -109.32166030558255,
+    "M4_pernumber_LZ78": -768.7605855910242
+   },
+   "null_gain_mean": {
+    "M1_KT_freq": -86.77514596861089,
+    "M2_pooled_CTW": -0.28775242978732424,
+    "M3_pernumber_CTW": -106.58006924305224,
+    "M4_pernumber_LZ78": -746.8880672234574
+   },
+   "null_gain_sd": {
+    "M1_KT_freq": 5.265741212028481,
+    "M2_pooled_CTW": 0.603689968183362,
+    "M3_pernumber_CTW": 5.535690896860664,
+    "M4_pernumber_LZ78": 28.661938711240953
+   },
+   "p_E": {
+    "M1_KT_freq": 0.7213930348258707,
+    "M2_pooled_CTW": 0.8756218905472637,
+    "M3_pernumber_CTW": 0.6716417910447762,
+    "M4_pernumber_LZ78": 0.7661691542288557
+   },
+   "mdl_final_choice": "M0_iid"
+  }
+ ]
+}
