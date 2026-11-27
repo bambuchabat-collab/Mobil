@@ -1,0 +1,170 @@
+{
+ "rows": [
+  {
+   "id": "S3",
+   "science": "cryptanalysis / RNG analysis (Berlekamp\u2013Massey linear-complexity attacks, NIST SP 800-22 battery, exhaustive 32-bit LCG state recovery)",
+   "rule": "F3",
+   "game": "EM",
+   "mean": 1.5346534653465347,
+   "exp": 1.4848484848484849,
+   "p": 0.039190859810238024,
+   "n": 1212,
+   "holm": 0.5878628971535703
+  },
+  {
+   "id": "S2",
+   "science": "information theory / algorithmic complexity (universal prediction by compression: CTW, LZ78, MDL; entropy-rate test)",
+   "rule": "S2_F2",
+   "game": "EM",
+   "mean": 1.50990099009901,
+   "exp": 1.4848484848484849,
+   "p": 0.18936147948108906,
+   "n": 1212,
+   "holm": 1
+  },
+  {
+   "id": "S4",
+   "science": "signal processing / time-series econometrics",
+   "rule": "S4_F2",
+   "game": "EM",
+   "mean": 1.5008250825082508,
+   "exp": 1.4848484848484849,
+   "p": 0.2887757628185081,
+   "n": 1212,
+   "holm": 1
+  },
+  {
+   "id": "S2",
+   "science": "information theory / algorithmic complexity (universal prediction by compression: CTW, LZ78, MDL; entropy-rate test)",
+   "rule": "S2_F1",
+   "game": "EM",
+   "mean": 1.4983498349834983,
+   "exp": 1.4848484848484849,
+   "p": 0.3196300260395186,
+   "n": 1212,
+   "holm": 1
+  },
+  {
+   "id": "S1",
+   "science": "PHYSICS: nonlinear dynamics and chaos (Takens embedding, simplex projection, S-map)",
+   "rule": "S1_F3",
+   "game": "VAN",
+   "mean": 5.527272727272727,
+   "exp": 5.5,
+   "p": 0.3355435378166181,
+   "n": 385,
+   "holm": 1
+  },
+  {
+   "id": "S3",
+   "science": "cryptanalysis / RNG analysis (Berlekamp\u2013Massey linear-complexity attacks, NIST SP 800-22 battery, exhaustive 32-bit LCG state recovery)",
+   "rule": "F2",
+   "game": "EM",
+   "mean": 1.4859735973597359,
+   "exp": 1.4848484848484849,
+   "p": 0.48915952517543987,
+   "n": 1212,
+   "holm": 1
+  },
+  {
+   "id": "S4",
+   "science": "signal processing / time-series econometrics",
+   "rule": "S4_F3",
+   "game": "VAN",
+   "mean": 5.4935064935064934,
+   "exp": 5.5,
+   "p": 0.5506868116128175,
+   "n": 385,
+   "holm": 1
+  },
+  {
+   "id": "S1",
+   "science": "PHYSICS: nonlinear dynamics and chaos (Takens embedding, simplex projection, S-map)",
+   "rule": "S1_F1",
+   "game": "EM",
+   "mean": 1.4793729372937294,
+   "exp": 1.4848484848484849,
+   "p": 0.582618469077294,
+   "n": 1212,
+   "holm": 1
+  },
+  {
+   "id": "S3",
+   "science": "cryptanalysis / RNG analysis (Berlekamp\u2013Massey linear-complexity attacks, NIST SP 800-22 battery, exhaustive 32-bit LCG state recovery)",
+   "rule": "F1",
+   "game": "VAN",
+   "mean": 5.48051948051948,
+   "exp": 5.5,
+   "p": 0.6329681909951088,
+   "n": 385,
+   "holm": 1
+  },
+  {
+   "id": "S4",
+   "science": "signal processing / time-series econometrics",
+   "rule": "S4_F1",
+   "game": "EM",
+   "mean": 1.4752475247524752,
+   "exp": 1.4848484848484849,
+   "p": 0.6390996545859502,
+   "n": 1212,
+   "holm": 1
+  },
+  {
+   "id": "S1",
+   "science": "PHYSICS: nonlinear dynamics and chaos (Takens embedding, simplex projection, S-map)",
+   "rule": "S1_F2",
+   "game": "EM",
+   "mean": 1.4636963696369636,
+   "exp": 1.4848484848484849,
+   "p": 0.7791534119954769,
+   "n": 1212,
+   "holm": 1
+  },
+  {
+   "id": "S2",
+   "science": "information theory / algorithmic complexity (universal prediction by compression: CTW, LZ78, MDL; entropy-rate test)",
+   "rule": "S2_F3",
+   "game": "EM",
+   "mean": 1.462046204620462,
+   "exp": 1.4848484848484849,
+   "p": 0.7962855982413034,
+   "n": 1212,
+   "holm": 1
+  },
+  {
+   "id": "S5",
+   "science": "machine learning / AI",
+   "rule": "S5_F3",
+   "game": "EM",
+   "mean": 1.4612211221122111,
+   "exp": 1.4848484848484849,
+   "p": 0.8045472317232427,
+   "n": 1212,
+   "holm": 1
+  },
+  {
+   "id": "S5",
+   "science": "machine learning / AI",
+   "rule": "S5_F2",
+   "game": "EM",
+   "mean": 1.4603960396039604,
+   "exp": 1.4848484848484849,
+   "p": 0.8126028892420245,
+   "n": 1212,
+   "holm": 1
+  },
+  {
+   "id": "S5",
+   "science": "machine learning / AI",
+   "rule": "S5_F1",
+   "game": "EM",
+   "mean": 1.4414191419141915,
+   "exp": 1.4848484848484849,
+   "p": 0.941570785609917,
+   "n": 1212,
+   "holm": 1
+  }
+ ],
+ "survivors": []
+}
